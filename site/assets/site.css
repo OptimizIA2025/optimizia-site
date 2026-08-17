@@ -1,0 +1,82 @@
+/* ═══ DESIGN TOKENS — partagés par toutes les pages OptimizIA.xyz ═══
+   Union des variables utilisées dans le projet. Chaque page peut redéfinir
+   localement (cascade respectée), mais aucune valeur ne diverge actuellement. */
+:root {
+    /* Orange — énergie, action */
+    --orange: #F97316;
+    --orange-hover: #EA580C;
+    --orange-dark: #C2410C;
+    --orange-light: rgba(249, 115, 22, 0.08);
+    --orange-glow: rgba(249, 115, 22, 0.22);
+    --orange-glow-strong: rgba(249, 115, 22, 0.35);
+
+    /* Bleu — confiance, profondeur */
+    --blue: #3B82F6;
+    --blue-hover: #2563EB;
+    --blue-dark: #1D4ED8;
+    --blue-deep: #1E3A5F;
+    --blue-light: rgba(59, 130, 246, 0.07);
+    --blue-glow: rgba(59, 130, 246, 0.18);
+
+    /* Fonds */
+    --bg: #FAFBFE;
+    --bg-alt: #F1F5F9;
+    --bg-card: #FFFFFF;
+    --bg-glass: rgba(255, 255, 255, 0.72);
+    --bg-dark: #0F172A;
+
+    /* Texte */
+    --text: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --text-inverse: #F8FAFC;
+
+    /* Bordures & ombres */
+    --border: rgba(15, 23, 42, 0.08);
+    --border-hover: rgba(249, 115, 22, 0.35);
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 20px rgba(15, 23, 42, 0.07);
+    --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.1);
+    --shadow-xl: 0 24px 64px rgba(15, 23, 42, 0.14);
+    --shadow-orange: 0 8px 32px rgba(249, 115, 22, 0.2);
+    --shadow-card: 0 1px 3px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06);
+
+    /* Layout */
+    --max-w: 1200px;
+    --radius: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-pill: 100px;
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ═══ RESET & BASE communs ═══ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+/* ═══ Atomes partagés (mêmes règles dans toutes les pages) ═══ */
+.overline { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--orange); display: block; margin-bottom: 16px; }
+.reveal { opacity: 0; transform: translateY(36px); }
+.lang-toggle { display: flex; align-items: center; gap: 4px; margin-left: 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; }
+.lang-btn { cursor: pointer; padding: 2px 6px; border-radius: 4px; color: var(--text-secondary); transition: color 0.2s; }
+.lang-btn:hover { color: var(--orange); }
+.lang-btn.lang-active { color: var(--orange); }
+.lang-sep { color: var(--border); }
+.lang-toggle-mobile { justify-content: center; margin: 8px 0 0; }
+
+/* ═══ Bandeau cookies V2 (partagé toutes pages) ═══ */
+#oia-consent { position: fixed; left: 16px; bottom: 16px; z-index: 9998; max-width: 460px; background: #fff; border: 1px solid #E5E7EB; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 12px 40px rgba(15,23,42,0.12), 0 2px 8px rgba(15,23,42,0.06); font-family: 'Inter', system-ui, sans-serif; font-size: 13.5px; line-height: 1.55; color: #1F2937; display: none; }
+#oia-consent[data-show="1"] { display: block; animation: oiaSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes oiaSlideUp { from { transform: translateY(28px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+#oia-consent .oia-consent-text { margin: 0 0 12px; }
+#oia-consent .oia-consent-text strong { color: #F97316; font-weight: 600; }
+#oia-consent .oia-consent-text a { color: #F97316; font-weight: 600; text-decoration: none; border-bottom: 1px dotted #F97316; }
+#oia-consent .oia-consent-actions { display: flex; gap: 8px; justify-content: flex-end; }
+#oia-consent .oia-consent-actions button { padding: 9px 18px; border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: inherit; transition: all 0.15s; }
+#oia-consent .oia-btn-refuse { background: #F3F4F6; color: #4B5563; }
+#oia-consent .oia-btn-refuse:hover { background: #E5E7EB; }
+#oia-consent .oia-btn-accept { background: #F97316; color: #fff; }
+#oia-consent .oia-btn-accept:hover { background: #EA6A0A; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,115,22,0.3); }
+@media (max-width: 520px) { #oia-consent { left: 12px; right: 12px; bottom: 12px; max-width: none; } }

@@ -1,0 +1,66 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://www.optimizia.xyz/entities.json#entities",
+  "name": "Entites cles d'OptimizIA.xyz",
+  "description": "Liste des entites decrites sur optimizia.xyz, avec leur identifiant stable dans le graphe du site.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Organization",
+        "@id": "https://www.optimizia.xyz/#organization",
+        "name": "OptimizIA.xyz",
+        "url": "https://www.optimizia.xyz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Person",
+        "@id": "https://www.optimizia.xyz/fr/apropos.html#person-remy-ginoux",
+        "name": "Remy Ginoux",
+        "url": "https://www.ginoux.xyz"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Person",
+        "@id": "https://www.optimizia.xyz/fr/apropos.html#person-romain-ben",
+        "name": "Romain Ben",
+        "url": "https://www.romainben.cloud"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "@id": "https://www.optimizia.xyz/fr/index.html#service-diagnostic",
+        "name": "Diagnostic IA & Connaissance"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "@id": "https://www.optimizia.xyz/fr/index.html#service-sprint",
+        "name": "Sprint IA, PoC vers MVP"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Service",
+        "@id": "https://www.optimizia.xyz/fr/index.html#service-copilotage",
+        "name": "Copilotage IA & Amelioration continue"
+      }
+    }
+  ]
+}

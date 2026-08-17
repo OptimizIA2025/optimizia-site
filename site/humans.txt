@@ -1,0 +1,22 @@
+/* TEAM */
+Rémy Ginoux — Co-fondateur & Senior Consultant
+  Site: https://www.ginoux.xyz
+  LinkedIn: https://www.linkedin.com/in/remyginoux/
+  Location: Occitanie, France
+  Role: Stratégie IA, conseil, formation — 25 ans d'expérience terrain industriel
+
+Romain Ben — Co-fondateur & Ingénieur IA
+  Email: contact@optimizia.xyz
+  Location: Nice, France
+  Role: Développement IA, automatisation (n8n / Make), RAG, agents autonomes
+
+/* SITE */
+  Domain: www.optimizia.xyz
+  Founded: 2022
+  Languages: Français, English
+  Standards: HTML5, CSS3, JSON-LD Schema.org, llms.txt, humans.txt, GEO
+  Contact: contact@optimizia.xyz
+
+/* THANKS */
+  Built by humans. Structured for AI agents.
+  Analytics: OptimizIA Tracker V2, developed in-house, hosted in Europe, no third parties. No dark patterns.

@@ -1,0 +1,16 @@
+{
+    "version": "2026.2",
+    "protocol": "Unified-UCP-ACP",
+    "target": "www.optimizia.xyz",
+    "capabilities": [
+        "search",
+        "checkout",
+        "support",
+        "rag_indexing"
+    ],
+    "endpoints": {
+        "google_ucp": "/api/v1/agent-card",
+        "openai_acp": "/api/v1/checkout-session"
+    },
+    "authentication": "none"
+}

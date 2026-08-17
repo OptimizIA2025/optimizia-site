@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../assets/site.css">
+    <link rel="canonical" href="https://www.optimizia.xyz/fr/agence-n8n.html">
+    <link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/agence-n8n.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/agence-n8n.html">
+    <title>Agence n8n France | Automatisation de processus pour PME</title>
+    <meta name="description" content="Agence n8n en France : conception, déploiement et maintenance d'automatisations n8n auto-hébergées pour PME de 20 à 500 salariés. PoC vers MVP en 13 jours en moyenne.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Agence n8n France | Automatisation de processus pour PME">
+    <meta property="og:description" content="Agence n8n en France : conception, déploiement et maintenance d'automatisations n8n auto-hébergées pour PME de 20 à 500 salariés. PoC vers MVP en 13 jours en moyenne.">
+    <meta property="og:url" content="https://www.optimizia.xyz/fr/agence-n8n.html">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agence n8n France | Automatisation de processus pour PME">
+    <meta name="twitter:description" content="Agence n8n en France : conception, déploiement et maintenance d'automatisations n8n auto-hébergées pour PME de 20 à 500 salariés. PoC vers MVP en 13 jours en moyenne.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+
+    <link rel="preload" href="../assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+
+    <script src="../assets/vendor/gsap.min.js" defer></script>
+    <script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <link rel="stylesheet" href="../assets/css/index-fr.72b42e0b.css">
+    <style>
+        /* Pages editoriales (guides, pages de service, hub realisations) */
+        .ed-hero { padding: 138px 0 56px; }
+        .ed-hero .overline { display: block; margin-bottom: 14px; }
+        .ed-hero h1 {
+            font-size: clamp(2rem, 4.6vw, 3.1rem);
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+        .ed-hero .ed-lead {
+            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+        .ed-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            margin-top: 26px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+        .ed-body { padding: 8px 0 96px; }
+        .ed-wrap { max-width: 780px; }
+        .ed-wrap h2 {
+            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+            margin: 52px 0 16px;
+        }
+        .ed-wrap h3 {
+            font-size: 1.14rem;
+            margin: 32px 0 10px;
+        }
+        .ed-wrap p {
+            font-size: 1rem;
+            line-height: 1.78;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+        .ed-wrap p strong { color: var(--text); font-weight: 600; }
+        .ed-wrap ul, .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; }
+        .ed-wrap ul { list-style: none; }
+        .ed-wrap ul li {
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.68;
+            color: var(--text-muted);
+        }
+        .ed-wrap ul li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 10px;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+        .ed-wrap ol { padding-left: 22px; }
+        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
+        .ed-callout {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin: 30px 0;
+        }
+        .ed-callout p:last-child { margin-bottom: 0; }
+        .ed-table-wrap { overflow-x: auto; margin: 26px 0; }
+        .ed-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; }
+        .ed-table th, .ed-table td {
+            text-align: left;
+            padding: 13px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .ed-table th {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+            background: var(--bg-alt);
+        }
+        .ed-cta {
+            margin-top: 54px;
+            padding: 40px 36px;
+            border-radius: var(--radius-xl);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+        }
+        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
+        .ed-faq details {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            background: var(--bg-card, #fff);
+        }
+        .ed-faq summary {
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            list-style: none;
+        }
+        .ed-faq summary::-webkit-details-marker { display: none; }
+        .ed-faq details p { margin: 14px 0 0; }
+        .ed-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 26px;
+            margin-top: 40px;
+        }
+        .ed-card {
+            display: block;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px 28px;
+            background: var(--bg-card, #fff);
+            transition: var(--transition);
+        }
+        .ed-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+        .ed-card .ed-card-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--orange);
+            display: block;
+            margin-bottom: 12px;
+        }
+        .ed-card h2, .ed-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.16rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin: 0 0 10px;
+        }
+        .ed-card p { font-size: 0.93rem; line-height: 1.65; color: var(--text-muted); margin: 0; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.optimizia.xyz/fr/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agence n8n",
+          "item": "https://www.optimizia.xyz/fr/agence-n8n.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.optimizia.xyz/fr/agence-n8n.html#service",
+      "name": "Automatisation n8n pour PME",
+      "serviceType": "Automatisation de processus métier avec n8n",
+      "description": "Conception, déploiement et maintenance d'automatisations n8n auto-hébergées pour des PME de 20 à 500 salariés.",
+      "provider": {
+        "@id": "https://www.optimizia.xyz/#organization"
+      },
+      "areaServed": [
+        "France",
+        "Occitanie",
+        "International (remote)"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 8000,
+          "maxPrice": 15000,
+          "priceCurrency": "EUR"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.optimizia.xyz/fr/agence-n8n.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "n8n en auto-hébergé ou en version cloud ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous déployons presque toujours n8n en auto-hébergé, sur votre infrastructure ou sur un serveur dédié en France. C'est ce qui vous garantit que vos données ne sortent pas de votre périmètre, ce qui supprime la facturation à l'exécution et ce qui vous laisse la liberté de reprendre la main. La version cloud reste pertinente pour démarrer vite sur un périmètre non sensible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il si on veut reprendre la main plus tard ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous le pouvez, et c'est prévu dès le départ. Les workflows sont documentés, les identifiants restent les vôtres, et l'instance tourne sur une infrastructure que vous contrôlez. Nous formons vos équipes à la lecture et à la modification des workflows pendant le projet, pas après. Aucun mécanisme ne vous oblige à rester."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une automatisation n8n ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un premier cas d'usage cadré et mis en production entre dans le format Sprint IA, entre 8 000 et 15 000 € HT selon la complexité. Si vous ne savez pas encore quel processus automatiser en premier, le diagnostic à 3 000 à 5 000 € HT sert précisément à trancher. Le suivi et l'ajout progressif de cas d'usage se font ensuite en copilotage, entre 1 500 et 4 000 € HT par mois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "n8n suffit-il pour de l'IA, ou faut-il autre chose ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "n8n orchestre, il ne raisonne pas. Pour la partie intelligence nous branchons des modèles de langage via API, avec le cas échéant une base vectorielle pour interroger vos propres documents. n8n reste la colonne vertébrale qui déclenche, enchaîne, réessaie et trace. C'est cette séparation qui rend l'ensemble maintenable."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo"><img src="../LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+        <div class="nav-links">
+            <a href="index.html#constat">Constat</a>
+            <a href="index.html#benefices">Bénéfices</a>
+            <a href="index.html#methode">Méthode</a>
+            <a href="index.html#services">Offres</a>
+            <a href="index.html#automatisation" class="active">Réalisations</a>
+            <a href="apropos.html">A propos</a>
+            <a href="index.html#questions-frequentes">FAQ</a>
+            <a href="contact.html" class="nav-cta">Audit gratuit</a>
+            <div class="lang-toggle">
+                <span class="lang-btn lang-active">FR</span>
+                <span class="lang-sep">|</span>
+                <a href="../en/index.html" class="lang-btn">EN</a>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#constat">Constat</a>
+    <a href="index.html#benefices">Bénéfices</a>
+    <a href="index.html#methode">Méthode</a>
+    <a href="index.html#services">Offres</a>
+    <a href="index.html#automatisation" class="active">Réalisations</a>
+    <a href="apropos.html">A propos</a>
+    <a href="index.html#questions-frequentes">FAQ</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Audit gratuit</a>
+    <div class="lang-toggle lang-toggle-mobile">
+        <span class="lang-btn lang-active">FR</span>
+        <span class="lang-sep">|</span>
+        <a href="../en/index.html" class="lang-btn">EN</a>
+    </div>
+</div>
+
+<section class="ed-hero bg-mesh" id="top">
+    <div class="container">
+        <span class="overline">Agence n8n</span>
+        <h1>Agence n8n en France : automatisation de vos processus métier</h1>
+        <p class="ed-lead">Nous concevons, déployons et maintenons des automatisations n8n auto-hébergées pour des PME de 20 à 500 personnes. Pas de démonstration jetable : des workflows qui tournent tous les jours en production, reliés à vos outils existants, et que vos équipes peuvent reprendre.</p>
+        <div class="ed-meta">
+            <span>PME de 20 à 500 salariés</span>
+            <span>n8n auto-hébergé</span>
+            <span>PoC vers MVP en 13 jours en moyenne</span>
+            <span>France et Occitanie, à distance partout</span>
+        </div>
+    </div>
+</section>
+<main class="ed-body">
+    <div class="container">
+        <div class="ed-wrap">
+            <h2>Pourquoi n8n plutôt qu'un autre orchestrateur</h2>
+            <p>n8n est un outil d'orchestration open source qui relie vos applications entre elles et exécute des enchaînements de tâches sans code, ou avec du code quand c'est plus court. Ce qui le distingue dans un contexte PME tient en trois points concrets : il s'auto-héberge, donc vos données restent chez vous ; il se facture à l'instance et non à l'exécution, donc un workflow qui tourne mille fois par jour ne fait pas exploser la note ; et il reste lisible, donc un salarié peut ouvrir un workflow, comprendre ce qu'il fait et le corriger.</p>
+            <p>Ce dernier point est celui qui compte le plus dans la durée. Une automatisation que personne ne comprend chez vous devient une dépendance, pas un actif. Nous construisons donc systématiquement de façon à ce que la reprise en main soit possible, y compris sans nous.</p>
+
+            <h2>Ce que nous automatisons le plus souvent</h2>
+            <p>Les cas d'usage qui reviennent chez nos clients ne sont presque jamais spectaculaires. Ce sont des tâches répétitives, à faible valeur ajoutée, qui grignotent plusieurs heures par semaine et par personne.</p>
+            <ul>
+                <li><strong>Veille et prospection</strong> : collecte de sources, filtrage, qualification par un modèle de langage, livraison d'une liste exploitable chaque matin plutôt qu'une boîte mail saturée.</li>
+                <li><strong>Reporting</strong> : agrégation de données dispersées, mise en forme, diffusion programmée aux bonnes personnes, sans ressaisie ni copier-coller entre outils.</li>
+                <li><strong>Traitement documentaire</strong> : extraction d'informations dans des PDF ou des mails, classement, alimentation d'un CRM ou d'un ERP, avec un humain qui valide les cas ambigus.</li>
+                <li><strong>Assistants métier</strong> : un agent qui répond aux questions de vos équipes en s'appuyant sur vos propres documents, avec les sources citées.</li>
+                <li><strong>Synchronisations</strong> : maintenir cohérents deux outils qui ne se parlent pas nativement, sans acheter un connecteur propriétaire de plus.</li>
+            </ul>
+
+            <h2>Notre pratique n8n, en clair</h2>
+            <p>La question légitime quand une agence dit faire du n8n est de savoir ce qu'elle fait tourner elle-même. Chez nous, n8n n'est pas une compétence commerciale, c'est l'infrastructure sur laquelle nos propres produits fonctionnent.</p>
+            <ul>
+                <li><strong>SEOPlus!</strong>, notre moteur d'audit SEO et GEO, exécute la totalité de son analyse dans n8n : plus d'une centaine de vérifications par site, du crawl à la génération du rapport. <a href="realisation-seoplus.html">Voir l'étude de cas</a>.</li>
+                <li><strong>Agent RADAR</strong>, livré à un client dans le négoce, tourne en production du lundi au vendredi et transforme une veille de marché en prospects qualifiés. <a href="realisation-veille-prospection.html">Voir l'étude de cas</a>.</li>
+                <li><strong>Nos chaînes de reporting</strong> produisent et diffusent des analyses quotidiennes sans intervention humaine. <a href="realisation-reporting-automatise.html">Voir l'étude de cas</a>.</li>
+                <li><strong>Nos propres tunnels d'abonnement</strong> (paiement, provisionnement d'accès, relances de cycle de vie) sont orchestrés dans n8n, y compris la gestion des cas pénibles comme les impayés et les résiliations.</li>
+            </ul>
+            <div class="ed-callout">
+                <p>Autrement dit : quand nous vous proposons une architecture n8n, nous vous proposons celle que nous utilisons pour faire tourner notre propre activité, avec les garde-fous que nous avons appris à poser après nous être fait mal.</p>
+            </div>
+
+            <h2>Comment se déroule un projet</h2>
+            <ol>
+                <li><strong>Cadrage</strong> : on identifie le processus à automatiser et surtout on vérifie qu'il mérite de l'être. Automatiser un processus mal conçu ne fait que produire l'erreur plus vite.</li>
+                <li><strong>Proof of Concept</strong> : une version restreinte du workflow, sur des données réelles, avec des critères d'acceptation écrits à l'avance. Objectif : prouver ou infirmer la valeur avant d'investir davantage.</li>
+                <li><strong>Passage en MVP</strong> : robustesse, gestion des erreurs, reprise sur incident, journalisation. Comptez 13 jours en moyenne entre le PoC validé et le MVP en production.</li>
+                <li><strong>Transfert</strong> : documentation, formation de vos équipes, accès aux identifiants et à l'instance. Vous devez pouvoir vivre sans nous.</li>
+                <li><strong>Copilotage</strong> : si vous le souhaitez, nous surveillons, corrigeons et ajoutons de nouveaux cas d'usage au fil de l'eau.</li>
+            </ol>
+
+            <h2>Ce que nous refusons de faire</h2>
+            <p>Nous ne livrons pas d'automatisation sur un processus que le client ne sait pas décrire, parce qu'elle sera modifiée trois fois puis abandonnée. Nous ne branchons pas un modèle de langage sur une décision qui engage juridiquement l'entreprise sans validation humaine. Et nous ne construisons pas de dépendance volontaire : si un workflow peut être plus simple, il sera plus simple, même si cela réduit notre part de maintenance.</p>
+
+            <h2>Questions fréquentes sur n8n</h2>
+            <div class="ed-faq">
+                <details>
+                    <summary>n8n en auto-hébergé ou en version cloud ?</summary>
+                    <p>Nous déployons presque toujours n8n en auto-hébergé, sur votre infrastructure ou sur un serveur dédié en France. C'est ce qui vous garantit que vos données ne sortent pas de votre périmètre, ce qui supprime la facturation à l'exécution et ce qui vous laisse la liberté de reprendre la main. La version cloud reste pertinente pour démarrer vite sur un périmètre non sensible.</p>
+                </details>
+                <details>
+                    <summary>Que se passe-t-il si on veut reprendre la main plus tard ?</summary>
+                    <p>Vous le pouvez, et c'est prévu dès le départ. Les workflows sont documentés, les identifiants restent les vôtres, et l'instance tourne sur une infrastructure que vous contrôlez. Nous formons vos équipes à la lecture et à la modification des workflows pendant le projet, pas après. Aucun mécanisme ne vous oblige à rester.</p>
+                </details>
+                <details>
+                    <summary>Combien coûte une automatisation n8n ?</summary>
+                    <p>Un premier cas d'usage cadré et mis en production entre dans le format Sprint IA, entre 8 000 et 15 000 € HT selon la complexité. Si vous ne savez pas encore quel processus automatiser en premier, le diagnostic à 3 000 à 5 000 € HT sert précisément à trancher. Le suivi et l'ajout progressif de cas d'usage se font ensuite en copilotage, entre 1 500 et 4 000 € HT par mois.</p>
+                </details>
+                <details>
+                    <summary>n8n suffit-il pour de l'IA, ou faut-il autre chose ?</summary>
+                    <p>n8n orchestre, il ne raisonne pas. Pour la partie intelligence nous branchons des modèles de langage via API, avec le cas échéant une base vectorielle pour interroger vos propres documents. n8n reste la colonne vertébrale qui déclenche, enchaîne, réessaie et trace. C'est cette séparation qui rend l'ensemble maintenable.</p>
+                </details>
+            </div>
+
+            <div class="ed-cta">
+                <h2>Un processus en tête ?</h2>
+                <p>Vingt minutes de diagnostic gratuit suffisent en général pour dire si votre cas est automatisable, ce que ça coûterait et ce que ça ferait gagner. Si la réponse est non, nous vous le dirons aussi.</p>
+                <a href="contact.html" class="btn btn-orange">Réserver un créneau</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo"><img src="../LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+                <p>Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.</p>
+                <a href="https://www.ginoux.xyz" target="_blank" class="footer-ginoux">
+                    ↗ ginoux.xyz — Le parcours de Rémy Ginoux
+                </a>
+                <a href="https://www.romainben.cloud" target="_blank" class="footer-ginoux">
+                    ↗ romainben.cloud — Le parcours de Romain Ben
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html#constat">Constat</a></li>
+                    <li><a href="index.html#benefices">Bénéfices</a></li>
+                    <li><a href="index.html#methode">Méthode</a></li>
+                    <li><a href="index.html#services">Offres</a></li>
+                    <li><a href="index.html#automatisation">Réalisations</a></li>
+                    <li><a href="apropos.html">A propos</a></li>
+                    <li><a href="index.html#questions-frequentes">FAQ</a></li>
+                </ul>                <h4 style="margin-top:26px;">Ressources</h4>
+                <ul>
+                    <li><a href="agence-ia-pme.html">Agence IA pour PME</a></li>
+                    <li><a href="agence-n8n.html">Agence n8n</a></li>
+                    <li><a href="audit-ia.html">Audit IA gratuit</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                    <li><a href="https://www.linkedin.com/in/remyginoux/" target="_blank">LinkedIn — Rémy Ginoux</a></li>
+                    <li><a href="https://www.linkedin.com/in/romainben/" target="_blank">LinkedIn — Romain Ben</a></li>
+                </ul>
+                <p style="margin-top:14px;">Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 OptimizIA.xyz · Tous droits réservés · <a href="mentions-legales.html" class="legal-link">Mentions Légales</a> · <a href="/tools/seoplus/" class="legal-link" target="_blank" rel="noopener">Site audité par SEOPlus!</a></p>
+            <p><span style="color: var(--text-muted);">optimizia.xyz</span> · <a href="https://www.ginoux.xyz">ginoux.xyz</a> · <a href="https://www.romainben.cloud">romainben.cloud</a></p>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<script>
+(function(){
+    var currentHash = '';
+    var ticking = false;
+
+    function getSections(){
+        return Array.prototype.slice.call(
+            document.querySelectorAll('section[id], [id="top"]')
+        );
+    }
+
+    function updateCurrentSection(){
+        var threshold = 150;
+        var sections = getSections();
+        var found = '';
+        for (var i = 0; i < sections.length; i++){
+            var rect = sections[i].getBoundingClientRect();
+            if (rect.top - threshold <= 0) found = '#' + sections[i].id;
+        }
+        if (!found && (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4) {
+            if (sections.length) found = '#' + sections[sections.length - 1].id;
+        }
+        currentHash = found;
+    }
+
+    function applyHrefs(){
+        var hash = currentHash || location.hash || '';
+        document.querySelectorAll('.lang-toggle a.lang-btn').forEach(function(a){
+            var base = a.href.split('#')[0];
+            a.href = hash ? base + hash : base;
+        });
+    }
+
+    function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function(){
+            updateCurrentSection();
+            applyHrefs();
+            ticking = false;
+        });
+    }
+
+    function init(){
+        updateCurrentSection();
+        applyHrefs();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('hashchange', applyHrefs);
+        window.addEventListener('resize', onScroll);
+        window.addEventListener('load', onScroll);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+<!-- OptimizIA Tracker V3 -->
+
+<script>
+/* OptimizIA Tracker V3 (multi-sites) : mesure d'audience anonyme, sans tiers. Opt-out : ?notrack=1 */
+(function () {
+  'use strict';
+  var CFG = { site: 'optimizia', legal: 'mentions-legales.html', accent: '#F97316' };
+  var N8N = 'https://n8n.romainben.cloud/webhook/oia/sync';
+  var K = { optout: 'optimizia_notrack', consent: 'oia_consent', vid: 'oia_vid', sid: 'oia_sid', src: 'oia_src', cmp: 'oia_cmp' };
+  var isEN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  var TXT = isEN ? {
+    body: 'We measure our audience <strong>anonymously</strong>, with no third parties and no profiling. <a href="mentions-legales.html">Learn more</a>',
+    accept: 'Accept', refuse: 'Decline'
+  } : {
+    body: 'Nous mesurons notre audience de façon <strong>anonyme</strong>, sans partage tiers ni profilage. <a href="mentions-legales.html">En savoir plus</a>',
+    accept: 'Accepter', refuse: 'Refuser'
+  };
+
+  var Q = null;
+  try { Q = new URLSearchParams(location.search); } catch (e) {}
+
+  try {
+    if (Q && Q.has('notrack')) {
+      if (Q.get('notrack') === '1') { localStorage.setItem(K.optout, '1'); console.log('%c[OptimizIA] Tracker désactivé sur ce navigateur', 'color:#F97316;font-weight:bold'); }
+      else { localStorage.removeItem(K.optout); console.log('%c[OptimizIA] Tracker réactivé', 'color:#3B82F6;font-weight:bold'); }
+    }
+    if (localStorage.getItem(K.optout)) return;
+  } catch (e) {}
+
+  var REF_AT_LOAD = document.referrer || '';
+
+  function categorize(ref) {
+    var us = Q && (Q.get('utm_source') || '').toLowerCase().slice(0, 40);
+    if (us) return us;
+    if (!ref) return 'direct';
+    try {
+      var h = new URL(ref).hostname.toLowerCase();
+      if (h === location.hostname) return null;
+      var MAP = [
+        ['linkedin', 'linkedin'], ['lnkd.in', 'linkedin'],
+        ['tiktok', 'tiktok'], ['youtu', 'youtube'],
+        ['instagram', 'instagram'], ['facebook', 'facebook'], ['fb.com', 'facebook'],
+        ['twitter', 'x'], ['x.com', 'x'], ['t.co', 'x'],
+        ['discord', 'discord'], ['t.me', 'telegram'], ['telegram', 'telegram'],
+        ['reddit', 'reddit'], ['bing', 'bing'], ['duckduckgo', 'duckduckgo'],
+        ['seoplus.optimizia', 'seoplus'], ['optimizia.xyz', 'optimizia.xyz'],
+        ['romainben.cloud', 'romainben.cloud'], ['ginoux.xyz', 'ginoux.xyz'],
+        ['exotradingplus', 'exotradingplus'],
+      ];
+      for (var i = 0; i < MAP.length; i++) { if (h.indexOf(MAP[i][0]) !== -1) return MAP[i][1]; }
+      if (/^(www\.)?google\./.test(h)) return 'google';
+      return h.replace(/^www\./, '');
+    } catch (e) { return 'direct'; }
+  }
+
+  function uuid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) { var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); });
+  }
+
+  function startTracker() {
+    var vid, sid, src, cmp;
+    try {
+      vid = localStorage.getItem(K.vid);
+      if (!vid) { vid = uuid(); localStorage.setItem(K.vid, vid); }
+      sid = sessionStorage.getItem(K.sid);
+      if (!sid) { sid = uuid(); sessionStorage.setItem(K.sid, sid); }
+      src = sessionStorage.getItem(K.src);
+      if (!src) { src = categorize(REF_AT_LOAD) || 'direct'; sessionStorage.setItem(K.src, src); }
+      cmp = sessionStorage.getItem(K.cmp);
+      if (cmp === null || cmp === undefined) { cmp = ((Q && Q.get('utm_campaign')) || '').slice(0, 80); sessionStorage.setItem(K.cmp, cmp); }
+    } catch (e) { return; }
+
+    function payload(event, element) {
+      return { site: CFG.site, event: event, page: location.pathname, element: element || '', visitorId: vid, sessionId: sid, source: src, campaign: cmp, timestamp: new Date().toISOString() };
+    }
+    function send(event, element) {
+      fetch(N8N, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload(event, element)) }).catch(function () {});
+    }
+
+    send('pageview', document.title);
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest ? e.target.closest('a[href], button, [data-track]') : null;
+      if (!el) return;
+      var href = el.getAttribute('href') || '';
+      var text = (el.textContent || '').trim().slice(0, 80);
+      var external = false;
+      if (href && href.indexOf('#') !== 0) {
+        try { external = new URL(href, location.href).hostname !== location.hostname; } catch (err) {}
+      }
+      if (el.matches('button, [data-track], [class*="btn"], [class*="cta"]')) { send('cta_click', text); }
+      else if (external) { send('external_click', text || href.slice(0, 80)); }
+      else { send('nav_click', text); }
+    });
+
+    document.querySelectorAll('form').forEach(function (form) {
+      form.addEventListener('submit', function () { send('form_submit', form.id || form.getAttribute('action') || 'form'); });
+    });
+
+    var depths = [25, 50, 75, 100], fired = {};
+    window.addEventListener('scroll', function () {
+      var pct = Math.round((window.scrollY + window.innerHeight) / Math.max(document.body.scrollHeight, 1) * 100);
+      depths.forEach(function (d) { if (pct >= d && !fired[d]) { fired[d] = true; send('scroll_depth', d + '%'); } });
+    }, { passive: true });
+
+    var t0 = Date.now(), sentTime = false;
+    function sendTime() {
+      if (sentTime) return;
+      var s = Math.round((Date.now() - t0) / 1000);
+      if (s < 1) return;
+      sentTime = true;
+      try { navigator.sendBeacon(N8N, new Blob([JSON.stringify(payload('time_on_page', s + 's'))], { type: 'text/plain' })); } catch (e) {}
+    }
+    window.addEventListener('pagehide', sendTime);
+    window.addEventListener('beforeunload', sendTime);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') sendTime(); });
+  }
+
+  function ensureBanner() {
+    var el = document.getElementById('oia-consent');
+    if (el) return el;
+    el = document.createElement('div');
+    el.id = 'oia-consent';
+    el.className = 'oia-injected';
+    el.hidden = true;
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-label', isEN ? 'Audience measurement consent' : "Consentement mesure d'audience");
+    el.innerHTML = '<p class="oia-consent-text"></p><div class="oia-consent-actions"><button type="button" class="oia-btn-refuse"></button><button type="button" class="oia-btn-accept"></button></div>';
+    var st = document.createElement('style');
+    st.textContent = '#oia-consent.oia-injected{position:fixed;left:18px;bottom:18px;z-index:9999;max-width:340px;background:#0F172A;color:#E2E8F0;border:1px solid rgba(148,163,184,.28);border-radius:14px;padding:16px 18px;font-size:13px;line-height:1.55;box-shadow:0 12px 34px rgba(2,6,18,.45);font-family:inherit}#oia-consent.oia-injected[hidden]{display:none}#oia-consent.oia-injected a{color:inherit;text-decoration:underline}#oia-consent.oia-injected .oia-consent-actions{display:flex;gap:8px;margin-top:12px;justify-content:flex-end}#oia-consent.oia-injected button{cursor:pointer;border-radius:8px;font-size:12.5px;padding:7px 14px;font-family:inherit}#oia-consent.oia-injected .oia-btn-accept{border:none;background:#F97316;color:#fff;font-weight:600}#oia-consent.oia-injected .oia-btn-refuse{border:1px solid rgba(148,163,184,.4);background:transparent;color:#94A3B8}';
+    document.head.appendChild(st);
+    document.body.appendChild(el);
+    return el;
+  }
+
+  function showBanner() {
+    var el = ensureBanner();
+    if (!el) return;
+    el.querySelector('.oia-consent-text').innerHTML = TXT.body;
+    el.querySelector('.oia-btn-accept').textContent = TXT.accept;
+    el.querySelector('.oia-btn-refuse').textContent = TXT.refuse;
+    el.hidden = false;
+    el.setAttribute('data-show', '1');
+    el.querySelector('.oia-btn-accept').addEventListener('click', function () {
+      try { localStorage.setItem(K.consent, 'accepted'); } catch (e) {}
+      el.removeAttribute('data-show'); el.hidden = true;
+      startTracker();
+    });
+    el.querySelector('.oia-btn-refuse').addEventListener('click', function () {
+      try { localStorage.setItem(K.consent, 'refused'); } catch (e) {}
+      el.removeAttribute('data-show'); el.hidden = true;
+    });
+  }
+
+  var consent = null;
+  try { consent = localStorage.getItem(K.consent); } catch (e) {}
+  if (consent === 'accepted') startTracker();
+  else if (consent !== 'refused') {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showBanner);
+    else showBanner();
+  }
+})();
+</script>
+</body>
+</html>

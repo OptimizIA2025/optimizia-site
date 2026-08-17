@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/index.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/index.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/en/index.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/index.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/apropos.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/apropos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/apropos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/apropos.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/en/apropos.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/apropos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/apropos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/apropos.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/contact.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/contact.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/en/contact.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/contact.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/agence-ia-pme.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/agence-ia-pme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/agence-ia-pme.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/agence-n8n.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/agence-n8n.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/agence-n8n.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/audit-ia.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/audit-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/audit-ia.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisations.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisations.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/guides.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/guides.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/guides.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisation-veille-prospection.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-veille-prospection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisation-veille-prospection.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisation-reporting-automatise.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-reporting-automatise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisation-reporting-automatise.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisation-formation-ia.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-formation-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisation-formation-ia.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisation-sites-vitrines.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-sites-vitrines.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisation-sites-vitrines.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/realisation-seoplus.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-seoplus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/realisation-seoplus.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/guide-automatiser-processus-pme.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/guide-automatiser-processus-pme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/guide-automatiser-processus-pme.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/guide-n8n-vs-make.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/guide-n8n-vs-make.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/guide-n8n-vs-make.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.optimizia.xyz/fr/guide-rag-pme.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/guide-rag-pme.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/fr/guide-rag-pme.html"/>
+  </url>
+
+</urlset>

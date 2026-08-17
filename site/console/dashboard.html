@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OptimizIA.xyz · Console d'opérations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../assets/vendor/chart-4.4.7.umd.min.js"></script>
+  <script>window._gis = { ready: false, failed: false };</script>
+  <script src="https://accounts.google.com/gsi/client" async
+    onload="window._gis.ready = true; document.dispatchEvent(new Event('gis-ready'))"
+    onerror="window._gis.failed = true; document.dispatchEvent(new Event('gis-failed'))"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A101E;
+      --surface: #101828;
+      --surface-2: #15203A;
+      --surface-3: #1B2946;
+      --border: rgba(148, 163, 184, 0.13);
+      --border-strong: rgba(148, 163, 184, 0.24);
+      --ink: #E7ECF6;
+      --ink-2: #9AA7BD;
+      --ink-3: #64748B;
+      --orange: #F97316;
+      --orange-soft: rgba(249, 115, 22, 0.14);
+      --blue: #5EA1F7;
+      --blue-soft: rgba(94, 161, 247, 0.13);
+      --emerald: #34D399;
+      --emerald-soft: rgba(52, 211, 153, 0.12);
+      --ok: #34D399;
+      --warn: #FBBF24;
+      --bad: #F87171;
+      --dull: #64748B;
+      --s1: #3987E5;
+      --s2: #D95926;
+      --s3: #199E70;
+      --s4: #C98500;
+      --s5: #9085E9;
+      --s6: #D55181;
+      --s-other: #64748B;
+      --radius: 14px;
+      --sans: 'Schibsted Grotesk', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --shadow: 0 10px 34px rgba(2, 6, 18, 0.45);
+    }
+
+    html { color-scheme: dark; }
+
+    body {
+      font-family: var(--sans);
+      background:
+        radial-gradient(1100px 500px at 85% -10%, rgba(59, 130, 246, 0.09), transparent 60%),
+        radial-gradient(900px 420px at -10% 110%, rgba(249, 115, 22, 0.07), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button { font-family: var(--sans); }
+
+    ::selection { background: rgba(249, 115, 22, 0.35); }
+
+    /* ── SCREENS (login / refus) ─────────────────────────────── */
+    .screen {
+      position: fixed; inset: 0; z-index: 100;
+      background: inherit;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+
+    .gate-card {
+      width: 400px; max-width: 100%;
+      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 44px 44px 36px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .gate-mark {
+      font-family: var(--mono);
+      font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase;
+      color: var(--ink-3); margin-bottom: 18px;
+    }
+
+    .gate-logo { font-size: 27px; font-weight: 700; letter-spacing: -0.02em; }
+    .gate-logo span { color: var(--orange); }
+
+    .gate-sub { font-size: 13px; color: var(--ink-2); margin: 8px 0 30px; }
+
+    .btn-main {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 13px 24px;
+      background: var(--orange); color: #fff;
+      border: none; border-radius: 11px;
+      font-size: 14.5px; font-weight: 600;
+      cursor: pointer; transition: background 0.15s, transform 0.1s, opacity 0.15s;
+    }
+    .btn-main:hover { background: #FB8534; }
+    .btn-main:active { transform: scale(0.98); }
+    .btn-main:disabled { opacity: 0.55; cursor: default; transform: none; }
+    .btn-main:focus-visible, .btn-ghost:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    .gate-status {
+      margin-top: 16px; font-size: 12px; line-height: 1.6;
+      color: var(--ink-3); min-height: 18px;
+    }
+    .gate-status.err { color: var(--bad); }
+
+    .gate-denied-email {
+      font-family: var(--mono); font-size: 13px; color: var(--warn);
+      background: var(--surface-3); border-radius: 8px;
+      padding: 8px 12px; margin: 14px 0 20px; display: inline-block;
+    }
+
+    .btn-ghost {
+      padding: 9px 18px; border: 1px solid var(--border-strong); background: transparent;
+      border-radius: 9px; font-size: 13px; color: var(--ink-2);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ── SHELL ───────────────────────────────────────────────── */
+    #app { display: none; }
+
+    .shell { display: grid; grid-template-columns: 216px 1fr; min-height: 100vh; }
+
+    /* rail */
+    .rail {
+      position: sticky; top: 0; height: 100vh;
+      border-right: 1px solid var(--border);
+      background: rgba(10, 16, 30, 0.6);
+      padding: 22px 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+
+    .rail-brand { padding: 0 10px 20px; }
+    .rail-wordmark { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+    .rail-wordmark span { color: var(--orange); }
+    .rail-tagline {
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--ink-3); margin-top: 3px;
+    }
+
+    .rail-btn {
+      display: flex; align-items: center; gap: 11px;
+      padding: 10px 12px; border: none; background: transparent;
+      border-radius: 10px; cursor: pointer;
+      font-size: 13.5px; font-weight: 500; color: var(--ink-2);
+      transition: all 0.15s; text-align: left; width: 100%;
+      border-left: 2px solid transparent;
+    }
+    .rail-btn:hover { background: var(--surface-2); color: var(--ink); }
+    .rail-btn.active { background: var(--surface-2); color: var(--ink); border-left-color: var(--tool, var(--orange)); }
+    .rail-btn .dot {
+      width: 8px; height: 8px; border-radius: 3px; flex-shrink: 0;
+      background: var(--tool, var(--ink-3));
+    }
+    .rail-btn[data-view="apercu"] { --tool: var(--ink-2); }
+    .rail-btn[data-view="site"] { --tool: var(--orange); }
+    .rail-btn[data-view="seoplus"] { --tool: var(--blue); }
+    .rail-btn[data-view="etp"] { --tool: var(--emerald); }
+
+    .rail-foot { margin-top: auto; padding: 12px 10px 0; border-top: 1px solid var(--border); }
+    .rail-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .rail-avatar { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border-strong); }
+    .rail-username { font-size: 12.5px; font-weight: 500; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn-logout {
+      width: 100%; padding: 7px 10px; border: 1px solid var(--border); background: transparent;
+      border-radius: 8px; font-size: 12px; color: var(--ink-3);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn-logout:hover { border-color: rgba(249, 115, 22, 0.4); color: var(--orange); }
+
+    /* topbar */
+    .main-col { min-width: 0; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 14px 30px;
+      background: rgba(10, 16, 30, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+    .topbar-title .crumb { color: var(--ink-3); font-weight: 500; }
+
+    .topbar-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    .date-range { display: flex; background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 3px; gap: 2px; }
+    .date-btn {
+      padding: 5px 10px; border: none; background: transparent; border-radius: 6px;
+      font-size: 12px; font-weight: 500; color: var(--ink-2);
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    }
+    .date-btn:hover { color: var(--ink); }
+    .date-btn.active { background: var(--surface-3); color: var(--orange); }
+
+    .date-custom { display: flex; align-items: center; gap: 6px; }
+    .date-input {
+      padding: 5px 8px; font-size: 12px;
+      border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface); color: var(--ink);
+      font-family: var(--sans); outline: none; color-scheme: dark;
+    }
+    .date-input:focus { border-color: var(--orange); }
+    .date-sep { color: var(--ink-3); font-size: 12px; }
+    .btn-apply {
+      padding: 5px 12px; border: none; background: var(--orange); color: white;
+      border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+    }
+    .btn-apply:hover { background: #FB8534; }
+
+    .bell {
+      position: relative; width: 36px; height: 36px;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: var(--surface); color: var(--ink-2);
+      cursor: pointer; display: grid; place-items: center;
+      transition: all 0.15s;
+    }
+    .bell:hover { color: var(--ink); border-color: var(--border-strong); }
+    .bell-badge {
+      position: absolute; top: -6px; right: -6px;
+      min-width: 17px; height: 17px; padding: 0 4px;
+      border-radius: 9px; background: var(--orange); color: #fff;
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      display: grid; place-items: center;
+      border: 2px solid var(--bg);
+    }
+    .bell-badge.zero { display: none; }
+
+    /* ── CONTENT ─────────────────────────────────────────────── */
+    main { max-width: 1340px; margin: 0 auto; padding: 26px 30px 70px; }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .section { margin-bottom: 40px; }
+
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3);
+      margin-bottom: 14px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-label .tag { color: var(--tool, var(--ink-3)); }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .grid > * { min-width: 0; }
+    .sp-2 { grid-column: span 2; }
+    .sp-3 { grid-column: span 3; }
+    .sp-4 { grid-column: span 4; }
+    .sp-6 { grid-column: span 6; }
+    .sp-8 { grid-column: span 8; }
+    .sp-12 { grid-column: span 12; }
+    @media (max-width: 1080px) {
+      .sp-2 { grid-column: span 6; }
+      .sp-3 { grid-column: span 6; }
+      .sp-4 { grid-column: span 6; }
+      .sp-6, .sp-8 { grid-column: span 12; }
+    }
+    @media (max-width: 660px) {
+      .sp-2, .sp-3, .sp-4 { grid-column: span 12; }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      height: 100%;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .card.accent { border-top: 2px solid var(--tool, var(--border-strong)); }
+
+    .card-label {
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-3);
+      display: flex; align-items: center;
+    }
+    .card-title { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+    .card-sub { font-size: 11.5px; color: var(--ink-3); margin-top: 3px; }
+    .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+
+    .big {
+      font-family: var(--mono); font-variant-numeric: tabular-nums;
+      font-size: 40px; font-weight: 700; letter-spacing: -0.04em;
+      line-height: 1.05; margin-top: 10px;
+    }
+    .big .unit { font-size: 17px; font-weight: 500; color: var(--ink-3); margin-left: 3px; letter-spacing: 0; }
+    .big.hero { font-size: 58px; }
+
+    .card-foot { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--ink-2); margin-top: 12px; }
+    .card-foot .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tool, var(--orange)); flex-shrink: 0; }
+
+    .trend-up { color: var(--ok); }
+    .trend-down { color: var(--bad); }
+    .trend-flat { color: var(--ink-3); }
+    .trend-note { font-size: 11px; color: var(--ink-3); margin-left: 4px; }
+
+    .chart-box { position: relative; flex: 1; min-height: 210px; }
+    .chart-box.tall { min-height: 250px; }
+
+    .legend {
+      display: flex; gap: 13px; flex-wrap: wrap;
+      font-family: var(--mono); font-size: 10.5px; color: var(--ink-2);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
+
+    /* ranked lists */
+    .rlist { display: flex; flex-direction: column; gap: 12px; }
+    .rrow { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: center; }
+    .rrank { font-family: var(--mono); font-size: 10px; color: var(--ink-3); text-align: center; }
+    .rbody { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    .rtop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; min-width: 0; }
+    .rkey { font-size: 12.5px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rkey.mono { font-family: var(--mono); font-size: 12px; letter-spacing: -0.01em; }
+    .rmeta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .rmeta strong { color: var(--ink); font-weight: 600; }
+    .rbar { height: 4px; background: var(--surface-3); border-radius: 2px; overflow: hidden; }
+    .rbar > i { display: block; height: 100%; border-radius: 2px; background: var(--tool, var(--s2)); }
+
+    /* funnel */
+    .fstep { display: grid; grid-template-columns: 92px 1fr 116px; align-items: center; gap: 13px; margin-bottom: 8px; }
+    .fname { font-size: 12px; color: var(--ink-2); font-weight: 500; }
+    .ftrack { background: var(--surface-3); border-radius: 6px; height: 19px; overflow: hidden; }
+    .ffill { height: 100%; border-radius: 6px; min-width: 2px; }
+    .fstat { font-family: var(--mono); font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+    .fstat .pct { color: var(--ink-3); margin-left: 7px; }
+
+    /* table */
+    .dtable { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .dtable thead th {
+      font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--ink-3); text-align: right;
+      padding: 8px 10px; border-bottom: 1px solid var(--border);
+    }
+    .dtable thead th:first-child { text-align: left; }
+    .dtable tbody td {
+      padding: 9px 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+      text-align: right; font-variant-numeric: tabular-nums;
+    }
+    .dtable tbody td:first-child { text-align: left; font-weight: 500; }
+    .dtable tbody tr:last-child td { border-bottom: none; }
+    .dtable tbody tr:hover { background: rgba(148, 163, 184, 0.04); }
+    .dtable td.muted { color: var(--ink-3); font-weight: 400; }
+    .dtable .cdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+    .dtable .tbar { width: 90px; height: 5px; background: var(--surface-3); border-radius: 3px; overflow: hidden; display: inline-block; vertical-align: middle; }
+    .dtable .tbar i { display: block; height: 100%; border-radius: 3px; }
+    .table-scroll { overflow-x: auto; }
+
+    .hl-row td { background: rgba(94, 161, 247, 0.07); }
+    .hl-row td:first-child { box-shadow: inset 2px 0 0 var(--blue); }
+
+    .grade {
+      display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+      padding: 1px 7px; border-radius: 5px;
+    }
+    .grade.A { background: var(--emerald-soft); color: var(--emerald); }
+    .grade.B { background: var(--blue-soft); color: var(--blue); }
+    .grade.C { background: rgba(251, 191, 36, 0.13); color: var(--warn); }
+    .grade.D, .grade.E, .grade.F { background: rgba(248, 113, 113, 0.13); color: var(--bad); }
+
+    /* feed */
+    .feed-items { display: flex; flex-direction: column; max-height: 440px; overflow-y: auto; margin-right: -8px; padding-right: 8px; }
+    .feed-items::-webkit-scrollbar { width: 6px; }
+    .feed-items::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+    .feed-item {
+      display: grid; grid-template-columns: 34px 1fr auto; gap: 12px;
+      padding: 10px 0; align-items: center;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+    }
+    .feed-item:last-child { border-bottom: 0; }
+    .feed-ico {
+      width: 34px; height: 34px; border-radius: 9px;
+      display: grid; place-items: center;
+      font-family: var(--mono); font-size: 9.5px; font-weight: 700; letter-spacing: 0.04em;
+    }
+    .fi-cta { background: var(--orange-soft); color: var(--orange); }
+    .fi-form { background: var(--blue-soft); color: var(--blue); }
+    .fi-view { background: var(--surface-3); color: var(--ink-2); }
+    .fi-scroll { background: rgba(144, 133, 233, 0.14); color: var(--s5); }
+    .fi-time { background: rgba(25, 158, 112, 0.14); color: var(--emerald); }
+    .fi-nav { background: var(--surface-3); color: var(--ink-2); }
+    .fi-ext { background: rgba(201, 133, 0, 0.14); color: var(--s4); }
+    .feed-main { min-width: 0; }
+    .feed-line { display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+    .feed-type { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+    .feed-elem { font-size: 12px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .feed-page { font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .feed-when { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); white-space: nowrap; }
+
+    /* progress / gauge */
+    .meter { height: 8px; background: var(--surface-3); border-radius: 4px; overflow: hidden; display: flex; }
+    .meter > i { height: 100%; }
+
+    .empty { padding: 34px 18px; text-align: center; }
+    .empty-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+    .empty-text { font-size: 12px; color: var(--ink-3); max-width: 380px; margin: 0 auto; line-height: 1.55; }
+
+    .err-state { padding: 28px 18px; text-align: center; color: var(--ink-3); font-size: 12.5px; }
+    .err-state p { margin-bottom: 12px; line-height: 1.5; }
+
+    /* status chips */
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--mono); font-size: 11px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 6px 11px; color: var(--ink-2);
+    }
+    .chip i { width: 7px; height: 7px; border-radius: 50%; }
+    .chip i.ok { background: var(--ok); }
+    .chip i.bad { background: var(--bad); }
+    .chip i.wait { background: var(--warn); }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 6px;
+    }
+    .badge.test { background: rgba(251, 191, 36, 0.13); color: var(--warn); }
+    .badge.live { background: var(--emerald-soft); color: var(--emerald); }
+
+    /* ── LE FIL (drawer) ─────────────────────────────────────── */
+    .fil-veil {
+      position: fixed; inset: 0; z-index: 90;
+      background: rgba(4, 8, 18, 0.55);
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .fil-veil.open { opacity: 1; pointer-events: auto; }
+
+    .fil {
+      position: fixed; top: 0; right: 0; bottom: 0; z-index: 95;
+      width: 420px; max-width: 94vw;
+      background: var(--surface);
+      border-left: 1px solid var(--border-strong);
+      box-shadow: -18px 0 50px rgba(2, 6, 18, 0.5);
+      transform: translateX(102%); transition: transform 0.24s cubic-bezier(.4,0,.2,1);
+      display: flex; flex-direction: column;
+    }
+    .fil.open { transform: translateX(0); }
+
+    .fil-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 18px 20px 14px; border-bottom: 1px solid var(--border);
+    }
+    .fil-title { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+    .fil-title .n { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-left: 7px; }
+    .fil-actions { display: flex; gap: 8px; }
+    .fil-btn {
+      padding: 5px 10px; border: 1px solid var(--border); background: transparent;
+      border-radius: 7px; font-size: 11.5px; color: var(--ink-2); cursor: pointer;
+    }
+    .fil-btn:hover { color: var(--ink); border-color: var(--border-strong); }
+
+    .fil-list { flex: 1; overflow-y: auto; padding: 8px 20px 24px; }
+    .fil-day {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-3); margin: 16px 0 6px;
+    }
+    .fil-item {
+      display: grid; grid-template-columns: 10px 1fr; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+    }
+    .fil-item:last-child { border-bottom: none; }
+    .fil-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 4px; }
+    .sev-record .fil-dot { background: var(--emerald); box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.16); }
+    .sev-alerte .fil-dot { background: var(--bad); box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.16); }
+    .sev-action .fil-dot { background: var(--orange); box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.16); }
+    .sev-info .fil-dot { background: var(--blue); }
+    .sev-creux .fil-dot { background: transparent; border: 2px solid var(--dull); }
+    .fil-body { min-width: 0; }
+    .fil-top { display: flex; align-items: baseline; gap: 8px; }
+    .fil-tool {
+      font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 1px 6px; border-radius: 4px; flex-shrink: 0;
+    }
+    .ft-site { background: var(--orange-soft); color: var(--orange); }
+    .ft-seoplus { background: var(--blue-soft); color: var(--blue); }
+    .ft-etp { background: var(--emerald-soft); color: var(--emerald); }
+    .ft-ops { background: var(--surface-3); color: var(--ink-2); }
+    .fil-t { font-size: 13px; font-weight: 600; line-height: 1.35; }
+    .fil-d { font-size: 12px; color: var(--ink-2); line-height: 1.5; margin-top: 3px; }
+    .fil-item.read .fil-t { color: var(--ink-2); font-weight: 500; }
+    .fil-item.read .fil-dot { opacity: 0.35; box-shadow: none; }
+    .fil-empty { padding: 40px 10px; text-align: center; color: var(--ink-3); font-size: 12.5px; line-height: 1.6; }
+
+    /* tooltips "i" */
+    .info-btn {
+      width: 15px; height: 15px; border-radius: 50%;
+      background: transparent; border: 1.5px solid var(--ink-3);
+      color: var(--ink-3); font-size: 9px; font-weight: 700;
+      cursor: help; display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0; line-height: 1; margin-left: 6px; padding: 0;
+      transition: all 0.15s; vertical-align: middle;
+    }
+    .info-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+    #tip {
+      position: fixed; z-index: 9999; pointer-events: none;
+      background: #060B16; color: #C6D0E2;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px; padding: 12px 14px;
+      max-width: 290px; font-size: 12px; line-height: 1.6;
+      box-shadow: 0 10px 34px rgba(0, 0, 0, 0.5);
+      opacity: 0; transition: opacity 0.15s; display: none;
+    }
+    #tip strong { color: var(--ink); display: block; margin-bottom: 5px; font-size: 12.5px; }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      .rail {
+        position: fixed; bottom: 0; top: auto; left: 0; right: 0; height: auto; z-index: 60;
+        flex-direction: row; align-items: center; padding: 8px 10px;
+        border-right: none; border-top: 1px solid var(--border-strong);
+        background: rgba(10, 16, 30, 0.95); backdrop-filter: blur(14px);
+      }
+      .rail-brand, .rail-foot { display: none; }
+      .rail-btn { flex-direction: column; gap: 4px; font-size: 10px; padding: 7px 4px; border-left: none; }
+      .rail-btn.active { border-left: none; }
+      main { padding: 20px 16px 110px; }
+      .topbar { padding: 10px 16px; }
+      .big.hero { font-size: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="tip"></div>
+
+<!-- ── LOGIN ── -->
+<div class="screen" id="scr-login">
+  <div class="gate-card">
+    <div class="gate-mark">Console d'opérations</div>
+    <div class="gate-logo">Optimiz<span>IA</span>.xyz</div>
+    <p class="gate-sub">Site, SEOPlus! et ExoTradingPlus! au même endroit.<br>Accès réservé aux fondateurs.</p>
+    <button class="btn-main" id="btn-login" disabled>
+      <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908C16.658 14.233 17.64 11.925 17.64 9.2z" fill="#fff" opacity="0.95"/>
+        <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#fff" opacity="0.85"/>
+        <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#fff" opacity="0.75"/>
+        <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#fff" opacity="0.65"/>
+      </svg>
+      Se connecter avec Google
+    </button>
+    <div class="gate-status" id="login-status">Chargement de Google Sign-In…</div>
+  </div>
+</div>
+
+<!-- ── ACCÈS REFUSÉ ── -->
+<div class="screen hidden" id="scr-denied">
+  <div class="gate-card">
+    <div class="gate-mark">Console d'opérations</div>
+    <div class="gate-logo">Optimiz<span>IA</span>.xyz</div>
+    <p class="gate-sub" style="margin-bottom:12px">Ce compte Google n'est pas autorisé.</p>
+    <div class="gate-denied-email" id="denied-email"></div>
+    <p class="gate-sub" style="margin-bottom:22px">Seuls les comptes fondateurs OptimizIA.xyz ont accès à cette console.</p>
+    <button class="btn-ghost" id="btn-retry-login">Changer de compte</button>
+  </div>
+</div>
+
+<!-- ── APP ── -->
+<div id="app">
+  <div class="shell">
+
+    <nav class="rail" aria-label="Navigation">
+      <div class="rail-brand">
+        <div class="rail-wordmark">Optimiz<span>IA</span>.xyz</div>
+        <div class="rail-tagline">Ops Console</div>
+      </div>
+      <button class="rail-btn active" data-view="apercu"><span class="dot"></span>Aperçu</button>
+      <button class="rail-btn" data-view="site"><span class="dot"></span>Site OptimizIA.xyz</button>
+      <button class="rail-btn" data-view="seoplus"><span class="dot"></span>SEOPlus!</button>
+      <button class="rail-btn" data-view="etp"><span class="dot"></span>ExoTradingPlus!</button>
+      <div class="rail-foot">
+        <div class="rail-user">
+          <img class="rail-avatar" id="user-avatar" src="" alt="" style="display:none" referrerpolicy="no-referrer">
+          <span class="rail-username" id="user-name"></span>
+        </div>
+        <button class="btn-logout" id="btn-logout">Déconnexion</button>
+      </div>
+    </nav>
+
+    <div class="main-col">
+      <div class="topbar">
+        <div class="topbar-title" id="topbar-title">Aperçu</div>
+        <div class="topbar-right">
+          <div class="date-range" id="date-range" role="group" aria-label="Période Search Console">
+            <button class="date-btn" data-days="7">7j</button>
+            <button class="date-btn active" data-days="28">28j</button>
+            <button class="date-btn" data-days="90">90j</button>
+            <button class="date-btn" data-days="180">6m</button>
+            <button class="date-btn" data-days="365">12m</button>
+            <button class="date-btn" data-days="custom">Libre</button>
+          </div>
+          <div class="date-custom hidden" id="date-custom">
+            <input type="date" class="date-input" id="date-start" aria-label="Début">
+            <span class="date-sep">au</span>
+            <input type="date" class="date-input" id="date-end" aria-label="Fin">
+            <button class="btn-apply" id="btn-apply-custom">OK</button>
+          </div>
+          <button class="bell" id="btn-fil" aria-label="Ouvrir Le Fil">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="bell-badge zero" id="fil-badge">0</span>
+          </button>
+        </div>
+      </div>
+
+      <main>
+        <div class="view active" id="view-apercu">
+          <div class="section">
+            <div class="section-label">État des trois outils</div>
+            <div class="grid" id="ov-tools"></div>
+          </div>
+          <div class="section">
+            <div class="section-label">Le Fil <span class="tag">dernières entrées</span></div>
+            <div class="card" id="ov-fil"></div>
+          </div>
+          <div class="section">
+            <div class="section-label">Santé des sources de données</div>
+            <div class="chips" id="ov-health"></div>
+          </div>
+        </div>
+
+        <div class="view" id="view-site">
+          <div class="section" style="--tool: var(--orange)">
+            <div class="section-label">Acquisition <span class="tag">Search Console</span></div>
+            <div class="grid" id="site-acq"></div>
+          </div>
+          <div class="section" style="--tool: var(--orange)">
+            <div class="section-label">Sources et sessions <span class="tag">tracker on-site</span></div>
+            <div class="grid" id="site-src"></div>
+          </div>
+          <div class="section" style="--tool: var(--orange)">
+            <div class="section-label">Comportement <span class="tag">tracker on-site</span></div>
+            <div class="grid" id="site-bhv"></div>
+          </div>
+        </div>
+
+        <div class="view" id="view-seoplus">
+          <div class="section" style="--tool: var(--blue)">
+            <div class="section-label">Moteur <span class="tag">production</span></div>
+            <div class="grid" id="seo-engine"></div>
+          </div>
+          <div class="section" style="--tool: var(--blue)">
+            <div class="section-label">Trafic du site <span class="tag">tracker on-site</span></div>
+            <div class="grid" id="seo-traffic"></div>
+          </div>
+          <div class="section" style="--tool: var(--blue)">
+            <div class="section-label">Nos sites <span class="tag">dogfooding</span></div>
+            <div class="grid" id="seo-ours"></div>
+          </div>
+          <div class="section" style="--tool: var(--blue)">
+            <div class="section-label">Classement public</div>
+            <div class="grid" id="seo-board"></div>
+          </div>
+        </div>
+
+        <div class="view" id="view-etp">
+          <div class="section" style="--tool: var(--emerald)">
+            <div class="section-label">Abonnements <span class="tag" id="etp-mode-tag"></span></div>
+            <div class="grid" id="etp-subs"></div>
+          </div>
+          <div class="section" style="--tool: var(--emerald)">
+            <div class="section-label">Trafic du site <span class="tag">tracker on-site</span></div>
+            <div class="grid" id="etp-traffic"></div>
+          </div>
+          <div class="section" style="--tool: var(--emerald)">
+            <div class="section-label">Analyses ON DEMAND</div>
+            <div class="grid" id="etp-ondemand"></div>
+          </div>
+          <div class="section" style="--tool: var(--emerald)">
+            <div class="section-label">Parrainage</div>
+            <div class="grid" id="etp-referral"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ── LE FIL ── -->
+<div class="fil-veil" id="fil-veil"></div>
+<aside class="fil" id="fil" aria-label="Le Fil, journal des insights">
+  <div class="fil-head">
+    <div class="fil-title">Le Fil<span class="n" id="fil-count"></span></div>
+    <div class="fil-actions">
+      <button class="fil-btn" id="fil-markall">Tout marquer comme lu</button>
+      <button class="fil-btn" id="fil-close" aria-label="Fermer">✕</button>
+    </div>
+  </div>
+  <div class="fil-list" id="fil-list"></div>
+</aside>
+
+<script>
+'use strict';
+
+// ── CONFIG ──────────────────────────────────────────────────────────────────
+const CONFIG = {
+  gscSiteUrl: 'sc-domain:optimizia.xyz',
+  googleClientId: '1042281353173-34c9b0mupvg202519n8t57ni3nnvrt5r.apps.googleusercontent.com',
+  scopes: 'openid email profile https://www.googleapis.com/auth/webmasters.readonly',
+  allowedEmails: ['romainben31@gmail.com', 'optimizia.contact@gmail.com'],
+  urls: {
+    events:     'https://n8n.romainben.cloud/webhook/oia/data',
+    etpStats:   'https://n8n.romainben.cloud/webhook/oia/etp-stats',
+    seoStats:   'https://n8n.romainben.cloud/webhook/seoplus-stats',
+    seoBoard:   'https://n8n.romainben.cloud/webhook/seoplus-classement',
+  },
+  ourHosts: ['optimizia.xyz', 'seoplus.optimizia.xyz', 'romainben.cloud', 'ginoux.xyz'],
+};
+
+const SERIES = { s1: '#3987E5', s2: '#D95926', s3: '#199E70', s4: '#C98500', s5: '#9085E9', s6: '#D55181', other: '#64748B' };
+const SURFACE = '#101828';
+
+// ── ÉTAT ────────────────────────────────────────────────────────────────────
+let accessToken = null;
+let userEmail = null;
+let tokenClient = null;
+let pendingLogin = false;
+let currentDays = 28;
+let customStart = null, customEnd = null;
+let currentView = 'apercu';
+const charts = {};
+const DATA = { gsc: null, gscErr: null, events: null, eventsErr: null, seoStats: null, seoBoard: null, seoErr: null, etp: null, etpErr: null };
+const HEALTH = {};
+let FIL = [];
+
+const STORE_KEY = 'oiaOpsV2';
+function store() { try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch { return {}; } }
+function saveStore(patch) {
+  const s = Object.assign(store(), patch);
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch {}
+  return s;
+}
+
+// ── UTILS ───────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function fmt(n) {
+  n = Number(n) || 0;
+  if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1).replace('.', ',') + 'M';
+  if (Math.abs(n) >= 1e4) return (n / 1e3).toFixed(1).replace('.', ',') + 'k';
+  return n.toLocaleString('fr-FR');
+}
+function fmtEur(cents) {
+  return (cents / 100).toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + ' €';
+}
+function fmtDate(d) {
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function dateRange(days, shiftBack = 0) {
+  const end = new Date();
+  end.setDate(end.getDate() - shiftBack);
+  const start = new Date(end);
+  start.setDate(start.getDate() - days + 1);
+  return { startDate: fmtDate(start), endDate: fmtDate(end) };
+}
+function getCurrentRange() {
+  if (currentDays === 'custom' && customStart && customEnd) return { startDate: customStart, endDate: customEnd };
+  return dateRange(currentDays);
+}
+function getPreviousRange() {
+  if (currentDays === 'custom' && customStart && customEnd) {
+    const s = new Date(customStart), e = new Date(customEnd);
+    const days = Math.round((e - s) / 86400000) + 1;
+    const pe = new Date(s); pe.setDate(pe.getDate() - 1);
+    const ps = new Date(pe); ps.setDate(ps.getDate() - days + 1);
+    return { startDate: fmtDate(ps), endDate: fmtDate(pe) };
+  }
+  return dateRange(currentDays, currentDays);
+}
+function rangeLabel() {
+  const L = { 7: '7 jours', 28: '28 jours', 90: '90 jours', 180: '6 mois', 365: '12 mois' };
+  if (currentDays === 'custom' && customStart && customEnd) return 'du ' + customStart + ' au ' + customEnd;
+  return L[currentDays] || currentDays + ' jours';
+}
+function relTime(ts) {
+  const t = new Date(ts).getTime();
+  if (isNaN(t)) return '';
+  const diff = (Date.now() - t) / 1000;
+  if (diff < 60) return 'à l\'instant';
+  if (diff < 3600) return 'il y a ' + Math.round(diff / 60) + ' min';
+  if (diff < 86400) return 'il y a ' + Math.round(diff / 3600) + ' h';
+  return 'il y a ' + Math.round(diff / 86400) + ' j';
+}
+function relShort(ts) {
+  const t = new Date(ts).getTime();
+  if (isNaN(t)) return '';
+  const diff = (Date.now() - t) / 1000;
+  if (diff < 60) return Math.max(1, Math.round(diff)) + 's';
+  if (diff < 3600) return Math.round(diff / 60) + 'm';
+  if (diff < 86400) return Math.round(diff / 3600) + 'h';
+  return Math.round(diff / 86400) + 'j';
+}
+const sumKey = (arr, k) => (arr || []).reduce((s, r) => s + (r[k] || 0), 0);
+
+function trendHTML(curr, prev, lowerIsBetter = false) {
+  if (!prev) return '<span class="trend-flat">pas de période de comparaison</span>';
+  const pct = (curr - prev) / prev * 100;
+  if (!isFinite(pct)) return '<span class="trend-flat">stable</span>';
+  const good = lowerIsBetter ? pct < 0 : pct > 0;
+  const cls = Math.abs(pct) < 0.05 ? 'trend-flat' : (good ? 'trend-up' : 'trend-down');
+  const arrow = pct > 0 ? '↑' : (pct < 0 ? '↓' : '=');
+  return '<span class="' + cls + '">' + arrow + ' ' + Math.abs(pct).toFixed(1).replace('.', ',') + '%</span><span class="trend-note">vs période précédente</span>';
+}
+
+// ── TOOLTIPS ────────────────────────────────────────────────────────────────
+const TIPS = {
+  clics: '<strong>Clics totaux (Search Console)</strong>Clics sur un résultat Google pointant vers optimizia.xyz, trafic organique uniquement. La tendance compare à la période précédente de même durée.',
+  impressions: '<strong>Impressions</strong>Affichages du site dans les résultats Google, avec ou sans clic. Beaucoup d\'impressions et peu de clics : CTR à travailler (title, meta description).',
+  ctr: '<strong>CTR global</strong>Clics divisés par impressions sur la période. Calculé sur les totaux, pas en moyenne de moyennes. 2 à 5 % est courant pour les positions 1 à 10.',
+  position: '<strong>Position moyenne pondérée</strong>Position moyenne pondérée par les impressions de chaque jour : les jours à fort volume pèsent plus. Plus c\'est bas, mieux c\'est. Sous 10 : première page.',
+  timeline: '<strong>Clics et impressions par jour</strong>Les deux courbes partagent la même échelle : le volume d\'impressions dépasse naturellement les clics de 10 à 100 fois.',
+  devices: '<strong>Appareils</strong>Répartition des clics Google par type d\'appareil. Utile pour prioriser le responsive et la vitesse mobile.',
+  queries: '<strong>Top requêtes</strong>Mots-clés Google ayant généré le plus de clics sur la période, avec CTR et position moyenne de chaque requête.',
+  pages: '<strong>Top pages</strong>Pages du site les plus cliquées depuis Google, classées par clics SEO.',
+  visitors: '<strong>Visiteurs uniques</strong>Personnes distinctes, identifiées par un UUID anonyme posé après acceptation du bandeau cookies. Les événements de test local sont exclus.',
+  sessions: '<strong>Sessions</strong>Une session : une visite continue. Un retour le lendemain compte comme une nouvelle session.',
+  pps: '<strong>Pages par session</strong>Pages vues moyennes par session. Au-dessus de 2 : le visiteur explore.',
+  bounce: '<strong>Taux de rebond</strong>Part des sessions à une seule page. À croiser avec le temps par page : un rebond peut aussi vouloir dire "info trouvée tout de suite".',
+  srcTimeline: '<strong>Trafic par source</strong>Pages vues quotidiennes empilées par canal d\'acquisition, 30 derniers jours.',
+  srcDonut: '<strong>Répartition des sources</strong>Part de chaque canal dans les sessions de la période.',
+  srcTable: '<strong>Performance par source</strong>Volume, engagement et conversions par canal. Conv : CTA cliqués plus formulaires envoyés.',
+  conversions: '<strong>Conversions totales</strong>Clics CTA et envois de formulaire détectés par le tracker. Les navigateurs avec bloqueur (env. 30 % sur desktop) ne sont pas mesurés.',
+  funnel: '<strong>Tunnel d\'engagement</strong>De la page vue au formulaire. Pourcentages rapportés au total des pages vues, pas aux sessions.',
+  temps: '<strong>Temps moyen par page</strong>Durée moyenne avant fermeture ou navigation, mesurée à la fermeture de la page. Valeurs hors 1 s à 2 h exclues.',
+  scroll: '<strong>Lecture profonde</strong>Part des pages vues avec un scroll d\'au moins 75 % : l\'indicateur d\'une vraie lecture.',
+  conv: '<strong>Taux de conversion CTA</strong>CTA cliqués divisés par sessions. Peut dépasser 100 % si plusieurs CTA sont cliqués dans une même session.',
+  pagesEng: '<strong>Pages engageantes</strong>Classement par temps de lecture multiplié par taux de scroll 75 %. Barre orange : temps. Barre bleue : scroll.',
+  activite: '<strong>Activité quotidienne</strong>Événements tracker empilés par type, 28 derniers jours.',
+  feed: '<strong>Flux d\'activité</strong>Derniers événements bruts du tracker, stockés dans n8n.',
+  seoScore: '<strong>Score moyen</strong>Score moyen de tous les audits du moteur SEOPlus! en production.',
+  seoAudits: '<strong>Audits réalisés</strong>Total des audits lancés sur le moteur, tous sites confondus.',
+  seoSites: '<strong>Sites distincts</strong>Nombre de domaines différents déjà audités.',
+  elite: '<strong>Cercle Élite</strong>Sites du classement public à 90 ou plus.',
+  mrr: '<strong>MRR</strong>Revenu mensuel récurrent calculé depuis les abonnements Stripe actifs. Les abonnements annuels sont ramenés au mois.',
+  quota: '<strong>Quota ON DEMAND</strong>Analyses à la demande : consommé ce mois-ci sur le quota total des abonnés actifs (Classique 0, VIP 4, VIP+ 10, plus bonus parrainage).',
+  parrainage: '<strong>Parrainage</strong>pending : filleul inscrit. qualified : 2e prélèvement passé, crédit dû. credited : avoir posé chez Stripe.',
+};
+const tipEl = $('tip');
+function infoBtn(k) { return '<button class="info-btn" data-tip="' + k + '" aria-label="Explication">i</button>'; }
+document.addEventListener('mouseover', e => {
+  const b = e.target.closest('.info-btn');
+  if (!b) return;
+  const html = TIPS[b.dataset.tip];
+  if (!html) return;
+  tipEl.innerHTML = html;
+  tipEl.style.display = 'block';
+  const r = b.getBoundingClientRect();
+  const tw = tipEl.offsetWidth, th = tipEl.offsetHeight;
+  let left = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), innerWidth - tw - 8);
+  let top = r.top - th - 10;
+  if (top < 8) top = r.bottom + 10;
+  tipEl.style.left = left + 'px'; tipEl.style.top = top + 'px';
+  requestAnimationFrame(() => tipEl.style.opacity = '1');
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.closest && e.target.closest('.info-btn')) { tipEl.style.opacity = '0'; tipEl.style.display = 'none'; }
+});
+
+// ── AUTH ────────────────────────────────────────────────────────────────────
+function setLoginStatus(msg, isErr) {
+  const el = $('login-status');
+  el.textContent = msg;
+  el.classList.toggle('err', !!isErr);
+}
+
+function initGIS() {
+  if (tokenClient || !(window.google && google.accounts && google.accounts.oauth2)) return;
+  try {
+    tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: CONFIG.googleClientId,
+      scope: CONFIG.scopes,
+      callback: onToken,
+      error_callback: err => {
+        setLoginStatus(err && err.type === 'popup_closed'
+          ? 'Fenêtre fermée avant la fin. Réessaie quand tu veux.'
+          : 'Connexion interrompue : ' + (err && err.type || 'erreur inconnue'), true);
+      },
+    });
+  } catch (e) {
+    setLoginStatus('Initialisation Google impossible : ' + e.message, true);
+    return;
+  }
+  $('btn-login').disabled = false;
+  setLoginStatus('');
+  if (pendingLogin) { pendingLogin = false; launchAuth(); }
+}
+
+function launchAuth(forceConsent) {
+  if (!tokenClient) return;
+  const authed = store().authed;
+  tokenClient.requestAccessToken({ prompt: (authed && !forceConsent) ? '' : 'consent' });
+}
+
+async function onToken(resp) {
+  if (resp.error) {
+    setLoginStatus('Google a refusé la connexion : ' + resp.error, true);
+    return;
+  }
+  accessToken = resp.access_token;
+  let u = {};
+  try {
+    const r = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', { headers: { Authorization: 'Bearer ' + accessToken } });
+    u = await r.json();
+  } catch (e) {
+    setLoginStatus('Impossible de vérifier le compte : ' + e.message, true);
+    return;
+  }
+  userEmail = (u.email || '').toLowerCase();
+  if (!CONFIG.allowedEmails.includes(userEmail)) {
+    accessToken = null;
+    $('denied-email').textContent = userEmail || 'email inconnu';
+    $('scr-login').classList.add('hidden');
+    $('scr-denied').classList.remove('hidden');
+    return;
+  }
+  saveStore({ authed: 1 });
+  $('user-name').textContent = u.given_name || u.name || userEmail;
+  const av = $('user-avatar');
+  if (u.picture) { av.src = u.picture; av.style.display = ''; } else av.style.display = 'none';
+  $('scr-login').classList.add('hidden');
+  $('scr-denied').classList.add('hidden');
+  $('app').style.display = 'block';
+  loadAll();
+}
+
+function silentRefresh() {
+  return new Promise((resolve, reject) => {
+    if (!tokenClient) return reject(new Error('GIS non chargé'));
+    const prevCb = tokenClient.callback;
+    tokenClient.callback = resp => {
+      tokenClient.callback = prevCb;
+      if (resp.error) reject(new Error(resp.error));
+      else { accessToken = resp.access_token; resolve(); }
+    };
+    tokenClient.requestAccessToken({ prompt: '' });
+  });
+}
+
+document.addEventListener('gis-ready', initGIS);
+document.addEventListener('gis-failed', () => setLoginStatus('Le script Google Sign-In n\'a pas pu être chargé. Cause probable : bloqueur de contenu ou CSP du serveur sans accounts.google.com.', true));
+window.addEventListener('load', initGIS);
+
+$('btn-login').addEventListener('click', () => {
+  if (tokenClient) { launchAuth(); return; }
+  if (window._gis.failed) {
+    setLoginStatus('Script Google bloqué. Désactive le bloqueur pour cette page puis recharge.', true);
+    return;
+  }
+  pendingLogin = true;
+  setLoginStatus('Google Sign-In se charge, la fenêtre s\'ouvrira automatiquement…');
+  initGIS();
+});
+
+$('btn-retry-login').addEventListener('click', () => {
+  $('scr-denied').classList.add('hidden');
+  $('scr-login').classList.remove('hidden');
+  $('btn-login').disabled = !tokenClient;
+  launchAuth(true);
+});
+
+$('btn-logout').addEventListener('click', () => {
+  const done = () => location.reload();
+  saveStore({ authed: 0 });
+  if (accessToken && window.google) { try { google.accounts.oauth2.revoke(accessToken, done); setTimeout(done, 800); } catch { done(); } }
+  else done();
+});
+
+// ── FETCH LAYER ─────────────────────────────────────────────────────────────
+async function timedFetch(name, url, opts = {}, withAuth = false) {
+  const t0 = performance.now();
+  const doFetch = () => fetch(url, withAuth
+    ? Object.assign({}, opts, { headers: Object.assign({}, opts.headers, { Authorization: 'Bearer ' + accessToken }) })
+    : opts);
+  let r = await doFetch();
+  if ((r.status === 401 || r.status === 403) && withAuth) {
+    try { await silentRefresh(); r = await doFetch(); } catch {}
+  }
+  const ms = Math.round(performance.now() - t0);
+  HEALTH[name] = { ok: r.ok, ms, status: r.status };
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r;
+}
+
+async function gscQuery(body) {
+  const site = encodeURIComponent(CONFIG.gscSiteUrl);
+  const r = await timedFetch('gsc', 'https://www.googleapis.com/webmasters/v3/sites/' + site + '/searchAnalytics/query', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  }, true);
+  return r.json();
+}
+
+// ── LOAD ────────────────────────────────────────────────────────────────────
+async function loadGSC() {
+  const curr = getCurrentRange();
+  const prev = getPreviousRange();
+  try {
+    const [timeline, queries, pages, devices, prevTimeline] = await Promise.all([
+      gscQuery({ ...curr, dimensions: ['date'], rowLimit: 550 }),
+      gscQuery({ ...curr, dimensions: ['query'], rowLimit: 25 }),
+      gscQuery({ ...curr, dimensions: ['page'], rowLimit: 12 }),
+      gscQuery({ ...curr, dimensions: ['device'], rowLimit: 3 }),
+      gscQuery({ ...prev, dimensions: ['date'], rowLimit: 550 }),
+    ]);
+    DATA.gsc = {
+      timeline: timeline.rows || [], queries: queries.rows || [], pages: pages.rows || [],
+      devices: devices.rows || [], prev: prevTimeline.rows || [],
+    };
+    DATA.gscErr = null;
+  } catch (e) {
+    DATA.gsc = null; DATA.gscErr = e.message;
+  }
+}
+
+async function loadEvents() {
+  try {
+    const r = await timedFetch('tracker', CONFIG.urls.events, {}, true);
+    const all = (await r.json()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const isTest = e => /^\/[A-Za-z]:\//.test(e.page || '') || /localhost|127\.0\.0\.1/.test(e.page || '') || /^\/test-/.test(e.page || '');
+    const bySite = { optimizia: { clean: [], test: [] }, seoplus: { clean: [], test: [] }, etp: { clean: [], test: [] }, romainben: { clean: [], test: [] } };
+    all.forEach(e => {
+      const s = bySite[e.site] ? e.site : 'optimizia';
+      (isTest(e) ? bySite[s].test : bySite[s].clean).push(e);
+    });
+    DATA.events = { bySite, all };
+    DATA.eventsErr = null;
+  } catch (e) { DATA.events = null; DATA.eventsErr = e.message; }
+}
+
+function siteEvents(site) {
+  return (DATA.events && DATA.events.bySite[site]) || { clean: [], test: [] };
+}
+
+function weekStats(events) {
+  const now = Date.now(), W = 7 * 86400e3;
+  const stat = (a, b) => {
+    const ev = events.filter(e => { const t = new Date(e.timestamp).getTime(); return t >= now - a && t < now - b; });
+    return {
+      visitors: new Set(ev.filter(e => e.visitorId).map(e => e.visitorId)).size,
+      sessions: new Set(ev.filter(e => e.sessionId).map(e => e.sessionId)).size,
+      pv: ev.filter(e => e.event === 'pageview').length,
+      conv: ev.filter(e => e.event === 'cta_click' || e.event === 'form_submit').length,
+    };
+  };
+  return { curr: stat(W, 0), prev: stat(2 * W, W) };
+}
+
+function renderSiteTraffic(site, mountId, color, extraHTML) {
+  const el = $(mountId);
+  if (!el) return;
+  if (!DATA.events) {
+    el.innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Tracker n8n inaccessible : ${esc(DATA.eventsErr || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
+    return;
+  }
+  const events = siteEvents(site).clean;
+  if (!events.length) {
+    el.innerHTML = `<div class="sp-12 card"><div class="empty"><div class="empty-title">Pas encore de visites mesurées</div><div class="empty-text">Le tracker vient d'être posé sur ce site. Les mesures apparaîtront après le prochain déploiement, dès les premières visites.</div></div></div>`;
+    return;
+  }
+  const ws = weekStats(events);
+  const kpi = (label, c, p, note) => `
+    <div class="sp-3 card"><div class="card-label">${label}</div>
+      <div class="big">${fmt(c)}</div>
+      <div class="card-foot">${trendHTML(c, p)}</div>
+      <div class="card-foot"><span class="dot" style="background:${color}"></span>${note}</div>
+    </div>`;
+
+  const days = [];
+  for (let i = 29; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); days.push(fmtDate(d)); }
+  const perDay = {}; days.forEach(d => perDay[d] = 0);
+  const bySrc = {};
+  const now = Date.now();
+  events.forEach(e => {
+    if (e.event !== 'pageview') return;
+    const day = (e.timestamp || '').slice(0, 10);
+    if (perDay[day] !== undefined) perDay[day]++;
+    if (now - new Date(e.timestamp).getTime() < 30 * 86400e3) {
+      const src = e.source || 'direct';
+      if (!bySrc[src]) bySrc[src] = { pv: 0, sessions: new Set() };
+      bySrc[src].pv++;
+      if (e.sessionId) bySrc[src].sessions.add(e.sessionId);
+    }
+  });
+  const srcRows = Object.entries(bySrc).map(([src, m]) => ({ src, pv: m.pv, sessions: m.sessions.size }))
+    .sort((a, b) => b.sessions - a.sessions || b.pv - a.pv).slice(0, 6);
+  const maxSrc = Math.max(...srcRows.map(r => r.sessions || r.pv), 1);
+
+  el.innerHTML = `
+    ${kpi('Visiteurs · 7 jours', ws.curr.visitors, ws.prev.visitors, 'personnes distinctes')}
+    ${kpi('Sessions · 7 jours', ws.curr.sessions, ws.prev.sessions, 'visites mesurées')}
+    ${kpi('Pages vues · 7 jours', ws.curr.pv, ws.prev.pv, 'toutes pages')}
+    ${kpi('Conversions · 7 jours', ws.curr.conv, ws.prev.conv, 'CTA + formulaires')}
+    <div class="sp-8 card">
+      <div class="card-head"><div><div class="card-title">Pages vues par jour</div><div class="card-sub">30 derniers jours</div></div></div>
+      <div class="chart-box" style="min-height:180px"><canvas id="ch-${site}-pv"></canvas></div>
+    </div>
+    <div class="sp-4 card">
+      <div class="card-head"><div><div class="card-title">Sources</div><div class="card-sub">sessions par canal, 30 jours</div></div></div>
+      <div class="rlist">
+        ${srcRows.length ? srcRows.map((r, i) => `
+          <div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+            <div class="rbody">
+              <div class="rtop"><div class="rkey">${esc(srcMeta(r.src).label)}</div>
+              <div class="rmeta"><strong>${fmt(r.sessions || r.pv)}</strong> sess. · ${fmt(r.pv)} pv</div></div>
+              <div class="rbar"><i style="width:${((r.sessions || r.pv) / maxSrc * 100).toFixed(0)}%;background:${srcMeta(r.src).color}"></i></div>
+            </div></div>`).join('') : '<div class="empty-text">Aucune session sur 30 jours.</div>'}
+      </div>
+    </div>
+    ${extraHTML || ''}`;
+
+  mkChart('ch-' + site + '-pv', {
+    type: 'bar',
+    data: { labels: days.map(d => d.slice(5)), datasets: [{ data: days.map(d => perDay[d]), backgroundColor: color, borderColor: SURFACE, borderWidth: 1, borderRadius: 3, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: CH_TOOLTIP }, scales: { x: { grid: { display: false }, ticks: { ...CH_TICK, maxTicksLimit: 10 } }, y: { grid: CH_GRID, ticks: { ...CH_TICK, precision: 0 }, beginAtZero: true } } },
+  });
+}
+
+async function loadSeo() {
+  try {
+    const [s, b] = await Promise.all([
+      timedFetch('seoStats', CONFIG.urls.seoStats).then(r => r.json()),
+      timedFetch('seoBoard', CONFIG.urls.seoBoard).then(r => r.json()),
+    ]);
+    DATA.seoStats = s; DATA.seoBoard = b; DATA.seoErr = null;
+  } catch (e) { DATA.seoStats = null; DATA.seoBoard = null; DATA.seoErr = e.message; }
+}
+
+async function loadEtp() {
+  try {
+    const r = await timedFetch('etp', CONFIG.urls.etpStats, {}, true);
+    DATA.etp = await r.json(); DATA.etpErr = null;
+  } catch (e) { DATA.etp = null; DATA.etpErr = e.message; }
+}
+
+async function loadAll() {
+  $('ov-tools').innerHTML = '<div class="sp-12 card"><div class="empty-text" style="padding:10px 0">Chargement des données des trois outils…</div></div>';
+  await Promise.all([loadGSC(), loadEvents(), loadSeo(), loadEtp()]);
+  buildFil();
+  renderView(currentView, true);
+  updateBadge();
+}
+
+// ── CHART HELPERS ───────────────────────────────────────────────────────────
+if (window.Chart) {
+  Chart.defaults.font.family = "'Schibsted Grotesk', sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = '#9AA7BD';
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) Chart.defaults.animation = false;
+}
+const CH_TOOLTIP = { backgroundColor: '#060B16', titleColor: '#E7ECF6', bodyColor: '#9AA7BD', borderColor: 'rgba(148,163,184,0.24)', borderWidth: 1, padding: 10, cornerRadius: 8 };
+const CH_TICK = { color: '#64748B', font: { family: "'JetBrains Mono', monospace", size: 10 } };
+const CH_GRID = { color: 'rgba(148, 163, 184, 0.07)' };
+function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+function mkChart(id, cfg) { if (!window.Chart) return; destroyChart(id); const el = $(id); if (el) charts[id] = new Chart(el, cfg); }
+
+// ── VUE : APERÇU ────────────────────────────────────────────────────────────
+function renderApercu() {
+  const g = DATA.gsc;
+  const clicks = g ? sumKey(g.timeline, 'clicks') : null;
+  const prevClicks = g ? sumKey(g.prev, 'clicks') : null;
+  const s = DATA.seoStats, e = DATA.etp;
+
+  $('ov-tools').innerHTML = `
+    <div class="sp-4 card accent" style="--tool: var(--orange)">
+      <div class="card-label">Site OptimizIA.xyz</div>
+      ${g ? `<div class="big">${fmt(clicks)}<span class="unit">clics</span></div>
+      <div class="card-foot">${trendHTML(clicks, prevClicks)}</div>
+      <div class="chart-box" style="min-height:64px;max-height:64px;margin-top:12px"><canvas id="ov-spark"></canvas></div>`
+      : `<div class="err-state"><p>Search Console injoignable${DATA.gscErr ? ' : ' + esc(DATA.gscErr) : ''}</p></div>`}
+    </div>
+    <div class="sp-4 card accent" style="--tool: var(--blue)">
+      <div class="card-label">SEOPlus!</div>
+      ${s ? `<div class="big">${esc(s.avgScore)}<span class="unit">/100 score moyen</span></div>
+      <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>${fmt(s.audits)} audits sur ${fmt(s.sites)} sites</div>
+      <div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>${DATA.seoBoard ? fmt((DATA.seoBoard.sites || []).filter(x => x.score >= 90).length) + ' sites au cercle Élite' : 'classement indisponible'}</div>
+      ${siteEvents('seoplus').clean.length ? `<div class="card-foot"><span class="dot" style="background:var(--blue)"></span>${fmt(weekStats(siteEvents('seoplus').clean).curr.visitors)} visiteurs sur 7 jours</div>` : ''}`
+      : `<div class="err-state"><p>Stats SEOPlus! injoignables${DATA.seoErr ? ' : ' + esc(DATA.seoErr) : ''}</p></div>`}
+    </div>
+    <div class="sp-4 card accent" style="--tool: var(--emerald)">
+      <div class="card-label">ExoTradingPlus!&nbsp;${e ? '<span class="badge ' + (e.stripeMode === 'live' ? 'live' : 'test') + '">' + (e.stripeMode === 'live' ? 'LIVE' : 'TEST') + '</span>' : ''}</div>
+      ${e ? `<div class="big">${fmt(e.abonnements.actifs)}<span class="unit">abonné${e.abonnements.actifs > 1 ? 's' : ''}</span></div>
+      <div class="card-foot"><span class="dot"></span>MRR ${fmtEur(e.stripe.mrrCents)}${e.stripeMode !== 'live' ? ' (test)' : ''}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--warn)"></span>${e.ondemand.demandes.enAttente} demande${e.ondemand.demandes.enAttente > 1 ? 's' : ''} /analyse en attente</div>
+      ${siteEvents('etp').clean.length ? `<div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>${fmt(weekStats(siteEvents('etp').clean).curr.visitors)} visiteurs sur 7 jours</div>` : ''}`
+      : `<div class="err-state"><p>Stats ETP injoignables${DATA.etpErr ? ' : ' + esc(DATA.etpErr) : ''}</p></div>`}
+    </div>`;
+
+  if (g) {
+    const rows = g.timeline.slice(-28);
+    mkChart('ov-spark', {
+      type: 'line',
+      data: { labels: rows.map(r => r.keys[0].slice(5)), datasets: [{ data: rows.map(r => r.clicks), borderColor: SERIES.s2, backgroundColor: 'rgba(217,89,38,0.12)', fill: true, tension: 0.4, pointRadius: 0, borderWidth: 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: false } }, scales: { x: { display: false }, y: { display: false } }, interaction: { intersect: false } },
+    });
+  }
+
+  const top = FIL.slice(0, 6);
+  $('ov-fil').innerHTML = top.length ? top.map(filItemHTML).join('') +
+    `<div style="margin-top:14px"><button class="fil-btn" onclick="openFil()">Ouvrir Le Fil complet</button></div>`
+    : '<div class="fil-empty">Rien à signaler pour le moment.</div>';
+
+  const chip = (name, label) => {
+    const h = HEALTH[name];
+    if (!h) return `<span class="chip"><i class="wait"></i>${label} : pas encore interrogé</span>`;
+    return `<span class="chip"><i class="${h.ok ? 'ok' : 'bad'}"></i>${label} : ${h.ok ? h.ms + ' ms' : 'erreur HTTP ' + h.status}</span>`;
+  };
+  $('ov-health').innerHTML =
+    chip('gsc', 'Search Console') + chip('tracker', 'Tracker n8n') +
+    chip('seoStats', 'SEOPlus! stats') + chip('seoBoard', 'SEOPlus! classement') + chip('etp', 'ETP stats');
+}
+
+// ── VUE : SITE ──────────────────────────────────────────────────────────────
+function renderSite() {
+  renderSiteAcq();
+  renderSiteSources();
+  renderSiteBehavior();
+}
+
+function renderSiteAcq() {
+  const g = DATA.gsc;
+  const el = $('site-acq');
+  if (!g) {
+    el.innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Erreur Search Console : ${esc(DATA.gscErr || 'inconnue')}</p><button class="btn-ghost" onclick="reloadGsc()">Réessayer</button></div></div>`;
+    return;
+  }
+  const c = sumKey(g.timeline, 'clicks'), pc = sumKey(g.prev, 'clicks');
+  const im = sumKey(g.timeline, 'impressions'), pim = sumKey(g.prev, 'impressions');
+  const ctr = im ? c / im * 100 : 0, pctr = pim ? pc / pim * 100 : 0;
+  const wpos = rows => { const wi = sumKey(rows, 'impressions'); return wi ? rows.reduce((s, r) => s + (r.position || 0) * (r.impressions || 0), 0) / wi : 0; };
+  const pos = wpos(g.timeline), ppos = wpos(g.prev);
+
+  el.innerHTML = `
+    <div class="sp-4 card accent" style="--tool: var(--orange)">
+      <div class="card-label">Clics totaux · ${esc(rangeLabel())}${infoBtn('clics')}</div>
+      <div class="big hero">${fmt(c)}</div>
+      <div class="card-foot">${trendHTML(c, pc)}</div>
+    </div>
+    <div class="sp-8 card">
+      <div class="card-head">
+        <div><div class="card-title">Clics et impressions${infoBtn('timeline')}</div><div class="card-sub">${esc(rangeLabel())}, échelle unique</div></div>
+        <div class="legend"><span><i style="background:${SERIES.s2}"></i>clics</span><span><i style="background:${SERIES.s1}"></i>impressions</span></div>
+      </div>
+      <div class="chart-box"><canvas id="ch-gsc-timeline"></canvas></div>
+    </div>
+    <div class="sp-3 card"><div class="card-label">Impressions${infoBtn('impressions')}</div><div class="big">${fmt(im)}</div><div class="card-foot">${trendHTML(im, pim)}</div></div>
+    <div class="sp-3 card"><div class="card-label">CTR global${infoBtn('ctr')}</div><div class="big">${ctr.toFixed(2).replace('.', ',')}<span class="unit">%</span></div><div class="card-foot">${trendHTML(ctr, pctr)}</div></div>
+    <div class="sp-3 card"><div class="card-label">Position moyenne${infoBtn('position')}</div><div class="big">${pos.toFixed(1).replace('.', ',')}</div><div class="card-foot">${trendHTML(pos, ppos, true)}</div></div>
+    <div class="sp-3 card">
+      <div class="card-label">Appareils${infoBtn('devices')}</div>
+      <div id="gsc-devices" style="margin-top:14px"></div>
+    </div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Top requêtes${infoBtn('queries')}</div><div class="card-sub">classées par clics</div></div></div>
+      <div class="rlist" style="--tool:${SERIES.s2}" id="gsc-queries"></div>
+    </div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Top pages${infoBtn('pages')}</div><div class="card-sub">pages d'atterrissage par clics SEO</div></div></div>
+      <div class="rlist" style="--tool:${SERIES.s1}" id="gsc-pages"></div>
+    </div>`;
+
+  mkChart('ch-gsc-timeline', {
+    type: 'line',
+    data: {
+      labels: g.timeline.map(r => r.keys[0].slice(5)),
+      datasets: [
+        { label: 'Clics', data: g.timeline.map(r => r.clicks), borderColor: SERIES.s2, backgroundColor: 'rgba(217,89,38,0.10)', fill: true, tension: 0.4, pointRadius: 0, pointHoverRadius: 4, borderWidth: 2 },
+        { label: 'Impressions', data: g.timeline.map(r => r.impressions), borderColor: SERIES.s1, backgroundColor: 'rgba(57,135,229,0.07)', fill: true, tension: 0.4, pointRadius: 0, pointHoverRadius: 4, borderWidth: 2 },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { display: false }, tooltip: CH_TOOLTIP },
+      scales: { x: { grid: CH_GRID, ticks: { ...CH_TICK, maxTicksLimit: 10 } }, y: { grid: CH_GRID, ticks: CH_TICK, beginAtZero: true } },
+    },
+  });
+
+  const DEV = { MOBILE: ['Mobile', SERIES.s2], DESKTOP: ['Desktop', SERIES.s1], TABLET: ['Tablette', SERIES.s3] };
+  const dtotal = sumKey(g.devices, 'clicks') || 1;
+  const dlist = (g.devices || []).map(r => ({ name: (DEV[r.keys[0]] || [r.keys[0], SERIES.other])[0], color: (DEV[r.keys[0]] || [0, SERIES.other])[1], pct: r.clicks / dtotal * 100 })).sort((a, b) => b.pct - a.pct);
+  $('gsc-devices').innerHTML = dlist.length ? `
+    <div class="meter" style="margin-bottom:14px">${dlist.map(d => `<i style="width:${d.pct}%;background:${d.color};margin-right:2px;border-radius:3px"></i>`).join('')}</div>
+    ${dlist.map(d => `<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px"><span style="display:inline-flex;align-items:center;gap:7px"><i style="width:8px;height:8px;border-radius:2px;background:${d.color};display:inline-block"></i>${esc(d.name)}</span><span class="rmeta">${d.pct.toFixed(0)}%</span></div>`).join('')}`
+    : '<div class="empty-text">Aucune donnée.</div>';
+
+  const rankList = (rows, elId, isPages) => {
+    const r = (rows || []).slice(0, 8);
+    const maxC = Math.max(...r.map(x => x.clicks), 1);
+    $(elId).innerHTML = r.length ? r.map((x, i) => {
+      let key = x.keys[0];
+      if (isPages) { try { key = new URL(key).pathname; } catch {} }
+      return `<div class="rrow">
+        <div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+        <div class="rbody">
+          <div class="rtop"><div class="rkey ${isPages ? 'mono' : ''}">${esc(key)}</div>
+          <div class="rmeta"><strong>${fmt(x.clicks)}</strong> clics · ${(x.ctr * 100).toFixed(1).replace('.', ',')}% · pos ${x.position.toFixed(1).replace('.', ',')}</div></div>
+          <div class="rbar"><i style="width:${(x.clicks / maxC * 100).toFixed(0)}%"></i></div>
+        </div></div>`;
+    }).join('') : `<div class="empty"><div class="empty-title">Pas encore de données</div><div class="empty-text">Aucune ${isPages ? 'page' : 'requête'} sur cette période.</div></div>`;
+  };
+  rankList(g.queries, 'gsc-queries', false);
+  rankList(g.pages, 'gsc-pages', true);
+}
+
+const SRC_META = {
+  linkedin: { color: SERIES.s1, label: 'LinkedIn' },
+  google: { color: SERIES.s4, label: 'Google' },
+  'romainben.cloud': { color: SERIES.s2, label: 'romainben.cloud' },
+  'ginoux.xyz': { color: SERIES.s5, label: 'ginoux.xyz' },
+  direct: { color: SERIES.s3, label: 'Direct' },
+  inconnue: { color: SERIES.other, label: 'Inconnue (V1)' },
+};
+function srcMeta(src) {
+  if (SRC_META[src]) return SRC_META[src];
+  return { color: SERIES.s6, label: src };
+}
+
+function buildSessionStats(events) {
+  const sessions = {};
+  let legacyPv = 0, legacyConv = 0;
+  events.forEach(e => {
+    if (!e.sessionId) {
+      if (e.event === 'pageview') legacyPv++;
+      if (e.event === 'cta_click' || e.event === 'form_submit') legacyConv++;
+      return;
+    }
+    if (!sessions[e.sessionId]) sessions[e.sessionId] = { source: e.source || 'inconnue', visitorId: e.visitorId || '', pv: 0, conv: 0 };
+    const s = sessions[e.sessionId];
+    if (e.event === 'pageview') s.pv++;
+    if (e.event === 'cta_click' || e.event === 'form_submit') s.conv++;
+  });
+  return { sessions, legacyPv, legacyConv };
+}
+
+function renderSiteSources() {
+  const el = $('site-src');
+  if (!DATA.events) {
+    el.innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Tracker n8n inaccessible : ${esc(DATA.eventsErr || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
+    return;
+  }
+  const events = siteEvents('optimizia').clean;
+  const { sessions, legacyPv, legacyConv } = buildSessionStats(events);
+  const sessList = Object.values(sessions);
+
+  const allVisitors = new Set(); const vCount = {}; const bySrc = {};
+  sessList.forEach(s => {
+    if (s.visitorId) { allVisitors.add(s.visitorId); vCount[s.visitorId] = (vCount[s.visitorId] || 0) + 1; }
+    const src = s.source || 'inconnue';
+    if (!bySrc[src]) bySrc[src] = { visitors: new Set(), sessions: 0, pv: 0, bounces: 0, conv: 0 };
+    bySrc[src].sessions++; if (s.visitorId) bySrc[src].visitors.add(s.visitorId);
+    bySrc[src].pv += s.pv; if (s.pv <= 1) bySrc[src].bounces++; bySrc[src].conv += s.conv;
+  });
+  if (legacyPv > 0) {
+    if (!bySrc.inconnue) bySrc.inconnue = { visitors: new Set(), sessions: 0, pv: 0, bounces: 0, conv: 0 };
+    bySrc.inconnue.legacy = true; bySrc.inconnue.legacyPv = legacyPv; bySrc.inconnue.legacyConv = legacyConv;
+  }
+
+  const totalVisitors = allVisitors.size;
+  const totalSessions = sessList.length;
+  const totalPv = sessList.reduce((a, s) => a + s.pv, 0);
+  const pps = totalSessions ? totalPv / totalSessions : 0;
+  const bounce = totalSessions ? Math.round(sessList.filter(s => s.pv <= 1).length / totalSessions * 100) : 0;
+  const recurring = Object.values(vCount).filter(n => n >= 2).length;
+
+  el.innerHTML = `
+    <div class="sp-3 card"><div class="card-label">Visiteurs uniques${infoBtn('visitors')}</div><div class="big">${fmt(totalVisitors)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>${recurring ? fmt(recurring) + ' récurrent' + (recurring > 1 ? 's' : '') : 'aucun récurrent encore'}</div></div>
+    <div class="sp-3 card"><div class="card-label">Sessions${infoBtn('sessions')}</div><div class="big">${fmt(totalSessions)}</div>
+      <div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span>visites mesurées</div></div>
+    <div class="sp-3 card"><div class="card-label">Pages / session${infoBtn('pps')}</div><div class="big">${pps.toFixed(1).replace('.', ',')}</div>
+      <div class="card-foot"><span class="dot"></span>${pps >= 2 ? 'bon niveau d\'exploration' : 'visiteurs peu explorateurs'}</div></div>
+    <div class="sp-3 card"><div class="card-label">Taux de rebond${infoBtn('bounce')}</div><div class="big">${bounce}<span class="unit">%</span></div>
+      <div class="card-foot"><span class="dot" style="background:${bounce < 50 ? 'var(--emerald)' : 'var(--warn)'}"></span>sessions à une page</div></div>
+    <div class="sp-8 card">
+      <div class="card-head"><div><div class="card-title">Trafic par source${infoBtn('srcTimeline')}</div><div class="card-sub">30 derniers jours, pages vues empilées</div></div></div>
+      <div class="chart-box"><canvas id="ch-sources"></canvas></div>
+    </div>
+    <div class="sp-4 card">
+      <div class="card-head"><div><div class="card-title">Répartition des sources${infoBtn('srcDonut')}</div><div class="card-sub">sessions par canal</div></div></div>
+      <div class="chart-box" style="min-height:200px"><canvas id="ch-src-donut"></canvas></div>
+      <div id="src-legend" style="margin-top:12px"></div>
+    </div>
+    <div class="sp-12 card">
+      <div class="card-head"><div><div class="card-title">Performance par source${infoBtn('srcTable')}</div><div class="card-sub">volume, engagement, conversions par canal</div></div></div>
+      <div class="table-scroll"><table class="dtable"><thead><tr><th>Source</th><th>Visiteurs</th><th>Sessions</th><th>Pg/sess</th><th>Rebond</th><th>Conv</th><th>Volume</th></tr></thead><tbody id="src-tbody"></tbody></table></div>
+    </div>`;
+
+  // timeline empilée
+  const days = [];
+  for (let i = 29; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); days.push(fmtDate(d)); }
+  const dayMap = {}; days.forEach(d => dayMap[d] = {});
+  const used = new Set();
+  events.forEach(e => {
+    if (e.event !== 'pageview') return;
+    const day = (e.timestamp || '').slice(0, 10);
+    if (!dayMap[day]) return;
+    const src = e.source || (e.sessionId ? 'direct' : 'inconnue');
+    used.add(src);
+    dayMap[day][src] = (dayMap[day][src] || 0) + 1;
+  });
+  const order = ['linkedin', 'google', 'romainben.cloud', 'ginoux.xyz', 'direct', 'inconnue'];
+  const ordered = Array.from(used).sort((a, b) => {
+    const ai = order.indexOf(a), bi = order.indexOf(b);
+    if (ai !== -1 && bi !== -1) return ai - bi;
+    if (ai !== -1) return -1; if (bi !== -1) return 1;
+    return a.localeCompare(b);
+  });
+  mkChart('ch-sources', {
+    type: 'bar',
+    data: {
+      labels: days.map(d => d.slice(5)),
+      datasets: ordered.map(src => {
+        const m = srcMeta(src);
+        return { label: m.label, data: days.map(d => dayMap[d][src] || 0), backgroundColor: m.color, borderColor: SURFACE, borderWidth: 1, borderRadius: 3, borderSkipped: false };
+      }),
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { display: true, position: 'top', align: 'end', labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: 'rect', padding: 12 } }, tooltip: CH_TOOLTIP },
+      scales: { x: { grid: CH_GRID, stacked: true, ticks: { ...CH_TICK, maxTicksLimit: 10 } }, y: { grid: CH_GRID, stacked: true, ticks: CH_TICK, beginAtZero: true } },
+    },
+  });
+
+  // donut
+  const entries = Object.entries(bySrc).map(([src, m]) => ({ src, count: m.sessions || (m.legacy ? m.legacyPv : 0) })).filter(e => e.count > 0).sort((a, b) => b.count - a.count);
+  if (entries.length) {
+    mkChart('ch-src-donut', {
+      type: 'doughnut',
+      data: { labels: entries.map(e => srcMeta(e.src).label), datasets: [{ data: entries.map(e => e.count), backgroundColor: entries.map(e => srcMeta(e.src).color), borderColor: SURFACE, borderWidth: 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, cutout: '68%', plugins: { legend: { display: false }, tooltip: CH_TOOLTIP } },
+    });
+    const tot = entries.reduce((a, x) => a + x.count, 0);
+    $('src-legend').innerHTML = entries.map(e => {
+      const m = srcMeta(e.src);
+      return `<div style="display:grid;grid-template-columns:9px 1fr auto;gap:8px;align-items:center;font-size:12px;margin-bottom:6px">
+        <span style="width:9px;height:9px;border-radius:50%;background:${m.color}"></span>
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.label)}</span>
+        <span class="rmeta">${Math.round(e.count / tot * 100)}%</span></div>`;
+    }).join('');
+  } else {
+    $('src-legend').innerHTML = '<div class="empty-text">Aucune session enregistrée pour l\'instant.</div>';
+  }
+
+  // table
+  const rows = Object.entries(bySrc).map(([src, m]) => ({ src, m, sessions: m.sessions || 0 }))
+    .sort((a, b) => (a.m.legacy && !b.m.legacy) ? 1 : (!a.m.legacy && b.m.legacy) ? -1 : b.sessions - a.sessions);
+  const maxS = Math.max(...rows.map(r => r.sessions), 1);
+  $('src-tbody').innerHTML = rows.length ? rows.map(({ src, m }) => {
+    const meta = srcMeta(src);
+    if (m.legacy && !m.sessions) {
+      return `<tr><td><span class="cdot" style="background:${meta.color}"></span>${esc(meta.label)}</td>
+        <td class="muted">·</td><td class="muted">·</td><td class="muted">${fmt(m.legacyPv)} vues</td><td class="muted">·</td>
+        <td>${fmt(m.legacyConv || 0)}</td><td><span class="tbar"><i style="width:0%;background:${meta.color}"></i></span></td></tr>`;
+    }
+    const pps2 = m.sessions ? m.pv / m.sessions : 0;
+    const b = m.sessions ? Math.round(m.bounces / m.sessions * 100) : 0;
+    return `<tr><td><span class="cdot" style="background:${meta.color}"></span>${esc(meta.label)}</td>
+      <td>${fmt(m.visitors.size)}</td><td>${fmt(m.sessions)}</td><td>${pps2.toFixed(1).replace('.', ',')}</td><td>${b}%</td><td>${fmt(m.conv)}</td>
+      <td><span class="tbar"><i style="width:${(m.sessions / maxS * 100).toFixed(0)}%;background:${meta.color}"></i></span></td></tr>`;
+  }).join('') : '<tr><td colspan="7" class="muted" style="text-align:center;padding:22px">Aucune session enregistrée.</td></tr>';
+}
+
+const FEED_META = {
+  pageview: { cls: 'fi-view', tag: 'PV', lbl: 'Page vue' },
+  cta_click: { cls: 'fi-cta', tag: 'CTA', lbl: 'CTA cliqué' },
+  form_submit: { cls: 'fi-form', tag: 'FRM', lbl: 'Formulaire envoyé' },
+  nav_click: { cls: 'fi-nav', tag: 'NAV', lbl: 'Navigation' },
+  external_click: { cls: 'fi-ext', tag: 'EXT', lbl: 'Lien externe' },
+  scroll_depth: { cls: 'fi-scroll', tag: 'SCR', lbl: 'Scroll atteint' },
+  time_on_page: { cls: 'fi-time', tag: 'TIM', lbl: 'Temps sur page' },
+};
+
+function renderSiteBehavior() {
+  const el = $('site-bhv');
+  if (!DATA.events) { el.innerHTML = ''; return; }
+  const events = siteEvents('optimizia').clean;
+  const nTest = siteEvents('optimizia').test.length;
+
+  const cta = events.filter(e => e.event === 'cta_click').length;
+  const forms = events.filter(e => e.event === 'form_submit').length;
+  const pv = events.filter(e => e.event === 'pageview').length;
+  const sc = p => events.filter(e => e.event === 'scroll_depth' && e.element === p).length;
+  const s25 = sc('25%'), s50 = sc('50%'), s75 = sc('75%'), s100 = sc('100%');
+
+  const times = events.filter(e => e.event === 'time_on_page').map(e => parseInt(e.element) || 0).filter(t => t >= 1 && t < 7200);
+  const avgT = times.length ? times.reduce((a, b) => a + b, 0) / times.length : 0;
+  const tMin = Math.floor(avgT / 60), tSec = String(Math.floor(avgT % 60)).padStart(2, '0');
+  const scrollRate = pv ? Math.round(s75 / pv * 100) : 0;
+  const nSessions = new Set(events.filter(e => e.sessionId).map(e => e.sessionId)).size;
+  const convRate = nSessions ? (cta / nSessions * 100).toFixed(1) : (pv ? (cta / pv * 100).toFixed(1) : '0.0');
+
+  el.innerHTML = `
+    <div class="sp-4 card accent" style="--tool: var(--orange)">
+      <div class="card-label">Conversions totales${infoBtn('conversions')}</div>
+      <div class="big hero">${fmt(cta + forms)}</div>
+      <div class="card-foot"><span class="dot"></span><strong style="margin-right:4px">${fmt(cta)}</strong> CTA cliqués</div>
+      <div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span><strong style="margin-right:4px">${fmt(forms)}</strong> formulaires envoyés</div>
+      ${nTest ? `<div class="card-foot"><span class="dot" style="background:var(--dull)"></span>${fmt(nTest)} événements de test exclus</div>` : ''}
+    </div>
+    <div class="sp-8 card">
+      <div class="card-head">
+        <div><div class="card-title">Tunnel d'engagement${infoBtn('funnel')}</div><div class="card-sub">pourcentages rapportés au total des pages vues</div></div>
+        <div class="legend"><span><i style="background:${SERIES.s2}"></i>lecture</span><span><i style="background:${SERIES.s1}"></i>conversion</span></div>
+      </div>
+      <div id="bhv-funnel"></div>
+    </div>
+    <div class="sp-4 card"><div class="card-label">Temps moyen par page${infoBtn('temps')}</div>
+      <div class="big">${tMin}<span class="unit">m</span>${tSec}<span class="unit">s</span></div>
+      <div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>sur ${fmt(times.length)} lectures mesurées</div></div>
+    <div class="sp-4 card"><div class="card-label">Lecture profonde${infoBtn('scroll')}</div>
+      <div class="big">${scrollRate}<span class="unit">%</span></div>
+      <div class="card-foot"><span class="dot" style="background:${SERIES.s5}"></span>pages vues avec scroll 75 % ou plus</div></div>
+    <div class="sp-4 card"><div class="card-label">Taux de conversion CTA${infoBtn('conv')}</div>
+      <div class="big">${String(convRate).replace('.', ',')}<span class="unit">%</span></div>
+      <div class="card-foot"><span class="dot"></span>CTA cliqués / ${nSessions ? 'sessions' : 'pages vues'}</div></div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Pages les plus engageantes${infoBtn('pagesEng')}</div><div class="card-sub">barre orange : temps, barre bleue : scroll 75 %</div></div></div>
+      <div class="rlist" id="bhv-pages"></div>
+    </div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Activité quotidienne${infoBtn('activite')}</div><div class="card-sub">28 derniers jours, événements empilés par type</div></div></div>
+      <div class="chart-box"><canvas id="ch-events"></canvas></div>
+    </div>
+    <div class="sp-12 card">
+      <div class="card-head">
+        <div><div class="card-title">Flux d'activité${infoBtn('feed')}</div><div class="card-sub">derniers événements détectés sur le site</div></div>
+        <div class="rmeta">${fmt(events.length)} événements</div>
+      </div>
+      <div class="feed-items" id="bhv-feed"></div>
+    </div>`;
+
+  // funnel
+  const steps = [
+    ['Pages vues', pv, SERIES.s2], ['Scroll 25%', s25, SERIES.s2], ['Scroll 50%', s50, SERIES.s2],
+    ['Scroll 75%', s75, SERIES.s2], ['Scroll 100%', s100, SERIES.s2], ['Clic CTA', cta, SERIES.s1], ['Formulaire', forms, SERIES.s1],
+  ];
+  const base = pv || 1, maxV = Math.max(...steps.map(s => s[1]), 1);
+  $('bhv-funnel').innerHTML = steps.map(([name, val, color]) => `
+    <div class="fstep">
+      <div class="fname">${name}</div>
+      <div class="ftrack"><div class="ffill" style="width:${(val / maxV * 100)}%;background:${val === 0 ? 'var(--surface-3)' : color}"></div></div>
+      <div class="fstat">${fmt(val)}<span class="pct">${(val / base * 100).toFixed(val < 100 ? 1 : 0).replace('.', ',')}%</span></div>
+    </div>`).join('');
+
+  // pages engageantes
+  const map = {};
+  events.forEach(e => {
+    const p = e.page || '/';
+    if (!map[p]) map[p] = { views: 0, timeSum: 0, timeN: 0, s75: 0 };
+    if (e.event === 'pageview') map[p].views++;
+    if (e.event === 'time_on_page') { const t = parseInt(e.element) || 0; if (t >= 1 && t < 7200) { map[p].timeSum += t; map[p].timeN++; } }
+    if (e.event === 'scroll_depth' && e.element === '75%') map[p].s75++;
+  });
+  const pagesEng = Object.entries(map).map(([page, m]) => ({
+    page, views: m.views, avgTime: m.timeN ? m.timeSum / m.timeN : 0,
+    scrollRate: m.views ? Math.min(m.s75 / m.views, 1) : 0,
+  })).filter(p => p.views > 0)
+    .sort((a, b) => (b.avgTime * (b.scrollRate || 0.1)) - (a.avgTime * (a.scrollRate || 0.1))).slice(0, 6);
+  const maxT = Math.max(...pagesEng.map(p => p.avgTime), 60);
+  $('bhv-pages').innerHTML = pagesEng.length ? pagesEng.map((p, i) => {
+    const mins = Math.floor(p.avgTime / 60), secs = String(Math.floor(p.avgTime % 60)).padStart(2, '0');
+    return `<div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+      <div class="rbody">
+        <div class="rtop"><div class="rkey mono">${esc(p.page)}</div>
+        <div class="rmeta"><strong>${mins}:${secs}</strong> · ${Math.round(p.scrollRate * 100)}% · ${fmt(p.views)}v</div></div>
+        <div style="display:flex;gap:8px">
+          <div class="rbar" style="flex:1;--tool:${SERIES.s2}"><i style="width:${(p.avgTime / maxT * 100).toFixed(0)}%"></i></div>
+          <div class="rbar" style="flex:1;--tool:${SERIES.s1}"><i style="width:${(p.scrollRate * 100).toFixed(0)}%;background:${SERIES.s1}"></i></div>
+        </div>
+      </div></div>`;
+  }).join('') : `<div class="empty"><div class="empty-title">Pas encore de données</div><div class="empty-text">Les pages apparaîtront après les premières visites mesurées.</div></div>`;
+
+  // activité quotidienne
+  const dayMap = {};
+  for (let i = 27; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); dayMap[fmtDate(d)] = { pv: 0, scroll: 0, cta: 0, form: 0, other: 0 }; }
+  events.forEach(e => {
+    const day = (e.timestamp || '').slice(0, 10);
+    if (!dayMap[day]) return;
+    if (e.event === 'pageview') dayMap[day].pv++;
+    else if (e.event === 'scroll_depth') dayMap[day].scroll++;
+    else if (e.event === 'cta_click') dayMap[day].cta++;
+    else if (e.event === 'form_submit') dayMap[day].form++;
+    else dayMap[day].other++;
+  });
+  const vals = Object.values(dayMap);
+  mkChart('ch-events', {
+    type: 'bar',
+    data: {
+      labels: Object.keys(dayMap).map(d => d.slice(5)),
+      datasets: [
+        { label: 'Pages vues', data: vals.map(v => v.pv), backgroundColor: SERIES.s1 },
+        { label: 'Scroll', data: vals.map(v => v.scroll), backgroundColor: SERIES.s5 },
+        { label: 'CTA', data: vals.map(v => v.cta), backgroundColor: SERIES.s2 },
+        { label: 'Formulaire', data: vals.map(v => v.form), backgroundColor: SERIES.s3 },
+        { label: 'Autre', data: vals.map(v => v.other), backgroundColor: SERIES.other },
+      ].map(d => ({ ...d, borderColor: SURFACE, borderWidth: 1, borderRadius: 3, borderSkipped: false })),
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { display: true, position: 'top', align: 'end', labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: 'rect', padding: 12 } }, tooltip: CH_TOOLTIP },
+      scales: { x: { grid: CH_GRID, stacked: true, ticks: { ...CH_TICK, maxTicksLimit: 10 } }, y: { grid: CH_GRID, stacked: true, ticks: CH_TICK, beginAtZero: true } },
+    },
+  });
+
+  // feed
+  const recent = events.slice(0, 60);
+  $('bhv-feed').innerHTML = recent.length ? recent.map(e => {
+    const m = FEED_META[e.event] || { cls: 'fi-view', tag: '?', lbl: e.event || '?' };
+    return `<div class="feed-item">
+      <div class="feed-ico ${m.cls}">${m.tag}</div>
+      <div class="feed-main">
+        <div class="feed-line"><span class="feed-type">${esc(m.lbl)}</span>${e.element ? `<span class="feed-elem">${esc(String(e.element).slice(0, 80))}</span>` : ''}</div>
+        <div class="feed-page">${esc(String(e.page || '').slice(0, 70))}</div>
+      </div>
+      <div class="feed-when">${relShort(e.timestamp)}</div>
+    </div>`;
+  }).join('') : `<div class="empty"><div class="empty-title">Aucun événement</div><div class="empty-text">Les événements apparaîtront dès qu'un visiteur naviguera sur le site.</div></div>`;
+}
+
+// ── VUE : SEOPLUS ───────────────────────────────────────────────────────────
+function seoTrafficExtra() {
+  const now = Date.now();
+  const events = siteEvents('seoplus').clean;
+  const map = {};
+  events.forEach(e => {
+    if (now - new Date(e.timestamp).getTime() > 30 * 86400e3) return;
+    const p = e.page || '/';
+    if (!map[p]) map[p] = { pv: 0, timeSum: 0, timeN: 0 };
+    if (e.event === 'pageview') map[p].pv++;
+    if (e.event === 'time_on_page') { const t = parseInt(e.element) || 0; if (t >= 1 && t < 7200) { map[p].timeSum += t; map[p].timeN++; } }
+  });
+  const rows = Object.entries(map).map(([page, m]) => ({ page, pv: m.pv, t: m.timeN ? m.timeSum / m.timeN : 0 }))
+    .filter(r => r.pv > 0).sort((a, b) => b.pv - a.pv).slice(0, 6);
+  if (!rows.length) return '';
+  const maxPv = Math.max(...rows.map(r => r.pv), 1);
+  return `<div class="sp-12 card">
+    <div class="card-head"><div><div class="card-title">Pages les plus vues</div><div class="card-sub">30 jours, avec temps moyen de lecture</div></div></div>
+    <div class="rlist">${rows.map((r, i) => {
+      const mins = Math.floor(r.t / 60), secs = String(Math.floor(r.t % 60)).padStart(2, '0');
+      return `<div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+        <div class="rbody"><div class="rtop"><div class="rkey mono">${esc(r.page)}</div>
+        <div class="rmeta"><strong>${fmt(r.pv)}</strong> vues · ${mins}:${secs}</div></div>
+        <div class="rbar"><i style="width:${(r.pv / maxPv * 100).toFixed(0)}%;background:${SERIES.s1}"></i></div></div></div>`;
+    }).join('')}</div></div>`;
+}
+
+function etpTrafficExtra() {
+  const now = Date.now();
+  const pvs = siteEvents('etp').clean.filter(e => e.event === 'pageview' && now - new Date(e.timestamp).getTime() < 30 * 86400e3);
+  if (!pvs.length) return '';
+  const steps = [
+    ['Accueil', p => p === '/' || /(^|\/)index\.html$/.test(p)],
+    ['Offres', p => p.indexOf('offres') !== -1],
+    ['Checkout', p => p.indexOf('checkout') !== -1],
+    ['Merci (payé)', p => p.indexOf('merci') !== -1],
+  ];
+  const counts = steps.map(([name, f]) => [name, new Set(pvs.filter(e => f(e.page || '')).map(e => e.sessionId || e.visitorId)).size]);
+  const max = Math.max(...counts.map(c => c[1]), 1);
+  return `<div class="sp-12 card">
+    <div class="card-head"><div><div class="card-title">Tunnel commercial</div><div class="card-sub">sessions distinctes par étape, 30 jours</div></div></div>
+    ${counts.map(([name, n], i) => `<div class="fstep"><div class="fname">${name}</div>
+      <div class="ftrack"><div class="ffill" style="width:${(n / max * 100)}%;background:${n === 0 ? 'var(--surface-3)' : (i === 3 ? 'var(--emerald)' : SERIES.s3)}"></div></div>
+      <div class="fstat">${fmt(n)}</div></div>`).join('')}</div>`;
+}
+
+function renderSeoplus() {
+  renderSiteTraffic('seoplus', 'seo-traffic', SERIES.s1, seoTrafficExtra());
+  const s = DATA.seoStats, b = DATA.seoBoard;
+  if (!s || !b) {
+    $('seo-engine').innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Webhooks SEOPlus! injoignables : ${esc(DATA.seoErr || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
+    $('seo-ours').innerHTML = ''; $('seo-board').innerHTML = '';
+    return;
+  }
+  const sites = b.sites || [];
+  const elite = sites.filter(x => x.score >= 90).length;
+
+  $('seo-engine').innerHTML = `
+    <div class="sp-3 card accent" style="--tool: var(--blue)">
+      <div class="card-label">Score moyen du moteur${infoBtn('seoScore')}</div>
+      <div class="big">${esc(s.avgScore)}<span class="unit">/100</span></div>
+      <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>tous audits confondus</div>
+    </div>
+    <div class="sp-3 card"><div class="card-label">Audits réalisés${infoBtn('seoAudits')}</div><div class="big">${fmt(s.audits)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>en production</div></div>
+    <div class="sp-3 card"><div class="card-label">Sites distincts${infoBtn('seoSites')}</div><div class="big">${fmt(s.sites)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>domaines audités</div></div>
+    <div class="sp-3 card"><div class="card-label">Cercle Élite${infoBtn('elite')}</div><div class="big">${fmt(elite)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>sites à 90 ou plus</div></div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Répartition des grades</div><div class="card-sub">classement public, ${fmt(sites.length)} sites inscrits</div></div></div>
+      <div class="chart-box" style="min-height:170px"><canvas id="ch-grades"></canvas></div>
+    </div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Distribution des scores</div><div class="card-sub">par tranche de 10 points</div></div></div>
+      <div class="chart-box" style="min-height:170px"><canvas id="ch-scores"></canvas></div>
+    </div>`;
+
+  const gradeOrder = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const gradeCounts = gradeOrder.map(gr => sites.filter(x => (x.grade || '').toUpperCase() === gr).length);
+  mkChart('ch-grades', {
+    type: 'bar',
+    data: { labels: gradeOrder, datasets: [{ data: gradeCounts, backgroundColor: SERIES.s1, borderColor: SURFACE, borderWidth: 1, borderRadius: 4, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: CH_TOOLTIP }, scales: { x: { grid: { display: false }, ticks: CH_TICK }, y: { grid: CH_GRID, ticks: { ...CH_TICK, precision: 0 }, beginAtZero: true } } },
+  });
+  const buckets = Array.from({ length: 10 }, (_, i) => sites.filter(x => x.score >= i * 10 && x.score < (i + 1) * 10 + (i === 9 ? 1 : 0)).length);
+  mkChart('ch-scores', {
+    type: 'bar',
+    data: { labels: Array.from({ length: 10 }, (_, i) => (i * 10) + '+'), datasets: [{ data: buckets, backgroundColor: SERIES.s3, borderColor: SURFACE, borderWidth: 1, borderRadius: 4, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: CH_TOOLTIP }, scales: { x: { grid: { display: false }, ticks: CH_TICK }, y: { grid: CH_GRID, ticks: { ...CH_TICK, precision: 0 }, beginAtZero: true } } },
+  });
+
+  const snap = PREV_SEO_SCORES;
+  $('seo-ours').innerHTML = CONFIG.ourHosts.map(host => {
+    const row = sites.find(x => x.host === host);
+    if (!row) return `<div class="sp-3 card"><div class="card-label">${esc(host)}</div><div class="empty-text" style="margin-top:12px">Absent du classement.</div></div>`;
+    const prev = snap[host];
+    const delta = (prev != null && prev !== row.score) ? (row.score > prev ? `<span class="trend-up">↑ ${row.score - prev}</span>` : `<span class="trend-down">↓ ${prev - row.score}</span>`) : '';
+    return `<div class="sp-3 card accent" style="--tool: var(--blue)">
+      <div class="card-label">${esc(host)}</div>
+      <div class="big">${row.score}<span class="unit">/100</span></div>
+      <div class="card-foot"><span class="grade ${esc(row.grade)}">${esc(row.grade)}</span><span>#${row.rank} du classement</span>${delta}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>audité ${relTime(row.ts)}</div>
+    </div>`;
+  }).join('');
+
+  const maxScore = Math.max(...sites.map(x => x.score), 1);
+  $('seo-board').innerHTML = `
+    <div class="sp-12 card">
+      <div class="card-head">
+        <div><div class="card-title">Classement public complet</div><div class="card-sub">${fmt(sites.length)} sites inscrits, mis à jour ${b.updated ? relTime(b.updated) : ''}</div></div>
+        <div class="legend"><span><i style="background:var(--emerald)"></i>Élite (90+)</span><span><i style="background:var(--blue)"></i>nos sites</span></div>
+      </div>
+      <div class="table-scroll"><table class="dtable">
+        <thead><tr><th>#</th><th style="text-align:left">Site</th><th>Score</th><th>Grade</th><th>Dernier audit</th><th>Niveau</th></tr></thead>
+        <tbody>${sites.map(x => `
+          <tr class="${CONFIG.ourHosts.includes(x.host) ? 'hl-row' : ''}">
+            <td class="muted" style="text-align:left">${x.rank}</td>
+            <td style="text-align:left">${x.score >= 90 ? '<span class="cdot" style="background:var(--emerald)"></span>' : ''}${esc(x.host)}</td>
+            <td><strong>${x.score}</strong></td>
+            <td><span class="grade ${esc(x.grade)}">${esc(x.grade)}</span></td>
+            <td class="muted">${relTime(x.ts)}</td>
+            <td><span class="tbar"><i style="width:${(x.score / maxScore * 100).toFixed(0)}%;background:${x.score >= 90 ? 'var(--emerald)' : SERIES.s1}"></i></span></td>
+          </tr>`).join('')}</tbody>
+      </table></div>
+    </div>`;
+}
+
+// ── VUE : ETP ───────────────────────────────────────────────────────────────
+function renderEtp() {
+  renderSiteTraffic('etp', 'etp-traffic', SERIES.s3, etpTrafficExtra());
+  const e = DATA.etp;
+  if (!e || !e.ok) {
+    $('etp-subs').innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Stats ExoTradingPlus! injoignables : ${esc(DATA.etpErr || (e && e.error) || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
+    $('etp-ondemand').innerHTML = ''; $('etp-referral').innerHTML = ''; $('etp-mode-tag').textContent = '';
+    return;
+  }
+  const a = e.abonnements, od = e.ondemand, pr = e.parrainage;
+  const isLive = e.stripeMode === 'live';
+  $('etp-mode-tag').innerHTML = `<span class="badge ${isLive ? 'live' : 'test'}">Stripe ${isLive ? 'LIVE' : 'TEST'}</span>`;
+
+  const tierMax = Math.max(a.parTier.classique, a.parTier.vip, a.parTier.vipplus, 1);
+  const tierRow = (label, n, color) => `
+    <div class="fstep" style="grid-template-columns:80px 1fr 46px">
+      <div class="fname">${label}</div>
+      <div class="ftrack"><div class="ffill" style="width:${n / tierMax * 100}%;background:${n === 0 ? 'var(--surface-3)' : color}"></div></div>
+      <div class="fstat">${fmt(n)}</div>
+    </div>`;
+
+  $('etp-subs').innerHTML = `
+    <div class="sp-4 card accent" style="--tool: var(--emerald)">
+      <div class="card-label">Abonnés actifs</div>
+      <div class="big hero">${fmt(a.actifs)}</div>
+      ${a.actifs === 0 ? `<div class="card-foot"><span class="dot" style="background:var(--warn)"></span>Backend prêt, bascule LIVE en attente du KYC Stripe</div>`
+        : `<div class="card-foot"><span class="dot"></span>dernier inscrit ${relTime(a.dernierInscrit)}</div>`}
+    </div>
+    <div class="sp-4 card">
+      <div class="card-label">MRR${infoBtn('mrr')}${isLive ? '' : ' '}</div>
+      <div class="big">${fmtEur(e.stripe.mrrCents)}</div>
+      <div class="card-foot"><span class="dot" style="background:${isLive ? 'var(--emerald)' : 'var(--warn)'}"></span>${e.stripe.abonnements} abonnement${e.stripe.abonnements > 1 ? 's' : ''} Stripe ${isLive ? '' : '(mode test)'}</div>
+      ${e.stripeErreur ? `<div class="card-foot"><span class="dot" style="background:var(--bad)"></span>Stripe : ${esc(e.stripeErreur)}</div>` : ''}
+    </div>
+    <div class="sp-4 card">
+      <div class="card-label">Répartition par palier</div>
+      <div style="margin-top:16px">
+        ${tierRow('Classique', a.parTier.classique, '#0F8A60')}
+        ${tierRow('VIP', a.parTier.vip, '#19B57E')}
+        ${tierRow('VIP+', a.parTier.vipplus, '#4CD8A8')}
+      </div>
+    </div>
+    <div class="sp-3 card"><div class="card-label">Essais en cours</div><div class="big">${fmt(a.trialing)}</div><div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span>trialing</div></div>
+    <div class="sp-3 card"><div class="card-label">Impayés</div><div class="big">${fmt(a.pastDue)}</div><div class="card-foot"><span class="dot" style="background:${a.pastDue ? 'var(--bad)' : 'var(--dull)'}"></span>past_due à surveiller</div></div>
+    <div class="sp-3 card"><div class="card-label">Résiliations programmées</div><div class="big">${fmt(a.resiliationsProgrammees)}</div><div class="card-foot"><span class="dot" style="background:${a.resiliationsProgrammees ? 'var(--warn)' : 'var(--dull)'}"></span>fin de période à venir</div></div>
+    <div class="sp-3 card"><div class="card-label">Abonnements annulés</div><div class="big">${fmt(a.annules)}</div><div class="card-foot"><span class="dot" style="background:var(--dull)"></span>historique cumulé</div></div>`;
+
+  const quotaPct = od.quotaTotal ? Math.min(100, Math.round(od.utiliseCeMois / od.quotaTotal * 100)) : 0;
+  $('etp-ondemand').innerHTML = `
+    <div class="sp-6 card">
+      <div class="card-label">Quota du mois${infoBtn('quota')}</div>
+      <div class="big">${fmt(od.utiliseCeMois)}<span class="unit">/ ${fmt(od.quotaTotal)} analyses</span></div>
+      <div class="meter" style="margin-top:16px"><i style="width:${quotaPct}%;background:${quotaPct > 85 ? 'var(--warn)' : 'var(--emerald)'};border-radius:4px"></i></div>
+      <div class="card-foot"><span class="dot"></span>${od.bonusCumules ? fmt(od.bonusCumules) + ' analyses bonus parrainage incluses' : 'aucun bonus parrainage pour l\'instant'}</div>
+    </div>
+    <div class="sp-2 card"><div class="card-label">En attente</div><div class="big">${fmt(od.demandes.enAttente)}</div><div class="card-foot"><span class="dot" style="background:${od.demandes.enAttente ? 'var(--warn)' : 'var(--dull)'}"></span>à traiter</div></div>
+    <div class="sp-2 card"><div class="card-label">En cours</div><div class="big">${fmt(od.demandes.enCours)}</div><div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span>analyse lancée</div></div>
+    <div class="sp-2 card"><div class="card-label">Livrées</div><div class="big">${fmt(od.demandes.livrees)}</div><div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>total livré</div></div>`;
+
+  const prMax = Math.max(pr.pending, pr.qualified, pr.credited, 1);
+  const prRow = (label, n, color, hint) => `
+    <div class="fstep" style="grid-template-columns:100px 1fr 46px">
+      <div class="fname">${label}</div>
+      <div class="ftrack"><div class="ffill" style="width:${n / prMax * 100}%;background:${n === 0 ? 'var(--surface-3)' : color}"></div></div>
+      <div class="fstat">${fmt(n)}</div>
+    </div><div style="font-size:11px;color:var(--ink-3);margin:-4px 0 10px">${hint}</div>`;
+  $('etp-referral').innerHTML = `
+    <div class="sp-6 card">
+      <div class="card-label">Tunnel de parrainage${infoBtn('parrainage')}</div>
+      <div style="margin-top:16px">
+        ${prRow('Inscrits', pr.pending, SERIES.s1, 'filleul inscrit, pas encore de 2e facture')}
+        ${prRow('Qualifiés', pr.qualified, '#19B57E', '2e prélèvement passé, crédit dû au parrain')}
+        ${prRow('Crédités', pr.credited, '#4CD8A8', 'avoir posé chez Stripe')}
+      </div>
+    </div>
+    <div class="sp-6 card">
+      <div class="card-label">Total filleuls</div>
+      <div class="big">${fmt(pr.total)}</div>
+      <div class="card-foot"><span class="dot"></span>${pr.total === 0 ? 'Le programme démarrera avec les premiers abonnés.' : 'tous statuts confondus'}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>Données agrégées ${relTime(e.generatedAt)}</div>
+    </div>`;
+}
+
+// ── LE FIL ──────────────────────────────────────────────────────────────────
+function mkNotif(id, tool, sev, title, detail) {
+  return { id, tool, sev, title, detail, day: fmtDate(new Date()) };
+}
+
+let PREV_SEO_SCORES = {};
+
+function buildFil() {
+  const S = store();
+  PREV_SEO_SCORES = S.seoScores || {};
+  const out = [];
+  const snapPatch = {};
+
+  // ── Site : GSC
+  const g = DATA.gsc;
+  if (g && g.timeline.length) {
+    const daily = g.timeline.map(r => ({ d: r.keys[0], c: r.clicks || 0 }));
+    const maxDay = daily.reduce((m, r) => r.c > m.c ? r : m, { c: -1 });
+    const known = S.gscDayRecord || 0;
+    if (maxDay.c > known && known > 0) {
+      out.push(mkNotif('gsc-record-' + maxDay.d, 'site', 'record', 'Record de clics : ' + maxDay.c + ' en un jour',
+        'Le ' + maxDay.d + ', meilleur jour jamais mesuré sur optimizia.xyz (précédent record : ' + known + ').'));
+    }
+    snapPatch.gscDayRecord = Math.max(known, maxDay.c);
+
+    if (daily.length >= 14) {
+      const last7 = daily.slice(-7).reduce((a, r) => a + r.c, 0);
+      const prev7 = daily.slice(-14, -7).reduce((a, r) => a + r.c, 0);
+      if (prev7 >= 5 && last7 < prev7 * 0.6) {
+        out.push(mkNotif('gsc-drop-' + fmtDate(new Date()), 'site', 'alerte', 'Chute des clics : -' + Math.round((1 - last7 / prev7) * 100) + '% sur 7 jours',
+          last7 + ' clics ces 7 derniers jours contre ' + prev7 + ' les 7 précédents. À investiguer : position, indexation, saisonnalité.'));
+      } else if (prev7 >= 5 && last7 > prev7 * 1.5) {
+        out.push(mkNotif('gsc-up-' + fmtDate(new Date()), 'site', 'record', 'Accélération : +' + Math.round((last7 / prev7 - 1) * 100) + '% de clics sur 7 jours',
+          last7 + ' clics contre ' + prev7 + ' la semaine précédente.'));
+      }
+    }
+
+    const opp = (g.queries || []).filter(q => (q.impressions || 0) >= 100 && (q.ctr || 0) < 0.01)
+      .sort((a, b) => b.impressions - a.impressions)[0];
+    if (opp) {
+      out.push(mkNotif('gsc-opp-' + opp.keys[0], 'site', 'action', 'Opportunité CTR : "' + opp.keys[0] + '"',
+        fmt(opp.impressions) + ' impressions et seulement ' + (opp.ctr * 100).toFixed(1).replace('.', ',') + '% de clics (position ' + opp.position.toFixed(1) + '). Un title ou une meta description plus incisifs peuvent débloquer ce volume.'));
+    }
+
+    const wi = sumKey(g.timeline, 'impressions');
+    const pos = wi ? g.timeline.reduce((s, r) => s + (r.position || 0) * (r.impressions || 0), 0) / wi : 0;
+    const pwi = sumKey(g.prev, 'impressions');
+    const ppos = pwi ? g.prev.reduce((s, r) => s + (r.position || 0) * (r.impressions || 0), 0) / pwi : 0;
+    if (ppos >= 10 && pos > 0 && pos < 10) {
+      out.push(mkNotif('gsc-pos10-' + fmtDate(new Date()), 'site', 'record', 'Première page atteinte',
+        'Position moyenne pondérée à ' + pos.toFixed(1).replace('.', ',') + ', contre ' + ppos.toFixed(1).replace('.', ',') + ' la période précédente.'));
+    }
+  } else if (DATA.gscErr) {
+    out.push(mkNotif('gsc-err-' + fmtDate(new Date()), 'ops', 'alerte', 'Search Console injoignable', DATA.gscErr));
+  }
+
+  // ── Tracker : les trois sites
+  if (DATA.events) {
+    const SITE_NAMES = { optimizia: 'optimizia.xyz', seoplus: 'seoplus.optimizia.xyz', etp: 'exotradingplus.com', romainben: 'romainben.cloud' };
+    const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'site' };
+    const now = Date.now();
+    ['optimizia', 'seoplus', 'etp', 'romainben'].forEach(site => {
+      const se = siteEvents(site);
+      const ev = se.clean;
+      const tool = SITE_TOOL[site], name = SITE_NAMES[site];
+      if (se.test.length > 0) {
+        out.push(mkNotif('trk-test-' + site + '-' + se.test.length, tool, 'creux', se.test.length + ' événement' + (se.test.length > 1 ? 's' : '') + ' de test dans le tracker de ' + name,
+          'Pages en file:// ou localhost, exclues de tous les calculs du dashboard.'));
+      }
+      if (!ev.length) return;
+      const conv48 = ev.filter(e => (e.event === 'cta_click' || e.event === 'form_submit') && now - new Date(e.timestamp).getTime() < 48 * 3600e3);
+      if (conv48.length) {
+        out.push(mkNotif('trk-conv-' + site + '-' + fmtDate(new Date()), tool, 'action', conv48.length + ' conversion' + (conv48.length > 1 ? 's' : '') + ' ces 48 h sur ' + name,
+          conv48.filter(e => e.event === 'form_submit').length + ' formulaire(s) et ' + conv48.filter(e => e.event === 'cta_click').length + ' clic(s) CTA. Un formulaire envoyé mérite une réponse rapide.'));
+      }
+      const ws = weekStats(ev);
+      if (ws.prev.sessions >= 5 && ws.curr.sessions < ws.prev.sessions * 0.6) {
+        out.push(mkNotif('trk-drop-' + site + '-' + fmtDate(new Date()), tool, 'alerte', name + ' : sessions en chute de ' + Math.round((1 - ws.curr.sessions / ws.prev.sessions) * 100) + '%',
+          ws.curr.sessions + ' sessions ces 7 jours contre ' + ws.prev.sessions + ' la semaine précédente.'));
+      } else if (ws.prev.sessions >= 5 && ws.curr.sessions > ws.prev.sessions * 1.5) {
+        out.push(mkNotif('trk-up-' + site + '-' + fmtDate(new Date()), tool, 'record', name + ' : sessions en hausse de ' + Math.round((ws.curr.sessions / ws.prev.sessions - 1) * 100) + '%',
+          ws.curr.sessions + ' sessions ces 7 jours contre ' + ws.prev.sessions + ' la semaine précédente.'));
+      }
+      if (ws.curr.pv === 0) {
+        out.push(mkNotif('trk-silence-' + site + '-' + fmtDate(new Date()), tool, 'alerte', 'Aucune page vue sur ' + name + ' depuis 7 jours',
+          'Soit le site n\'a réellement aucun trafic, soit le tracker ne remonte plus.'));
+      }
+    });
+    const etpPv = siteEvents('etp').clean.filter(e => e.event === 'pageview' && now - new Date(e.timestamp).getTime() < 7 * 86400e3);
+    const etpCheckout = new Set(etpPv.filter(e => (e.page || '').indexOf('checkout') !== -1).map(e => e.sessionId)).size;
+    const etpMerci = new Set(etpPv.filter(e => (e.page || '').indexOf('merci') !== -1).map(e => e.sessionId)).size;
+    if (etpCheckout > 0 && etpMerci === 0) {
+      out.push(mkNotif('etp-cart-' + fmtDate(new Date()), 'etp', 'action', etpCheckout + ' session(s) au checkout ExoTradingPlus! sans paiement',
+        'Des visiteurs arrivent au checkout mais aucune page merci vue ces 7 jours. À creuser : prix, réassurance, bug du tunnel.'));
+    }
+  } else if (DATA.eventsErr) {
+    out.push(mkNotif('trk-err-' + fmtDate(new Date()), 'ops', 'alerte', 'Tracker n8n injoignable', DATA.eventsErr));
+  }
+
+  // ── SEOPlus
+  if (DATA.seoStats && DATA.seoBoard) {
+    const s = DATA.seoStats, sites = DATA.seoBoard.sites || [];
+    const prevAudits = S.seoAudits;
+    if (prevAudits != null) {
+      const d = s.audits - prevAudits;
+      if (d > 0) out.push(mkNotif('seo-audits-' + s.audits, 'seoplus', 'info', d + ' nouvel' + (d > 1 ? 's' : '') + ' audit' + (d > 1 ? 's' : '') + ' depuis ta dernière visite', 'Total : ' + s.audits + ' audits sur ' + s.sites + ' sites.'));
+      else if (d === 0) out.push(mkNotif('seo-flat-' + fmtDate(new Date()), 'seoplus', 'creux', 'Aucun nouvel audit SEOPlus!', 'Le compteur n\'a pas bougé depuis ta dernière visite. Le moteur va bien, la demande non. L\'action utile est commerciale.'));
+    }
+    snapPatch.seoAudits = s.audits;
+
+    const prevScores = S.seoScores || {};
+    CONFIG.ourHosts.forEach(host => {
+      const row = sites.find(x => x.host === host);
+      if (!row) return;
+      const prev = prevScores[host];
+      if (prev != null && row.score !== prev) {
+        out.push(mkNotif('seo-score-' + host + '-' + row.score, 'seoplus', row.score > prev ? 'record' : 'alerte',
+          host + ' : ' + prev + ' devient ' + row.score + '/100',
+          row.score > prev ? 'Score en hausse au classement public (rang ' + row.rank + ').' : 'Score en baisse. Repasser un audit pour identifier la régression.'));
+      }
+    });
+    snapPatch.seoScores = Object.fromEntries(CONFIG.ourHosts.map(h => {
+      const r = sites.find(x => x.host === h); return [h, r ? r.score : (prevScores[h] ?? null)];
+    }).filter(([, v]) => v != null));
+
+    const prevCount = S.seoBoardCount;
+    if (prevCount != null && sites.length > prevCount) {
+      out.push(mkNotif('seo-newsites-' + sites.length, 'seoplus', 'info', (sites.length - prevCount) + ' nouveau(x) site(s) au classement public',
+        'Chaque inscrit est un prospect qui a laissé son domaine. ' + sites.length + ' sites inscrits au total.'));
+    }
+    snapPatch.seoBoardCount = sites.length;
+
+    const elite = sites.filter(x => x.score >= 90).length;
+    const prevElite = S.seoElite;
+    if (prevElite != null && elite !== prevElite) {
+      out.push(mkNotif('seo-elite-' + elite, 'seoplus', 'info', 'Cercle Élite : ' + prevElite + ' devient ' + elite + ' sites', 'Sites à 90 ou plus au classement public.'));
+    }
+    snapPatch.seoElite = elite;
+  } else if (DATA.seoErr) {
+    out.push(mkNotif('seo-err-' + fmtDate(new Date()), 'ops', 'alerte', 'Webhooks SEOPlus! injoignables', DATA.seoErr));
+  }
+
+  // ── ETP
+  if (DATA.etp && DATA.etp.ok) {
+    const e = DATA.etp;
+    const prevActifs = S.etpActifs;
+    if (prevActifs != null && e.abonnements.actifs > prevActifs) {
+      out.push(mkNotif('etp-new-' + e.abonnements.actifs, 'etp', 'record', (e.abonnements.actifs - prevActifs) + ' nouvel(s) abonné(s) ExoTradingPlus!',
+        e.abonnements.actifs + ' abonnés actifs, MRR ' + fmtEur(e.stripe.mrrCents) + (e.stripeMode === 'live' ? '.' : ' (mode test).')));
+    }
+    snapPatch.etpActifs = e.abonnements.actifs;
+    if (e.abonnements.resiliationsProgrammees > 0) {
+      out.push(mkNotif('etp-churn-' + e.abonnements.resiliationsProgrammees, 'etp', 'alerte',
+        e.abonnements.resiliationsProgrammees + ' résiliation(s) programmée(s)', 'Fin d\'accès à la fin de la période en cours. Une relance avant l\'échéance peut en sauver une partie.'));
+    }
+    if (e.ondemand.demandes.enAttente > 0) {
+      out.push(mkNotif('etp-oda-' + e.ondemand.demandes.enAttente + '-' + fmtDate(new Date()), 'etp', 'action',
+        e.ondemand.demandes.enAttente + ' demande(s) /analyse en attente', 'Des abonnés attendent une analyse ON DEMAND.'));
+    }
+    if (e.stripeMode !== 'live') {
+      out.push(mkNotif('etp-test', 'etp', 'creux', 'Stripe toujours en mode TEST',
+        'Les chiffres ETP de cette console sont des données de test. La bascule LIVE attend le KYC : au moment du passage, penser à recocher les events du webhook et changer la clé du workflow stats.'));
+    }
+    if (e.abonnements.pastDue > 0) {
+      out.push(mkNotif('etp-pastdue-' + e.abonnements.pastDue, 'etp', 'alerte', e.abonnements.pastDue + ' paiement(s) en échec',
+        'Statut past_due : Stripe va retenter, mais un email proactif limite le churn involontaire.'));
+    }
+  } else if (DATA.etpErr) {
+    out.push(mkNotif('etp-err-' + fmtDate(new Date()), 'ops', 'alerte', 'Stats ExoTradingPlus! injoignables', DATA.etpErr));
+  }
+
+  if (!out.length) {
+    out.push(mkNotif('calm-' + fmtDate(new Date()), 'ops', 'creux', 'Journée calme', 'Rien d\'anormal ni de notable détecté sur les trois outils.'));
+  }
+
+  const sevRank = { alerte: 0, action: 1, record: 2, info: 3, creux: 4 };
+  out.sort((a, b) => sevRank[a.sev] - sevRank[b.sev]);
+  FIL = out;
+  saveStore(snapPatch);
+  renderFil();
+}
+
+function filItemHTML(n) {
+  const read = (store().readIds || []).includes(n.id);
+  return `<div class="fil-item sev-${n.sev} ${read ? 'read' : ''}" data-id="${esc(n.id)}">
+    <div class="fil-dot"></div>
+    <div class="fil-body">
+      <div class="fil-top"><span class="fil-tool ft-${n.tool}">${{ site: 'Site', seoplus: 'SEOPlus', etp: 'ETP', ops: 'Console' }[n.tool]}</span><div class="fil-t">${esc(n.title)}</div></div>
+      <div class="fil-d">${esc(n.detail)}</div>
+    </div>
+  </div>`;
+}
+
+function renderFil() {
+  const list = $('fil-list');
+  $('fil-count').textContent = FIL.length ? FIL.length + ' entrées' : '';
+  list.innerHTML = FIL.length
+    ? `<div class="fil-day">Calculé à l'ouverture · ${new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>` + FIL.map(filItemHTML).join('')
+    : '<div class="fil-empty">Rien à signaler.<br>Le Fil se remplit à chaque ouverture du dashboard.</div>';
+}
+
+function updateBadge() {
+  const read = store().readIds || [];
+  const unread = FIL.filter(n => !read.includes(n.id) && n.sev !== 'creux').length;
+  const b = $('fil-badge');
+  b.textContent = unread;
+  b.classList.toggle('zero', unread === 0);
+}
+
+function openFil() {
+  $('fil').classList.add('open');
+  $('fil-veil').classList.add('open');
+}
+function closeFil() {
+  $('fil').classList.remove('open');
+  $('fil-veil').classList.remove('open');
+  const read = new Set(store().readIds || []);
+  FIL.forEach(n => read.add(n.id));
+  saveStore({ readIds: Array.from(read).slice(-300) });
+  updateBadge();
+  renderFil();
+  if (currentView === 'apercu') renderApercu();
+}
+$('btn-fil').addEventListener('click', openFil);
+$('fil-close').addEventListener('click', closeFil);
+$('fil-veil').addEventListener('click', closeFil);
+$('fil-markall').addEventListener('click', () => { closeFil(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFil(); });
+
+// ── NAVIGATION ──────────────────────────────────────────────────────────────
+const VIEW_TITLES = { apercu: 'Aperçu', site: 'Site OptimizIA.xyz', seoplus: 'SEOPlus!', etp: 'ExoTradingPlus!' };
+const rendered = {};
+
+function renderView(name, force) {
+  if (force) Object.keys(rendered).forEach(k => rendered[k] = false);
+  if (!rendered[name]) {
+    if (name === 'apercu') renderApercu();
+    if (name === 'site') renderSite();
+    if (name === 'seoplus') renderSeoplus();
+    if (name === 'etp') renderEtp();
+    rendered[name] = true;
+  }
+}
+
+function showView(name) {
+  currentView = name;
+  document.querySelectorAll('.rail-btn').forEach(b => b.classList.toggle('active', b.dataset.view === name));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + name));
+  $('topbar-title').innerHTML = '<span class="crumb">Console / </span>' + VIEW_TITLES[name];
+  renderView(name);
+}
+document.querySelectorAll('.rail-btn').forEach(b => b.addEventListener('click', () => showView(b.dataset.view)));
+
+// ── DATE RANGE ──────────────────────────────────────────────────────────────
+async function reloadGsc() {
+  await loadGSC();
+  rendered.site = false; rendered.apercu = false;
+  renderView(currentView);
+}
+
+document.querySelectorAll('.date-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const v = btn.dataset.days;
+    const customEl = $('date-custom');
+    if (v === 'custom') {
+      customEl.classList.remove('hidden');
+      const defStart = new Date(); defStart.setDate(defStart.getDate() - 27);
+      if (!$('date-start').value) $('date-start').value = fmtDate(defStart);
+      if (!$('date-end').value) $('date-end').value = fmtDate(new Date());
+      return;
+    }
+    customEl.classList.add('hidden');
+    currentDays = parseInt(v, 10);
+    if (accessToken) reloadGsc();
+  });
+});
+$('btn-apply-custom').addEventListener('click', () => {
+  const s = $('date-start').value, e = $('date-end').value;
+  if (!s || !e || new Date(s) > new Date(e)) return;
+  customStart = s; customEnd = e; currentDays = 'custom';
+  if (accessToken) reloadGsc();
+});
+
+if (window._gis.ready) initGIS();
+</script>
+</body>
+</html>
