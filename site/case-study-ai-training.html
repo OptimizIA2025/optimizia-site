@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="canonical" href="https://www.optimizia.xyz/case-study-ai-training.html">
+    <link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/realisation-formation-ia.html">
+    <link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/case-study-ai-training.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/case-study-ai-training.html">
+    <title>AI Training for a Freelancer Community | OptimizIA.xyz</title>
+    <meta name="description" content="Case study: an AI adoption workshop from the first prompt to the autonomous agent, designed and delivered for a freelancer community.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Training for a Freelancer Community | OptimizIA.xyz">
+    <meta property="og:description" content="Case study: an AI adoption workshop from the first prompt to the autonomous agent, designed and delivered for a freelancer community.">
+    <meta property="og:url" content="https://www.optimizia.xyz/case-study-ai-training.html">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Training for a Freelancer Community | OptimizIA.xyz">
+    <meta name="twitter:description" content="Case study: an AI adoption workshop from the first prompt to the autonomous agent, designed and delivered for a freelancer community.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+
+    <link rel="preload" href="assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <link rel="stylesheet" href="assets/css/index-en.39634e9f.css">
+    <style>
+        /* Page etude de cas : le dialogue de modale devient un bloc de page */
+        .rpage { padding: 132px 0 96px; }
+        .rpage .rmodal-dialog {
+            transform: none;
+            box-shadow: none;
+            margin: 0 auto;
+            border: 1px solid var(--border);
+        }
+        .rpage-back {
+            display: inline-block;
+            margin-bottom: 22px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+        .rpage-back:hover { color: var(--orange); }
+        .rpage-cta {
+            max-width: 960px;
+            margin: 46px auto 0;
+            padding: 40px 36px;
+            border-radius: var(--radius-xl);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .rpage-cta h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin-bottom: 12px; }
+        .rpage-cta p { color: var(--text-muted); margin-bottom: 24px; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.optimizia.xyz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case studies",
+          "item": "https://www.optimizia.xyz/case-studies.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI adoption and training",
+          "item": "https://www.optimizia.xyz/case-study-ai-training.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.optimizia.xyz/case-study-ai-training.html#article",
+      "headline": "AI adoption and training",
+      "description": "Case study: an AI adoption workshop from the first prompt to the autonomous agent, designed and delivered for a freelancer community.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.optimizia.xyz/#website"
+      },
+      "author": {
+        "@id": "https://www.optimizia.xyz/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.optimizia.xyz/#organization"
+      },
+      "about": [
+        "AI training",
+        "AI adoption",
+        "Prompt engineering",
+        "AI agents"
+      ],
+      "mainEntityOfPage": "https://www.optimizia.xyz/case-study-ai-training.html",
+      "image": "https://www.optimizia.xyz/assets/og-image.png"
+    }
+    </script>
+    <script src="assets/oia-lang.js" defer></script>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+        <div class="nav-links">
+            <a href="/#constat">Why now</a>
+            <a href="/#benefices">Benefits</a>
+            <a href="/#methode">Method</a>
+            <a href="/#services">Services</a>
+            <a href="/#automatisation" class="active">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="/#questions-frequentes">FAQ</a>
+            <a href="contact.html" class="nav-cta">Free audit</a>
+            <div class="lang-toggle">
+                <a href="fr/realisation-formation-ia.html" class="lang-btn">FR</a>
+                <span class="lang-sep">|</span>
+                <span class="lang-btn lang-active">EN</span>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/#constat">Why now</a>
+    <a href="/#benefices">Benefits</a>
+    <a href="/#methode">Method</a>
+    <a href="/#services">Services</a>
+    <a href="/#automatisation" class="active">Case studies</a>
+    <a href="about.html">About</a>
+    <a href="/#questions-frequentes">FAQ</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
+    <div class="lang-toggle lang-toggle-mobile">
+        <a href="fr/realisation-formation-ia.html" class="lang-btn">FR</a>
+        <span class="lang-sep">|</span>
+        <span class="lang-btn lang-active">EN</span>
+    </div>
+</div>
+
+
+<main class="rpage">
+<div class="container">
+    <a href="case-studies.html" class="rpage-back">&#60; All case studies</a>
+</div>
+<div class="container">
+<div class="rmodal-dialog">
+
+        
+
+        <header class="rmodal-hero">
+            <span class="rmodal-eyebrow">
+                <span class="dot" aria-hidden="true"></span>
+                Case study · AI Adoption &amp; Training
+            </span>
+            <h1 class="rmodal-title">
+                Bringing a freelancer community up to speed on AI, <em>from the first prompt to the autonomous agent</em>.
+            </h1>
+            <p class="rmodal-lead">
+                On March 19, 2026, we ran an AI adoption workshop for an audience of freelancers and solopreneurs. The common thread was not technology but usage: "if you got two hours back every day, what would you do with them?" The goal: demystify AI, give a clear map of its uses, and trigger action. A work of teaching, exchange and knowledge sharing, more than a tool demo.
+            </p>
+        </header>
+
+        <div class="rmodal-stats">
+            <div class="rmodal-stat">
+                <div class="v"><em>77</em>%</div>
+                <div class="l">Usage limited to search</div>
+            </div>
+            <div class="rmodal-stat">
+                <div class="v"><em>6</em> levels</div>
+                <div class="l">A map of AI usage</div>
+            </div>
+            <div class="rmodal-stat">
+                <div class="v"><em>2</em>h / day</div>
+                <div class="l">Target time to free up</div>
+            </div>
+            <div class="rmodal-stat">
+                <div class="v">03/19/26</div>
+                <div class="l">Workshop delivered in person</div>
+            </div>
+        </div>
+
+        <div class="rmodal-body">
+
+            <section class="rmodal-section">
+                <h3><span class="num">01</span> The observation that opens the workshop</h3>
+                <p class="kicker">
+                    AI is everywhere, yet most people use only a tiny part of it. That is exactly where the opportunity lies: everything beyond plain conversation is still a blue ocean.
+                </p>
+                <div class="pipe-detail">
+                    <div class="pipe-detail-list">
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">The audience</div>
+                            <div class="pipe-detail-val">
+                                <strong>Freelancers and solopreneurs</strong> looking for one thing above all: reclaiming time from repetitive tasks to reinvest it where they create value.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">The trigger</div>
+                            <div class="pipe-detail-val">
+                                One simple question asked upfront: <strong>"if you got two hours back every day, what would you do with them?"</strong> The rest of the workshop delivers on that promise.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">The stake</div>
+                            <div class="pipe-detail-val">
+                                <strong>77% of users treat AI as a search engine</strong>: they ask questions in a plain conversation and stop there. Very few move on to analyzing their files, automation or agents. As a reminder, ChatGPT reached 100 million users in two months where Facebook took four years: adoption is massive, usage stays shallow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rmodal-section">
+                <h3><span class="num">02</span> The 6 levels of AI, from simple to most powerful</h3>
+                <p class="kicker">
+                    The teaching core of the workshop: a grid to place every use case. No need to master everything, depending on your tasks, one or two levels are often enough.
+                </p>
+                <div class="pipe-detail">
+                    <div class="pipe-detail-list">
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">01 · LLM</div>
+                            <div class="pipe-detail-val">
+                                <strong>Conversational LLMs.</strong> Chatting, writing, brainstorming with a language model drawing on its general knowledge.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">02 · RAG</div>
+                            <div class="pipe-detail-val">
+                                <strong>RAG and document analysis.</strong> Having AI reason over your own files to get answers grounded in your documents.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">03 · Automatisation</div>
+                            <div class="pipe-detail-val">
+                                <strong>Process automation.</strong> Connecting your tools to each other (n8n, Make, Zapier) to chain tasks without intervention.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">04 · Agents</div>
+                            <div class="pipe-detail-val">
+                                <strong>AI agents.</strong> An autonomous virtual team: an LLM with reasoning and long memory that carries a task end to end.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">05 · MCP</div>
+                            <div class="pipe-detail-val">
+                                <strong>MCP, Model Context Protocol.</strong> A standard that lets AI drive your software and services by talking directly to your tools.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">06 · Vibe coding</div>
+                            <div class="pipe-detail-val">
+                                <strong>Vibe coding and apps.</strong> Building applications without coding, by simply describing what you want.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="capture-card" style="margin-top:24px;">
+                    <figcaption class="capture-head">
+                        <span class="capture-head-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></span>
+                        <div>
+                            <h4>From city car to F1, the teaching infographic</h4>
+                            <span class="l">The 6 levels illustrated through a race car metaphor</span>
+                        </div>
+                    </figcaption>
+                    <div class="capture-img">
+                        <picture><source srcset="formation-pics/infographie-ia.webp" type="image/webp"><img src="formation-pics/infographie-ia.webp" width="1600" height="872" alt="Teaching infographic: from city car to Formula 1, each step illustrates a level of AI, from a standalone LLM to the full ecosystem with agents, MCP and skills." loading="lazy" decoding="async"></picture>
+                    </div>
+                </figure>
+                <p class="kicker" style="margin-top:14px;font-style:italic;">
+                    With learning AI, the road you take is almost as exciting as the destination.
+                </p>
+            </section>
+
+            <section class="rmodal-section">
+                <h3><span class="num">03</span> AI does not replace you, it amplifies you</h3>
+                <p class="kicker">
+                    The message that reassures and reframes. AI acts like a magnifying glass, a megaphone, a jet engine: it separates those who get organized from those who improvise.
+                </p>
+                <div class="pipe-detail">
+                    <div class="pipe-detail-list">
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">Stays with you</div>
+                            <div class="pipe-detail-val">
+                                Your <strong>domain expertise</strong>, your <strong>professional judgment</strong>, your <strong>creativity</strong> and the <strong>human relationship</strong>. What makes your value cannot be delegated.
+                            </div>
+                        </div>
+                        <div class="pipe-detail-item">
+                            <div class="pipe-detail-key">Delegated to AI</div>
+                            <div class="pipe-detail-val">
+                                The <strong>repetitive tasks</strong>, the <strong>formatting</strong>, the <strong>information gathering</strong> and the <strong>first draft</strong>. Everything that weighs on you without really setting you apart.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rmodal-section">
+                <h3><span class="num">04</span> The business case for time</h3>
+                <p class="kicker">
+                    Two hours saved every day by automating repetitive tasks is twelve weeks reclaimed over the year, nearly three months. The real question is what you do with them.
+                </p>
+                <div class="stack">
+                    <span class="chip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /><circle cx="12" cy="12" r="10" /></svg> Strategy &amp; vision</span>
+                    <span class="chip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg> Quality prospecting</span>
+                    <span class="chip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="M7 21h10" /><path d="M12 3v18" /><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></svg> Work / life balance</span>
+                    <span class="chip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg> Ambitious projects</span>
+                </div>
+            </section>
+
+            <section class="rmodal-section">
+                <h3><span class="num">05</span> The gift: your Prompt Engineering expert</h3>
+                <p class="kicker">
+                    No need to be a pro. Copy the prompt below, paste it into ChatGPT, Claude or Gemini, and you get an assistant that turns your vague requests into clear, effective prompts, and explains why. One of the reflexes shared during the workshop.
+                </p>
+                <div class="gift-prompt">
+                    <div class="gift-prompt-head">
+                        <span class="gift-prompt-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" /></svg> Expert Prompt Engineering</span>
+                        <button type="button" class="copy-btn" data-copy-target="gift-prompt-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>
+                            <span class="copy-btn-label">Copy the prompt</span>
+                        </button>
+                    </div>
+<pre class="gift-prompt-code" id="gift-prompt-text">You are a prompt engineering expert, specialized in large language models (ChatGPT, Claude, Gemini). Your mission: turn a vague request into a clear, structured, effective prompt, then briefly explain why.
+
+# Your method
+When I submit a task or an existing prompt, you apply these techniques in order, keeping only the useful ones:
+1. Clarity and direction: state the usage context, the target audience and the expected format. Say what to do, not only what to avoid.
+2. Examples (multishot): if consistency matters, add 2 or 3 examples of input and ideal output.
+3. Step-by-step reasoning: for complex tasks, ask the model to think before answering.
+4. Structure: separate role, context, examples, instructions and data with named tags (&lt;context&gt;, &lt;instructions&gt;, &lt;data&gt;).
+5. Role: give the model a precise persona, such as "You are a [domain] expert with X years of experience".
+6. Output format: explicitly define the structure, length and format of the answer.
+
+# How you answer
+1. If my request is ambiguous, first ask 1 to 3 clarifying questions.
+2. Deliver the improved prompt, ready to copy, in a structured block.
+3. Add a short "Why" section: 3 to 5 bullets explaining the key choices.
+4. Offer a shorter version if the task is simple.
+
+# Your principles
+- A prompt a colleague without context would not understand, the model will not either.
+- Always show an example of the ideal output rather than hoping for it.
+- Prefer positive, precise instructions over vague prohibitions.
+- Never invent: if information is missing, ask for it.
+
+Start by asking me what task I want to hand to the AI.</pre>
+                </div>
+                <p class="kicker" style="margin-top:22px;">
+                    Want more AI and productivity tips in the same spirit, concrete and jargon-free? We share them regularly.
+                </p>
+                <div class="pipe-detail" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+                    <div class="pipe-detail-val" style="margin:0;max-width:420px;">
+                        Follow the OptimizIA.xyz LinkedIn page so you never miss one.
+                    </div>
+                    <a href="https://www.linkedin.com/company/optimizia-xyz" target="_blank" rel="noopener" class="sf-btn" style="margin-top:0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+                        Follow OptimizIA.xyz
+                    </a>
+                </div>
+            </section>
+
+            <section class="rmodal-section">
+                <div class="savoir-faire">
+                    <div class="savoir-faire-inner">
+                        <span class="overline">The expertise on display</span>
+                        <h3>Transferring knowledge, not just delivering.</h3>
+                        <p>
+                            Deploying a tool is not enough, teams still need to make it their own. This project shows the other side of our work: <strong style="color:#fff;">AI adoption and knowledge sharing</strong>. Demystifying AI, providing a shared reading grid and sparking the urge to experiment is what turns a tool into real, lasting usage.
+                        </p>
+                        <p style="margin-top:14px;">
+                            Thanks to <a href="https://www.rh-solutions.com/nos-agences/portage-salarial-beziers/" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700;text-decoration:underline;text-underline-offset:3px;">RH Solutions Portage Salarial</a> for their warm welcome and for organizing this event.
+                        </p>
+                        <a href="contact.html#reservation" class="sf-btn">
+                            Book a discovery call
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="rpage-cta reveal">
+        <h2>A use case close to yours?</h2>
+        <p>A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.</p>
+        <a href="contact.html" class="btn btn-orange">Book a slot</a>
+    </div>
+</div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="https://www.ginoux.xyz" target="_blank" class="footer-ginoux">
+                    ↗ ginoux.xyz — Rémy Ginoux's journey
+                </a>
+                <a href="https://www.romainben.cloud" target="_blank" class="footer-ginoux">
+                    ↗ romainben.cloud — Romain Ben's journey
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/#constat">Why now</a></li>
+                    <li><a href="/#benefices">Benefits</a></li>
+                    <li><a href="/#methode">Method</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#automatisation">Case studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="/#questions-frequentes">FAQ</a></li>
+                </ul>                <h4 style="margin-top:26px;">Resources</h4>
+                <ul>
+                    <li><a href="ai-integration-agency.html">AI integration agency</a></li>
+                    <li><a href="n8n-agency.html">n8n agency</a></li>
+                    <li><a href="ai-audit.html">Free AI audit</a></li>
+                    <li><a href="case-studies.html">Case studies</a></li>
+                    <li><a href="/tools/seoplus/?lang=en">SEO &amp; GEO audit tool (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                    <li><a href="https://www.linkedin.com/in/remyginoux/" target="_blank">LinkedIn — Rémy Ginoux</a></li>
+                    <li><a href="https://www.linkedin.com/in/romainben/" target="_blank">LinkedIn — Romain Ben</a></li>
+                </ul>
+                <p style="margin-top:14px;">Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 OptimizIA.xyz · All rights reserved · <a href="legal-notice.html" class="legal-link">Legal Notice</a> · <a href="/tools/seoplus/" class="legal-link" target="_blank" rel="noopener">Website audited by SEOPlus!</a></p>
+            <p><span style="color: var(--text-muted);">optimizia.xyz</span> · <a href="https://www.ginoux.xyz">ginoux.xyz</a> · <a href="https://www.romainben.cloud">romainben.cloud</a></p>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<script>
+(function(){
+    var currentHash = '';
+    var ticking = false;
+
+    function getSections(){
+        return Array.prototype.slice.call(
+            document.querySelectorAll('section[id], [id="top"]')
+        );
+    }
+
+    function updateCurrentSection(){
+        var threshold = 150;
+        var sections = getSections();
+        var found = '';
+        for (var i = 0; i < sections.length; i++){
+            var rect = sections[i].getBoundingClientRect();
+            if (rect.top - threshold <= 0) found = '#' + sections[i].id;
+        }
+        if (!found && (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4) {
+            if (sections.length) found = '#' + sections[sections.length - 1].id;
+        }
+        currentHash = found;
+    }
+
+    function applyHrefs(){
+        var hash = currentHash || location.hash || '';
+        document.querySelectorAll('.lang-toggle a.lang-btn').forEach(function(a){
+            var base = a.href.split('#')[0];
+            a.href = hash ? base + hash : base;
+        });
+    }
+
+    function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function(){
+            updateCurrentSection();
+            applyHrefs();
+            ticking = false;
+        });
+    }
+
+    function init(){
+        updateCurrentSection();
+        applyHrefs();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('hashchange', applyHrefs);
+        window.addEventListener('resize', onScroll);
+        window.addEventListener('load', onScroll);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. data-clarity vide = Clarity totalement inerte. -->
+<script src="assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="assets/oia-clarity.js" data-clarity="" data-legal="legal-notice.html" data-accent="#F97316" defer></script>
+</body>
+</html>

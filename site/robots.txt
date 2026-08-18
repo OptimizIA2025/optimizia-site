@@ -50,4 +50,10 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
+# Deux produits, un seul domaine depuis le 16/08, donc un seul robots.txt :
+# celui-ci, servi par le conteneur de l'agence. SEOPlus vit sous /tools/seoplus/
+# et son sitemap ne peut etre declare NULLE PART AILLEURS, un crawler ne lisant
+# le robots.txt qu'a la racine de l'origine. Le retirer rendrait ses 80 articles
+# decouvrables par les seuls liens internes.
 Sitemap: https://www.optimizia.xyz/sitemap.xml
+Sitemap: https://www.optimizia.xyz/tools/seoplus/sitemap.xml
