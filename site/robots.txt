@@ -3,6 +3,10 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /console/
+# Les pages personnelles de SEOPlus (rapport, bilan, roast, compte) ne sont
+# PAS listees ici : elles portent deja <meta name="robots" content="noindex">.
+# Les interdire au crawl empecherait justement de lire ce noindex, et l'adresse
+# resterait affichable en resultat nu. Un seul mecanisme, le bon.
 
 # Crawlers IA et moteurs de reponse, autorises explicitement (GEO)
 User-agent: GPTBot

@@ -61,6 +61,26 @@
         "@id": "https://www.optimizia.xyz/fr/index.html#service-copilotage",
         "name": "Copilotage IA & Amelioration continue"
       }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "WebApplication",
+        "@id": "https://www.optimizia.xyz/tools/seoplus/#app",
+        "name": "SEOPlus!",
+        "url": "https://www.optimizia.xyz/tools/seoplus/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "WebApplication",
+        "@id": "https://www.optimizia.xyz/tools/seoplus/generateur-llms-txt.html#app",
+        "name": "Generateur de llms.txt",
+        "url": "https://www.optimizia.xyz/tools/seoplus/generateur-llms-txt.html"
+      }
     }
   ]
 }
