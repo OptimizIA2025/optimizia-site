@@ -32,6 +32,8 @@
       --blue-soft: rgba(94, 161, 247, 0.13);
       --emerald: #34D399;
       --emerald-soft: rgba(52, 211, 153, 0.12);
+      --violet: #9085E9;
+      --gold: #C9A227;
       --ok: #34D399;
       --warn: #FBBF24;
       --bad: #F87171;
@@ -167,6 +169,8 @@
     .rail-btn[data-view="site"] { --tool: var(--orange); }
     .rail-btn[data-view="seoplus"] { --tool: var(--blue); }
     .rail-btn[data-view="etp"] { --tool: var(--emerald); }
+    .rail-btn[data-view="romainben"] { --tool: var(--violet); }
+    .rail-btn[data-view="ginoux"] { --tool: var(--gold); }
 
     .rail-foot { margin-top: auto; padding: 12px 10px 0; border-top: 1px solid var(--border); }
     .rail-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -493,6 +497,9 @@
     .ft-seoplus { background: var(--blue-soft); color: var(--blue); }
     .ft-etp { background: var(--emerald-soft); color: var(--emerald); }
     .ft-ops { background: var(--surface-3); color: var(--ink-2); }
+    .ft-romainben { background: rgba(144, 133, 233, 0.14); color: var(--violet); }
+    .ft-ginoux { background: rgba(201, 162, 39, 0.14); color: var(--gold); }
+    .ft-inconnu { background: rgba(251, 191, 36, 0.14); color: var(--warn); }
     .fil-t { font-size: 13px; font-weight: 600; line-height: 1.35; }
     .fil-d { font-size: 12px; color: var(--ink-2); line-height: 1.5; margin-top: 3px; }
     .fil-item.read .fil-t { color: var(--ink-2); font-weight: 500; }
@@ -592,6 +599,8 @@
       <button class="rail-btn" data-view="site"><span class="dot"></span>Site OptimizIA.xyz</button>
       <button class="rail-btn" data-view="seoplus"><span class="dot"></span>SEOPlus!</button>
       <button class="rail-btn" data-view="etp"><span class="dot"></span>ExoTradingPlus!</button>
+      <button class="rail-btn" data-view="romainben"><span class="dot"></span>romainben.cloud</button>
+      <button class="rail-btn" data-view="ginoux"><span class="dot"></span>ginoux.xyz</button>
       <div class="rail-foot">
         <div class="rail-user">
           <img class="rail-avatar" id="user-avatar" src="" alt="" style="display:none" referrerpolicy="no-referrer">
@@ -631,6 +640,10 @@
           <div class="section">
             <div class="section-label">État des trois outils</div>
             <div class="grid" id="ov-tools"></div>
+          </div>
+          <div class="section">
+            <div class="section-label">Autres sites mesurés <span class="tag">tracker seul</span></div>
+            <div class="grid" id="ov-autres"></div>
           </div>
           <div class="section">
             <div class="section-label">Le Fil <span class="tag">dernières entrées</span></div>
@@ -696,6 +709,24 @@
           <div class="section" style="--tool: var(--emerald)">
             <div class="section-label">Parrainage</div>
             <div class="grid" id="etp-referral"></div>
+          </div>
+        </div>
+
+        <div class="view" id="view-romainben">
+          <div class="section" style="--tool: var(--violet)">
+            <div class="section-label">Trafic du site <span class="tag">tracker on-site, pas de Search Console sur ce domaine</span></div>
+            <div class="grid" id="rb-traffic"></div>
+          </div>
+        </div>
+
+        <div class="view" id="view-ginoux">
+          <div class="section" style="--tool: var(--gold)">
+            <div class="section-label">État de la pose <span class="tag">passation RGI</span></div>
+            <div class="grid" id="gx-etat"></div>
+          </div>
+          <div class="section" style="--tool: var(--gold)">
+            <div class="section-label">Trafic du site <span class="tag">tracker on-site</span></div>
+            <div class="grid" id="gx-traffic"></div>
           </div>
         </div>
       </main>
@@ -1243,6 +1274,26 @@ function renderApercu() {
     chip('gsc', 'Search Console') + chip('tracker', 'Tracker n8n') +
     chip('seoStats', 'SEOPlus! stats') + chip('seoBoard', 'SEOPlus! classement') + chip('etp', 'ETP stats');
 
+  // ── Les deux sites sans backend ni Search Console : ils ont leur vue au rail,
+  // ce resume evite d'avoir a y aller pour savoir s'ils vivent.
+  const AUTRES = [
+    { site: 'romainben', label: 'romainben.cloud', couleur: 'var(--violet)', attente: '' },
+    { site: 'ginoux', label: 'ginoux.xyz', couleur: 'var(--gold)', attente: 'Mesure pas encore posée : passation à RGI en cours.' },
+  ];
+  $('ov-autres').innerHTML = AUTRES.map(a => {
+    const ev = siteEvents(a.site).clean;
+    const w = ev.length ? weekStats(ev) : null;
+    return `<div class="sp-6 card accent" style="--tool: ${a.couleur}">
+      <div class="card-label">${esc(a.label)}</div>
+      ${w ? `<div class="big">${fmt(w.curr.visitors)}<span class="unit">visiteur${w.curr.visitors > 1 ? 's' : ''} sur 7 jours</span></div>
+      <div class="card-foot">${trendHTML(w.curr.visitors, w.prev.visitors)}</div>
+      <div class="card-foot"><span class="dot" style="background:${a.couleur}"></span>${fmt(w.curr.sessions)} session${w.curr.sessions > 1 ? 's' : ''}, ${fmt(w.curr.pv)} page${w.curr.pv > 1 ? 's' : ''} vue${w.curr.pv > 1 ? 's' : ''}</div>`
+      : `<div class="big">–</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>${esc(a.attente || 'Aucune visite mesurée pour le moment.')}</div>`}
+      <div class="card-foot"><button class="btn-ghost" onclick="showView('${a.site}')">Ouvrir la vue</button></div>
+    </div>`;
+  }).join('');
+
   // ── Clarity : la couche 2 étant exemptée, elle tourne pendant l'affichage du
   // bandeau et enregistre les clics sur ses boutons : le taux d'acceptation se
   // calcule depuis notre propre base, sans rien demander à Microsoft.
@@ -1681,9 +1732,9 @@ function renderSiteBehavior() {
 }
 
 // ── VUE : SEOPLUS ───────────────────────────────────────────────────────────
-function seoTrafficExtra() {
+function pagesVuesExtra(site) {
   const now = Date.now();
-  const events = siteEvents('seoplus').clean;
+  const events = siteEvents(site).clean;
   const map = {};
   events.forEach(e => {
     if (now - new Date(e.timestamp).getTime() > 30 * 86400e3) return;
@@ -1727,7 +1778,7 @@ function etpTrafficExtra() {
 }
 
 function renderSeoplus() {
-  renderSiteTraffic('seoplus', 'seo-traffic', SERIES.s1, seoTrafficExtra());
+  renderSiteTraffic('seoplus', 'seo-traffic', SERIES.s1, pagesVuesExtra('seoplus'));
   const s = DATA.seoStats, b = DATA.seoBoard;
   if (!s || !b) {
     $('seo-engine').innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Webhooks SEOPlus! injoignables : ${esc(DATA.seoErr || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
@@ -1807,6 +1858,57 @@ function renderSeoplus() {
           </tr>`).join('')}</tbody>
       </table></div>
     </div>`;
+}
+
+// ── VUES : LES DEUX PETITS SITES ───────────────────────────────
+// romainben.cloud et ginoux.xyz n'ont pas de propriete Search Console connectee
+// (celle du jeton est sc-domain:optimizia.xyz) ni de backend a interroger :
+// tout ce qui s'affiche vient du tracker, d'ou des vues plus courtes.
+
+function feedExtra(site) {
+  const events = siteEvents(site).clean;
+  if (!events.length) return '';
+  return `<div class="sp-12 card">
+    <div class="card-head">
+      <div><div class="card-title">Flux d'activité${infoBtn('feed')}</div><div class="card-sub">40 derniers événements du tracker</div></div>
+      <div class="rmeta">${fmt(events.length)} événements</div>
+    </div>
+    <div class="feed-items">${events.slice(0, 40).map(e => {
+      const m = FEED_META[e.event] || { cls: 'fi-view', tag: '?', lbl: e.event || '?' };
+      return `<div class="feed-item">
+        <div class="feed-ico ${m.cls}">${m.tag}</div>
+        <div class="feed-main">
+          <div class="feed-line"><span class="feed-type">${esc(m.lbl)}</span>${e.element ? `<span class="feed-elem">${esc(String(e.element).slice(0, 80))}</span>` : ''}</div>
+          <div class="feed-page">${esc(String(e.page || '').slice(0, 70))}</div>
+        </div>
+        <div class="feed-when">${relShort(e.timestamp)}</div>
+      </div>`;
+    }).join('')}</div>
+  </div>`;
+}
+
+function renderRomainben() {
+  renderSiteTraffic('romainben', 'rb-traffic', SERIES.s5, pagesVuesExtra('romainben') + feedExtra('romainben'));
+}
+
+function renderGinoux() {
+  const pose = siteEvents('ginoux').clean.length > 0;
+  $('gx-etat').innerHTML = `
+    <div class="sp-6 card accent" style="--tool: var(--gold)">
+      <div class="card-label">Pose de la mesure</div>
+      <div class="big">${pose ? 'en ligne' : 'en attente'}</div>
+      ${pose
+        ? `<div class="card-foot"><span class="dot" style="background:var(--gold)"></span>Premiers événements reçus : la chaîne fonctionne de bout en bout.</div>`
+        : `<div class="card-foot"><span class="dot" style="background:var(--warn)"></span>Kit remis à RGI. Le dépôt est cryptosswing/RGI-Site sur son VPS Hostinger, la pose se fait de son côté.</div>
+           <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>Le geste décisif est la CSP, pas les balises : elle n'autorise que n8n.optimizia.xyz alors que le webhook vit sur n8n.romainben.cloud. Posé sans ce correctif, le tracker émet, se fait bloquer, et rien ne le signale.</div>`}
+    </div>
+    <div class="sp-6 card">
+      <div class="card-label">Ce que cette vue montre</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>Uniquement le tracker : pas de Search Console sur ce domaine, la propriété connectée est celle d'optimizia.xyz.</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>Rejeu de session : projet Clarity y4wyx13sg1, carte et lien dans l'Aperçu.</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>Un événement arrivant d'un site non déclaré tombe dans le seau « inconnu » du Fil, jamais dans les chiffres de l'agence.</div>
+    </div>`;
+  renderSiteTraffic('ginoux', 'gx-traffic', SERIES.s4, pagesVuesExtra('ginoux') + feedExtra('ginoux'));
 }
 
 // ── VUE : ETP ───────────────────────────────────────────────────────────────
@@ -1951,7 +2053,7 @@ function buildFil() {
   // ── Tracker : tous les sites de la liste blanche n8n, plus 'inconnu'
   if (DATA.events) {
     const SITE_NAMES = { optimizia: 'optimizia.xyz', seoplus: 'optimizia.xyz/tools/seoplus', etp: 'exotradingplus.com', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz', inconnu: 'un site non declare' };
-    const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'site', ginoux: 'site', inconnu: 'site' };
+    const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'romainben', ginoux: 'ginoux', inconnu: 'inconnu' };
     const now = Date.now();
     ['optimizia', 'seoplus', 'etp', 'romainben', 'ginoux', 'inconnu'].forEach(site => {
       const se = siteEvents(site);
@@ -2079,7 +2181,7 @@ function filItemHTML(n) {
   return `<div class="fil-item sev-${n.sev} ${read ? 'read' : ''}" data-id="${esc(n.id)}">
     <div class="fil-dot"></div>
     <div class="fil-body">
-      <div class="fil-top"><span class="fil-tool ft-${n.tool}">${{ site: 'Site', seoplus: 'SEOPlus', etp: 'ETP', ops: 'Console' }[n.tool]}</span><div class="fil-t">${esc(n.title)}</div></div>
+      <div class="fil-top"><span class="fil-tool ft-${n.tool}">${{ site: 'Site', seoplus: 'SEOPlus', etp: 'ETP', ops: 'Console', romainben: 'romainben', ginoux: 'ginoux', inconnu: 'Site inconnu' }[n.tool] || n.tool}</span><div class="fil-t">${esc(n.title)}</div></div>
       <div class="fil-d">${esc(n.detail)}</div>
     </div>
   </div>`;
@@ -2122,7 +2224,7 @@ $('fil-markall').addEventListener('click', () => { closeFil(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFil(); });
 
 // ── NAVIGATION ──────────────────────────────────────────────────────────────
-const VIEW_TITLES = { apercu: 'Aperçu', site: 'Site OptimizIA.xyz', seoplus: 'SEOPlus!', etp: 'ExoTradingPlus!' };
+const VIEW_TITLES = { apercu: 'Aperçu', site: 'Site OptimizIA.xyz', seoplus: 'SEOPlus!', etp: 'ExoTradingPlus!', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz' };
 const rendered = {};
 
 function renderView(name, force) {
@@ -2132,6 +2234,8 @@ function renderView(name, force) {
     if (name === 'site') renderSite();
     if (name === 'seoplus') renderSeoplus();
     if (name === 'etp') renderEtp();
+    if (name === 'romainben') renderRomainben();
+    if (name === 'ginoux') renderGinoux();
     rendered[name] = true;
   }
 }
