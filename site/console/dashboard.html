@@ -874,7 +874,7 @@ const TIPS = {
   devices: '<strong>Appareils</strong>Répartition des clics Google par type d\'appareil. Utile pour prioriser le responsive et la vitesse mobile.',
   queries: '<strong>Top requêtes</strong>Mots-clés Google ayant généré le plus de clics sur la période, avec CTR et position moyenne de chaque requête.',
   pages: '<strong>Top pages</strong>Pages du site les plus cliquées depuis Google, classées par clics SEO.',
-  visitors: '<strong>Visiteurs uniques</strong>Personnes distinctes, identifiées par un identifiant pseudonyme posé sans bannière (mesure exemptée CNIL, régénéré après 13 mois). Les événements de test local sont exclus.',
+  visitors: '<strong>Visiteurs uniques</strong>Personnes distinctes, identifiées par un identifiant pseudonyme posé sans bannière (mesure exemptée CNIL, régénéré après 13 mois). Les événements de test et les passages de robots sont exclus. Les événements de test local sont exclus.',
   sessions: '<strong>Sessions</strong>Une session : une visite continue. Un retour le lendemain compte comme une nouvelle session.',
   pps: '<strong>Pages par session</strong>Pages vues moyennes par session. Au-dessus de 2 : le visiteur explore.',
   bounce: '<strong>Taux de rebond</strong>Part des sessions à une seule page. À croiser avec le temps par page : un rebond peut aussi vouloir dire "info trouvée tout de suite".',
@@ -896,6 +896,7 @@ const TIPS = {
   mrr: '<strong>MRR</strong>Revenu mensuel récurrent calculé depuis les abonnements Stripe actifs. Les abonnements annuels sont ramenés au mois.',
   quota: '<strong>Quota ON DEMAND</strong>Analyses à la demande : consommé ce mois-ci sur le quota total des abonnés actifs (Classique 0, VIP 4, VIP+ 10, plus bonus parrainage).',
   parrainage: '<strong>Parrainage</strong>pending : filleul inscrit. qualified : 2e prélèvement passé, crédit dû. credited : avoir posé chez Stripe.',
+  robots: '<strong>Robots ecartes</strong>Pages vues par un moteur de rendu automatique, reconnues a leur horloge : elles annoncent minuit pile a chaque chargement, ce qu\'aucun vrai navigateur ne fait. Elles sont exclues de tous les calculs. Un robot vaut un visiteur unique la ou un humain en genere cinq a quinze, donc les compter fausse surtout les visiteurs uniques, le rebond et les pages par session.',
   clarityTaux: '<strong>Taux d\'acceptation du bandeau</strong>Calculé depuis notre propre base : la mesure exemptée tourne pendant l\'affichage du bandeau Clarity et enregistre les clics Accepter/Refuser. Les visiteurs qui ignorent le bandeau ne comptent pas.',
 };
 const tipEl = $('tip');
@@ -1081,12 +1082,19 @@ async function loadEvents() {
     const r = await timedFetch('tracker', CONFIG.urls.events, {}, true);
     const all = (await r.json()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     const isTest = e => /^\/[A-Za-z]:\//.test(e.page || '') || /localhost|127\.0\.0\.1/.test(e.page || '') || /^\/test-/.test(e.page || '');
-    const bySite = { optimizia: { clean: [], test: [] }, seoplus: { clean: [], test: [] }, etp: { clean: [], test: [] }, romainben: { clean: [], test: [] }, ginoux: { clean: [], test: [] }, inconnu: { clean: [], test: [] } };
+    // Horloge deterministe : un moteur de rendu automatique remet l'horloge a
+    // minuit a chaque chargement pour que ses rendus soient reproductibles. La
+    // milliseconde ne mesure alors que le temps mis pour atteindre ce script,
+    // d'ou la meme valeur pour une meme page. Un vrai navigateur ne peut tomber
+    // sur minuit pile qu'une seconde par jour, soit une chance sur 86400.
+    const isRobot = e => /T00:00:00(\.\d{1,3})?Z?$/.test(e.timestamp || '');
+    const vide = () => ({ clean: [], test: [], robot: [] });
+    const bySite = { optimizia: vide(), seoplus: vide(), etp: vide(), romainben: vide(), ginoux: vide(), inconnu: vide() };
     all.forEach(e => {
       // Un site hors dictionnaire tombe dans 'inconnu', jamais dans 'optimizia' :
       // un repli silencieux vers l'agence gonflerait ses chiffres sans le dire.
       const s = bySite[e.site] ? e.site : 'inconnu';
-      (isTest(e) ? bySite[s].test : bySite[s].clean).push(e);
+      (isTest(e) ? bySite[s].test : isRobot(e) ? bySite[s].robot : bySite[s].clean).push(e);
     });
     DATA.events = { bySite, all };
     DATA.eventsErr = null;
@@ -1094,7 +1102,7 @@ async function loadEvents() {
 }
 
 function siteEvents(site) {
-  return (DATA.events && DATA.events.bySite[site]) || { clean: [], test: [] };
+  return (DATA.events && DATA.events.bySite[site]) || { clean: [], test: [], robot: [] };
 }
 
 function weekStats(events) {
@@ -1119,8 +1127,10 @@ function renderSiteTraffic(site, mountId, color, extraHTML) {
     return;
   }
   const events = siteEvents(site).clean;
+  const nRobots = siteEvents(site).robot.length;
+  const ligneRobots = nRobots ? ' · ' + fmt(nRobots) + ' robot' + (nRobots > 1 ? 's' : '') + ' écarté' + (nRobots > 1 ? 's' : '') + infoBtn('robots') : '';
   if (!events.length) {
-    el.innerHTML = `<div class="sp-12 card"><div class="empty"><div class="empty-title">Pas encore de visites mesurées</div><div class="empty-text">Le tracker vient d'être posé sur ce site. Les mesures apparaîtront après le prochain déploiement, dès les premières visites.</div></div></div>`;
+    el.innerHTML = `<div class="sp-12 card"><div class="empty"><div class="empty-title">Pas encore de visites mesurées</div><div class="empty-text">Le tracker vient d'être posé sur ce site. Les mesures apparaîtront après le prochain déploiement, dès les premières visites.${nRobots ? ` Seuls ${fmt(nRobots)} passages de robots ont été vus, ils ne comptent pas.` : ''}</div></div></div>`;
     return;
   }
   const ws = weekStats(events);
@@ -1157,7 +1167,7 @@ function renderSiteTraffic(site, mountId, color, extraHTML) {
     ${kpi('Pages vues · 7 jours', ws.curr.pv, ws.prev.pv, 'toutes pages')}
     ${kpi('Conversions · 7 jours', ws.curr.conv, ws.prev.conv, 'CTA + formulaires')}
     <div class="sp-8 card">
-      <div class="card-head"><div><div class="card-title">Pages vues par jour</div><div class="card-sub">30 derniers jours</div></div></div>
+      <div class="card-head"><div><div class="card-title">Pages vues par jour</div><div class="card-sub">30 derniers jours${ligneRobots}</div></div></div>
       <div class="chart-box" style="min-height:180px"><canvas id="ch-${site}-pv"></canvas></div>
     </div>
     <div class="sp-4 card">
@@ -1588,6 +1598,7 @@ function renderSiteBehavior() {
   if (!DATA.events) { el.innerHTML = ''; return; }
   const events = siteEvents('optimizia').clean;
   const nTest = siteEvents('optimizia').test.length;
+  const nRobots = siteEvents('optimizia').robot.length;
 
   const cta = events.filter(e => e.event === 'cta_click').length;
   const forms = events.filter(e => e.event === 'form_submit').length;
@@ -1609,6 +1620,7 @@ function renderSiteBehavior() {
       <div class="card-foot"><span class="dot"></span><strong style="margin-right:4px">${fmt(cta)}</strong> CTA cliqués</div>
       <div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span><strong style="margin-right:4px">${fmt(forms)}</strong> formulaires envoyés</div>
       ${nTest ? `<div class="card-foot"><span class="dot" style="background:var(--dull)"></span>${fmt(nTest)} événements de test exclus</div>` : ''}
+      ${nRobots ? `<div class="card-foot"><span class="dot" style="background:var(--dull)"></span>${fmt(nRobots)} passage${nRobots > 1 ? 's' : ''} de robot exclu${nRobots > 1 ? 's' : ''}${infoBtn('robots')}</div>` : ''}
     </div>
     <div class="sp-8 card">
       <div class="card-head">
@@ -2062,6 +2074,10 @@ function buildFil() {
       if (se.test.length > 0) {
         out.push(mkNotif('trk-test-' + site + '-' + se.test.length, tool, 'creux', se.test.length + ' événement' + (se.test.length > 1 ? 's' : '') + ' de test dans le tracker de ' + name,
           'Pages en file:// ou localhost, exclues de tous les calculs du dashboard.'));
+      }
+      if (se.robot.length > 0) {
+        out.push(mkNotif('trk-robot-' + site + '-' + se.robot.length, tool, 'creux', se.robot.length + ' passage' + (se.robot.length > 1 ? 's' : '') + ' de robot écarté' + (se.robot.length > 1 ? 's' : '') + ' sur ' + name,
+          'Moteurs de rendu automatique, reconnus a leur horloge figee a minuit. Exclus de tous les calculs : un robot vaut un visiteur unique la ou un humain en genere cinq a quinze.'));
       }
       if (!ev.length) return;
       const conv48 = ev.filter(e => (e.event === 'cta_click' || e.event === 'form_submit') && now - new Date(e.timestamp).getTime() < 48 * 3600e3);
