@@ -34,6 +34,7 @@
       --emerald-soft: rgba(52, 211, 153, 0.12);
       --violet: #9085E9;
       --gold: #C9A227;
+      --cyan: #38BDF8;
       --ok: #34D399;
       --warn: #FBBF24;
       --bad: #F87171;
@@ -171,6 +172,7 @@
     .rail-btn[data-view="etp"] { --tool: var(--emerald); }
     .rail-btn[data-view="romainben"] { --tool: var(--violet); }
     .rail-btn[data-view="ginoux"] { --tool: var(--gold); }
+    .rail-btn[data-view="robots"] { --tool: var(--cyan); }
 
     .rail-foot { margin-top: auto; padding: 12px 10px 0; border-top: 1px solid var(--border); }
     .rail-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -601,6 +603,7 @@
       <button class="rail-btn" data-view="etp"><span class="dot"></span>ExoTradingPlus!</button>
       <button class="rail-btn" data-view="romainben"><span class="dot"></span>romainben.cloud</button>
       <button class="rail-btn" data-view="ginoux"><span class="dot"></span>ginoux.xyz</button>
+      <button class="rail-btn" data-view="robots"><span class="dot"></span>Robots &amp; IA</button>
       <div class="rail-foot">
         <div class="rail-user">
           <img class="rail-avatar" id="user-avatar" src="" alt="" style="display:none" referrerpolicy="no-referrer">
@@ -719,6 +722,13 @@
           </div>
         </div>
 
+        <div class="view" id="view-robots">
+          <div class="section" style="--tool: var(--cyan)">
+            <div class="section-label">Qui explore nos sites <span class="tag">tous sites, hors calculs d’audience</span></div>
+            <div class="grid" id="rb-robots"></div>
+          </div>
+        </div>
+
         <div class="view" id="view-ginoux">
           <div class="section" style="--tool: var(--gold)">
             <div class="section-label">État de la pose <span class="tag">passation RGI</span></div>
@@ -767,6 +777,7 @@ const CONFIG = {
 
 const SERIES = { s1: '#3987E5', s2: '#D95926', s3: '#199E70', s4: '#C98500', s5: '#9085E9', s6: '#D55181', other: '#64748B' };
 const SURFACE = '#101828';
+const SITE_LABEL = { optimizia: 'optimizia.xyz', seoplus: 'optimizia.xyz/tools/seoplus', etp: 'exotradingplus.com', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz', inconnu: 'un site non declare' };
 
 // ── ÉTAT ────────────────────────────────────────────────────────────────────
 let accessToken = null;
@@ -896,6 +907,7 @@ const TIPS = {
   mrr: '<strong>MRR</strong>Revenu mensuel récurrent calculé depuis les abonnements Stripe actifs. Les abonnements annuels sont ramenés au mois.',
   quota: '<strong>Quota ON DEMAND</strong>Analyses à la demande : consommé ce mois-ci sur le quota total des abonnés actifs (Classique 0, VIP 4, VIP+ 10, plus bonus parrainage).',
   parrainage: '<strong>Parrainage</strong>pending : filleul inscrit. qualified : 2e prélèvement passé, crédit dû. credited : avoir posé chez Stripe.',
+  robotsIA: '<strong>Moteurs d&rsquo;IA</strong>Robots des assistants (GPTBot, ClaudeBot, PerplexityBot, Google-Extended...). Leur passage est le seul signal direct que nos pages entrent dans ce qui nourrit les reponses des IA. Une page beaucoup exploree et jamais citee vaut un coup d&rsquo;oeil : le contenu est atteignable mais pas assez citable.',
   robots: '<strong>Robots ecartes</strong>Pages vues par un moteur de rendu automatique, reconnues a leur horloge : elles annoncent minuit pile a chaque chargement, ce qu\'aucun vrai navigateur ne fait. Elles sont exclues de tous les calculs. Un robot vaut un visiteur unique la ou un humain en genere cinq a quinze, donc les compter fausse surtout les visiteurs uniques, le rebond et les pages par session.',
   clarityTaux: '<strong>Taux d\'acceptation du bandeau</strong>Calculé depuis notre propre base : la mesure exemptée tourne pendant l\'affichage du bandeau Clarity et enregistre les clics Accepter/Refuser. Les visiteurs qui ignorent le bandeau ne comptent pas.',
 };
@@ -1087,7 +1099,11 @@ async function loadEvents() {
     // milliseconde ne mesure alors que le temps mis pour atteindre ce script,
     // d'ou la meme valeur pour une meme page. Un vrai navigateur ne peut tomber
     // sur minuit pile qu'une seconde par jour, soit une chance sur 86400.
-    const isRobot = e => /T00:00:00(\.\d{1,3})?Z?$/.test(e.timestamp || '');
+    // Deux filets. Le premier est l'etiquette posee par n8n a partir de
+    // l'User-Agent : elle NOMME le robot. Le second est l'horloge figee,
+    // pour ceux qui ne se declarent pas.
+    const isRobot = e => /^robot:/.test(e.campaign || '')
+      || /T00:00:00(\.\d{1,3})?Z?$/.test(e.timestamp || '');
     const vide = () => ({ clean: [], test: [], robot: [] });
     const bySite = { optimizia: vide(), seoplus: vide(), etp: vide(), romainben: vide(), ginoux: vide(), inconnu: vide() };
     all.forEach(e => {
@@ -1923,6 +1939,161 @@ function renderGinoux() {
   renderSiteTraffic('ginoux', 'gx-traffic', SERIES.s4, pagesVuesExtra('ginoux') + feedExtra('ginoux'));
 }
 
+// ── VUE : ROBOTS ──────────────────────────────────────────
+// Les robots sont exclus des chiffres d'audience, mais ce n'est pas du dechet :
+// savoir quels moteurs d'IA nous explorent, a quelle frequence et sur quelles
+// pages, est une mesure GEO qu'aucun autre outil ne nous donne.
+
+const ROBOTS_IA = ['gptbot', 'oai-searchbot', 'chatgpt-user', 'claudebot', 'claude-web', 'anthropic-ai',
+  'perplexitybot', 'perplexity-user', 'google-extended', 'bytespider', 'amazonbot', 'meta-externalagent',
+  'cohere-ai', 'youbot', 'ccbot', 'diffbot'];
+const ROBOT_LABEL = {
+  'gptbot': 'GPTBot (OpenAI)', 'oai-searchbot': 'OAI-SearchBot (ChatGPT Search)',
+  'chatgpt-user': 'ChatGPT-User (navigation)', 'claudebot': 'ClaudeBot (Anthropic)',
+  'claude-web': 'Claude-Web', 'anthropic-ai': 'anthropic-ai', 'perplexitybot': 'PerplexityBot',
+  'perplexity-user': 'Perplexity-User', 'google-extended': 'Google-Extended (Gemini)',
+  'bytespider': 'Bytespider (TikTok)', 'amazonbot': 'Amazonbot', 'meta-externalagent': 'Meta AI',
+  'cohere-ai': 'Cohere', 'youbot': 'YouBot', 'ccbot': 'CCBot (Common Crawl)', 'diffbot': 'Diffbot',
+  'googlebot': 'Googlebot', 'bingbot': 'bingbot', 'applebot': 'Applebot',
+  'non declare': 'Non déclaré (horloge figée)',
+};
+
+function robotEvents() {
+  if (!DATA.events) return [];
+  const out = [];
+  Object.keys(DATA.events.bySite).forEach(site => {
+    DATA.events.bySite[site].robot.forEach(e => {
+      out.push({ ...e, site, nom: (e.campaign || '').replace(/^robot:/, '') || 'non declare' });
+    });
+  });
+  return out.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+}
+
+function renderRobots() {
+  const el = $('rb-robots');
+  if (!DATA.events) {
+    el.innerHTML = `<div class="sp-12 card"><div class="err-state"><p>Tracker n8n inaccessible : ${esc(DATA.eventsErr || 'inconnue')}</p><button class="btn-ghost" onclick="loadAll()">Réessayer</button></div></div>`;
+    return;
+  }
+  const ev = robotEvents();
+  if (!ev.length) {
+    el.innerHTML = `<div class="sp-12 card"><div class="empty"><div class="empty-title">Aucun passage de robot détecté</div><div class="empty-text">Deux détecteurs tournent : l'étiquette posée par n8n à partir de l'User-Agent, qui nomme le robot, et la signature d'horloge figée pour ceux qui ne se déclarent pas. Cette vue se remplira au prochain passage.</div></div></div>`;
+    return;
+  }
+
+  const now = Date.now();
+  const ev30 = ev.filter(e => now - new Date(e.timestamp).getTime() < 30 * 86400e3);
+  const parNom = {};
+  ev.forEach(e => {
+    if (!parNom[e.nom]) parNom[e.nom] = { n: 0, sites: new Set(), pages: new Set(), dernier: e.timestamp };
+    const m = parNom[e.nom];
+    m.n++; m.sites.add(e.site); m.pages.add(e.page || '/');
+    if (new Date(e.timestamp) > new Date(m.dernier)) m.dernier = e.timestamp;
+  });
+  const rows = Object.entries(parNom)
+    .map(([nom, m]) => ({ nom, n: m.n, sites: m.sites.size, pages: m.pages.size, dernier: m.dernier }))
+    .sort((a, b) => b.n - a.n);
+  const ia = rows.filter(r => ROBOTS_IA.includes(r.nom));
+  const autres = rows.filter(r => !ROBOTS_IA.includes(r.nom));
+  const nIA = ia.reduce((s, r) => s + r.n, 0);
+  const nNonDeclare = (parNom['non declare'] || { n: 0 }).n;
+  const maxN = rows[0].n;
+
+  const liste = (arr, couleur, vide) => arr.length
+    ? `<div class="rlist">${arr.map((r, i) => `
+        <div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+          <div class="rbody">
+            <div class="rtop"><div class="rkey">${esc(ROBOT_LABEL[r.nom] || r.nom)}</div>
+            <div class="rmeta"><strong>${fmt(r.n)}</strong> passage${r.n > 1 ? 's' : ''} · ${fmt(r.pages)} page${r.pages > 1 ? 's' : ''} · ${relTime(r.dernier)}</div></div>
+            <div class="rbar"><i style="width:${(r.n / maxN * 100).toFixed(0)}%;background:${couleur}"></i></div>
+          </div></div>`).join('')}</div>`
+    : `<div class="empty-text" style="padding:10px 0">${vide}</div>`;
+
+  const parSite = {};
+  ev.forEach(e => { parSite[e.site] = (parSite[e.site] || 0) + 1; });
+  const siteRows = Object.entries(parSite).sort((a, b) => b[1] - a[1]);
+  const maxSite = Math.max(...siteRows.map(r => r[1]), 1);
+
+  const parPage = {};
+  ev.forEach(e => {
+    const p = e.page || '/';
+    if (!parPage[p]) parPage[p] = { n: 0, robots: new Set() };
+    parPage[p].n++; parPage[p].robots.add(e.nom);
+  });
+  const pageRows = Object.entries(parPage).map(([p, m]) => ({ page: p, n: m.n, robots: m.robots.size }))
+    .sort((a, b) => b.n - a.n).slice(0, 10);
+  const maxPage = Math.max(...pageRows.map(r => r.n), 1);
+
+  el.innerHTML = `
+    <div class="sp-3 card accent" style="--tool: var(--cyan)">
+      <div class="card-label">Passages de robots${infoBtn('robots')}</div>
+      <div class="big hero">${fmt(ev.length)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--cyan)"></span>${fmt(ev30.length)} sur les 30 derniers jours</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>exclus de tous les chiffres d'audience</div>
+    </div>
+    <div class="sp-3 card"><div class="card-label">Robots distincts</div>
+      <div class="big">${fmt(rows.length)}</div>
+      <div class="card-foot"><span class="dot" style="background:${SERIES.s1}"></span>${fmt(ia.length)} moteur${ia.length > 1 ? 's' : ''} d'IA</div></div>
+    <div class="sp-3 card accent" style="--tool: ${SERIES.s5}">
+      <div class="card-label">Passages de moteurs d'IA${infoBtn('robotsIA')}</div>
+      <div class="big">${fmt(nIA)}</div>
+      <div class="card-foot"><span class="dot" style="background:${SERIES.s5}"></span>${Math.round(nIA / ev.length * 100)}% des passages</div></div>
+    <div class="sp-3 card"><div class="card-label">Non déclarés</div>
+      <div class="big">${fmt(nNonDeclare)}</div>
+      <div class="card-foot"><span class="dot" style="background:var(--warn)"></span>repérés à l'horloge figée, sans nom</div></div>
+
+    <div class="sp-6 card accent" style="--tool: ${SERIES.s5}">
+      <div class="card-head"><div><div class="card-title">Moteurs d'IA${infoBtn('robotsIA')}</div><div class="card-sub">le signal GEO : qui nous lit pour construire ses réponses</div></div></div>
+      ${liste(ia, SERIES.s5, 'Aucun moteur d&rsquo;IA repéré pour le moment.')}
+    </div>
+    <div class="sp-6 card">
+      <div class="card-head"><div><div class="card-title">Autres robots</div><div class="card-sub">moteurs de recherche, outils SEO, aperçus de réseaux, surveillance</div></div></div>
+      ${liste(autres, SERIES.s1, 'Aucun autre robot repéré.')}
+    </div>
+
+    <div class="sp-8 card">
+      <div class="card-head"><div><div class="card-title">Passages par jour</div><div class="card-sub">30 derniers jours</div></div></div>
+      <div class="chart-box"><canvas id="ch-robots"></canvas></div>
+    </div>
+    <div class="sp-4 card">
+      <div class="card-head"><div><div class="card-title">Par site</div><div class="card-sub">depuis la pose du tracker</div></div></div>
+      <div class="rlist">${siteRows.map(([s, n], i) => `
+        <div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+          <div class="rbody"><div class="rtop"><div class="rkey">${esc(SITE_LABEL[s] || s)}</div>
+          <div class="rmeta"><strong>${fmt(n)}</strong></div></div>
+          <div class="rbar"><i style="width:${(n / maxSite * 100).toFixed(0)}%;background:var(--cyan)"></i></div></div></div>`).join('')}</div>
+    </div>
+
+    <div class="sp-12 card">
+      <div class="card-head"><div><div class="card-title">Pages les plus explorées</div><div class="card-sub">une page beaucoup explorée et jamais citée mérite un coup d&rsquo;oeil</div></div></div>
+      <div class="rlist">${pageRows.map((r, i) => `
+        <div class="rrow"><div class="rrank">${String(i + 1).padStart(2, '0')}</div>
+          <div class="rbody"><div class="rtop"><div class="rkey mono">${esc(r.page)}</div>
+          <div class="rmeta"><strong>${fmt(r.n)}</strong> passage${r.n > 1 ? 's' : ''} · ${fmt(r.robots)} robot${r.robots > 1 ? 's' : ''}</div></div>
+          <div class="rbar"><i style="width:${(r.n / maxPage * 100).toFixed(0)}%;background:var(--cyan)"></i></div></div></div>`).join('')}</div>
+    </div>`;
+
+  const jours = [];
+  for (let i = 29; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); jours.push(fmtDate(d)); }
+  const parJour = {}; jours.forEach(j => parJour[j] = { ia: 0, autre: 0 });
+  ev.forEach(e => {
+    const j = (e.timestamp || '').slice(0, 10);
+    if (!parJour[j]) return;
+    if (ROBOTS_IA.includes(e.nom)) parJour[j].ia++; else parJour[j].autre++;
+  });
+  mkChart('ch-robots', {
+    type: 'bar',
+    data: { labels: jours.map(j => j.slice(5)), datasets: [
+      { label: 'Moteurs d\'IA', data: jours.map(j => parJour[j].ia), backgroundColor: SERIES.s5 },
+      { label: 'Autres robots', data: jours.map(j => parJour[j].autre), backgroundColor: '#38BDF8' },
+    ].map(d => ({ ...d, borderColor: SURFACE, borderWidth: 1, borderRadius: 3, borderSkipped: false })) },
+    options: { responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { display: true, position: 'top', align: 'end', labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: 'rect', padding: 12 } }, tooltip: CH_TOOLTIP },
+      scales: { x: { grid: { display: false }, stacked: true, ticks: { ...CH_TICK, maxTicksLimit: 10 } }, y: { grid: CH_GRID, stacked: true, ticks: { ...CH_TICK, precision: 0 }, beginAtZero: true } } },
+  });
+}
+
 // ── VUE : ETP ───────────────────────────────────────────────────────────────
 function renderEtp() {
   renderSiteTraffic('etp', 'etp-traffic', SERIES.s3, etpTrafficExtra());
@@ -2064,13 +2235,12 @@ function buildFil() {
 
   // ── Tracker : tous les sites de la liste blanche n8n, plus 'inconnu'
   if (DATA.events) {
-    const SITE_NAMES = { optimizia: 'optimizia.xyz', seoplus: 'optimizia.xyz/tools/seoplus', etp: 'exotradingplus.com', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz', inconnu: 'un site non declare' };
     const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'romainben', ginoux: 'ginoux', inconnu: 'inconnu' };
     const now = Date.now();
     ['optimizia', 'seoplus', 'etp', 'romainben', 'ginoux', 'inconnu'].forEach(site => {
       const se = siteEvents(site);
       const ev = se.clean;
-      const tool = SITE_TOOL[site], name = SITE_NAMES[site];
+      const tool = SITE_TOOL[site], name = SITE_LABEL[site];
       if (se.test.length > 0) {
         out.push(mkNotif('trk-test-' + site + '-' + se.test.length, tool, 'creux', se.test.length + ' événement' + (se.test.length > 1 ? 's' : '') + ' de test dans le tracker de ' + name,
           'Pages en file:// ou localhost, exclues de tous les calculs du dashboard.'));
@@ -2240,7 +2410,7 @@ $('fil-markall').addEventListener('click', () => { closeFil(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFil(); });
 
 // ── NAVIGATION ──────────────────────────────────────────────────────────────
-const VIEW_TITLES = { apercu: 'Aperçu', site: 'Site OptimizIA.xyz', seoplus: 'SEOPlus!', etp: 'ExoTradingPlus!', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz' };
+const VIEW_TITLES = { apercu: 'Aperçu', site: 'Site OptimizIA.xyz', seoplus: 'SEOPlus!', etp: 'ExoTradingPlus!', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz', robots: 'Robots et moteurs d’IA' };
 const rendered = {};
 
 function renderView(name, force) {
@@ -2252,6 +2422,7 @@ function renderView(name, force) {
     if (name === 'etp') renderEtp();
     if (name === 'romainben') renderRomainben();
     if (name === 'ginoux') renderGinoux();
+    if (name === 'robots') renderRobots();
     rendered[name] = true;
   }
 }
