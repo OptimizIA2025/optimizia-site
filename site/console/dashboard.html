@@ -640,6 +640,10 @@
             <div class="section-label">Santé des sources de données</div>
             <div class="chips" id="ov-health"></div>
           </div>
+          <div class="section">
+            <div class="section-label">Rejeu de session <span class="tag">Microsoft Clarity</span></div>
+            <div class="grid" id="ov-clarity"></div>
+          </div>
         </div>
 
         <div class="view" id="view-site">
@@ -839,7 +843,7 @@ const TIPS = {
   devices: '<strong>Appareils</strong>Répartition des clics Google par type d\'appareil. Utile pour prioriser le responsive et la vitesse mobile.',
   queries: '<strong>Top requêtes</strong>Mots-clés Google ayant généré le plus de clics sur la période, avec CTR et position moyenne de chaque requête.',
   pages: '<strong>Top pages</strong>Pages du site les plus cliquées depuis Google, classées par clics SEO.',
-  visitors: '<strong>Visiteurs uniques</strong>Personnes distinctes, identifiées par un UUID anonyme posé après acceptation du bandeau cookies. Les événements de test local sont exclus.',
+  visitors: '<strong>Visiteurs uniques</strong>Personnes distinctes, identifiées par un identifiant pseudonyme posé sans bannière (mesure exemptée CNIL, régénéré après 13 mois). Les événements de test local sont exclus.',
   sessions: '<strong>Sessions</strong>Une session : une visite continue. Un retour le lendemain compte comme une nouvelle session.',
   pps: '<strong>Pages par session</strong>Pages vues moyennes par session. Au-dessus de 2 : le visiteur explore.',
   bounce: '<strong>Taux de rebond</strong>Part des sessions à une seule page. À croiser avec le temps par page : un rebond peut aussi vouloir dire "info trouvée tout de suite".',
@@ -861,6 +865,7 @@ const TIPS = {
   mrr: '<strong>MRR</strong>Revenu mensuel récurrent calculé depuis les abonnements Stripe actifs. Les abonnements annuels sont ramenés au mois.',
   quota: '<strong>Quota ON DEMAND</strong>Analyses à la demande : consommé ce mois-ci sur le quota total des abonnés actifs (Classique 0, VIP 4, VIP+ 10, plus bonus parrainage).',
   parrainage: '<strong>Parrainage</strong>pending : filleul inscrit. qualified : 2e prélèvement passé, crédit dû. credited : avoir posé chez Stripe.',
+  clarityTaux: '<strong>Taux d\'acceptation du bandeau</strong>Calculé depuis notre propre base : la mesure exemptée tourne pendant l\'affichage du bandeau Clarity et enregistre les clics Accepter/Refuser. Les visiteurs qui ignorent le bandeau ne comptent pas.',
 };
 const tipEl = $('tip');
 function infoBtn(k) { return '<button class="info-btn" data-tip="' + k + '" aria-label="Explication">i</button>'; }
@@ -1045,9 +1050,11 @@ async function loadEvents() {
     const r = await timedFetch('tracker', CONFIG.urls.events, {}, true);
     const all = (await r.json()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     const isTest = e => /^\/[A-Za-z]:\//.test(e.page || '') || /localhost|127\.0\.0\.1/.test(e.page || '') || /^\/test-/.test(e.page || '');
-    const bySite = { optimizia: { clean: [], test: [] }, seoplus: { clean: [], test: [] }, etp: { clean: [], test: [] }, romainben: { clean: [], test: [] } };
+    const bySite = { optimizia: { clean: [], test: [] }, seoplus: { clean: [], test: [] }, etp: { clean: [], test: [] }, romainben: { clean: [], test: [] }, ginoux: { clean: [], test: [] }, inconnu: { clean: [], test: [] } };
     all.forEach(e => {
-      const s = bySite[e.site] ? e.site : 'optimizia';
+      // Un site hors dictionnaire tombe dans 'inconnu', jamais dans 'optimizia' :
+      // un repli silencieux vers l'agence gonflerait ses chiffres sans le dire.
+      const s = bySite[e.site] ? e.site : 'inconnu';
       (isTest(e) ? bySite[s].test : bySite[s].clean).push(e);
     });
     DATA.events = { bySite, all };
@@ -1235,6 +1242,32 @@ function renderApercu() {
   $('ov-health').innerHTML =
     chip('gsc', 'Search Console') + chip('tracker', 'Tracker n8n') +
     chip('seoStats', 'SEOPlus! stats') + chip('seoBoard', 'SEOPlus! classement') + chip('etp', 'ETP stats');
+
+  // ── Clarity : la couche 2 étant exemptée, elle tourne pendant l'affichage du
+  // bandeau et enregistre les clics sur ses boutons : le taux d'acceptation se
+  // calcule depuis notre propre base, sans rien demander à Microsoft.
+  const CLARITY = [
+    { id: 'y4wvew5ezs', label: 'www.optimizia.xyz', note: 'agence + SEOPlus, séparés par filtre d\'URL /tools/seoplus/', sites: ['optimizia', 'seoplus'] },
+    { id: 'y1tpyc2qw8', label: 'romainben.cloud', note: '', sites: ['romainben'] },
+    { id: 'y4wyeqfqmu', label: 'exotradingplus.com', note: 'prêt, part avec le lancement du site', sites: ['etp'] },
+    { id: 'y4wyx13sg1', label: 'ginoux.xyz', note: 'en attente de pose par RGI', sites: ['ginoux'] },
+  ];
+  const OUI = ['Accepter', 'Accept'], NON = ['Refuser', 'Decline'];
+  $('ov-clarity').innerHTML = CLARITY.map(p => {
+    const clics = p.sites.flatMap(s => siteEvents(s).clean).filter(e => e.event === 'cta_click');
+    const oui = clics.filter(e => OUI.includes(e.element)).length;
+    const non = clics.filter(e => NON.includes(e.element)).length;
+    const total = oui + non;
+    return `<div class="sp-3 card">
+      <div class="card-label">${esc(p.label)}${infoBtn('clarityTaux')}</div>
+      ${total ? `<div class="big">${Math.round(oui / total * 100)}<span class="unit">% d'acceptation</span></div>
+      <div class="card-foot"><span class="dot" style="background:var(--emerald)"></span>${fmt(oui)} accepté${oui > 1 ? 's' : ''}, ${fmt(non)} refusé${non > 1 ? 's' : ''}</div>`
+      : `<div class="big">–</div>
+      <div class="card-foot"><span class="dot" style="background:var(--dull)"></span>aucun choix de bandeau mesuré</div>`}
+      ${p.note ? `<div class="card-foot"><span class="dot" style="background:var(--dull)"></span>${esc(p.note)}</div>` : ''}
+      <div class="card-foot"><a href="https://clarity.microsoft.com/projects/view/${p.id}/dashboard" target="_blank" rel="noopener">Ouvrir le projet Clarity</a></div>
+    </div>`;
+  }).join('');
 }
 
 // ── VUE : SITE ──────────────────────────────────────────────────────────────
@@ -1750,6 +1783,7 @@ function renderSeoplus() {
       <div class="big">${row.score}<span class="unit">/100</span></div>
       <div class="card-foot"><span class="grade ${esc(row.grade)}">${esc(row.grade)}</span><span>#${row.rank} du classement</span>${delta}</div>
       <div class="card-foot"><span class="dot" style="background:var(--blue)"></span>audité ${relTime(row.ts)}</div>
+      ${host === 'seoplus.optimizia.xyz' ? `<div class="card-foot"><span class="dot" style="background:var(--dull)"></span>photo d'avant la migration du 16/08, figée : l'outil vit sous /tools/seoplus</div>` : ''}
     </div>`;
   }).join('');
 
@@ -1765,7 +1799,7 @@ function renderSeoplus() {
         <tbody>${sites.map(x => `
           <tr class="${CONFIG.ourHosts.includes(x.host) ? 'hl-row' : ''}">
             <td class="muted" style="text-align:left">${x.rank}</td>
-            <td style="text-align:left">${x.score >= 90 ? '<span class="cdot" style="background:var(--emerald)"></span>' : ''}${esc(x.host)}</td>
+            <td style="text-align:left">${x.score >= 90 ? '<span class="cdot" style="background:var(--emerald)"></span>' : ''}${esc(x.host)}${x.host === 'seoplus.optimizia.xyz' ? ' <span style="color:var(--ink-3);font-weight:400">(figé, avant migration)</span>' : ''}</td>
             <td><strong>${x.score}</strong></td>
             <td><span class="grade ${esc(x.grade)}">${esc(x.grade)}</span></td>
             <td class="muted">${relTime(x.ts)}</td>
@@ -1914,12 +1948,12 @@ function buildFil() {
     out.push(mkNotif('gsc-err-' + fmtDate(new Date()), 'ops', 'alerte', 'Search Console injoignable', DATA.gscErr));
   }
 
-  // ── Tracker : les trois sites
+  // ── Tracker : tous les sites de la liste blanche n8n, plus 'inconnu'
   if (DATA.events) {
-    const SITE_NAMES = { optimizia: 'optimizia.xyz', seoplus: 'seoplus.optimizia.xyz', etp: 'exotradingplus.com', romainben: 'romainben.cloud' };
-    const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'site' };
+    const SITE_NAMES = { optimizia: 'optimizia.xyz', seoplus: 'optimizia.xyz/tools/seoplus', etp: 'exotradingplus.com', romainben: 'romainben.cloud', ginoux: 'ginoux.xyz', inconnu: 'un site non declare' };
+    const SITE_TOOL = { optimizia: 'site', seoplus: 'seoplus', etp: 'etp', romainben: 'site', ginoux: 'site', inconnu: 'site' };
     const now = Date.now();
-    ['optimizia', 'seoplus', 'etp', 'romainben'].forEach(site => {
+    ['optimizia', 'seoplus', 'etp', 'romainben', 'ginoux', 'inconnu'].forEach(site => {
       const se = siteEvents(site);
       const ev = se.clean;
       const tool = SITE_TOOL[site], name = SITE_NAMES[site];
