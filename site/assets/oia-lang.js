@@ -14,6 +14,21 @@
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + other + '"]');
     if (!alt || !alt.href) return;
 
+    /* La cible hreflang est une URL propre, sans query. Sans ce report, la
+       redirection de langue EFFACE la chaine de requete. Mesure du 21/08 :
+       un ?notrack=1 n'atteignait jamais le traceur, et surtout les utm_*
+       d'une campagne etaient perdus pour tout visiteur redirige, alors que
+       le traceur lit utm_source et utm_campaign. Le hash suit aussi, sinon
+       une ancre profonde partagee retombe en haut de page. */
+    function cible() {
+        try {
+            var u = new URL(alt.href, location.href);
+            if (location.search) u.search = location.search;
+            if (location.hash) u.hash = location.hash;
+            return u.href;
+        } catch (e) { return alt.href; }
+    }
+
     var pref = null;
     try { pref = localStorage.getItem(KEY); } catch (e) { return; }
 
@@ -23,7 +38,7 @@
     try { entree = !document.referrer || new URL(document.referrer).origin !== location.origin; } catch (e) { }
 
     if (pref === other) {
-        if (entree) location.replace(alt.href);
+        if (entree) location.replace(cible());
         return;
     }
 
@@ -46,7 +61,7 @@
     msg.textContent = txt.msg;
 
     var go = document.createElement('a');
-    go.href = alt.href;
+    go.href = cible();
     go.textContent = txt.go;
     go.style.cssText = 'color:#101418;background:#f5f7fa;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600';
     go.addEventListener('click', function () {
