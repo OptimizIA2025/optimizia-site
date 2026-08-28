@@ -98,7 +98,7 @@ window.OIA_I18N.fr = {
         "Contact": "Contact",
         "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.0</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
     },
     attr: {}
 };

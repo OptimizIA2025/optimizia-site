@@ -27,7 +27,11 @@
         { code: 'de', nom: 'Deutsch' }
     ];
     var STORE = 'oia-lang';
-    var VERSION = '1';
+    /* A relever des qu'un dictionnaire change. Le 28/08, le pied de page est
+       passe en V6.1 : la chaine etant elle-meme la cle, un dictionnaire garde
+       en cache continuerait a chercher l'ancienne et laisserait la ligne en
+       anglais, sans erreur visible. */
+    var VERSION = '2';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
@@ -289,9 +293,30 @@
         return code;
     }
 
+    /* Icones inline plutot qu'un fichier de plus : quelques centaines d'octets,
+       aucune requete supplementaire, et elles heritent de currentColor donc
+       suivent le survol et l'etat actif sans regle CSS dediee. */
+    var GLOBE = '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.35" aria-hidden="true">'
+        + '<circle cx="8" cy="8" r="6.25"/><ellipse cx="8" cy="8" rx="2.75" ry="6.25"/>'
+        + '<path d="M1.9 8h12.2" stroke-linecap="round"/></svg>';
+    var CHEVRON = '<svg class="lang-chev" viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        + '<path d="M2.6 4.4 6 7.8l3.4-3.4"/></svg>';
+    var COCHE = '<svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        + '<path d="M2 6.3 4.7 9 10 3.4"/></svg>';
+
     function majPicker() {
         pickers.forEach(function (p) {
-            p.btn.textContent = courante.toUpperCase();
+            if (p.pills) {
+                Array.prototype.forEach.call(p.hote.querySelectorAll('.lang-pill'), function (b) {
+                    var on = b.getAttribute('data-code') === courante;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('lang-active', on);
+                });
+                return;
+            }
+            /* Le code seul est reecrit : le bouton porte aussi deux SVG, qu'un
+               textContent effacerait a la premiere bascule de langue. */
+            p.code.textContent = courante.toUpperCase();
             p.btn.setAttribute('aria-label', 'Language: ' + nomDe(courante));
             Array.prototype.forEach.call(p.liste.children, function (li) {
                 var on = li.getAttribute('data-code') === courante;
@@ -302,19 +327,60 @@
     }
 
     function fermer(p) {
+        if (p.pills) return;
         p.liste.hidden = true;
+        p.hote.classList.remove('lang-ouvert');
         p.btn.setAttribute('aria-expanded', 'false');
     }
 
+    function ouvrir(p) {
+        p.liste.hidden = false;
+        p.hote.classList.add('lang-ouvert');
+        p.btn.setAttribute('aria-expanded', 'true');
+    }
+
+    /* Le menu mobile affiche les quatre langues a plat : elles tiennent sur une
+       ligne, et le visiteur voit d'un coup ce qui existe au lieu d'ouvrir un
+       second menu dans un panneau qui l'est deja. */
+    function construirePills(hote) {
+        hote.textContent = '';
+        var grp = document.createElement('div');
+        grp.className = 'lang-pills';
+        grp.setAttribute('role', 'group');
+        grp.setAttribute('aria-label', 'Language');
+
+        LANGS.forEach(function (l) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'lang-pill';
+            b.setAttribute('data-code', l.code);
+            b.setAttribute('aria-pressed', 'false');
+            /* Le libelle visible est le code, le nom complet reste lu par les
+               lecteurs d'ecran : « FR » seul ne dit pas grand chose a la voix. */
+            b.setAttribute('aria-label', l.nom);
+            b.textContent = l.code.toUpperCase();
+            b.addEventListener('click', function () { poser(l.code, true); });
+            grp.appendChild(b);
+        });
+
+        hote.appendChild(grp);
+        var p = { hote: hote, pills: true };
+        pickers.push(p);
+        return p;
+    }
+
     function construire(hote, i) {
+        if (hote.classList.contains('lang-toggle-mobile')) return construirePills(hote);
         hote.textContent = '';
 
         var btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'lang-btn lang-current';
+        btn.className = 'lang-btn';
         btn.setAttribute('aria-haspopup', 'listbox');
         btn.setAttribute('aria-expanded', 'false');
         btn.id = 'lang-btn-' + i;
+        btn.innerHTML = GLOBE + '<span class="lang-code"></span>' + CHEVRON;
+        var code = btn.querySelector('.lang-code');
 
         var liste = document.createElement('ul');
         liste.className = 'lang-list';
@@ -327,32 +393,57 @@
             li.className = 'lang-opt';
             li.setAttribute('role', 'option');
             li.setAttribute('data-code', l.code);
-            li.setAttribute('tabindex', '0');
-            li.textContent = l.nom;
+            /* -1 et non 0 : les options n'entrent pas dans l'ordre de tabulation
+               de la page, on y circule aux fleches une fois la liste ouverte. */
+            li.setAttribute('tabindex', '-1');
+            li.innerHTML = '<span class="lang-nom"></span>' + COCHE;
+            li.querySelector('.lang-nom').textContent = l.nom;
             li.addEventListener('click', function () {
                 poser(l.code, true);
                 fermer(p);
                 btn.focus();
             });
-            li.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); }
-            });
             liste.appendChild(li);
+        });
+
+        /* Deplacement aux fleches, comme attendu d'une listbox. */
+        liste.addEventListener('keydown', function (e) {
+            var opts = Array.prototype.slice.call(liste.children);
+            var pos = opts.indexOf(document.activeElement);
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (pos >= 0) opts[pos].click();
+                return;
+            }
+            var vers = null;
+            if (e.key === 'ArrowDown') vers = pos < 0 ? 0 : (pos + 1) % opts.length;
+            else if (e.key === 'ArrowUp') vers = pos <= 0 ? opts.length - 1 : pos - 1;
+            else if (e.key === 'Home') vers = 0;
+            else if (e.key === 'End') vers = opts.length - 1;
+            if (vers === null) return;
+            e.preventDefault();
+            opts[vers].focus();
         });
 
         btn.addEventListener('click', function () {
             var ouvert = liste.hidden === false;
             pickers.forEach(fermer);
-            if (!ouvert) {
-                liste.hidden = false;
-                btn.setAttribute('aria-expanded', 'true');
-            }
+            if (!ouvert) ouvrir(p);
+        });
+        /* Ouverture au clavier avec le focus pose sur la langue courante, pour
+           ne pas obliger a parcourir la liste depuis le debut. */
+        btn.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+            e.preventDefault();
+            if (liste.hidden) { pickers.forEach(fermer); ouvrir(p); }
+            var actif = liste.querySelector('.lang-active') || liste.firstChild;
+            if (actif) actif.focus();
         });
 
         hote.appendChild(btn);
         hote.appendChild(liste);
 
-        var p = { hote: hote, btn: btn, liste: liste };
+        var p = { hote: hote, btn: btn, code: code, liste: liste, pills: false };
         pickers.push(p);
         return p;
     }
@@ -364,11 +455,18 @@
 
         document.addEventListener('click', function (e) {
             pickers.forEach(function (p) {
-                if (!p.hote.contains(e.target)) fermer(p);
+                if (!p.pills && !p.hote.contains(e.target)) fermer(p);
             });
         });
+        /* Echap rend le focus au bouton : sans cela il resterait sur une option
+           devenue invisible, et la tabulation repartirait du haut de la page. */
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') pickers.forEach(fermer);
+            if (e.key !== 'Escape') return;
+            pickers.forEach(function (p) {
+                if (p.pills || p.liste.hidden) return;
+                fermer(p);
+                p.btn.focus();
+            });
         });
 
         majPicker();

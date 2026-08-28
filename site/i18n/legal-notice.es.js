@@ -94,7 +94,7 @@ window.OIA_I18N.es = {
         "These legal notices may be modified at any time. The online version is authoritative and applies as soon as it is published.": "Este aviso legal puede modificarse en cualquier momento. La versión en línea es la que prevalece y se aplica desde su publicación.",
         "<strong>Last updated:</strong> May 2026. For any question regarding these notices, write to <a href=\"mailto:contact@optimizia.xyz\">contact@optimizia.xyz</a>.": "<strong>Última actualización:</strong> mayo de 2026. Para cualquier pregunta relativa a este aviso, escriba a <a href=\"mailto:contact@optimizia.xyz\">contact@optimizia.xyz</a>.",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <span style=\"color: var(--text-muted);\">V6.0</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <span style=\"color: var(--text-muted);\">V6.1</span>"
     },
     attr: {}
 };

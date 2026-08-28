@@ -456,7 +456,7 @@ window.OIA_I18N.es = {
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Contact": "Contacto",
         "Occitanie, France<br>&amp; International": "Occitania, Francia<br>e internacional",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.0</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
 
         /* Libelles accompagnes d une icone : la cle porte le SVG entier,
            seule la partie texte change. Entrees produites par gen-svg.js. */

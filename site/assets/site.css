@@ -61,20 +61,41 @@ a { text-decoration: none; color: inherit; }
 .reveal { opacity: 0; transform: translateY(36px); }
 /* Selecteur de langue. Le balisage est construit par assets/oia-i18n.js dans
    l'hote [data-lang-picker] : la page ne porte que le conteneur vide. */
-.lang-toggle { position: relative; display: flex; align-items: center; margin-left: 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; }
-.lang-btn { cursor: pointer; padding: 2px 6px; border-radius: 4px; color: var(--text-secondary); transition: color 0.2s; }
-.lang-btn:hover { color: var(--orange); }
-.lang-current { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 9px; font: inherit; line-height: 1.4; }
-.lang-current:hover { border-color: var(--border-hover); }
-.lang-list { position: absolute; top: calc(100% + 6px); right: 0; z-index: 200; min-width: 132px; list-style: none; margin: 0; padding: 4px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); }
+.lang-toggle { position: relative; display: flex; align-items: center; margin-left: 10px; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 5px 9px; background: none; border: 1px solid var(--border); border-radius: var(--radius-pill); font: inherit; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; line-height: 1; color: var(--text-secondary); transition: color 0.2s, border-color 0.2s, background 0.2s; }
+.lang-btn:hover { color: var(--orange); border-color: var(--border-hover); background: var(--orange-light); }
+.lang-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+/* Largeur figee sur le code : sans elle, passer de EN a FR decale le chevron
+   et le bouton tressaute a chaque changement de langue. */
+.lang-code { min-width: 1.7em; text-align: left; }
+.lang-chev { transition: transform 0.2s ease; }
+.lang-ouvert .lang-chev { transform: rotate(180deg); }
+
+.lang-list { position: absolute; top: calc(100% + 8px); right: 0; z-index: 200; min-width: 158px; list-style: none; margin: 0; padding: 5px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-lg); animation: langOuvre 0.18s cubic-bezier(0.16, 1, 0.3, 1); }
 .lang-list[hidden] { display: none; }
-.lang-opt { padding: 7px 12px; border-radius: 6px; cursor: pointer; color: var(--text-secondary); font-weight: 500; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+@keyframes langOuvre { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.lang-opt { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 8px 11px; border-radius: 9px; cursor: pointer; color: var(--text-secondary); font-size: 0.86rem; font-weight: 500; white-space: nowrap; transition: background 0.15s, color 0.15s; }
+/* La coche occupe sa place en permanence : la reveler en opacite plutot qu'en
+   affichage evite que la ligne active soit plus large que les autres. */
+.lang-opt svg { flex-shrink: 0; opacity: 0; transition: opacity 0.15s; }
 .lang-opt:hover, .lang-opt:focus-visible { background: var(--orange-light); color: var(--orange); outline: none; }
 .lang-opt.lang-active { color: var(--orange); font-weight: 600; }
-/* Dans le menu mobile le selecteur est en bas de panneau : la liste s'ouvre
-   vers le haut, sinon elle sort de l'ecran. */
-.lang-toggle-mobile { justify-content: center; margin: 8px 0 0; }
-.lang-toggle-mobile .lang-list { top: auto; bottom: calc(100% + 6px); right: auto; left: 50%; transform: translateX(-50%); }
+.lang-opt.lang-active svg { opacity: 1; }
+
+/* Dans le menu mobile les quatre langues tiennent a plat. Un menu deroulant
+   qui s'ouvre vers le haut a l'interieur d'un panneau deja ouvert est une
+   cible tactile de plus pour rien. */
+.lang-toggle-mobile { justify-content: center; margin: 14px 0 0; }
+.lang-pills { display: flex; gap: 4px; padding: 4px; background: var(--orange-light); border-radius: var(--radius-pill); }
+.lang-pill { flex: 1; padding: 8px 15px; border: none; background: none; border-radius: var(--radius-pill); cursor: pointer; font: inherit; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; color: var(--text-secondary); transition: background 0.18s, color 0.18s; }
+.lang-pill:hover { color: var(--orange); }
+.lang-pill.lang-active { background: var(--bg-card); color: var(--orange); box-shadow: var(--shadow-sm); }
+.lang-pill:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .lang-list { animation: none; }
+    .lang-chev, .lang-opt svg { transition: none; }
+}
 
 /* ═══ Bandeau cookies V2 (partagé toutes pages) ═══ */
 #oia-consent { position: fixed; left: 16px; bottom: 16px; z-index: 9998; max-width: 460px; background: #fff; border: 1px solid #E5E7EB; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 12px 40px rgba(15,23,42,0.12), 0 2px 8px rgba(15,23,42,0.06); font-family: 'Inter', system-ui, sans-serif; font-size: 13.5px; line-height: 1.55; color: #1F2937; display: none; }
