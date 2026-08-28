@@ -1,5 +1,5 @@
 /* about.html — espagnol. Meme jeu de cles que about.fr.js et about.de.js.
-   PME/ETI se rend par « pymes y empresas medianas », le lecteur espagnol ne
+   TPE/PME se rend par « micropymes y pymes », le lecteur espagnol ne
    connait pas le decoupage francais. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
@@ -47,9 +47,11 @@ window.OIA_I18N.es = {
         "Free AI audit": "Auditoría de IA gratuita",
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
-        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "OptimizIA.xyz is based in Béziers, in the south of France, and works with SMEs across Occitanie and internationally. French-speaking businesses nearby can start from our local page: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.": "OptimizIA.xyz tiene su sede en Béziers, en el sur de Francia, y acompaña a pymes en Occitania y a nivel internacional. Las empresas cercanas pueden empezar por nuestra página local: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.",
+        "Guides": "Guías"
     },
     attr: {}
 };

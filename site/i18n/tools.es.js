@@ -49,9 +49,10 @@ window.OIA_I18N.es = {
         "n8n agency": "Agencia n8n",
         "Free AI audit": "Auditoría de IA gratuita",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
-        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"../legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"../legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"../legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"../legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guías"
     },
     attr: {}
 };

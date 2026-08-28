@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="assets/site.css?v=2">
+    <link rel="canonical" href="https://www.optimizia.xyz/n8n-vs-make.html">
+    <title>n8n or Make: How to Choose as an SME | OptimizIA.xyz</title>
+    <meta name="description" content="n8n or Make to automate an SME: where your data runs, how you are billed, technical limits and the reversibility criterion. An honest comparison with the cases where each one wins.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="n8n or Make: How to Choose as an SME | OptimizIA.xyz">
+    <meta property="og:description" content="n8n or Make to automate an SME: where your data runs, how you are billed, technical limits and the reversibility criterion. An honest comparison with the cases where each one wins.">
+    <meta property="og:url" content="https://www.optimizia.xyz/n8n-vs-make.html">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="n8n or Make: How to Choose as an SME | OptimizIA.xyz">
+    <meta name="twitter:description" content="n8n or Make to automate an SME: where your data runs, how you are billed, technical limits and the reversibility criterion. An honest comparison with the cases where each one wins.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+
+    <link rel="preload" href="assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* Pages editoriales (guides, pages de service, hub realisations) */
+        .ed-hero { padding: 138px 0 56px; }
+        .ed-hero .overline { display: block; margin-bottom: 14px; }
+        .ed-hero h1 {
+            font-size: clamp(2rem, 4.6vw, 3.1rem);
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+        .ed-hero .ed-lead {
+            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+        .ed-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            margin-top: 26px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+        .ed-body { padding: 8px 0 96px; }
+        .ed-wrap { max-width: 780px; }
+        .ed-wrap h2 {
+            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+            margin: 52px 0 16px;
+        }
+        .ed-wrap h3 {
+            font-size: 1.14rem;
+            margin: 32px 0 10px;
+        }
+        .ed-wrap p {
+            font-size: 1rem;
+            line-height: 1.78;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+        .ed-wrap p strong { color: var(--text); font-weight: 600; }
+        .ed-wrap ul, .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; }
+        .ed-wrap ul { list-style: none; }
+        .ed-wrap ul li {
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.68;
+            color: var(--text-muted);
+        }
+        .ed-wrap ul li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 10px;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+        .ed-wrap ol { padding-left: 22px; }
+        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
+        .ed-callout {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin: 30px 0;
+        }
+        .ed-callout p:last-child { margin-bottom: 0; }
+        .ed-table-wrap { overflow-x: auto; margin: 26px 0; }
+        .ed-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; }
+        .ed-table th, .ed-table td {
+            text-align: left;
+            padding: 13px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .ed-table th {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text);
+            background: var(--bg-alt);
+        }
+        .ed-cta {
+            margin-top: 54px;
+            padding: 40px 36px;
+            border-radius: var(--radius-xl);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+        }
+        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
+        .ed-faq details {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            background: var(--bg-card, #fff);
+        }
+        .ed-faq summary {
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            list-style: none;
+        }
+        .ed-faq summary::-webkit-details-marker { display: none; }
+        .ed-faq details p { margin: 14px 0 0; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+        {"@type":"ListItem","position":2,"name":"Guides","item":"https://www.optimizia.xyz/guides.html"},
+        {"@type":"ListItem","position":3,"name":"n8n or Make","item":"https://www.optimizia.xyz/n8n-vs-make.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.optimizia.xyz/n8n-vs-make.html#article",
+      "headline": "n8n or Make: how to choose when you are an SME",
+      "description": "n8n or Make to automate an SME: where your data runs, how you are billed, technical limits and the reversibility criterion. An honest comparison with the cases where each one wins.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-08-11",
+      "dateModified": "2026-08-28",
+      "author": { "@id": "https://www.optimizia.xyz/#organization" },
+      "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+      "isPartOf": { "@id": "https://www.optimizia.xyz/#website" },
+      "mainEntityOfPage": "https://www.optimizia.xyz/n8n-vs-make.html",
+      "about": ["n8n", "Make", "Automation", "Orchestration", "SME"],
+      "image": "https://www.optimizia.xyz/assets/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.optimizia.xyz/n8n-vs-make.html#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"Is n8n free?","acceptedAnswer":{"@type":"Answer","text":"The core of n8n is distributed under a source-available licence that allows free self-hosting for internal use, including in a company. What is not free is the server, the updates and the maintenance time. Some enterprise features require a paid licence. For an SME, the real cost sits in hosting and operations, not in the licence."}},
+        {"@type":"Question","name":"Can you do AI with Make like with n8n?","acceptedAnswer":{"@type":"Answer","text":"Yes, both call language models through APIs. The difference is not the ability to call a model, it is in what you build around it: document splitting, vector database, fine-grained handling of errors and ambiguous cases. Those treatments often require custom code, which n8n absorbs more naturally."}},
+        {"@type":"Question","name":"How much does a self-hosted n8n server cost for an SME?","acceptedAnswer":{"@type":"Answer","text":"A virtual server able to run n8n for an SME's needs rents for a few dozen euros per month. The real cost centre is not the machine, it is maintenance: updates, backups, monitoring. That is what a co-piloting contract includes, between €1,500 and €4,000 excl. VAT per month depending on the scope covered."}},
+        {"@type":"Question","name":"Do you need to know how to code to use n8n?","acceptedAnswer":{"@type":"Answer","text":"Not for everyday use: the interface is visual and most workflows are built without writing a single line. Knowing how to code becomes useful for edge cases, and that is precisely where n8n stands out. In practice, we build the workflows and train the teams to read and adjust them."}}
+      ]
+    }
+    </script>
+    <script src="assets/oia-i18n.js?v=3" data-page="n8n-vs-make" defer></script>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+        <div class="nav-links">
+            <a href="/#constat">Why now</a>
+            <a href="/#benefices">Benefits</a>
+            <a href="/#methode">Method</a>
+            <a href="/#services">Services</a>
+            <a href="/#automatisation">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="/#questions-frequentes">FAQ</a>
+            <a href="contact.html" class="nav-cta">Free audit</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/#constat">Why now</a>
+    <a href="/#benefices">Benefits</a>
+    <a href="/#methode">Method</a>
+    <a href="/#services">Services</a>
+    <a href="/#automatisation">Case studies</a>
+    <a href="about.html">About</a>
+    <a href="/#questions-frequentes">FAQ</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<section class="ed-hero bg-mesh" id="top">
+    <div class="container">
+        <span class="overline">n8n or Make</span>
+        <h1>n8n or Make: how to choose when you are an SME</h1>
+        <p class="ed-lead">The two tools do roughly the same thing. The choice comes down to three differences you cannot see in a demo: where your data runs, how you are billed, and how far you can go when a case falls outside the frame.</p>
+        <div class="ed-meta"><span>Comparison</span><span>7 minute read</span><span>Updated 28 August 2026</span></div>
+    </div>
+</section>
+<main class="ed-body">
+    <div class="container">
+        <div class="ed-wrap">
+            <h2>What the two tools do the same</h2>
+            <p>n8n and Make belong to the same family: visual orchestrators that connect applications to each other and run chains of actions triggered by an event or a clock. Both cover the bulk of an SME's needs, both offer hundreds of connectors, both can call an API when the connector does not exist, both can handle errors and replay an execution.</p>
+            <p>In other words: on the everyday functional scope, the choice is not made on what the tool can do. It is made on three structural differences that do not show in a demo but that you pay for after six months.</p>
+
+            <h2>Difference 1: where your data runs</h2>
+            <p>Make is an online service. Your data passes through its infrastructure, in the data centre of the region you choose. That is perfectly acceptable for many uses, and it is a problem as soon as you handle health data, client data under confidentiality agreements, or anything your management does not want leaving its perimeter.</p>
+            <p>n8n self-hosts. You install it on your own server or on a dedicated machine in France, and nothing leaves. There is also a cloud version of n8n, which brings you back to Make's model. n8n's real argument is therefore not "open source" in the ideological sense, it is <strong>the ability to choose where your processing runs</strong>, including later.</p>
+
+            <h2>Difference 2: how you are billed</h2>
+            <p>Make bills per operation. Every step of every execution consumes quota. That is predictable while volumes stay low, and it is the classic trap as soon as a workflow becomes useful: the more it runs, the more it costs. A monitoring automation that processes 500 items a day can consume more quota than the rest of your account combined.</p>
+            <p>Self-hosted n8n bills the licence and the server, not the execution. A workflow that runs a thousand times a day costs no more than one that runs ten times, as long as the machine holds. That completely changes the trade-offs: you allow yourself to automate high-volume, low-unit-value tasks, which are precisely the ones where automation pays off most.</p>
+            <div class="ed-table-wrap">
+                <table class="ed-table">
+                    <thead><tr><th>Criterion</th><th>Self-hosted n8n</th><th>Make</th></tr></thead>
+                    <tbody>
+                        <tr><td>Data location</td><td>Your infrastructure, your choice of country</td><td>Provider's infrastructure</td></tr>
+                        <tr><td>Cost model</td><td>Server and licence, independent of volume</td><td>Per operation consumed</td></tr>
+                        <tr><td>Getting started</td><td>Requires installation and maintenance</td><td>Immediate, no server to manage</td></tr>
+                        <tr><td>Custom code</td><td>Native JavaScript and Python in workflows</td><td>Possible, more constrained</td></tr>
+                        <tr><td>Reversibility</td><td>Exportable workflows, an instance you own</td><td>Depends on the provider</td></tr>
+                        <tr><td>Non-technical onboarding</td><td>Decent, less guided</td><td>Excellent, very accessible</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Difference 3: how far you can go</h2>
+            <p>The day a use case falls outside the planned frame, the question becomes: can I write ten lines of code here without leaving the tool? n8n answers yes natively, with JavaScript and Python nodes, which lets you handle edge cases without building a separate service. Make allows code too, within a more constrained frame.</p>
+            <p>This point seems secondary at the start and becomes central after a year, when your automations cover real cases with their exceptions. It is the main reason we build our own products on n8n.</p>
+
+            <h2>How to choose, concretely</h2>
+            <p><strong>Make is the right choice</strong> if you want to start this week without mobilising technical skills, if your volumes are moderate and predictable, if your data is not sensitive, and if nobody at your company wants to hear about servers. It is an excellent tool, and underestimating it would be a mistake of posture.</p>
+            <p><strong>n8n is the right choice</strong> if your data must not leave your perimeter, if you anticipate volume, if you want to control cost over time, or if you already know your use cases will step outside the standard. The price to pay is real: you need a machine, updates, and someone who knows how to maintain it, in-house or through a provider.</p>
+            <div class="ed-callout">
+                <p>Our position, transparently: we almost always deploy self-hosted n8n, and it is what runs our own products. That is not an aesthetic preference, it is the result of the sovereignty constraint our clients set and of the cost model. It does not make Make a bad tool, and we sometimes recommend staying on it when a migration would bring nothing.</p>
+            </div>
+
+            <h2>And migration, if you get it wrong?</h2>
+            <p>There is no reliable automatic import from one tool to the other: the node logic and error handling differ too much. A migration is redone by hand, workflow by workflow. The good news is that the useful work, namely the description of the process and the decision rules, carries over entirely. Count half a day to two days per workflow depending on complexity. It is not a wall, it is a cost to know before committing.</p>
+            <h2>Frequently asked questions</h2>
+            <div class="ed-faq">
+                <details>
+                    <summary>Is n8n free?</summary>
+                    <p>The core of n8n is distributed under a source-available licence that allows free self-hosting for internal use, including in a company. What is not free is the server, the updates and the maintenance time. Some enterprise features require a paid licence. For an SME, the real cost sits in hosting and operations, not in the licence.</p>
+                </details>
+                <details>
+                    <summary>Can you do AI with Make like with n8n?</summary>
+                    <p>Yes, both call language models through APIs. The difference is not the ability to call a model, it is in what you build around it: document splitting, vector database, fine-grained handling of errors and ambiguous cases. Those treatments often require custom code, which n8n absorbs more naturally.</p>
+                </details>
+                <details>
+                    <summary>How much does a self-hosted n8n server cost for an SME?</summary>
+                    <p>A virtual server able to run n8n for an SME's needs rents for a few dozen euros per month. The real cost centre is not the machine, it is maintenance: updates, backups, monitoring. That is what a co-piloting contract includes, between €1,500 and €4,000 excl. VAT per month depending on the scope covered.</p>
+                </details>
+                <details>
+                    <summary>Do you need to know how to code to use n8n?</summary>
+                    <p>Not for everyday use: the interface is visual and most workflows are built without writing a single line. Knowing how to code becomes useful for edge cases, and that is precisely where n8n stands out. In practice, we build the workflows and train the teams to read and adjust them.</p>
+                </details>
+            </div>
+
+            <div class="ed-cta">
+                <h2>Unsure about your specific situation?</h2>
+                <p>The right choice depends on your volumes, the sensitivity of your data and who will maintain the whole thing. Twenty minutes are enough to settle it, with no commitment.</p>
+                <a href="contact.html" class="btn btn-orange">Book a free diagnostic</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="https://www.ginoux.xyz" target="_blank" class="footer-ginoux">
+                    ↗ ginoux.xyz — Rémy Ginoux's journey
+                </a>
+                <a href="https://www.romainben.cloud" target="_blank" class="footer-ginoux">
+                    ↗ romainben.cloud — Romain Ben's journey
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/#constat">Why now</a></li>
+                    <li><a href="/#benefices">Benefits</a></li>
+                    <li><a href="/#methode">Method</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#automatisation">Case studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="/#questions-frequentes">FAQ</a></li>
+                </ul>                <h4 style="margin-top:26px;">Resources</h4>
+                <ul>
+                    <li><a href="ai-integration-agency.html">AI integration agency</a></li>
+                    <li><a href="n8n-agency.html">n8n agency</a></li>
+                    <li><a href="ai-audit.html">Free AI audit</a></li>
+                    <li><a href="case-studies.html">Case studies</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/tools/seoplus/?lang=en">SEO &amp; GEO audit tool (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                    <li><a href="https://www.linkedin.com/in/remyginoux/" target="_blank">LinkedIn — Rémy Ginoux</a></li>
+                    <li><a href="https://www.linkedin.com/in/romainben/" target="_blank">LinkedIn — Romain Ben</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 OptimizIA.xyz · All rights reserved · <a href="legal-notice.html" class="legal-link">Legal Notice</a> · <span style="color: var(--text-muted);">V6.1</span></p>
+            <p><span style="color: var(--text-muted);">optimizia.xyz</span> · <a href="https://www.ginoux.xyz">ginoux.xyz</a> · <a href="https://www.romainben.cloud">romainben.cloud</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="legal-notice.html" data-accent="#F97316" defer></script>
+</body>
+</html>

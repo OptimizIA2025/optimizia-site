@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="assets/site.css?v=2">
+    <link rel="canonical" href="https://www.optimizia.xyz/automate-sme-processes.html">
+    <title>Automating Business Processes in an SME | OptimizIA.xyz</title>
+    <meta name="description" content="How to automate business processes in an SME: spot the profitable deposits, quantify the gain, choose the right sequence and avoid the mistakes that make projects fail.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Automating Business Processes in an SME | OptimizIA.xyz">
+    <meta property="og:description" content="How to automate business processes in an SME: spot the profitable deposits, quantify the gain, choose the right sequence and avoid the mistakes that make projects fail.">
+    <meta property="og:url" content="https://www.optimizia.xyz/automate-sme-processes.html">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automating Business Processes in an SME | OptimizIA.xyz">
+    <meta name="twitter:description" content="How to automate business processes in an SME: spot the profitable deposits, quantify the gain, choose the right sequence and avoid the mistakes that make projects fail.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+
+    <link rel="preload" href="assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* Pages editoriales (guides, pages de service, hub realisations) */
+        .ed-hero { padding: 138px 0 56px; }
+        .ed-hero .overline { display: block; margin-bottom: 14px; }
+        .ed-hero h1 {
+            font-size: clamp(2rem, 4.6vw, 3.1rem);
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+        .ed-hero .ed-lead {
+            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+        .ed-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            margin-top: 26px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+        .ed-body { padding: 8px 0 96px; }
+        .ed-wrap { max-width: 780px; }
+        .ed-wrap h2 {
+            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+            margin: 52px 0 16px;
+        }
+        .ed-wrap h3 {
+            font-size: 1.14rem;
+            margin: 32px 0 10px;
+        }
+        .ed-wrap p {
+            font-size: 1rem;
+            line-height: 1.78;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+        .ed-wrap p strong { color: var(--text); font-weight: 600; }
+        .ed-wrap ul, .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; }
+        .ed-wrap ul { list-style: none; }
+        .ed-wrap ul li {
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.68;
+            color: var(--text-muted);
+        }
+        .ed-wrap ul li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 10px;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+        .ed-wrap ol { padding-left: 22px; }
+        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
+        .ed-callout {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin: 30px 0;
+        }
+        .ed-callout p:last-child { margin-bottom: 0; }
+        .ed-cta {
+            margin-top: 54px;
+            padding: 40px 36px;
+            border-radius: var(--radius-xl);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+        }
+        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
+        .ed-faq details {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            background: var(--bg-card, #fff);
+        }
+        .ed-faq summary {
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            list-style: none;
+        }
+        .ed-faq summary::-webkit-details-marker { display: none; }
+        .ed-faq details p { margin: 14px 0 0; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+        {"@type":"ListItem","position":2,"name":"Guides","item":"https://www.optimizia.xyz/guides.html"},
+        {"@type":"ListItem","position":3,"name":"Automating business processes","item":"https://www.optimizia.xyz/automate-sme-processes.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.optimizia.xyz/automate-sme-processes.html#article",
+      "headline": "Automating business processes in an SME: where to start, and where definitely not to",
+      "description": "How to automate business processes in an SME: spot the profitable deposits, quantify the gain, choose the right sequence and avoid the mistakes that make projects fail.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-08-11",
+      "dateModified": "2026-08-28",
+      "author": { "@id": "https://www.optimizia.xyz/#organization" },
+      "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+      "isPartOf": { "@id": "https://www.optimizia.xyz/#website" },
+      "mainEntityOfPage": "https://www.optimizia.xyz/automate-sme-processes.html",
+      "about": ["Process automation", "SME", "Digital transformation", "Artificial intelligence"],
+      "image": "https://www.optimizia.xyz/assets/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.optimizia.xyz/automate-sme-processes.html#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"Do you need an IT department to automate your processes?","acceptedAnswer":{"@type":"Answer","text":"No. Most of the SMEs we support have no dedicated IT department. What you need is an internal owner who knows the business and has the mandate to arbitrate. Technical skills can be outsourced; knowledge of the process cannot."}},
+        {"@type":"Question","name":"Which process should you start with when everything seems urgent?","acceptedAnswer":{"@type":"Answer","text":"The one that combines the best ratio between quantified gain and simplicity of rule. In practice, it is almost always re-keying data between two tools. It is not the most impressive one, it is the one that produces a visible result within weeks and funds what comes next."}},
+        {"@type":"Question","name":"How long before you see a real gain?","acceptedAnswer":{"@type":"Answer","text":"Count on a quarter for a first use case in production in an SME starting from zero: one to three weeks of diagnosis, then two to five weeks of build. The gain is then measured over a few weeks of real use, not on launch day."}},
+        {"@type":"Question","name":"Does automation eliminate jobs?","acceptedAnswer":{"@type":"Answer","text":"In the projects we run, it eliminates tasks, not jobs. The profitable deposits are tasks nobody claims: re-keying, sorting, follow-ups. The real issue in an SME is rather the opposite, absorbing a growing workload with a constant headcount."}}
+      ]
+    }
+    </script>
+    <script src="assets/oia-i18n.js?v=3" data-page="automate-sme-processes" defer></script>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+        <div class="nav-links">
+            <a href="/#constat">Why now</a>
+            <a href="/#benefices">Benefits</a>
+            <a href="/#methode">Method</a>
+            <a href="/#services">Services</a>
+            <a href="/#automatisation">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="/#questions-frequentes">FAQ</a>
+            <a href="contact.html" class="nav-cta">Free audit</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/#constat">Why now</a>
+    <a href="/#benefices">Benefits</a>
+    <a href="/#methode">Method</a>
+    <a href="/#services">Services</a>
+    <a href="/#automatisation">Case studies</a>
+    <a href="about.html">About</a>
+    <a href="/#questions-frequentes">FAQ</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<section class="ed-hero bg-mesh" id="top">
+    <div class="container">
+        <span class="overline">Automating processes in an SME</span>
+        <h1>Automating business processes in an SME: where to start, and where definitely not to</h1>
+        <p class="ed-lead">A practical guide for SME leaders: how to spot the tasks genuinely worth automating, how to quantify the gain before spending a single euro, and why the choice of tool comes last.</p>
+        <div class="ed-meta"><span>Guide</span><span>8 minute read</span><span>Updated 28 August 2026</span></div>
+    </div>
+</section>
+<main class="ed-body">
+    <div class="container">
+        <div class="ed-wrap">
+            <h2>The question to ask before the tool question</h2>
+            <p>Almost every automation project that fails in an SME began with the choice of a tool. It makes sense, it is the visible part, and it is the only part a salesperson can help you with. It is also the least decisive part. The question that decides the outcome sits elsewhere: <strong>which process, precisely, and why that one.</strong></p>
+            <p>A process deserves automation when it meets four simple conditions. It is repetitive, so the gain multiplies. It is describable, so someone can explain its decision rule without saying "it depends". It is measurable, so you will know whether it worked. And it is stable, so the automation will not need redoing in three months because the procedure changed. A process that fails one of these conditions is not a bad candidate forever, it is a bad candidate right now.</p>
+
+            <h2>Spotting the real deposits in an SME</h2>
+            <p>The most profitable deposits are rarely the ones mentioned in meetings. Here is what we find at most of the SMEs we support, in decreasing order of profitability.</p>
+            <ul>
+                <li><strong>Re-keying between two tools.</strong> Someone reads information in one place and copies it into another. It is the number one deposit, because the gain is immediate, the risk zero and the decision rule non-existent.</li>
+                <li><strong>Collecting and sorting incoming information.</strong> Emails, forms, documents, alerts. The work is not deciding, it is sorting before deciding. A machine sorts better and never gets tired of it.</li>
+                <li><strong>Producing repetitive documents.</strong> Minutes, periodic reports, standard quotes. The content varies, the structure does not.</li>
+                <li><strong>Internal information search.</strong> Finding the right procedure, the right contract, the right version. It is invisible time because it is scattered in slices of a few minutes, and it is often the biggest total on the list.</li>
+                <li><strong>Follow-ups and reminders.</strong> Everything that consists of remembering that someone needs chasing.</li>
+            </ul>
+            <div class="ed-callout">
+                <p>A simple method to quantify: take the task, multiply the unit time by the annual frequency and by the number of people involved. A 10-minute task, 3 times a week, for 4 people, represents about 100 hours a year. It is an order of magnitude, and an order of magnitude is enough to prioritise.</p>
+            </div>
+
+            <h2>The sequence that works</h2>
+            <ol>
+                <li><strong>Describe before automating.</strong> Write the process down as it really is, not as it should be. The difference between the two is usually the real subject.</li>
+                <li><strong>Simplify before tooling.</strong> One step in three generally disappears at this stage. Removing a step costs zero euros of maintenance; automating it costs money every year.</li>
+                <li><strong>Automate a narrow scope.</strong> One case, one department, one source. The temptation to fold in the edge cases right away is what turns a three-week project into a six-month one.</li>
+                <li><strong>Put the human where they decide.</strong> An automation that proposes and a human who validates is a system people adopt. An automation that decides alone on a sensitive subject is a system people unplug at the first incident.</li>
+                <li><strong>Measure and expand.</strong> The gain observed on the first case funds and legitimises the next ones. Without measurement, every new case starts over from a debate of principle.</li>
+            </ol>
+
+            <h2>What AI changes, and what it does not</h2>
+            <p>Classic automation knows how to execute rules. What it never knew how to do is handle language: understanding a badly written email, summarising minutes, classifying a request phrased in everyday words. Language models remove that lock, and it is a real change of scale for an SME, because most of an SME's information is unstructured text.</p>
+            <p>On the other hand, AI changes nothing about three things. It does not make a fuzzy process reliable. It does not replace data that does not exist. And it introduces a new uncertainty: a model can be confidently wrong, which a script never is. The practical consequence is that an AI treatment must always be designed with an exit door, that is, a case where the system says "I don't know" and hands over.</p>
+
+            <h2>The mistakes that come back most often</h2>
+            <ul>
+                <li><strong>Starting with the most complex case</strong> to prove it works. It is the best way to prove the opposite.</li>
+                <li><strong>Automating without an owner.</strong> Without someone who has the mandate to arbitrate, the project stops at the first disagreement between two departments.</li>
+                <li><strong>Not planning for failure.</strong> What happens when the API is down, when the file arrives empty, when the format changes? A workflow without error handling produces silent damage, which is worse than a visible outage.</li>
+                <li><strong>Creating a dependency.</strong> If nobody in-house can open and understand the automation, you bought a black box, not an asset.</li>
+                <li><strong>Confusing pilot and production.</strong> A working pilot demonstrates feasibility. Going to production means robustness, incident recovery, logging and training. That is where most of the work lives.</li>
+            </ul>
+
+            <h2>How long it takes and how much it costs</h2>
+            <p>For an SME starting from a blank page, a realistic first use case fits within the quarter: one to three weeks of scoping and diagnosis, then two to five weeks to build and put into production. We observe an average of 13 days between a validated Proof of Concept and an MVP actually running, on a deliberately narrow scope.</p>
+            <p>On budget, serious scoping sits between €3,000 and €5,000 excl. VAT, and putting a first use case into production between €8,000 and €15,000 excl. VAT. These amounts only matter relative to the deposit quantified at step 1: if the targeted task represents 100 hours a year and the automation saves 80 of them, the maths do themselves. If you cannot quantify the deposit, that is the sign you should start there.</p>
+            <h2>Frequently asked questions</h2>
+            <div class="ed-faq">
+                <details>
+                    <summary>Do you need an IT department to automate your processes?</summary>
+                    <p>No. Most of the SMEs we support have no dedicated IT department. What you need is an internal owner who knows the business and has the mandate to arbitrate. Technical skills can be outsourced; knowledge of the process cannot.</p>
+                </details>
+                <details>
+                    <summary>Which process should you start with when everything seems urgent?</summary>
+                    <p>The one that combines the best ratio between quantified gain and simplicity of rule. In practice, it is almost always re-keying data between two tools. It is not the most impressive one, it is the one that produces a visible result within weeks and funds what comes next.</p>
+                </details>
+                <details>
+                    <summary>How long before you see a real gain?</summary>
+                    <p>Count on a quarter for a first use case in production in an SME starting from zero: one to three weeks of diagnosis, then two to five weeks of build. The gain is then measured over a few weeks of real use, not on launch day.</p>
+                </details>
+                <details>
+                    <summary>Does automation eliminate jobs?</summary>
+                    <p>In the projects we run, it eliminates tasks, not jobs. The profitable deposits are tasks nobody claims: re-keying, sorting, follow-ups. The real issue in an SME is rather the opposite, absorbing a growing workload with a constant headcount.</p>
+                </details>
+            </div>
+
+            <div class="ed-cta">
+                <h2>Have a process in mind?</h2>
+                <p>Twenty minutes are usually enough to say whether it can be automated, what it would cost and what it would save. If the answer is no, we will tell you.</p>
+                <a href="contact.html" class="btn btn-orange">Book a free diagnostic</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="https://www.ginoux.xyz" target="_blank" class="footer-ginoux">
+                    ↗ ginoux.xyz — Rémy Ginoux's journey
+                </a>
+                <a href="https://www.romainben.cloud" target="_blank" class="footer-ginoux">
+                    ↗ romainben.cloud — Romain Ben's journey
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/#constat">Why now</a></li>
+                    <li><a href="/#benefices">Benefits</a></li>
+                    <li><a href="/#methode">Method</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#automatisation">Case studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="/#questions-frequentes">FAQ</a></li>
+                </ul>                <h4 style="margin-top:26px;">Resources</h4>
+                <ul>
+                    <li><a href="ai-integration-agency.html">AI integration agency</a></li>
+                    <li><a href="n8n-agency.html">n8n agency</a></li>
+                    <li><a href="ai-audit.html">Free AI audit</a></li>
+                    <li><a href="case-studies.html">Case studies</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/tools/seoplus/?lang=en">SEO &amp; GEO audit tool (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                    <li><a href="https://www.linkedin.com/in/remyginoux/" target="_blank">LinkedIn — Rémy Ginoux</a></li>
+                    <li><a href="https://www.linkedin.com/in/romainben/" target="_blank">LinkedIn — Romain Ben</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 OptimizIA.xyz · All rights reserved · <a href="legal-notice.html" class="legal-link">Legal Notice</a> · <span style="color: var(--text-muted);">V6.1</span></p>
+            <p><span style="color: var(--text-muted);">optimizia.xyz</span> · <a href="https://www.ginoux.xyz">ginoux.xyz</a> · <a href="https://www.romainben.cloud">romainben.cloud</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="legal-notice.html" data-accent="#F97316" defer></script>
+</body>
+</html>

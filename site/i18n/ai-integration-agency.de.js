@@ -15,10 +15,10 @@ window.OIA_I18N.de = {
         "FAQ": "FAQ",
         "Free audit": "Kostenloses Audit",
 
-        "AI agency for SMEs and mid-market companies": "KI-Agentur für den Mittelstand",
+        "AI agency for small businesses and SMEs": "KI-Agentur für den Mittelstand",
         "AI integration agency for SMEs: up to 30% of productive time reclaimed in the first quarter": "Agentur für KI-Integration im Mittelstand: bis zu 30 % produktive Zeit zurückgewonnen im ersten Quartal",
-        "OptimizIA.xyz supports leaders of SMEs and mid-market companies from 20 to 500 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz begleitet Geschäftsführungen von KMU und Mittelständlern mit 20 bis 500 Beschäftigten, die messbare Ergebnisse wollen, keine Technologie-Demo. Bezifferte Analyse, Automatisierungen in Produktion, Kompetenztransfer an Ihre Teams.",
-        "SMEs and mid-market, 20 to 500 employees": "KMU und Mittelstand, 20 bis 500 Beschäftigte",
+        "OptimizIA.xyz supports leaders of small businesses and SMEs up to 250 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz begleitet Geschäftsführungen von KMU mit bis zu 250 Beschäftigten, die messbare Ergebnisse wollen, keine Technologie-Demo. Bezifferte Analyse, Automatisierungen in Produktion, Kompetenztransfer an Ihre Teams.",
+        "Small businesses and SMEs, up to 250 employees": "KMU, bis zu 250 Beschäftigte",
         "Diagnosis from €3,000": "Analyse ab 3.000 €",
         "First use case in production in 13 days": "Erster Anwendungsfall in Produktion in 13 Tagen",
         "France &amp; international, based in Occitanie": "Frankreich &amp; international, verankert in Okzitanien",
@@ -90,9 +90,10 @@ window.OIA_I18N.de = {
         "Tools": "Tools",
         "SEO &amp; GEO audit tool (SEOPlus!)": "SEO- und KI-Sichtbarkeitsaudit (SEOPlus!)",
         "Contact": "Kontakt",
-        "Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Leitfäden"
     },
     attr: {}
 };

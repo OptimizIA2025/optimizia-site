@@ -47,7 +47,7 @@ window.OIA_I18N.es = {
         "Can I cancel or reschedule?": "¿Puedo cancelar o cambiar la cita?",
         "Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.": "Sí, por supuesto. Recibirá un correo de confirmación con un enlace para cancelar o reprogramar fácilmente si cambian sus planes.",
         "Do you operate everywhere in France?": "¿Trabajan en toda Francia?",
-        "We operate on-site in Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Trabajamos presencialmente en Occitania y en remoto en toda Francia y a nivel internacional. La videoconferencia es nuestra norma desde hace años y encaja perfectamente con este tipo de conversación.",
+        "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Nuestra sede está en <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Intervenimos in situ en Occitania y a distancia en toda Francia y a nivel internacional. La videoconferencia es nuestra norma desde hace años y se presta perfectamente a este tipo de conversación.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — La trayectoria de Rémy Ginoux",
@@ -59,9 +59,10 @@ window.OIA_I18N.es = {
         "Free AI audit": "Auditoría de IA gratuita",
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
-        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guías"
     },
     attr: {}
 };

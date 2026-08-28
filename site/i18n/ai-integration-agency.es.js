@@ -1,6 +1,6 @@
 /* ai-integration-agency.html — espagnol. Meme jeu de cles que
-   ai-integration-agency.fr.js et .de.js. PME/ETI se rend par « pymes y
-   empresas medianas », montants au format espagnol (3.000 €). */
+   ai-integration-agency.fr.js et .de.js. TPE/PME se rend par « micropymes
+   y pymes », montants au format espagnol (3.000 €). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -15,10 +15,10 @@ window.OIA_I18N.es = {
         "FAQ": "Preguntas frecuentes",
         "Free audit": "Auditoría gratuita",
 
-        "AI agency for SMEs and mid-market companies": "Agencia de IA para pymes y empresas medianas",
+        "AI agency for small businesses and SMEs": "Agencia de IA para micropymes y pymes",
         "AI integration agency for SMEs: up to 30% of productive time reclaimed in the first quarter": "Agencia de integración de IA para pymes: hasta un 30 % de tiempo productivo recuperado en el primer trimestre",
-        "OptimizIA.xyz supports leaders of SMEs and mid-market companies from 20 to 500 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz acompaña a directivos de pymes y empresas medianas de 20 a 500 empleados que quieren resultados medibles, no una demostración de tecnología. Diagnóstico cuantificado, automatizaciones en producción, transferencia de competencias a sus equipos.",
-        "SMEs and mid-market, 20 to 500 employees": "Pymes y empresas medianas, de 20 a 500 empleados",
+        "OptimizIA.xyz supports leaders of small businesses and SMEs up to 250 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz acompaña a directivos de micropymes y pymes de hasta 250 empleados que quieren resultados medibles, no una demostración de tecnología. Diagnóstico cuantificado, automatizaciones en producción, transferencia de competencias a sus equipos.",
+        "Small businesses and SMEs, up to 250 employees": "Micropymes y pymes, hasta 250 empleados",
         "Diagnosis from €3,000": "Diagnóstico desde 3.000 €",
         "First use case in production in 13 days": "Primer caso de uso en producción en 13 días",
         "France &amp; international, based in Occitanie": "Francia e internacional, con base en Occitania",
@@ -90,9 +90,10 @@ window.OIA_I18N.es = {
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Contact": "Contacto",
-        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guías"
     },
     attr: {}
 };

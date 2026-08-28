@@ -20,8 +20,8 @@ window.OIA_I18N.fr = {
         "n8n agency": "Agence n8n",
 
         "n8n agency: automating your business processes": "Agence n8n : automatisation de vos processus métier",
-        "We design, deploy and maintain self-hosted n8n automations for companies from 20 to 500 people. No disposable demos: workflows that run every day in production, connected to your existing tools, and that your teams can take over.": "Nous concevons, déployons et maintenons des automatisations n8n auto-hébergées pour des entreprises de 20 à 500 personnes. Pas de démonstration jetable : des workflows qui tournent tous les jours en production, reliés à vos outils existants, et que vos équipes peuvent reprendre.",
-        "SMEs from 20 to 500 employees": "PME de 20 à 500 salariés",
+        "We design, deploy and maintain self-hosted n8n automations for companies of up to 250 people. No disposable demos: workflows that run every day in production, connected to your existing tools, and that your teams can take over.": "Nous concevons, déployons et maintenons des automatisations n8n auto-hébergées pour des entreprises jusqu'à 250 personnes. Pas de démonstration jetable : des workflows qui tournent tous les jours en production, reliés à vos outils existants, et que vos équipes peuvent reprendre.",
+        "Small businesses and SMEs up to 250 employees": "TPE et PME jusqu'à 250 salariés",
         "Self-hosted n8n": "n8n auto-hébergé",
         "PoC to MVP in 13 days on average": "PoC vers MVP en 13 jours en moyenne",
         "Based in France, remote worldwide": "Basés en France, à distance partout dans le monde",
@@ -70,7 +70,7 @@ window.OIA_I18N.fr = {
         "Twenty minutes of free diagnosis are usually enough to say whether your case can be automated, what it would cost and what it would save. If the answer is no, we will tell you that too.": "Vingt minutes de diagnostic gratuit suffisent en général pour dire si votre cas est automatisable, ce que ça coûterait et ce que ça ferait gagner. Si la réponse est non, nous vous le dirons aussi.",
         "Book a slot": "Réserver un créneau",
 
-        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.",
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
@@ -81,9 +81,10 @@ window.OIA_I18N.fr = {
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
         "Contact": "Contact",
-        "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guides"
     },
     attr: {}
 };

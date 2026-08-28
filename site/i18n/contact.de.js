@@ -47,7 +47,7 @@ window.OIA_I18N.de = {
         "Can I cancel or reschedule?": "Kann ich absagen oder verschieben?",
         "Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.": "Ja, selbstverständlich. Sie erhalten eine Bestätigungsmail mit einem Link, über den Sie den Termin bei geänderten Plänen leicht absagen oder verschieben können.",
         "Do you operate everywhere in France?": "Arbeiten Sie in ganz Frankreich?",
-        "We operate on-site in Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Wir arbeiten vor Ort in Okzitanien und remote in ganz Frankreich sowie international. Videokonferenzen sind seit Jahren unser Normalfall und passen zu dieser Art von Gespräch bestens.",
+        "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Unser Sitz ist in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Wir arbeiten vor Ort in Okzitanien und remote in ganz Frankreich und international. Videokonferenzen sind seit Jahren unsere Norm und passen perfekt zu dieser Art von Gespräch.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Der Werdegang von Rémy Ginoux",
@@ -59,9 +59,10 @@ window.OIA_I18N.de = {
         "Free AI audit": "Kostenloses KI-Audit",
         "Tools": "Tools",
         "SEO &amp; GEO audit tool (SEOPlus!)": "SEO- und KI-Sichtbarkeitsaudit (SEOPlus!)",
-        "Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Leitfäden"
     },
     attr: {}
 };

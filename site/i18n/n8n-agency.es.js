@@ -16,8 +16,8 @@ window.OIA_I18N.es = {
         "n8n agency": "Agencia n8n",
 
         "n8n agency: automating your business processes": "Agencia n8n: automatización de sus procesos de negocio",
-        "We design, deploy and maintain self-hosted n8n automations for companies from 20 to 500 people. No disposable demos: workflows that run every day in production, connected to your existing tools, and that your teams can take over.": "Diseñamos, desplegamos y mantenemos automatizaciones n8n autoalojadas para empresas de 20 a 500 personas. Nada de demostraciones desechables: flujos de trabajo que funcionan cada día en producción, conectados a sus herramientas existentes y que sus equipos pueden asumir.",
-        "SMEs from 20 to 500 employees": "Pymes de 20 a 500 empleados",
+        "We design, deploy and maintain self-hosted n8n automations for companies of up to 250 people. No disposable demos: workflows that run every day in production, connected to your existing tools, and that your teams can take over.": "Diseñamos, desplegamos y mantenemos automatizaciones n8n autoalojadas para empresas de hasta 250 personas. Nada de demostraciones desechables: flujos de trabajo que funcionan cada día en producción, conectados a sus herramientas existentes y que sus equipos pueden asumir.",
+        "Small businesses and SMEs up to 250 employees": "Micropymes y pymes de hasta 250 empleados",
         "Self-hosted n8n": "n8n autoalojado",
         "PoC to MVP in 13 days on average": "De PoC a MVP en 13 días de media",
         "Based in France, remote worldwide": "Con base en Francia, en remoto en todo el mundo",
@@ -77,9 +77,10 @@ window.OIA_I18N.es = {
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Contact": "Contacto",
-        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guías"
     },
     attr: {}
 };

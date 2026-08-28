@@ -19,7 +19,6 @@
 (function () {
     'use strict';
 
-    var SOURCE = 'en';
     var LANGS = [
         { code: 'en', nom: 'English' },
         { code: 'fr', nom: 'Français' },
@@ -36,6 +35,12 @@
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
     var BASE = (self && self.getAttribute('data-base')) || 'i18n/';
+    /* La langue d'ecriture de la page. Anglais partout, sauf exception declaree :
+       la page locale de Beziers est ecrite et indexee en francais (une requete
+       locale francaise ne se gagne pas avec une page anglaise), et ce sont ses
+       dictionnaires en/es/de qui s'appliquent au rendu. Le reste du mecanisme
+       ne distingue jamais les langues, seule la source change. */
+    var SOURCE = (self && self.getAttribute('data-source')) || 'en';
     if (!PAGE) return;
 
     var root = document.documentElement;

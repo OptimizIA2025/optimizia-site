@@ -85,7 +85,7 @@ window.OIA_I18N.fr = {
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutes de diagnostic gratuit pour savoir si le même mécanisme s'applique chez vous, sans jargon et sans engagement.",
         "Book a slot": "Réserver un créneau",
 
-        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.",
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
         "Navigation": "Navigation",
@@ -96,9 +96,10 @@ window.OIA_I18N.fr = {
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
         "Contact": "Contact",
-        "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guides"
     },
     attr: {}
 };

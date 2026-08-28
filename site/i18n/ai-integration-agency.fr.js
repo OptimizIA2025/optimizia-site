@@ -7,7 +7,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
-        "AI Integration Agency for SMEs | OptimizIA.xyz": "Agence IA pour PME et ETI | OptimizIA.xyz",
+        "AI Integration Agency for SMEs | OptimizIA.xyz": "Agence IA pour TPE et PME | OptimizIA.xyz",
 
         "Why now": "Constat",
         "Benefits": "Bénéfices",
@@ -18,10 +18,10 @@ window.OIA_I18N.fr = {
         "FAQ": "FAQ",
         "Free audit": "Audit gratuit",
 
-        "AI agency for SMEs and mid-market companies": "Agence IA pour PME et ETI",
+        "AI agency for small businesses and SMEs": "Agence IA pour TPE et PME",
         "AI integration agency for SMEs: up to 30% of productive time reclaimed in the first quarter": "Agence IA pour PME : jusqu'à 30 % de temps productif regagné dès le premier trimestre",
-        "OptimizIA.xyz supports leaders of SMEs and mid-market companies from 20 to 500 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz accompagne les dirigeants de PME et d'ETI de 20 à 500 salariés qui veulent des résultats mesurables, pas une démonstration de technologie. Diagnostic chiffré, automatisations en production, transfert de compétences à vos équipes.",
-        "SMEs and mid-market, 20 to 500 employees": "PME et ETI de 20 à 500 salariés",
+        "OptimizIA.xyz supports leaders of small businesses and SMEs up to 250 employees who want measurable results, not a technology demo. Quantified diagnosis, automations in production, skills transfer to your teams.": "OptimizIA.xyz accompagne les dirigeants de TPE et PME jusqu'à 250 salariés qui veulent des résultats mesurables, pas une démonstration de technologie. Diagnostic chiffré, automatisations en production, transfert de compétences à vos équipes.",
+        "Small businesses and SMEs, up to 250 employees": "TPE et PME jusqu'à 250 salariés",
         "Diagnosis from €3,000": "Diagnostic dès 3 000 € HT",
         "First use case in production in 13 days": "Premier cas d'usage en production en 13 jours",
         "France &amp; international, based in Occitanie": "France &amp; international, ancrage Occitanie",
@@ -81,7 +81,7 @@ window.OIA_I18N.fr = {
         "Take the self-assessment": "Faire l'auto-évaluation",
         "Talk to someone": "Parler à quelqu'un",
 
-        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.",
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
@@ -93,9 +93,10 @@ window.OIA_I18N.fr = {
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
         "Contact": "Contact",
-        "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guides"
     },
     attr: {}
 };

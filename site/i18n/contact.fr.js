@@ -49,9 +49,9 @@ window.OIA_I18N.fr = {
         "Can I cancel or reschedule?": "Puis-je annuler ou reprogrammer ?",
         "Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.": "Oui, absolument. Vous recevrez un email de confirmation avec un lien pour annuler ou reprogrammer facilement si vos plans changent.",
         "Do you operate everywhere in France?": "Intervenez-vous partout en France ?",
-        "We operate on-site in Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Nous intervenons en présentiel en Occitanie et à distance partout en France et à l'international. La visioconférence est notre norme depuis des années, elle convient parfaitement à ce type d'échange.",
+        "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Notre siège est à <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Nous intervenons sur site en Occitanie et à distance partout en France comme à l'international. La visioconférence est notre norme depuis des années, elle se prête parfaitement à ce type d'échange.",
 
-        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.",
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
@@ -61,9 +61,10 @@ window.OIA_I18N.fr = {
         "Free AI audit": "Audit IA gratuit",
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
-        "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
+        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "Guides": "Guides"
     },
     attr: {}
 };

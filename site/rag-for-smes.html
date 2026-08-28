@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="assets/site.css?v=2">
+    <link rel="canonical" href="https://www.optimizia.xyz/rag-for-smes.html">
+    <title>RAG Explained for SME Leaders | OptimizIA.xyz</title>
+    <meta name="description" content="RAG explained without jargon: how to plug an AI into your own documents, what it takes to succeed, where your data goes, and the cases where RAG is not the right answer.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="RAG Explained for SME Leaders | OptimizIA.xyz">
+    <meta property="og:description" content="RAG explained without jargon: how to plug an AI into your own documents, what it takes to succeed, where your data goes, and the cases where RAG is not the right answer.">
+    <meta property="og:url" content="https://www.optimizia.xyz/rag-for-smes.html">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAG Explained for SME Leaders | OptimizIA.xyz">
+    <meta name="twitter:description" content="RAG explained without jargon: how to plug an AI into your own documents, what it takes to succeed, where your data goes, and the cases where RAG is not the right answer.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+
+    <link rel="preload" href="assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* Pages editoriales (guides, pages de service, hub realisations) */
+        .ed-hero { padding: 138px 0 56px; }
+        .ed-hero .overline { display: block; margin-bottom: 14px; }
+        .ed-hero h1 {
+            font-size: clamp(2rem, 4.6vw, 3.1rem);
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+        .ed-hero .ed-lead {
+            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+        .ed-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            margin-top: 26px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+        .ed-body { padding: 8px 0 96px; }
+        .ed-wrap { max-width: 780px; }
+        .ed-wrap h2 {
+            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+            margin: 52px 0 16px;
+        }
+        .ed-wrap h3 {
+            font-size: 1.14rem;
+            margin: 32px 0 10px;
+        }
+        .ed-wrap p {
+            font-size: 1rem;
+            line-height: 1.78;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+        .ed-wrap p strong { color: var(--text); font-weight: 600; }
+        .ed-wrap ul, .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; }
+        .ed-wrap ul { list-style: none; }
+        .ed-wrap ul li {
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.68;
+            color: var(--text-muted);
+        }
+        .ed-wrap ul li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 10px;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+        .ed-wrap ol { padding-left: 22px; }
+        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
+        .ed-callout {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin: 30px 0;
+        }
+        .ed-callout p:last-child { margin-bottom: 0; }
+        .ed-cta {
+            margin-top: 54px;
+            padding: 40px 36px;
+            border-radius: var(--radius-xl);
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+        }
+        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
+        .ed-faq details {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            background: var(--bg-card, #fff);
+        }
+        .ed-faq summary {
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            list-style: none;
+        }
+        .ed-faq summary::-webkit-details-marker { display: none; }
+        .ed-faq details p { margin: 14px 0 0; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+        {"@type":"ListItem","position":2,"name":"Guides","item":"https://www.optimizia.xyz/guides.html"},
+        {"@type":"ListItem","position":3,"name":"RAG explained simply","item":"https://www.optimizia.xyz/rag-for-smes.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": "https://www.optimizia.xyz/rag-for-smes.html#article",
+      "headline": "RAG explained for SME leaders: plugging AI into your own documents",
+      "description": "RAG explained without jargon: how to plug an AI into your own documents, what it takes to succeed, where your data goes, and the cases where RAG is not the right answer.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-08-11",
+      "dateModified": "2026-08-28",
+      "author": { "@id": "https://www.optimizia.xyz/#organization" },
+      "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+      "isPartOf": { "@id": "https://www.optimizia.xyz/#website" },
+      "mainEntityOfPage": "https://www.optimizia.xyz/rag-for-smes.html",
+      "about": ["RAG", "Retrieval-Augmented Generation", "LLM", "Knowledge Management", "SME"],
+      "image": "https://www.optimizia.xyz/assets/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.optimizia.xyz/rag-for-smes.html#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"Does RAG completely prevent AI errors?","acceptedAnswer":{"@type":"Answer","text":"No, it strongly reduces them and makes them verifiable. The model can still misread a passage, and the search can miss the right document. The decisive difference is that every answer cites its sources: a user can check in one click, which is impossible with a model answering from memory."}},
+        {"@type":"Question","name":"How many documents does it take to be worth it?","acceptedAnswer":{"@type":"Answer","text":"There is no threshold in number of files. The criterion is the number of recurring questions those documents answer. A hundred pages of procedures that people actually consult justify an assistant; ten thousand pages nobody reads do not."}},
+        {"@type":"Question","name":"Is our data used to train the model?","acceptedAnswer":{"@type":"Answer","text":"Not if the architecture is correct. In a RAG system, your documents are passed to the model at question time, as reading context, and are not folded into its training. What remains is to check the API provider's contractual terms on the reuse of transmitted data, which can be verified and negotiated."}},
+        {"@type":"Question","name":"How long does it take to get a first assistant into service?","acceptedAnswer":{"@type":"Answer","text":"On a narrow corpus that is already up to date and centralised, count on the AI Sprint format: two to five weeks between scoping and production. If the documents first need to be gathered, deduplicated and updated, that preliminary work often lasts longer than the technical build."}}
+      ]
+    }
+    </script>
+    <script src="assets/oia-i18n.js?v=3" data-page="rag-for-smes" defer></script>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+        <div class="nav-links">
+            <a href="/#constat">Why now</a>
+            <a href="/#benefices">Benefits</a>
+            <a href="/#methode">Method</a>
+            <a href="/#services">Services</a>
+            <a href="/#automatisation">Case studies</a>
+            <a href="about.html">About</a>
+            <a href="/#questions-frequentes">FAQ</a>
+            <a href="contact.html" class="nav-cta">Free audit</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/#constat">Why now</a>
+    <a href="/#benefices">Benefits</a>
+    <a href="/#methode">Method</a>
+    <a href="/#services">Services</a>
+    <a href="/#automatisation">Case studies</a>
+    <a href="about.html">About</a>
+    <a href="/#questions-frequentes">FAQ</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<section class="ed-hero bg-mesh" id="top">
+    <div class="container">
+        <span class="overline">RAG explained simply</span>
+        <h1>RAG explained for SME leaders: plugging AI into your own documents</h1>
+        <p class="ed-lead">A language model does not know your company, and it makes things up when asked about it. RAG fixes that by giving the model your documents to read before answering. Here is what that really involves, and when it is not the right answer.</p>
+        <div class="ed-meta"><span>Guide</span><span>8 minute read</span><span>Updated 28 August 2026</span></div>
+    </div>
+</section>
+<main class="ed-body">
+    <div class="container">
+        <div class="ed-wrap">
+            <h2>The problem RAG solves</h2>
+            <p>A language model was trained on public text, up to a given date. It knows neither your contracts, nor your procedures, nor your client history. Ask it a question about your company and it will produce a plausible, wrong answer, with the same confidence as a correct one. That is the behaviour that durably burned AI in the eyes of many business leaders.</p>
+            <p>RAG, for <em>Retrieval-Augmented Generation</em>, fixes this with a simple idea: <strong>you do not ask the model to know, you give it something to read.</strong> Before answering, the system searches your documents for the relevant passages, then asks the model to answer based solely on those passages, citing its sources.</p>
+
+            <h2>How it works, without jargon</h2>
+            <ol>
+                <li><strong>Your documents are split</strong> into reasonably sized chunks, a paragraph or a section. A 40-page contract becomes a few dozen self-contained pieces.</li>
+                <li><strong>A meaning fingerprint is computed</strong> for each chunk. It is a series of numbers that places the text in a space where two texts with similar meaning sit close together. That is what lets the system find "termination notice period" when the question says "how do we stop the contract".</li>
+                <li><strong>Those fingerprints are stored</strong> in a specialised database.</li>
+                <li><strong>When a question comes in</strong>, the same fingerprint is computed and the closest chunks are retrieved.</li>
+                <li><strong>The answer is assembled</strong>: the model receives the question and those chunks, with the instruction to answer from them and to say so when the information is not there.</li>
+            </ol>
+            <div class="ed-callout">
+                <p>The most important practical consequence: a well-built RAG system knows how to answer "this information is not in the documents". That property is what makes it usable in a company, and it is the first thing to test in a demo. Ask a question whose answer you know exists nowhere in your files: if the system makes something up, it is not ready.</p>
+            </div>
+
+            <h2>What it changes concretely in an SME</h2>
+            <ul>
+                <li><strong>Internal search becomes a conversation.</strong> Instead of hunting for the right file, you ask the question and get the answer with a link to the source.</li>
+                <li><strong>Onboarding speeds up.</strong> A newcomer queries the company's memory instead of pulling a colleague away for every question.</li>
+                <li><strong>Expert knowledge survives departures</strong>, provided it was written down somewhere first.</li>
+                <li><strong>Client answers standardise</strong> on what is actually written in your contracts and procedures, not on each person's recollection.</li>
+            </ul>
+
+            <h2>What it takes to succeed, and it is demanding</h2>
+            <p>RAG does not compensate for missing material. It is the point we repeat most often during scoping, because it determines the outcome more than any technical choice.</p>
+            <ul>
+                <li><strong>You need documents.</strong> If the knowledge lives in people's heads, it must be written down first. No tool reads minds.</li>
+                <li><strong>You need a single version of the truth.</strong> Three versions of a procedure in three different folders produce a system that answers at random, and a random answer is worse than no answer.</li>
+                <li><strong>You need access rights handled.</strong> An assistant that answers everyone about salaries is an incident, not a feature. Rights must apply to the search, not just the display.</li>
+                <li><strong>You need maintenance.</strong> An updated document must be re-indexed, otherwise the system answers with the previous version, without flagging it.</li>
+            </ul>
+
+            <h2>Where your data goes</h2>
+            <p>Three things potentially leave your walls: the documents sent for fingerprint computation, the user's question, and the passages passed to the model to write the answer. Depending on your requirements, everything can stay in-house with self-hosted models, or only the generation step can be externalised to an API whose contractual terms exclude training on your data. Those are two different levels of cost and quality, and it is a management decision, not a technical one.</p>
+            <p>Our default practice: the document base and the index stay on your infrastructure or on servers in France, and generation goes through an API with a contractual commitment of non-reuse. When sensitivity demands it, everything stays internal.</p>
+
+            <h2>Should you do RAG, or something else?</h2>
+            <p>RAG is good at questions whose answer is written somewhere. It is bad at three families of needs, and confusing them is the most frequent cause of failure.</p>
+            <ul>
+                <li><strong>Computation questions on structured data</strong> ("what is this month's revenue") belong to a query on your database, not to semantic search.</li>
+                <li><strong>Questions that require synthesising the whole corpus</strong> ("what are the recurring themes in our complaints") call for batch processing, not a search for the ten closest passages.</li>
+                <li><strong>Actions</strong> ("create the quote") belong to an automation with rules, possibly triggered by the assistant, but not to RAG itself.</li>
+            </ul>
+            <p>In practice, a useful system combines all three: document search for what is written, queries for what is numeric, and automation for what must be done. The point is not to pick a technique, it is to know which one applies to which question.</p>
+
+            <h2>Where to start</h2>
+            <p>Choose a narrow, high-value corpus: one department's procedures, one product's documentation, the history of client answers. Check that the corpus is up to date and unique. Build a first assistant on that scope, measure the rate of correct answers on thirty or so real questions asked by the teams, and only then expand. An assistant that is excellent on one domain gets adopted; an assistant that is mediocre on everything is abandoned within three weeks.</p>
+            <h2>Frequently asked questions</h2>
+            <div class="ed-faq">
+                <details>
+                    <summary>Does RAG completely prevent AI errors?</summary>
+                    <p>No, it strongly reduces them and makes them verifiable. The model can still misread a passage, and the search can miss the right document. The decisive difference is that every answer cites its sources: a user can check in one click, which is impossible with a model answering from memory.</p>
+                </details>
+                <details>
+                    <summary>How many documents does it take to be worth it?</summary>
+                    <p>There is no threshold in number of files. The criterion is the number of recurring questions those documents answer. A hundred pages of procedures that people actually consult justify an assistant; ten thousand pages nobody reads do not.</p>
+                </details>
+                <details>
+                    <summary>Is our data used to train the model?</summary>
+                    <p>Not if the architecture is correct. In a RAG system, your documents are passed to the model at question time, as reading context, and are not folded into its training. What remains is to check the API provider's contractual terms on the reuse of transmitted data, which can be verified and negotiated.</p>
+                </details>
+                <details>
+                    <summary>How long does it take to get a first assistant into service?</summary>
+                    <p>On a narrow corpus that is already up to date and centralised, count on the AI Sprint format: two to five weeks between scoping and production. If the documents first need to be gathered, deduplicated and updated, that preliminary work often lasts longer than the technical build.</p>
+                </details>
+            </div>
+
+            <div class="ed-cta">
+                <h2>Wondering whether your document base holds up?</h2>
+                <p>That is exactly what the diagnostic looks at: the real state of your documents and the corpus to favour for a first assistant. Twenty minutes to talk it through.</p>
+                <a href="contact.html" class="btn btn-orange">Book a free diagnostic</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img src="LogoComplet.webp" alt="OptimizIA.xyz" width="640" height="143"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="https://www.ginoux.xyz" target="_blank" class="footer-ginoux">
+                    ↗ ginoux.xyz — Rémy Ginoux's journey
+                </a>
+                <a href="https://www.romainben.cloud" target="_blank" class="footer-ginoux">
+                    ↗ romainben.cloud — Romain Ben's journey
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/#constat">Why now</a></li>
+                    <li><a href="/#benefices">Benefits</a></li>
+                    <li><a href="/#methode">Method</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#automatisation">Case studies</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="/#questions-frequentes">FAQ</a></li>
+                </ul>                <h4 style="margin-top:26px;">Resources</h4>
+                <ul>
+                    <li><a href="ai-integration-agency.html">AI integration agency</a></li>
+                    <li><a href="n8n-agency.html">n8n agency</a></li>
+                    <li><a href="ai-audit.html">Free AI audit</a></li>
+                    <li><a href="case-studies.html">Case studies</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/tools/seoplus/?lang=en">SEO &amp; GEO audit tool (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                    <li><a href="https://www.linkedin.com/in/remyginoux/" target="_blank">LinkedIn — Rémy Ginoux</a></li>
+                    <li><a href="https://www.linkedin.com/in/romainben/" target="_blank">LinkedIn — Romain Ben</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 OptimizIA.xyz · All rights reserved · <a href="legal-notice.html" class="legal-link">Legal Notice</a> · <span style="color: var(--text-muted);">V6.1</span></p>
+            <p><span style="color: var(--text-muted);">optimizia.xyz</span> · <a href="https://www.ginoux.xyz">ginoux.xyz</a> · <a href="https://www.romainben.cloud">romainben.cloud</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="legal-notice.html" data-accent="#F97316" defer></script>
+</body>
+</html>
