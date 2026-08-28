@@ -1,0 +1,80 @@
+/* case-study-showcase-websites.html — espagnol. Meme jeu de cles que le francais et
+   l'allemand de cette page. Une chaine identique dans les trois langues (One-shot,
+   SEO / GEO ready, LinkedIn, adresses e-mail) n'a d'entree dans aucun dictionnaire. */
+window.OIA_I18N = window.OIA_I18N || {};
+window.OIA_I18N.es = {
+    html: {
+        "Brand Websites and Visual Identity | OptimizIA.xyz": "Sitios web de marca e identidad visual | OptimizIA.xyz",
+
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Method": "Método",
+        "Services": "Servicios",
+        "Case studies": "Casos de éxito",
+        "About": "Quiénes somos",
+        "FAQ": "Preguntas frecuentes",
+        "Free audit": "Auditoría gratuita",
+
+        "&lt; All case studies": "&lt; Todos los casos de éxito",
+        "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Websites &amp; Brand Identity": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Sitios web &amp; identidad de marca",
+        "A website that truly looks like your brand, <em>not yet another template</em>.": "Un sitio web que realmente se parece a su marca, <em>no una plantilla más</em>.",
+        "Creating content is not filling a shop window, it is translating an identity. We help our clients turn what makes them unique into a website that looks like them: a custom art direction, copy that rings true, and the year's webdesign and SEO/GEO practices. All delivered fast, with no over-engineered machinery.": "Crear contenido no es llenar un escaparate, es traducir una identidad. Ayudamos a nuestros clientes a convertir lo que los hace únicos en un sitio web que se les parece: una dirección artística a medida, textos que suenan auténticos y las prácticas de webdesign y SEO/GEO del año. Todo entregado rápido, sin complicaciones innecesarias.",
+
+        "custom-made": "a medida",
+        "Delivered responsive + GEO-ready": "Entregado responsive y GEO-ready",
+        "&lt; <em>10</em> days": "&lt; <em>10</em> días",
+        "From brief to launch": "Del brief al lanzamiento",
+        "<em>2</em> meetings": "<em>2</em> reuniones",
+        "+ 1 call to deliver": "+ 1 llamada para entregar",
+
+        "<span class=\"num\">01</span> Our conviction: start from the identity, not a template": "<span class=\"num\">01</span> Nuestra convicción: partir de la identidad, no de una plantilla",
+        "A good website does not trace over a ready-made model. It starts from what makes the client singular, then dresses it with today's visual and technical codes.": "Un buen sitio web no calca un modelo prefabricado. Parte de lo que hace singular al cliente y luego lo viste con los códigos visuales y técnicos de hoy.",
+        "Identity first": "La identidad primero",
+        "We look for inspiration where it already lives. For Audrey, the <strong>art direction was born from her own business card</strong>: her idea, surprising but excellent, set the tone for the whole site. The result reflects how she supports companies, with pragmatism, simplicity and closeness.": "Buscamos la inspiración donde ya existe. Para Audrey, la <strong>dirección artística nació de su propia tarjeta de visita</strong>: su idea, sorprendente pero excelente, marcó el tono de todo el sitio. El resultado refleja cómo acompaña a las empresas, con pragmatismo, sencillez y cercanía.",
+        "2026 trends": "Tendencias 2026",
+        "We stick to the <strong>year's webdesign trends</strong> and to accessibility and performance standards. No gratuitous fashion effects: every choice serves readability and conversion.": "Nos ceñimos a las <strong>tendencias de webdesign del año</strong> y a los estándares de accesibilidad y rendimiento. Sin efectos de moda gratuitos: cada elección sirve a la legibilidad y a la conversión.",
+        "Native SEO / GEO": "SEO / GEO nativo",
+        "Every site is designed <strong>responsive and GEO-ready from its very first launch</strong>. Our process produces the site in one shot, already optimized for search engines and generative engines. Essential in 2026.": "Cada sitio se diseña <strong>responsive y GEO-ready desde su primer lanzamiento</strong>. Nuestro proceso produce el sitio de una sola vez, ya optimizado para los motores de búsqueda y los motores generativos. Esencial en 2026.",
+
+        "<span class=\"num\">02</span> Among the sites already delivered, 2 examples, with 2 custom identities": "<span class=\"num\">02</span> Entre los sitios ya entregados, 2 ejemplos, con 2 identidades a medida",
+        "The best demonstration is still the live result. Open the sites, these are real client projects in production.": "La mejor demostración sigue siendo el resultado en vivo. Abra los sitios, son proyectos reales de clientes en producción.",
+        "HappySharing RH, Audrey Charpentrat's website": "HappySharing RH, el sitio de Audrey Charpentrat",
+        "Outsourced HR and CSR consultant for small businesses in Occitanie, France. Art direction inspired by her business card, delivered in 2 meetings and one call, in under 10 days. Optimized for search engines and generative engines from launch, with no second pass.": "Consultora de RR. HH. externalizados y RSE para pequeñas empresas en Occitania, Francia. Dirección artística inspirada en su tarjeta de visita, entregada en 2 reuniones y una llamada, en menos de 10 días. Optimizado para motores de búsqueda y motores generativos desde el lanzamiento, sin una segunda pasada.",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> Visit happysharing-rh.fr": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> Visitar happysharing-rh.fr",
+        "Ophélie, photographer, an immersive portfolio": "Ophélie, fotógrafa, un portfolio inmersivo",
+        "A showcase site designed as a visual experience. A polished gallery, fluid navigation and an immersive design that highlights Ophélie's artistic universe and photo sessions. Responsive on mobile, tablet and desktop.": "Un sitio vitrina concebido como una experiencia visual. Una galería cuidada, una navegación fluida y un diseño inmersivo que resalta el universo artístico de Ophélie y sus sesiones fotográficas. Responsive en móvil, tableta y escritorio.",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> See Ophélie's portfolio": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> Ver el portfolio de Ophélie",
+
+        "<span class=\"num\">03</span> A fast method, no over-engineering": "<span class=\"num\">03</span> Un método rápido, sin complicaciones innecesarias",
+        "A custom website does not mean an endless project. Our process condenses the essentials to deliver fast, clean, and optimized on the first pass.": "Un sitio web a medida no significa un proyecto interminable. Nuestro proceso condensa lo esencial para entregar rápido, limpio y optimizado a la primera.",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-palette\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"></path></svg> Custom art direction": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-palette\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"></path></svg> Dirección artística a medida",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-smartphone\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"></rect><path d=\"M12 18h.01\"></path></svg> Mobile-first responsive": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-smartphone\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"></rect><path d=\"M12 18h.01\"></path></svg> Responsive mobile-first",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"></path><path d=\"M20 3v4\"></path><path d=\"M22 5h-4\"></path><path d=\"M4 17v2\"></path><path d=\"M5 18H3\"></path></svg> 2026 webdesign trends": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"></path><path d=\"M20 3v4\"></path><path d=\"M22 5h-4\"></path><path d=\"M4 17v2\"></path><path d=\"M5 18H3\"></path></svg> Tendencias de webdesign 2026",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\"><path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"></path></svg> Delivery &lt; 10 days": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\"><path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"></path></svg> Entrega &lt; 10 días",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> HTML / CSS / JS, dependency-free": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> HTML / CSS / JS, sin dependencias",
+
+        "The expertise on display": "El saber hacer destacado",
+        "Giving a voice, not just a shop window.": "Dar una voz, no solo un escaparate.",
+        "Behind every website there is a person and a story. Our craft is <strong style=\"color:#fff;\">translating an identity into a web presence</strong>: capturing what makes a client unique, shaping it with today's codes, and making it visible to search engines and generative AI alike. Fast, and faithfully.": "Detrás de cada sitio web hay una persona y una historia. Nuestro oficio es <strong style=\"color:#fff;\">traducir una identidad en presencia web</strong>: captar lo que hace único a un cliente, darle forma con los códigos de hoy y hacerlo visible tanto para los motores de búsqueda como para la IA generativa. Rápido y con fidelidad.",
+        "Book a discovery call": "Reservar una llamada de descubrimiento",
+
+        "A use case close to yours?": "¿Un caso de uso parecido al suyo?",
+        "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutos de diagnóstico gratuito para saber si el mismo mecanismo se aplica en su caso, sin jerga y sin compromiso.",
+        "Book a slot": "Reservar una franja",
+
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
+        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — La trayectoria de Rémy Ginoux",
+        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
+        "Navigation": "Navegación",
+        "Resources": "Recursos",
+        "AI integration agency": "Agencia de integración de IA",
+        "n8n agency": "Agencia n8n",
+        "Free AI audit": "Auditoría de IA gratuita",
+        "Tools": "Herramientas",
+        "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
+        "Contact": "Contacto",
+        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.0</span>"
+    },
+    attr: {}
+};

@@ -1,0 +1,97 @@
+/* case-study-seoplus.html — espagnol. Meme jeu de cles que le francais et
+   l'allemand de cette page. Les mesures chiffrees (160, 16, 30 s, 8) sont des
+   faits : elles ne changent pas d'une langue a l'autre. */
+window.OIA_I18N = window.OIA_I18N || {};
+window.OIA_I18N.es = {
+    html: {
+        "SEOPlus!, SEO Audit and AI Visibility | OptimizIA.xyz": "SEOPlus!, auditoría SEO y visibilidad en IA | OptimizIA.xyz",
+
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Method": "Método",
+        "Services": "Servicios",
+        "Case studies": "Casos de éxito",
+        "About": "Quiénes somos",
+        "FAQ": "Preguntas frecuentes",
+        "Free audit": "Auditoría gratuita",
+
+        "&lt; All case studies": "&lt; Todos los casos de éxito",
+        "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · SEO &amp; AI Visibility": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · SEO y visibilidad en IA",
+        "SEOPlus!, the full SEO audit, <em>AI visibility included</em>, delivered in 30 seconds with its action plan.": "SEOPlus!, la auditoría SEO completa, <em>con la visibilidad en IA incluida</em>, entregada en 30 segundos junto a su plan de acción.",
+        "SEOPlus! was born in-house: an engine built to make our own client SEO audits reliable and fast, then industrialized into an online product open to everyone. You enter a URL, the engine reads the homepage and up to five key pages, runs 160 factual checks across 16 categories, measures the performance visitors actually experience, and returns a score out of 100, a verdict and a prioritized action plan. No jargon, and with the fixes included.": "SEOPlus! nació en casa: un motor creado para hacer fiables y rápidas nuestras propias auditorías SEO de clientes, luego industrializado como producto en línea abierto a todos. Se introduce una URL, el motor lee la página de inicio y hasta cinco páginas clave, ejecuta 160 comprobaciones objetivas en 16 categorías, mide el rendimiento que los visitantes experimentan de verdad y devuelve una puntuación sobre 100, un veredicto y un plan de acción priorizado. Sin jerga y con las correcciones incluidas.",
+
+        "<em>160</em> checks": "<em>160</em> comprobaciones",
+        "Factual checks per audit": "Comprobaciones objetivas por auditoría",
+        "<em>16</em> categories": "<em>16</em> categorías",
+        "Scored and weighted": "Puntuadas y ponderadas",
+        "From URL to verdict": "De la URL al veredicto",
+        "<em>8</em> files": "<em>8</em> archivos",
+        "Fixes generated, ready to drop in": "Correcciones generadas, listas para instalar",
+
+        "<span class=\"num\">01</span> The engine, from URL to report": "<span class=\"num\">01</span> El motor, de la URL al informe",
+        "A fully automated chain, triggered by entering a URL. Scores come from verifiable measurements, never from an AI's imagination.": "Una cadena totalmente automatizada, activada al introducir una URL. Las puntuaciones salen de mediciones verificables, nunca de la imaginación de una IA.",
+        "Collection": "Recogida",
+        "Homepage and up to five key pages, robots.txt, sitemap, DNS and server headers fetched live.": "Página de inicio y hasta cinco páginas clave, robots.txt, sitemap, DNS y cabeceras del servidor obtenidos en directo.",
+        "Checks": "Comprobaciones",
+        "160 deterministic checks across 16 categories: structure, content, security, email, AI visibility, compliance.": "160 comprobaciones deterministas en 16 categorías: estructura, contenido, seguridad, correo, visibilidad en IA, cumplimiento.",
+        "Performance": "Rendimiento",
+        "Core Web Vitals measured through Google PageSpeed: real field data when it exists, lab data otherwise.": "Core Web Vitals medidos con Google PageSpeed: datos de campo reales cuando existen, datos de laboratorio en caso contrario.",
+        "AI verdict": "Veredicto de la IA",
+        "A language model writes the verdict and the competitive read. It comments on the measurements, it never invents them.": "Un modelo de lenguaje redacta el veredicto y la lectura competitiva. Comenta las mediciones, nunca las inventa.",
+        "Report": "Informe",
+        "Score out of 100, grade, 4-phase action plan, per-category detail and fix files ready to drop in.": "Puntuación sobre 100, nota, plan de acción en 4 fases, detalle por categoría y archivos de corrección listos para instalar.",
+
+        "Many sites only respond on one variant of their address (with or without www): the engine <strong>detects the right origin before auditing</strong>, so it never grades a site on an empty page. It follows redirects and reads the real content of each page, not just the tags.": "Muchos sitios solo responden en una variante de su dirección (con o sin www): el motor <strong>detecta el origen correcto antes de auditar</strong>, para no puntuar nunca un sitio sobre una página vacía. Sigue las redirecciones y lee el contenido real de cada página, no solo las etiquetas.",
+        "Every check is <strong>deterministic and traceable</strong>: robots.txt, sitemap, structured data, security headers, email configuration (SPF, DMARC), heading consistency... A finding is a measurement and a fix, never an impression.": "Cada comprobación es <strong>determinista y trazable</strong>: robots.txt, sitemap, datos estructurados, cabeceras de seguridad, configuración de correo (SPF, DMARC), coherencia de los títulos... Un hallazgo es una medición y una corrección, nunca una impresión.",
+        "AI visibility": "Visibilidad en IA",
+        "Eleven checks dedicated to how readable the site is for <strong>ChatGPT, Perplexity and Google AI Overviews</strong>: llms.txt file, structured data, citable passages, quantified facts. The category where even good sites hit a ceiling, and that almost nobody audits.": "Once comprobaciones dedicadas a la legibilidad del sitio para <strong>ChatGPT, Perplexity y los resúmenes de IA de Google</strong>: archivo llms.txt, datos estructurados, pasajes citables, hechos cuantificados. La categoría donde incluso los buenos sitios se estancan y que casi nadie audita.",
+        "Score": "Puntuación",
+        "The final grade <strong>weights categories by their real impact</strong>: technical structure weighs four times more than the legal notice. The methodology is public, detailed on a dedicated product page.": "La nota final <strong>pondera las categorías según su impacto real</strong>: la estructura técnica pesa cuatro veces más que el aviso legal. La metodología es pública y se detalla en una página específica del producto.",
+        "The full report adds the 4-phase plan, Core Web Vitals, a head-to-head with a competitor of your choice and <strong>the missing files generated for the audited domain</strong>: robots.txt, sitemap.xml, llms.txt, structured data, server headers, SPF, DMARC. Copy-paste ready, PDF export included.": "El informe completo añade el plan en 4 fases, los Core Web Vitals, una comparación directa con el competidor que elija y <strong>los archivos que faltan, generados para el dominio auditado</strong>: robots.txt, sitemap.xml, llms.txt, datos estructurados, cabeceras del servidor, SPF, DMARC. Listos para copiar y pegar, con exportación a PDF.",
+
+        "<span class=\"num\">02</span> What makes it a product, not a gadget": "<span class=\"num\">02</span> Lo que lo convierte en producto y no en un juguete",
+        "An automated audit without safeguards is a toy. SEOPlus! is built like a service: reliable, frugal, and honest about what it measures.": "Una auditoría automática sin salvaguardas es un juguete. SEOPlus! está construido como un servicio: fiable, austero y honesto sobre lo que mide.",
+        "Reliability": "Fiabilidad",
+        "Every check has been validated against a <strong>deterministic oracle</strong> that re-derives the result from raw HTTP responses: zero false positives tolerated. If a link in the chain fails, the system falls back and sends a diagnostic alert on its own.": "Cada comprobación se ha validado frente a un <strong>oráculo determinista</strong> que vuelve a deducir el resultado a partir de las respuestas HTTP en bruto: cero falsos positivos tolerados. Si un eslabón falla, el sistema recurre a un plan alternativo y envía por sí mismo una alerta de diagnóstico.",
+        "Controlled cost": "Coste controlado",
+        "A 24-hour cache per site, a per-address analysis limit and <strong>a single language model call per audit</strong>: the service runs for a few euros a month, whatever reasonable traffic you send it.": "Caché de 24 horas por sitio, límite de análisis por dirección y <strong>una única llamada al modelo de lenguaje por auditoría</strong>: el servicio funciona por unos pocos euros al mes, sea cual sea el tráfico razonable que reciba.",
+        "Sovereignty": "Soberanía",
+        "The report locates the site's server on a world map and flags hosting outside the European Union: a <strong>GDPR</strong> angle business leaders understand immediately. The service's own data is hosted in Paris.": "El informe sitúa el servidor del sitio en un mapamundi y señala el alojamiento fuera de la Unión Europea: un ángulo <strong>RGPD</strong> que los directivos entienden de inmediato. Los datos del propio servicio se alojan en París.",
+        "Leaderboard": "Clasificación",
+        "Any audited site can, with a single checkbox, join a <strong>public leaderboard of top scores</strong>: social proof for the product, a badge to display for well-kept sites.": "Cualquier sitio auditado puede, con solo marcar una casilla, entrar en una <strong>clasificación pública de las mejores puntuaciones</strong>: prueba social para el producto y un distintivo que mostrar para los sitios bien cuidados.",
+
+        "<span class=\"num\">03</span> The technical stack involved": "<span class=\"num\">03</span> La pila técnica utilizada",
+        "The same building blocks as our client automations: sober, maintainable, with no locked-in dependency.": "Los mismos bloques que en nuestras automatizaciones para clientes: sobrios, mantenibles y sin dependencias cautivas.",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-git-branch\"><line x1=\"6\" x2=\"6\" y1=\"3\" y2=\"15\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><path d=\"M18 9a9 9 0 0 1-9 9\"></path></svg> n8n orchestration": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-git-branch\"><line x1=\"6\" x2=\"6\" y1=\"3\" y2=\"15\"></line><circle cx=\"18\" cy=\"6\" r=\"3\"></circle><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><path d=\"M18 9a9 9 0 0 1-9 9\"></path></svg> Orquestación con n8n",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-bot\"><path d=\"M12 8V4H8\"></path><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"></rect><path d=\"M2 14h2\"></path><path d=\"M20 14h2\"></path><path d=\"M15 13v2\"></path><path d=\"M9 13v2\"></path></svg> Claude for the AI verdict": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-bot\"><path d=\"M12 8V4H8\"></path><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"></rect><path d=\"M2 14h2\"></path><path d=\"M20 14h2\"></path><path d=\"M15 13v2\"></path><path d=\"M9 13v2\"></path></svg> Claude para el veredicto de la IA",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list-checks\"><path d=\"m3 17 2 2 4-4\"></path><path d=\"m3 7 2 2 4-4\"></path><path d=\"M13 6h8\"></path><path d=\"M13 12h8\"></path><path d=\"M13 18h8\"></path></svg> 160 deterministic checks": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list-checks\"><path d=\"m3 17 2 2 4-4\"></path><path d=\"m3 7 2 2 4-4\"></path><path d=\"M13 6h8\"></path><path d=\"M13 12h8\"></path><path d=\"M13 18h8\"></path></svg> 160 comprobaciones deterministas",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-database\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"></ellipse><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"></path><path d=\"M3 12A9 3 0 0 0 21 12\"></path></svg> Supabase, data in Paris": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-database\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"></ellipse><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"></path><path d=\"M3 12A9 3 0 0 0 21 12\"></path></svg> Supabase, datos en París",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg> 24 h cache &amp; rate limiting": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg> Caché de 24 h y límite de peticiones",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-trophy\"><path d=\"M6 9H4.5a2.5 2.5 0 0 1 0-5H6\"></path><path d=\"M18 9h1.5a2.5 2.5 0 0 0 0-5H18\"></path><path d=\"M4 22h16\"></path><path d=\"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22\"></path><path d=\"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22\"></path><path d=\"M18 2H6v7a6 6 0 0 0 12 0V2\"></path></svg> Opt-in public leaderboard": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-trophy\"><path d=\"M6 9H4.5a2.5 2.5 0 0 1 0-5H6\"></path><path d=\"M18 9h1.5a2.5 2.5 0 0 0 0-5H18\"></path><path d=\"M4 22h16\"></path><path d=\"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22\"></path><path d=\"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22\"></path><path d=\"M18 2H6v7a6 6 0 0 0 12 0V2\"></path></svg> Clasificación pública voluntaria",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> Framework-free HTML/CSS/JS front end": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> Front-end HTML/CSS/JS sin framework",
+
+        "The expertise on display": "El saber hacer destacado",
+        "From an internal need to an online product.": "De una necesidad interna a un producto en línea.",
+        "SEOPlus! first served to make our own client audits reliable: same checks, same standards, executed in 30 seconds instead of a day. Industrializing it into a self-service product, with authentication, cache and safeguards, is <strong style=\"color:#fff;\">exactly the path we take our clients' processes down</strong>: from artisanal know-how to a system that runs on its own.": "SEOPlus! sirvió primero para hacer fiables nuestras propias auditorías de clientes: las mismas comprobaciones, las mismas exigencias, ejecutadas en 30 segundos en lugar de un día. Industrializarlo como producto de autoservicio, con autenticación, caché y salvaguardas, es <strong style=\"color:#fff;\">exactamente el camino que hacemos recorrer a los procesos de nuestros clientes</strong>: de un saber hacer artesanal a un sistema que funciona solo.",
+        "Try SEOPlus! for free": "Probar SEOPlus! gratis",
+
+        "A use case close to yours?": "¿Un caso de uso parecido al suyo?",
+        "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutos de diagnóstico gratuito para saber si el mismo mecanismo se aplica en su caso, sin jerga y sin compromiso.",
+        "Book a slot": "Reservar una franja",
+
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
+        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — La trayectoria de Rémy Ginoux",
+        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
+        "Navigation": "Navegación",
+        "Resources": "Recursos",
+        "AI integration agency": "Agencia de integración de IA",
+        "n8n agency": "Agencia n8n",
+        "Free AI audit": "Auditoría de IA gratuita",
+        "Tools": "Herramientas",
+        "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
+        "Contact": "Contacto",
+        "Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.0</span>"
+    },
+    attr: {}
+};

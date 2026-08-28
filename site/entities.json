@@ -20,7 +20,7 @@
       "position": 2,
       "item": {
         "@type": "Person",
-        "@id": "https://www.optimizia.xyz/fr/apropos.html#person-remy-ginoux",
+        "@id": "https://www.optimizia.xyz/about.html#person-remy-ginoux",
         "name": "Remy Ginoux",
         "url": "https://www.ginoux.xyz"
       }
@@ -30,7 +30,7 @@
       "position": 3,
       "item": {
         "@type": "Person",
-        "@id": "https://www.optimizia.xyz/fr/apropos.html#person-romain-ben",
+        "@id": "https://www.optimizia.xyz/about.html#person-romain-ben",
         "name": "Romain Ben",
         "url": "https://www.romainben.cloud"
       }
@@ -40,7 +40,7 @@
       "position": 4,
       "item": {
         "@type": "Service",
-        "@id": "https://www.optimizia.xyz/fr/index.html#service-diagnostic",
+        "@id": "https://www.optimizia.xyz/#service-diagnostic",
         "name": "Diagnostic IA & Connaissance"
       }
     },
@@ -49,7 +49,7 @@
       "position": 5,
       "item": {
         "@type": "Service",
-        "@id": "https://www.optimizia.xyz/fr/index.html#service-sprint",
+        "@id": "https://www.optimizia.xyz/#service-sprint",
         "name": "Sprint IA, PoC vers MVP"
       }
     },
@@ -58,7 +58,7 @@
       "position": 6,
       "item": {
         "@type": "Service",
-        "@id": "https://www.optimizia.xyz/fr/index.html#service-copilotage",
+        "@id": "https://www.optimizia.xyz/#service-copilotage",
         "name": "Copilotage IA & Amelioration continue"
       }
     },

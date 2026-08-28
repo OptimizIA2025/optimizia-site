@@ -40,20 +40,47 @@
        pouvoir revenir sur son choix dans le delai de 13 mois. */
     var VALIDITE = { granted: 397, denied: 183 };
 
-    var isEN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
-    var TXT = isEN ? {
-        region: 'Session replay consent',
-        titre: 'Session replay',
-        /* « sans vous identifier » et non « anonyme » : la mesure est pseudonyme,
-           l'ancienne formulation etait juridiquement fausse. */
-        corps: 'We use Microsoft Clarity to replay browsing sessions and improve this site, without identifying you and without advertising cookies. <a href="' + LEGAL + '">Learn more</a>',
-        oui: 'Accept', non: 'Decline', gerer: 'Manage cookies'
-    } : {
-        region: 'Consentement au rejeu de session',
-        titre: 'Rejeu de session',
-        corps: 'Nous utilisons Microsoft Clarity pour rejouer les parcours et améliorer ce site, sans vous identifier et sans cookie publicitaire. <a href="' + LEGAL + '">En savoir plus</a>',
-        oui: 'Accepter', non: 'Refuser', gerer: 'Gérer les cookies'
+    /* Ce bandeau est construit en JavaScript : ses textes n'existent pas dans le
+       HTML et echappent donc au dictionnaire de assets/oia-i18n.js, qui ne
+       traduit que ce qu'il trouve dans la page. Il porte ses quatre langues
+       lui-meme, et l'attribut [data-consent] pose sur son conteneur le tient
+       hors de la collecte du moteur.
+
+       Avant la V6.1 le choix se faisait sur « anglais, sinon francais » : un
+       visiteur espagnol ou allemand voyait un bandeau francais. */
+    var TEXTES = {
+        en: {
+            region: 'Session replay consent',
+            titre: 'Session replay',
+            /* « sans vous identifier » et non « anonyme » : la mesure est pseudonyme,
+               l'ancienne formulation etait juridiquement fausse. */
+            corps: 'We use Microsoft Clarity to replay browsing sessions and improve this site, without identifying you and without advertising cookies. <a href="' + LEGAL + '">Learn more</a>',
+            oui: 'Accept', non: 'Decline', gerer: 'Manage cookies'
+        },
+        fr: {
+            region: 'Consentement au rejeu de session',
+            titre: 'Rejeu de session',
+            corps: 'Nous utilisons Microsoft Clarity pour rejouer les parcours et améliorer ce site, sans vous identifier et sans cookie publicitaire. <a href="' + LEGAL + '">En savoir plus</a>',
+            oui: 'Accepter', non: 'Refuser', gerer: 'Gérer les cookies'
+        },
+        es: {
+            region: 'Consentimiento de repetición de sesión',
+            titre: 'Repetición de sesión',
+            corps: 'Utilizamos Microsoft Clarity para reproducir la navegación y mejorar este sitio, sin identificarle y sin cookies publicitarias. <a href="' + LEGAL + '">Más información</a>',
+            oui: 'Aceptar', non: 'Rechazar', gerer: 'Gestionar cookies'
+        },
+        de: {
+            region: 'Einwilligung zur Sitzungsaufzeichnung',
+            titre: 'Sitzungsaufzeichnung',
+            corps: 'Wir nutzen Microsoft Clarity, um Sitzungen nachzuvollziehen und diese Website zu verbessern, ohne Sie zu identifizieren und ohne Werbe-Cookies. <a href="' + LEGAL + '">Mehr erfahren</a>',
+            oui: 'Akzeptieren', non: 'Ablehnen', gerer: 'Cookies verwalten'
+        }
     };
+
+    function TXT() {
+        var l = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+        return TEXTES[l] || TEXTES.en;
+    }
 
     var CSS =
         '#oia-clarity{position:fixed;left:18px;bottom:18px;z-index:9999;max-width:360px;' +
@@ -120,6 +147,24 @@
     }
 
     var bandeau = null;
+    var lienGerer = null;
+
+    /* Une seule fonction repeint tout ce qui porte du texte, appelee a la
+       construction puis a chaque changement de langue. Le bandeau peut etre
+       affiche au moment ou le visiteur bascule : il doit suivre. */
+    function peindre() {
+        var t = TXT();
+        if (bandeau) {
+            bandeau.setAttribute('aria-label', t.region);
+            bandeau.querySelector('.oiac-t').textContent = t.titre;
+            bandeau.querySelector('.oiac-b').innerHTML = t.corps;
+            bandeau.querySelector('[data-oiac="non"]').textContent = t.non;
+            bandeau.querySelector('[data-oiac="oui"]').textContent = t.oui;
+        }
+        if (lienGerer) lienGerer.textContent = t.gerer;
+    }
+
+    document.addEventListener('oia:lang', peindre);
 
     function construire() {
         var style = document.createElement('style');
@@ -129,7 +174,10 @@
         bandeau = document.createElement('div');
         bandeau.id = 'oia-clarity';
         bandeau.setAttribute('role', 'region');
-        bandeau.setAttribute('aria-label', TXT.region);
+        /* [data-consent] tient ce bloc hors de la collecte de oia-i18n.js : il
+           porte ses langues lui-meme, et laisser le moteur y toucher ferait
+           lutter deux ecritures sur le meme texte. */
+        bandeau.setAttribute('data-consent', '');
         bandeau.hidden = true;
         bandeau.innerHTML =
             '<p class="oiac-t"></p><p class="oiac-b"></p>' +
@@ -142,10 +190,7 @@
            tot au clavier et par un lecteur d'ecran, meme si elle s'affiche en bas. */
         document.body.insertBefore(bandeau, document.body.firstChild);
 
-        bandeau.querySelector('.oiac-t').textContent = TXT.titre;
-        bandeau.querySelector('.oiac-b').innerHTML = TXT.corps;
-        bandeau.querySelector('[data-oiac="non"]').textContent = TXT.non;
-        bandeau.querySelector('[data-oiac="oui"]').textContent = TXT.oui;
+        peindre();
 
         bandeau.querySelector('[data-oiac="non"]').addEventListener('click', function () {
             ecrire('denied');
@@ -177,11 +222,13 @@
         if (!pied) return;
         var wrap = document.createElement('span');
         wrap.className = 'oiac-relink-wrap';
+        wrap.setAttribute('data-consent', '');
         var b = document.createElement('button');
         b.type = 'button';
         b.className = 'oiac-relink';
-        b.textContent = TXT.gerer;
         b.addEventListener('click', afficher);
+        lienGerer = b;
+        peindre();
         wrap.appendChild(document.createTextNode(' · '));
         wrap.appendChild(b);
         pied.appendChild(wrap);

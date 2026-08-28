@@ -1,0 +1,69 @@
+/* contact.html — francais. Texte repris de l'ancienne page fr/contact.html,
+   avec les liens de la page anglaise : le pied de page pointe vers
+   legal-notice.html, pas vers l'ancien mentions-legales.html du silo. */
+window.OIA_I18N = window.OIA_I18N || {};
+window.OIA_I18N.fr = {
+    html: {
+        "Contact, OptimizIA.xyz | Book your Discovery Call": "Contact, OptimizIA.xyz | Réservez votre RDV Découverte",
+
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Method": "Méthode",
+        "Services": "Offres",
+        "Case studies": "Réalisations",
+        "About": "À propos",
+        "FAQ": "FAQ",
+        "Free audit": "Audit gratuit",
+        "Navigation": "Navigation",
+        "Contact": "Contact",
+
+        "<span class=\"dot\"></span>Agency available for new projects": "<span class=\"dot\"></span>Agence disponible pour nouveaux projets",
+        "Let's talk about your <span>AI project</span>": "Parlons de votre <span>projet IA</span>",
+        "20 minutes to analyse your context, identify the priority automation levers, and define together how OptimizIA.xyz can accelerate your performance. No commitment, 100% free.": "20 minutes pour analyser votre contexte, identifier les leviers d'automatisation prioritaires, et définir ensemble comment OptimizIA.xyz peut accélérer votre performance. Sans engagement, 100% gratuit.",
+
+        "Why book a discovery call?": "Pourquoi réserver un RDV découverte ?",
+        "Tailored diagnostic": "Diagnostic personnalisé",
+        "We analyse your specific situation and identify the high-impact automation opportunities inside your organisation.": "Nous analysons votre situation spécifique et identifions les opportunités d'automatisation à fort impact dans votre organisation.",
+        "Actionable advice": "Conseils actionnables",
+        "You leave with concrete, prioritised leads, even if we don't end up working together.": "Vous repartez avec des pistes concrètes et priorisées, même si nous ne travaillons pas ensemble par la suite.",
+        "No commitment": "Sans engagement",
+        "A first strategic conversation to assess the potential. No sales pressure, just a professional exchange.": "Un premier échange stratégique pour évaluer le potentiel. Aucune pression commerciale, juste une conversation professionnelle.",
+
+        "Online booking": "Réservation en ligne",
+        "Pick your slot": "Choisissez votre créneau",
+        "The slots shown below sync in real time with our calendar. Pick the time that suits you.": "Les créneaux affichés sont mis à jour en temps réel depuis notre agenda. Sélectionnez le moment qui vous convient.",
+
+        "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"width:12px;height:12px;flex-shrink:0;\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path></svg> Home-made, 100% custom": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"width:12px;height:12px;flex-shrink:0;\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path></svg> Fait maison, 100% sur mesure",
+        "This widget, <span>we built it ourselves!</span>": "Ce widget, <span>nous l'avons construit nous-mêmes !</span>",
+        "Why settle for an off-the-shelf solution when you can have the \"haute couture\" version?": "Pourquoi se limiter à l'intégration d'une solution grande série quand on peut s'offrir la version 'haute couture' ?",
+        "No generic template here, a 100% home-made solution that fits us perfectly. Our identity, our logic, our rules: that's the OptimizIA.xyz edge. Turning your ideas and ambitions into concrete solutions, tailored for you!": "Ici, pas de template générique, une solution 100% 'Home made' à notre image. Notre identité, notre logique, nos règles, c'est ça, la force d'OptimizIA.xyz ! Transformer vos idées et vos ambitions en solutions concrètes, taillées pour vous !",
+        "If we do this so well for ourselves, imagine what we could do for your company and for you...": "Si nous le faisons aussi bien pour nous-mêmes, imaginez ce que nous pourrions faire pour votre entreprise et pour vous...",
+
+        "Frequently asked questions": "Questions fréquentes",
+        "How does the call work?": "Comment se déroule le rendez-vous ?",
+        "We meet for 20 minutes over video (Google Meet, Zoom or Teams, your choice). We ask a few questions about your context and current challenges, and share initial ideas for improvement. It's an informal, no-commitment conversation.": "Nous échangeons 20 minutes en visio (Google Meet, Zoom ou Teams selon votre préférence). Nous vous posons quelques questions sur votre contexte, vos défis actuels, et partageons des premières pistes d'amélioration. C'est une conversation informelle et sans engagement.",
+        "Do I need to prepare anything?": "Dois-je préparer quelque chose ?",
+        "Not necessarily. If you have a precise issue or documents to share, that's a plus. The key thing is to come with your questions and your current challenges.": "Pas nécessairement. Si vous avez une problématique précise ou des documents à partager, c'est un plus. L'essentiel est de venir avec vos questions et vos défis actuels.",
+        "Is there any commitment after this call?": "Y a-t-il un engagement après ce rendez-vous ?",
+        "None at all. This discovery call is free and with no strings attached. If we identify collaboration opportunities together, we'll suggest a concrete next step.": "Absolument aucun. Ce RDV découverte est gratuit et sans engagement. Si nous identifions ensemble des opportunités de collaboration, nous vous proposerons une prochaine étape concrète.",
+        "Can I cancel or reschedule?": "Puis-je annuler ou reprogrammer ?",
+        "Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.": "Oui, absolument. Vous recevrez un email de confirmation avec un lien pour annuler ou reprogrammer facilement si vos plans changent.",
+        "Do you operate everywhere in France?": "Intervenez-vous partout en France ?",
+        "We operate on-site in Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Nous intervenons en présentiel en Occitanie et à distance partout en France et à l'international. La visioconférence est notre norme depuis des années, elle convient parfaitement à ce type d'échange.",
+
+        "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME/ETI à transformer leurs processus pour gagner en productivité et en sérénité.",
+        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
+        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
+
+        "Resources": "Ressources",
+        "AI integration agency": "Agence IA pour PME",
+        "n8n agency": "Agence n8n",
+        "Free AI audit": "Audit IA gratuit",
+        "Tools": "Nos outils",
+        "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
+        "Occitanie, France<br>&amp; International": "Occitanie, France<br>&amp; International",
+
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.0</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.0</span>"
+    },
+    attr: {}
+};

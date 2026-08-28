@@ -6,9 +6,6 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="assets/site.css">
     <link rel="canonical" href="https://www.optimizia.xyz/ai-audit.html">
-    <link rel="alternate" hreflang="fr" href="https://www.optimizia.xyz/fr/audit-ia.html">
-    <link rel="alternate" hreflang="en" href="https://www.optimizia.xyz/ai-audit.html">
-    <link rel="alternate" hreflang="x-default" href="https://www.optimizia.xyz/ai-audit.html">
     <title>Free AI Audit for SMEs | 3-Minute Self-Assessment</title>
     <meta name="description" content="Free AI maturity self-assessment for your company: six questions, an immediate score across six dimensions and a recommended starting point. No sign-up, no email.">
     <meta property="og:locale" content="en_US">
@@ -319,7 +316,7 @@
       "@type": "WebApplication",
       "@id": "https://www.optimizia.xyz/ai-audit.html#app",
       "name": "AI maturity self-assessment",
-      "url": "https://www.optimizia.xyz/fr/audit-ia.html",
+      "url": "https://www.optimizia.xyz/ai-audit.html",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Navigateur web",
       "browserRequirements": "JavaScript enabled",
@@ -335,7 +332,7 @@
       }
     }
     </script>
-    <script src="assets/oia-lang.js" defer></script>
+    <script src="assets/oia-i18n.js?v=1" data-page="ai-audit" defer></script>
 </head>
 <body>
 
@@ -351,11 +348,7 @@
             <a href="about.html">About</a>
             <a href="/#questions-frequentes">FAQ</a>
             <a href="contact.html" class="nav-cta">Free audit</a>
-            <div class="lang-toggle">
-                <a href="fr/audit-ia.html" class="lang-btn">FR</a>
-                <span class="lang-sep">|</span>
-                <span class="lang-btn lang-active">EN</span>
-            </div>
+            <div class="lang-toggle" data-lang-picker></div>
         </div>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
             <span></span><span></span><span></span>
@@ -373,11 +366,7 @@
     <a href="about.html">About</a>
     <a href="/#questions-frequentes">FAQ</a>
     <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
-    <div class="lang-toggle lang-toggle-mobile">
-        <a href="fr/audit-ia.html" class="lang-btn">FR</a>
-        <span class="lang-sep">|</span>
-        <span class="lang-btn lang-active">EN</span>
-    </div>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
 <section class="ed-hero bg-mesh" id="top">
