@@ -29,10 +29,21 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 ## Guides
 
-- [SEO: get found on Google](https://www.optimizia.xyz/seo/): what actually moves the needle for a small business website
+- [SEO: get found on Google](https://www.optimizia.xyz/seo/): the pillar, what actually moves the needle for a small business website
 - [SEO audit: what a useful report looks like](https://www.optimizia.xyz/seo/seo-audit-example/): the 4 elements a real audit must contain, and how to verify any audit yourself
-- [GEO: get cited by AI](https://www.optimizia.xyz/geo/): how AI engines decide who to cite, and the four levers
+- [Why your website doesn't show up on Google](https://www.optimizia.xyz/seo/website-invisible-on-google/): the 10-second indexation test, then the 7 measurable causes and their fixes
+- [How long does SEO take?](https://www.optimizia.xyz/seo/how-long-does-seo-take/): the honest timeline, clock by clock
+- [Core Web Vitals for non-technical owners](https://www.optimizia.xyz/seo/core-web-vitals-guide/): LCP, INP and CLS in plain words, and the fixes that matter
+- [Internal linking](https://www.optimizia.xyz/seo/internal-linking/): the most underrated SEO lever
+- [Titles and meta descriptions](https://www.optimizia.xyz/seo/titles-meta-descriptions/): the two tags Google actually shows
+- [Google Business Profile](https://www.optimizia.xyz/seo/google-business-profile/): the free local lever most owners under-use
+- [SPF, DKIM, DMARC](https://www.optimizia.xyz/seo/spf-dkim-dmarc/): why your emails end up in spam, and the three DNS records that fix it
+- [GEO: get cited by AI](https://www.optimizia.xyz/geo/): the pillar, how AI engines decide who to cite
 - [Why ChatGPT doesn't know your brand](https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/): where the models get their knowledge, and 5 concrete levers to get into answers
+- [GEO: how to get cited](https://www.optimizia.xyz/geo/geo-get-cited/): the 4 conditions to meet, in order
+- [llms.txt: the complete guide](https://www.optimizia.xyz/geo/llms-txt-guide/): the file that tells AI what to read and cite
+- [GPTBot, ClaudeBot, PerplexityBot](https://www.optimizia.xyz/geo/ai-crawlers-robots-txt/): block or welcome the AI bots
+- [AI Overviews](https://www.optimizia.xyz/geo/ai-overviews-france/): what Google answering in your place changes
 
 ## Case studies
 

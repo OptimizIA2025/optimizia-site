@@ -129,6 +129,41 @@
         }
         .ed-faq summary::-webkit-details-marker { display: none; }
         .ed-faq details p { margin: 14px 0 0; }
+        .ed-wrap h3 { font-size: 1.14rem; margin: 32px 0 10px; }
+        .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; padding-left: 22px; }
+        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
+        .ed-wrap code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88em;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1px 6px;
+        }
+        .ed-wrap pre { overflow-x: auto; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 0 22px; }
+        .ed-wrap pre code { background: none; border: none; padding: 0; }
+        .ed-callout {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 28px;
+            margin: 30px 0;
+        }
+        .ed-callout p:last-child { margin-bottom: 0; }
+        .ed-table-wrap { overflow-x: auto; margin: 0 0 22px; }
+        .ed-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .ed-table-wrap th, .ed-table-wrap td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; color: var(--text-muted); }
+        .ed-table-wrap th { color: var(--text); font-family: 'Outfit', sans-serif; }
+        .ed-more { margin-top: 54px; border-top: 1px solid var(--border); padding-top: 36px; }
+        .ed-more h2 { margin: 0 0 18px; font-size: 1.3rem; }
+        .ed-more ul { list-style: none; margin: 0 0 16px; display: grid; gap: 12px; }
+        .ed-more li a { display: block; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; transition: var(--transition); }
+        .ed-more li a:hover { border-color: var(--orange); }
+        .ed-more li b { display: block; color: var(--text); font-family: 'Outfit', sans-serif; font-weight: 600; }
+        .ed-more li span { display: block; color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; margin-top: 4px; }
+        .ed-more .ed-more-all { font-weight: 600; color: var(--orange); }
+        .ed-sources { margin-top: 40px; font-size: 0.92rem; color: var(--text-muted); }
+        .ed-sources b { color: var(--text); }
     </style>
     <script type="application/ld+json">
     {
@@ -252,6 +287,23 @@
             <h2 id="free-audit-or-paid-audit-which-one-to-choose">Free audit or paid audit: which one to choose?</h2>
             <p>A serious free audit gives you the diagnostic: the score, the categories in trouble, the main problems. That is enough to know where you stand. A paid audit is worth it when it adds the executable part: the detail of every check, the exact fixes, files ready to upload, a comparison with a competitor. If a paid audit only makes the PDF longer, walk away.</p>
             <p>And in both cases, stay in control: an audit tells you what to do, it does not force you to buy the fixes from whoever wrote it. An honest provider lets you leave with the plan.</p>
+
+
+<!-- silo:debut -->
+            <nav class="ed-more" aria-label="More in SEO">
+                <h2>More in SEO</h2>
+                <ul>
+                    <li><a href="/seo/website-invisible-on-google/"><b>Why your website doesn't show up on Google</b><span>The 10-second test to know if you are indexed, then the 7 measurable causes and their exact fixes.</span></a></li>
+                    <li><a href="/seo/how-long-does-seo-take/"><b>How long does SEO take to produce results?</b><span>Technical fixes in days, content in 2-3 months, authority in 6-12 months: the honest timeline, and how to measure without fooling yourself.</span></a></li>
+                    <li><a href="/seo/core-web-vitals-guide/"><b>Core Web Vitals: the guide for non-technical owners</b><span>LCP, INP and CLS translated into plain words, the three causes behind most bad scores, and the fixes that do not break your website.</span></a></li>
+                    <li><a href="/seo/internal-linking/"><b>Internal linking: the most underrated SEO lever</b><span>How links between your own pages distribute authority, the hub method, and the anchor-text rules that make it work.</span></a></li>
+                    <li><a href="/seo/titles-meta-descriptions/"><b>Titles and meta descriptions that earn the click</b><span>The two tags Google actually shows, how to write them page by page, and why Google rewrites yours when they are weak.</span></a></li>
+                    <li><a href="/seo/google-business-profile/"><b>Google Business Profile: the free lever most owners under-use</b><span>The fields that actually matter, the review strategy, and how the profile and the website reinforce each other.</span></a></li>
+                    <li><a href="/seo/spf-dkim-dmarc/"><b>SPF, DKIM, DMARC: why your emails end up in spam</b><span>The three DNS records that authenticate your email, what each one does, and how to set them without breaking delivery.</span></a></li>
+                </ul>
+                <a class="ed-more-all" href="/seo/">See everything in SEO (Get found on Google)</a>
+            </nav>
+<!-- silo:fin -->
 
             <div class="ed-cta reveal">
                 <h2>Judge for yourself.</h2>

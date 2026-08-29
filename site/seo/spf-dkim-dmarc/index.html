@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/assets/site.css?v=2">
-    <link rel="canonical" href="https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/">
-    <title>ChatGPT doesn't know your brand: why, and the fix | OptimizIA.xyz</title>
-    <meta name="description" content="Your customers ask AI engines for a recommendation and you never show up. Where the models get their knowledge, and 5 concrete levers to get into answers.">
+    <link rel="canonical" href="https://www.optimizia.xyz/seo/spf-dkim-dmarc/">
+    <title>SPF, DKIM, DMARC: why your emails end up in spam | OptimizIA.xyz</title>
+    <meta name="description" content="The three DNS records that decide whether your emails reach the inbox. What each one does, in what order to publish them, and the mistake that makes DMARC useless.">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="OptimizIA.xyz">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="ChatGPT doesn't know your brand: why, and the fix | OptimizIA.xyz">
-    <meta property="og:description" content="Your customers ask AI engines for a recommendation and you never show up. Where the models get their knowledge, and 5 concrete levers to get into answers.">
-    <meta property="og:url" content="https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/">
+    <meta property="og:title" content="SPF, DKIM, DMARC: why your emails end up in spam | OptimizIA.xyz">
+    <meta property="og:description" content="The three DNS records that decide whether your emails reach the inbox. What each one does, in what order to publish them, and the mistake that makes DMARC useless.">
+    <meta property="og:url" content="https://www.optimizia.xyz/seo/spf-dkim-dmarc/">
     <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ChatGPT doesn't know your brand: why, and the fix | OptimizIA.xyz">
-    <meta name="twitter:description" content="Your customers ask AI engines for a recommendation and you never show up. Where the models get their knowledge, and 5 concrete levers to get into answers.">
+    <meta name="twitter:title" content="SPF, DKIM, DMARC: why your emails end up in spam | OptimizIA.xyz">
+    <meta name="twitter:description" content="The three DNS records that decide whether your emails reach the inbox. What each one does, in what order to publish them, and the mistake that makes DMARC useless.">
     <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
 
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -171,8 +171,8 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
-        {"@type":"ListItem","position":2,"name":"GEO","item":"https://www.optimizia.xyz/geo/"},
-        {"@type":"ListItem","position":3,"name":"Why ChatGPT doesn't know your brand","item":"https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/"}
+        {"@type":"ListItem","position":2,"name":"SEO","item":"https://www.optimizia.xyz/seo/"},
+        {"@type":"ListItem","position":3,"name":"SPF, DKIM, DMARC: why your emails end up in spam","item":"https://www.optimizia.xyz/seo/spf-dkim-dmarc/"}
       ]
     }
     </script>
@@ -180,17 +180,16 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "@id": "https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/#article",
-      "headline": "Why ChatGPT doesn't know your brand (and how to fix it)",
-      "description": "Your customers ask AI engines for a recommendation and you never show up. Where the models get their knowledge, and 5 concrete levers to get into answers.",
+      "@id": "https://www.optimizia.xyz/seo/spf-dkim-dmarc/#article",
+      "headline": "SPF, DKIM, DMARC: why your emails end up in spam",
+      "description": "The three DNS records that decide whether your emails reach the inbox. What each one does, in what order to publish them, and the mistake that makes DMARC useless.",
       "inLanguage": "en-US",
-      "datePublished": "2026-07-24",
+      "datePublished": "2026-08-13",
       "dateModified": "2026-08-29",
       "author": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
       "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
-      "isPartOf": { "@id": "https://www.optimizia.xyz/geo/#collection" },
-      "mainEntityOfPage": "https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/",
-      "about": ["GEO", "AI visibility", "ChatGPT", "llms.txt", "AI crawlers"],
+      "isPartOf": { "@id": "https://www.optimizia.xyz/seo/#collection" },
+      "mainEntityOfPage": "https://www.optimizia.xyz/seo/spf-dkim-dmarc/",
       "image": "https://www.optimizia.xyz/assets/og-image.png"
     }
     </script>
@@ -232,61 +231,84 @@
 
 <section class="ed-hero bg-mesh" id="top">
     <div class="container">
-        <span class="overline"><a href="/geo/" style="color:inherit;text-decoration:none">GEO</a></span>
-        <h1>Why ChatGPT doesn't know your brand (and how to fix it)</h1>
-        <p class="ed-lead">Ask ChatGPT to recommend a provider in your trade in your city: if you are not in the answer, the competitors it cites are picking up prospects who will never know you exist. The models build their answers from the public web, and five levers decide whether you are in.</p>
+        <span class="overline"><a href="/seo/" style="color:inherit;text-decoration:none">SEO</a></span>
+        <h1>SPF, DKIM, DMARC: why your emails end up in spam</h1>
+        <p class="ed-lead">SPF says which servers may send in your name, DKIM signs your messages, DMARC says what to do when a message fails the first two. Without all three, your emails look suspicious and anyone can impersonate you. Since February 2024, Google and Yahoo require them from bulk senders. The most common mistake is not forgetting them, it is publishing DMARC in observation mode and never tightening it: in that state it protects against nothing.</p>
         <div class="ed-meta"><span>Guide</span><span>By Romain Ben</span><span>Updated 29 August 2026</span></div>
     </div>
 </section>
 <main class="ed-body">
     <div class="container">
         <div class="ed-wrap">
-            <h2 id="the-painful-test">The test that hurts</h2>
-            <p>Open ChatGPT and ask the question your prospects are already asking: "Recommend a [your trade] in [your city]". Look at the answer. In most cases, three or four businesses are cited, with a summary of their strengths. If you are not among them, those prospects go to the ones who are, without ever seeing your name.</p>
-            <p>This behavior is no longer marginal. A growing share of provider searches now starts in a conversational AI rather than on Google, especially among people under 40. And unlike a Google results page where ten links share the attention, an AI answer cites two to four names. Spots are scarce, and they are being decided right now.</p>
 
-            <h2 id="where-ai-answers-come-from">Where do AI engines get their answers?</h2>
-            <p>A model like ChatGPT combines two sources. First its <strong>training memory</strong>: everything it read from the public web while it was being built, with a lag of several months. Then <strong>live search</strong>: for local or recent questions, it queries the web at the moment of the question and synthesizes the pages it finds.</p>
-            <p>In both cases, the raw material is the same: your website, your Google listing, professional directories, customer reviews, articles that talk about you. A model cannot recommend a business the web says nothing clear about. It only "knows" you if the web describes you.</p>
+          <h2 id="the-problem">The problem these three records solve</h2>
+          <p>Email was designed without authentication. Originally, any server could send a message claiming to be anyone, exactly as you can write whatever you like on the back of an envelope.</p>
+          <p>Two direct consequences for a business:</p>
+          <ul>
+            <li><b>Your identity can be impersonated.</b> A fraudster sends a fake invoice that appears to come from your address, to your own customers. That is CEO fraud and supplier fraud, and it almost always starts with an unprotected domain.</li>
+            <li><b>Your genuine messages look suspicious.</b> Unable to verify that you are you, mail providers apply doubt and file you under junk.</li>
+          </ul>
+          <p>SPF, DKIM and DMARC close that gap. They are three lines of text published in your DNS zone, at your host or your registrar. They cost nothing.</p>
 
-            <h2 id="why-you-are-missing">Why are you missing?</h2>
-            <p>Four causes come up in nearly every case we audit:</p>
-            <ul>
-                <li><strong>Your website does not say who you are.</strong> A homepage showing "Welcome" and photos, without a sentence like "[Name], [trade] in [city] since [year]", is unreadable for a model.</li>
-                <li><strong>Your AI crawlers are blocked.</strong> GPTBot, ClaudeBot or PerplexityBot banned in the robots.txt, often by a plugin setting nobody ever approved. The result: AI engines that search live cannot read you.</li>
-                <li><strong>No structured data.</strong> Without Organization or LocalBusiness JSON-LD, the model has to guess your business and your service area instead of reading them.</li>
-                <li><strong>The outside web does not mention you.</strong> No directory, no reviews, no article: nothing confirming your existence beyond your own website. Models are wary of businesses described by a single source.</li>
-            </ul>
+          <h2 id="spf">SPF: the list of authorised senders</h2>
+          <p>SPF publishes the list of servers allowed to send mail for your domain. Your business mailbox, your emailing tool, your website sending form notifications.</p>
+          <p>What matters, beyond its mere presence, is <b>how it ends</b>:</p>
+          <ul>
+            <li><span class="mono">-all</span> means: any server outside this list is an impostor, reject it. That is the strict stance.</li>
+            <li><span class="mono">~all</span> means: mark it as doubtful but let it through. That is the soft stance, the most common one, and a reasonable compromise as long as you are not certain you have listed every one of your senders.</li>
+            <li><span class="mono">+all</span> authorises everyone. It is the equivalent of publishing nothing, and it turns up more often than you would think.</li>
+          </ul>
+          <p>Classic trap: SPF has a limit of ten DNS lookups. A record that stacks five different tools exceeds it silently, and the whole thing stops working without a single error message.</p>
 
-            <h2 id="the-5-levers">The 5 levers to exist</h2>
-            <ul>
-                <li><strong>Spell out your identity in plain words.</strong> On the homepage and the about page: who, what, where, since when, for whom. Facts, numbers, city names. That is the material the models cite.</li>
-                <li><strong>Add structured data.</strong> An Organization or LocalBusiness JSON-LD block with name, address, phone, service area and services. Ten minutes of work, readable by every engine.</li>
-                <li><strong>Publish an llms.txt.</strong> The text file that summarizes your website for AI engines: who you are, what your pages contain, what to cite.</li>
-                <li><strong>Open your doors to AI crawlers.</strong> Check the robots.txt: GPTBot, ClaudeBot, PerplexityBot and Google-Extended must be allowed through.</li>
-                <li><strong>Multiply consistent mentions.</strong> An up-to-date Google listing, directories in your industry, regular customer reviews. Every external source repeating the same information strengthens the model's trust.</li>
-            </ul>
+          <h2 id="dkim">DKIM: the signature on your messages</h2>
+          <p>DKIM adds a cryptographic signature to every outgoing message. The receiving server fetches your public key from your DNS and verifies the signature. If it matches, two things are proven: the message really comes from you, and it was not altered in transit.</p>
+          <p>Unlike SPF, DKIM survives forwarding: a relayed message keeps a valid signature. That is what makes it the sturdiest of the three.</p>
+          <p>Setting it up is almost always done from your mail provider's interface, which hands you a record to copy. The difficulty, when there is one, comes from <b>forgotten senders</b>: your invoicing software, your newsletter tool, your booking platform. Each needs its own signature.</p>
 
-            <h2 id="how-long-it-takes">How long does it take?</h2>
-            <p>AI engines that search live, like Perplexity or ChatGPT in search mode, reflect your changes within a few days to a few weeks: that is the fast lever. The models' training memory, on the other hand, updates with each new version, on a rhythm of several months. Concretely: what you fix this week feeds live answers as early as this month, and the models' deep knowledge within six to twelve months. One more reason not to wait: your lead is being built while your competitors sleep.</p>
+          <h2 id="dmarc">DMARC: the instruction, and the mistake that makes it useless</h2>
+          <p>DMARC answers the question the other two leave open: what should be done with a message that fails the checks? Three possible answers:</p>
+          <ul>
+            <li><span class="mono">p=none</span>: do nothing, just send reports. That is observation mode.</li>
+            <li><span class="mono">p=quarantine</span>: file as junk.</li>
+            <li><span class="mono">p=reject</span>: refuse the message.</li>
+          </ul>
+          <p><b>Here is the most frequent mistake we measure</b>: a domain publishes DMARC at <span class="mono">p=none</span>, and nobody ever goes back to it. The record is there, a checking tool shows a green tick, and yet <b>no impersonation is blocked</b>. Observation mode is a transition step, useful for a few weeks, not a destination.</p>
+          <p>The path is simple: publish at <span class="mono">p=none</span>, read the reports for two to four weeks to identify the legitimate senders you forgot, then move to <span class="mono">quarantine</span>, then to <span class="mono">reject</span>. Tightening too fast risks blocking your own invoices.</p>
+
+          <h2 id="the-three-complements">The three complements that follow</h2>
+          <p>Once the trio is in place, three lesser-known settings become available, and our audit measures them too:</p>
+          <ul>
+            <li><b>MTA-STS</b> requires that mail addressed to you travels encrypted, which blocks interception by protocol downgrade.</li>
+            <li><b>TLS-RPT</b> sends you a report when that encryption fails.</li>
+            <li><b>BIMI</b> displays your logo in your recipients' inbox. It requires DMARC at <span class="mono">quarantine</span> or <span class="mono">reject</span>: it is the visible reward for the previous work, and a brand signal your competitors probably do not have.</li>
+          </ul>
+
+          <h2 id="what-our-audit-measures">What our audit measures exactly</h2>
+          <p>Nine checks, all performed from the outside on your public records: presence of SPF and the strength of its ending, presence of a DKIM signature on the common selectors, presence of DMARC and the strength of its policy, MTA-STS, TLS-RPT, BIMI, and your receiving servers.</p>
+          <p>We measure nothing your recipient could not verify themselves, which makes every finding replayable. That is the principle of our <a href="/tools/seoplus/methodology.html">methodology</a>, and it is what separates a finding you can hold up from an opinion.</p>
+          <p>If your emails land in junk, start here before rewriting your subject lines. And if your site scores poorly elsewhere, our <a href="/seo/">website security guide</a> covers the other three projects.</p>
+        
 
 
 <!-- silo:debut -->
-            <nav class="ed-more" aria-label="More in GEO">
-                <h2>More in GEO</h2>
+            <nav class="ed-more" aria-label="More in SEO">
+                <h2>More in SEO</h2>
                 <ul>
-                    <li><a href="/geo/geo-get-cited/"><b>GEO: how to get cited by ChatGPT, Perplexity and AI Overviews</b><span>The 4 conditions to meet, in order, so your business is part of AI answers: readable, understandable, citable, credible.</span></a></li>
-                    <li><a href="/geo/llms-txt-guide/"><b>llms.txt: the complete guide</b><span>The text file that tells AI what to read and what to cite on your website. What it is, what it changes, how to write it.</span></a></li>
-                    <li><a href="/geo/ai-crawlers-robots-txt/"><b>GPTBot, ClaudeBot, PerplexityBot: block or welcome the AI bots?</b><span>Who these bots visiting your website are, what blocking them really costs you, and the exact lines to put in your robots.txt.</span></a></li>
-                    <li><a href="/geo/ai-overviews-france/"><b>AI Overviews: what Google answering in your place changes</b><span>How AI answers work, who loses traffic to them, and how to become the cited source rather than the victim.</span></a></li>
+                    <li><a href="/seo/seo-audit-example/"><b>SEO audit: what a useful report looks like</b><span>The 4 elements a real audit must contain, the red flags of a decorative report, and how to verify any audit yourself.</span></a></li>
+                    <li><a href="/seo/website-invisible-on-google/"><b>Why your website doesn't show up on Google</b><span>The 10-second test to know if you are indexed, then the 7 measurable causes and their exact fixes.</span></a></li>
+                    <li><a href="/seo/how-long-does-seo-take/"><b>How long does SEO take to produce results?</b><span>Technical fixes in days, content in 2-3 months, authority in 6-12 months: the honest timeline, and how to measure without fooling yourself.</span></a></li>
+                    <li><a href="/seo/core-web-vitals-guide/"><b>Core Web Vitals: the guide for non-technical owners</b><span>LCP, INP and CLS translated into plain words, the three causes behind most bad scores, and the fixes that do not break your website.</span></a></li>
+                    <li><a href="/seo/internal-linking/"><b>Internal linking: the most underrated SEO lever</b><span>How links between your own pages distribute authority, the hub method, and the anchor-text rules that make it work.</span></a></li>
+                    <li><a href="/seo/titles-meta-descriptions/"><b>Titles and meta descriptions that earn the click</b><span>The two tags Google actually shows, how to write them page by page, and why Google rewrites yours when they are weak.</span></a></li>
+                    <li><a href="/seo/google-business-profile/"><b>Google Business Profile: the free lever most owners under-use</b><span>The fields that actually matter, the review strategy, and how the profile and the website reinforce each other.</span></a></li>
                 </ul>
-                <a class="ed-more-all" href="/geo/">See everything in GEO (Get cited by AI)</a>
+                <a class="ed-more-all" href="/seo/">See everything in SEO (Get found on Google)</a>
             </nav>
 <!-- silo:fin -->
 
             <div class="ed-cta reveal">
-                <h2>Do AI engines know who you are?</h2>
-                <p>The free diagnostic checks your AI crawlers, your llms.txt, your structured data and your citable passages. Score in 30 seconds.</p>
+                <h2>Are your three records in place?</h2>
+                <p>The audit checks SPF, DKIM, DMARC, MTA-STS, BIMI and your receiving servers. Free, 30 seconds.</p>
                 <a href="/tools/seoplus/" class="btn btn-orange">Analyze my website</a>
             </div>
         </div>

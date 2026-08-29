@@ -60,4 +60,3 @@ Allow: /
 # le robots.txt qu'a la racine de l'origine. Le retirer rendrait ses 80 articles
 # decouvrables par les seuls liens internes.
 Sitemap: https://www.optimizia.xyz/sitemap.xml
-Sitemap: https://www.optimizia.xyz/tools/seoplus/sitemap.xml
