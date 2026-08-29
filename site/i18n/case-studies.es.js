@@ -1,8 +1,10 @@
-/* case-studies.html — espagnol. Meme jeu de cles que case-studies.fr.js et
+/* /case-studies/ — espagnol. Meme jeu de cles que case-studies.fr.js et
    case-studies.de.js. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+  "SEO guides": "Guías SEO",
+  "GEO guides": "Guías GEO",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Casos de éxito en IA y automatización | OptimizIA.xyz",
 
         "Why now": "El diagnóstico",
@@ -47,16 +49,12 @@ window.OIA_I18N.es = {
 
         "Navigation": "Navegación",
         "Resources": "Recursos",
-        "AI integration agency": "Agencia de integración de IA",
-        "n8n agency": "Agencia n8n",
-        "Free AI audit": "Auditoría de IA gratuita",
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Contact": "Contacto",
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-        "Guides": "Guías"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"/legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
     },
     attr: {}
 };

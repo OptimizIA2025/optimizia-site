@@ -4,6 +4,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+  "SEO guides": "Guías SEO",
+  "GEO guides": "Guías GEO",
         "About | OptimizIA.xyz": "Quiénes somos | OptimizIA.xyz",
 
         "Why now": "El diagnóstico",
@@ -42,16 +44,12 @@ window.OIA_I18N.es = {
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
 
         "Resources": "Recursos",
-        "AI integration agency": "Agencia de integración de IA",
-        "n8n agency": "Agencia n8n",
-        "Free AI audit": "Auditoría de IA gratuita",
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
 
         "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
         "OptimizIA.xyz is based in Béziers, in the south of France, and works with SMEs across Occitanie and internationally. French-speaking businesses nearby can start from our local page: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.": "OptimizIA.xyz tiene su sede en Béziers, en el sur de Francia, y acompaña a pymes en Occitania y a nivel internacional. Las empresas cercanas pueden empezar por nuestra página local: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.",
-        "Guides": "Guías"
     },
     attr: {}
 };

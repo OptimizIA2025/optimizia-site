@@ -1,6 +1,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+  "Guides SEO": "SEO-Leitfäden",
+  "Guides GEO": "GEO-Leitfäden",
         "Agence IA à Béziers | OptimizIA.xyz": "KI-Agentur in Béziers | OptimizIA.xyz",
         "Constat": "Ausgangslage",
         "Bénéfices": "Nutzen",
@@ -27,7 +29,7 @@ window.OIA_I18N.de = {
         "Voir une formation en action": "Eine Schulung in Aktion sehen",
         "La preuve sur place": "Der Beweis vor Ort",
         "Nous travaillons déjà <span style=\"color:var(--orange);\">à Béziers</span>": "Wir arbeiten bereits <span style=\"color:var(--orange);\">in Béziers</span>",
-        "En 2026, nous avons animé à Béziers une formation IA pour des dirigeants et des indépendants, dans les locaux de RH Solutions, boulevard Président Kennedy. Le déroulé complet, les questions posées et les résultats sont documentés dans <a href=\"case-study-ai-training.html\">le récit de cette formation</a>. Nos autres missions pour des PME françaises sont détaillées dans nos <a href=\"case-studies.html\">réalisations</a>.": "2026 haben wir in Béziers eine KI-Schulung für Führungskräfte und Selbstständige durchgeführt, in den Räumen von RH Solutions am Boulevard Président Kennedy. Der komplette Ablauf, die gestellten Fragen und die Ergebnisse sind dokumentiert in <a href=\"case-study-ai-training.html\">dem Bericht über diese Schulung</a>. Unsere weiteren Projekte für französische KMU finden Sie in unseren <a href=\"case-studies.html\">Referenzen</a>.",
+        "En 2026, nous avons animé à Béziers une formation IA pour des dirigeants et des indépendants, dans les locaux de RH Solutions, boulevard Président Kennedy. Le déroulé complet, les questions posées et les résultats sont documentés dans <a href=\"/case-studies/ai-training/\">le récit de cette formation</a>. Nos autres missions pour des PME françaises sont détaillées dans nos <a href=\"/case-studies/\">réalisations</a>.": "2026 haben wir in Béziers eine KI-Schulung für Führungskräfte und Selbstständige durchgeführt, in den Räumen von RH Solutions am Boulevard Président Kennedy. Der komplette Ablauf, die gestellten Fragen und die Ergebnisse sind dokumentiert in <a href=\"/case-studies/ai-training/\">dem Bericht über diese Schulung</a>. Unsere weiteren Projekte für französische KMU finden Sie in unseren <a href=\"/case-studies/\">Referenzen</a>.",
         "<strong>Notre siège :</strong> 23 Boulevard Président Kennedy, 34500 Béziers": "<strong>Unser Sitz:</strong> 23 Boulevard Président Kennedy, 34500 Béziers",
         "Zone d'intervention": "Einsatzgebiet",
         "Internationale par nos clients, <span style=\"color:var(--orange);\">biterroise par notre ancrage</span>": "International durch unsere Kunden, <span style=\"color:var(--orange);\">verwurzelt in Béziers</span>",
@@ -49,10 +51,6 @@ window.OIA_I18N.de = {
         "↗ romainben.cloud, le parcours de Romain Ben": "↗ romainben.cloud, der Werdegang von Romain Ben",
         "Navigation": "Navigation",
         "Ressources": "Ressourcen",
-        "Agence IA pour PME": "Agentur für KI-Integration",
-        "Agence n8n": "n8n-Agentur",
-        "Audit IA gratuit": "Kostenloses KI-Audit",
-        "Guides": "Leitfäden",
         "Nos outils": "Tools",
         "Audit SEO et visibilité IA (SEOPlus!)": "SEO- und KI-Sichtbarkeitsaudit (SEOPlus!)",
         "Contact": "Kontakt",

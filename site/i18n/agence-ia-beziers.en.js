@@ -1,6 +1,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.en = {
     html: {
+  "Guides SEO": "SEO guides",
+  "Guides GEO": "GEO guides",
         "Agence IA à Béziers | OptimizIA.xyz": "AI Agency in Béziers | OptimizIA.xyz",
         "Constat": "Why now",
         "Bénéfices": "Benefits",
@@ -27,7 +29,7 @@ window.OIA_I18N.en = {
         "Voir une formation en action": "See a training session in action",
         "La preuve sur place": "Proof on the ground",
         "Nous travaillons déjà <span style=\"color:var(--orange);\">à Béziers</span>": "We already work <span style=\"color:var(--orange);\">in Béziers</span>",
-        "En 2026, nous avons animé à Béziers une formation IA pour des dirigeants et des indépendants, dans les locaux de RH Solutions, boulevard Président Kennedy. Le déroulé complet, les questions posées et les résultats sont documentés dans <a href=\"case-study-ai-training.html\">le récit de cette formation</a>. Nos autres missions pour des PME françaises sont détaillées dans nos <a href=\"case-studies.html\">réalisations</a>.": "In 2026 we delivered an AI training session in Béziers for business leaders and independents, at the RH Solutions offices on Boulevard Président Kennedy. The full story, the questions asked and the results are documented in <a href=\"case-study-ai-training.html\">the account of that session</a>. Our other work for French SMEs is detailed in our <a href=\"case-studies.html\">case studies</a>.",
+        "En 2026, nous avons animé à Béziers une formation IA pour des dirigeants et des indépendants, dans les locaux de RH Solutions, boulevard Président Kennedy. Le déroulé complet, les questions posées et les résultats sont documentés dans <a href=\"/case-studies/ai-training/\">le récit de cette formation</a>. Nos autres missions pour des PME françaises sont détaillées dans nos <a href=\"/case-studies/\">réalisations</a>.": "In 2026 we delivered an AI training session in Béziers for business leaders and independents, at the RH Solutions offices on Boulevard Président Kennedy. The full story, the questions asked and the results are documented in <a href=\"/case-studies/ai-training/\">the account of that session</a>. Our other work for French SMEs is detailed in our <a href=\"/case-studies/\">case studies</a>.",
         "<strong>Notre siège :</strong> 23 Boulevard Président Kennedy, 34500 Béziers": "<strong>Our registered office:</strong> 23 Boulevard Président Kennedy, 34500 Béziers",
         "Zone d'intervention": "Service area",
         "Internationale par nos clients, <span style=\"color:var(--orange);\">biterroise par notre ancrage</span>": "International through our clients, <span style=\"color:var(--orange);\">rooted in Béziers</span>",
@@ -49,10 +51,6 @@ window.OIA_I18N.en = {
         "↗ romainben.cloud, le parcours de Romain Ben": "↗ romainben.cloud, Romain Ben's journey",
         "Navigation": "Navigation",
         "Ressources": "Resources",
-        "Agence IA pour PME": "AI integration agency",
-        "Agence n8n": "n8n agency",
-        "Audit IA gratuit": "Free AI audit",
-        "Guides": "Guides",
         "Nos outils": "Tools",
         "Audit SEO et visibilité IA (SEOPlus!)": "SEO &amp; GEO audit tool (SEOPlus!)",
         "Contact": "Contact",

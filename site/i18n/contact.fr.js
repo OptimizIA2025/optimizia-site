@@ -4,6 +4,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+  "SEO guides": "Guides SEO",
+  "GEO guides": "Guides GEO",
         "Contact, OptimizIA.xyz | Book your Discovery Call": "Contact, OptimizIA.xyz | Réservez votre RDV Découverte",
 
         "Why now": "Constat",
@@ -56,15 +58,11 @@ window.OIA_I18N.fr = {
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
         "Resources": "Ressources",
-        "AI integration agency": "Agence IA pour PME",
-        "n8n agency": "Agence n8n",
-        "Free AI audit": "Audit IA gratuit",
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
         "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-        "Guides": "Guides"
     },
     attr: {}
 };

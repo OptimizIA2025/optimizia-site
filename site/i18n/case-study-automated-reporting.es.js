@@ -1,8 +1,10 @@
-/* case-study-automated-reporting.html — espagnol. Meme jeu de cles que le francais et
+/* /case-studies/automated-reporting/ — espagnol. Meme jeu de cles que le francais et
    l'allemand de cette page. Traduit depuis l'anglais. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+  "SEO guides": "Guías SEO",
+  "GEO guides": "Guías GEO",
         "Automated Reporting and Dashboards | OptimizIA.xyz": "Informes y paneles automatizados | OptimizIA.xyz",
         "Why now": "El diagnóstico",
         "Benefits": "Beneficios",
@@ -79,15 +81,11 @@ window.OIA_I18N.es = {
         "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
         "Navigation": "Navegación",
         "Resources": "Recursos",
-        "AI integration agency": "Agencia de integración de IA",
-        "n8n agency": "Agencia n8n",
-        "Free AI audit": "Auditoría de IA gratuita",
         "Tools": "Herramientas",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
         "Contact": "Contacto",
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-        "Guides": "Guías"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"/legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
     },
     attr: {}
 };

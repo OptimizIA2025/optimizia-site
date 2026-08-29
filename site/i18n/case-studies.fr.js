@@ -1,10 +1,12 @@
-/* case-studies.html — francais. Cle = texte anglais exact du HTML, espaces
+/* /case-studies/ — francais. Cle = texte anglais exact du HTML, espaces
    normalises. Le vocabulaire reprend celui de l'ancienne page fr/realisations.html,
    validee en production. Une chaine identique dans les trois langues n'a d'entree
    dans aucun fichier. Les trois langues portent EXACTEMENT le meme jeu de cles. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+  "SEO guides": "Guides SEO",
+  "GEO guides": "Guides GEO",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Réalisations IA et automatisation | OptimizIA.xyz",
 
         "Why now": "Constat",
@@ -49,16 +51,12 @@ window.OIA_I18N.fr = {
 
         "Navigation": "Navigation",
         "Resources": "Ressources",
-        "AI integration agency": "Agence IA pour PME",
-        "n8n agency": "Agence n8n",
-        "Free AI audit": "Audit IA gratuit",
         "Tools": "Nos outils",
         "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
         "Contact": "Contact",
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-        "Guides": "Guides"
+        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"/legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
     },
     attr: {}
 };
