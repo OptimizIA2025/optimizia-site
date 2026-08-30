@@ -3,6 +3,7 @@
    legal-notice.html, pas vers l'ancien mentions-legales.html du silo. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
@@ -54,8 +55,6 @@ window.OIA_I18N.fr = {
         "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Notre siège est à <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Nous intervenons sur site en Occitanie et à distance partout en France comme à l'international. La visioconférence est notre norme depuis des années, elle se prête parfaitement à ce type d'échange.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
         "Resources": "Ressources",
         "Tools": "Nos outils",

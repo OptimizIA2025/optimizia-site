@@ -12,6 +12,7 @@
    contact@optimizia.xyz) n'ont d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
@@ -457,8 +458,6 @@ window.OIA_I18N.fr = {
         "We systematically favour hosting on your existing infrastructure, so your data stays under your control. For clients who prefer to outsource hosting and maintenance, we run VPS servers located in France. The tools we deploy (self-hosted n8n, Claude API, and others) can be configured to meet your GDPR and data sovereignty requirements. No client data passes through our servers without your explicit agreement.": "Nous privilégions systématiquement l'hébergement sur votre infrastructure existante, pour que vos données restent sous votre contrôle. Pour les clients qui préfèrent externaliser l'hébergement et la maintenance, nous exploitons des serveurs VPS situés en France. Les outils que nous déployons (n8n auto-hébergé, API Claude, et d'autres) se configurent pour répondre à vos exigences RGPD et de souveraineté des données. Aucune donnée client ne transite par nos serveurs sans votre accord explicite.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
         "Navigation": "Navigation",
         "Resources": "Ressources",
         "Tools": "Nos outils",

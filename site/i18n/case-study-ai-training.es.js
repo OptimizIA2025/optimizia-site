@@ -3,6 +3,7 @@
    (pymes, caso de exito, auditoria gratuita), usted. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
@@ -85,8 +86,6 @@ window.OIA_I18N.es = {
         "Book a slot": "Reservar una cita",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — La trayectoria de Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
         "Navigation": "Navegación",
         "Resources": "Recursos",
         "Tools": "Herramientas",

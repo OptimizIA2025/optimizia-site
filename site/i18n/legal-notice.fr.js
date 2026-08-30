@@ -5,6 +5,7 @@
    ces cles n'ont d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
         "Legal Notice | OptimizIA.xyz": "Mentions légales | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Retour à l'accueil",

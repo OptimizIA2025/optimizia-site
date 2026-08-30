@@ -1,6 +1,7 @@
 /* contact.html — allemand. Meme jeu de cles que contact.fr.js et contact.es.js. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
@@ -52,8 +53,6 @@ window.OIA_I18N.de = {
         "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Unser Sitz ist in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Wir arbeiten vor Ort in Okzitanien und remote in ganz Frankreich und international. Videokonferenzen sind seit Jahren unsere Norm und passen perfekt zu dieser Art von Gespräch.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Der Werdegang von Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Der Werdegang von Romain Ben",
 
         "Resources": "Ressourcen",
         "Tools": "Tools",

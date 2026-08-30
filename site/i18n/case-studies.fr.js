@@ -4,6 +4,7 @@
    dans aucun fichier. Les trois langues portent EXACTEMENT le meme jeu de cles. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
@@ -46,8 +47,6 @@ window.OIA_I18N.fr = {
         "Book a free diagnosis": "Réserver un diagnostic gratuit",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Le parcours de Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Le parcours de Romain Ben",
 
         "Navigation": "Navigation",
         "Resources": "Ressources",

@@ -3,6 +3,7 @@
    ce tissu d'entreprises ; « KMU » sert quand la taille est le sujet. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
@@ -40,8 +41,6 @@ window.OIA_I18N.de = {
         "Start the conversation": "Gespräch beginnen",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Der Werdegang von Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Der Werdegang von Romain Ben",
 
         "Resources": "Ressourcen",
         "Tools": "Tools",

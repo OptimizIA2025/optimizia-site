@@ -4,6 +4,7 @@
    cambian de un idioma a otro. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
@@ -447,8 +448,6 @@ window.OIA_I18N.es = {
         "We systematically favour hosting on your existing infrastructure, so your data stays under your control. For clients who prefer to outsource hosting and maintenance, we run VPS servers located in France. The tools we deploy (self-hosted n8n, Claude API, and others) can be configured to meet your GDPR and data sovereignty requirements. No client data passes through our servers without your explicit agreement.": "Favorecemos sistemáticamente el alojamiento en su infraestructura existente, para que sus datos permanezcan bajo su control. Para los clientes que prefieren externalizar el alojamiento y el mantenimiento, operamos servidores VPS ubicados en Francia. Las herramientas que desplegamos (n8n autoalojado, API de Claude, y otras) pueden configurarse para cumplir sus exigencias de RGPD y de soberanía de los datos. Ningún dato de cliente transita por nuestros servidores sin su acuerdo explícito.",
 
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — La trayectoria de Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — La trayectoria de Romain Ben",
         "Navigation": "Navegación",
         "Resources": "Recursos",
         "Tools": "Herramientas",

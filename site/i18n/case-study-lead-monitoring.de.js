@@ -2,6 +2,7 @@
    l'espagnol de cette page. Traduit depuis l'anglais. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
@@ -70,8 +71,6 @@ window.OIA_I18N.de = {
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 Minuten kostenlose Analyse, um zu klären, ob derselbe Mechanismus bei Ihnen greift, ohne Fachjargon und unverbindlich.",
         "Book a slot": "Termin buchen",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
-        "↗ ginoux.xyz — Rémy Ginoux's journey": "↗ ginoux.xyz — Der Werdegang von Rémy Ginoux",
-        "↗ romainben.cloud — Romain Ben's journey": "↗ romainben.cloud — Der Werdegang von Romain Ben",
         "Navigation": "Navigation",
         "Resources": "Ressourcen",
         "Tools": "Tools",

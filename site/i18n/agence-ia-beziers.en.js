@@ -1,5 +1,6 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.en = {
+        "↗ Rencontrer les fondateurs": "↗ Meet the founders",
     html: {
   "Guides SEO": "SEO guides",
   "Guides GEO": "GEO guides",
@@ -47,19 +48,14 @@ window.OIA_I18N.en = {
         "20 minutes, sans pitch commercial : une conversation sur ce que l'IA peut changer pour votre entreprise.": "20 minutes, no sales pitch: a conversation about what AI can change for your company.",
         "Réserver un créneau": "Book a slot",
         "Un réseau d'experts IA, automatisation et Knowledge Management. Nous aidons les dirigeants de PME à transformer leurs processus pour gagner en productivité et en sérénité.": "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.",
-        "↗ ginoux.xyz, le parcours de Rémy Ginoux": "↗ ginoux.xyz, Rémy Ginoux's journey",
-        "↗ romainben.cloud, le parcours de Romain Ben": "↗ romainben.cloud, Romain Ben's journey",
         "Navigation": "Navigation",
         "Ressources": "Resources",
         "Nos outils": "Tools",
         "Audit SEO et visibilité IA (SEOPlus!)": "SEO &amp; GEO audit tool (SEOPlus!)",
         "Contact": "Contact",
         "contact@optimizia.xyz": "contact@optimizia.xyz",
-        "LinkedIn, Rémy Ginoux": "LinkedIn, Rémy Ginoux",
-        "LinkedIn, Romain Ben": "LinkedIn, Romain Ben",
         "23 Boulevard Président Kennedy<br>34500 Béziers, France": "23 Boulevard Président Kennedy<br>34500 Béziers, France",
         "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-        "<span style=\"color: var(--text-muted);\">optimizia.xyz</span> · <a href=\"https://www.ginoux.xyz\">ginoux.xyz</a> · <a href=\"https://www.romainben.cloud\">romainben.cloud</a>": "<span style=\"color: var(--text-muted);\">optimizia.xyz</span> · <a href=\"https://www.ginoux.xyz\">ginoux.xyz</a> · <a href=\"https://www.romainben.cloud\">romainben.cloud</a>"
     },
     attr: {}
 };
