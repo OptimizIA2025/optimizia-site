@@ -178,3 +178,12 @@ footer .footer-grid {
 .theme-btn:hover { color: var(--orange); border-color: var(--border-hover); background: var(--orange-light); }
 .theme-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 .theme-btn svg { width: 15px; height: 15px; display: block; }
+
+/* Trois feuilles compilees (editorial, apropos, legal) codent le fond de la
+   nav en blanc dur au lieu de --bg-glass : la barre restait claire en mode
+   sombre partout hors accueil. Surcharge ciblee plutot que regenerer trois
+   fichiers immutable. legal-notice n'a pas d'id sur sa nav, d'ou body > nav. */
+:root[data-theme="dark"] #navbar,
+:root[data-theme="dark"] body > nav {
+    background: rgba(11, 17, 32, 0.85);
+}

@@ -24,6 +24,10 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 - [About](https://www.optimizia.xyz/about.html): the two co-founders' backgrounds
 - [Services](https://www.optimizia.xyz/services.html): the 3 formats in detail, deliverables, durations and price ranges
 - [The 3 levers](https://www.optimizia.xyz/levers.html): how diagnosis, automation and knowledge management combine, explained in detail
+- [AI fundamentals](https://www.optimizia.xyz/ai-fundamentals/): what AI can and cannot do for a small business, LLMs, RAG, agents, confidentiality
+- [AI integration](https://www.optimizia.xyz/ai-integration/): the integration strategy that holds, from diagnosis to adoption and governance
+- [Process automation](https://www.optimizia.xyz/process-automation/): what to automate, n8n and Make, human in the loop, measuring gains
+- [Pricing & ROI](https://www.optimizia.xyz/pricing-roi/): real price ranges for AI projects, hidden costs, honest ROI measurement
 - [Contact](https://www.optimizia.xyz/contact.html): a free 20-minute discovery call, no commitment
 - [Tools](https://www.optimizia.xyz/tools/): the tools built by the agency, and how to tell whether your need calls for the tool or the agency
 - [Agence IA à Béziers](https://www.optimizia.xyz/agence-ia-beziers.html): the French local page, Béziers and its region
