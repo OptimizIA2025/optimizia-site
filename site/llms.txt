@@ -29,6 +29,8 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 ## Guides
 
+- [Blog](https://www.optimizia.xyz/blog/): every article in one place, filterable by theme; each article lives in its silo (/seo/ or /geo/).
+
 - [SEO: get found on Google](https://www.optimizia.xyz/seo/): the pillar, what actually moves the needle for a small business website
 - [SEO audit: what a useful report looks like](https://www.optimizia.xyz/seo/seo-audit-example/): the 4 elements a real audit must contain, and how to verify any audit yourself
 - [Why your website doesn't show up on Google](https://www.optimizia.xyz/seo/website-invisible-on-google/): the 10-second indexation test, then the 7 measurable causes and their fixes
