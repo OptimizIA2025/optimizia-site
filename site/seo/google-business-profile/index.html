@@ -25,146 +25,11 @@
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=1">
 
     <script src="/assets/vendor/gsap.min.js" defer></script>
     <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 
-    <style>
-        /* Pages editoriales (piliers de silo, articles) */
-        .ed-hero { padding: 138px 0 56px; }
-        .ed-hero .overline { display: block; margin-bottom: 14px; }
-        .ed-hero h1 {
-            font-size: clamp(2rem, 4.6vw, 3.1rem);
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-        .ed-hero .ed-lead {
-            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
-            line-height: 1.7;
-            color: var(--text-muted);
-            max-width: 760px;
-        }
-        .ed-body { padding: 8px 0 96px; }
-        .ed-wrap { max-width: 780px; }
-        .ed-wrap h2 {
-            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
-            margin: 52px 0 16px;
-        }
-        .ed-wrap p {
-            font-size: 1rem;
-            line-height: 1.78;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-        }
-        .ed-wrap p strong { color: var(--text); font-weight: 600; }
-        .ed-wrap ul { margin: 0 0 22px 0; display: grid; gap: 11px; list-style: none; }
-        .ed-wrap ul li {
-            position: relative;
-            padding-left: 24px;
-            line-height: 1.68;
-            color: var(--text-muted);
-        }
-        .ed-wrap ul li::before {
-            content: "";
-            position: absolute;
-            left: 2px; top: 10px;
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--orange);
-        }
-        .ed-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 26px;
-            margin-top: 40px;
-        }
-        .ed-card {
-            display: block;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 30px 28px;
-            background: var(--bg-card, #fff);
-            transition: var(--transition);
-        }
-        .ed-card:hover { border-color: var(--orange); transform: translateY(-3px); }
-        .ed-card .ed-card-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.74rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--orange);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .ed-card h2, .ed-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.16rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text);
-            margin: 0 0 10px;
-        }
-        .ed-card p { font-size: 0.93rem; line-height: 1.65; color: var(--text-muted); margin: 0; }
-        .ed-cta {
-            margin-top: 54px;
-            padding: 40px 36px;
-            border-radius: var(--radius-xl);
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-        }
-        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
-        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
-        .ed-faq details {
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 22px;
-            background: var(--bg-card, #fff);
-        }
-        .ed-faq summary {
-            cursor: pointer;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            color: var(--text);
-            list-style: none;
-        }
-        .ed-faq summary::-webkit-details-marker { display: none; }
-        .ed-faq details p { margin: 14px 0 0; }
-        .ed-wrap h3 { font-size: 1.14rem; margin: 32px 0 10px; }
-        .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; padding-left: 22px; }
-        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
-        .ed-wrap code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.88em;
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1px 6px;
-        }
-        .ed-wrap pre { overflow-x: auto; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 0 22px; }
-        .ed-wrap pre code { background: none; border: none; padding: 0; }
-        .ed-callout {
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 26px 28px;
-            margin: 30px 0;
-        }
-        .ed-callout p:last-child { margin-bottom: 0; }
-        .ed-table-wrap { overflow-x: auto; margin: 0 0 22px; }
-        .ed-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-        .ed-table-wrap th, .ed-table-wrap td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; color: var(--text-muted); }
-        .ed-table-wrap th { color: var(--text); font-family: 'Outfit', sans-serif; }
-        .ed-more { margin-top: 54px; border-top: 1px solid var(--border); padding-top: 36px; }
-        .ed-more h2 { margin: 0 0 18px; font-size: 1.3rem; }
-        .ed-more ul { list-style: none; margin: 0 0 16px; display: grid; gap: 12px; }
-        .ed-more li a { display: block; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; transition: var(--transition); }
-        .ed-more li a:hover { border-color: var(--orange); }
-        .ed-more li b { display: block; color: var(--text); font-family: 'Outfit', sans-serif; font-weight: 600; }
-        .ed-more li span { display: block; color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; margin-top: 4px; }
-        .ed-more .ed-more-all { font-weight: 600; color: var(--orange); }
-        .ed-sources { margin-top: 40px; font-size: 0.92rem; color: var(--text-muted); }
-        .ed-sources b { color: var(--text); }
-    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -229,19 +94,61 @@
     <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
 </div>
 
-<section class="ed-hero bg-mesh" id="top">
-    <div class="container">
-        <span class="overline"><a href="/seo/" style="color:inherit;text-decoration:none">SEO</a></span>
-        <h1>Google Business Profile: the fields that actually matter</h1>
-        <p class="ed-lead">For a shop, a tradesperson or a local service business, the Google Business Profile is often the number one source of contacts, ahead of the website. Three factors decide your position in the local pack: relevance (categories and description), distance, and prominence (reviews, regularity, consistency of your information). A complete profile with regular, answered reviews almost always beats a rich but dormant one.</p>
-        <div class="ed-meta"><span>Guide</span><span>By Rémy Ginoux</span><span>Updated 29 August 2026</span></div>
-    </div>
-</section>
-<main class="ed-body">
-    <div class="container">
-        <div class="ed-wrap">
-
-          <h2 id="why-the-profile-matters-so-much">Why does the profile matter so much?</h2>
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="post-wrap post-rel">
+        <a class="post-back" href="/seo/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back to the SEO guides</a>
+        <div class="post-head">
+          <p class="eyebrow"><a href="/seo/" style="color:inherit;text-decoration:none">SEO</a> &middot; Guide</p>
+          <h1>Google Business Profile: the fields that actually matter</h1>
+        </div>
+        <div class="post-author">
+          <span class="author-avatar"><img src="/avis-pics/remyGinoux.webp" alt="Portrait of Rémy Ginoux" width="44" height="44" loading="lazy"></span>
+          <div class="author-id">
+            <a class="author-link" href="/about.html"><b>Rémy Ginoux</b></a>
+            <span>Co-founder, OptimizIA.xyz, 25 years in industry &middot; <time datetime="2026-07-03">July 3, 2026</time> &middot; <span class="post-updated"><time datetime="2026-08-29">Updated August 29, 2026</time></span></span>
+          </div>
+        </div>
+        <aside class="post-aside">
+          <div class="post-aside-inner">
+            <div class="aside-box">
+              <b class="aside-title">Contents</b>
+              <nav class="post-toc" aria-label="Article contents">
+                <a href="#why-the-profile-matters-so-much">Why does the profile matter so much?</a>
+                <a href="#the-priority-fields">The priority fields</a>
+                <a href="#how-reviews-really-work">How do reviews really work?</a>
+                <a href="#the-mistakes-that-drag-you-down">The mistakes that drag you down</a>
+                <a href="#measuring-what-it-brings-in">How do you measure what it brings in?</a>
+              </nav>
+            </div>
+            <div class="aside-box">
+              <b class="aside-title">Share this article</b>
+              <div class="post-share" aria-label="Share this article">
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Fseo%2Fgoogle-business-profile%2F" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Fseo%2Fgoogle-business-profile%2F&amp;text=Google%20Business%20Profile%3A%20the%20fields%20that%20actually%20matter" target="_blank" rel="noopener">X</a>
+                <button class="share-btn share-copy" type="button">Copy link</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="post-summary">
+          <b>In short</b>
+          
+          <p>For a shop, a tradesperson or a local service business, the Google Business Profile is often the number one source of contacts, ahead of the website. Three factors decide your position in the local pack: relevance (categories and description), distance, and prominence (reviews, regularity, consistency of your information). A complete profile with regular, answered reviews almost always beats a rich but dormant one.</p>
+        </div>
+        <aside class="post-rail" aria-label="Analyze my website">
+          <div class="post-rail-inner">
+            <div class="post-rail-card">
+              <span class="post-rail-tag">SEOPlus!</span>
+              <b>Is your website visible in Google and in AI answers?</b>
+              <p>161 SEO and GEO checks, a score out of 100 and the action plan that goes with it.</p>
+              <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+              <span class="post-rail-note">30 seconds. Free diagnostic, no credit card.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="post">
+<h2 id="why-the-profile-matters-so-much">Why does the profile matter so much?</h2>
           <p>Search for "plumber", "bakery" or "accountant" from your phone: the first three results are not websites, they are business profiles, shown on a map. That is the "local pack", and it captures most of the clicks on proximity queries. Many customers call or ask for directions <b>without ever visiting the website</b>. A local business that polishes its website but neglects its profile is optimizing the wrong asset first.</p>
 
           <h2 id="the-priority-fields">The priority fields</h2>
@@ -267,32 +174,27 @@
 
           <h2 id="measuring-what-it-brings-in">How do you measure what it brings in?</h2>
           <p>The profile statistics (calls, direction requests, website clicks, discovery queries) are in your Google Business Profile dashboard. Look at them once a month: that is your real local scoreboard. And where does the website fit in? It remains the foundation: the profile attracts, the website convinces and converts. The two reinforce each other, notably through LocalBusiness structured data that links your website to your local entity. Start by checking the health of the foundation with our <a href="/tools/seoplus/">free audit</a>.</p>
-        
-
-
-<!-- silo:debut -->
-            <nav class="ed-more" aria-label="More in SEO">
-                <h2>More in SEO</h2>
-                <ul>
-                    <li><a href="/seo/seo-audit-example/"><b>SEO audit: what a useful report looks like</b><span>The 4 elements a real audit must contain, the red flags of a decorative report, and how to verify any audit yourself.</span></a></li>
-                    <li><a href="/seo/website-invisible-on-google/"><b>Why your website doesn't show up on Google</b><span>The 10-second test to know if you are indexed, then the 7 measurable causes and their exact fixes.</span></a></li>
-                    <li><a href="/seo/how-long-does-seo-take/"><b>How long does SEO take to produce results?</b><span>Technical fixes in days, content in 2-3 months, authority in 6-12 months: the honest timeline, and how to measure without fooling yourself.</span></a></li>
-                    <li><a href="/seo/core-web-vitals-guide/"><b>Core Web Vitals: the guide for non-technical owners</b><span>LCP, INP and CLS translated into plain words, the three causes behind most bad scores, and the fixes that do not break your website.</span></a></li>
-                    <li><a href="/seo/internal-linking/"><b>Internal linking: the most underrated SEO lever</b><span>How links between your own pages distribute authority, the hub method, and the anchor-text rules that make it work.</span></a></li>
-                    <li><a href="/seo/titles-meta-descriptions/"><b>Titles and meta descriptions that earn the click</b><span>The two tags Google actually shows, how to write them page by page, and why Google rewrites yours when they are weak.</span></a></li>
-                    <li><a href="/seo/spf-dkim-dmarc/"><b>SPF, DKIM, DMARC: why your emails end up in spam</b><span>The three DNS records that authenticate your email, what each one does, and how to set them without breaking delivery.</span></a></li>
-                </ul>
-                <a class="ed-more-all" href="/seo/">See everything in SEO (Get found on Google)</a>
-            </nav>
-<!-- silo:fin -->
-
-            <div class="ed-cta reveal">
-                <h2>The profile attracts, the website convinces.</h2>
-                <p>Make sure your foundation holds up: 161 checks on your website, free, in 30 seconds.</p>
-                <a href="/tools/seoplus/" class="btn btn-orange">Analyze my website</a>
-            </div>
         </div>
-    </div>
+        <nav class="silo-more" aria-label="More in SEO">
+          <b class="silo-more-title">More in SEO</b>
+          <ul class="silo-more-list">
+            <li><a href="/seo/seo-audit-example/"><b>SEO audit: what a useful report looks like</b><span>The 4 elements a real audit must contain, the red flags of a decorative report, and how to verify any audit yourself.</span></a></li>
+            <li><a href="/seo/website-invisible-on-google/"><b>Why your website doesn't show up on Google</b><span>The 10-second test to know if you are indexed, then the 7 measurable causes and their exact fixes.</span></a></li>
+            <li><a href="/seo/how-long-does-seo-take/"><b>How long does SEO take to produce results?</b><span>Technical fixes in days, content in 2-3 months, authority in 6-12 months: the honest timeline, and how to measure without fooling yourself.</span></a></li>
+            <li><a href="/seo/core-web-vitals-guide/"><b>Core Web Vitals: the guide for non-technical owners</b><span>LCP, INP and CLS translated into plain words, the three causes behind most bad scores, and the fixes that do not break your website.</span></a></li>
+            <li><a href="/seo/internal-linking/"><b>Internal linking: the most underrated SEO lever</b><span>How links between your own pages distribute authority, the hub method, and the anchor-text rules that make it work.</span></a></li>
+            <li><a href="/seo/titles-meta-descriptions/"><b>Titles and meta descriptions that earn the click</b><span>The two tags Google actually shows, how to write them page by page, and why Google rewrites yours when they are weak.</span></a></li>
+            <li><a href="/seo/spf-dkim-dmarc/"><b>SPF, DKIM, DMARC: why your emails end up in spam</b><span>The three DNS records that authenticate your email, what each one does, and how to set them without breaking delivery.</span></a></li>
+            <li><a href="/seo/"><em class="silo-more-tag">Pillar</em><b>See everything in SEO (Get found on Google)</b><span>The full map of the silo, and the order to read it in.</span></a></li>
+          </ul>
+        </nav>
+        <div class="post-cta">
+          <h2>The profile attracts, the website convinces.</h2>
+          <p>Make sure your foundation holds up: 161 checks on your website, free, in 30 seconds.</p>
+          <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+        </div>
+      </div>
+    </section>
 </main>
 
 <footer>
@@ -391,5 +293,16 @@ document.addEventListener('DOMContentLoaded', function() {
      couche 3 sous consentement. -->
 <script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
 <script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script>
+document.querySelectorAll(".share-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+            b.textContent = "Link copied";
+            b.classList.add("copied");
+            setTimeout(function () { b.textContent = "Copy link"; b.classList.remove("copied"); }, 2000);
+        });
+    });
+});
+</script>
 </body>
 </html>

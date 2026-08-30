@@ -25,111 +25,11 @@
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=1">
 
     <script src="/assets/vendor/gsap.min.js" defer></script>
     <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 
-    <style>
-        /* Pages editoriales (piliers de silo, articles) */
-        .ed-hero { padding: 138px 0 56px; }
-        .ed-hero .overline { display: block; margin-bottom: 14px; }
-        .ed-hero h1 {
-            font-size: clamp(2rem, 4.6vw, 3.1rem);
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-        .ed-hero .ed-lead {
-            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
-            line-height: 1.7;
-            color: var(--text-muted);
-            max-width: 760px;
-        }
-        .ed-body { padding: 8px 0 96px; }
-        .ed-wrap { max-width: 780px; }
-        .ed-wrap h2 {
-            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
-            margin: 52px 0 16px;
-        }
-        .ed-wrap p {
-            font-size: 1rem;
-            line-height: 1.78;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-        }
-        .ed-wrap p strong { color: var(--text); font-weight: 600; }
-        .ed-wrap ul { margin: 0 0 22px 0; display: grid; gap: 11px; list-style: none; }
-        .ed-wrap ul li {
-            position: relative;
-            padding-left: 24px;
-            line-height: 1.68;
-            color: var(--text-muted);
-        }
-        .ed-wrap ul li::before {
-            content: "";
-            position: absolute;
-            left: 2px; top: 10px;
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--orange);
-        }
-        .ed-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 26px;
-            margin-top: 40px;
-        }
-        .ed-card {
-            display: block;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 30px 28px;
-            background: var(--bg-card, #fff);
-            transition: var(--transition);
-        }
-        .ed-card:hover { border-color: var(--orange); transform: translateY(-3px); }
-        .ed-card .ed-card-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.74rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--orange);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .ed-card h2, .ed-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.16rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text);
-            margin: 0 0 10px;
-        }
-        .ed-card p { font-size: 0.93rem; line-height: 1.65; color: var(--text-muted); margin: 0; }
-        .ed-cta {
-            margin-top: 54px;
-            padding: 40px 36px;
-            border-radius: var(--radius-xl);
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-        }
-        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
-        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
-        .ed-faq details {
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 22px;
-            background: var(--bg-card, #fff);
-        }
-        .ed-faq summary {
-            cursor: pointer;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            color: var(--text);
-            list-style: none;
-        }
-        .ed-faq summary::-webkit-details-marker { display: none; }
-        .ed-faq details p { margin: 14px 0 0; }
-    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -192,20 +92,35 @@
     <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
 </div>
 
-<section class="ed-hero bg-mesh" id="top">
-    <div class="container">
-        <span class="overline">Tools</span>
-        <h1>The OptimizIA.xyz tools</h1>
-        <p class="ed-lead">We automate business processes for a living, and some of what we build for ourselves is worth putting in everyone's hands. The tools on this page are real products, not demos: each one does a precise job, gives you the result in minutes, and tells you exactly what it measured.</p>
-    </div>
-</section>
-<main class="ed-body">
-    <div class="container">
-        <div class="ed-wrap">
-            <h2>Available now</h2>
-            <div class="ed-cards">
-                <a class="ed-card reveal" href="/tools/seoplus/">
-                    <span class="ed-card-tag">SEO &amp; GEO audit</span>
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="pilier-wrap">
+        <div class="post-head">
+          <p class="eyebrow">Tools</p>
+          <h1>The OptimizIA.xyz tools</h1>
+        </div>
+        <div class="post-summary">
+          <b>In short</b>
+          
+          <p>We automate business processes for a living, and some of what we build for ourselves is worth putting in everyone's hands. The tools on this page are real products, not demos: each one does a precise job, gives you the result in minutes, and tells you exactly what it measured.</p>
+        </div>
+        <div class="pilier-cta">
+          <div class="pilier-cta-texte">
+            <span class="post-rail-tag">SEOPlus!</span>
+            <b>Is your website visible in Google and in AI answers?</b>
+            <p>161 SEO and GEO checks, a score out of 100 and the action plan that goes with it.</p>
+          </div>
+          <div class="pilier-cta-action">
+            <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+            <span class="post-rail-note">30 seconds. Free diagnostic, no credit card.</span>
+          </div>
+        </div>
+
+        <div class="post pilier-articles">
+<h2>Available now</h2>
+            <div class="blog-grid">
+                <a class="blog-card" href="/tools/seoplus/">
+                    <span class="blog-card-tag">SEO &amp; GEO audit</span>
                     <h3>SEOPlus!</h3>
                     <p>161 checks on your website: security, SEO, performance and visibility in ChatGPT and AI engines. A score out of 100 in 30 seconds, every point traceable to a measurement, and the action plan that goes with it. Free diagnostic, no credit card.</p>
                 </a>
@@ -214,14 +129,14 @@
             <h2>Why we publish free tools</h2>
             <p>A tool that gives you a real measurement is the honest version of a sales pitch: you see what we see, on your own website, before anyone talks about a project. It is also how we hold ourselves accountable. SEOPlus! publishes <a href="/tools/seoplus/methodology.html">its full scoring method</a> and a <a href="/tools/seoplus/leaderboard.html">public leaderboard</a> where audited websites, ours included, display their score.</p>
             <p>More small tools are on the way, each solving one concrete problem a business owner actually has. If there is a measurement or a calculator you wish existed, <a href="/contact.html">tell us</a>: the best ideas on this page will have come from the people who use it.</p>
-
-            <div class="ed-cta reveal">
-                <h2>Not sure where to start?</h2>
-                <p>Run the free SEOPlus! diagnostic: it scores your website in 30 seconds and shows you what deserves attention first.</p>
-                <a href="/tools/seoplus/" class="btn btn-orange">Analyze my website</a>
-            </div>
         </div>
-    </div>
+        <div class="post-cta">
+          <h2>Not sure where to start?</h2>
+          <p>Run the free SEOPlus! diagnostic: it scores your website in 30 seconds and shows you what deserves attention first.</p>
+          <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+        </div>
+      </div>
+    </section>
 </main>
 
 <footer>

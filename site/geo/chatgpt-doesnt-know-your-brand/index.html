@@ -25,146 +25,11 @@
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=1">
 
     <script src="/assets/vendor/gsap.min.js" defer></script>
     <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 
-    <style>
-        /* Pages editoriales (piliers de silo, articles) */
-        .ed-hero { padding: 138px 0 56px; }
-        .ed-hero .overline { display: block; margin-bottom: 14px; }
-        .ed-hero h1 {
-            font-size: clamp(2rem, 4.6vw, 3.1rem);
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-        .ed-hero .ed-lead {
-            font-size: clamp(1.02rem, 1.6vw, 1.16rem);
-            line-height: 1.7;
-            color: var(--text-muted);
-            max-width: 760px;
-        }
-        .ed-body { padding: 8px 0 96px; }
-        .ed-wrap { max-width: 780px; }
-        .ed-wrap h2 {
-            font-size: clamp(1.45rem, 2.8vw, 1.95rem);
-            margin: 52px 0 16px;
-        }
-        .ed-wrap p {
-            font-size: 1rem;
-            line-height: 1.78;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-        }
-        .ed-wrap p strong { color: var(--text); font-weight: 600; }
-        .ed-wrap ul { margin: 0 0 22px 0; display: grid; gap: 11px; list-style: none; }
-        .ed-wrap ul li {
-            position: relative;
-            padding-left: 24px;
-            line-height: 1.68;
-            color: var(--text-muted);
-        }
-        .ed-wrap ul li::before {
-            content: "";
-            position: absolute;
-            left: 2px; top: 10px;
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--orange);
-        }
-        .ed-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 26px;
-            margin-top: 40px;
-        }
-        .ed-card {
-            display: block;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 30px 28px;
-            background: var(--bg-card, #fff);
-            transition: var(--transition);
-        }
-        .ed-card:hover { border-color: var(--orange); transform: translateY(-3px); }
-        .ed-card .ed-card-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.74rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--orange);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .ed-card h2, .ed-card h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.16rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text);
-            margin: 0 0 10px;
-        }
-        .ed-card p { font-size: 0.93rem; line-height: 1.65; color: var(--text-muted); margin: 0; }
-        .ed-cta {
-            margin-top: 54px;
-            padding: 40px 36px;
-            border-radius: var(--radius-xl);
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-        }
-        .ed-cta h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
-        .ed-faq { margin-top: 20px; display: grid; gap: 14px; }
-        .ed-faq details {
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 22px;
-            background: var(--bg-card, #fff);
-        }
-        .ed-faq summary {
-            cursor: pointer;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            color: var(--text);
-            list-style: none;
-        }
-        .ed-faq summary::-webkit-details-marker { display: none; }
-        .ed-faq details p { margin: 14px 0 0; }
-        .ed-wrap h3 { font-size: 1.14rem; margin: 32px 0 10px; }
-        .ed-wrap ol { margin: 0 0 22px 0; display: grid; gap: 11px; padding-left: 22px; }
-        .ed-wrap ol li { line-height: 1.68; color: var(--text-muted); padding-left: 6px; }
-        .ed-wrap code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.88em;
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1px 6px;
-        }
-        .ed-wrap pre { overflow-x: auto; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 0 22px; }
-        .ed-wrap pre code { background: none; border: none; padding: 0; }
-        .ed-callout {
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 26px 28px;
-            margin: 30px 0;
-        }
-        .ed-callout p:last-child { margin-bottom: 0; }
-        .ed-table-wrap { overflow-x: auto; margin: 0 0 22px; }
-        .ed-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-        .ed-table-wrap th, .ed-table-wrap td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; color: var(--text-muted); }
-        .ed-table-wrap th { color: var(--text); font-family: 'Outfit', sans-serif; }
-        .ed-more { margin-top: 54px; border-top: 1px solid var(--border); padding-top: 36px; }
-        .ed-more h2 { margin: 0 0 18px; font-size: 1.3rem; }
-        .ed-more ul { list-style: none; margin: 0 0 16px; display: grid; gap: 12px; }
-        .ed-more li a { display: block; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; transition: var(--transition); }
-        .ed-more li a:hover { border-color: var(--orange); }
-        .ed-more li b { display: block; color: var(--text); font-family: 'Outfit', sans-serif; font-weight: 600; }
-        .ed-more li span { display: block; color: var(--text-muted); font-size: 0.92rem; line-height: 1.55; margin-top: 4px; }
-        .ed-more .ed-more-all { font-weight: 600; color: var(--orange); }
-        .ed-sources { margin-top: 40px; font-size: 0.92rem; color: var(--text-muted); }
-        .ed-sources b { color: var(--text); }
-    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -230,18 +95,61 @@
     <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
 </div>
 
-<section class="ed-hero bg-mesh" id="top">
-    <div class="container">
-        <span class="overline"><a href="/geo/" style="color:inherit;text-decoration:none">GEO</a></span>
-        <h1>Why ChatGPT doesn't know your brand (and how to fix it)</h1>
-        <p class="ed-lead">Ask ChatGPT to recommend a provider in your trade in your city: if you are not in the answer, the competitors it cites are picking up prospects who will never know you exist. The models build their answers from the public web, and five levers decide whether you are in.</p>
-        <div class="ed-meta"><span>Guide</span><span>By Romain Ben</span><span>Updated 29 August 2026</span></div>
-    </div>
-</section>
-<main class="ed-body">
-    <div class="container">
-        <div class="ed-wrap">
-            <h2 id="the-painful-test">The test that hurts</h2>
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="post-wrap post-rel">
+        <a class="post-back" href="/geo/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back to the GEO guides</a>
+        <div class="post-head">
+          <p class="eyebrow"><a href="/geo/" style="color:inherit;text-decoration:none">GEO</a> &middot; Guide</p>
+          <h1>Why ChatGPT doesn't know your brand (and how to fix it)</h1>
+        </div>
+        <div class="post-author">
+          <span class="author-avatar"><img src="/avis-pics/romainBen.webp" alt="Portrait of Romain Ben" width="44" height="44" loading="lazy"></span>
+          <div class="author-id">
+            <a class="author-link" href="/about.html"><b>Romain Ben</b></a>
+            <span>Co-founder &amp; CTO, OptimizIA.xyz &middot; <time datetime="2026-07-24">July 24, 2026</time> &middot; <span class="post-updated"><time datetime="2026-08-29">Updated August 29, 2026</time></span></span>
+          </div>
+        </div>
+        <aside class="post-aside">
+          <div class="post-aside-inner">
+            <div class="aside-box">
+              <b class="aside-title">Contents</b>
+              <nav class="post-toc" aria-label="Article contents">
+                <a href="#the-painful-test">The test that hurts</a>
+                <a href="#where-ai-answers-come-from">Where do AI engines get their answers?</a>
+                <a href="#why-you-are-missing">Why are you missing?</a>
+                <a href="#the-5-levers">The 5 levers to exist</a>
+                <a href="#how-long-it-takes">How long does it take?</a>
+              </nav>
+            </div>
+            <div class="aside-box">
+              <b class="aside-title">Share this article</b>
+              <div class="post-share" aria-label="Share this article">
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Fgeo%2Fchatgpt-doesnt-know-your-brand%2F" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Fgeo%2Fchatgpt-doesnt-know-your-brand%2F&amp;text=Why%20ChatGPT%20doesn't%20know%20your%20brand%20(and%20how%20to%20fix%20it)" target="_blank" rel="noopener">X</a>
+                <button class="share-btn share-copy" type="button">Copy link</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="post-summary">
+          <b>In short</b>
+          
+          <p>Ask ChatGPT to recommend a provider in your trade in your city: if you are not in the answer, the competitors it cites are picking up prospects who will never know you exist. The models build their answers from the public web, and five levers decide whether you are in.</p>
+        </div>
+        <aside class="post-rail" aria-label="Analyze my website">
+          <div class="post-rail-inner">
+            <div class="post-rail-card">
+              <span class="post-rail-tag">SEOPlus!</span>
+              <b>Is your website visible in Google and in AI answers?</b>
+              <p>161 SEO and GEO checks, a score out of 100 and the action plan that goes with it.</p>
+              <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+              <span class="post-rail-note">30 seconds. Free diagnostic, no credit card.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="post">
+<h2 id="the-painful-test">The test that hurts</h2>
             <p>Open ChatGPT and ask the question your prospects are already asking: "Recommend a [your trade] in [your city]". Look at the answer. In most cases, three or four businesses are cited, with a summary of their strengths. If you are not among them, those prospects go to the ones who are, without ever seeing your name.</p>
             <p>This behavior is no longer marginal. A growing share of provider searches now starts in a conversational AI rather than on Google, especially among people under 40. And unlike a Google results page where ten links share the attention, an AI answer cites two to four names. Spots are scarce, and they are being decided right now.</p>
 
@@ -269,28 +177,24 @@
 
             <h2 id="how-long-it-takes">How long does it take?</h2>
             <p>AI engines that search live, like Perplexity or ChatGPT in search mode, reflect your changes within a few days to a few weeks: that is the fast lever. The models' training memory, on the other hand, updates with each new version, on a rhythm of several months. Concretely: what you fix this week feeds live answers as early as this month, and the models' deep knowledge within six to twelve months. One more reason not to wait: your lead is being built while your competitors sleep.</p>
-
-
-<!-- silo:debut -->
-            <nav class="ed-more" aria-label="More in GEO">
-                <h2>More in GEO</h2>
-                <ul>
-                    <li><a href="/geo/geo-get-cited/"><b>GEO: how to get cited by ChatGPT, Perplexity and AI Overviews</b><span>The 4 conditions to meet, in order, so your business is part of AI answers: readable, understandable, citable, credible.</span></a></li>
-                    <li><a href="/geo/llms-txt-guide/"><b>llms.txt: the complete guide</b><span>The text file that tells AI what to read and what to cite on your website. What it is, what it changes, how to write it.</span></a></li>
-                    <li><a href="/geo/ai-crawlers-robots-txt/"><b>GPTBot, ClaudeBot, PerplexityBot: block or welcome the AI bots?</b><span>Who these bots visiting your website are, what blocking them really costs you, and the exact lines to put in your robots.txt.</span></a></li>
-                    <li><a href="/geo/ai-overviews-france/"><b>AI Overviews: what Google answering in your place changes</b><span>How AI answers work, who loses traffic to them, and how to become the cited source rather than the victim.</span></a></li>
-                </ul>
-                <a class="ed-more-all" href="/geo/">See everything in GEO (Get cited by AI)</a>
-            </nav>
-<!-- silo:fin -->
-
-            <div class="ed-cta reveal">
-                <h2>Do AI engines know who you are?</h2>
-                <p>The free diagnostic checks your AI crawlers, your llms.txt, your structured data and your citable passages. Score in 30 seconds.</p>
-                <a href="/tools/seoplus/" class="btn btn-orange">Analyze my website</a>
-            </div>
         </div>
-    </div>
+        <nav class="silo-more" aria-label="More in GEO">
+          <b class="silo-more-title">More in GEO</b>
+          <ul class="silo-more-list">
+            <li><a href="/geo/geo-get-cited/"><b>GEO: how to get cited by ChatGPT, Perplexity and AI Overviews</b><span>The 4 conditions to meet, in order, so your business is part of AI answers: readable, understandable, citable, credible.</span></a></li>
+            <li><a href="/geo/llms-txt-guide/"><b>llms.txt: the complete guide</b><span>The text file that tells AI what to read and what to cite on your website. What it is, what it changes, how to write it.</span></a></li>
+            <li><a href="/geo/ai-crawlers-robots-txt/"><b>GPTBot, ClaudeBot, PerplexityBot: block or welcome the AI bots?</b><span>Who these bots visiting your website are, what blocking them really costs you, and the exact lines to put in your robots.txt.</span></a></li>
+            <li><a href="/geo/ai-overviews-france/"><b>AI Overviews: what Google answering in your place changes</b><span>How AI answers work, who loses traffic to them, and how to become the cited source rather than the victim.</span></a></li>
+            <li><a href="/geo/"><em class="silo-more-tag">Pillar</em><b>See everything in GEO (Get cited by AI)</b><span>The full map of the silo, and the order to read it in.</span></a></li>
+          </ul>
+        </nav>
+        <div class="post-cta">
+          <h2>Do AI engines know who you are?</h2>
+          <p>The free diagnostic checks your AI crawlers, your llms.txt, your structured data and your citable passages. Score in 30 seconds.</p>
+          <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
+        </div>
+      </div>
+    </section>
 </main>
 
 <footer>
@@ -389,5 +293,16 @@ document.addEventListener('DOMContentLoaded', function() {
      couche 3 sous consentement. -->
 <script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
 <script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script>
+document.querySelectorAll(".share-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+            b.textContent = "Link copied";
+            b.classList.add("copied");
+            setTimeout(function () { b.textContent = "Copy link"; b.classList.remove("copied"); }, 2000);
+        });
+    });
+});
+</script>
 </body>
 </html>

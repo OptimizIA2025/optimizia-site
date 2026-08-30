@@ -3,6 +3,12 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /console/
+# L'exemplaire de rapport SOI vit dans assets/ : c'est une piece jointe de
+# demonstration, pas une page du site. Un crawler qui le lit en fait un silo
+# de plus (meeeters regroupe par premier segment d'URL TOUT HTML atteignable,
+# noindex ou pas). Interdire ce seul chemin le rend invisible aux robots sans
+# toucher aux feuilles ni aux scripts, qui vivent ailleurs dans assets/.
+Disallow: /assets/examples/
 # Les pages personnelles de SEOPlus (rapport, bilan, roast, compte) ne sont
 # PAS listees ici : elles portent deja <meta name="robots" content="noindex">.
 # Les interdire au crawl empecherait justement de lire ce noindex, et l'adresse
