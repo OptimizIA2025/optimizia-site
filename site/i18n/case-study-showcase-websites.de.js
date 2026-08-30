@@ -1,35 +1,24 @@
-/* /case-studies/showcase-websites/ — allemand. Meme jeu de cles que le francais et
-   l'espagnol de cette page. Une chaine identique dans les trois langues (One-shot,
-   SEO / GEO ready, LinkedIn, adresses e-mail) n'a d'entree dans aucun dictionnaire. */
+/* case-studies/showcase-websites/index.html — de. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
-  "SEO guides": "SEO-Leitfäden",
-  "GEO guides": "GEO-Leitfäden",
         "Brand Websites and Visual Identity | OptimizIA.xyz": "Marken-Websites und visuelle Identität | OptimizIA.xyz",
-
-        "Why now": "Ausgangslage",
-        "Benefits": "Nutzen",
-        "Method": "Methode",
         "Services": "Leistungen",
         "Case studies": "Referenzen",
+        "Blog": "Blog",
         "About": "Über uns",
-        "FAQ": "FAQ",
         "Free audit": "Kostenloses Audit",
-
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Websites &amp; Brand Identity": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · Websites &amp; Markenidentität",
         "A website that truly looks like your brand, <em>not yet another template</em>.": "Eine Website, die wirklich nach Ihrer Marke aussieht, <em>nicht noch eine Vorlage von der Stange</em>.",
         "Creating content is not filling a shop window, it is translating an identity. We help our clients turn what makes them unique into a website that looks like them: a custom art direction, copy that rings true, and the year's webdesign and SEO/GEO practices. All delivered fast, with no over-engineered machinery.": "Inhalte zu erstellen heißt nicht, ein Schaufenster zu füllen, sondern eine Identität zu übersetzen. Wir helfen unseren Kunden dabei, das, was sie einzigartig macht, in eine Website zu verwandeln, die zu ihnen passt: eine maßgeschneiderte Art Direction, Texte, die authentisch klingen, und die aktuellen Webdesign- und SEO/GEO-Praktiken. Alles schnell geliefert, ohne unnötigen technischen Aufwand.",
-
         "custom-made": "maßgeschneidert",
         "Delivered responsive + GEO-ready": "Geliefert responsive und GEO-ready",
         "&lt; <em>10</em> days": "&lt; <em>10</em> Tage",
         "From brief to launch": "Vom Briefing bis zum Launch",
         "<em>2</em> meetings": "<em>2</em> Termine",
         "+ 1 call to deliver": "+ 1 Anruf zur Übergabe",
-
         "<span class=\"num\">01</span> Our conviction: start from the identity, not a template": "<span class=\"num\">01</span> Unsere Überzeugung: von der Identität ausgehen, nicht von einer Vorlage",
         "A good website does not trace over a ready-made model. It starts from what makes the client singular, then dresses it with today's visual and technical codes.": "Eine gute Website kopiert kein fertiges Modell. Sie geht von dem aus, was den Kunden einzigartig macht, und kleidet es dann in die visuellen und technischen Codes von heute.",
         "Identity first": "Identität zuerst",
@@ -38,7 +27,6 @@ window.OIA_I18N.de = {
         "We stick to the <strong>year's webdesign trends</strong> and to accessibility and performance standards. No gratuitous fashion effects: every choice serves readability and conversion.": "Wir halten uns an die <strong>Webdesign-Trends des Jahres</strong> sowie an Standards für Barrierefreiheit und Performance. Keine überflüssigen Modeeffekte: Jede Entscheidung dient der Lesbarkeit und der Conversion.",
         "Native SEO / GEO": "Natives SEO / GEO",
         "Every site is designed <strong>responsive and GEO-ready from its very first launch</strong>. Our process produces the site in one shot, already optimized for search engines and generative engines. Essential in 2026.": "Jede Website wird <strong>responsive und GEO-ready ab dem allerersten Launch</strong> gestaltet. Unser Prozess erzeugt die Website in einem Zug, bereits optimiert für Suchmaschinen und generative Engines. Unverzichtbar 2026.",
-
         "<span class=\"num\">02</span> Among the sites already delivered, 2 examples, with 2 custom identities": "<span class=\"num\">02</span> Unter den bereits gelieferten Websites, 2 Beispiele mit 2 maßgeschneiderten Identitäten",
         "The best demonstration is still the live result. Open the sites, these are real client projects in production.": "Die beste Demonstration bleibt das Ergebnis live. Öffnen Sie die Websites, es handelt sich um echte Kundenprojekte im produktiven Einsatz.",
         "HappySharing RH, Audrey Charpentrat's website": "HappySharing RH, die Website von Audrey Charpentrat",
@@ -47,7 +35,6 @@ window.OIA_I18N.de = {
         "Ophélie, photographer, an immersive portfolio": "Ophélie, Fotografin, ein immersives Portfolio",
         "A showcase site designed as a visual experience. A polished gallery, fluid navigation and an immersive design that highlights Ophélie's artistic universe and photo sessions. Responsive on mobile, tablet and desktop.": "Eine Unternehmenswebsite, konzipiert als visuelles Erlebnis. Eine sorgfältig gestaltete Galerie, eine flüssige Navigation und ein immersives Design, das Ophélies künstlerisches Universum und ihre Fotoshootings in den Mittelpunkt stellt. Responsive auf Mobilgerät, Tablet und Desktop.",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> See Ophélie's portfolio": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg> Ophélies Portfolio ansehen",
-
         "<span class=\"num\">03</span> A fast method, no over-engineering": "<span class=\"num\">03</span> Eine schnelle Methode, ohne unnötigen Aufwand",
         "A custom website does not mean an endless project. Our process condenses the essentials to deliver fast, clean, and optimized on the first pass.": "Eine maßgeschneiderte Website bedeutet kein endloses Projekt. Unser Prozess bündelt das Wesentliche, um schnell, sauber und beim ersten Anlauf optimiert zu liefern.",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-palette\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"></path></svg> Custom art direction": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-palette\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"></path></svg> Maßgeschneiderte Art Direction",
@@ -55,24 +42,35 @@ window.OIA_I18N.de = {
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"></path><path d=\"M20 3v4\"></path><path d=\"M22 5h-4\"></path><path d=\"M4 17v2\"></path><path d=\"M5 18H3\"></path></svg> 2026 webdesign trends": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"></path><path d=\"M20 3v4\"></path><path d=\"M22 5h-4\"></path><path d=\"M4 17v2\"></path><path d=\"M5 18H3\"></path></svg> Webdesign-Trends 2026",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\"><path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"></path></svg> Delivery &lt; 10 days": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\"><path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"></path></svg> Lieferung &lt; 10 Tage",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> HTML / CSS / JS, dependency-free": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> HTML / CSS / JS, ohne Abhängigkeiten",
-
         "The expertise on display": "Das gezeigte Können",
         "Giving a voice, not just a shop window.": "Eine Stimme geben, nicht nur ein Schaufenster.",
         "Behind every website there is a person and a story. Our craft is <strong style=\"color:#fff;\">translating an identity into a web presence</strong>: capturing what makes a client unique, shaping it with today's codes, and making it visible to search engines and generative AI alike. Fast, and faithfully.": "Hinter jeder Website steht ein Mensch und eine Geschichte. Unser Handwerk ist es, <strong style=\"color:#fff;\">eine Identität in eine Web-Präsenz zu übersetzen</strong>: das einzufangen, was einen Kunden einzigartig macht, es mit den Codes von heute zu formen und es sowohl für Suchmaschinen als auch für generative KI sichtbar zu machen. Schnell und originalgetreu.",
         "Book a discovery call": "Erstgespräch vereinbaren",
-
         "A use case close to yours?": "Ein Anwendungsfall wie Ihrer?",
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 Minuten kostenlose Analyse, um zu klären, ob derselbe Mechanismus bei Ihnen greift, ohne Fachjargon und unverbindlich.",
         "Book a slot": "Termin buchen",
-
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
-        "Navigation": "Navigation",
-        "Resources": "Ressourcen",
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
+        "Company": "Unternehmen",
+        "The 3 levers": "Die 3 Hebel",
+        "Book a free audit": "Kostenloses Audit buchen",
+        "All case studies": "Alle Fallstudien",
+        "Lead monitoring": "Lead-Monitoring",
+        "Automated reporting": "Automatisiertes Reporting",
+        "AI training": "KI-Schulung",
+        "Showcase websites": "Firmenwebsites",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Leitfäden",
+        "SEO guide": "SEO-Leitfaden",
+        "GEO guide": "GEO-Leitfaden",
         "Tools": "Tools",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "SEO- und KI-Sichtbarkeitsaudit (SEOPlus!)",
+        "All tools": "Alle Tools",
+        "SEO &amp; GEO audit (SEOPlus!)": "SEO-&amp;-GEO-Audit (SEOPlus!)",
         "Contact": "Kontakt",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"/legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten ·",
+        "Legal Notice": "Impressum",
     },
     attr: {}
 };

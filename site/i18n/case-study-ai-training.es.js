@@ -1,35 +1,24 @@
-/* /case-studies/ai-training/ — espagnol. Meme jeu de cles que le .fr.js et
-   le .de.js de la page. Traduit depuis l'anglais, vocabulaire du glossaire
-   (pymes, caso de exito, auditoria gratuita), usted. */
+/* case-studies/ai-training/index.html — es. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
-  "SEO guides": "Guías SEO",
-  "GEO guides": "Guías GEO",
         "AI Training for a Freelancer Community | OptimizIA.xyz": "Formación en IA para una comunidad de freelances | OptimizIA.xyz",
-
-        "Why now": "El diagnóstico",
-        "Benefits": "Beneficios",
-        "Method": "Método",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",
+        "Blog": "Blog",
         "About": "Quiénes somos",
-        "FAQ": "Preguntas frecuentes",
         "Free audit": "Auditoría gratuita",
-
         "&lt; All case studies": "&lt; Todos los casos de éxito",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · AI Adoption &amp; Training": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Adopción &amp; Formación en IA",
         "Bringing a freelancer community up to speed on AI, <em>from the first prompt to the autonomous agent</em>.": "Poner al día en IA a una comunidad de freelances, <em>del primer prompt al agente autónomo</em>.",
         "On March 19, 2026, we ran an AI adoption workshop for an audience of freelancers and solopreneurs. The common thread was not technology but usage: \"if you got two hours back every day, what would you do with them?\" The goal: demystify AI, give a clear map of its uses, and trigger action. A work of teaching, exchange and knowledge sharing, more than a tool demo.": "El 19 de marzo de 2026 impartimos un taller de adopción de la IA ante un público de freelances y solopreneurs. El hilo conductor no era la tecnología sino el uso: «si recuperara dos horas cada día, ¿qué haría con ellas?» El objetivo: desmitificar la IA, dar un mapa de lectura claro de los usos y provocar el paso a la acción. Un trabajo de pedagogía, intercambio y transmisión de conocimiento, más que una demostración de herramienta.",
-
         "Usage limited to search": "Uso limitado a la búsqueda",
         "<em>6</em> levels": "<em>6</em> niveles",
         "A map of AI usage": "Un mapa de los usos de la IA",
         "<em>2</em>h / day": "<em>2</em>h / día",
         "Target time to free up": "Tiempo objetivo a liberar",
         "Workshop delivered in person": "Taller impartido presencialmente",
-
         "<span class=\"num\">01</span> The observation that opens the workshop": "<span class=\"num\">01</span> La constatación que abre el taller",
         "AI is everywhere, yet most people use only a tiny part of it. That is exactly where the opportunity lies: everything beyond plain conversation is still a blue ocean.": "La IA está en todas partes, pero la mayoría de la gente solo explota una parte ínfima. Ahí está exactamente la oportunidad: todo lo que va más allá de la simple conversación sigue siendo un océano azul.",
         "The audience": "El público",
@@ -38,35 +27,31 @@ window.OIA_I18N.es = {
         "One simple question asked upfront: <strong>\"if you got two hours back every day, what would you do with them?\"</strong> The rest of the workshop delivers on that promise.": "Una pregunta sencilla planteada de entrada: <strong>«si recuperara dos horas cada día, ¿qué haría con ellas?»</strong> El resto del taller cumple esa promesa.",
         "The stake": "Lo que está en juego",
         "<strong>77% of users treat AI as a search engine</strong>: they ask questions in a plain conversation and stop there. Very few move on to analyzing their files, automation or agents. As a reminder, ChatGPT reached 100 million users in two months where Facebook took four years: adoption is massive, usage stays shallow.": "<strong>El 77% de los usuarios trata la IA como un motor de búsqueda</strong>: hacen preguntas en una simple conversación y se quedan ahí. Muy pocos pasan al análisis de sus archivos, a la automatización o a los agentes. Como recordatorio, ChatGPT alcanzó los 100 millones de usuarios en dos meses, donde Facebook tardó cuatro años: la adopción es masiva, el uso sigue siendo superficial.",
-
         "<span class=\"num\">02</span> The 6 levels of AI, from simple to most powerful": "<span class=\"num\">02</span> Los 6 niveles de la IA, de lo simple a lo más potente",
         "The teaching core of the workshop: a grid to place every use case. No need to master everything, depending on your tasks, one or two levels are often enough.": "El núcleo pedagógico del taller: una cuadrícula para situar cada caso de uso. No hace falta dominarlo todo, según sus tareas, uno o dos niveles suelen bastar.",
-        "03 · Automatisation": "03 · Automatización",
-        "04 · Agents": "04 · Agentes",
         "<strong>Conversational LLMs.</strong> Chatting, writing, brainstorming with a language model drawing on its general knowledge.": "<strong>LLM conversacionales.</strong> Dialogar, redactar, hacer brainstorming con un modelo de lenguaje que se apoya en su conocimiento general.",
         "<strong>RAG and document analysis.</strong> Having AI reason over your own files to get answers grounded in your documents.": "<strong>RAG y análisis documental.</strong> Hacer razonar a la IA sobre sus propios archivos para obtener respuestas ancladas en sus documentos.",
+        "03 · Automatisation": "03 · Automatización",
         "<strong>Process automation.</strong> Connecting your tools to each other (n8n, Make, Zapier) to chain tasks without intervention.": "<strong>Automatización de procesos.</strong> Conectar sus herramientas entre sí (n8n, Make, Zapier) para encadenar tareas sin intervención.",
+        "04 · Agents": "04 · Agentes",
         "<strong>AI agents.</strong> An autonomous virtual team: an LLM with reasoning and long memory that carries a task end to end.": "<strong>Agentes de IA.</strong> Un equipo virtual autónomo: un LLM dotado de razonamiento y memoria larga que lleva una tarea de principio a fin.",
         "<strong>MCP, Model Context Protocol.</strong> A standard that lets AI drive your software and services by talking directly to your tools.": "<strong>MCP, Model Context Protocol.</strong> Un estándar que permite a la IA manejar sus programas y servicios hablando directamente con sus herramientas.",
         "<strong>Vibe coding and apps.</strong> Building applications without coding, by simply describing what you want.": "<strong>Vibe coding y apps.</strong> Crear aplicaciones sin programar, simplemente describiendo lo que se quiere obtener.",
         "From city car to F1, the teaching infographic": "Del utilitario a la F1, la infografía pedagógica",
         "The 6 levels illustrated through a race car metaphor": "Los 6 niveles ilustrados con la metáfora de un coche de carreras",
         "With learning AI, the road you take is almost as exciting as the destination.": "Al aprender IA, el camino recorrido es casi tan apasionante como el destino.",
-
         "<span class=\"num\">03</span> AI does not replace you, it amplifies you": "<span class=\"num\">03</span> La IA no le sustituye, le amplifica",
         "The message that reassures and reframes. AI acts like a magnifying glass, a megaphone, a jet engine: it separates those who get organized from those who improvise.": "El mensaje que tranquiliza y reencuadra. La IA actúa como una lupa, un megáfono, un reactor: separa a los que se organizan de los que improvisan.",
         "Stays with you": "Queda en sus manos",
         "Your <strong>domain expertise</strong>, your <strong>professional judgment</strong>, your <strong>creativity</strong> and the <strong>human relationship</strong>. What makes your value cannot be delegated.": "Su <strong>conocimiento del oficio</strong>, su <strong>criterio profesional</strong>, su <strong>creatividad</strong> y la <strong>relación humana</strong>. Lo que constituye su valor no se puede delegar.",
         "Delegated to AI": "Delegado a la IA",
         "The <strong>repetitive tasks</strong>, the <strong>formatting</strong>, the <strong>information gathering</strong> and the <strong>first draft</strong>. Everything that weighs on you without really setting you apart.": "Las <strong>tareas repetitivas</strong>, el <strong>formateo</strong>, la <strong>búsqueda de información</strong> y el <strong>primer borrador</strong>. Todo lo que pesa sin diferenciarle de verdad.",
-
         "<span class=\"num\">04</span> The business case for time": "<span class=\"num\">04</span> El business case del tiempo",
         "Two hours saved every day by automating repetitive tasks is twelve weeks reclaimed over the year, nearly three months. The real question is what you do with them.": "Dos horas ganadas cada día automatizando las tareas repetitivas son doce semanas recuperadas al año, casi tres meses. La verdadera pregunta es qué hace usted con ellas.",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"></path><circle cx=\"12\" cy=\"12\" r=\"10\"></circle></svg> Strategy &amp; vision": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"></path><circle cx=\"12\" cy=\"12\" r=\"10\"></circle></svg> Estrategia &amp; visión",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-target\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg> Quality prospecting": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-target\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg> Prospección de calidad",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-scale\"><path d=\"m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\"></path><path d=\"m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\"></path><path d=\"M7 21h10\"></path><path d=\"M12 3v18\"></path><path d=\"M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2\"></path></svg> Work / life balance": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-scale\"><path d=\"m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\"></path><path d=\"m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\"></path><path d=\"M7 21h10\"></path><path d=\"M12 3v18\"></path><path d=\"M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2\"></path></svg> Equilibrio trabajo / vida",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rocket\"><path d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"></path><path d=\"m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"></path><path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"></path><path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"></path></svg> Ambitious projects": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rocket\"><path d=\"M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z\"></path><path d=\"m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z\"></path><path d=\"M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0\"></path><path d=\"M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5\"></path></svg> Proyectos ambiciosos",
-
         "<span class=\"num\">05</span> The gift: your Prompt Engineering expert": "<span class=\"num\">05</span> El regalo: su experto en Prompt Engineering",
         "No need to be a pro. Copy the prompt below, paste it into ChatGPT, Claude or Gemini, and you get an assistant that turns your vague requests into clear, effective prompts, and explains why. One of the reflexes shared during the workshop.": "No hace falta ser un profesional. Copie el prompt de abajo, péguelo en ChatGPT, Claude o Gemini, y obtendrá un asistente que convierte sus peticiones vagas en prompts claros y eficaces, y le explica por qué. Uno de los reflejos compartidos durante el taller.",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-gift\"><rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"></rect><path d=\"M12 8v13\"></path><path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"></path><path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\"></path></svg> Expert Prompt Engineering": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-gift\"><rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"></rect><path d=\"M12 8v13\"></path><path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"></path><path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\"></path></svg> Experto en Prompt Engineering",
@@ -74,26 +59,36 @@ window.OIA_I18N.es = {
         "Want more AI and productivity tips in the same spirit, concrete and jargon-free? We share them regularly.": "¿Quiere más consejos de IA y productividad en el mismo espíritu, concretos y sin jerga? Los compartimos con regularidad.",
         "Follow the OptimizIA.xyz LinkedIn page so you never miss one.": "Siga la página de LinkedIn de OptimizIA.xyz para no perderse ninguno.",
         "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-linkedin\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"></path><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"></rect><circle cx=\"4\" cy=\"4\" r=\"2\"></circle></svg> Follow OptimizIA.xyz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-linkedin\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"></path><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"></rect><circle cx=\"4\" cy=\"4\" r=\"2\"></circle></svg> Seguir a OptimizIA.xyz",
-
         "The expertise on display": "El saber hacer destacado",
         "Transferring knowledge, not just delivering.": "Transmitir, no solo entregar.",
         "Deploying a tool is not enough, teams still need to make it their own. This project shows the other side of our work: <strong style=\"color:#fff;\">AI adoption and knowledge sharing</strong>. Demystifying AI, providing a shared reading grid and sparking the urge to experiment is what turns a tool into real, lasting usage.": "Desplegar una herramienta no basta, hace falta además que los equipos se la apropien. Este proyecto muestra la otra cara de nuestro oficio: <strong style=\"color:#fff;\">la adopción de la IA y la transmisión de conocimiento</strong>. Desmitificar la IA, dar una cuadrícula de lectura común y despertar las ganas de experimentar es lo que convierte una herramienta en un uso real y duradero.",
         "Thanks to <a href=\"https://www.rh-solutions.com/nos-agences/portage-salarial-beziers/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--orange);font-weight:700;text-decoration:underline;text-underline-offset:3px;\">RH Solutions Portage Salarial</a> for their warm welcome and for organizing this event.": "Gracias a <a href=\"https://www.rh-solutions.com/nos-agences/portage-salarial-beziers/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--orange);font-weight:700;text-decoration:underline;text-underline-offset:3px;\">RH Solutions Portage Salarial</a> por su cálida acogida y la organización de este encuentro.",
-
         "Book a discovery call": "Reservar una llamada de descubrimiento",
         "A use case close to yours?": "¿Un caso de uso parecido al suyo?",
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutos de diagnóstico gratuito para saber si el mismo mecanismo se aplica a su negocio, sin jerga y sin compromiso.",
         "Book a slot": "Reservar una cita",
-
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
-        "Navigation": "Navegación",
-        "Resources": "Recursos",
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
+        "Company": "Empresa",
+        "The 3 levers": "Las 3 palancas",
+        "Book a free audit": "Reservar una auditoría gratuita",
+        "All case studies": "Todos los casos de éxito",
+        "Lead monitoring": "Monitoreo de leads",
+        "Automated reporting": "Informes automatizados",
+        "AI training": "Formación en IA",
+        "Showcase websites": "Webs corporativas",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Guías",
+        "SEO guide": "Guía SEO",
+        "GEO guide": "Guía GEO",
         "Tools": "Herramientas",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
+        "All tools": "Todas las herramientas",
+        "SEO &amp; GEO audit (SEOPlus!)": "Auditoría SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contacto",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
-
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"/legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
+        "Legal Notice": "Aviso legal",
     },
     attr: {}
 };

@@ -1,19 +1,13 @@
-/* /case-studies/automated-reporting/ — allemand. Meme jeu de cles que le francais et
-   l'espagnol de cette page. Traduit depuis l'anglais. */
+/* case-studies/automated-reporting/index.html — de. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
-  "SEO guides": "SEO-Leitfäden",
-  "GEO guides": "GEO-Leitfäden",
         "Automated Reporting and Dashboards | OptimizIA.xyz": "Automatisiertes Reporting und Dashboards | OptimizIA.xyz",
-        "Why now": "Ausgangslage",
-        "Benefits": "Nutzen",
-        "Method": "Methode",
         "Services": "Leistungen",
         "Case studies": "Referenzen",
+        "Blog": "Blog",
         "About": "Über uns",
-        "FAQ": "FAQ",
         "Free audit": "Kostenloses Audit",
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Reporting &amp; Dashboards": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · Reporting &amp; Dashboards",
@@ -78,13 +72,27 @@ window.OIA_I18N.de = {
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 Minuten kostenlose Analyse, um zu klären, ob derselbe Mechanismus bei Ihnen greift, ohne Fachjargon und unverbindlich.",
         "Book a slot": "Termin buchen",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
-        "Navigation": "Navigation",
-        "Resources": "Ressourcen",
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
+        "Company": "Unternehmen",
+        "The 3 levers": "Die 3 Hebel",
+        "Book a free audit": "Kostenloses Audit buchen",
+        "All case studies": "Alle Fallstudien",
+        "Lead monitoring": "Lead-Monitoring",
+        "Automated reporting": "Automatisiertes Reporting",
+        "AI training": "KI-Schulung",
+        "Showcase websites": "Firmenwebsites",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Leitfäden",
+        "SEO guide": "SEO-Leitfaden",
+        "GEO guide": "GEO-Leitfaden",
         "Tools": "Tools",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "SEO- und KI-Sichtbarkeitsaudit (SEOPlus!)",
+        "All tools": "Alle Tools",
+        "SEO &amp; GEO audit (SEOPlus!)": "SEO-&amp;-GEO-Audit (SEOPlus!)",
         "Contact": "Kontakt",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <a href=\"/legal-notice.html\" class=\"legal-link\">Impressum</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten ·",
+        "Legal Notice": "Impressum",
     },
     attr: {}
 };

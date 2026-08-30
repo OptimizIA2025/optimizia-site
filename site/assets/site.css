@@ -111,3 +111,70 @@ a { text-decoration: none; color: inherit; }
 #oia-consent .oia-btn-accept { background: #F97316; color: #fff; }
 #oia-consent .oia-btn-accept:hover { background: #EA6A0A; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,115,22,0.3); }
 @media (max-width: 520px) { #oia-consent { left: 12px; right: 12px; bottom: 12px; max-width: none; } }
+
+/* ═══ FOOTER V6.2 — marque + 4 colonnes (facon meeeters, 100 % interne) ═══
+   Les feuilles compilees par page portent l'ancienne grille 3 colonnes en
+   immutable : les selecteurs ci-dessous sont plus specifiques (footer .x)
+   pour gagner la cascade sans les regenerer. */
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1.1fr 0.8fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+@media (max-width: 1080px) {
+    footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    footer .footer-brand { grid-column: 1 / -1; max-width: 480px; }
+}
+@media (max-width: 600px) {
+    footer .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ═══ DARK MODE — surcharge des tokens, posee par assets/oia-theme.js ═══
+   :root[data-theme="dark"] (0,1,1) bat les :root des feuilles par page,
+   ordre de chargement indifferent. Couvre aussi les tokens editorial.css. */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --orange-light: rgba(249, 115, 22, 0.14);
+    --blue-light: rgba(59, 130, 246, 0.12);
+    --bg: #0B1120;
+    --bg-alt: #0F172A;
+    --bg-card: #151E32;
+    --bg-glass: rgba(11, 17, 32, 0.72);
+    --text: #F1F5F9;
+    --text-secondary: #A6B4C8;
+    --text-muted: #6B7A93;
+    --border: rgba(248, 250, 252, 0.10);
+    --border-hover: rgba(249, 115, 22, 0.45);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.55);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    /* tokens editorial.css (guides et articles) */
+    --surface: #151E32;
+    --ink: #F1F5F9;
+    --ink-soft: #C4D0E0;
+    --muted: #8B99AE;
+    --orange-soft: rgba(249, 115, 22, 0.14);
+    --blue-soft: rgba(59, 130, 246, 0.14);
+    --glass: rgba(15, 23, 42, 0.72);
+    --glass-brd: rgba(248, 250, 252, 0.12);
+    --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.4);
+    --shadow-pop: 0 2px 6px rgba(0, 0, 0, 0.35), 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+/* Le logo est trace pour fond clair : inversion de luminance, teintes gardees. */
+:root[data-theme="dark"] .nav-logo img { filter: invert(1) hue-rotate(180deg); }
+
+/* Bouton bascule de theme, injecte par oia-theme.js a cote du selecteur de langue. */
+.theme-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; margin-left: 10px; flex-shrink: 0;
+    cursor: pointer; background: none;
+    border: 1px solid var(--border); border-radius: 50%;
+    color: var(--text-secondary);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.theme-btn:hover { color: var(--orange); border-color: var(--border-hover); background: var(--orange-light); }
+.theme-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.theme-btn svg { width: 15px; height: 15px; display: block; }

@@ -1,59 +1,56 @@
-/* /case-studies/ — espagnol. Meme jeu de cles que case-studies.fr.js et
-   case-studies.de.js. */
+/* case-studies/index.html — es. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
-  "SEO guides": "Guías SEO",
-  "GEO guides": "Guías GEO",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Casos de éxito en IA y automatización | OptimizIA.xyz",
-
-        "Why now": "El diagnóstico",
-        "Benefits": "Beneficios",
-        "Method": "Método",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",
+        "Blog": "Blog",
         "About": "Quiénes somos",
-        "FAQ": "Preguntas frecuentes",
         "Free audit": "Auditoría gratuita",
-
         "What we have actually delivered": "Lo que realmente hemos entregado",
         "Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.": "Cinco proyectos entregados por OptimizIA.xyz, descritos sin adornos: el problema de partida, la mecánica construida, las herramientas utilizadas y lo que cambia en el día a día. Dos son productos internos, tres se entregaron a clientes.",
-
         "Sales prospecting": "Prospección comercial",
         "Automated market intelligence turned into a prospect pipeline": "Vigilancia de mercado automatizada convertida en pipeline de prospectos",
         "Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.": "Una vigilancia que se convierte sola en prospectos cualificados cada mañana: recopilación, scoring, entrega en la bandeja de entrada, sin trabajo manual.",
-
         "Reporting and dashboards": "Reporting y paneles",
         "From raw data streams to distributed reports": "Del flujo de datos en bruto al informe distribuido",
         "An analysis chain that produces and distributes its own reports, with readable dashboards instead of an over-engineered machine.": "Una cadena de análisis que produce y distribuye sus propios informes, con paneles legibles en lugar de una máquina sobredimensionada.",
-
         "AI adoption and training": "Adopción de la IA y formación",
         "Training a freelancer community on AI": "Formar a una comunidad de freelances en IA",
         "A workshop built from the first prompt to the autonomous agent, for professionals who had never gone beyond the chatbot stage.": "Un taller construido desde el primer prompt hasta el agente autónomo, para profesionales que nunca habían pasado de la etapa del chatbot.",
-
         "Websites and brand identity": "Webs e identidad de marca",
         "Websites that look like the brand, not the template": "Webs que se parecen a la marca, no a la plantilla",
         "Design, visual identity and launch for independent professionals starting their business, in days rather than months.": "Diseño, identidad visual y puesta en línea para independientes que lanzan su actividad, en días en lugar de meses.",
-
         "SEO and AI visibility": "SEO y visibilidad en IA",
         "SEOPlus!, our SEO and GEO audit engine": "SEOPlus!, nuestro motor de auditoría SEO y GEO",
         "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Un producto construido internamente: una auditoría completa del sitio, visibilidad en los buscadores de IA incluida, entregada en 30 segundos con su plan de acción.",
-
         "Does your situation look like one of these pages?": "¿Su situación se parece a una de estas páginas?",
         "Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.": "Cada uno de estos proyectos partió de un problema simple de formular y penoso de vivir a diario. Veinte minutos suelen bastar para saber si el mismo mecanismo se aplica a su negocio.",
         "Book a free diagnosis": "Reservar un diagnóstico gratuito",
-
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
-
-        "Navigation": "Navegación",
-        "Resources": "Recursos",
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
+        "Company": "Empresa",
+        "The 3 levers": "Las 3 palancas",
+        "Book a free audit": "Reservar una auditoría gratuita",
+        "All case studies": "Todos los casos de éxito",
+        "Lead monitoring": "Monitoreo de leads",
+        "Automated reporting": "Informes automatizados",
+        "AI training": "Formación en IA",
+        "Showcase websites": "Webs corporativas",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Guías",
+        "SEO guide": "Guía SEO",
+        "GEO guide": "Guía GEO",
         "Tools": "Herramientas",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "Auditoría SEO y visibilidad en IA (SEOPlus!)",
+        "All tools": "Todas las herramientas",
+        "SEO &amp; GEO audit (SEOPlus!)": "Auditoría SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contacto",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
-
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Todos los derechos reservados · <a href=\"/legal-notice.html\" class=\"legal-link\">Aviso legal</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
+        "Legal Notice": "Aviso legal",
     },
     attr: {}
 };

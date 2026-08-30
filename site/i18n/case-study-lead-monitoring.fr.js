@@ -1,20 +1,13 @@
-/* /case-studies/lead-monitoring/ — francais. Cle = texte anglais exact du HTML,
-   espaces normalises. Le francais reprend l'ancienne page fr/realisation-veille-prospection.html
-   validee en production ; appariement fait par le sens, pas par la position. */
+/* case-studies/lead-monitoring/index.html — fr. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
-  "SEO guides": "Guides SEO",
-  "GEO guides": "Guides GEO",
         "Automated Market Intelligence to Prospects | OptimizIA.xyz": "Veille de marché automatisée en prospects | OptimizIA.xyz",
-        "Why now": "Constat",
-        "Benefits": "Bénéfices",
-        "Method": "Méthode",
         "Services": "Offres",
         "Case studies": "Réalisations",
+        "Blog": "Blog",
         "About": "À propos",
-        "FAQ": "FAQ",
         "Free audit": "Audit gratuit",
         "&lt; All case studies": "&lt; Toutes les réalisations",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Sales prospecting": "<span class=\"dot\" aria-hidden=\"true\"></span> Réalisation · Prospection commerciale",
@@ -72,13 +65,27 @@ window.OIA_I18N.fr = {
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutes de diagnostic gratuit pour savoir si le même mécanisme s'applique chez vous, sans jargon et sans engagement.",
         "Book a slot": "Réserver un créneau",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
-        "Navigation": "Navigation",
-        "Resources": "Ressources",
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
+        "Company": "Entreprise",
+        "The 3 levers": "Les 3 leviers",
+        "Book a free audit": "Réserver un audit gratuit",
+        "All case studies": "Toutes les réalisations",
+        "Lead monitoring": "Veille de leads",
+        "Automated reporting": "Reporting automatisé",
+        "AI training": "Formation IA",
+        "Showcase websites": "Sites vitrines",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Guides",
+        "SEO guide": "Guide SEO",
+        "GEO guide": "Guide GEO",
         "Tools": "Nos outils",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
+        "All tools": "Tous nos outils",
+        "SEO &amp; GEO audit (SEOPlus!)": "Audit SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contact",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"/legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"/legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Tous droits réservés ·",
+        "Legal Notice": "Mentions légales",
     },
     attr: {}
 };

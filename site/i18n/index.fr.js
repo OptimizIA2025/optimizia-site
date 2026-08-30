@@ -1,42 +1,23 @@
-/* index.html — francais. Cle = texte anglais exact du HTML, espaces normalises.
-   Le texte reprend l'ancienne page fr/index.html, validee en production ;
-   l'appariement est fait par le sens, pas par le rang, les deux versions ayant
-   diverge (la page francaise portait en plus une pilule FR|EN et des cartes
-   Guides absentes de la version anglaise).
-
-   Quelques formulations anglaises n'ont pas d'equivalent francais et sont
-   traduites ici : le bouton du hero disait « Tester votre maturite IA en 3 min »
-   en francais, l'anglais dit « Discover the method ».
-
-   Les marques, noms propres et adresses (VOLVO GROUP, AIRBUS, Rémy Ginoux,
-   contact@optimizia.xyz) n'ont d'entree dans aucun dictionnaire. */
+/* index.html — fr. Cle = texte anglais exact du HTML, espaces normalises.
+   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
-  "SEO guides": "Guides SEO",
-  "GEO guides": "Guides GEO",
         "OptimizIA.xyz | AI &amp; Automation for SMEs": "OptimizIA.xyz | IA &amp; Automatisation pour TPE/PME",
-
-        "Why now": "Constat",
-        "Benefits": "Bénéfices",
-        "Method": "Méthode",
         "Services": "Offres",
         "Case studies": "Réalisations",
+        "Blog": "Blog",
         "About": "À propos",
-        "FAQ": "FAQ",
         "Free audit": "Audit gratuit",
-
         "AI &amp; Automation Agency, France &amp; International": "Agence IA &amp; Automatisation, France &amp; International",
         "Your processes are slowing your growth.<br> <span class=\"accent\">AI puts them back in motion.</span>": "Vos process freinent votre croissance.<br> <span class=\"accent\">L'IA les accélère.</span>",
         "OptimizIA.xyz helps SME leaders <strong>reclaim up to 30% of productive time from the first quarter</strong> by combining AI, automation and Knowledge Management with a methodology built on 25 years of industrial field experience.": "OptimizIA.xyz aide les dirigeants de TPE/PME à <strong>gagner jusqu'à 30 % de temps productif dès le 1er trimestre</strong> en combinant IA, automatisation et Knowledge Management avec une méthode issue de 25 ans de terrain industriel.",
         "Small businesses and SMEs up to 250 employees · Diagnostic from €3,000 excl. VAT · First use case live in 13 days on average": "TPE et PME jusqu'à 250 salariés · Diagnostic dès 3 000 € HT · Premier cas d'usage en production en 13 jours en moyenne",
         "Let's talk about your situation": "Parlons de votre situation",
         "Discover the method ↓": "Découvrir la méthode ↓",
-
         "Where our founders proved themselves": "Là où nos fondateurs ont fait leurs preuves",
         "Assignments led by Rémy Ginoux over 25 years in industry, before OptimizIA.xyz was founded in 2022. HappySharing RH is the agency's first client.": "Missions menées par Rémy Ginoux pendant 25 ans dans l'industrie, avant la création d'OptimizIA.xyz en 2022. HappySharing RH est le premier client de l'agence.",
-
+        "Why now": "Constat",
         "The real problem isn't <em>technology</em>": "Le vrai problème n'est pas la <em>technologie</em>",
         "In 2026, the gap between leaders and followers isn't about which AI tool you picked. It's about <strong>the ability to structure your processes before injecting intelligence into them</strong>. Without that foundation, AI amplifies the chaos instead of resolving it.": "En 2026, la différence entre leaders et suiveurs ne se joue plus sur l'outil IA choisi. Elle se joue sur <strong>la capacité à structurer ses processus avant d'y injecter de l'intelligence</strong>. Sans cette fondation, l'IA amplifie le chaos au lieu de le résoudre.",
         "Daily productivity drain": "Perte de productivité quotidienne",
@@ -49,14 +30,13 @@ window.OIA_I18N.fr = {
         "Infobesity and organisational noise paralyse even your simplest processes. Your competitors go <span class=\"highlight-text\">from data to decision in hours,</span> while others are still planning by the week.": "L'infobésité et le bruit organisationnel paralysent jusqu'à vos processus. Vos concurrents switchent <span class=\"highlight-text\">de la donnée à la décision en quelques heures,</span> pendant que d'autres planifient encore à la semaine.",
         "Competitive lag": "Retard compétitif",
         "This isn't a tech problem, it's a <strong>systemic</strong> one. Pouring AI into a saturated organisation is like dropping a more powerful engine into an unchecked car: <strong>speed goes up, but control doesn't necessarily follow.</strong>": "Ce n'est pas un problème de techno, c'est un problème <strong>systémique</strong>. Injecter de l'IA dans une organisation saturée, c'est comme ajouter un moteur plus puissant sur un véhicule pas encore réglé, <strong>la vitesse augmente, mais la maîtrise, pas forcément.</strong>",
-
+        "Benefits": "Bénéfices",
         "AI as an amplifier, not a band-aid": "L'IA comme amplificateur, pas comme rustine",
         "OptimizIA.xyz isn't here to sell AI for technology's sake. We structure your processes first, capture your critical know-how, and then inject AI exactly where it actually amplifies your performance.": "OptimizIA.xyz ne vend pas de l'IA pour le plaisir de la technologie. On structure d'abord vos processus, on capitalise vos savoirs critiques, puis on injecte l'IA là où elle amplifie vraiment votre performance.",
         "Mapping of blockers, identification of priority AI levers": "Cartographie des freins, identification des leviers IA prioritaires",
         "n8n/Make workflows, AI assistants, RAG over your business data": "Workflows n8n/Make, assistants IA, RAG sur vos données métier",
         "Knowledge Management + AI = an actionable corporate memory": "Knowledge Management + IA = mémoire d'entreprise exploitable",
         "Learn more": "En savoir plus",
-
         "What concretely changes": "Ce qui change concrètement",
         "Info lookup: 45 min": "Recherche d'info : 45 min",
         "AI answer: 30 sec": "Réponse IA : 30 sec",
@@ -66,15 +46,9 @@ window.OIA_I18N.fr = {
         "AI-assisted: 6 weeks": "Assisté IA : 6 semaines",
         "Decision: 1 week": "Décision : 1 semaine",
         "Real-time dashboard": "Dashboard temps réel",
-
-
-
-
         "Measurable results": "Résultats mesurables",
         "Results, not promises": "Des résultats plus que des promesses",
         "25 years on the ground in demanding industrial environments, a few numbers to set the scene.": "25 ans de terrain dans des environnements industriels exigeants, quelques chiffres pour illustration.",
-        /* La version francaise portait ici un lien vers realisations.html, page du
-           silo retire. L'anglais n'en a pas : la traduction n'en ajoute pas. */
         "These results were achieved by Rémy Ginoux as an employee and consultant, before OptimizIA.xyz was founded in 2022. The agency's own work is documented in our case studies.": "Ces résultats ont été obtenus par Rémy Ginoux dans le cadre de son parcours de salarié et de consultant, avant la création d'OptimizIA.xyz en 2022. Les réalisations de l'agence sont détaillées dans nos études de cas.",
         "k€/month, monthly savings identified at Solvay, 145 sites, 26,000 employees": "k€/mois, les économies mensuelles identifiées chez Solvay, 145 sites, 26 000 collaborateurs",
         "expert communities created and run over 4 years at Volvo Group, 30,000 unique monthly users": "communautés d'experts créées et animées sur 4 ans, chez Volvo Group, 30 000 utilisateurs uniques mensuels",
@@ -82,7 +56,6 @@ window.OIA_I18N.fr = {
         "years of field experience in industrial and digital transformation": "ans d'expérience terrain en transformation industrielle et digitale",
         "\"Great collaboration with Rémy on a complex, high-visibility project. He quickly got up to speed on the history and restructured it effectively.\"": "« Très bonne collaboration avec Rémy sur un projet complexe et à forte visibilité. Il a su rapidement rattraper l'historique et le restructurer de façon efficace. »",
         "More recommendations on LinkedIn": "Autres recommandations sur Linkedin",
-
         "The OptimizIA.xyz method": "La méthode OptimizIA.xyz",
         "4 steps to transform without breaking": "4 étapes pour transformer sans casser",
         "A pragmatic approach that follows your transformation project's maturity, from diagnosis through to industrial-scale deployment.": "Une approche pragmatique qui suit la maturité de votre projet de transformation, de son diagnostic jusqu'à son déploiement industriel.",
@@ -98,27 +71,27 @@ window.OIA_I18N.fr = {
         "Tailored industrialisation": "Industrialisation sur mesure",
         "Scale-up deployment": "Déploiement à l'échelle",
         "Iterating on systems, processes, governance and culture. A small-steps strategy with explicit \"quick wins\" to bring the project team along and lock in the gains.": "Itération sur les systèmes, processus, gouvernance et culture. La stratégie des petits pas orientés « quick win » explicites, pour embarquer l'équipe projet et pérenniser les gains.",
-
         "Our services": "Nos offres",
         "3 clear formats, tailored to your situation": "3 formules claires, adaptées à votre situation",
         "Each engagement stands on its own; combining them gives you a full project direction. The Serenity package supports your entire project, delivering tailor-made solutions.": "Chaque intervention est indépendante, les combiner ensemble vous donne une direction projet. Le pack Sérénité vous accompagne sur l'intégralité de votre projet, en délivrant des solutions sur-mesure.",
         "AI &amp; Knowledge Diagnostic": "Diagnostic IA &amp; Connaissance",
         "For leaders wondering <span class=\"highlight-text\">\"where do I start\"</span> with AI, without scattering their efforts.": "Pour les dirigeants qui se demandent <span class=\"highlight-text\">« par où commencer »</span> avec l'IA, sans partir dans tous les sens.",
-
         "PoC and MVP": "PoC et MVP",
         "For <span class=\"highlight-text\">companies with an identified use case</span>, ready to move from intent to action.": "Pour <span class=\"highlight-text\">les entreprises avec un cas d'usage identifié</span>, prêtes à passer de l'intention à l'action.",
-
         "Copiloting &amp; Continuous Improvement": "Copilotage &amp; Amélioration continue",
         "To secure and amplify the gains, OptimizIA.xyz handles deployment, maintenance and tech watch for your internal teams. Sample deliverables:": "Pour sécuriser et amplifier les gains, OptimizIA.xyz assure pour vos équipes internes le déploiement, la maintenance et la veille. Pour exemple de livrable :",
-
+        "Discover our services": "Découvrir nos offres",
+        "Formats, deliverables and price ranges are detailed on the services page.": "Les formats, les livrables et les fourchettes de prix sont détaillés sur la page Offres.",
         "AI in your day-to-day operations": "L'IA au service de votre quotidien",
         "Concrete use cases, deployed in weeks rather than months. Every automation frees up time for your teams.": "Des cas d'usage concrets, déployés en semaines, pas en mois. Chaque automatisation libère du temps pour vos équipes.",
         "Sales prospecting": "Prospection commerciale",
         "Market monitoring, opportunity qualification and scoring, hot-prospect detection.": "Veille marché, qualification et scoring des opportunités, détection des prospects chauds.",
+        "View case study": "Voir la réalisation",
         "Support &amp; Assistance": "Support &amp; Assistance",
         "AI chatbots over your business data, instant answers, smart escalation.": "Chatbots IA sur vos données métier, réponses instantanées, escalade intelligente.",
         "Content creation": "Création de contenu",
         "Bespoke showcase websites, assisted writing, copywriting true to your identity.": "Sites vitrines sur-mesure, rédaction assistée, copywriting fidèle à votre identité.",
+        "View the project": "Voir le projet",
         "Training &amp; Onboarding": "Formation &amp; Onboarding",
         "AI-driven onboarding paths, dynamic knowledge bases, adaptive quizzes.": "Parcours d'intégration IA, bases de connaissances dynamiques, quiz adaptatifs.",
         "Reporting &amp; Dashboards": "Reporting &amp; Dashboards",
@@ -129,7 +102,6 @@ window.OIA_I18N.fr = {
         "Automated campaigns, AI A/B testing, message personalisation.": "Campagnes automatisées, A/B testing IA, personnalisation des messages.",
         "Community Management": "Community Management",
         "Social listening, automated responses, sentiment analysis, scheduling.": "Veille sociale, réponses automatisées, analyse de sentiment, planification.",
-
         "Talent agent for Bigflo &amp; Oli": "Agent d'influenceur pour Bigflo et Oli",
         "\"OptimizIA.xyz genuinely took my business to the next level through automation. I was skeptical at first, but within days a key part of my client acquisition was already running on its own.": "« OptimizIA.xyz a clairement fait passer mon activité à un autre niveau grâce à l'automatisation. J'étais sceptique au départ, mais en quelques jours, une partie clé de mon acquisition tournait déjà toute seule.",
         "The result: over 2 hours saved every day, better-qualified leads, and a setup that's far easier to scale.": "Résultat : plus de 2h gagnées par jour, des leads mieux qualifiés, et une organisation beaucoup plus solide pour grandir.",
@@ -144,29 +116,6 @@ window.OIA_I18N.fr = {
         "The result exceeds my expectations: the design is modern, fluid and perfectly tailored to my needs.": "Le résultat dépasse mes attentes : le design est moderne, fluide et parfaitement adapté à mes besoins.",
         "The team was responsive, available and brought great ideas throughout the project.": "L'équipe a été réactive, disponible et force de proposition tout au long du projet.",
         "A truly excellent experience, I will not hesitate to work with them again and recommend them to everyone around me!\"": "Une très belle expérience, je n'hésiterai pas à retravailler avec eux et à les recommander autour de moi ! »",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         "Word on the street": "Ce qu'on en dit",
         "What our clients say": "Ce que disent nos clients",
         "\"OptimizIA.xyz genuinely took my business to the next level through automation. I was skeptical at first, but within days a key part of my client acquisition was already running on its own. […]\"": "« OptimizIA.xyz a clairement fait passer mon activité à un autre niveau grâce à l'automatisation. J'étais sceptique au départ, mais en quelques jours, une partie clé de mon acquisition tournait déjà toute seule. […] »",
@@ -177,12 +126,6 @@ window.OIA_I18N.fr = {
         "\"His ability to grasp business stakes while owning the technical dimension makes a real difference. Results are concrete and measurable from the very first weeks.\"": "« Sa capacité à saisir les enjeux métier tout en maîtrisant la dimension technique fait une vraie différence. Les résultats sont concrets et mesurables dès les premières semaines. »",
         "See more reviews": "Voir plus d'avis",
         "Other recommendations on LinkedIn": "Autres recommandations sur LinkedIn",
-
-        "Ready to automate your growth?": "Prêt à automatiser votre croissance ?",
-        "Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.": "Réservez 20 minutes, sans pitch ni vente, juste une conversation informelle sur votre situation et ce que l'IA peut vraiment y changer.",
-        "Book my free audit": "Réserver mon audit gratuit",
-        "Reply within 72h · Occitanie, France &amp; International": "Réponse sous 72h · Occitanie, France &amp; International",
-
         "Frequently asked questions": "Questions fréquentes",
         "Where do you operate?": "Où intervenez-vous ?",
         "We operate on-site in Occitanie and remotely across France and internationally. Most of our engagements involve teams spread across multiple sites, sometimes across several countries. Video conferencing and modern collaboration tools have become powerful, unavoidable enablers. We travel on-site when needed, this hybrid format suits our clients and has been our norm since 2001.": "Nous intervenons en présentiel en Occitanie et à distance partout en France et à l'international. La plupart de nos missions concernent des équipes réparties sur plusieurs sites, parfois dans plusieurs pays. La visioconférence et les outils de collaboration modernes sont devenus des leviers puissants et incontournables. Nous nous déplaçons sur site quand c'est nécessaire, ce format hybride convient à nos clients et constitue notre norme depuis 2001.",
@@ -198,18 +141,32 @@ window.OIA_I18N.fr = {
         "It entirely depends on the use case, your IT environment and your objective: N8N, Make, Zapier for orchestration; Claude and Claude Code, other multi-agent tools, Grafana, Power BI for visualisation. We always recommend solutions your teams can maintain on their own, with no proprietary lock-in. Bear in mind that what's true today may already be obsolete in a month, that's why we run a continuous tech watch to propose the best options for your situation.": "Cela dépend entièrement du cas d'usage, de votre environnement informatique et de votre objectif : N8N, Make, Zapier pour l'orchestration ; Claude et Claude Code, d'autres outils multi-agents, Grafana, Power BI pour la visualisation. Nous recommandons toujours des solutions que vos équipes peuvent maintenir seules, sans verrou propriétaire. Gardez en tête que ce qui est vrai aujourd'hui peut être obsolète dans un mois : c'est pourquoi nous menons une veille continue pour vous proposer les meilleures options selon votre situation.",
         "How do you handle data confidentiality and GDPR?": "Comment gérez-vous la confidentialité des données et le RGPD ?",
         "We systematically favour hosting on your existing infrastructure, so your data stays under your control. For clients who prefer to outsource hosting and maintenance, we run VPS servers located in France. The tools we deploy (self-hosted n8n, Claude API, and others) can be configured to meet your GDPR and data sovereignty requirements. No client data passes through our servers without your explicit agreement.": "Nous privilégions systématiquement l'hébergement sur votre infrastructure existante, pour que vos données restent sous votre contrôle. Pour les clients qui préfèrent externaliser l'hébergement et la maintenance, nous exploitons des serveurs VPS situés en France. Les outils que nous déployons (n8n auto-hébergé, API Claude, et d'autres) se configurent pour répondre à vos exigences RGPD et de souveraineté des données. Aucune donnée client ne transite par nos serveurs sans votre accord explicite.",
-
+        "Ready to automate your growth?": "Prêt à automatiser votre croissance ?",
+        "Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.": "Réservez 20 minutes, sans pitch ni vente, juste une conversation informelle sur votre situation et ce que l'IA peut vraiment y changer.",
+        "Book my free audit": "Réserver mon audit gratuit",
+        "Reply within 72h · Occitanie, France &amp; International": "Réponse sous 72h · Occitanie, France &amp; International",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
-        "Navigation": "Navigation",
-        "Resources": "Ressources",
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
+        "Company": "Entreprise",
+        "The 3 levers": "Les 3 leviers",
+        "Book a free audit": "Réserver un audit gratuit",
+        "All case studies": "Toutes les réalisations",
+        "Lead monitoring": "Veille de leads",
+        "Automated reporting": "Reporting automatisé",
+        "AI training": "Formation IA",
+        "Showcase websites": "Sites vitrines",
+        "SEOPlus!": "SEOPlus!",
+        "Guides": "Guides",
+        "SEO guide": "Guide SEO",
+        "GEO guide": "Guide GEO",
         "Tools": "Nos outils",
-        "SEO &amp; GEO audit tool (SEOPlus!)": "Audit SEO et visibilité IA (SEOPlus!)",
+        "All tools": "Tous nos outils",
+        "SEO &amp; GEO audit (SEOPlus!)": "Audit SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contact",
+        "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
-        "© 2026 OptimizIA.xyz · All rights reserved · <a href=\"legal-notice.html\" class=\"legal-link\">Legal Notice</a> · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Tous droits réservés · <a href=\"legal-notice.html\" class=\"legal-link\">Mentions légales</a> · <span style=\"color: var(--text-muted);\">V6.1</span>",
-
-        /* Libelles accompagnes d une icone : la cle porte le SVG entier,
-           seule la partie texte change. Entrees produites par gen-svg.js. */
+        "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Tous droits réservés ·",
+        "Legal Notice": "Mentions légales",
     },
     attr: {}
 };
