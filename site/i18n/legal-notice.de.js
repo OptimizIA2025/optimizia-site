@@ -3,7 +3,6 @@
    traduisent jamais : ces cles n'ont d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
         "Legal Notice | OptimizIA.xyz": "Impressum | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Zurück zur Startseite",

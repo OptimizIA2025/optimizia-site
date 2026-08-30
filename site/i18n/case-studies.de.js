@@ -3,8 +3,8 @@
    lecteur allemand attend d'une agence. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Referenzen KI &amp; Automatisierung | OptimizIA.xyz",

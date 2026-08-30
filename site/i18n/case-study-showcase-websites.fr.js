@@ -5,8 +5,8 @@
    adresses e-mail) n'a d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "Brand Websites and Visual Identity | OptimizIA.xyz": "Sites vitrines et identité de marque | OptimizIA.xyz",

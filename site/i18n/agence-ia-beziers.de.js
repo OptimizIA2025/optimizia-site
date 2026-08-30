@@ -1,7 +1,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Rencontrer les fondateurs": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Rencontrer les fondateurs": "↗ Die Gründer kennenlernen",
   "Guides SEO": "SEO-Leitfäden",
   "Guides GEO": "GEO-Leitfäden",
         "Agence IA à Béziers | OptimizIA.xyz": "KI-Agentur in Béziers | OptimizIA.xyz",

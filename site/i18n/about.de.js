@@ -3,8 +3,8 @@
    ce tissu d'entreprises ; « KMU » sert quand la taille est le sujet. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
         "About | OptimizIA.xyz": "Über uns | OptimizIA.xyz",

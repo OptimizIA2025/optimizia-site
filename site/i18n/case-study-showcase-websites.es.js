@@ -3,8 +3,8 @@
    SEO / GEO ready, LinkedIn, adresses e-mail) n'a d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
         "Brand Websites and Visual Identity | OptimizIA.xyz": "Sitios web de marca e identidad visual | OptimizIA.xyz",

@@ -1,7 +1,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Rencontrer les fondateurs": "↗ Conozca a los fundadores",
     html: {
+        "↗ Rencontrer les fondateurs": "↗ Conozca a los fundadores",
   "Guides SEO": "Guías SEO",
   "Guides GEO": "Guías GEO",
         "Agence IA à Béziers | OptimizIA.xyz": "Agencia de IA en Béziers | OptimizIA.xyz",

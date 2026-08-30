@@ -11,8 +11,8 @@
    en allemand par la suite. "(C) i18n-controle.js" verifie cette egalite. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "About | OptimizIA.xyz": "À propos | OptimizIA.xyz",

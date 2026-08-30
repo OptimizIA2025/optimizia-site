@@ -3,8 +3,8 @@
    connait pas le decoupage francais. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
         "About | OptimizIA.xyz": "Quiénes somos | OptimizIA.xyz",

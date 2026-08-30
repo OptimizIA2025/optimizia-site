@@ -1,8 +1,8 @@
 /* contact.html — allemand. Meme jeu de cles que contact.fr.js et contact.es.js. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
         "Contact, OptimizIA.xyz | Book your Discovery Call": "Kontakt, OptimizIA.xyz | Erstgespräch buchen",

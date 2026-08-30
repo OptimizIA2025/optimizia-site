@@ -4,8 +4,8 @@
    dans aucun fichier. Les trois langues portent EXACTEMENT le meme jeu de cles. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Réalisations IA et automatisation | OptimizIA.xyz",

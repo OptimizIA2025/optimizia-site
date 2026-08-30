@@ -2,8 +2,8 @@
    l'espagnol de cette page. Traduit depuis l'anglais. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
         "Automated Reporting and Dashboards | OptimizIA.xyz": "Automatisiertes Reporting und Dashboards | OptimizIA.xyz",

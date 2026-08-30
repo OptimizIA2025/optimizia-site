@@ -3,8 +3,8 @@
    legal-notice.html, pas vers l'ancien mentions-legales.html du silo. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "Contact, OptimizIA.xyz | Book your Discovery Call": "Contact, OptimizIA.xyz | Réservez votre RDV Découverte",

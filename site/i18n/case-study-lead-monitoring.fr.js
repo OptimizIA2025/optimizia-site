@@ -3,8 +3,8 @@
    validee en production ; appariement fait par le sens, pas par la position. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "Automated Market Intelligence to Prospects | OptimizIA.xyz": "Veille de marché automatisée en prospects | OptimizIA.xyz",

@@ -4,8 +4,8 @@
    d'entree nulle part. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
-        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
     html: {
+        "↗ Meet the founders": "↗ Die Gründer kennenlernen",
   "SEO guides": "SEO-Leitfäden",
   "GEO guides": "GEO-Leitfäden",
         "AI Training for a Freelancer Community | OptimizIA.xyz": "KI-Schulung für eine Freelancer-Community | OptimizIA.xyz",

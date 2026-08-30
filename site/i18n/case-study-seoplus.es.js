@@ -3,8 +3,8 @@
    faits : elles ne changent pas d'une langue a l'autre. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
         "SEOPlus!, SEO Audit and AI Visibility | OptimizIA.xyz": "SEOPlus!, auditoría SEO y visibilidad en IA | OptimizIA.xyz",

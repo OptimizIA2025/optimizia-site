@@ -3,8 +3,8 @@
    (pymes, caso de exito, auditoria gratuita), usted. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
         "AI Training for a Freelancer Community | OptimizIA.xyz": "Formación en IA para una comunidad de freelances | OptimizIA.xyz",

@@ -22,6 +22,7 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 - [Home](https://www.optimizia.xyz/): positioning, 4-step method, offers with displayed pricing, FAQ
 - [About](https://www.optimizia.xyz/about.html): the two co-founders' backgrounds
+- [Services](https://www.optimizia.xyz/services.html): the 3 formats in detail, deliverables, durations and price ranges
 - [Contact](https://www.optimizia.xyz/contact.html): a free 20-minute discovery call, no commitment
 - [Tools](https://www.optimizia.xyz/tools/): the tools built by the agency, and how to tell whether your need calls for the tool or the agency
 - [Agence IA à Béziers](https://www.optimizia.xyz/agence-ia-beziers.html): the French local page, Béziers and its region

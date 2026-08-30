@@ -6,8 +6,8 @@
    propres) n'ont d'entree dans aucun dictionnaire. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
-        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
     html: {
+        "↗ Meet the founders": "↗ Rencontrer les fondateurs",
   "SEO guides": "Guides SEO",
   "GEO guides": "Guides GEO",
         "AI Training for a Freelancer Community | OptimizIA.xyz": "Formation IA d'une communauté de freelances | OptimizIA.xyz",

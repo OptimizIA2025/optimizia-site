@@ -2,8 +2,8 @@
    case-studies.de.js. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
-        "↗ Meet the founders": "↗ Conozca a los fundadores",
     html: {
+        "↗ Meet the founders": "↗ Conozca a los fundadores",
   "SEO guides": "Guías SEO",
   "GEO guides": "Guías GEO",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Casos de éxito en IA y automatización | OptimizIA.xyz",
