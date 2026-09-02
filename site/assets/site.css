@@ -183,6 +183,78 @@ footer .footer-grid {
    nav en blanc dur au lieu de --bg-glass : la barre restait claire en mode
    sombre partout hors accueil. Surcharge ciblee plutot que regenerer trois
    fichiers immutable. legal-notice n'a pas d'id sur sa nav, d'ou body > nav. */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BARRE DE NAVIGATION : une seule definition pour tout le site.
+
+   Chaque feuille de page redefinissait la nav de son cote, avec deux mecaniques
+   incompatibles : `position: fixed` transparente qui se compacte au scroll
+   (accueil, offres, leviers, contact) et `position: sticky` blanche de 72px
+   (silos, articles, blog, a propos, legales). Trois hauteurs mesurees pour la
+   meme barre : 96px sur l'accueil, 73px sur les silos, et 117px sur les etudes
+   de cas, qui chargent LES DEUX feuilles et cumulaient donc la hauteur de l'une
+   avec le padding de l'autre. Le point de rupture mobile divergeait aussi,
+   900px d'un cote et 768px de l'autre : entre les deux, une page passait en
+   menu burger et sa voisine non.
+
+   Ces regles vivent ici parce que site.css est la seule feuille chargee par
+   toutes les pages, et elles portent un selecteur plus specifique que celui des
+   feuilles de page, qui sont chargees apres. Le dark mode plus bas reste
+   prioritaire : son `:root[data-theme="dark"] #navbar` compte une classe de
+   plus.
+
+   Sticky plutot que fixed : elle reserve sa place dans le flux et ne peut donc
+   jamais recouvrir le premier bloc d'une page, ce qui arriverait sur toutes les
+   pages editoriales, qui n'ont aucun padding-top pour compenser.
+   ═══════════════════════════════════════════════════════════════════════════ */
+html body #navbar,
+html body > nav {
+    position: sticky;
+    top: 0;
+    width: auto;
+    padding: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow .2s ease;
+}
+html body #navbar.scrolled,
+html body > nav.scrolled {
+    padding: 0;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: var(--shadow-md);
+}
+html body .nav-inner { height: 72px; }
+html body .nav-links a { font-size: 0.9rem; font-weight: 500; }
+/* Les deux noms de l'etat courant coexistent dans les pages (`active` cote
+   editorial, `nav-active` cote accueil) : styler les deux evite d'avoir a
+   reprendre le balisage de 29 pages pour un resultat identique. */
+html body .nav-links a:hover,
+html body .nav-links a.active,
+html body .nav-links a.nav-active { color: var(--orange); }
+html body .nav-cta {
+    padding: 10px 22px;
+    font-weight: 600 !important;
+    font-size: 0.88rem;
+}
+html body .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-orange);
+}
+/* Un seul point de rupture, dans les deux sens : sans la regle min-width, les
+   pages dont la feuille bascule a 768px garderaient leurs liens desktop entre
+   769 et 900px alors que leurs voisines sont deja en burger. */
+@media (max-width: 900px) {
+    html body .nav-links { display: none; }
+    html body .hamburger { display: flex; }
+}
+@media (min-width: 901px) {
+    html body .nav-links { display: flex; align-items: center; gap: 32px; }
+    html body .hamburger { display: none; }
+}
+
 :root[data-theme="dark"] #navbar,
 :root[data-theme="dark"] body > nav {
     background: rgba(11, 17, 32, 0.85);
