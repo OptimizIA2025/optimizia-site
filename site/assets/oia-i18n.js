@@ -29,8 +29,11 @@
     /* A relever des qu'un dictionnaire change. Le 28/08, le pied de page est
        passe en V6.1 : la chaine etant elle-meme la cle, un dictionnaire garde
        en cache continuerait a chercher l'ancienne et laisserait la ligne en
-       anglais, sans erreur visible. */
-    var VERSION = '2';
+       anglais, sans erreur visible. Le 02/09, les 3 cartes d'offres de
+       l'accueil gagnent badge, duree, livrables et promesse (18 cles par
+       langue) et le compteur du moteur passe de 107 a 161 : la cle change
+       avec le chiffre. */
+    var VERSION = '3';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
