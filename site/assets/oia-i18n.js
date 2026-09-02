@@ -33,7 +33,7 @@
        l'accueil gagnent badge, duree, livrables et promesse (18 cles par
        langue) et le compteur du moteur passe de 107 a 161 : la cle change
        avec le chiffre. */
-    var VERSION = '3';
+    var VERSION = '4';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';

@@ -6,6 +6,11 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Services": "Offres",
+        "Case studies": "Réalisations",
+        "Blog": "Blog",
+        "About": "À propos",
+        "Free audit": "Audit gratuit",
         "Legal Notice | OptimizIA.xyz": "Mentions légales | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Retour à l'accueil",
         "Legal information": "Informations légales",

@@ -4,6 +4,11 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Services": "Servicios",
+        "Case studies": "Casos de éxito",
+        "Blog": "Blog",
+        "About": "Quiénes somos",
+        "Free audit": "Auditoría gratuita",
         "Legal Notice | OptimizIA.xyz": "Aviso legal | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Volver al inicio",
         "Legal information": "Información legal",

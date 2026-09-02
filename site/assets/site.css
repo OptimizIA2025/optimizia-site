@@ -246,13 +246,67 @@ html body .nav-cta:hover {
 /* Un seul point de rupture, dans les deux sens : sans la regle min-width, les
    pages dont la feuille bascule a 768px garderaient leurs liens desktop entre
    769 et 900px alors que leurs voisines sont deja en burger. */
+/* Le bouton d'appel et le menu mobile sont decrits ici en entier, pas seulement
+   corriges : la feuille de la page legale ne les definissait pas du tout, et
+   son menu mobile s'affichait donc en clair sous la barre, en plein desktop.
+   Une nav autonome ne peut plus dependre de ce que la feuille de page a pense
+   a declarer. */
+html body .nav-cta {
+    background: var(--orange);
+    color: #fff !important;
+    border-radius: var(--radius-pill);
+    transition: var(--transition) !important;
+}
+html body .nav-cta:hover { background: var(--orange-hover) !important; }
+
+html body .hamburger {
+    flex-direction: column; gap: 5px; cursor: pointer;
+    padding: 8px; z-index: 1001; background: none; border: none;
+}
+html body .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--text); border-radius: 2px; transition: var(--transition);
+}
+html body .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+html body .hamburger.active span:nth-child(2) { opacity: 0; }
+html body .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+html body .mobile-menu {
+    position: fixed; top: 0; right: -100%;
+    width: 80%; max-width: 360px; height: 100vh;
+    background: var(--bg); box-shadow: -8px 0 40px rgba(15, 23, 42, 0.12);
+    padding: 100px 40px 40px; z-index: 999;
+    transition: right 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    flex-direction: column; gap: 0;
+}
+html body .mobile-menu.open { right: 0; }
+html body .mobile-menu a {
+    display: block; padding: 18px 0; font-size: 1.1rem; font-weight: 600;
+    color: var(--text); border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+html body .mobile-menu a:hover { color: var(--orange); }
+html body .mobile-menu .btn { margin-top: 32px; width: 100%; }
+html body .mobile-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.4); z-index: 998;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+html body .mobile-overlay.active { display: block; opacity: 1; }
+
+/* Un seul point de rupture, dans les deux sens : sans la regle min-width, les
+   pages dont la feuille bascule a 768px garderaient leurs liens desktop entre
+   769 et 900px alors que leurs voisines sont deja en burger. */
 @media (max-width: 900px) {
     html body .nav-links { display: none; }
     html body .hamburger { display: flex; }
+    html body .mobile-menu { display: flex; }
 }
 @media (min-width: 901px) {
     html body .nav-links { display: flex; align-items: center; gap: 32px; }
     html body .hamburger { display: none; }
+    html body .mobile-menu,
+    html body .mobile-overlay { display: none; }
 }
 
 :root[data-theme="dark"] #navbar,
