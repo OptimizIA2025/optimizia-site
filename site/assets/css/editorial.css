@@ -352,7 +352,12 @@
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   padding: 16px 0; margin-bottom: 32px;
   border-block: 1px solid var(--border);
+  color: inherit; text-decoration: none;
 }
+/* Toute la carte auteur est cliquable vers A propos : une cible de 44px de haut
+   vaut mieux qu'un nom de trois centimetres, surtout au doigt. */
+a.post-author:hover { text-decoration: none; }
+a.post-author:hover .author-id b { color: var(--orange); }
 .author-avatar {
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--dark); color: #fff;
@@ -365,15 +370,24 @@
 .author-id b { display: block; font-size: .92rem; line-height: 1.3; }
 .author-id span { font-size: .78rem; color: var(--muted); }
 .post-share { margin-left: auto; display: flex; gap: 8px; }
+/* Boutons de partage : le logo du reseau, pas son nom. Le libelle part en
+   aria-label et en title, donc le lecteur d'ecran et le survol le disent encore. */
 .share-btn {
-  font-family: var(--font-mono); font-size: .7rem; font-weight: 600;
-  padding: 7px 14px; border-radius: var(--pill);
+  width: 34px; height: 34px; padding: 0; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
   border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft);
   cursor: pointer; text-decoration: none;
   transition: border-color .15s ease, color .15s ease;
 }
+.share-btn svg { width: 16px; height: 16px; display: block; }
 .share-btn:hover { border-color: var(--orange); color: var(--orange-deep); text-decoration: none; }
 .share-btn.copied { border-color: var(--green); color: var(--green); }
+/* La confirmation de copie bascule d'icone plutot que de texte : remplacer le
+   contenu du bouton effacerait le SVG. */
+.share-copy .icon-copied { display: none; }
+.share-copy.copied .icon-link { display: none; }
+.share-copy.copied .icon-copied { display: block; }
 @media (max-width: 640px) { .post-share { margin-left: 0; } }
 
 /* ---- Article : deux rails lateraux (sommaire + partage a gauche, audit a
