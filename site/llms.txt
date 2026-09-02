@@ -39,6 +39,7 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 - [SEO: get found on Google](https://www.optimizia.xyz/seo/): the pillar, what actually moves the needle for a small business website
 - [SEO audit: what a useful report looks like](https://www.optimizia.xyz/seo/seo-audit-example/): the 4 elements a real audit must contain, and how to verify any audit yourself
+- [Ecommerce SEO audit: the complete method](https://www.optimizia.xyz/seo/ecommerce-seo-audit.html): faceted navigation, pagination, product structured data, and the business-first prioritization most audits skip
 - [Why your website doesn't show up on Google](https://www.optimizia.xyz/seo/website-invisible-on-google/): the 10-second indexation test, then the 7 measurable causes and their fixes
 - [How long does SEO take?](https://www.optimizia.xyz/seo/how-long-does-seo-take/): the honest timeline, clock by clock
 - [Core Web Vitals for non-technical owners](https://www.optimizia.xyz/seo/core-web-vitals-guide/): LCP, INP and CLS in plain words, and the fixes that matter
