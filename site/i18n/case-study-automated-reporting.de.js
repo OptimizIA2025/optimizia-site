@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Reporting &amp; Dashboards": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · Reporting &amp; Dashboards",
         "Market analysis and <em>trading assistance</em>, from raw data to a distributed verdict, with no manual work.": "Marktanalyse und <em>Trading-Unterstützung</em>, von den Rohdaten bis zum verteilten Urteil, ohne manuellen Aufwand.",

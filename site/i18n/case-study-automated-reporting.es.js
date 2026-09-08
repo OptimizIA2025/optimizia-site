@@ -8,7 +8,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "&lt; All case studies": "&lt; Todos los casos de éxito",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Reporting &amp; Dashboards": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Informes y paneles",
         "Market analysis and <em>trading assistance</em>, from raw data to a distributed verdict, with no manual work.": "Análisis de mercado y <em>asistencia al trading</em>, del dato en bruto al veredicto distribuido, sin intervención manual.",

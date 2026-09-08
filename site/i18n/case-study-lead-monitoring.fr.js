@@ -8,7 +8,7 @@ window.OIA_I18N.fr = {
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
-        "Free audit": "Audit gratuit",
+        "Book a call": "Prendre rdv",
         "&lt; All case studies": "&lt; Toutes les réalisations",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Sales prospecting": "<span class=\"dot\" aria-hidden=\"true\"></span> Réalisation · Prospection commerciale",
         "Market intelligence that turns itself into a <em>pipeline of qualified prospects</em>, every morning.": "Une veille de marché qui se transforme seule en <em>pipeline de prospects qualifiés</em>, chaque matin.",

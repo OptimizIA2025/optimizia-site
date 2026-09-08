@@ -10,7 +10,7 @@ window.OIA_I18N.fr = {
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
-        "Free audit": "Audit gratuit",
+        "Book a call": "Prendre rdv",
         "Legal Notice | OptimizIA.xyz": "Mentions légales | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Retour à l'accueil",
         "Legal information": "Informations légales",

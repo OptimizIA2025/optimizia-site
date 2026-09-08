@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "<span class=\"dot\"></span>Agency available for new projects": "<span class=\"dot\"></span>Agentur nimmt neue Projekte an",
         "Let's talk about your <span>AI project</span>": "Sprechen wir über Ihr <span>KI-Projekt</span>",
         "20 minutes to analyse your context, identify the priority automation levers, and define together how OptimizIA.xyz can accelerate your performance. No commitment, 100% free.": "20 Minuten, um Ihren Kontext zu analysieren, die wichtigsten Automatisierungshebel zu erkennen und gemeinsam zu klären, wie OptimizIA.xyz Ihre Leistung beschleunigen kann. Unverbindlich, 100% kostenlos.",

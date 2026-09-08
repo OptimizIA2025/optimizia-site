@@ -8,7 +8,7 @@ window.OIA_I18N.fr = {
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
-        "Free audit": "Audit gratuit",
+        "Book a call": "Prendre rdv",
         "&lt; All case studies": "&lt; Toutes les réalisations",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · AI Adoption &amp; Training": "<span class=\"dot\" aria-hidden=\"true\"></span> Réalisation · Acculturation &amp; Formation IA",
         "Bringing a freelancer community up to speed on AI, <em>from the first prompt to the autonomous agent</em>.": "Acculturer une communauté de freelances à l'IA, <em>du premier prompt à l'agent autonome</em>.",

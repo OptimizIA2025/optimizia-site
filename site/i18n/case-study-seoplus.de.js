@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · SEO &amp; AI Visibility": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · SEO &amp; KI-Sichtbarkeit",
         "SEOPlus!, the full SEO audit, <em>AI visibility included</em>, delivered in 30 seconds with its action plan.": "SEOPlus!, das vollständige SEO-Audit, <em>KI-Sichtbarkeit inklusive</em>, in 30 Sekunden geliefert, mitsamt Maßnahmenplan.",

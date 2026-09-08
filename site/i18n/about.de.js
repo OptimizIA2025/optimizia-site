@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "Who we are": "Wer wir sind",
         "OptimizIA.xyz, <span>AI at work in the field</span>": "OptimizIA.xyz, <span>KI im praktischen Einsatz</span>",
         "OptimizIA.xyz is a network of experts founded by practitioners, not theorists, who believe <strong>AI only has value when it produces measurable results</strong> inside your organisation, with no unnecessary disruption and no jargon. We step in where it actually hurts: the processes that are slowing your growth.": "OptimizIA.xyz ist ein Expertennetzwerk, gegründet von Praktikern statt Theoretikern, die überzeugt sind: <strong>KI hat nur dann Wert, wenn sie messbare Ergebnisse liefert</strong>, in Ihrem Unternehmen, ohne unnötige Umbrüche und ohne Fachjargon. Wir setzen dort an, wo es wirklich hakt: bei den Prozessen, die Ihr Wachstum bremsen.",

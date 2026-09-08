@@ -26,7 +26,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "AI &amp; Automation Agency, France &amp; International": "Agencia de IA y automatización, Francia e internacional",
         "Your processes are slowing your growth.<br> <span class=\"accent\">AI puts them back in motion.</span>": "Sus procesos están frenando su crecimiento.<br> <span class=\"accent\">La IA los pone en marcha.</span>",
         "OptimizIA.xyz helps SME leaders <strong>reclaim up to 30% of productive time from the first quarter</strong> by combining AI, automation and Knowledge Management with a methodology built on 25 years of industrial field experience.": "OptimizIA.xyz ayuda a los directivos de pymes a <strong>recuperar hasta un 30% de tiempo productivo desde el primer trimestre</strong> combinando IA, automatización y Knowledge Management con un método nacido de 25 años de experiencia industrial sobre el terreno.",

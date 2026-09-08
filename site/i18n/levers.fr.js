@@ -8,7 +8,7 @@ window.OIA_I18N.fr = {
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
-        "Free audit": "Audit gratuit",
+        "Book a call": "Prendre rdv",
         "Our method": "Notre méthode",
         "The 3 levers in detail": "Les 3 leviers en détail",
         "Before injecting AI everywhere, you need to understand what it should be amplifying. Here is how OptimizIA.xyz combines diagnosis, automation and knowledge management to produce sustainable gains, not demos.": "Avant d'injecter de l'IA partout, il faut comprendre ce qu'elle doit amplifier. Voici comment OptimizIA.xyz articule diagnostic, automatisation et knowledge management pour produire des gains durables, pas des démos.",

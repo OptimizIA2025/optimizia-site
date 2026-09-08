@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Websites &amp; Brand Identity": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · Websites &amp; Markenidentität",
         "A website that truly looks like your brand, <em>not yet another template</em>.": "Eine Website, die wirklich nach Ihrer Marke aussieht, <em>nicht noch eine Vorlage von der Stange</em>.",

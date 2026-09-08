@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Réalisations": "Referenzen",
         "Blog": "Blog",
         "À propos": "Über uns",
-        "Audit gratuit": "Kostenloses Audit",
+        "Prendre rdv": "Termin buchen",
         "Agence IA locale": "Lokale KI-Agentur",
         "Agence IA à Béziers : <span>l'automatisation au service des PME</span>": "KI-Agentur in Béziers: <span>Automatisierung im Dienst des Mittelstands</span>",
         "OptimizIA.xyz est une agence d'intelligence artificielle et d'automatisation basée à Béziers, dans l'Hérault. Nous travaillons à l'international avec des industries et des entreprises du monde entier, et nous accompagnons en direct, sur place, les TPE et PME de Béziers et de sa région. Notre promesse : <strong>récupérer jusqu'à 30 % de temps productif dès le premier trimestre</strong> en combinant IA, automatisation et Knowledge Management, avec une méthode issue de 25 ans de terrain industriel.": "OptimizIA.xyz ist eine Agentur für künstliche Intelligenz und Automatisierung mit Sitz in Béziers in Südfrankreich. Wir arbeiten international mit Industrien und Unternehmen aus aller Welt, und wir begleiten die Kleinst- und Mittelunternehmen von Béziers und Umgebung direkt vor Ort. Unser Versprechen: <strong>ab dem ersten Quartal bis zu 30 % produktive Zeit zurückzugewinnen</strong>, indem wir KI, Automatisierung und Knowledge Management verbinden, mit einer Methode aus 25 Jahren Industrieerfahrung.",

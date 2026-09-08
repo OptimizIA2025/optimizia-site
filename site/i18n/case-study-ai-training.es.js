@@ -8,7 +8,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "&lt; All case studies": "&lt; Todos los casos de éxito",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · AI Adoption &amp; Training": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Adopción &amp; Formación en IA",
         "Bringing a freelancer community up to speed on AI, <em>from the first prompt to the autonomous agent</em>.": "Poner al día en IA a una comunidad de freelances, <em>del primer prompt al agente autónomo</em>.",

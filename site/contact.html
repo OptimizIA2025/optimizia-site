@@ -72,7 +72,7 @@
       }
     }
     </script>
-    <script src="assets/oia-i18n.js?v=5" data-page="contact" defer></script>
+    <script src="assets/oia-i18n.js?v=6" data-page="contact" defer></script>
 </head>
 <body>
 
@@ -85,7 +85,7 @@
             <a href="/case-studies/">Case studies</a>
             <a href="/blog/">Blog</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="nav-cta active">Free audit</a>
+            <a href="contact.html" class="nav-cta active">Book a call</a>
             <div class="lang-toggle" data-lang-picker></div>
         </div>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -101,7 +101,7 @@
     <a href="/case-studies/">Case studies</a>
     <a href="/blog/">Blog</a>
     <a href="about.html">About</a>
-    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Free audit</a>
+    <a href="contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
     <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
@@ -146,7 +146,7 @@
             <h2>Pick your slot</h2>
             <p>The slots shown below sync in real time with our calendar. Pick the time that suits you.</p>
         </div>
-        <div id="booking-root"></div>
+        <div id="booking-root" data-no-i18n></div>
     </div>
 </section>
 
@@ -262,21 +262,140 @@
 
 <!-- ===== WIDGET BOOKING V3 — Vanilla JS, zero CDN dependency ===== -->
 <script>
+/* Widget de reservation. Il porte ses quatre langues lui-meme et se repeint sur
+   l'evenement oia:lang, comme le bandeau de consentement : c'est un composant a
+   etat qui reconstruit son DOM a chaque interaction, et dont une partie du texte
+   est calculee (nom du mois, jour de la semaine, duree du creneau). Le passer par
+   le dictionnaire de page demanderait une cle par mois et par duree, et cette cle
+   changerait tous les 1ers du mois.
+
+   #booking-root porte donc data-no-i18n : le collecteur generique n'y entre pas.
+
+   Les objectifs gardent leur libelle ANGLAIS comme valeur envoyee au webhook.
+   Traduire la valeur ferait arriver dans n8n quatre libelles differents pour le
+   meme objectif selon la langue du visiteur. */
 (function(){
   function parseTimeRange(s){var p=s.split('-'),f=p[0].split(':').map(Number),t=p[1].split(':').map(Number);return[f[0]+f[1]/60,t[0]+t[1]/60];}
   function buildSC(sch){var r={};Object.keys(sch).forEach(function(d){r[d]=sch[d]?[parseTimeRange(sch[d])]:null;});return r;}
   var SC={0:null,1:[[13.5,19]],2:[[10,19]],3:[[9,12.5]],4:[[14,19]],5:[[9,16]],6:[[9.5,11.5]]};
-  var OB=['AI maturity diagnostic','Specific AI integration','Process automation','Global transformation','Other'];
-  var MO=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var DF=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var DH=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   var ERR_EMAIL='contact@optimizia.xyz';
+  var PH_TEL='+33 6 00 00 00 00';
+
+  /* Valeurs canoniques envoyees au webhook. L'ordre fait foi : les libelles
+     traduits sont indexes dessus. */
+  var OB=['AI maturity diagnostic','Specific AI integration','Process automation','Global transformation','Other'];
+
+  var L={
+    en:{
+      title:'Discovery Call', sub:'AI &amp; Automation', min:'minutes', days:'Mon &rarr; Sat',
+      b1:'Understand your context and challenges',
+      b2:'Identify priority AI levers',
+      b3:'Assess how OptimizIA.xyz can boost your performance',
+      cta:'<strong>100% free</strong>, no commitment. Leave with actionable insights.',
+      pick:'Select a date and time slot', loading:'Loading...',
+      noSlot:'No slot available on this day &mdash; try another date.',
+      cont:'Continue', errSlots:'Unable to load slots. Please contact ',
+      change:'Change slot', details:'Your details', at:' at ',
+      fn:'First name *', fnPh:'Your first name', ln:'Last name *', lnPh:'Your last name',
+      em:'Email *', emPh:'you@company.com', co:'Company', opt:'(optional)', coPh:'Company name',
+      obj:'Main objective *', many:'(one or more)',
+      chal:'Current challenge', chalPh:'Briefly describe your situation...',
+      cb:'Would you like a callback?', ph:'Phone *',
+      back:'Back', sending:'Booking...', confirm:'Confirm the appointment',
+      okTitle:'Appointment confirmed!', okMail:'A confirmation email has been sent to',
+      okCal:'You will also receive a Google Calendar invitation with the video conference link.',
+      quest:'Any question? Write to ',
+      ob:['AI maturity diagnostic','Specific AI integration','Process automation','Global transformation','Other'],
+      MO:['January','February','March','April','May','June','July','August','September','October','November','December'],
+      DF:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      DH:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      fmt:function(d,n,m){return d+' '+n+' '+m;}
+    },
+    fr:{
+      title:'Rendez-vous découverte', sub:'IA &amp; Automatisation', min:'minutes', days:'Lun &rarr; Sam',
+      b1:'Comprendre votre contexte et vos enjeux',
+      b2:'Identifier les leviers IA prioritaires',
+      b3:'Évaluer comment OptimizIA.xyz peut booster votre performance',
+      cta:'<strong>100 % gratuit</strong>, sans engagement. Repartez avec des pistes concrètes.',
+      pick:'Choisissez une date et un créneau', loading:'Chargement...',
+      noSlot:'Aucun créneau disponible ce jour, essayez une autre date.',
+      cont:'Continuer', errSlots:'Impossible de charger les créneaux. Contactez ',
+      change:'Changer de créneau', details:'Vos coordonnées', at:' à ',
+      fn:'Prénom *', fnPh:'Votre prénom', ln:'Nom *', lnPh:'Votre nom',
+      em:'E-mail *', emPh:'vous@entreprise.com', co:'Entreprise', opt:'(facultatif)', coPh:'Nom de l’entreprise',
+      obj:'Objectif principal *', many:'(un ou plusieurs)',
+      chal:'Enjeu actuel', chalPh:'Décrivez brièvement votre situation...',
+      cb:'Souhaitez-vous être rappelé ?', ph:'Téléphone *',
+      back:'Retour', sending:'Réservation...', confirm:'Confirmer le rendez-vous',
+      okTitle:'Rendez-vous confirmé !', okMail:'Un e-mail de confirmation a été envoyé à',
+      okCal:'Vous recevrez également une invitation Google Calendar avec le lien de visioconférence.',
+      quest:'Une question ? Écrivez à ',
+      ob:['Diagnostic de maturité IA','Intégration IA spécifique','Automatisation de processus','Transformation globale','Autre'],
+      MO:['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
+      DF:['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'],
+      DH:['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'],
+      fmt:function(d,n,m){return d+' '+n+' '+m;}
+    },
+    es:{
+      title:'Llamada de descubrimiento', sub:'IA &amp; Automatización', min:'minutos', days:'Lun &rarr; Sáb',
+      b1:'Entender su contexto y sus retos',
+      b2:'Identificar las palancas de IA prioritarias',
+      b3:'Evaluar cómo OptimizIA.xyz puede impulsar su rendimiento',
+      cta:'<strong>100 % gratis</strong>, sin compromiso. Salga con ideas accionables.',
+      pick:'Elija una fecha y una franja horaria', loading:'Cargando...',
+      noSlot:'No hay franja disponible este día, pruebe otra fecha.',
+      cont:'Continuar', errSlots:'No se han podido cargar las franjas. Contacte con ',
+      change:'Cambiar de franja', details:'Sus datos', at:' a las ',
+      fn:'Nombre *', fnPh:'Su nombre', ln:'Apellidos *', lnPh:'Sus apellidos',
+      em:'Correo electrónico *', emPh:'usted@empresa.com', co:'Empresa', opt:'(opcional)', coPh:'Nombre de la empresa',
+      obj:'Objetivo principal *', many:'(uno o varios)',
+      chal:'Reto actual', chalPh:'Describa brevemente su situación...',
+      cb:'¿Desea que le llamemos?', ph:'Teléfono *',
+      back:'Volver', sending:'Reservando...', confirm:'Confirmar la cita',
+      okTitle:'¡Cita confirmada!', okMail:'Se ha enviado un correo de confirmación a',
+      okCal:'También recibirá una invitación de Google Calendar con el enlace de videoconferencia.',
+      quest:'¿Alguna pregunta? Escriba a ',
+      ob:['Diagnóstico de madurez en IA','Integración de IA específica','Automatización de procesos','Transformación global','Otro'],
+      MO:['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],
+      DF:['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],
+      DH:['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'],
+      fmt:function(d,n,m){return d+' '+n+' de '+m;}
+    },
+    de:{
+      title:'Kennenlerngespräch', sub:'KI &amp; Automatisierung', min:'Minuten', days:'Mo &rarr; Sa',
+      b1:'Ihren Kontext und Ihre Herausforderungen verstehen',
+      b2:'Vorrangige KI-Hebel identifizieren',
+      b3:'Bewerten, wie OptimizIA.xyz Ihre Leistung steigern kann',
+      cta:'<strong>100 % kostenlos</strong>, unverbindlich. Sie gehen mit konkreten Ansätzen.',
+      pick:'Wählen Sie ein Datum und eine Uhrzeit', loading:'Wird geladen...',
+      noSlot:'An diesem Tag ist kein Termin frei, bitte ein anderes Datum wählen.',
+      cont:'Weiter', errSlots:'Termine konnten nicht geladen werden. Bitte kontaktieren Sie ',
+      change:'Termin ändern', details:'Ihre Angaben', at:' um ',
+      fn:'Vorname *', fnPh:'Ihr Vorname', ln:'Nachname *', lnPh:'Ihr Nachname',
+      em:'E-Mail *', emPh:'sie@unternehmen.com', co:'Unternehmen', opt:'(optional)', coPh:'Name des Unternehmens',
+      obj:'Hauptziel *', many:'(eines oder mehrere)',
+      chal:'Aktuelle Herausforderung', chalPh:'Beschreiben Sie kurz Ihre Situation...',
+      cb:'Möchten Sie zurückgerufen werden?', ph:'Telefon *',
+      back:'Zurück', sending:'Wird gebucht...', confirm:'Termin bestätigen',
+      okTitle:'Termin bestätigt!', okMail:'Eine Bestätigungs-E-Mail wurde gesendet an',
+      okCal:'Sie erhalten außerdem eine Google-Calendar-Einladung mit dem Link zur Videokonferenz.',
+      quest:'Eine Frage? Schreiben Sie an ',
+      ob:['KI-Reifegrad-Diagnose','Spezifische KI-Integration','Prozessautomatisierung','Globale Transformation','Sonstiges'],
+      MO:['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+      DF:['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
+      DH:['Mo','Di','Mi','Do','Fr','Sa','So'],
+      fmt:function(d,n,m){return d+', '+n+'. '+m;}
+    }
+  };
+
+  /* Une langue sans table retombe sur l'anglais plutot que d'afficher un trou. */
+  function tr(){return L[(window.OIA&&window.OIA.langue&&window.OIA.langue())||'en']||L.en;}
 
   var g={vd:new Date(),sd:null,sl:null,step:'cal',ld:false,er:null,slots:[],sll:false,sle:null,
          f:{fn:'',ln:'',em:'',co:'',ob:[],ch:'',cb:false,ph:''},dd:null,sc:SC,dur:20};
 
   function toDS(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-  function fmD(d){return DF[d.getDay()]+' '+d.getDate()+' '+MO[d.getMonth()];}
+  function fmD(d){var t=tr();return t.fmt(t.DF[d.getDay()],d.getDate(),t.MO[d.getMonth()]);}
   function isToday(d){var t=new Date();return d.getDate()===t.getDate()&&d.getMonth()===t.getMonth()&&d.getFullYear()===t.getFullYear();}
   function bookable(d){
     var t=new Date();t.setHours(0,0,0,0);
@@ -303,17 +422,18 @@
   };
 
   function sidebar(){
+    var t=tr();
     return '<div class="bw-sidebar">'
       +'<div class="bw-sidebar-label">OptimizIA.xyz</div>'
-      +'<h3 class="bw-sidebar-title">Discovery Call</h3>'
-      +'<p class="bw-sidebar-sub">AI &amp; Automation</p>'
+      +'<h3 class="bw-sidebar-title">'+t.title+'</h3>'
+      +'<p class="bw-sidebar-sub">'+t.sub+'</p>'
       +'<div class="bw-meta">'
-      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.clock+'</div><span>'+g.dur+' minutes</span></div>'
-      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.video+'</div><span>Mon → Sat</span></div>'
-      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.cal+'</div><span>Mon → Sat</span></div>'
+      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.clock+'</div><span>'+g.dur+' '+t.min+'</span></div>'
+      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.video+'</div><span>'+t.days+'</span></div>'
+      +'<div class="bw-meta-item"><div class="bw-meta-icon">'+SV.cal+'</div><span>'+t.days+'</span></div>'
       +'</div><div class="bw-divider"></div>'
-      +'<ul class="bw-bullets"><li>Understand your context and challenges</li><li>Identify priority AI levers</li><li>Assess how OptimizIA.xyz can boost your performance</li></ul>'
-      +'<div class="bw-cta-box"><p><strong>100% free</strong>, no commitment. Leave with actionable insights.</p></div>'
+      +'<ul class="bw-bullets"><li>'+t.b1+'</li><li>'+t.b2+'</li><li>'+t.b3+'</li></ul>'
+      +'<div class="bw-cta-box"><p>'+t.cta+'</p></div>'
       +'</div>';
   }
 
@@ -327,6 +447,7 @@
   }
 
   function renderCal(){
+    var t=tr();
     var dim=new Date(g.vd.getFullYear(),g.vd.getMonth()+1,0).getDate();
     var fd=new Date(g.vd.getFullYear(),g.vd.getMonth(),1).getDay();
     var off=fd===0?6:fd-1,cells='';
@@ -340,62 +461,66 @@
     var slH='';
     if(g.sd){
       slH='<div class="bw-slots"><div class="bw-slots-date">'+fmD(g.sd)+'</div>';
-      if(g.sll)slH+='<div class="bw-slots-loading"><div class="bw-spinner"></div><span>Loading...</span></div>';
+      if(g.sll)slH+='<div class="bw-slots-loading"><div class="bw-spinner"></div><span>'+t.loading+'</span></div>';
       else if(g.sle)slH+='<div class="bw-slots-empty" style="color:#DC2626">'+g.sle+'</div>';
       else if(g.slots.length){
         slH+='<div class="bw-slots-grid">';
         g.slots.forEach(function(s){slH+='<button class="bw-slot'+(g.sl&&g.sl.d===s.d?' bw-slot--sel':'')+'" data-t="'+s.d+'">'+s.d+'</button>';});
         slH+='</div>';
-        if(g.sl)slH+='<div class="bw-continue-row"><button class="bw-btn-continue" id="bw-cont">Continuer '+SV.aR+'</button></div>';
-      }else slH+='<div class="bw-slots-empty">No slot available on this day — try another date.</div>';
+        if(g.sl)slH+='<div class="bw-continue-row"><button class="bw-btn-continue" id="bw-cont">'+t.cont+' '+SV.aR+'</button></div>';
+      }else slH+='<div class="bw-slots-empty">'+t.noSlot+'</div>';
       slH+='</div>';
     }
     return '<div class="bw-card">'+sidebar()+'<div class="bw-main">'+dots('cal')
-      +'<h3 class="bw-section-title">Select a date and time slot</h3>'
+      +'<h3 class="bw-section-title">'+t.pick+'</h3>'
       +'<div class="bw-cal-nav"><button class="bw-cal-nav-btn" id="bw-prev">'+SV.cL+'</button>'
-      +'<span class="bw-cal-month">'+MO[g.vd.getMonth()]+' '+g.vd.getFullYear()+'</span>'
+      +'<span class="bw-cal-month">'+t.MO[g.vd.getMonth()]+' '+g.vd.getFullYear()+'</span>'
       +'<button class="bw-cal-nav-btn" id="bw-next">'+SV.cR+'</button></div>'
-      +'<div class="bw-cal-grid">'+DH.map(function(d){return'<div class="bw-cal-hdr">'+d+'</div>';}).join('')+cells+'</div>'
+      +'<div class="bw-cal-grid">'+t.DH.map(function(d){return'<div class="bw-cal-hdr">'+d+'</div>';}).join('')+cells+'</div>'
       +slH+'</div></div>';
   }
 
   function renderForm(){
-    var pills=OB.map(function(o){var chk=g.f.ob.indexOf(o)>=0;
-      return'<label class="bw-pill'+(chk?' checked':'')+'" data-ob="'+encodeURIComponent(o)+'">'
-        +'<input type="checkbox"'+(chk?' checked':'')+'><span class="bw-pill-check">'+SV.cs+'</span>'+o+'</label>';
+    var t=tr();
+    /* data-ob porte l'index : la valeur envoyee reste OB[i], en anglais, quelle
+       que soit la langue affichee. */
+    var pills=OB.map(function(o,i){var chk=g.f.ob.indexOf(o)>=0;
+      return'<label class="bw-pill'+(chk?' checked':'')+'" data-ob="'+i+'">'
+        +'<input type="checkbox"'+(chk?' checked':'')+'><span class="bw-pill-check">'+SV.cs+'</span>'+t.ob[i]+'</label>';
     }).join('');
     return '<div class="bw-card">'+sidebar()+'<div class="bw-main bw-form-container">'+dots('form')
-      +'<button class="bw-back-btn" id="bw-back">'+SV.aL+' Change slot</button>'
-      +'<h3 class="bw-section-title">Your details</h3>'
-      +'<div class="bw-selection-badge">'+SV.cal+'<span>'+fmD(g.sd)+' at <strong>'+g.sl.d+'</strong></span></div>'
+      +'<button class="bw-back-btn" id="bw-back">'+SV.aL+' '+t.change+'</button>'
+      +'<h3 class="bw-section-title">'+t.details+'</h3>'
+      +'<div class="bw-selection-badge">'+SV.cal+'<span>'+fmD(g.sd)+t.at+'<strong>'+g.sl.d+'</strong></span></div>'
       +'<div class="bw-form-row">'
-      +'<div class="bw-form-group"><label class="bw-form-label">First name *</label><input class="bw-input" id="bw-fn" type="text" placeholder="Your first name"></div>'
-      +'<div class="bw-form-group"><label class="bw-form-label">Last name *</label><input class="bw-input" id="bw-ln" type="text" placeholder="Your last name"></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.fn+'</label><input class="bw-input" id="bw-fn" type="text" placeholder="'+t.fnPh+'"></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.ln+'</label><input class="bw-input" id="bw-ln" type="text" placeholder="'+t.lnPh+'"></div>'
       +'</div><div class="bw-form-row">'
-      +'<div class="bw-form-group"><label class="bw-form-label">Email *</label><input class="bw-input" id="bw-em" type="email" placeholder="you@company.com"></div>'
-      +'<div class="bw-form-group"><label class="bw-form-label">Company <span class="bw-form-label-hint">(optional)</span></label><input class="bw-input" id="bw-co" type="text" placeholder="Company name"></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.em+'</label><input class="bw-input" id="bw-em" type="email" placeholder="'+t.emPh+'"></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.co+' <span class="bw-form-label-hint">'+t.opt+'</span></label><input class="bw-input" id="bw-co" type="text" placeholder="'+t.coPh+'"></div>'
       +'</div>'
-      +'<div class="bw-form-group"><label class="bw-form-label">Main objective * <span class="bw-form-label-hint">(one or more)</span></label><div class="bw-pills">'+pills+'</div></div>'
-      +'<div class="bw-form-group"><label class="bw-form-label">Current challenge <span class="bw-form-label-hint">(optional)</span></label><textarea class="bw-input" id="bw-ch" rows="3" placeholder="Briefly describe your situation..."></textarea></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.obj+' <span class="bw-form-label-hint">'+t.many+'</span></label><div class="bw-pills">'+pills+'</div></div>'
+      +'<div class="bw-form-group"><label class="bw-form-label">'+t.chal+' <span class="bw-form-label-hint">'+t.opt+'</span></label><textarea class="bw-input" id="bw-ch" rows="3" placeholder="'+t.chalPh+'"></textarea></div>'
       +'<div class="bw-form-group"><label class="bw-cb-wrap"><input type="checkbox" id="bw-cb"'+(g.f.cb?' checked':'')+'>'
       +'<span class="bw-cb-box"><svg class="bw-cb-check" viewBox="0 0 11 11" fill="none"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'
-      +'Would you like a callback?</label></div>'
-      +(g.f.cb?'<div class="bw-form-group"><label class="bw-form-label">Phone *</label><input class="bw-input" id="bw-ph" type="tel" placeholder="+33 6 00 00 00 00"></div>':'')
+      +t.cb+'</label></div>'
+      +(g.f.cb?'<div class="bw-form-group"><label class="bw-form-label">'+t.ph+'</label><input class="bw-input" id="bw-ph" type="tel" placeholder="'+PH_TEL+'"></div>':'')
       +(g.er?'<div class="bw-error">'+g.er+'</div>':'')
-      +'<div class="bw-btn-row"><button class="bw-btn bw-btn-ghost" id="bw-back2">Back</button>'
-      +'<button class="bw-btn bw-btn-gold" id="bw-sub"'+(g.ld||!valid()?' disabled':'')+'>'+(g.ld?'Booking...':'Confirm the appointment')+'</button>'
+      +'<div class="bw-btn-row"><button class="bw-btn bw-btn-ghost" id="bw-back2">'+t.back+'</button>'
+      +'<button class="bw-btn bw-btn-gold" id="bw-sub"'+(g.ld||!valid()?' disabled':'')+'>'+(g.ld?t.sending:t.confirm)+'</button>'
       +'</div></div></div>';
   }
 
   function renderOk(){
+    var t=tr();
     return '<div class="bw-card">'+sidebar()+'<div class="bw-main bw-confirm">'
       +'<div class="bw-confirm-icon">'+SV.chk+'</div>'
-      +'<h3 class="bw-confirm-title">Appointment confirmed!</h3>'
-      +'<p class="bw-confirm-text">'+fmD(g.sd)+' à '+g.sl.d+'</p>'
-      +'<p class="bw-confirm-text" style="margin-top:8px">A confirmation email has been sent to</p>'
+      +'<h3 class="bw-confirm-title">'+t.okTitle+'</h3>'
+      +'<p class="bw-confirm-text">'+fmD(g.sd)+t.at+g.sl.d+'</p>'
+      +'<p class="bw-confirm-text" style="margin-top:8px">'+t.okMail+'</p>'
       +'<span class="bw-confirm-email">'+g.f.em+'</span>'
-      +'<p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);line-height:1.6">You will also receive a Google Calendar invitation with the video conference link.</p>'
-      +'<p style="margin-top:16px;font-size:0.82rem;color:var(--text-muted);line-height:1.6">Any question? Write to <a href="mailto:'+ERR_EMAIL+'" style="color:var(--orange);text-decoration:none">'+ERR_EMAIL+'</a></p>'
+      +'<p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);line-height:1.6">'+t.okCal+'</p>'
+      +'<p style="margin-top:16px;font-size:0.82rem;color:var(--text-muted);line-height:1.6">'+t.quest+'<a href="mailto:'+ERR_EMAIL+'" style="color:var(--orange);text-decoration:none">'+ERR_EMAIL+'</a></p>'
       +'</div></div>';
   }
 
@@ -437,7 +562,7 @@
       root.querySelectorAll('.bw-pill').forEach(function(pill){
         pill.addEventListener('click',function(e){
           e.preventDefault();saveForm();
-          var val=decodeURIComponent(pill.dataset.ob),idx=g.f.ob.indexOf(val);
+          var val=OB[parseInt(pill.dataset.ob,10)],idx=g.f.ob.indexOf(val);
           if(idx>=0)g.f.ob.splice(idx,1);else g.f.ob.push(val);render();
         });
       });
@@ -452,9 +577,10 @@
         fetch(window.N8N_BOOKING_URL,{method:'POST',headers:{'Content-Type':'application/json'},
           body:JSON.stringify({firstName:g.f.fn,lastName:g.f.ln,email:g.f.em,company:g.f.co,
             objectives:g.f.ob,challenge:g.f.ch,date:toDS(g.sd),time:g.sl.d,
-            timestamp:new Date().toISOString(),callback:g.f.cb,phone:g.f.ph})
+            timestamp:new Date().toISOString(),callback:g.f.cb,phone:g.f.ph,
+            lang:(window.OIA&&window.OIA.langue&&window.OIA.langue())||'en'})
         }).then(function(r){if(!r.ok)throw new Error();g.ld=false;g.step='ok';render();})
-           .catch(function(){g.ld=false;g.er='Unable to load slots. Please contact '+ERR_EMAIL;render();});
+           .catch(function(){g.ld=false;g.er=tr().errSlots+ERR_EMAIL;render();});
       });
     }
   }
@@ -463,7 +589,7 @@
     fetch(window.N8N_AVAILABILITY_URL+'?date='+toDS(date),{method:'GET',headers:{'Accept':'application/json'}})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(data){g.slots=(data.slots||[]).map(function(t){return{d:t};});g.sll=false;render();})
-      .catch(function(){g.sll=false;g.sle='Unable to load slots. Please contact '+ERR_EMAIL;render();});
+      .catch(function(){g.sll=false;g.sle=tr().errSlots+ERR_EMAIL;render();});
   }
 
   fetch(window.N8N_BATCH_URL+'?_t='+Date.now(),{method:'GET',headers:{'Accept':'application/json','Cache-Control':'no-cache'}})
@@ -472,6 +598,13 @@
       if(data.dates&&data.schedule){g.dd=data.dates;g.sc=buildSC(data.schedule);if(data.slot_duration_min)g.dur=data.slot_duration_min;}
       else g.dd=data;render();
     }).catch(function(e){console.warn('Batch dispo unavailable:',e);});
+
+  /* Repeinture a la bascule de langue. La saisie en cours est relevee avant,
+     sinon changer de langue au milieu du formulaire viderait les champs. */
+  document.addEventListener('oia:lang',function(){
+    if(g.step==='form')saveForm();
+    render();
+  });
 
   render();
 })();

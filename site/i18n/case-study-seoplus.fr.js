@@ -8,7 +8,7 @@ window.OIA_I18N.fr = {
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
-        "Free audit": "Audit gratuit",
+        "Book a call": "Prendre rdv",
         "&lt; All case studies": "&lt; Toutes les réalisations",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · SEO &amp; AI Visibility": "<span class=\"dot\" aria-hidden=\"true\"></span> Réalisation · SEO &amp; Visibilité IA",
         "SEOPlus!, the full SEO audit, <em>AI visibility included</em>, delivered in 30 seconds with its action plan.": "SEOPlus!, l'audit SEO complet, <em>visibilité IA comprise</em>, rendu en 30 secondes avec son plan d'action.",

@@ -8,7 +8,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "Our services": "Nuestros servicios",
         "3 clear formats, tailored to your situation": "3 formatos claros, adaptados a su situación",
         "Every engagement starts with your business problem, never with the technology. Below, the full detail of each format: what it covers, how long it takes, what it costs.": "Cada misión parte de su problema de negocio, nunca de la tecnología. A continuación, el detalle completo de cada formato: qué cubre, cuánto dura, cuánto cuesta.",

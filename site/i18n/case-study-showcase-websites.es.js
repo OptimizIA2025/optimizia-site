@@ -8,7 +8,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "&lt; All case studies": "&lt; Todos los casos de éxito",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Websites &amp; Brand Identity": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Sitios web &amp; identidad de marca",
         "A website that truly looks like your brand, <em>not yet another template</em>.": "Un sitio web que realmente se parece a su marca, <em>no una plantilla más</em>.",

@@ -8,7 +8,7 @@ window.OIA_I18N.es = {
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
-        "Free audit": "Auditoría gratuita",
+        "Book a call": "Reservar una cita",
         "&lt; All case studies": "&lt; Todos los casos de éxito",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · Sales prospecting": "<span class=\"dot\" aria-hidden=\"true\"></span> Caso de éxito · Prospección comercial",
         "Market intelligence that turns itself into a <em>pipeline of qualified prospects</em>, every morning.": "Una vigilancia de mercado que se convierte por sí sola en un <em>flujo de prospectos cualificados</em>, cada mañana.",

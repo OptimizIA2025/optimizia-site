@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "What we have actually delivered": "Was wir tatsächlich geliefert haben",
         "Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.": "Fünf Projekte von OptimizIA.xyz, beschrieben ohne Beschönigung: das Ausgangsproblem, die gebaute Mechanik, die eingesetzten Tools und was sich im Alltag ändert. Zwei sind interne Produkte, drei wurden an Kunden geliefert.",
         "Sales prospecting": "Vertriebsakquise",

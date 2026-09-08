@@ -8,7 +8,7 @@ window.OIA_I18N.de = {
         "Case studies": "Referenzen",
         "Blog": "Blog",
         "About": "Über uns",
-        "Free audit": "Kostenloses Audit",
+        "Book a call": "Termin buchen",
         "&lt; All case studies": "&lt; Alle Referenzen",
         "<span class=\"dot\" aria-hidden=\"true\"></span> Case study · AI Adoption &amp; Training": "<span class=\"dot\" aria-hidden=\"true\"></span> Referenz · KI-Einführung &amp; Schulung",
         "Bringing a freelancer community up to speed on AI, <em>from the first prompt to the autonomous agent</em>.": "Eine Freelancer-Community an KI heranführen, <em>vom ersten Prompt bis zum autonomen Agenten</em>.",
