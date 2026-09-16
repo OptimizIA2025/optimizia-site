@@ -10,7 +10,7 @@
 # sur /usr/share/nginx/html, sinon chaque deploiement passe au vert sans
 # rien changer en ligne (piege mesure le 12/08/2026 sur Site_OptimizIA).
 
-FROM nginx:1.27-alpine
+FROM nginx:1.31-alpine
 
 COPY site/ /usr/share/nginx/html/
 COPY mta-sts.txt /usr/share/nginx/html/.well-known/mta-sts.txt
