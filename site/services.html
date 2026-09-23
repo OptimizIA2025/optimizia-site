@@ -8,19 +8,19 @@
     <script src="/assets/oia-theme.js?v=1"></script>
     <link rel="canonical" href="https://www.optimizia.xyz/services.html">
     <title>Our services: diagnostic, PoC & MVP, copiloting | OptimizIA.xyz</title>
-    <meta name="description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and price ranges.">
+    <meta name="description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and starting prices.">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="OptimizIA.xyz">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Our services: diagnostic, PoC & MVP, copiloting | OptimizIA.xyz">
-    <meta property="og:description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and price ranges.">
+    <meta property="og:description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and starting prices.">
     <meta property="og:url" content="https://www.optimizia.xyz/services.html">
     <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our services: diagnostic, PoC & MVP, copiloting | OptimizIA.xyz">
-    <meta name="twitter:description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and price ranges.">
+    <meta name="twitter:description" content="The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and starting prices.">
     <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
 
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,7 +40,7 @@
           "@id": "https://www.optimizia.xyz/services.html#page",
           "url": "https://www.optimizia.xyz/services.html",
           "name": "3 clear formats, tailored to your situation",
-          "description": "The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and price ranges.",
+          "description": "The 3 OptimizIA.xyz formats in detail: AI & Knowledge diagnostic, PoC and MVP, copiloting and continuous improvement. Deliverables, durations and starting prices.",
           "inLanguage": "en",
           "isPartOf": {
             "@id": "https://www.optimizia.xyz/#website"
@@ -69,6 +69,83 @@
       ]
     }
     </script>
+    <style>
+        /* Sections sous les offres : deroule, engagements, questions prix, ressources.
+           Tokens de site.css, donc mode sombre inclus. */
+        #top { padding-bottom: 96px; }
+        .sv-sec { padding: 96px 0; }
+        .sv-head { max-width: 680px; margin: 0 auto 52px; text-align: center; }
+        .sv-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 12px; }
+        .sv-head p { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.7; }
+
+        .sv-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px; }
+        .sv-steps li { position: relative; }
+        .sv-steps li:not(:last-child)::after {
+            content: ""; position: absolute; top: 23px; left: 64px; right: -20px; height: 2px;
+            background: linear-gradient(90deg, rgba(249, 115, 22, 0.45), rgba(249, 115, 22, 0.08));
+        }
+        .sv-step-num {
+            width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+            background: var(--bg); border: 2px solid var(--orange); color: var(--orange);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600;
+        }
+        .sv-steps li:first-child .sv-step-num { border-color: var(--blue); color: var(--blue); }
+        .sv-steps h3 { font-size: 1.12rem; margin: 20px 0 8px; }
+        .sv-steps p { font-size: 0.94rem; line-height: 1.65; color: var(--text-secondary); }
+
+        .sv-incl { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px; align-items: start; }
+        .sv-incl-side h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 14px; }
+        .sv-incl-side > p { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.7; margin-bottom: 40px; }
+        .sv-proof { padding: 28px 30px; background: var(--bg); border: 1px solid var(--border); border-radius: 18px; }
+        .sv-incl-list { list-style: none; margin: 0; padding: 0; }
+        .sv-incl-list li { position: relative; padding: 22px 0 22px 46px; border-top: 1px solid var(--border); }
+        .sv-incl-list li:last-child { border-bottom: 1px solid var(--border); }
+        .sv-incl-list li::before {
+            content: "✓"; position: absolute; left: 0; top: 22px; width: 28px; height: 28px; border-radius: 50%;
+            display: grid; place-items: center; background: var(--orange-light); color: var(--orange);
+            font-size: 0.85rem; font-weight: 700;
+        }
+        .sv-incl-list h3 { font-size: 1.08rem; margin-bottom: 6px; }
+        .sv-incl-list p { font-size: 0.95rem; line-height: 1.65; color: var(--text-secondary); }
+
+        .sv-faq { max-width: 780px; margin: 0 auto; }
+        .sv-faq details { border-top: 1px solid var(--border); }
+        .sv-faq details:last-child { border-bottom: 1px solid var(--border); }
+        .sv-faq summary {
+            list-style: none; cursor: pointer; position: relative; padding: 22px 44px 22px 0;
+            font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.08rem; color: var(--text);
+        }
+        .sv-faq summary::-webkit-details-marker { display: none; }
+        .sv-faq summary::after {
+            content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+            font-size: 1.5rem; line-height: 1; color: var(--orange); transition: transform 0.2s;
+        }
+        .sv-faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+        .sv-faq summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 4px; }
+        .sv-faq details p { padding: 0 44px 24px 0; color: var(--text-secondary); line-height: 1.75; }
+
+        .sv-res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+        .sv-res h3 { font-size: 1.1rem; margin-bottom: 14px; }
+        .sv-res ul { list-style: none; margin: 0; padding: 0; }
+        .sv-res li { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-top: 1px solid var(--border); }
+        .sv-res a { font-weight: 600; color: var(--text); text-decoration: none; }
+        .sv-res a:hover { color: var(--orange); }
+        .sv-res a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+        .sv-res li span { font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); }
+
+        @media (max-width: 980px) {
+            .sv-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+            .sv-steps li::after { display: none; }
+            .sv-incl { grid-template-columns: 1fr; gap: 40px; }
+            .sv-res { grid-template-columns: 1fr; gap: 36px; }
+        }
+        @media (max-width: 600px) {
+            #top { padding-bottom: 64px; }
+            .sv-sec { padding: 64px 0; }
+            .sv-steps { grid-template-columns: 1fr; }
+            .sv-proof { padding: 24px 22px; }
+        }
+    </style>
 </head>
 <body>
 <nav id="navbar">
@@ -113,7 +190,7 @@
                 <span class="offer-num">01 /</span>
                 <h3>AI & Knowledge Diagnostic</h3>
                 <span class="offer-duration">1 to 3 weeks</span>
-                <span class="offer-price">€3,000 – €5,000 <span class="offer-price-unit">excl. VAT</span></span>
+                <span class="offer-price"><span class="offer-price-unit">From</span> €1,000 <span class="offer-price-unit">excl. VAT</span></span>
                 <span class="offer-price-note">Fixed fee, depending on the scope agreed together.</span>
                 <p class="offer-tagline">For leaders wondering <span class="highlight-text">"where do I start"</span> with AI, without scattering their efforts.</p>
                 <ul class="offer-features">
@@ -133,7 +210,7 @@
                 <span class="offer-num">02 /</span>
                 <h3>PoC and MVP</h3>
                 <span class="offer-duration">2 to 5 weeks (depending on the project)</span>
-                <span class="offer-price">€8,000 – €15,000 <span class="offer-price-unit">excl. VAT</span></span>
+                <span class="offer-price"><span class="offer-price-unit">From</span> €2,500 <span class="offer-price-unit">excl. VAT</span></span>
                 <span class="offer-price-note">Fixed fee, depending on use-case complexity.</span>
                 <p class="offer-tagline">For <span class="highlight-text">companies with an identified use case</span>, ready to move from intent to action.</p>
                 <ul class="offer-features">
@@ -153,7 +230,7 @@
                 <span class="offer-num">03 /</span>
                 <h3>Copiloting & Continuous Improvement</h3>
                 <span class="offer-duration">Long-term engagement</span>
-                <span class="offer-price">€1,500 – €4,000 <span class="offer-price-unit">excl. VAT / month</span></span>
+                <span class="offer-price"><span class="offer-price-unit">From</span> €100 <span class="offer-price-unit">excl. VAT / month</span></span>
                 <span class="offer-price-note">Depending on how many automations are monitored.</span>
                 <p class="offer-tagline">To secure and amplify the gains, OptimizIA.xyz handles deployment, maintenance and tech watch for your internal teams. Sample deliverables:</p>
                 <ul class="offer-features">
@@ -172,11 +249,134 @@
     </div>
 </section>
 
-<section id="levers">
+<section class="sv-sec">
     <div class="container">
-        <div class="offers-header reveal" style="margin-bottom:80px;">
-            <h2>How do these formats work under the hood?</h2>
-            <p>Diagnosis, automation, knowledge management: the three levers behind every engagement. <a href="/levers.html" class="solution-link no-arrow" style="display:inline-flex;">Read the 3 levers in detail</a></p>
+        <div class="sv-head reveal">
+            <h2>How an engagement runs</h2>
+            <p>Four steps, and at each one you decide whether to go further.</p>
+        </div>
+        <ol class="sv-steps reveal">
+            <li>
+                <span class="sv-step-num">01</span>
+                <h3>A 20-minute call</h3>
+                <p>Free and without a sales pitch: you describe your situation, we tell you honestly whether AI can help.</p>
+            </li>
+            <li>
+                <span class="sv-step-num">02</span>
+                <h3>A written proposal</h3>
+                <p>Scope, deliverables, timeline and a fixed price, in writing, before any work starts.</p>
+            </li>
+            <li>
+                <span class="sv-step-num">03</span>
+                <h3>A narrow scope first</h3>
+                <p>We start small so you can check the value before anything grows. For a PoC, 13 days on average to a working MVP.</p>
+            </li>
+            <li>
+                <span class="sv-step-num">04</span>
+                <h3>Handover or copiloting</h3>
+                <p>Documentation and training so your team runs it on its own. If you prefer, we stay on to maintain and extend it.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="sv-sec section-alt">
+    <div class="container sv-incl">
+        <div class="sv-incl-side reveal">
+            <h2>Included in every engagement</h2>
+            <p>Whatever the format and the budget, these five points are not options.</p>
+            <figure class="reco sv-proof">
+                <blockquote>“Rémy helped us in structuring the message to our local interfaces, he gave the momentum and the tools to create a collaborative network and allow us to develop it after his departure.”</blockquote>
+                <figcaption>
+                    <span class="reco-name">Michel Claire</span>
+                    <span>Business Process Owner, Equipment &amp; Spares, bioMérieux</span>
+                    <span>Worked with Rémy at bioMérieux · January 2020</span>
+                    <a class="reco-src" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">See on LinkedIn</a>
+                </figcaption>
+            </figure>
+        </div>
+        <ul class="sv-incl-list reveal">
+            <li>
+                <h3>A fixed price, set before we start</h3>
+                <p>Every format is billed as a fixed fee written into the proposal. No hourly meter running in the background.</p>
+            </li>
+            <li>
+                <h3>You keep what we build</h3>
+                <p>Workflows, configuration and documentation are handed over to you. We choose tools your teams can maintain on their own, with no proprietary lock-in.</p>
+            </li>
+            <li>
+                <h3>Hosting that fits your setup</h3>
+                <p>Workflows run on your existing infrastructure, or on our servers located in France if you would rather we host and maintain them for you.</p>
+            </li>
+            <li>
+                <h3>Gains you can measure</h3>
+                <p>Every automation ships with its own measurement: time saved, volume processed, error rate.</p>
+            </li>
+            <li>
+                <h3>A team that can run it without us</h3>
+                <p>Onboarding guide, documentation and training are part of the delivery, not an extra.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="sv-sec">
+    <div class="container">
+        <div class="sv-head reveal">
+            <h2>Questions about pricing</h2>
+        </div>
+        <div class="sv-faq reveal">
+            <details>
+                <summary>Why “from” rather than a set price?</summary>
+                <p>Because the price depends on your scope: how many processes, how many tools to connect, how much data. After the first call you get a fixed quote, before any work starts.</p>
+            </details>
+            <details>
+                <summary>Do we have to start with the diagnostic?</summary>
+                <p>No. If you already know which process you want to automate, we can go straight to a PoC. The diagnostic is for when you don't yet know where AI will pay off.</p>
+            </details>
+            <details>
+                <summary>Can we stop after one step?</summary>
+                <p>Yes. Each format stands on its own, and the diagnostic deliverable stays usable even if you implement it without us.</p>
+            </details>
+            <details>
+                <summary>What comes on top of the price?</summary>
+                <p>Software subscriptions and API usage, paid directly to the providers. For an SME workload they usually come to a few tens of euros per month, and we list them in the proposal.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section class="sv-sec section-alt">
+    <div class="container">
+        <div class="sv-head reveal">
+            <h2>Go further before we talk</h2>
+            <p>How we work, what we have already built, and guides to prepare your project.</p>
+        </div>
+        <div class="sv-res reveal">
+            <div>
+                <h3>The agency</h3>
+                <ul>
+                    <li><a href="/levers.html">The 3 levers in detail</a><span>Diagnose, automate, capitalise: what sits under every format.</span></li>
+                    <li><a href="/about.html">Who we are</a><span>The two founders, their background and how we work.</span></li>
+                    <li><a href="/tools/">Free SEO &amp; GEO audit</a><span>SEOPlus! scores your website out of 100 in 30 seconds.</span></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Case studies</h3>
+                <ul>
+                    <li><a href="/case-studies/lead-monitoring/">Automated market intelligence</a><span>Monitoring that turns into qualified prospects every morning.</span></li>
+                    <li><a href="/case-studies/automated-reporting/">Automated reporting</a><span>From raw data to a distributed report, with no manual work.</span></li>
+                    <li><a href="/case-studies/ai-training/">AI training</a><span>An AI adoption workshop, from the first prompt to the autonomous agent.</span></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Guides</h3>
+                <ul>
+                    <li><a href="/pricing-roi/">What AI really costs a small business</a><span>Price ranges, hidden costs and how to measure ROI honestly.</span></li>
+                    <li><a href="/ai-integration/">Bringing AI into your business</a><span>Start from the problem, pilot small, get the team on board.</span></li>
+                    <li><a href="/process-automation/">Process automation for small businesses</a><span>What deserves automating, and how to keep it running.</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>

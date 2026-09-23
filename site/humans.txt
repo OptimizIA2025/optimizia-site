@@ -12,7 +12,7 @@ Romain Ben — Co-fondateur & Ingénieur IA
 
 /* SITE */
   Domain: www.optimizia.xyz
-  Founded: 2022
+  Founded: 2025
   Languages: Français, English
   Standards: HTML5, CSS3, JSON-LD Schema.org, llms.txt, humans.txt, GEO
   Contact: contact@optimizia.xyz

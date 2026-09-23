@@ -2,9 +2,9 @@
 
 > French AI, automation and Knowledge Management agency for small businesses and SMEs up to 250 employees. Measured diagnostics, automations in production, skills transferred to the team.
 
-OptimizIA.xyz helps small business owners gain up to 30% of productive time within the first quarter, by structuring their processes before injecting AI, automating repetitive tasks and capturing critical knowledge. The agency was founded in 2022 by Rémy Ginoux and Romain Ben. Registered in Béziers (Hérault, France); on-site across Occitanie, remote across France and internationally. Contact: contact@optimizia.xyz
+OptimizIA.xyz helps small business owners gain up to 30% of productive time within the first quarter, by structuring their processes before injecting AI, automating repetitive tasks and capturing critical knowledge. The agency was founded in 2025 by Rémy Ginoux and Romain Ben. Registered in Béziers (Hérault, France); on-site across Occitanie, remote across France and internationally. Contact: contact@optimizia.xyz
 
-Three independent engagement formats: AI & Knowledge Diagnostic (1 to 3 weeks, 3,000 to 5,000 € excl. VAT), AI Sprint from Proof of Concept to MVP (2 to 5 weeks, 8,000 to 15,000 € excl. VAT, 13 days on average between validated PoC and MVP in production), Continuous improvement co-piloting (1,500 to 4,000 € excl. VAT per month). Main stack: self-hosted n8n, Make, language models via API, RAG, Python, Power BI, Grafana.
+Three independent engagement formats: AI & Knowledge Diagnostic (1 to 3 weeks, from 1,000 € excl. VAT), AI Sprint from Proof of Concept to MVP (2 to 5 weeks, from 2,500 € excl. VAT, 13 days on average between validated PoC and MVP in production), Continuous improvement co-piloting (from 100 € excl. VAT per month). Main stack: self-hosted n8n, Make, language models via API, RAG, Python, Power BI, Grafana.
 
 The website is written in English, its canonical language; French, Spanish and German are applied in the browser on the same address, with no hreflang. One exception: https://www.optimizia.xyz/agence-ia-beziers.html is written and indexed in French, for the local query it serves.
 
