@@ -27,7 +27,7 @@ window.OIA_I18N.de = {
         "Most requested": "Am meisten gefragt",
         "PoC and MVP": "PoC und MVP",
         "2 to 5 weeks (depending on the project)": "2 bis 5 Wochen (je nach Projekt)",
-        "<span class=\"offer-price-unit\">From</span> €2,500 <span class=\"offer-price-unit\">excl. VAT</span>": "<span class=\"offer-price-unit\">Ab</span> 2.500 <span class=\"offer-price-unit\">€ netto</span>",
+        "<span class=\"offer-price-unit\">From</span> €1,500 <span class=\"offer-price-unit\">excl. VAT</span>": "<span class=\"offer-price-unit\">Ab</span> 1.500 <span class=\"offer-price-unit\">€ netto</span>",
         "Fixed fee, depending on use-case complexity.": "Pauschalpreis, je nach Komplexität des Anwendungsfalls.",
         "For <span class=\"highlight-text\">companies with an identified use case</span>, ready to move from intent to action.": "Für <span class=\"highlight-text\">Unternehmen mit einem festgelegten Anwendungsfall</span>, bereit, von der Absicht zur Umsetzung überzugehen.",
         "Detailed scoping and use-case design": "Detailliertes Scoping und Konzeption des Anwendungsfalls",
