@@ -61,6 +61,7 @@
     }
     </script>
 
+    <script src="/assets/oia-i18n.js?v=6" data-base="/i18n/" data-page="seo-seo-audit-example" defer></script>
 </head>
 <body>
 
@@ -73,6 +74,7 @@
             <a href="/blog/">Blog</a>
             <a href="/about.html">About</a>
             <a href="/contact.html" class="nav-cta">Book a call</a>
+            <div class="lang-toggle" data-lang-picker></div>
         </div>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
             <span></span><span></span><span></span>
@@ -88,6 +90,7 @@
     <a href="/blog/">Blog</a>
     <a href="/about.html">About</a>
     <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
 <main class="editorial-body bg-mesh">
@@ -108,7 +111,7 @@
         <aside class="post-aside">
           <div class="post-aside-inner">
             <div class="aside-box">
-              <b class="aside-title">Share this article</b>
+              <b class="aside-title"><span>Share this article</span></b>
               <div class="post-share" aria-label="Share this article">
                 <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Fseo%2Fseo-audit-example%2F" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.06c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.88V21H9z"/></svg></a>
                 <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Fseo%2Fseo-audit-example%2F&amp;text=SEO%20audit%3A%20what%20does%20a%20useful%20report%20look%20like%3F" target="_blank" rel="noopener" aria-label="Share on X" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.9l-4.62-6.04L5.94 21H2.92l7.06-8.07L2.4 3h6.05l4.18 5.52L17.53 3zm-1.06 16.2h1.67L7.6 4.7H5.81l10.66 14.5z"/></svg></a>
@@ -116,7 +119,7 @@
               </div>
             </div>
             <div class="aside-box">
-              <b class="aside-title">Contents</b>
+              <b class="aside-title"><span>Contents</span></b>
               <nav class="post-toc" aria-label="Article contents">
                 <a href="#why-so-many-seo-audits-are-useless">Why are so many SEO audits useless?</a>
                 <a href="#the-4-elements-of-an-audit-that-actually-helps">The 4 elements of an audit that actually helps</a>
@@ -130,7 +133,7 @@
           </div>
         </aside>
         <div class="post-summary">
-          <b>In short</b>
+          <b><span>In short</span></b>
           
           <p>A useful SEO audit contains 4 things: measured facts, a precise fix for every finding, clear prioritization, and a deliverable you can act on without being an expert. A report that gives you a grade without showing where it comes from is a sales document, not an audit.</p>
         </div>
@@ -138,7 +141,7 @@
           <div class="post-rail-inner">
             <div class="post-rail-card">
               <span class="post-rail-tag">SEOPlus!</span>
-              <b>Is your website visible in Google and in AI answers?</b>
+              <b><span>Is your website visible in Google and in AI answers?</span></b>
               <p>161 SEO and GEO checks, a score out of 100 and the action plan that goes with it.</p>
               <a class="btn btn-primary" href="/tools/seoplus/">Analyze my website</a>
               <span class="post-rail-note">30 seconds. Free diagnostic, no credit card.</span>
@@ -194,7 +197,7 @@
             <p>And in both cases, stay in control: an audit tells you what to do, it does not force you to buy the fixes from whoever wrote it. An honest provider lets you leave with the plan.</p>
         </div>
         <nav class="silo-more" aria-label="More in SEO">
-          <b class="silo-more-title">More in SEO</b>
+          <b class="silo-more-title"><span>More in SEO</span></b>
           <ul class="silo-more-list">
             <li><a href="/seo/ecommerce-seo-audit.html"><b>Ecommerce SEO audit: the complete method</b><span>Faceted navigation, pagination, product structured data: the six steps of a store audit, the five mistakes to avoid, and the business-first angle most audits skip.</span></a></li>
             <li><a href="/seo/website-invisible-on-google/"><b>Why your website doesn't show up on Google</b><span>The 10-second test to know if you are indexed, then the 7 measurable causes and their exact fixes.</span></a></li>
@@ -330,12 +333,14 @@ document.querySelectorAll(".share-copy").forEach(function (b) {
     b.addEventListener("click", function () {
         navigator.clipboard.writeText(location.href).then(function () {
             b.classList.add("copied");
-            b.setAttribute("aria-label", "Link copied");
-            b.setAttribute("title", "Link copied");
+            var t = window.OIA ? OIA.t("Link copied") : "Link copied";
+            b.setAttribute("aria-label", t);
+            b.setAttribute("title", t);
             setTimeout(function () {
                 b.classList.remove("copied");
-                b.setAttribute("aria-label", "Copy link");
-                b.setAttribute("title", "Copy link");
+                var u = window.OIA ? OIA.t("Copy link") : "Copy link";
+                b.setAttribute("aria-label", u);
+                b.setAttribute("title", u);
             }, 2000);
         });
     });

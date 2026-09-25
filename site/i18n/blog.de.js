@@ -1,5 +1,5 @@
 /* blog/index.html — de. Cle = texte anglais exact du HTML, espaces normalises.
-   Cree le 2026-09-24 : le hub du blog passe en quatre langues, les articles restent en anglais. */
+   Cree le 2026-09-24 : le hub du blog passe en quatre langues. Articles traduits le 2026-09-25 (T-105). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -36,7 +36,7 @@ window.OIA_I18N.de = {
         "GEO and SEO blog | OptimizIA.xyz": "SEO- und GEO-Blog | OptimizIA.xyz",
         "The blog": "Der Blog",
         "Get visible on Google. Get cited by AI.": "Sichtbar bei Google. Zitiert von der KI.",
-        "Practical guides written for small and mid-size businesses: what changes with ChatGPT, Perplexity and Google AI Overviews, and what to actually do on your website. Every piece of advice maps to a check in our audit. Each article lives in its silo: <a href=\"/seo/\">SEO</a> or <a href=\"/geo/\">GEO</a>.": "Praxisleitfäden für kleine und mittlere Unternehmen: was sich mit ChatGPT, Perplexity und Googles AI Overviews ändert und was Sie auf Ihrer Website wirklich tun sollten. Jeder Rat entspricht einer Prüfung unseres Audits. Jeder Artikel lebt in seinem Silo: <a href=\"/seo/\">SEO</a> oder <a href=\"/geo/\">GEO</a>. Die Artikel sind auf Englisch verfasst.",
+        "Practical guides written for small and mid-size businesses: what changes with ChatGPT, Perplexity and Google AI Overviews, and what to actually do on your website. Every piece of advice maps to a check in our audit. Each article lives in its silo: <a href=\"/seo/\">SEO</a> or <a href=\"/geo/\">GEO</a>.": "Praxisleitfäden für kleine und mittlere Unternehmen: was sich mit ChatGPT, Perplexity und Googles AI Overviews ändert und was Sie auf Ihrer Website wirklich tun sollten. Jeder Rat entspricht einer Prüfung unseres Audits. Jeder Artikel lebt in seinem Silo: <a href=\"/seo/\">SEO</a> oder <a href=\"/geo/\">GEO</a>.",
         "All articles": "Alle Artikel",
         "Authority &amp; trust": "Autorität &amp; Vertrauen",
         "GEO &amp; AI": "GEO &amp; KI",
@@ -75,6 +75,9 @@ window.OIA_I18N.de = {
         "Who these bots visiting your website are, what blocking them really costs you, and the exact lines to put in your robots.txt.": "Wer diese Bots sind, die Ihre Website besuchen, was Sie ein Blockieren wirklich kostet und die genauen Zeilen für Ihre robots.txt.",
         "How long does SEO take to produce results?": "Wie lange dauert es, bis SEO Ergebnisse bringt?",
         "Technical fixes in days, content in 2-3 months, authority in 6-12 months: the honest timeline, and how to measure without fooling yourself.": "Technische Korrekturen in Tagen, Inhalte in 2-3 Monaten, Autorität in 6-12 Monaten: der ehrliche Zeitplan und wie Sie messen, ohne sich etwas vorzumachen.",
+        "brand: unknown": "Marke: unbekannt",
+        "cited ✓": "zitiert ✓",
+        "3 · 6 · 12 months": "3 · 6 · 12 Monate",
     },
     attr: {
         ".blog-filter": { "aria-label": "Artikel nach Thema filtern" }

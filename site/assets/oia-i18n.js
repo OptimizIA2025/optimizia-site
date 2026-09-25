@@ -100,7 +100,8 @@
 
     /* ─────────── Collecte ─────────── */
 
-    var SEL = 'h1, h2, h3, h4, h5, p, li, span, a, button, dt, dd, div, title, option, label, figcaption, summary, th, td, blockquote';
+    /* text : les etiquettes des vignettes SVG du blog. */
+    var SEL = 'h1, h2, h3, h4, h5, p, li, span, a, button, dt, dd, div, title, option, label, figcaption, summary, th, td, blockquote, text';
     function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
 
     /* L'anglais d'origine est memorise au premier passage : passer du francais

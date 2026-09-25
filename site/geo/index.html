@@ -74,6 +74,7 @@
     }
     </script>
 
+    <script src="/assets/oia-i18n.js?v=6" data-base="/i18n/" data-page="geo" defer></script>
 </head>
 <body>
 
@@ -86,6 +87,7 @@
             <a href="/blog/">Blog</a>
             <a href="/about.html">About</a>
             <a href="/contact.html" class="nav-cta">Book a call</a>
+            <div class="lang-toggle" data-lang-picker></div>
         </div>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
             <span></span><span></span><span></span>
@@ -101,6 +103,7 @@
     <a href="/blog/">Blog</a>
     <a href="/about.html">About</a>
     <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
 <main class="editorial-body bg-mesh">
@@ -111,7 +114,7 @@
           <h1>Getting visible in ChatGPT, Perplexity and AI answers: the GEO guide</h1>
         </div>
         <div class="post-summary">
-          <b>In short</b>
+          <b><span>In short</span></b>
           
           <p>A growing share of your customers no longer type "plumber Lyon" into Google: they ask ChatGPT or Perplexity to recommend someone. GEO (Generative Engine Optimization) means making sure the answer mentions you. Three projects, in order: let AI crawlers in, make your website readable and citable for them, then build the reputation that earns their trust. This guide connects our four detailed articles on the subject.</p>
         </div>
@@ -161,7 +164,7 @@
             <li>Check access: robots.txt, firewall, llms.txt present and up to date.</li>
             <li>Repeat the test in three months, same questions, and compare.</li>
           </ol>
-          <p>Our <a href="/tools/seoplus/">free audit</a> automates the measurable part: 23 checks dedicated to AI visibility (crawler access, llms.txt, structured data, citability), out of the audit's 107. You leave with a score and the exact list of what blocks you.</p>
+          <p>Our <a href="/tools/seoplus/">free audit</a> automates the measurable part: 23 checks dedicated to AI visibility (crawler access, llms.txt, structured data, citability), out of the audit's 161. You leave with a score and the exact list of what blocks you.</p>
         </div>
         <div class="pilier-articles">
           <h2>The articles in this guide</h2>
@@ -222,7 +225,7 @@
               <rect x="104" y="88" width="96" height="5" rx="2.5" fill="#475569"/>
               <rect x="104" y="100" width="72" height="5" rx="2.5" fill="#475569"/>
               <circle cx="236" cy="98" r="3" fill="#38BDF8"/><circle cx="248" cy="98" r="3" fill="#38BDF8" opacity=".6"/><circle cx="260" cy="98" r="3" fill="#38BDF8" opacity=".3"/>
-              <text x="160" y="162" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#94A3B8">marque : inconnue</text>
+              <text x="160" y="162" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#94A3B8">brand: unknown</text>
             </svg></div>
             <span class="blog-card-tag">GEO &amp; AI</span>
             <h2>Why ChatGPT doesn't know your brand (and how to fix it)</h2>
@@ -242,7 +245,7 @@
               <path d="M248 54l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#FDBA74"/>
               <path d="M270 96l2.6 6.4 6.4 2.6-6.4 2.6-2.6 6.4-2.6-6.4-6.4-2.6 6.4-2.6z" fill="#38BDF8"/>
               <rect x="216" y="128" width="66" height="22" rx="11" fill="none" stroke="#F97316"/>
-              <text x="249" y="143" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" font-weight="700" fill="#FDBA74">cité ✓</text>
+              <text x="249" y="143" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" font-weight="700" fill="#FDBA74">cited ✓</text>
             </svg></div>
             <span class="blog-card-tag">GEO &amp; AI</span>
             <h2>GEO: how to get cited by ChatGPT, Perplexity and Google AI Overviews</h2>
@@ -399,5 +402,14 @@ document.addEventListener('DOMContentLoaded', function() {
      couche 3 sous consentement. -->
 <script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
 <script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script>
+/* Les dates des cartes suivent la langue affichee : oia-i18n.js n'indexe pas les <time>. */
+document.addEventListener("oia:lang", function (e) {
+    var fmt = new Intl.DateTimeFormat(e.detail || "en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+    document.querySelectorAll(".blog-card time[datetime]").forEach(function (t) {
+        t.textContent = fmt.format(new Date(t.getAttribute("datetime") + "T00:00:00Z"));
+    });
+});
+</script>
 </body>
 </html>
