@@ -198,6 +198,9 @@ window.OIA_I18N.fr = {
         "Rémy's direct manager at Volvo Group · July 2015": "Responsable direct de Rémy chez Volvo Group · juillet 2015",
         "“Rémy helped us in structuring the message to our local interfaces, he gave the momentum and the tools to create a collaborative network and allow us to develop it after his departure.”": "« Rémy nous a aidés à structurer le message destiné à nos interlocuteurs locaux. Il a donné l'élan et les outils pour créer un réseau collaboratif, et nous a permis de le développer après son départ. »",
         "Worked with Rémy at bioMérieux · January 2020": "A travaillé avec Rémy chez bioMérieux · janvier 2020",
+        "<strong>Diagnose before automating</strong> <span>Mapping of blockers, identification of priority AI levers</span>": "<strong>Diagnostiquer avant d'automatiser</strong> <span>Cartographie des freins, identification des leviers IA prioritaires</span>",
+        "<strong>Automate what's slowing you down</strong> <span>n8n/Make workflows, AI assistants, RAG over your business data</span>": "<strong>Automatiser ce qui vous ralentit</strong> <span>Workflows n8n/Make, assistants IA, RAG sur vos données métier</span>",
+        "<strong>Secure and capitalise on your know-how</strong> <span>Knowledge Management + AI = an actionable corporate memory</span>": "<strong>Sécuriser et capitaliser vos savoirs</strong> <span>Knowledge Management + IA = mémoire d'entreprise exploitable</span>",
     },
     attr: {}
 };

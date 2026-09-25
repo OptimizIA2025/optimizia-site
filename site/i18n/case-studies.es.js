@@ -55,6 +55,7 @@ window.OIA_I18N.es = {
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
         "Legal Notice": "Aviso legal",
+        "<b>In short</b> <p>Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>": "<b>En resumen</b> <p>Cinco proyectos entregados por OptimizIA.xyz, descritos sin adornos: el problema de partida, la mecánica construida, las herramientas utilizadas y lo que cambia en el día a día. Dos son productos internos, tres se entregaron a clientes.</p>",
     },
     attr: {}
 };
