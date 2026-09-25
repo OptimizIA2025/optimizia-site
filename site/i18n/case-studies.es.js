@@ -1,5 +1,5 @@
-/* case-studies/index.html — es. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* case-studies, es. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : Realisations au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -14,9 +14,11 @@ window.OIA_I18N.es = {
         "Sales prospecting": "Prospección comercial",
         "Automated market intelligence turned into a prospect pipeline": "Vigilancia de mercado automatizada convertida en pipeline de prospectos",
         "Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.": "Una vigilancia que se convierte sola en prospectos cualificados cada mañana: recopilación, scoring, entrega en la bandeja de entrada, sin trabajo manual.",
+        "Client project": "Proyecto de cliente",
         "Reporting and dashboards": "Reporting y paneles",
         "From raw data streams to distributed reports": "Del flujo de datos en bruto al informe distribuido",
         "An analysis chain that produces and distributes its own reports, with readable dashboards instead of an over-engineered machine.": "Una cadena de análisis que produce y distribuye sus propios informes, con paneles legibles en lugar de una máquina sobredimensionada.",
+        "In-house product": "Producto propio",
         "AI adoption and training": "Adopción de la IA y formación",
         "Training a freelancer community on AI": "Formar a una comunidad de freelances en IA",
         "A workshop built from the first prompt to the autonomous agent, for professionals who had never gone beyond the chatbot stage.": "Un taller construido desde el primer prompt hasta el agente autónomo, para profesionales que nunca habían pasado de la etapa del chatbot.",
@@ -28,7 +30,7 @@ window.OIA_I18N.es = {
         "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Un producto construido internamente: una auditoría completa del sitio, visibilidad en los buscadores de IA incluida, entregada en 30 segundos con su plan de acción.",
         "Does your situation look like one of these pages?": "¿Su situación se parece a una de estas páginas?",
         "Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.": "Cada uno de estos proyectos partió de un problema simple de formular y penoso de vivir a diario. Veinte minutos suelen bastar para saber si el mismo mecanismo se aplica a su negocio.",
-        "Book a free diagnosis": "Reservar un diagnóstico gratuito",
+        "Reply within 72h · Occitanie, France &amp; International": "Respuesta en 72 h · Occitania, Francia e internacional",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
         "↗ Meet the founders": "↗ Conozca a los fundadores",
         "Company": "Empresa",
@@ -55,7 +57,6 @@ window.OIA_I18N.es = {
         "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>&amp; Internacional",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
         "Legal Notice": "Aviso legal",
-        "<b>In short</b> <p>Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>": "<b>En resumen</b> <p>Cinco proyectos entregados por OptimizIA.xyz, descritos sin adornos: el problema de partida, la mecánica construida, las herramientas utilizadas y lo que cambia en el día a día. Dos son productos internos, tres se entregaron a clientes.</p>",
     },
     attr: {}
 };

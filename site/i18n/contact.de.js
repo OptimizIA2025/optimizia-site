@@ -1,5 +1,5 @@
-/* contact.html — de. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* contact, de. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : Contact au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -12,6 +12,7 @@ window.OIA_I18N.de = {
         "<span class=\"dot\"></span>Agency available for new projects": "<span class=\"dot\"></span>Agentur nimmt neue Projekte an",
         "Let's talk about your <span>AI project</span>": "Sprechen wir über Ihr <span>KI-Projekt</span>",
         "20 minutes to analyse your context, identify the priority automation levers, and define together how OptimizIA.xyz can accelerate your performance. No commitment, 100% free.": "20 Minuten, um Ihren Kontext zu analysieren, die wichtigsten Automatisierungshebel zu erkennen und gemeinsam zu klären, wie OptimizIA.xyz Ihre Leistung beschleunigen kann. Unverbindlich, 100% kostenlos.",
+        "Pick your slot": "Wählen Sie Ihren Termin",
         "Why book a discovery call?": "Warum ein Erstgespräch buchen?",
         "Tailored diagnostic": "Individuelle Analyse",
         "We analyse your specific situation and identify the high-impact automation opportunities inside your organisation.": "Wir analysieren Ihre konkrete Situation und identifizieren die Automatisierungschancen mit der größten Wirkung in Ihrem Unternehmen.",
@@ -20,9 +21,8 @@ window.OIA_I18N.de = {
         "No commitment": "Unverbindlich",
         "A first strategic conversation to assess the potential. No sales pressure, just a professional exchange.": "Ein erstes strategisches Gespräch, um das Potenzial einzuschätzen. Kein Verkaufsdruck, nur ein fachlicher Austausch.",
         "Online booking": "Online-Buchung",
-        "Pick your slot": "Wählen Sie Ihren Termin",
         "The slots shown below sync in real time with our calendar. Pick the time that suits you.": "Die angezeigten Termine werden in Echtzeit mit unserem Kalender abgeglichen. Wählen Sie die Zeit, die Ihnen passt.",
-        "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"width:12px;height:12px;flex-shrink:0;\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path></svg> Home-made, 100% custom": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"width:12px;height:12px;flex-shrink:0;\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"></path></svg> Eigenbau, 100% maßgeschneidert",
+        "Home-made, 100% custom": "Eigenbau, 100% maßgeschneidert",
         "This widget, <span>we built it ourselves!</span>": "Dieses Widget <span>haben wir selbst gebaut!</span>",
         "Why settle for an off-the-shelf solution when you can have the \"haute couture\" version?": "Warum sich mit einer Lösung von der Stange begnügen, wenn die Maßanfertigung möglich ist?",
         "No generic template here, a 100% home-made solution that fits us perfectly. Our identity, our logic, our rules: that's the OptimizIA.xyz edge. Turning your ideas and ambitions into concrete solutions, tailored for you!": "Keine generische Vorlage, sondern eine zu 100% selbst gebaute Lösung, die perfekt zu uns passt. Unsere Identität, unsere Logik, unsere Regeln: genau das macht OptimizIA.xyz aus. Ihre Ideen und Ziele werden zu konkreten Lösungen, zugeschnitten auf Sie!",

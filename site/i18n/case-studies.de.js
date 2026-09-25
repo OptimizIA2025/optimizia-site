@@ -1,5 +1,5 @@
-/* case-studies/index.html — de. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* case-studies, de. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : Realisations au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -14,9 +14,11 @@ window.OIA_I18N.de = {
         "Sales prospecting": "Vertriebsakquise",
         "Automated market intelligence turned into a prospect pipeline": "Automatisierte Marktbeobachtung, verwandelt in eine Interessenten-Pipeline",
         "Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.": "Eine Marktbeobachtung, die sich jeden Morgen von selbst in qualifizierte Interessenten verwandelt: Sammlung, Scoring, Zustellung ins Postfach, ohne manuelle Arbeit.",
+        "Client project": "Kundenprojekt",
         "Reporting and dashboards": "Reporting und Dashboards",
         "From raw data streams to distributed reports": "Vom rohen Datenstrom zum verteilten Bericht",
         "An analysis chain that produces and distributes its own reports, with readable dashboards instead of an over-engineered machine.": "Eine Analysekette, die ihre Berichte selbst erstellt und verteilt, mit lesbaren Dashboards statt einer überkonstruierten Maschinerie.",
+        "In-house product": "Eigenes Produkt",
         "AI adoption and training": "KI-Einführung und Schulung",
         "Training a freelancer community on AI": "Eine Freelancer-Community in KI schulen",
         "A workshop built from the first prompt to the autonomous agent, for professionals who had never gone beyond the chatbot stage.": "Ein Workshop vom ersten Prompt bis zum autonomen Agenten, für Berufstätige, die nie über das Chatbot-Stadium hinausgekommen waren.",
@@ -28,7 +30,7 @@ window.OIA_I18N.de = {
         "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Ein intern gebautes Produkt: ein vollständiges Website-Audit, KI-Suchsichtbarkeit inklusive, geliefert in 30 Sekunden mit Aktionsplan.",
         "Does your situation look like one of these pages?": "Erkennen Sie Ihre Situation auf einer dieser Seiten wieder?",
         "Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.": "Jedes dieser Projekte begann mit einem Problem, das einfach zu benennen und im Alltag mühsam zu ertragen war. Zwanzig Minuten reichen meist, um zu wissen, ob derselbe Mechanismus auch bei Ihnen greift.",
-        "Book a free diagnosis": "Kostenlose Analyse buchen",
+        "Reply within 72h · Occitanie, France &amp; International": "Antwort innerhalb von 72 Std. · Okzitanien, Frankreich &amp; International",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Expertennetzwerk für KI, Automatisierung und Knowledge Management. Wir unterstützen Führungskräfte im Mittelstand dabei, ihre Prozesse umzubauen, für mehr Produktivität und weniger Reibung.",
         "↗ Meet the founders": "↗ Die Gründer kennenlernen",
         "Company": "Unternehmen",
@@ -55,7 +57,6 @@ window.OIA_I18N.de = {
         "Béziers · Occitanie, France<br>&amp; International": "Okzitanien, Frankreich<br>&amp; International",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten ·",
         "Legal Notice": "Impressum",
-        "<b>In short</b> <p>Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>": "<b>Kurz gesagt</b> <p>Fünf Projekte von OptimizIA.xyz, beschrieben ohne Beschönigung: das Ausgangsproblem, die gebaute Mechanik, die eingesetzten Tools und was sich im Alltag ändert. Zwei sind interne Produkte, drei wurden an Kunden geliefert.</p>",
     },
     attr: {}
 };

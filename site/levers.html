@@ -28,9 +28,6 @@
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
     <link rel="stylesheet" href="/assets/css/index-en.39634e9f.css">
 
-    <script src="/assets/vendor/gsap.min.js" defer></script>
-    <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,91 +66,55 @@
       ]
     }
     </script>
+    <link rel="stylesheet" href="/assets/css/v7.css?v=1">
+    <link rel="stylesheet" href="/assets/css/pages.css?v=1">
     <style>
-        /* Page leviers : un chapitre par levier, la these en grand a gauche,
-           le detail a droite. Tokens de site.css, donc mode sombre inclus. */
-        .lv-hero { padding: 56px 0 48px; }
-        #diagnose { padding-top: 64px; }
-        .lv-intro { max-width: 720px; margin: 0 auto 56px; text-align: center; }
-        .lv-intro h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); margin-bottom: 16px; }
-        .lv-intro p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
-
-        .lv-chain {
-            list-style: none; margin: 0 auto; padding: 0; max-width: 940px;
-            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); position: relative;
-        }
-        .lv-chain::before {
-            content: ""; position: absolute; top: 23px; left: 16.7%; right: 16.7%; height: 2px;
-            background: linear-gradient(90deg, var(--blue), var(--orange));
-        }
-        .lv-chain a {
-            position: relative; display: flex; flex-direction: column; align-items: center;
-            text-align: center; gap: 14px; padding: 0 14px; color: inherit; text-decoration: none;
-        }
-        .lv-chain-num {
-            width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
-            background: var(--bg); border: 2px solid var(--orange); color: var(--orange);
-            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600;
-            transition: background 0.2s, color 0.2s;
-        }
+        /* Leviers V7 : la chaine des 3 leviers, puis un chapitre par levier (these a gauche, detail a droite). */
+        .lv-chain { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+        .lv-chain li { position: relative; }
+        .lv-chain li:not(:last-child)::after { content: ""; position: absolute; top: 21px; left: 60px; right: -16px; height: 2px; background: var(--hm-grad); opacity: .55; }
+        .lv-chain a { display: grid; gap: 14px; color: inherit; }
+        .lv-chain-num { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-card); border: 2px solid var(--orange); color: var(--orange); font-family: var(--hm-mono); font-size: .8rem; font-weight: 600; transition: background .2s, color .2s, border-color .2s; }
         .lv-chain li:first-child .lv-chain-num { border-color: var(--blue); color: var(--blue); }
-        .lv-chain a:hover .lv-chain-num, .lv-chain a:focus-visible .lv-chain-num { background: var(--orange); border-color: var(--orange); color: #fff; }
-        .lv-chain a:focus-visible { outline: none; }
-        .lv-chain-txt { display: flex; flex-direction: column; gap: 4px; }
-        .lv-chain-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); }
-        .lv-chain-sub { font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); }
+        .lv-chain a:hover .lv-chain-num { background: var(--orange); border-color: var(--orange); color: #fff; }
+        .lv-chain-txt { display: grid; gap: 4px; }
+        .lv-chain-title { font-family: var(--hm-display); font-weight: 700; font-size: 1.2rem; color: var(--text); }
+        .lv-chain-sub { font-size: .92rem; color: var(--text-secondary); }
 
-        .lv { padding: 104px 0; scroll-margin-top: 64px; }
-        .lv-alt { background: var(--bg-alt); }
-        .lv-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px; align-items: start; }
-        .lv-side { position: sticky; top: 104px; }
-        .lv-num {
-            display: block; margin-bottom: 12px; color: var(--orange);
-            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.08em;
-        }
-        .lv-side h2 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); margin-bottom: 18px; color: var(--text-secondary); }
-        .lv-thesis {
-            font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--text);
-            font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.12; letter-spacing: -0.03em;
-            margin-bottom: 36px; text-wrap: balance;
-        }
-        .lv-facts { margin: 0; border-top: 1px solid var(--border); }
-        .lv-facts div {
-            display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 16px;
-            padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; line-height: 1.5;
-        }
+        .lv { scroll-margin-top: 64px; }
+        .lv-num { font-family: var(--hm-mono); font-size: .78rem; letter-spacing: .06em; color: var(--orange); }
+        .lv .pg-side h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); color: var(--text-secondary); margin: 10px 0 16px; }
+        .lv-thesis { font-family: var(--hm-display); font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.12; letter-spacing: -0.035em; color: var(--text); text-wrap: balance; margin-bottom: 36px; }
+        .lv-facts { margin: 0; background: var(--bg-card); border: 1px solid var(--hm-line); border-radius: 18px; padding: 4px 22px; }
+        .hm-alt .lv-facts { background: var(--bg); }
+        .lv-facts div { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 16px; padding: 14px 0; font-size: .9rem; line-height: 1.5; }
+        .lv-facts div + div { border-top: 1px solid var(--hm-line); }
         .lv-facts dt { color: var(--text-muted); }
-        .lv-facts dd { margin: 0; color: var(--text); font-weight: 600; }
-        .lv-facts a { color: var(--orange); text-decoration: none; }
-        .lv-facts a:hover { text-decoration: underline; }
+        .lv-facts dd { margin: 0; font-weight: 600; color: var(--text); overflow-wrap: anywhere; }
+        .lv-facts a { color: var(--orange); }
 
         .lv-body > p { font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 18px; max-width: 66ch; }
         .lv-points { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
-        .lv-points li { border-top: 2px solid rgba(249, 115, 22, 0.3); padding-top: 16px; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); }
+        .lv-points li { border-top: 2px solid transparent; border-image: var(--hm-grad) 1; padding-top: 16px; font-size: .93rem; line-height: 1.6; color: var(--text-secondary); }
         .lv-points strong { color: var(--text); font-weight: 700; }
-
-        .lv-proof { margin-top: 48px; padding: 30px 32px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; }
-        .lv-alt .lv-proof { background: var(--bg); }
-
-        .lv-more { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; font-size: 0.92rem; }
+        .lv-more { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; font-size: .92rem; }
         .lv-more-label { color: var(--text-muted); }
-        .lv-more a { color: var(--orange); font-weight: 600; text-decoration: none; }
+        .lv-more a { color: var(--orange); font-weight: 600; }
         .lv-more a:hover { text-decoration: underline; }
 
-        .lv-bridge { padding: 72px 0; border-top: 1px solid var(--border); text-align: center; }
-        .lv-bridge p { color: var(--text-secondary); font-size: 1.02rem; }
+        .lv-bridge { padding: 72px 0; border-top: 1px solid var(--hm-line); text-align: center; }
+        .lv-bridge p { color: var(--text-secondary); font-size: 1.05rem; }
+        .lv-bridge a { margin-left: 4px; font-weight: 600; color: var(--orange); }
 
         @media (max-width: 900px) {
-            .lv-hero { padding: 40px 0 40px; }
-            .lv-chain { grid-template-columns: 1fr; gap: 18px; max-width: 420px; }
-            .lv-chain::before { display: none; }
-            .lv-chain a { flex-direction: row; text-align: left; align-items: center; }
-            .lv-chain-num { flex-shrink: 0; }
-            .lv { padding: 72px 0; }
-            .lv-grid { grid-template-columns: 1fr; gap: 36px; }
-            .lv-side { position: static; }
+            .lv-chain { grid-template-columns: 1fr; gap: 18px; }
+            .lv-chain li::after { display: none; }
+            .lv-chain a { grid-template-columns: 44px minmax(0, 1fr); align-items: center; }
             .lv-points { grid-template-columns: 1fr; gap: 22px; }
-            .lv-proof { padding: 24px 22px; }
+            .pg-quote { padding: 24px 22px; }
+        }
+        @media (max-width: 560px) {
+            .lv-facts div { grid-template-columns: 1fr; gap: 2px; }
         }
     </style>
 </head>
@@ -186,14 +147,16 @@
     <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
-<section class="lv-hero bg-mesh" id="top">
+<section class="pg-hero" id="top">
     <div class="container">
-        <div class="lv-intro reveal">
-            <span class="overline">Our method</span>
-            <h1>The 3 levers in detail</h1>
-            <p>Before injecting AI everywhere, you need to understand what it should be amplifying. Here is how OptimizIA.xyz combines diagnosis, automation and knowledge management to produce sustainable gains, not demos.</p>
+        <div class="pg-head">
+            <div>
+                <span class="overline">Our method</span>
+                <h1>The 3 levers in detail</h1>
+            </div>
+            <p class="hm-lead">Before injecting AI everywhere, you need to understand what it should be amplifying. Here is how OptimizIA.xyz combines diagnosis, automation and knowledge management to produce sustainable gains, not demos.</p>
         </div>
-        <ol class="lv-chain reveal">
+        <ol class="lv-chain">
             <li><a href="#diagnose"><span class="lv-chain-num">01</span><span class="lv-chain-txt"><span class="lv-chain-title">Diagnose</span><span class="lv-chain-sub">Find where AI actually pays off</span></span></a></li>
             <li><a href="#automate"><span class="lv-chain-num">02</span><span class="lv-chain-txt"><span class="lv-chain-title">Automate</span><span class="lv-chain-sub">Take the repetitive work off your teams</span></span></a></li>
             <li><a href="#capitalise"><span class="lv-chain-num">03</span><span class="lv-chain-txt"><span class="lv-chain-title">Capitalise</span><span class="lv-chain-sub">Keep the know-how inside the company</span></span></a></li>
@@ -201,9 +164,9 @@
     </div>
 </section>
 
-<section class="lv" id="diagnose">
-    <div class="container lv-grid">
-        <div class="lv-side">
+<section class="hm-sec lv" id="diagnose">
+    <div class="container pg-2col">
+        <div class="pg-side">
             <span class="lv-num">Lever 01</span>
             <h2>Diagnose before automating</h2>
             <p class="lv-thesis">Automating a broken process just makes it broken faster.</p>
@@ -222,13 +185,14 @@
                 <li><span><strong>Quantified gain estimates</strong> per use case (time, cost, quality), with transparent assumptions.</span></li>
                 <li><span><strong>Prioritised roadmap</strong>: immediate quick wins vs. long-haul work, with clear decision criteria.</span></li>
             </ul>
-            <figure class="reco lv-proof">
+            <figure class="pg-quote">
+                <i class="hm-mask lg-solvay" style="--src:url(/assets/logos/solvay.svg)" role="img" aria-label="Solvay"></i>
                 <blockquote>“I particularly appreciated Remy's customer centricity and pragmatism. In a short time he had been able to identify root causes of over-consumption and build solutions to address them.”</blockquote>
                 <figcaption>
-                    <span class="reco-name">Sébastien Pinault</span>
+                    <a class="hm-name" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">Sébastien Pinault</a>
                     <span>Group Internal Audit Senior Manager, Dassault Systèmes</span>
                     <span>Worked with Rémy at Solvay · May 2020</span>
-                    <a class="reco-src" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">See on LinkedIn</a>
+                    <a class="hm-src" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">See on LinkedIn</a>
                 </figcaption>
             </figure>
             <div class="lv-more">
@@ -240,9 +204,9 @@
     </div>
 </section>
 
-<section class="lv lv-alt" id="automate">
-    <div class="container lv-grid">
-        <div class="lv-side">
+<section class="hm-sec hm-alt lv" id="automate">
+    <div class="container pg-2col">
+        <div class="pg-side">
             <span class="lv-num">Lever 02</span>
             <h2>Automate what slows you down</h2>
             <p class="lv-thesis">Automate the repetitive work, leave the decisions to people.</p>
@@ -261,13 +225,13 @@
                 <li><span><strong>Autonomous agents</strong> for repetitive tasks (sorting, extraction, summarisation, routing), with guardrails and a human in the loop.</span></li>
                 <li><span><strong>Continuous measurement</strong> of saved time and produced quality, simple dashboards, no over-engineering.</span></li>
             </ul>
-            <figure class="reco lv-proof">
+            <figure class="pg-quote">
                 <blockquote>“I brought Romain in to automate part of my work as an influencer agent, and the result exceeded my expectations. In just a few days, he had set up a system that saves me over 2 hours a day and surfaces far better-qualified opportunities.”</blockquote>
                 <figcaption>
-                    <span class="reco-name">Paul Bergé Lemonnier</span>
+                    <a class="hm-name" href="https://www.linkedin.com/in/romainben/details/recommendations/" target="_blank" rel="noopener">Paul Bergé Lemonnier</a>
                     <span>Talent Sales, Talent Manager</span>
                     <span>Client of Romain · July 2026</span>
-                    <a class="reco-src" href="https://www.linkedin.com/in/romainben/details/recommendations/" target="_blank" rel="noopener">Read the original in French on LinkedIn</a>
+                    <a class="hm-src" href="https://www.linkedin.com/in/romainben/details/recommendations/" target="_blank" rel="noopener">Read the original in French on LinkedIn</a>
                 </figcaption>
             </figure>
             <div class="lv-more">
@@ -280,9 +244,9 @@
     </div>
 </section>
 
-<section class="lv" id="capitalise">
-    <div class="container lv-grid">
-        <div class="lv-side">
+<section class="hm-sec lv" id="capitalise">
+    <div class="container pg-2col">
+        <div class="pg-side">
             <span class="lv-num">Lever 03</span>
             <h2>Secure and capitalise on your know-how</h2>
             <p class="lv-thesis">AI without a corporate memory produces generic content.</p>
@@ -301,13 +265,14 @@
                 <li><span><strong>Capture of tacit know-how</strong> from senior experts before they leave: structured interviews, AI-assisted documentation.</span></li>
                 <li><span><strong>Governance and security</strong>: access rights, usage traceability, compliant hosting (France / Europe as needed).</span></li>
             </ul>
-            <figure class="reco lv-proof">
+            <figure class="pg-quote">
+                <i class="hm-mask lg-volvo" style="--src:url(/assets/logos/volvo.svg)" role="img" aria-label="Volvo Group"></i>
                 <blockquote>“Change management is definitely one of his strengths. We have succeeded to rollout Knowledge management and Visual management in many different contexts thanks to Remy.”</blockquote>
                 <figcaption>
-                    <span class="reco-name">Philippe Colombo</span>
+                    <a class="hm-name" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">Philippe Colombo</a>
                     <span>Process and Knowledge Manager prototypes, Volvo Group</span>
                     <span>Senior to Rémy at Volvo Group · January 2020</span>
-                    <a class="reco-src" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">See on LinkedIn</a>
+                    <a class="hm-src" href="https://www.linkedin.com/in/remyginoux/details/recommendations/" target="_blank" rel="noopener">See on LinkedIn</a>
                 </figcaption>
             </figure>
             <div class="lv-more">
@@ -321,20 +286,16 @@
 
 <section class="lv-bridge">
     <div class="container">
-        <p class="reveal">These three levers power every format we sell. <a href="/services.html" class="solution-link no-arrow">See the services and starting prices</a></p>
+        <p>These three levers power every format we sell. <a href="/services.html" class="solution-link no-arrow">See the services and starting prices</a></p>
     </div>
 </section>
 
-<section class="final-cta">
+<section class="hm-final">
     <div class="container">
-        <div class="final-inner reveal">
-            <h2>Ready to automate your growth?</h2>
-            <p>Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.</p>
-            <a href="contact.html" class="btn btn-orange btn-lg" style="font-size:1.1rem;padding:20px 52px;">
-                Book my free audit
-            </a>
-            <p class="final-micro">Reply within 72h · Occitanie, France & International</p>
-        </div>
+        <h2>Ready to automate your growth?</h2>
+        <p>Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.</p>
+        <a href="contact.html" class="btn btn-orange btn-lg">Book a call</a>
+        <p class="final-micro">Reply within 72h · Occitanie, France &amp; International</p>
     </div>
 </section>
 
@@ -394,7 +355,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V6.2</span></p>
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
             <p><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
         </div>
     </div>
@@ -425,24 +386,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function initGSAP() {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            setTimeout(initGSAP, 100);
-            return;
-        }
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.reveal').forEach((el, i) => {
-            gsap.fromTo(el,
-                { y: 36, opacity: 0 },
-                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
-            );
-        });
-    }
-    initGSAP();
 });
 </script>
-<script src="/assets/oia-i18n.js?v=6" data-page="levers" data-base="/i18n/" defer></script>
+<script src="/assets/oia-i18n.js?v=7" data-page="levers" data-base="/i18n/" defer></script>
 <script src="/assets/oia-tracker.js" defer></script>
 <script src="/assets/oia-clarity.js" defer></script>
 </body>

@@ -23,9 +23,6 @@
     <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/fonts/fonts.css">
 
-    <script src="assets/vendor/gsap.min.js" defer></script>
-    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-
     <script>
         window.N8N_AVAILABILITY_URL = 'https://n8n.optimizia.xyz/webhook/optimizia-availability-opz';
         window.N8N_BOOKING_URL      = 'https://n8n.optimizia.xyz/webhook/optz-booking';
@@ -72,7 +69,39 @@
       }
     }
     </script>
-    <script src="assets/oia-i18n.js?v=6" data-page="contact" defer></script>
+    <script src="assets/oia-i18n.js?v=7" data-page="contact" defer></script>
+    <link rel="stylesheet" href="/assets/css/v7.css?v=1">
+    <link rel="stylesheet" href="/assets/css/pages.css?v=1">
+    <style>
+        /* Contact V7 : l'en-tete porte les trois raisons de reserver, le widget (fait maison) reste tel quel. */
+        .ct-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 64px; align-items: center; }
+        .ct-hero h1 span { color: var(--orange); }
+        .ct-hero .hm-lead { margin: 22px 0 32px; }
+        .ct-hero .btn { margin: 0; }
+        .ct-badge { display: inline-flex; align-items: center; gap: 9px; font-size: .82rem; font-weight: 600; color: #15803D; background: rgba(22,163,74,.09); padding: 6px 13px; border-radius: 999px; }
+        :root[data-theme="dark"] .ct-badge { color: #86EFAC; background: rgba(22,163,74,.16); }
+        .ct-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; animation: hm-pouls 1.8s ease-in-out infinite; }
+        .ct-why { background: var(--bg-card); border: 1px solid var(--hm-line); border-radius: 24px; padding: 30px 30px 10px; box-shadow: 0 24px 60px rgba(15,23,42,.08); }
+        .ct-why h2 { font-size: 1.25rem; margin-bottom: 8px; }
+        .ct-why ul { list-style: none; margin: 0; padding: 0; }
+        .ct-why li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 20px 0; }
+        .ct-why li + li { border-top: 1px solid var(--hm-line); }
+        .ct-why i { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--blue-light); color: var(--blue); }
+        .ct-why li:nth-child(3) i { background: var(--orange-light); color: var(--orange); }
+        .ct-why i svg { width: 19px !important; height: 19px !important; }
+        .ct-why h3 { font-size: 1.05rem; margin-bottom: 4px; }
+        .ct-why p { font-size: .9rem; line-height: 1.55; color: var(--text-secondary); }
+        .ct-tag { display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--orange-light); color: var(--hm-orange-ink); }
+        #widget .hm-h2 span { color: var(--orange); }
+        .ct-paras p { font-size: 1.08rem; line-height: 1.8; color: var(--text-secondary); max-width: 60ch; }
+        .ct-paras p + p { margin-top: 18px; }
+        .ct-paras p:first-child { font-family: var(--hm-display); font-weight: 600; font-size: 1.35rem; line-height: 1.4; color: var(--text); }
+        .hm-qa p a { color: var(--orange); font-weight: 600; }
+        @media (max-width: 900px) {
+            .ct-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .ct-hero .btn { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
 
@@ -105,99 +134,69 @@
     <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero" id="top">
-    <div class="container">
-        <div class="hero-badge reveal"><span class="dot"></span>Agency available for new projects</div>
-        <h1 class="reveal">Let's talk about your <span>AI project</span></h1>
-        <p class="hero-subtitle reveal">20 minutes to analyse your context, identify the priority automation levers, and define together how OptimizIA.xyz can accelerate your performance. No commitment, 100% free.</p>
-    </div>
-</section>
-
-<!-- ═══ BENEFITS ═══ -->
-<section class="benefits" id="pourquoi">
-    <div class="container">
-        <h2 class="reveal">Why book a discovery call?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target" style="width:22px;height:22px;"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></div>
-                <h3>Tailored diagnostic</h3>
-                <p>We analyse your specific situation and identify the high-impact automation opportunities inside your organisation.</p>
-            </div>
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb" style="width:22px;height:22px;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg></div>
-                <h3>Actionable advice</h3>
-                <p>You leave with concrete, prioritised leads, even if we don't end up working together.</p>
-            </div>
-            <div class="benefit-card reveal">
-                <div class="benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" style="width:22px;height:22px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></div>
-                <h3>No commitment</h3>
-                <p>A first strategic conversation to assess the potential. No sales pressure, just a professional exchange.</p>
-            </div>
+<section class="pg-hero ct-hero" id="top">
+    <div class="container ct-hero-grid">
+        <div>
+            <div class="ct-badge"><span class="dot"></span>Agency available for new projects</div>
+            <h1>Let's talk about your <span>AI project</span></h1>
+            <p class="hm-lead">20 minutes to analyse your context, identify the priority automation levers, and define together how OptimizIA.xyz can accelerate your performance. No commitment, 100% free.</p>
+            <a href="#booking" class="btn btn-orange btn-lg">Pick your slot</a>
+        </div>
+        <div class="ct-why" id="pourquoi">
+            <h2>Why book a discovery call?</h2>
+            <ul>
+                <li><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target" style="width:22px;height:22px;"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></i><div><h3>Tailored diagnostic</h3><p>We analyse your specific situation and identify the high-impact automation opportunities inside your organisation.</p></div></li>
+                <li><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb" style="width:22px;height:22px;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg></i><div><h3>Actionable advice</h3><p>You leave with concrete, prioritised leads, even if we don't end up working together.</p></div></li>
+                <li><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" style="width:22px;height:22px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></i><div><h3>No commitment</h3><p>A first strategic conversation to assess the potential. No sales pressure, just a professional exchange.</p></div></li>
+            </ul>
         </div>
     </div>
 </section>
 
-<!-- ═══ BOOKING ═══ -->
-<section class="booking-section" id="booking">
+<section class="booking-section hm-sec hm-alt" id="booking">
     <div class="container">
-        <div class="booking-intro reveal">
-            <span class="overline">Online booking</span>
-            <h2>Pick your slot</h2>
-            <p>The slots shown below sync in real time with our calendar. Pick the time that suits you.</p>
+        <div class="hm-uses-head">
+            <div><span class="overline">Online booking</span><h2 class="hm-h2" style="margin-bottom:0">Pick your slot</h2></div>
+            <p class="hm-intro">The slots shown below sync in real time with our calendar. Pick the time that suits you.</p>
         </div>
         <div id="booking-root" data-no-i18n></div>
     </div>
 </section>
 
-<!-- ═══ CUSTOM-MADE SECTION ═══ -->
-<section class="custom-pride" id="widget">
-    <div class="container">
-        <div class="custom-pride-inner reveal">
-            <div class="custom-pride-tag">
+<section class="hm-sec" id="widget">
+    <div class="container pg-2col">
+        <div class="pg-side">
+            <div class="ct-tag">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;flex-shrink:0;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 Home-made, 100% custom
             </div>
-            <h2>This widget, <span>we built it ourselves!</span></h2>
-            <div class="custom-pride-paras">
-                <p>Why settle for an off-the-shelf solution when you can have the "haute couture" version?</p>
-                <p>No generic template here, a 100% home-made solution that fits us perfectly. Our identity, our logic, our rules: that's the OptimizIA.xyz edge. Turning your ideas and ambitions into concrete solutions, tailored for you!</p>
-                <p>If we do this so well for ourselves, imagine what we could do for your company and for you...</p>
-            </div>
+            <h2 class="hm-h2">This widget, <span>we built it ourselves!</span></h2>
+        </div>
+        <div class="ct-paras">
+            <p>Why settle for an off-the-shelf solution when you can have the "haute couture" version?</p>
+            <p>No generic template here, a 100% home-made solution that fits us perfectly. Our identity, our logic, our rules: that's the OptimizIA.xyz edge. Turning your ideas and ambitions into concrete solutions, tailored for you!</p>
+            <p>If we do this so well for ourselves, imagine what we could do for your company and for you...</p>
         </div>
     </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
-<section class="faq" id="faq">
-    <div class="container">
-        <h2 class="reveal">Frequently asked questions</h2>
-        <div class="faq-list">
-            <div class="faq-item reveal">
-                <div class="faq-question"><span>How does the call work?</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon" style="width:18px;height:18px;"><path d="m6 9 6 6 6-6" /></svg></div>
-                <div class="faq-answer"><p>We meet for 20 minutes over video (Google Meet, Zoom or Teams, your choice). We ask a few questions about your context and current challenges, and share initial ideas for improvement. It's an informal, no-commitment conversation.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <div class="faq-question"><span>Do I need to prepare anything?</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon" style="width:18px;height:18px;"><path d="m6 9 6 6 6-6" /></svg></div>
-                <div class="faq-answer"><p>Not necessarily. If you have a precise issue or documents to share, that's a plus. The key thing is to come with your questions and your current challenges.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <div class="faq-question"><span>Is there any commitment after this call?</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon" style="width:18px;height:18px;"><path d="m6 9 6 6 6-6" /></svg></div>
-                <div class="faq-answer"><p>None at all. This discovery call is free and with no strings attached. If we identify collaboration opportunities together, we'll suggest a concrete next step.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <div class="faq-question"><span>Can I cancel or reschedule?</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon" style="width:18px;height:18px;"><path d="m6 9 6 6 6-6" /></svg></div>
-                <div class="faq-answer"><p>Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <div class="faq-question"><span>Do you operate everywhere in France?</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon" style="width:18px;height:18px;"><path d="m6 9 6 6 6-6" /></svg></div>
-                <div class="faq-answer"><p>Our registered office is in <a href="agence-ia-beziers.html">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.</p></div>
-            </div>
+<section class="hm-sec hm-alt" id="faq">
+    <div class="container hm-faq-grid">
+        <div class="hm-faq-side">
+            <span class="overline">FAQ</span>
+            <h2 class="hm-h2">Frequently asked questions</h2>
+        </div>
+        <div>
+            <details class="hm-qa" open><summary><h3>How does the call work?</h3><i aria-hidden="true"></i></summary><p>We meet for 20 minutes over video (Google Meet, Zoom or Teams, your choice). We ask a few questions about your context and current challenges, and share initial ideas for improvement. It's an informal, no-commitment conversation.</p></details>
+            <details class="hm-qa"><summary><h3>Do I need to prepare anything?</h3><i aria-hidden="true"></i></summary><p>Not necessarily. If you have a precise issue or documents to share, that's a plus. The key thing is to come with your questions and your current challenges.</p></details>
+            <details class="hm-qa"><summary><h3>Is there any commitment after this call?</h3><i aria-hidden="true"></i></summary><p>None at all. This discovery call is free and with no strings attached. If we identify collaboration opportunities together, we'll suggest a concrete next step.</p></details>
+            <details class="hm-qa"><summary><h3>Can I cancel or reschedule?</h3><i aria-hidden="true"></i></summary><p>Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.</p></details>
+            <details class="hm-qa"><summary><h3>Do you operate everywhere in France?</h3><i aria-hidden="true"></i></summary><p>Our registered office is in <a href="agence-ia-beziers.html">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.</p></details>
         </div>
     </div>
 </section>
 
-<!-- ═══ FOOTER — copie exacte MVP3 ═══ -->
+
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -254,7 +253,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V6.2</span></p>
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
             <p><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
         </div>
     </div>
@@ -620,15 +619,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            var a = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = '0'; });
-            if(!a){ item.classList.add('active'); var ans = item.querySelector('.faq-answer'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
-        });
-    });
-
     // Mobile menu
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobileMenu');
@@ -637,18 +627,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMenu(){ var open = mobileMenu.classList.toggle('open'); overlay.classList.toggle('active', open); hamburger.classList.toggle('active', open); document.body.style.overflow = open ? 'hidden' : ''; }
     if(hamburger){ hamburger.addEventListener('click', toggleMenu); overlay.addEventListener('click', closeMenu); mobileMenu.querySelectorAll('a').forEach(function(l) { l.addEventListener('click', closeMenu); }); }
 
-    // GSAP reveal
-    if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.reveal').forEach(function(el) {
-            gsap.fromTo(el, { y: 36, opacity: 0 }, {
-                scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-                y: 0, opacity: 1, duration: 1.0, ease: 'power4.out'
-            });
-        });
-    } else {
-        document.querySelectorAll('.reveal').forEach(function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
-    }
 });
 </script>
 <script>

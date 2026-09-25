@@ -1,5 +1,5 @@
-/* case-studies/index.html — fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* case-studies, fr. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : Realisations au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -10,13 +10,15 @@ window.OIA_I18N.fr = {
         "About": "À propos",
         "Book a call": "Prendre rdv",
         "What we have actually delivered": "Ce que nous avons réellement livré",
-        "Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.": "Cinq chantiers menés par OptimizIA.xyz, décrits sans habillage : le problème de départ, la mécanique construite, les outils utilisés et ce que ça change au quotidien. Deux d'entre eux sont des produits internes, trois ont été livrés à des clients.",
+        "Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.": "Cinq chantiers menés par OptimizIA.xyz, décrits sans habillage : le problème de départ, la mécanique construite, les outils utilisés et ce que ça change au quotidien. Deux d'entre eux sont des produits internes, trois ont été livrés à des clients.",
         "Sales prospecting": "Prospection commerciale",
         "Automated market intelligence turned into a prospect pipeline": "Veille de marché automatisée en pipeline de prospects",
-        "Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.": "Une veille qui se transforme seule en prospects qualifiés chaque matin : collecte, scoring, livraison en boîte mail, sans intervention manuelle.",
+        "Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.": "Une veille qui se transforme seule en prospects qualifiés chaque matin : collecte, scoring, livraison en boîte mail, sans intervention manuelle.",
+        "Client project": "Projet client",
         "Reporting and dashboards": "Reporting et dashboards",
         "From raw data streams to distributed reports": "Du flux de données brut au rapport diffusé",
         "An analysis chain that produces and distributes its own reports, with readable dashboards instead of an over-engineered machine.": "Une chaîne d'analyse qui produit et diffuse ses rapports toute seule, avec des dashboards lisibles plutôt qu'une usine à gaz.",
+        "In-house product": "Produit maison",
         "AI adoption and training": "Acculturation et formation",
         "Training a freelancer community on AI": "Former une communauté de freelances à l'IA",
         "A workshop built from the first prompt to the autonomous agent, for professionals who had never gone beyond the chatbot stage.": "Un atelier construit du premier prompt à l'agent autonome, pour des professionnels qui n'avaient jamais dépassé le stade du chatbot.",
@@ -25,10 +27,10 @@ window.OIA_I18N.fr = {
         "Design, visual identity and launch for independent professionals starting their business, in days rather than months.": "Conception, identité visuelle et mise en ligne pour des indépendants qui lancent leur activité, en quelques jours plutôt qu'en quelques mois.",
         "SEO and AI visibility": "SEO et visibilité IA",
         "SEOPlus!, our SEO and GEO audit engine": "SEOPlus!, notre moteur d'audit SEO et GEO",
-        "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Un produit construit en interne : audit complet d'un site, visibilité dans les moteurs IA comprise, rendu en 30 secondes avec son plan d'action.",
-        "Does your situation look like one of these pages?": "Votre situation ressemble à l'une de ces pages ?",
+        "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Un produit construit en interne : audit complet d'un site, visibilité dans les moteurs IA comprise, rendu en 30 secondes avec son plan d'action.",
+        "Does your situation look like one of these pages?": "Votre situation ressemble à l'une de ces pages ?",
         "Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.": "Chacune de ces réalisations est partie d'un problème simple à formuler et pénible à vivre au quotidien. Vingt minutes suffisent en général pour savoir si le même mécanisme s'applique chez vous.",
-        "Book a free diagnosis": "Réserver un diagnostic gratuit",
+        "Reply within 72h · Occitanie, France &amp; International": "Réponse sous 72h · Occitanie, France &amp; International",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ Meet the founders": "↗ Rencontrer les fondateurs",
         "Company": "Entreprise",
@@ -55,7 +57,6 @@ window.OIA_I18N.fr = {
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Tous droits réservés ·",
         "Legal Notice": "Mentions légales",
-        "<b>In short</b> <p>Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>": "<b>En bref</b> <p>Cinq chantiers menés par OptimizIA.xyz, décrits sans habillage : le problème de départ, la mécanique construite, les outils utilisés et ce que ça change au quotidien. Deux d'entre eux sont des produits internes, trois ont été livrés à des clients.</p>",
     },
     attr: {}
 };

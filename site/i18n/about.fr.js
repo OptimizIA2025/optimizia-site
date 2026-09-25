@@ -1,5 +1,5 @@
-/* about.html — fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* about, fr. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : A propos au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -11,11 +11,13 @@ window.OIA_I18N.fr = {
         "Book a call": "Prendre rdv",
         "Who we are": "Qui sommes-nous",
         "OptimizIA.xyz, <span>AI at work in the field</span>": "OptimizIA.xyz, <span>l'IA au service du terrain</span>",
-        "OptimizIA.xyz is a network of experts founded by practitioners, not theorists, who believe <strong>AI only has value when it produces measurable results</strong> inside your organisation, with no unnecessary disruption and no jargon. We step in where it actually hurts: the processes that are slowing your growth.": "OptimizIA.xyz est un réseau d'experts fondé par des praticiens, pas des théoriciens, qui croient que <strong>l'IA n'a de valeur que si elle produit des résultats mesurables</strong> dans votre organisation, sans disruption inutile ni jargon. Nous intervenons là où ça coince vraiment : les processus qui freinent votre croissance.",
+        "OptimizIA.xyz is a network of experts founded by practitioners, not theorists, who believe <strong>AI only has value when it produces measurable results</strong> inside your organisation, with no unnecessary disruption and no jargon. We step in where it actually hurts: the processes that are slowing your growth.": "OptimizIA.xyz est un réseau d'experts fondé par des praticiens, pas des théoriciens, qui croient que <strong>l'IA n'a de valeur que si elle produit des résultats mesurables</strong> dans votre organisation, sans disruption inutile ni jargon. Nous intervenons là où ça coince vraiment : les processus qui freinent votre croissance.",
+        "Where our founders proved themselves": "Là où nos fondateurs ont fait leurs preuves",
+        "Assignments led by Rémy Ginoux over 25 years in industry, before OptimizIA.xyz was founded in 2025.": "Missions menées par Rémy Ginoux pendant 25 ans dans l'industrie, avant la création d'OptimizIA.xyz en 2025.",
         "Vision": "Vision",
         "Make AI <span style=\"color:var(--orange);\">accessible and sustainable</span> for SMEs": "Rendre l'IA <span style=\"color:var(--orange);\">accessible et durable</span> pour les TPE/PME",
-        "We believe every SME leader should have access to the same performance levers as large groups, <strong>without the cost, risk and complexity that usually come with them</strong>. Our mission: support transformation through small, concrete steps, from diagnosis to industrial deployment, with a relentless focus on ROI.": "Nous pensons que chaque dirigeant de TPE/PME devrait pouvoir accéder aux mêmes leviers de performance que les grands groupes, <strong>sans les coûts, les risques et la complexité associés</strong>. Notre mission : accompagner la transformation par petits pas concrets, du diagnostic au déploiement industriel, avec une obsession constante pour le ROI.",
-        "OptimizIA.xyz is based in Béziers, in the south of France, and works with SMEs across Occitanie and internationally. French-speaking businesses nearby can start from our local page: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.": "OptimizIA.xyz est basée à Béziers, dans le sud de la France, et accompagne des PME en Occitanie comme à l'international. Les entreprises proches peuvent partir de notre page locale : <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.",
+        "We believe every SME leader should have access to the same performance levers as large groups, <strong>without the cost, risk and complexity that usually come with them</strong>. Our mission: support transformation through small, concrete steps, from diagnosis to industrial deployment, with a relentless focus on ROI.": "Nous pensons que chaque dirigeant de TPE/PME devrait pouvoir accéder aux mêmes leviers de performance que les grands groupes, <strong>sans les coûts, les risques et la complexité associés</strong>. Notre mission : accompagner la transformation par petits pas concrets, du diagnostic au déploiement industriel, avec une obsession constante pour le ROI.",
+        "OptimizIA.xyz is based in Béziers, in the south of France, and works with SMEs across Occitanie and internationally. French-speaking businesses nearby can start from our local page: <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.": "OptimizIA.xyz est basée à Béziers, dans le sud de la France, et accompagne des PME en Occitanie comme à l'international. Les entreprises proches peuvent partir de notre page locale : <a href=\"agence-ia-beziers.html\">Agence IA à Béziers</a>.",
         "The team": "L'équipe",
         "Experts, not consultants": "Des experts, pas des consultants",
         "Co-founder &amp; Senior Consultant": "Co-fondateur &amp; Senior Consultant",
@@ -25,6 +27,7 @@ window.OIA_I18N.fr = {
         "Let's talk about your project": "Parlons de votre projet",
         "20 minutes, no pitch, just a conversation about what AI can change for you.": "20 minutes, pas de pitch, juste une conversation sur ce que l'IA peut changer pour vous.",
         "Start the conversation": "Démarrer la conversation",
+        "Reply within 72h · Occitanie, France &amp; International": "Réponse sous 72h · Occitanie, France &amp; International",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ Meet the founders": "↗ Rencontrer les fondateurs",
         "Company": "Entreprise",

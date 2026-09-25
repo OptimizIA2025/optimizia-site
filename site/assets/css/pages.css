@@ -1,0 +1,58 @@
+/* Pages interieures V7 : ce qui manque a v7.css (composants de l'accueil) pour les autres pages.
+   Jetons de site.css et de v7.css, donc mode sombre inclus. Servi immutable un an : bump ?v= a chaque changement. */
+
+/* ── En-tete de page : titre a gauche, chapo a droite ── */
+.pg-hero { padding: 140px 0 96px; background: radial-gradient(ellipse at 85% 10%, rgba(249,115,22,.07), transparent 50%), radial-gradient(ellipse at 5% 60%, rgba(59,130,246,.06), transparent 45%); }
+.pg-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: end; margin-bottom: 48px; }
+.pg-hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; margin: 14px 0 0; text-wrap: balance; }
+.pg-head .hm-lead { margin-bottom: 6px; }
+
+/* ── Deux colonnes : cote collant, contenu a droite ── */
+.pg-2col { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; }
+.pg-side { position: sticky; top: 110px; align-self: start; }
+
+/* ── Fiche comparative complete (prix et boutons en plus de la version accueil) ── */
+.hm-spec .offer-price { display: block; font-family: var(--hm-display); font-weight: 700; font-size: 1.75rem; letter-spacing: -0.03em; line-height: 1.1; color: var(--text); }
+.hm-spec .offer-price-unit { font-size: .5em; font-weight: 500; letter-spacing: 0; color: var(--text-muted); }
+.hm-spec .offer-price-note { display: block; margin-top: 8px; font-size: .82rem; line-height: 1.45; color: var(--text-muted); }
+.hm-spec > .pg-cta { padding-bottom: 26px; }
+.pg-cta .btn { width: 100%; justify-content: center; margin: 0; }
+
+/* ── Frise : les numeros d'etape remplacent les durees ── */
+.pg-tl .hm-dur { font-size: .78rem; color: var(--orange); }
+
+/* ── Liste cochee ── */
+.pg-checks { list-style: none; margin: 0; padding: 0; }
+.pg-checks li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 18px; padding: 26px 0; border-top: 1px solid var(--hm-line); }
+.pg-checks li:last-child { border-bottom: 1px solid var(--hm-line); }
+.pg-checks li::before { content: "✓"; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--orange-light); color: var(--hm-orange-ink); font-size: .85rem; font-weight: 700; }
+.pg-checks h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.pg-checks p { color: var(--text-secondary); font-size: .95rem; }
+
+/* ── Recommandation LinkedIn a cote d'un contenu, logo de l'entreprise en tete ── */
+.pg-reco { margin-top: 40px; }
+.pg-reco .hm-mask { color: var(--text-secondary); }
+
+/* ── Recommandation en carte, dans le fil d'un contenu ── */
+.pg-quote { margin: 48px 0 0; display: grid; gap: 18px; justify-items: start; background: var(--bg-card); border: 1px solid var(--hm-line); border-radius: 22px; padding: 28px 30px; }
+.hm-alt .pg-quote { background: var(--bg); }
+.pg-quote .hm-mask { color: var(--text-secondary); }
+.pg-quote blockquote { margin: 0; font-family: var(--hm-display); font-weight: 500; font-size: 1.15rem; line-height: 1.5; letter-spacing: -0.01em; color: var(--text); }
+.pg-quote figcaption { display: grid; gap: 2px; font-size: .84rem; color: var(--text-muted); }
+
+/* ── Ressources : trois colonnes de liens ── */
+.pg-res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; }
+.pg-res h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.pg-res ul { list-style: none; margin: 0; padding: 0; }
+.pg-res li { display: grid; gap: 4px; padding: 18px 0; border-top: 1px solid var(--hm-line); }
+.pg-res li:last-child { border-bottom: 1px solid var(--hm-line); }
+.pg-res a { font-family: var(--hm-display); font-weight: 600; font-size: 1.05rem; color: var(--text); transition: color .2s; }
+.pg-res a:hover { color: var(--orange); }
+.pg-res li span { font-size: .9rem; line-height: 1.55; color: var(--text-secondary); }
+
+@media (max-width: 900px) {
+    .pg-hero { padding: 120px 0 72px; }
+    .pg-head, .pg-2col, .pg-res { grid-template-columns: 1fr; gap: 28px; }
+    .pg-side { position: static; }
+    .hm-spec > .hm-sk:empty { display: none; }
+}

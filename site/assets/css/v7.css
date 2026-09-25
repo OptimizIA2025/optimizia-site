@@ -269,7 +269,7 @@ a.hm-use:hover { border-color: rgba(249,115,22,.45); box-shadow: 0 16px 40px rgb
 .hm-final { padding: 120px 0; background: var(--bg-dark); color: #fff; text-align: center; position: relative; overflow: hidden; }
 :root[data-theme="dark"] .hm-final { border-top: 1px solid var(--hm-line); }
 .hm-final::before { content: ""; position: absolute; left: 50%; top: -30%; width: 900px; height: 600px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(249,115,22,.22), transparent); pointer-events: none; }
-.hm-final h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 16px; position: relative; color: #fff; }
+.hm-final h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 16px; position: relative; color: #fff; text-wrap: balance; }
 .hm-final p { color: #CBD5E1; max-width: 560px; margin: 0 auto 36px; position: relative; }
 .hm-final .btn { position: relative; margin: 0; }
 .hm-final .final-micro { margin: 20px 0 0; color: #94A3B8; font-size: .84rem; }

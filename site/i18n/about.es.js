@@ -1,5 +1,5 @@
-/* about.html — es. Cle = texte anglais exact du HTML, espaces normalises.
-   Synchronise le 2026-08-31 (T-093 : page levers, footer V6.2). */
+/* about, es. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (T-105 : A propos au design V7). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -12,6 +12,8 @@ window.OIA_I18N.es = {
         "Who we are": "Quiénes somos",
         "OptimizIA.xyz, <span>AI at work in the field</span>": "OptimizIA.xyz, <span>la IA al servicio del terreno</span>",
         "OptimizIA.xyz is a network of experts founded by practitioners, not theorists, who believe <strong>AI only has value when it produces measurable results</strong> inside your organisation, with no unnecessary disruption and no jargon. We step in where it actually hurts: the processes that are slowing your growth.": "OptimizIA.xyz es una red de expertos fundada por profesionales, no por teóricos, que creen que <strong>la IA solo tiene valor si produce resultados medibles</strong> dentro de su organización, sin disrupciones innecesarias ni jerga. Intervenimos donde realmente duele: los procesos que frenan su crecimiento.",
+        "Where our founders proved themselves": "Donde nuestros fundadores demostraron su valía",
+        "Assignments led by Rémy Ginoux over 25 years in industry, before OptimizIA.xyz was founded in 2025.": "Misiones dirigidas por Rémy Ginoux durante 25 años en la industria, antes de la creación de OptimizIA.xyz en 2025.",
         "Vision": "Visión",
         "Make AI <span style=\"color:var(--orange);\">accessible and sustainable</span> for SMEs": "Hacer la IA <span style=\"color:var(--orange);\">accesible y sostenible</span> para las pymes",
         "We believe every SME leader should have access to the same performance levers as large groups, <strong>without the cost, risk and complexity that usually come with them</strong>. Our mission: support transformation through small, concrete steps, from diagnosis to industrial deployment, with a relentless focus on ROI.": "Creemos que cada directivo de una pyme debería poder acceder a las mismas palancas de rendimiento que los grandes grupos, <strong>sin los costes, los riesgos ni la complejidad que suelen acompañarlas</strong>. Nuestra misión: acompañar la transformación con pasos pequeños y concretos, del diagnóstico al despliegue industrial, con una obsesión constante por el retorno de la inversión.",
@@ -25,6 +27,7 @@ window.OIA_I18N.es = {
         "Let's talk about your project": "Hablemos de su proyecto",
         "20 minutes, no pitch, just a conversation about what AI can change for you.": "20 minutos, sin discurso comercial, solo una conversación sobre lo que la IA puede cambiar para usted.",
         "Start the conversation": "Iniciar la conversación",
+        "Reply within 72h · Occitanie, France &amp; International": "Respuesta en 72 h · Occitania, Francia e internacional",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
         "↗ Meet the founders": "↗ Conozca a los fundadores",
         "Company": "Empresa",

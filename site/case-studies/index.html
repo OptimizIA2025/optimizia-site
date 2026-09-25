@@ -26,10 +26,6 @@
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
-    <link rel="stylesheet" href="/assets/css/editorial.css?v=3">
-
-    <script src="/assets/vendor/gsap.min.js" defer></script>
-    <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 
     <link rel="stylesheet" href="/assets/css/index-en.39634e9f.css">
     <script type="application/ld+json">
@@ -90,7 +86,28 @@
       ]
     }
     </script>
-    <script src="/assets/oia-i18n.js?v=6" data-base="/i18n/" data-page="case-studies" defer></script>
+    <script src="/assets/oia-i18n.js?v=7" data-base="/i18n/" data-page="case-studies" defer></script>
+    <link rel="stylesheet" href="/assets/css/v7.css?v=1">
+    <link rel="stylesheet" href="/assets/css/pages.css?v=1">
+    <style>
+        /* Realisations V7 : une ligne par realisation, projet client ou produit maison. */
+        .cs-list { border-top: 1px solid var(--hm-line); }
+        .cs-row { display: grid; grid-template-columns: 48px minmax(0, 5fr) minmax(0, 4fr) 150px; gap: 32px; align-items: center; padding: 30px 12px; border-bottom: 1px solid var(--hm-line); color: inherit; border-radius: 4px; transition: background .25s; }
+        .cs-row:hover { background: var(--bg-card); }
+        .cs-ico { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--blue-light); color: var(--blue); }
+        .cs-ico svg { width: 22px; height: 22px; }
+        .cs-tag { font-family: var(--hm-mono); font-size: .72rem; letter-spacing: .04em; color: var(--text-muted); }
+        .cs-row h2 { font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: -0.025em; margin-top: 6px; transition: color .2s; text-wrap: balance; }
+        .cs-row:hover h2 { color: var(--orange); }
+        .cs-row p { font-size: .93rem; line-height: 1.6; color: var(--text-secondary); }
+        .cs-kind { justify-self: end; font-size: .74rem; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: var(--orange-light); color: var(--hm-orange-ink); white-space: nowrap; }
+        .cs-kind.in { background: var(--blue-light); color: var(--hm-blue-ink); }
+        @media (max-width: 900px) {
+            .cs-row { grid-template-columns: 48px minmax(0, 1fr); gap: 14px 18px; padding: 26px 0; }
+            .cs-row > p, .cs-kind { grid-column: 2; }
+            .cs-kind { justify-self: start; }
+        }
+    </style>
 </head>
 <body>
 
@@ -121,54 +138,59 @@
     <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
-<main class="editorial-body bg-mesh">
-    <section>
-      <div class="pilier-wrap">
-        <div class="post-head">
-          <p class="eyebrow">Case studies</p>
-          <h1>What we have actually delivered</h1>
+<main>
+<section class="pg-hero" id="top">
+    <div class="container">
+        <div class="pg-head">
+            <div>
+                <span class="overline">Case studies</span>
+                <h1>What we have actually delivered</h1>
+            </div>
+            <p class="hm-lead">Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>
         </div>
-        <div class="post-summary">
-          <b>In short</b>
-          
-          <p>Five projects delivered by OptimizIA.xyz, described without embellishment: the initial problem, the mechanics we built, the tools we used and what changes day to day. Two are internal products, three were delivered to clients.</p>
-        </div>
-        <div class="pilier-articles">
-          <div class="blog-grid">
-            <a class="blog-card" href="/case-studies/lead-monitoring/">
-                <span class="blog-card-tag">Sales prospecting</span>
-                <h2>Automated market intelligence turned into a prospect pipeline</h2>
+        <div class="cs-list">
+            <a class="cs-row" href="/case-studies/lead-monitoring/">
+                <i class="cs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></i>
+                <div><span class="cs-tag">Sales prospecting</span><h2>Automated market intelligence turned into a prospect pipeline</h2></div>
                 <p>Market monitoring that converts itself into qualified prospects every morning: collection, scoring, delivery to the inbox, with no manual work.</p>
+                <span class="cs-kind">Client project</span>
             </a>
-            <a class="blog-card" href="/case-studies/automated-reporting/">
-                <span class="blog-card-tag">Reporting and dashboards</span>
-                <h2>From raw data streams to distributed reports</h2>
+            <a class="cs-row" href="/case-studies/automated-reporting/">
+                <i class="cs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></i>
+                <div><span class="cs-tag">Reporting and dashboards</span><h2>From raw data streams to distributed reports</h2></div>
                 <p>An analysis chain that produces and distributes its own reports, with readable dashboards instead of an over-engineered machine.</p>
+                <span class="cs-kind in">In-house product</span>
             </a>
-            <a class="blog-card" href="/case-studies/ai-training/">
-                <span class="blog-card-tag">AI adoption and training</span>
-                <h2>Training a freelancer community on AI</h2>
+            <a class="cs-row" href="/case-studies/ai-training/">
+                <i class="cs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4z"/><path d="M7 10v5c3 2 7 2 10 0v-5"/></svg></i>
+                <div><span class="cs-tag">AI adoption and training</span><h2>Training a freelancer community on AI</h2></div>
                 <p>A workshop built from the first prompt to the autonomous agent, for professionals who had never gone beyond the chatbot stage.</p>
+                <span class="cs-kind">Client project</span>
             </a>
-            <a class="blog-card" href="/case-studies/showcase-websites/">
-                <span class="blog-card-tag">Websites and brand identity</span>
-                <h2>Websites that look like the brand, not the template</h2>
+            <a class="cs-row" href="/case-studies/showcase-websites/">
+                <i class="cs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/></svg></i>
+                <div><span class="cs-tag">Websites and brand identity</span><h2>Websites that look like the brand, not the template</h2></div>
                 <p>Design, visual identity and launch for independent professionals starting their business, in days rather than months.</p>
+                <span class="cs-kind">Client project</span>
             </a>
-            <a class="blog-card" href="/case-studies/seoplus/">
-                <span class="blog-card-tag">SEO and AI visibility</span>
-                <h2>SEOPlus!, our SEO and GEO audit engine</h2>
+            <a class="cs-row" href="/case-studies/seoplus/">
+                <i class="cs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6M11 8v6"/></svg></i>
+                <div><span class="cs-tag">SEO and AI visibility</span><h2>SEOPlus!, our SEO and GEO audit engine</h2></div>
                 <p>A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.</p>
+                <span class="cs-kind in">In-house product</span>
             </a>
         </div>
-        </div>
-        <div class="post-cta">
-          <h2>Does your situation look like one of these pages?</h2>
-          <p>Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.</p>
-          <a class="btn btn-primary" href="/contact.html">Book a free diagnosis</a>
-        </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<section class="hm-final">
+    <div class="container">
+        <h2>Does your situation look like one of these pages?</h2>
+        <p>Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.</p>
+        <a href="/contact.html" class="btn btn-orange btn-lg">Book a call</a>
+        <p class="final-micro">Reply within 72h · Occitanie, France &amp; International</p>
+    </div>
+</section>
 </main>
 
 <footer>
@@ -227,7 +249,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V6.2</span></p>
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
             <p><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
         </div>
     </div>
@@ -259,21 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function initGSAP() {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            setTimeout(initGSAP, 100);
-            return;
-        }
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.reveal').forEach((el, i) => {
-            gsap.fromTo(el,
-                { y: 36, opacity: 0 },
-                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
-            );
-        });
-    }
-    initGSAP();
 });
 </script>
 

@@ -35,7 +35,7 @@
        avec le chiffre. Le 08/09, le bouton d'appel de la nav passe de
        « Free audit » a « Book a call » sur les 34 pages : la cle change avec le
        libelle, un dictionnaire en cache chercherait encore l'ancienne. */
-    var VERSION = '5';
+    var VERSION = '6';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
