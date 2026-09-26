@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="assets/site.css?v=7">
+    <link rel="stylesheet" href="assets/site.css?v=8">
     <script src="assets/oia-theme.js?v=1"></script>
     <link rel="canonical" href="https://www.optimizia.xyz/">
     <meta property="og:locale" content="en_US">
@@ -218,7 +218,7 @@
     </script>
 
     <link rel="stylesheet" href="assets/css/index-en.39634e9f.css">
-    <link rel="stylesheet" href="assets/css/v7.css?v=2">
+    <link rel="stylesheet" href="assets/css/v7.css?v=4">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -644,7 +644,7 @@
         </div>
         <div class="footer-bottom">
             <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
-            <p><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
+            <p class="footer-tools"><button type="button" class="footer-cookies" data-oia-cookies data-no-i18n></button><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
         </div>
     </div>
 </footer>
@@ -705,14 +705,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Constat : la douleur au centre de l'ecran s'allume, l'index suit.
     var index = document.querySelectorAll('#hmPainIndex li');
     document.querySelectorAll('.hm-prow').forEach(function (row, i) {
-        ScrollTrigger.create({ trigger: row, start: 'top 60%', end: 'bottom 40%', onToggle: function (st) {
+        ScrollTrigger.create({ trigger: row, start: 'top 62%', end: 'bottom 38%', onToggle: function (st) {
             row.classList.toggle('on', st.isActive);
             if (st.isActive) index.forEach(function (li, j) { li.classList.toggle('on', j === i); });
         } });
     });
     // Benefices : chaque ligne avant / apres se resout en croisant le milieu de l'ecran.
     document.querySelectorAll('.hm-srow').forEach(function (row) {
-        ScrollTrigger.create({ trigger: row, start: 'top 60%', onEnter: function () { row.classList.add('done'); } });
+        ScrollTrigger.create({ trigger: row, start: 'top 78%', onEnter: function () { row.classList.add('done'); } });
     });
 
     if (!calme) {

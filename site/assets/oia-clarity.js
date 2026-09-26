@@ -147,7 +147,7 @@
     }
 
     var bandeau = null;
-    var lienGerer = null;
+    var liensGerer = [];
 
     /* Une seule fonction repeint tout ce qui porte du texte, appelee a la
        construction puis a chaque changement de langue. Le bandeau peut etre
@@ -161,7 +161,7 @@
             bandeau.querySelector('[data-oiac="non"]').textContent = t.non;
             bandeau.querySelector('[data-oiac="oui"]').textContent = t.oui;
         }
-        if (lienGerer) lienGerer.textContent = t.gerer;
+        liensGerer.forEach(function (el) { el.textContent = t.gerer; });
     }
 
     document.addEventListener('oia:lang', peindre);
@@ -215,7 +215,13 @@
     function poserRappel() {
         var cibles = document.querySelectorAll('[data-oia-cookies]');
         if (cibles.length) {
-            cibles.forEach(function (el) { el.addEventListener('click', afficher); });
+            /* Un bouton vide recoit le libelle dans la langue de la page, et le
+               suit ; un bouton deja libelle est laisse tel quel. */
+            cibles.forEach(function (el) {
+                el.addEventListener('click', afficher);
+                if (!el.textContent.trim()) liensGerer.push(el);
+            });
+            peindre();
             return;
         }
         var pied = document.querySelector('footer');
@@ -227,7 +233,7 @@
         b.type = 'button';
         b.className = 'oiac-relink';
         b.addEventListener('click', afficher);
-        lienGerer = b;
+        liensGerer.push(b);
         peindre();
         wrap.appendChild(document.createTextNode(' · '));
         wrap.appendChild(b);

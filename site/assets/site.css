@@ -147,6 +147,11 @@ body > footer .footer-bottom { border-top: 1px solid rgba(248, 250, 252, .10); }
 body > footer .footer-bottom p, body > footer .footer-bottom span { color: #64748B; }
 body > footer .footer-bottom a.legal-link { color: #94A3B8; }
 body > footer .footer-bottom a.legal-link:hover { color: #FDBA74; }
+body > footer .footer-tools { display: flex; align-items: center; gap: 16px; }
+body > footer .footer-cookies { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 9px; border: 1px solid rgba(248, 250, 252, .16); border-radius: 999px; background: transparent; color: #94A3B8; font: inherit; font-size: .8rem; line-height: 1.2; cursor: pointer; transition: color .2s, border-color .2s; }
+body > footer .footer-cookies::before { content: ""; flex: none; width: 13px; height: 13px; border-radius: 50%; background: radial-gradient(circle at 32% 34%, #0F172A 0 1.5px, transparent 2px), radial-gradient(circle at 68% 40%, #0F172A 0 1.2px, transparent 1.7px), radial-gradient(circle at 48% 70%, #0F172A 0 1.4px, transparent 1.9px), #FDBA74; }
+body > footer .footer-cookies:hover { color: #fff; border-color: #FDBA74; }
+body > footer .footer-cookies:focus-visible { outline: 2px solid #FDBA74; outline-offset: 3px; }
 
 /* ═══ DARK MODE — surcharge des tokens, posee par assets/oia-theme.js ═══
    :root[data-theme="dark"] (0,1,1) bat les :root des feuilles par page,
