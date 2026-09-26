@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Resources": "Recursos",
         "SEOPlus!, SEO Audit and AI Visibility | OptimizIA.xyz": "SEOPlus!, auditoría SEO y visibilidad en IA | OptimizIA.xyz",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

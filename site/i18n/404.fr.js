@@ -1,22 +1,27 @@
-/* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (blog vide, piliers SEO et GEO retires). */
+/* 404, fr. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (page d'erreur 404/410). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
         "Resources": "Ressources",
-        "Blog | OptimizIA.xyz": "Blog | OptimizIA.xyz",
+        "Page not found | OptimizIA.xyz": "Page introuvable | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",
         "Blog": "Blog",
         "About": "À propos",
         "Book a call": "Prendre rdv",
-        "The blog": "Le blog",
-        "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
-        "Our first articles are on their way. In the meantime, our <a href=\"/case-studies/\">case studies</a> show what we build for small and mid-size businesses, and what it changes day to day.": "Nos premiers articles sont en préparation. En attendant, nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons pour les PME, et ce que cela change au quotidien.",
+        "Page not found": "Page introuvable",
+        "This page does not exist, or no longer does": "Cette page n'existe pas, ou plus",
+        "The link may be outdated, or the page has been removed. The rest of the site is still here.": "Le lien est peut-être ancien, ou la page a été supprimée. Le reste du site est toujours là.",
+        "Back to home": "Retour à l'accueil",
+        "Diagnostic, proof of concept, then copiloting: our 3 formats in detail.": "Diagnostic, preuve de concept, puis copilotage : nos 3 formules en détail.",
+        "The 3 levers": "Les 3 leviers",
+        "Diagnosis, automation and knowledge management, explained one by one.": "Diagnostic, automatisation et gestion des connaissances, expliqués un par un.",
+        "Five projects we have actually delivered, described without embellishment.": "Cinq projets réellement livrés, décrits sans enjolivure.",
+        "Who we are, and how we work in the field.": "Qui nous sommes, et comment nous travaillons sur le terrain.",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",
         "↗ Meet the founders": "↗ Rencontrer les fondateurs",
         "Company": "Entreprise",
-        "The 3 levers": "Les 3 leviers",
         "All case studies": "Toutes les réalisations",
         "Lead monitoring": "Veille de leads",
         "Automated reporting": "Reporting automatisé",
@@ -37,9 +42,5 @@ window.OIA_I18N.fr = {
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Tous droits réservés ·",
         "Legal Notice": "Mentions légales",
     },
-    attr: {
-        ".blog-filter": {
-            "aria-label": "Filtrer les articles par thème"
-        }
-    }
+    attr: {}
 };

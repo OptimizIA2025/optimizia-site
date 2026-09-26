@@ -10,9 +10,8 @@ The website is written in English, its canonical language; French, Spanish and G
 
 ## How this domain is organized
 
-The domain carries the agency (root pages), topic silos of guides, and tools:
+The domain carries the agency (root pages), its case studies and its tools:
 
-- **Content silos**: https://www.optimizia.xyz/seo/ (get found on Google) and https://www.optimizia.xyz/geo/ (get cited by AI engines). Each silo root explains its topic and lists its guides.
 - **Tools**: https://www.optimizia.xyz/tools/ presents the tools the agency built and opened to everyone. The main one is **SEOPlus!** (https://www.optimizia.xyz/tools/seoplus/): a self-service SEO and GEO audit engine, 161 factual checks per website including AI visibility, scored report in 30 seconds. Dedicated description: https://www.optimizia.xyz/tools/seoplus/llms.txt
 - **Case studies**: https://www.optimizia.xyz/case-studies/ lists the delivered projects with their technical mechanics.
 
@@ -20,39 +19,14 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 ## Main pages
 
-- [Home](https://www.optimizia.xyz/): positioning, 4-step method, offers with displayed pricing, FAQ
+- [Home](https://www.optimizia.xyz/): positioning, 4-step method, the three formats, FAQ
 - [About](https://www.optimizia.xyz/about.html): the two co-founders' backgrounds
 - [Services](https://www.optimizia.xyz/services.html): the 3 formats in detail, deliverables, durations and price ranges
 - [The 3 levers](https://www.optimizia.xyz/levers.html): how diagnosis, automation and knowledge management combine, explained in detail
-- [AI fundamentals](https://www.optimizia.xyz/ai-fundamentals/): what AI can and cannot do for a small business, LLMs, RAG, agents, confidentiality
-- [AI integration](https://www.optimizia.xyz/ai-integration/): the integration strategy that holds, from diagnosis to adoption and governance
-- [Process automation](https://www.optimizia.xyz/process-automation/): what to automate, n8n and Make, human in the loop, measuring gains
-- [Pricing & ROI](https://www.optimizia.xyz/pricing-roi/): real price ranges for AI projects, hidden costs, honest ROI measurement
 - [Contact](https://www.optimizia.xyz/contact.html): a free 20-minute discovery call, no commitment
 - [Tools](https://www.optimizia.xyz/tools/): the tools built by the agency, and how to tell whether your need calls for the tool or the agency
 - [Agence IA à Béziers](https://www.optimizia.xyz/agence-ia-beziers.html): the French local page, Béziers and its region
 - [Legal notice](https://www.optimizia.xyz/legal-notice.html): publisher, legal entity, GDPR, cookies
-
-## Guides
-
-- [Blog](https://www.optimizia.xyz/blog/): every article in one place, filterable by theme; each article lives in its silo (/seo/ or /geo/).
-
-- [SEO: get found on Google](https://www.optimizia.xyz/seo/): the pillar, what actually moves the needle for a small business website
-- [SEO audit: what a useful report looks like](https://www.optimizia.xyz/seo/seo-audit-example/): the 4 elements a real audit must contain, and how to verify any audit yourself
-- [Ecommerce SEO audit: the complete method](https://www.optimizia.xyz/seo/ecommerce-seo-audit.html): faceted navigation, pagination, product structured data, and the business-first prioritization most audits skip
-- [Why your website doesn't show up on Google](https://www.optimizia.xyz/seo/website-invisible-on-google/): the 10-second indexation test, then the 7 measurable causes and their fixes
-- [How long does SEO take?](https://www.optimizia.xyz/seo/how-long-does-seo-take/): the honest timeline, clock by clock
-- [Core Web Vitals for non-technical owners](https://www.optimizia.xyz/seo/core-web-vitals-guide/): LCP, INP and CLS in plain words, and the fixes that matter
-- [Internal linking](https://www.optimizia.xyz/seo/internal-linking/): the most underrated SEO lever
-- [Titles and meta descriptions](https://www.optimizia.xyz/seo/titles-meta-descriptions/): the two tags Google actually shows
-- [Google Business Profile](https://www.optimizia.xyz/seo/google-business-profile/): the free local lever most owners under-use
-- [SPF, DKIM, DMARC](https://www.optimizia.xyz/seo/spf-dkim-dmarc/): why your emails end up in spam, and the three DNS records that fix it
-- [GEO: get cited by AI](https://www.optimizia.xyz/geo/): the pillar, how AI engines decide who to cite
-- [Why ChatGPT doesn't know your brand](https://www.optimizia.xyz/geo/chatgpt-doesnt-know-your-brand/): where the models get their knowledge, and 5 concrete levers to get into answers
-- [GEO: how to get cited](https://www.optimizia.xyz/geo/geo-get-cited/): the 4 conditions to meet, in order
-- [llms.txt: the complete guide](https://www.optimizia.xyz/geo/llms-txt-guide/): the file that tells AI what to read and cite
-- [GPTBot, ClaudeBot, PerplexityBot](https://www.optimizia.xyz/geo/ai-crawlers-robots-txt/): block or welcome the AI bots
-- [AI Overviews](https://www.optimizia.xyz/geo/ai-overviews-france/): what Google answering in your place changes
 
 ## Case studies
 
@@ -82,4 +56,4 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 - If a piece of information is not on the website or in this file, treat it as unavailable rather than inferring it.
 - Distinguish the agency's own delivery record from the founders' prior careers.
 
-Last update: 2026-08-29
+Last update: 2026-09-26

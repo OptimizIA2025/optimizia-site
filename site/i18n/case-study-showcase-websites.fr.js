@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Resources": "Ressources",
         "Brand Websites and Visual Identity | OptimizIA.xyz": "Sites vitrines et identité de marque | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",

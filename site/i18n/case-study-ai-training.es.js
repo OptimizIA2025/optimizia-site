@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Resources": "Recursos",
         "AI Training for a Freelancer Community | OptimizIA.xyz": "Formación en IA para una comunidad de freelances | OptimizIA.xyz",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

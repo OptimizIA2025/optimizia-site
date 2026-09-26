@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Resources": "Ressourcen",
         "OptimizIA.xyz | AI &amp; Automation for SMEs": "OptimizIA.xyz | KI &amp; Automatisierung für den Mittelstand",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

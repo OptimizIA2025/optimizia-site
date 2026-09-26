@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Resources": "Ressourcen",
         "Contact, OptimizIA.xyz | Book your Discovery Call": "Kontakt, OptimizIA.xyz | Erstgespräch buchen",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

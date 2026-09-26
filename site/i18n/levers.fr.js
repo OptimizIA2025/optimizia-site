@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Resources": "Ressources",
         "The 3 levers: diagnose, automate, capitalise | OptimizIA.xyz": "Les 3 leviers : diagnostiquer, automatiser, capitaliser | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",

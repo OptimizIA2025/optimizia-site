@@ -65,4 +65,9 @@ Allow: /
 # et son sitemap ne peut etre declare NULLE PART AILLEURS, un crawler ne lisant
 # le robots.txt qu'a la racine de l'origine. Le retirer rendrait ses 80 articles
 # decouvrables par les seuls liens internes.
-Sitemap: https://www.optimizia.xyz/sitemap.xml
+# Le parametre ?v=2026 est volontaire : l'entree https://www.optimizia.xyz/sitemap.xml
+# est morte dans Search Console (un mois d'echecs, Google abandonne une URL de
+# sitemap apres quelques jours et une resoumission ne la ranime pas). La meme
+# adresse avec ce parametre a ete traitee en quelques secondes le 26/09/2026.
+# nginx ignore la query sur un fichier statique : meme fichier, meme .gz.
+Sitemap: https://www.optimizia.xyz/sitemap.xml?v=2026

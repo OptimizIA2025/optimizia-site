@@ -96,7 +96,7 @@ window.OIA_I18N.es = {
         "Software subscriptions and API usage, paid directly to the providers. For an SME workload they usually come to a few tens of euros per month, and we list them in the proposal.": "Las suscripciones de software y el consumo de API, pagados directamente a los proveedores. Para una pyme suelen suponer unas decenas de euros al mes, y los detallamos en la propuesta.",
         "Resources": "Recursos",
         "Go further before we talk": "Para ir más lejos antes de hablar",
-        "How we work, what we have already built, and guides to prepare your project.": "Cómo trabajamos, lo que ya hemos construido y guías para preparar su proyecto.",
+        "How we work, and what we have already built.": "Cómo trabajamos y lo que ya hemos construido.",
         "The agency": "La agencia",
         "The 3 levers in detail": "Las 3 palancas en detalle",
         "Diagnose, automate, capitalise: what sits under every format.": "Diagnosticar, automatizar, capitalizar: lo que hay detrás de cada formato.",

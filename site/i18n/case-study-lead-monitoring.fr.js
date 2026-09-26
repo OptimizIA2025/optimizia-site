@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Resources": "Ressources",
         "Automated Market Intelligence to Prospects | OptimizIA.xyz": "Veille de marché automatisée en prospects | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",

@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Resources": "Ressourcen",
         "Tools | OptimizIA.xyz": "Tools | OptimizIA.xyz",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

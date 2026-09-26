@@ -96,7 +96,7 @@ window.OIA_I18N.de = {
         "Software subscriptions and API usage, paid directly to the providers. For an SME workload they usually come to a few tens of euros per month, and we list them in the proposal.": "Software-Abonnements und API-Nutzung, direkt an die Anbieter bezahlt. Für ein KMU sind das meist einige Dutzend Euro pro Monat, und wir führen sie im Angebot auf.",
         "Resources": "Ressourcen",
         "Go further before we talk": "Mehr erfahren vor dem Gespräch",
-        "How we work, what we have already built, and guides to prepare your project.": "Wie wir arbeiten, was wir bereits gebaut haben, und Leitfäden zur Vorbereitung Ihres Projekts.",
+        "How we work, and what we have already built.": "Wie wir arbeiten und was wir bereits gebaut haben.",
         "The agency": "Die Agentur",
         "The 3 levers in detail": "Die 3 Hebel im Detail",
         "Diagnose, automate, capitalise: what sits under every format.": "Analysieren, automatisieren, sichern: was hinter jedem Format steckt.",

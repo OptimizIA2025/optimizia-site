@@ -1,22 +1,27 @@
-/* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (blog vide, piliers SEO et GEO retires). */
+/* 404, es. Cle = texte anglais exact du HTML, espaces normalises.
+   Regenere le 2026-09-25 (page d'erreur 404/410). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
         "Resources": "Recursos",
-        "Blog | OptimizIA.xyz": "Blog | OptimizIA.xyz",
+        "Page not found | OptimizIA.xyz": "Página no encontrada | OptimizIA.xyz",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",
         "Blog": "Blog",
         "About": "Quiénes somos",
         "Book a call": "Reservar una cita",
-        "The blog": "El blog",
-        "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
-        "Our first articles are on their way. In the meantime, our <a href=\"/case-studies/\">case studies</a> show what we build for small and mid-size businesses, and what it changes day to day.": "Nuestros primeros artículos están en camino. Mientras tanto, nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos para las pymes y lo que cambia en su día a día.",
+        "Page not found": "Página no encontrada",
+        "This page does not exist, or no longer does": "Esta página no existe, o ya no existe",
+        "The link may be outdated, or the page has been removed. The rest of the site is still here.": "Puede que el enlace esté desactualizado o que la página se haya eliminado. El resto del sitio sigue aquí.",
+        "Back to home": "Volver al inicio",
+        "Diagnostic, proof of concept, then copiloting: our 3 formats in detail.": "Diagnóstico, prueba de concepto y copilotaje: nuestros 3 formatos en detalle.",
+        "The 3 levers": "Las 3 palancas",
+        "Diagnosis, automation and knowledge management, explained one by one.": "Diagnóstico, automatización y gestión del conocimiento, explicados uno a uno.",
+        "Five projects we have actually delivered, described without embellishment.": "Cinco proyectos realmente entregados, descritos sin adornos.",
+        "Who we are, and how we work in the field.": "Quiénes somos y cómo trabajamos sobre el terreno.",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
         "↗ Meet the founders": "↗ Conozca a los fundadores",
         "Company": "Empresa",
-        "The 3 levers": "Las 3 palancas",
         "All case studies": "Todos los casos de éxito",
         "Lead monitoring": "Monitoreo de leads",
         "Automated reporting": "Informes automatizados",
@@ -37,9 +42,5 @@ window.OIA_I18N.es = {
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
         "Legal Notice": "Aviso legal",
     },
-    attr: {
-        ".blog-filter": {
-            "aria-label": "Filtrar los artículos por tema"
-        }
-    }
+    attr: {}
 };

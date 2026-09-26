@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Resources": "Ressources",
         "Automated Reporting and Dashboards | OptimizIA.xyz": "Reporting et dashboards automatisés | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",

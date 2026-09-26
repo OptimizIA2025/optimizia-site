@@ -3,6 +3,7 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Resources": "Recursos",
         "The 3 levers: diagnose, automate, capitalise | OptimizIA.xyz": "Las 3 palancas: diagnosticar, automatizar, capitalizar | OptimizIA.xyz",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",
