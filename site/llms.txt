@@ -14,6 +14,7 @@ The domain carries the agency (root pages), its case studies and its tools:
 
 - **Tools**: https://www.optimizia.xyz/tools/ presents the tools the agency built and opened to everyone. The main one is **SEOPlus!** (https://www.optimizia.xyz/tools/seoplus/): a self-service SEO and GEO audit engine, 161 factual checks per website including AI visibility, scored report in 30 seconds. Dedicated description: https://www.optimizia.xyz/tools/seoplus/llms.txt
 - **Case studies**: https://www.optimizia.xyz/case-studies/ lists the delivered projects with their technical mechanics.
+- **Blog**: https://www.optimizia.xyz/blog/ publishes practical articles on automating the repetitive work of small businesses and SMEs.
 
 One search intent belongs to one page only: do not cite the agency for an audit-tool question, nor the tool for an integration-services question.
 
@@ -31,11 +32,15 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 ## Case studies
 
 - [All case studies](https://www.optimizia.xyz/case-studies/): the five delivered projects, described with their technical mechanics
-- [Automated market intelligence to prospects](https://www.optimizia.xyz/case-studies/lead-monitoring/): Agent RADAR, in production Monday to Friday for a trading-sector client
+- [Automated market intelligence to prospects](https://www.optimizia.xyz/case-studies/lead-monitoring/): Agent RADAR, in production Monday to Friday for an influence agent, 25 industry feeds read and ranked every morning
 - [Automated reporting and dashboards](https://www.optimizia.xyz/case-studies/automated-reporting/): an analysis chain that produces and distributes its reports without manual work
 - [AI training](https://www.optimizia.xyz/case-studies/ai-training/): a workshop for a freelancer community, from first prompt to autonomous agent
 - [Brand websites and visual identity](https://www.optimizia.xyz/case-studies/showcase-websites/): design and launch for independents, including HappySharing RH
 - [SEOPlus!, SEO audit and AI visibility](https://www.optimizia.xyz/case-studies/seoplus/): internal product, 161 checks per website, report in 30 seconds
+
+## Blog
+
+- [Zapier workflow automation tool](https://www.optimizia.xyz/blog/zapier-workflow-automation-tool/): how the agency maps, builds, tests and hands over Zapier workflows, the four safeguards on every Zap, pricing from 1,500 € excl. VAT, and when n8n or Make is the better call
 
 ## Founders
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - zapier-workflow-automation-tool</title>
+<!-- Source du visuel de l'article. Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/zapier-workflow-automation-tool.html        (og : titre + Zap)
+     /_meeeters/visuels/zapier-workflow-automation-tool.html#art    (carte et figure : Zap, alerte, journal)
+     Rendu : chrome --headless=new --screenshot --window-size=1200,630.
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root {
+  --bg: #0F1729;
+  --ink: #F8FAFC;
+  --ink-soft: #CBD5E1;
+  --ink-mute: #A5B4CB;
+  --card: #1B2640;
+  --card-line: rgba(203, 213, 225, .22);
+  --orange: #FB923C;
+  --green: #4ADE80;
+  --amber: #FBBF24;
+  --grad: linear-gradient(90deg, #60A5FA 0%, #A78BFA 45%, #FB923C 100%);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background:
+    radial-gradient(640px 440px at 4% -8%, rgba(59, 130, 246, .34), transparent 70%),
+    radial-gradient(720px 500px at 102% 110%, rgba(249, 115, 22, .30), transparent 70%),
+    var(--bg); }
+.stage::before { content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(203, 213, 225, .14) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%);
+          mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%); }
+.stage::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--grad); }
+
+/* Plateau du Zap */
+.scene { position: absolute; perspective: 1800px; }
+.board { width: 100%; transform: rotateY(-8deg) rotateX(4deg); transform-origin: 60% 50%;
+  border-radius: 26px; padding: 20px 22px 22px; background: linear-gradient(165deg, #22304F, #151F36);
+  border: 1px solid rgba(203, 213, 225, .26);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .08) inset, 0 40px 80px -24px rgba(0, 0, 0, .75); }
+.bar { display: flex; align-items: center; gap: 14px; padding: 0 4px 16px; margin-bottom: 16px; border-bottom: 1px solid var(--card-line); }
+.bar b { display: block; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -.015em; line-height: 1.1; }
+.bar small { display: block; margin-top: 4px; font-size: 16px; color: var(--ink-soft); }
+.toggle { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--green); letter-spacing: .08em; }
+.toggle s { position: relative; width: 44px; height: 26px; border-radius: 26px; background: #22C55E; }
+.toggle s::after { content: ""; position: absolute; right: 4px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: #F8FAFC; }
+
+.steps { position: relative; list-style: none; }
+.steps::before { content: ""; position: absolute; left: 39px; top: 36px; bottom: 36px; width: 3px; border-radius: 3px; background: linear-gradient(180deg, #60A5FA, #A78BFA 50%, #FB923C); }
+.step { position: relative; display: flex; align-items: center; gap: 16px; height: 78px; padding: 0 18px 0 13px; margin-bottom: 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--card-line); }
+.step:last-child { margin-bottom: 0; }
+.tile { flex: none; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; position: relative; z-index: 1; }
+.tile svg { width: 28px; height: 28px; }
+.meta { min-width: 0; flex: 1; }
+.kind { display: block; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); }
+.what { display: block; margin-top: 2px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -.015em; line-height: 1.15; white-space: nowrap; }
+.what u { text-decoration: none; color: var(--ink-soft); font-weight: 400; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 16px; padding: 6px 12px; border-radius: 100px; }
+.chip.ok { color: #86EFAC; background: rgba(74, 222, 128, .14); border: 1px solid rgba(74, 222, 128, .4); }
+.chip.retry { color: #FCD34D; background: rgba(251, 191, 36, .14); border: 1px solid rgba(251, 191, 36, .45); }
+.step.hot { border-color: rgba(251, 146, 60, .75); background: #24273A; box-shadow: 0 0 0 4px rgba(251, 146, 60, .12); }
+
+.t-form { background: rgba(96, 165, 250, .2); color: #BFDBFE; box-shadow: inset 0 0 0 1px rgba(96, 165, 250, .5); }
+.t-filter { background: rgba(251, 191, 36, .18); color: #FDE68A; box-shadow: inset 0 0 0 1px rgba(251, 191, 36, .45); }
+.t-sheets { background: rgba(74, 222, 128, .18); color: #BBF7D0; box-shadow: inset 0 0 0 1px rgba(74, 222, 128, .45); }
+.t-slack { background: rgba(192, 132, 252, .2); color: #E9D5FF; box-shadow: inset 0 0 0 1px rgba(192, 132, 252, .5); }
+.t-gmail { background: rgba(251, 113, 133, .18); color: #FECDD3; box-shadow: inset 0 0 0 1px rgba(251, 113, 133, .45); }
+
+/* Panneaux de droite (variante carte) */
+.side { position: absolute; left: 764px; top: 40px; width: 392px; perspective: 1800px; display: none; flex-direction: column; gap: 20px; }
+.side > * { transform: rotateY(-8deg) rotateX(4deg); transform-origin: 0 50%; }
+.panel { border-radius: 22px; background: #172136; border: 1px solid rgba(203, 213, 225, .26); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .75); }
+.alert { display: flex; gap: 16px; align-items: center; padding: 18px 20px; }
+.bell { flex: none; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(251, 146, 60, .2); color: #FDBA74; box-shadow: inset 0 0 0 1px rgba(251, 146, 60, .55); }
+.bell svg { width: 26px; height: 26px; }
+.alert b { display: block; font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -.01em; }
+.alert small { display: block; margin-top: 3px; font-size: 16px; line-height: 1.35; color: var(--ink-soft); }
+.log { padding: 18px 20px 16px; }
+.log h4 { display: flex; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); font-weight: 400; margin-bottom: 6px; }
+.log h4 b { color: #86EFAC; font-weight: 400; letter-spacing: .06em; }
+.row { display: grid; grid-template-columns: 96px 1fr 24px; align-items: center; gap: 10px; padding: 11px 0; border-top: 1px solid rgba(203, 213, 225, .14); }
+.row time { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-mute); }
+.row span { font-size: 18px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.row i { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; }
+.row i svg { width: 14px; height: 14px; }
+.row .g { background: rgba(74, 222, 128, .2); color: #86EFAC; }
+.row .a { background: rgba(251, 191, 36, .22); color: #FCD34D; }
+.log p { margin-top: 4px; padding-top: 12px; border-top: 1px solid rgba(203, 213, 225, .14); display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-soft); }
+.log p i { width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+
+/* og : titre a gauche, plateau a droite */
+.copy { position: absolute; left: 64px; top: 72px; width: 510px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #FDBA74; padding: 8px 15px 8px 13px; border: 1px solid rgba(251, 146, 60, .45); border-radius: 100px; background: rgba(251, 146, 60, .1); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+h1 { margin-top: 26px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 64px; line-height: 1.02; letter-spacing: -.035em; }
+h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { margin-top: 22px; font-size: 22px; line-height: 1.45; color: var(--ink-soft); max-width: 460px; }
+.brand { position: absolute; left: 64px; bottom: 50px; display: flex; align-items: center; gap: 16px; }
+.brand img { height: 32px; width: auto; filter: invert(1) hue-rotate(180deg) brightness(1.15); }
+.brand span { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-mute); letter-spacing: .04em; padding-left: 16px; border-left: 1px solid var(--card-line); }
+.og .scene { left: 606px; top: 44px; width: 548px; }
+.og .step { height: 74px; margin-bottom: 12px; }
+.og .what { font-size: 24px; }
+
+/* Carte et figure : pas de titre, plateau a gauche, alerte et journal a droite */
+.art .copy, .art .brand { display: none; }
+.art .scene { left: 52px; top: 30px; width: 668px; }
+.art .side { display: flex; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="copy">
+    <span class="eyebrow"><i></i>Zapier workflow automation</span>
+    <h1>Automations that match how you <em>actually work.</em></h1>
+    <p class="sub">Mapped first, tested step by step, handed over documented.</p>
+  </div>
+  <div class="brand"><img src="../../site/LogoComplet.webp" alt=""><span>optimizia.xyz/blog</span></div>
+
+  <div class="scene">
+    <div class="board">
+      <div class="bar">
+        <div><b>Website lead to sales</b><small>Zap &middot; last run 09:19</small></div>
+        <span class="toggle">ON <s></s></span>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="tile t-form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+          <span class="meta"><span class="kind">Trigger</span><span class="what">New form entry <u>&middot; Website</u></span></span>
+        </li>
+        <li class="step">
+          <span class="tile t-filter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7.5V19l-4 1.5v-8z"/></svg></span>
+          <span class="meta"><span class="kind">Filter</span><span class="what">Valid email only</span></span>
+        </li>
+        <li class="step">
+          <span class="tile t-sheets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M4 10h16M4 15h16M10 10v10"/></svg></span>
+          <span class="meta"><span class="kind">Action</span><span class="what">Add row <u>&middot; Google Sheets</u></span></span>
+        </li>
+        <li class="step hot">
+          <span class="tile t-slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 7 20M17 4l-2 16M4.5 9h16M3.5 15h16"/></svg></span>
+          <span class="meta"><span class="kind">Action</span><span class="what">Notify sales <u>&middot; Slack</u></span></span>
+          <span class="chip retry">replayed &#10003;</span>
+        </li>
+        <li class="step">
+          <span class="tile t-gmail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span class="meta"><span class="kind">Action</span><span class="what">First reply <u>&middot; Gmail</u></span></span>
+          <span class="chip ok">sent</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="panel alert">
+      <span class="bell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+      <span><b>Error alerts on</b><small>Sent to a person, not a shared inbox</small></span>
+    </div>
+    <div class="panel log">
+      <h4>Zap history <b>5/5 ok</b></h4>
+      <div class="row"><time>09:14:02</time><span>New form entry</span><i class="g"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i></div>
+      <div class="row"><time>09:14:03</time><span>Filter passed</span><i class="g"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i></div>
+      <div class="row"><time>09:14:04</time><span>Row added</span><i class="g"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i></div>
+      <div class="row"><time>09:19:04</time><span>Slack, replayed</span><i class="a"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4.5A4 4 0 1 0 10 7"/><path d="M10 2v2.6H7.4"/></svg></i></div>
+      <div class="row"><time>09:19:05</time><span>Gmail reply sent</span><i class="g"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i></div>
+      <p><i></i>Autoreplay on &middot; 0 records lost</p>
+    </div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

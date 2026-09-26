@@ -7,21 +7,20 @@
     <link rel="stylesheet" href="/assets/site.css?v=8">
     <script src="/assets/oia-theme.js?v=1"></script>
     <link rel="canonical" href="https://www.optimizia.xyz/blog/">
-    <meta name="robots" content="noindex, follow">
     <title>Blog | OptimizIA.xyz</title>
-    <meta name="description" content="Articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz. The first ones are on their way.">
+    <meta name="description" content="Practical articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz: what we build, what breaks, and how we keep it running.">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="OptimizIA.xyz">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blog | OptimizIA.xyz">
-    <meta property="og:description" content="Articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz. The first ones are on their way.">
+    <meta property="og:description" content="Practical articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz: what we build, what breaks, and how we keep it running.">
     <meta property="og:url" content="https://www.optimizia.xyz/blog/">
     <meta property="og:image" content="https://www.optimizia.xyz/assets/og-v7.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog | OptimizIA.xyz">
-    <meta name="twitter:description" content="Articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz. The first ones are on their way.">
+    <meta name="twitter:description" content="Practical articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz: what we build, what breaks, and how we keep it running.">
     <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-v7.jpg">
 
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,8 +40,17 @@
           "@id": "https://www.optimizia.xyz/blog/#page",
           "url": "https://www.optimizia.xyz/blog/",
           "name": "OptimizIA.xyz blog",
-          "description": "Articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz. The first ones are on their way.",
+          "description": "Practical articles on custom AI automation for small and mid-size businesses, by OptimizIA.xyz: what we build, what breaks, and how we keep it running.",
           "inLanguage": "en",
+          "blogPost": [
+            {
+              "@type": "BlogPosting",
+              "@id": "https://www.optimizia.xyz/blog/zapier-workflow-automation-tool/#article",
+              "headline": "Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork",
+              "url": "https://www.optimizia.xyz/blog/zapier-workflow-automation-tool/",
+              "datePublished": "2026-09-26"
+            }
+          ],
           "isPartOf": {
             "@id": "https://www.optimizia.xyz/#website"
           },
@@ -70,7 +78,20 @@
       ]
     }
     </script>
-    <style>.post-head .lead a { color: var(--orange-deep); text-decoration: underline; text-underline-offset: 2px; }</style>
+    <style>
+    .post-head .lead a { color: var(--orange-deep); text-decoration: underline; text-underline-offset: 2px; }
+    .blog-card-art img { display: block; width: 100%; height: auto; }
+    .blog-grid.is-featured > .blog-card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); column-gap: 36px; align-content: center; padding: 28px; }
+    .blog-grid.is-featured > .blog-card:first-child > .blog-card-art { grid-column: 1; grid-row: 1 / span 4; margin: 0; align-self: center; }
+    .blog-grid.is-featured > .blog-card:first-child > :not(.blog-card-art) { grid-column: 2; }
+    .blog-grid.is-featured > .blog-card:first-child > .blog-card-tag { align-self: end; }
+    .blog-grid.is-featured > .blog-card:first-child h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); letter-spacing: -0.025em; line-height: 1.2; }
+    .blog-grid.is-featured > .blog-card:first-child p { flex: none; font-size: .98rem; }
+    @media (max-width: 800px) {
+      .blog-grid.is-featured > .blog-card:first-child { display: flex; padding: 24px; }
+      .blog-grid.is-featured > .blog-card:first-child > .blog-card-art { margin: -6px 0 16px; }
+    }
+    </style>
 </head>
 <body>
 
@@ -108,7 +129,17 @@
         <div class="post-head">
           <p class="eyebrow">The blog</p>
           <h1>Custom AI automation, from the field</h1>
-          <p class="lead">Our first articles are on their way. In the meantime, our <a href="/case-studies/">case studies</a> show what we build for small and mid-size businesses, and what it changes day to day.</p>
+          <p class="lead">Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href="/case-studies/">case studies</a> show what we build, and what it changes day to day.</p>
+        </div>
+
+        <div class="blog-grid is-featured">
+          <a class="blog-card" href="/blog/zapier-workflow-automation-tool/">
+            <div class="blog-card-art"><img src="/assets/blog/zapier-workflow-automation-tool.webp" alt="" width="1200" height="630"></div>
+            <span class="blog-card-tag">Automation</span>
+            <h2>Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork</h2>
+            <p>How we map your process before touching Zapier, the four safeguards on every Zap we hand over, what it costs, and when n8n or Make is the better call.</p>
+            <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-09-26">September 26, 2026</time></span>
+          </a>
         </div>
       </div>
     </section>
@@ -207,6 +238,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     initGSAP();
+});
+</script>
+
+<script>
+/* Les dates des cartes suivent la langue affichee : oia-i18n.js n'indexe pas les <time>. */
+document.addEventListener("oia:lang", function (e) {
+    var fmt = new Intl.DateTimeFormat(e.detail || "en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+    document.querySelectorAll(".blog-card time[datetime]").forEach(function (t) {
+        t.textContent = fmt.format(new Date(t.getAttribute("datetime") + "T00:00:00Z"));
+    });
 });
 </script>
 
