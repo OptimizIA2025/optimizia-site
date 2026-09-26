@@ -130,6 +130,24 @@ footer .footer-grid {
     footer .footer-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
+/* ═══ FOOTER V7 : bloc sombre dans la continuite de l'appel final, filet degrade en tete,
+   titres de colonnes en surtitre, logo inverse comme en mode sombre. Selecteurs body > footer
+   pour passer devant les feuilles compilees par page. ═══ */
+body > footer { position: relative; background: #0F172A; color: #CBD5E1; border-top: 0; padding: 88px 0 36px; }
+body > footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, #3B82F6, #F97316); }
+body > footer .nav-logo img { filter: invert(1) hue-rotate(180deg); }
+body > footer .footer-brand p { color: #94A3B8; font-size: .92rem; line-height: 1.7; }
+body > footer .footer-ginoux { color: #FDBA74; font-weight: 600; }
+body > footer .footer-ginoux:hover { color: #fff; }
+body > footer .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: #FDBA74; margin-bottom: 18px; }
+body > footer .footer-col a { color: #CBD5E1; transition: color .2s; }
+body > footer .footer-col a:hover { color: #fff; }
+body > footer .footer-col p { color: #94A3B8; }
+body > footer .footer-bottom { border-top: 1px solid rgba(248, 250, 252, .10); }
+body > footer .footer-bottom p, body > footer .footer-bottom span { color: #64748B; }
+body > footer .footer-bottom a.legal-link { color: #94A3B8; }
+body > footer .footer-bottom a.legal-link:hover { color: #FDBA74; }
+
 /* ═══ DARK MODE — surcharge des tokens, posee par assets/oia-theme.js ═══
    :root[data-theme="dark"] (0,1,1) bat les :root des feuilles par page,
    ordre de chargement indifferent. Couvre aussi les tokens editorial.css. */

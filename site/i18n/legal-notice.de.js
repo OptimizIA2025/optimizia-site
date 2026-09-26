@@ -99,7 +99,7 @@ window.OIA_I18N.de = {
         "These legal notices may be modified at any time. The online version is authoritative and applies as soon as it is published.": "Dieses Impressum kann jederzeit geändert werden. Die Online-Version ist maßgeblich und gilt ab ihrer Veröffentlichung.",
         "<strong>Last updated:</strong> May 2026. For any question regarding these notices, write to <a href=\"mailto:contact@optimizia.xyz\">contact@optimizia.xyz</a>.": "<strong>Letzte Aktualisierung:</strong> Mai 2026. Bei Fragen zu diesem Impressum schreiben Sie an <a href=\"mailto:contact@optimizia.xyz\">contact@optimizia.xyz</a>.",
 
-        "© 2026 OptimizIA.xyz · All rights reserved · <span style=\"color: var(--text-muted);\">V6.1</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <span style=\"color: var(--text-muted);\">V6.1</span>"
+        "© 2026 OptimizIA.xyz · All rights reserved · <span style=\"color: var(--text-muted);\">V7</span>": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten · <span style=\"color: var(--text-muted);\">V7</span>"
     },
     attr: {}
 };

@@ -50,6 +50,45 @@
 .pg-res a:hover { color: var(--orange); }
 .pg-res li span { font-size: .9rem; line-height: 1.55; color: var(--text-secondary); }
 
+/* ── Etudes de cas : pages pleines (la carte facon modale disparait) ──
+   Les composants internes (pipeline, detail, captures, stack, bloc expertise) gardent leurs styles d'origine. */
+.cs-hero { padding-bottom: 72px; }
+.cs-hero .rpage-back { display: inline-flex; margin-bottom: 30px; font-family: var(--hm-mono); font-size: .76rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); transition: color .2s; }
+.cs-hero .rpage-back:hover { color: var(--orange); }
+.cs-hero .rmodal-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--hm-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--hm-orange-ink); background: var(--orange-light); padding: 6px 12px; border-radius: 999px; }
+.cs-hero .rmodal-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.cs-hero .rmodal-title { font-size: clamp(2rem, 3.6vw, 2.9rem); margin: 18px 0 0; }
+.cs-hero .rmodal-title em { font-style: normal; color: var(--orange); }
+.cs-hero .rmodal-lead { font-size: 1.02rem; }
+.cs-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0; padding: 0; background: none; border: 0; border-top: 1px solid var(--hm-line); border-bottom: 1px solid var(--hm-line); border-radius: 0; }
+.cs-stats .rmodal-stat { padding: 26px 24px; background: none; border: 0; border-radius: 0; text-align: left; }
+.cs-stats .rmodal-stat:first-child { padding-left: 0; }
+.cs-stats .rmodal-stat + .rmodal-stat { border-left: 1px solid var(--hm-line); }
+.cs-stats .v { font-family: var(--hm-display); font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.6rem); letter-spacing: -0.04em; line-height: 1; color: var(--text); }
+.cs-stats .v em { font-style: normal; color: var(--orange); }
+.cs-stats .l { margin-top: 10px; font-family: inherit; font-size: .88rem; letter-spacing: 0; text-transform: none; color: var(--text-muted); }
+.cs-sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: end; margin-bottom: 44px; }
+.cs-sec-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.03em; margin: 0; }
+.cs-sec-head h2 .num { display: block; margin-bottom: 12px; font-family: var(--hm-mono); font-size: .8rem; font-weight: 500; letter-spacing: .06em; color: var(--orange); }
+.cs-sec-head .kicker { margin: 0; font-size: 1.02rem; line-height: 1.7; color: var(--text-secondary); }
+.cs-expertise .savoir-faire { margin: 0; border-radius: 28px; padding: 56px; }
+.cs-expertise .savoir-faire-inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto auto 1fr; column-gap: 64px; row-gap: 14px; align-items: start; max-width: none; }
+.cs-expertise .savoir-faire-inner > .overline { grid-column: 1; grid-row: 1; }
+.cs-expertise .savoir-faire-inner > h3 { grid-column: 1; grid-row: 2; margin: 0; font-size: clamp(1.6rem, 2.8vw, 2.3rem); line-height: 1.15; letter-spacing: -0.03em; }
+.cs-expertise .savoir-faire-inner > p, .cs-expertise .savoir-faire-inner > a { grid-column: 2; margin: 0; }
+.cs-expertise .savoir-faire-inner > p:first-of-type { grid-row: 1 / span 3; }
+.cs-expertise .savoir-faire-inner > a { justify-self: start; margin-top: 10px; }
+
+@media (max-width: 900px) {
+    .cs-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cs-stats .rmodal-stat:nth-child(3) { padding-left: 0; border-left: 0; }
+    .cs-stats .rmodal-stat:nth-child(n+3) { border-top: 1px solid var(--hm-line); }
+    .cs-sec-head { grid-template-columns: 1fr; gap: 16px; }
+    .cs-expertise .savoir-faire { padding: 36px 26px; }
+    .cs-expertise .savoir-faire-inner { display: block; }
+    .cs-expertise .savoir-faire-inner > * + * { margin-top: 14px; }
+}
+
 @media (max-width: 900px) {
     .pg-hero { padding: 120px 0 72px; }
     .pg-head, .pg-2col, .pg-res { grid-template-columns: 1fr; gap: 28px; }

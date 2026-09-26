@@ -272,7 +272,7 @@ a.hm-use:hover { border-color: rgba(249,115,22,.45); box-shadow: 0 16px 40px rgb
 .hm-final h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 16px; position: relative; color: #fff; text-wrap: balance; }
 .hm-final p { color: #CBD5E1; max-width: 560px; margin: 0 auto 36px; position: relative; }
 .hm-final .btn { position: relative; margin: 0; }
-.hm-final .final-micro { margin: 20px 0 0; color: #94A3B8; font-size: .84rem; }
+.hm-final .final-micro { margin: 20px auto 0; color: #94A3B8; font-size: .84rem; }
 
 a:focus-visible, summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 6px; }
 
