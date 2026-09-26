@@ -18,31 +18,31 @@
     <meta property="og:description" content="Agence IA et automatisation basée à Béziers. Diagnostic, automatisation n8n et formation IA pour TPE et PME.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.optimizia.xyz/agence-ia-beziers.html">
-    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-beziers.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-image.png">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-beziers.jpg">
 
     <link rel="preload" href="assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/fonts/fonts.css">
 
-    <script src="assets/vendor/gsap.min.js" defer></script>
-    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-
     <link rel="stylesheet" href="assets/css/apropos.fdaee2c0.css">
+    <link rel="stylesheet" href="/assets/css/v7.css?v=4">
+    <link rel="stylesheet" href="/assets/css/pages.css?v=2">
     <style>
-        .bz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 38px; }
-        .bz-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 26px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px; }
-        .bz-card h3 { margin: 0; }
-        .bz-card p { color: var(--text-secondary); margin: 0; flex: 1; }
-        .bz-card a { color: var(--orange); font-weight: 600; }
-        .bz-adresse { margin-top: 26px; padding: 18px 22px; background: var(--orange-light); border-radius: var(--radius); display: inline-block; }
-        .bz-faq { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); padding: 4px 22px; margin-top: 14px; }
-        .bz-faq summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style: none; }
-        .bz-faq summary::-webkit-details-marker { display: none; }
-        .bz-faq[open] summary { color: var(--orange); }
-        .bz-faq p { color: var(--text-secondary); padding-bottom: 16px; margin: 0; }
+        /* Page locale de Beziers : seules les pieces propres a la page, le reste vient de v7.css */
+        .bz-ancre { position: static; }
+        .bz-ancre h3 { font-size: 1.25rem; }
+        .hm-use-grid.bz-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .bz-texte p { color: var(--text-secondary); max-width: 62ch; }
+        .bz-texte p + p { margin-top: 16px; }
+        .bz-texte a { color: var(--orange); font-weight: 600; }
+        #preuve .bz-texte > p:first-child { font-family: var(--hm-display); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.55; letter-spacing: -0.01em; color: var(--text); }
+        .bz-texte .bz-adresse { display: inline-block; margin-top: 26px; padding: 12px 16px; border-radius: 14px; background: var(--orange-light); color: var(--hm-orange-ink); font-size: .95rem; }
+        .bz-adresse strong { color: inherit; }
+        @media (max-width: 1000px) { .hm-use-grid.bz-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 560px) { .hm-use-grid.bz-3 { grid-template-columns: minmax(0, 1fr); } }
     </style>
     <script type="application/ld+json">
     {
@@ -53,7 +53,7 @@
       "description": "Agence IA et automatisation basée à Béziers (Hérault). Diagnostic de maturité IA, automatisation n8n et formation pour TPE et PME, en Occitanie et partout en France.",
       "url": "https://www.optimizia.xyz/agence-ia-beziers.html",
       "email": "contact@optimizia.xyz",
-      "image": "https://www.optimizia.xyz/assets/og-image.png",
+      "image": "https://www.optimizia.xyz/assets/og-beziers.jpg",
       "parentOrganization": { "@id": "https://www.optimizia.xyz/#organization" },
       "address": {
         "@type": "PostalAddress",
@@ -105,7 +105,7 @@
       ]
     }
     </script>
-    <script src="assets/oia-i18n.js?v=7" data-page="agence-ia-beziers" data-source="fr" defer></script>
+    <script src="assets/oia-i18n.js?v=8" data-page="agence-ia-beziers" data-source="fr" defer></script>
 </head>
 <body>
 
@@ -137,99 +137,99 @@
     <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
 </div>
 
-<!-- Hero -->
-<section class="about-hero bg-mesh" id="top">
-    <div class="container">
-        <div class="about-hero-inner reveal">
+<!-- ═══════ HERO : la promesse, et l'ancrage biterrois ═══════ -->
+<section class="hm-hero" id="top">
+    <div class="container hm-hero-grid">
+        <div>
             <span class="overline">Agence IA locale</span>
-            <h1>Agence IA à Béziers : <span>l'automatisation au service des PME</span></h1>
-            <p>OptimizIA.xyz est une agence d'intelligence artificielle et d'automatisation basée à Béziers, dans l'Hérault. Nous travaillons à l'international avec des industries et des entreprises du monde entier, et nous accompagnons en direct, sur place, les TPE et PME de Béziers et de sa région. Notre promesse : <strong>récupérer jusqu'à 30 % de temps productif dès le premier trimestre</strong> en combinant IA, automatisation et Knowledge Management, avec une méthode issue de 25 ans de terrain industriel.</p>
-            <p class="hero-trust">TPE et PME jusqu'à 250 salariés · Premier cas d'usage en production en 13 jours environ</p>
+            <h1>Agence IA à Béziers :<br> <span class="accent">l'automatisation au service des PME</span></h1>
+            <p class="hm-lead">OptimizIA.xyz est une agence d'intelligence artificielle et d'automatisation basée à Béziers, dans l'Hérault. Nous travaillons à l'international avec des industries et des entreprises du monde entier, et nous accompagnons en direct, sur place, les TPE et PME de Béziers et de sa région. Notre promesse : <strong>récupérer jusqu'à 30 % de temps productif dès le premier trimestre</strong> en combinant IA, automatisation et Knowledge Management, avec une méthode issue de 25 ans de terrain industriel.</p>
+            <div class="hm-actions">
+                <a href="contact.html" class="btn btn-orange btn-lg">Réserver un créneau</a>
+                <a href="/case-studies/" class="btn btn-outline btn-lg">Voir nos réalisations</a>
+            </div>
+            <p class="hm-trust">TPE et PME jusqu'à 250 salariés · Premier cas d'usage en production en 13 jours environ</p>
+        </div>
+        <aside class="hm-example bz-ancre">
+            <span class="overline">Notre ancrage</span>
+            <h3>23 Boulevard Président Kennedy, 34500 Béziers</h3>
+            <div class="hm-chips"><span>Béziers</span><span>Narbonne</span><span>Agde</span><span>Sète</span><span>Montpellier</span></div>
+            <ul class="hm-ticks">
+                <li>Diagnostic dans vos locaux</li>
+                <li>Formation en présentiel</li>
+                <li>Un interlocuteur que vous pouvez rencontrer</li>
+            </ul>
+            <a href="/case-studies/ai-training/" class="hm-link">Voir la formation animée à Béziers</a>
+        </aside>
+    </div>
+</section>
+
+<!-- ═══════ CE QUE NOUS FAISONS ═══════ -->
+<section class="hm-sec hm-alt" id="services-locaux">
+    <div class="container">
+        <div class="hm-uses-head">
+            <div><span class="overline">Ce que nous faisons</span><h2 class="hm-h2" style="margin-bottom:0">Trois façons de gagner du temps</h2></div>
+            <p class="hm-intro">Un diagnostic pour savoir quoi automatiser, des automatisations reliées à vos outils, des formations construites sur vos propres cas d'usage.</p>
+        </div>
+        <div class="hm-use-grid bz-3">
+            <a href="contact.html" class="hm-use"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></i><h3>Diagnostic de maturité IA</h3><p>Cartographie de vos processus, identification des tâches répétitives, priorisation des cas d'usage par retour sur investissement. Vous savez quoi automatiser, dans quel ordre, et pour quel gain.</p><span class="hm-go">Commencer par l'audit gratuit</span></a>
+            <a href="/services.html" class="hm-use"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><h3>Automatisation sur mesure</h3><p>Agents IA et workflows n8n reliés à vos outils existants : reporting automatisé, veille, qualification de prospects, réponse aux clients. En production sur un périmètre restreint en 13 jours environ.</p><span class="hm-go">Découvrir notre approche n8n</span></a>
+            <a href="/case-studies/ai-training/" class="hm-use"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4z"/><path d="M7 10v5c3 2 7 2 10 0v-5"/></svg></i><h3>Formation de vos équipes</h3><p>Des formations IA concrètes, animées sur site, construites sur vos propres cas d'usage plutôt que sur des slides génériques. Vos équipes repartent avec des réflexes, pas des promesses.</p><span class="hm-go">Voir une formation en action</span></a>
         </div>
     </div>
 </section>
 
-<!-- Services -->
-<section class="about-text-section section-alt" id="services-locaux">
-    <div class="container">
-        <div class="about-text-inner reveal">
-            <span class="overline">Ce que nous faisons</span>
-            <h2>Trois façons de <span style="color:var(--orange);">gagner du temps</span></h2>
-        </div>
-        <div class="bz-grid">
-            <div class="bz-card reveal">
-                <h3>Diagnostic de maturité IA</h3>
-                <p>Cartographie de vos processus, identification des tâches répétitives, priorisation des cas d'usage par retour sur investissement. Vous savez quoi automatiser, dans quel ordre, et pour quel gain.</p>
-                <a href="contact.html">Commencer par l'audit gratuit</a>
-            </div>
-            <div class="bz-card reveal">
-                <h3>Automatisation sur mesure</h3>
-                <p>Agents IA et workflows n8n reliés à vos outils existants : reporting automatisé, veille, qualification de prospects, réponse aux clients. En production sur un périmètre restreint en 13 jours environ.</p>
-                <a href="/services.html">Découvrir notre approche n8n</a>
-            </div>
-            <div class="bz-card reveal">
-                <h3>Formation de vos équipes</h3>
-                <p>Des formations IA concrètes, animées sur site, construites sur vos propres cas d'usage plutôt que sur des slides génériques. Vos équipes repartent avec des réflexes, pas des promesses.</p>
-                <a href="/case-studies/ai-training/">Voir une formation en action</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Preuve locale -->
-<section class="about-text-section" id="preuve">
-    <div class="container">
-        <div class="about-text-inner reveal">
+<!-- ═══════ PREUVE LOCALE ═══════ -->
+<section class="hm-sec" id="preuve">
+    <div class="container hm-story-grid">
+        <div class="hm-story-side">
             <span class="overline">La preuve sur place</span>
-            <h2>Nous travaillons déjà <span style="color:var(--orange);">à Béziers</span></h2>
+            <h2 class="hm-h2">Nous travaillons déjà à Béziers</h2>
+        </div>
+        <div class="bz-texte">
             <p>En 2026, nous avons animé à Béziers une formation IA pour des dirigeants et des indépendants, dans les locaux de RH Solutions, boulevard Président Kennedy. Le déroulé complet, les questions posées et les résultats sont documentés dans <a href="/case-studies/ai-training/">le récit de cette formation</a>. Nos autres missions pour des PME françaises sont détaillées dans nos <a href="/case-studies/">réalisations</a>.</p>
             <p class="bz-adresse"><strong>Notre siège :</strong> 23 Boulevard Président Kennedy, 34500 Béziers</p>
         </div>
     </div>
 </section>
 
-<!-- Zone d'intervention -->
-<section class="about-text-section section-alt" id="zone">
-    <div class="container">
-        <div class="about-text-inner reveal">
+<!-- ═══════ ZONE D'INTERVENTION ═══════ -->
+<section class="hm-sec hm-alt" id="zone">
+    <div class="container hm-story-grid">
+        <div class="hm-story-side">
             <span class="overline">Zone d'intervention</span>
-            <h2>Internationale par nos clients, <span style="color:var(--orange);">biterroise par notre ancrage</span></h2>
+            <h2 class="hm-h2">Internationale par nos clients, biterroise par notre ancrage</h2>
+        </div>
+        <div class="bz-texte">
             <p>Notre quotidien est international : nous concevons et maintenons des automatisations pour des industries et des entreprises du monde entier, à distance, en français comme en anglais. C'est ce volume et cette exigence qui font mûrir notre méthode.</p>
             <p>Et c'est précisément ce que nous ramenons aux entreprises d'ici. À Béziers et dans l'Hérault (Narbonne, Agde, Sète, Montpellier), nous nous déplaçons : diagnostic dans vos locaux, formation en présentiel, un café pour commencer. Une TPE biterroise a accès au même niveau d'ingénierie que nos clients internationaux, avec un interlocuteur qu'elle peut rencontrer.</p>
         </div>
     </div>
 </section>
 
-<!-- FAQ -->
-<section class="about-text-section" id="questions">
-    <div class="container">
-        <div class="about-text-inner reveal">
+<!-- ═══════ FAQ ═══════ -->
+<section class="hm-sec" id="questions">
+    <div class="container hm-faq-grid">
+        <div class="hm-faq-side">
             <span class="overline">Questions fréquentes</span>
-            <h2>Ce qu'on nous demande <span style="color:var(--orange);">le plus souvent</span></h2>
-            <details class="bz-faq">
-                <summary>Travaillez-vous uniquement avec des entreprises de Béziers ?</summary>
-                <p>Non. Béziers est notre port d'attache : nous intervenons sur site à Béziers, dans l'Hérault et en Occitanie, et à distance partout en France comme à l'international. La visioconférence est notre quotidien depuis des années.</p>
-            </details>
-            <details class="bz-faq">
-                <summary>Combien coûte un accompagnement IA ?</summary>
-                <p>Le diagnostic de maturité IA démarre à 1 000 € HT. L'audit express de votre visibilité en ligne est gratuit. Chaque mission est chiffrée avant d'être lancée : vous savez ce que vous payez et ce que vous obtenez.</p>
-            </details>
-            <details class="bz-faq">
-                <summary>Par où commencer ?</summary>
-                <p>Par un appel de 20 minutes, sans engagement. Vous nous décrivez vos processus, nous vous disons franchement si l'IA peut vous faire gagner du temps, et où.</p>
-            </details>
+            <h2 class="hm-h2">Ce qu'on nous demande le plus souvent</h2>
+            <p>Une question qui n'est pas ici ? <a href="contact.html">Posez-la nous directement</a>, réponse sous 72 h.</p>
+        </div>
+        <div>
+            <details class="hm-qa" open><summary><h3>Travaillez-vous uniquement avec des entreprises de Béziers ?</h3><i aria-hidden="true"></i></summary><p>Non. Béziers est notre port d'attache : nous intervenons sur site à Béziers, dans l'Hérault et en Occitanie, et à distance partout en France comme à l'international. La visioconférence est notre quotidien depuis des années.</p></details>
+            <details class="hm-qa"><summary><h3>Combien coûte un accompagnement IA ?</h3><i aria-hidden="true"></i></summary><p>Le diagnostic de maturité IA démarre à 1 000 € HT. L'audit express de votre visibilité en ligne est gratuit. Chaque mission est chiffrée avant d'être lancée : vous savez ce que vous payez et ce que vous obtenez.</p></details>
+            <details class="hm-qa"><summary><h3>Par où commencer ?</h3><i aria-hidden="true"></i></summary><p>Par un appel de 20 minutes, sans engagement. Vous nous décrivez vos processus, nous vous disons franchement si l'IA peut vous faire gagner du temps, et où.</p></details>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="about-cta" id="cta">
+<!-- ═══════ APPEL FINAL ═══════ -->
+<section class="hm-final" id="cta">
     <div class="container">
-        <div class="final-inner">
-            <h2>Parlons de vos processus</h2>
-            <p>20 minutes, sans pitch commercial : une conversation sur ce que l'IA peut changer pour votre entreprise.</p>
-            <a href="contact.html" class="btn btn-orange" style="font-size:1.1rem;padding:20px 52px;">Réserver un créneau</a>
-        </div>
+        <h2>Parlons de vos processus</h2>
+        <p>20 minutes, sans pitch commercial : une conversation sur ce que l'IA peut changer pour votre entreprise.</p>
+        <a href="contact.html" class="btn btn-orange btn-lg">Réserver un créneau</a>
+        <p class="final-micro">Réponse sous 72 h · Béziers, Occitanie &amp; international</p>
     </div>
 </section>
 
@@ -287,16 +287,12 @@
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileOverlay = document.getElementById('mobileOverlay');
+document.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.scrollY > 50); }, { passive: true });
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileOverlay = document.getElementById('mobileOverlay');
     function toggleMenu() {
         hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('open');
@@ -305,27 +301,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     hamburger.addEventListener('click', toggleMenu);
     mobileOverlay.addEventListener('click', toggleMenu);
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('open')) toggleMenu();
-        });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { if (mobileMenu.classList.contains('open')) toggleMenu(); });
     });
-
-    function initGSAP() {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            setTimeout(initGSAP, 100);
-            return;
-        }
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.reveal').forEach((el, i) => {
-            gsap.fromTo(el,
-                { y: 36, opacity: 0 },
-                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
-            );
-        });
-    }
-    initGSAP();
 });
 </script>
 

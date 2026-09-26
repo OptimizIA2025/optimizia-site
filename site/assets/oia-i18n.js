@@ -35,7 +35,7 @@
        avec le chiffre. Le 08/09, le bouton d'appel de la nav passe de
        « Free audit » a « Book a call » sur les 34 pages : la cle change avec le
        libelle, un dictionnaire en cache chercherait encore l'ancienne. */
-    var VERSION = '6';
+    var VERSION = '7';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
@@ -493,6 +493,11 @@
         var m = null;
         try { m = localStorage.getItem(STORE); } catch (e) { }
         if (m && connue(m)) return m;
+        /* Une page ecrite dans une autre langue que l'anglais (la page locale de
+           Beziers) vise un public et un classement dans cette langue : on ne la
+           traduit que sur choix explicite. Sinon Googlebot, qui crawle en en-US,
+           l'indexerait traduite en anglais. */
+        if (SOURCE !== 'en') return SOURCE;
         var l = navigator.languages || [navigator.language || ''];
         for (var i = 0; i < l.length; i++) {
             var c = String(l[i]).slice(0, 2).toLowerCase();
