@@ -15,13 +15,13 @@
     <meta property="og:title" content="Tools | OptimizIA.xyz">
     <meta property="og:description" content="The tools we build and put in your hands: SEOPlus!, the SEO and GEO audit that scores your website out of 100 in 30 seconds. More small tools are on the way.">
     <meta property="og:url" content="https://www.optimizia.xyz/tools/">
-    <meta property="og:image" content="https://www.optimizia.xyz/assets/og-v7.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://www.optimizia.xyz/tools/seoplus/assets/img/og.png?v=3">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1260">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tools | OptimizIA.xyz">
     <meta name="twitter:description" content="The tools we build and put in your hands: SEOPlus!, the SEO and GEO audit that scores your website out of 100 in 30 seconds. More small tools are on the way.">
-    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/og-v7.jpg">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/tools/seoplus/assets/img/og.png?v=3">
 
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,6 +59,15 @@
     </script>
 
     <script src="/assets/oia-i18n.js?v=8" data-base="/i18n/" data-page="tools" defer></script>
+    <style>
+      /* Logo SEOPlus! : paire claire / sombre selon data-theme (27/09) */
+      .sp-logo{display:block;width:auto}
+      .sp-logo.logo-sombre{display:none}
+      :root[data-theme="dark"] .sp-logo.logo-clair{display:none}
+      :root[data-theme="dark"] .sp-logo.logo-sombre{display:block}
+      .pilier-cta .sp-logo{height:40px;margin-bottom:14px}
+      .blog-card h3 .sp-logo{height:34px}
+    </style>
 </head>
 <body>
 
@@ -104,7 +113,7 @@
         </div>
         <div class="pilier-cta">
           <div class="pilier-cta-texte">
-            <span class="post-rail-tag">SEOPlus!</span>
+            <img class="sp-logo" src="/tools/seoplus/assets/img/seoplus-logo-sombre.svg?v=1" alt="SEOPlus!" width="145" height="40">
             <b>Is your website visible in Google and in AI answers?</b>
             <p>161 SEO and GEO checks, a score out of 100 and the action plan that goes with it.</p>
           </div>
@@ -119,7 +128,7 @@
           <div class="blog-grid">
                 <a class="blog-card" href="/tools/seoplus/">
                     <span class="blog-card-tag">SEO &amp; GEO audit</span>
-                    <h3>SEOPlus!</h3>
+                    <h3><img class="sp-logo logo-clair" src="/tools/seoplus/assets/img/seoplus-logo.svg?v=1" alt="SEOPlus!" width="123" height="34"><img class="sp-logo logo-sombre" src="/tools/seoplus/assets/img/seoplus-logo-sombre.svg?v=1" alt="SEOPlus!" width="123" height="34"></h3>
                     <p>161 checks on your website: security, SEO, performance and visibility in ChatGPT and AI engines. A score out of 100 in 30 seconds, every point traceable to a measurement, and the action plan that goes with it. Free diagnostic, no credit card.</p>
                 </a>
             </div>
