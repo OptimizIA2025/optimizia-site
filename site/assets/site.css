@@ -131,11 +131,10 @@ footer .footer-grid {
 }
 
 /* ═══ FOOTER V7 : bloc sombre dans la continuite de l'appel final, filet degrade en tete,
-   titres de colonnes en surtitre, logo inverse comme en mode sombre. Selecteurs body > footer
+   titres de colonnes en surtitre, logo en version sombre. Selecteurs body > footer
    pour passer devant les feuilles compilees par page. ═══ */
 body > footer { position: relative; background: #0F172A; color: #CBD5E1; border-top: 0; padding: 88px 0 36px; }
 body > footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, #3B82F6, #F97316); }
-body > footer .nav-logo img { filter: invert(1) hue-rotate(180deg); }
 body > footer .footer-brand p { color: #94A3B8; font-size: .92rem; line-height: 1.7; }
 body > footer .footer-ginoux { color: #FDBA74; font-weight: 600; }
 body > footer .footer-ginoux:hover { color: #fff; }
@@ -186,8 +185,6 @@ body > footer .footer-cookies:focus-visible { outline: 2px solid #FDBA74; outlin
     --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.4);
     --shadow-pop: 0 2px 6px rgba(0, 0, 0, 0.35), 0 24px 64px rgba(0, 0, 0, 0.5);
 }
-/* Le logo est trace pour fond clair : inversion de luminance, teintes gardees. */
-:root[data-theme="dark"] .nav-logo img { filter: invert(1) hue-rotate(180deg); }
 
 /* Bouton bascule de theme, injecte par oia-theme.js a cote du selecteur de langue. */
 .theme-btn {
@@ -375,3 +372,12 @@ html body .mobile-overlay.active { display: block; opacity: 1; }
 /* La citation sous les chiffres de l'accueil reprend le composant, centree. */
 figure.stats-quote { margin: 48px 0 0; }
 .stats-quote figcaption { align-items: center; }
+
+/* Logo (27/09) : paire claire / sombre selon data-theme ; le footer, toujours sombre, porte la version sombre.
+   Selecteurs .nav-logo img.oia-logo : passent devant les feuilles compilees par page (height: 52px). */
+.nav-logo img.oia-logo { height: 44px; width: auto; }
+.nav-logo img.logo-sombre { display: none; }
+:root[data-theme="dark"] .nav-logo img.logo-clair { display: none; }
+:root[data-theme="dark"] .nav-logo img.logo-sombre { display: block; }
+body > footer .nav-logo img.oia-logo { height: 42px; }
+@media (max-width: 480px) { .nav-logo img.oia-logo { height: 34px; } }
