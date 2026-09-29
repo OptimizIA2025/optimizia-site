@@ -6,7 +6,7 @@
 - URL ending: blog/business-process-automation-companies/
 - Target keyword: what is business process automation
 - Media: business-process-automation-companies-og.png
-- Alt: Time to a first live use case by type of provider: 6 to 12 months for a global consultancy, 3 to 12 months for an in-house team, 2 to 4 weeks for a freelancer, 13 days on average for a specialized agency, next to OptimizIA.xyz's published starting prices.
+- Alt: A notepad shortlist: global consultancy (6 to 12 months), in-house team (3 to 12 months) and freelancer (rarely industrial) crossed out, specialized agency circled at 13 days. Sticky notes show OptimizIA.xyz's published prices and the question to ask: tell me about a past failure.
 
 ---
 

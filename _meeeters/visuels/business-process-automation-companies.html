@@ -3,109 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <title>Visuel - business-process-automation-companies</title>
-<!-- Source du visuel de l'article. Servir la racine du depot puis ouvrir
-     /_meeeters/visuels/business-process-automation-companies.html        (og : titre + delais)
-     /_meeeters/visuels/business-process-automation-companies.html#art    (carte et figure : delais, prix publies, criteres)
-     Les barres sont a l'echelle (0 a 12 mois) : 13 jours = 0,43 mois, 2-4 semaines = 0,46-0,92 mois.
+<!-- Source du visuel de l'article (v2 : liste papier sur fond orange, volontairement a l'oppose
+     du plateau sombre de l'article Zapier). Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/business-process-automation-companies.html        (og : titre + liste)
+     /_meeeters/visuels/business-process-automation-companies.html#art    (carte et figure : liste + post-it)
      Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
 <link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
 <style>
 :root {
-  --bg: #0F1729;
-  --ink: #F8FAFC;
-  --ink-soft: #CBD5E1;
-  --ink-mute: #A5B4CB;
-  --card: #1B2640;
-  --card-line: rgba(203, 213, 225, .22);
-  --orange: #FB923C;
-  --green: #4ADE80;
-  --grad: linear-gradient(90deg, #60A5FA 0%, #A78BFA 45%, #FB923C 100%);
+  --ink: #1C1917;
+  --ink-soft: #57534E;
+  --struck: #8A817C;
+  --paper: #FFFDF8;
+  --rule: rgba(59, 130, 246, .20);
+  --margin: rgba(220, 38, 38, .45);
+  --marker: #F97316;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #F97316; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
 
 .stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
   background:
-    radial-gradient(640px 440px at 4% -8%, rgba(59, 130, 246, .34), transparent 70%),
-    radial-gradient(720px 500px at 102% 110%, rgba(249, 115, 22, .30), transparent 70%),
-    var(--bg); }
+    radial-gradient(620px 460px at 12% 0%, rgba(254, 215, 170, .75), transparent 70%),
+    radial-gradient(700px 520px at 100% 100%, rgba(194, 65, 12, .55), transparent 70%),
+    linear-gradient(135deg, #FB923C 0%, #F97316 55%, #EA580C 100%); }
 .stage::before { content: ""; position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(203, 213, 225, .14) 1px, transparent 1.2px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%);
-          mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%); }
-.stage::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--grad); }
+  background-image: radial-gradient(rgba(255, 255, 255, .16) 1px, transparent 1.3px);
+  background-size: 22px 22px; }
 
-/* Plateau : delai jusqu'au premier cas d'usage en production */
-.scene { position: absolute; perspective: 1800px; }
-.board { width: 100%; transform: rotateY(-8deg) rotateX(4deg); transform-origin: 60% 50%;
-  border-radius: 26px; padding: 20px 22px 18px; background: linear-gradient(165deg, #22304F, #151F36);
-  border: 1px solid rgba(203, 213, 225, .26);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .08) inset, 0 40px 80px -24px rgba(0, 0, 0, .75); }
-.bar { padding: 0 4px 16px; margin-bottom: 16px; border-bottom: 1px solid var(--card-line); }
-.bar b { display: block; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -.015em; line-height: 1.1; }
-.bar small { display: block; margin-top: 5px; font-size: 16px; color: var(--ink-soft); }
+/* Feuille de bloc-notes */
+.paper { position: absolute; width: 660px; height: 520px; transform-origin: 0 0;
+  background:
+    linear-gradient(90deg, transparent 69px, var(--margin) 69px, var(--margin) 71px, transparent 71px),
+    var(--paper);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .04), 0 34px 60px -22px rgba(124, 45, 18, .65); }
+.paper .lines { position: absolute; left: 0; right: 0; top: 140px; height: 289px; border-top: 1px solid var(--rule);
+  background: repeating-linear-gradient(180deg, transparent 0 71px, var(--rule) 71px 72px); }
+.tape { position: absolute; left: 250px; top: -18px; width: 160px; height: 38px; transform: rotate(3deg);
+  background: rgba(255, 255, 255, .55); box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
+.label { position: absolute; left: 96px; top: 34px; font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: #9A3412; }
+.title { position: absolute; left: 94px; top: 52px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 62px; letter-spacing: -.035em; line-height: 1; }
+.row { position: absolute; left: 96px; width: 530px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.row b { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 30px; letter-spacing: -.015em; white-space: nowrap; }
+.row span { font-family: 'JetBrains Mono', monospace; font-size: 19px; white-space: nowrap; }
+.row.out { color: var(--struck); }
+.row.out svg { position: absolute; left: -6px; top: 30px; width: 542px; height: 14px; overflow: visible; }
+.row.win b { font-weight: 800; }
+.row.win span { font-size: 23px; font-weight: 700; color: #C2410C; }
+.row.win .ring { position: absolute; left: -30px; top: -14px; width: 590px; height: 100px; overflow: visible; }
+.check { position: absolute; left: 22px; width: 38px; height: 34px; overflow: visible; }
+.foot { position: absolute; left: 96px; top: 462px; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-soft); }
 
-.board { --who: 232px; }
-.rows { list-style: none; }
-.row { display: grid; grid-template-columns: var(--who) 1fr; align-items: center; column-gap: 14px; height: 80px; padding: 0 16px 0 18px; margin-bottom: 12px; border-radius: 18px; background: var(--card); border: 1px solid var(--card-line); }
-.who b { display: block; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 23px; letter-spacing: -.015em; line-height: 1.12; white-space: nowrap; }
-.who small { display: block; margin-top: 3px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .04em; color: var(--ink-mute); white-space: nowrap; }
-.track { position: relative; height: 34px;
-  background: linear-gradient(90deg, rgba(203, 213, 225, .18) 1px, transparent 1px) 0 0 / 25% 100%;
-  border-right: 1px solid rgba(203, 213, 225, .18); }
-.rng { position: absolute; top: 5px; bottom: 5px; left: calc(var(--a) / 12 * 100%); width: calc((var(--b) - var(--a)) / 12 * 100%);
-  border-radius: 8px; background: linear-gradient(90deg, rgba(148, 163, 184, .38), rgba(148, 163, 184, .62)); box-shadow: inset 0 0 0 1px rgba(203, 213, 225, .35); }
-.val { position: absolute; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--ink); white-space: nowrap; }
-.val.in { right: 10px; }
-.val.out { left: calc(var(--b) / 12 * 100% + 12px); color: var(--ink-soft); }
-.row.hot { border-color: rgba(251, 146, 60, .75); background: #24273A; box-shadow: 0 0 0 4px rgba(251, 146, 60, .12); }
-.row.hot .rng { min-width: 14px; background: linear-gradient(90deg, #FDBA74, #F97316); box-shadow: none; }
-.row.hot .val { color: #FDBA74; font-weight: 700; }
-.chip { display: inline-flex; margin-left: 10px; font-size: 14px; font-weight: 400; padding: 3px 10px; border-radius: 100px; color: #86EFAC; background: rgba(74, 222, 128, .14); border: 1px solid rgba(74, 222, 128, .4); vertical-align: 1px; }
-.axis { display: grid; grid-template-columns: var(--who) 1fr; column-gap: 14px; padding: 2px 16px 0 18px; }
-.ticks { position: relative; height: 20px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-mute); }
-.ticks span { position: absolute; top: 0; transform: translateX(-50%); }
-.ticks span:first-child { transform: none; }
-.ticks span:last-child { transform: translateX(-100%); }
-.axis em { font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); line-height: 20px; }
+/* Post-it */
+.note { position: absolute; transform-origin: 0 0; padding: 26px 28px 22px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 22px 40px -18px rgba(124, 45, 18, .7); }
+.note::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30px; background: rgba(0, 0, 0, .05); }
+.note h4 { position: relative; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+.prices { width: 340px; background: linear-gradient(180deg, #FDE68A, #FCD34D); color: #451A03; }
+.prices h4 { color: #92400E; margin-bottom: 8px; }
+.price { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 2px dashed rgba(146, 64, 14, .28); }
+.price em { font-style: normal; font-weight: 600; font-size: 20px; }
+.price strong { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -.02em; }
+.price strong small { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0; margin-right: 5px; }
+.price strong u { text-decoration: none; font-size: 18px; font-weight: 600; }
+.prices p { margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #92400E; }
+.ask { width: 320px; background: linear-gradient(180deg, #DBEAFE, #BFDBFE); color: #172554; }
+.ask h4 { color: #1E40AF; margin-bottom: 10px; }
+.ask p { position: relative; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.15; letter-spacing: -.02em; }
 
-/* Panneaux de droite (variante carte) */
-.side { position: absolute; left: 764px; top: 34px; width: 392px; perspective: 1800px; display: none; flex-direction: column; gap: 18px; }
-.side > * { transform: rotateY(-8deg) rotateX(4deg); transform-origin: 0 50%; }
-.panel { border-radius: 22px; background: #172136; border: 1px solid rgba(203, 213, 225, .26); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .75); padding: 18px 20px 14px; }
-.panel h4 { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); font-weight: 400; margin-bottom: 4px; }
-.price { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(203, 213, 225, .14); }
-.price b { display: block; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -.01em; line-height: 1.15; }
-.price small { display: block; margin-top: 2px; font-size: 15px; color: var(--ink-soft); }
-.price strong { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -.01em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; white-space: nowrap; }
-.price strong u { text-decoration: none; font-size: 15px; font-weight: 500; }
-.panel p { padding-top: 10px; border-top: 1px solid rgba(203, 213, 225, .14); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-soft); }
-.check { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: 18px; font-weight: 500; }
-.check i { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: rgba(74, 222, 128, .2); color: #86EFAC; }
-.check i svg { width: 14px; height: 14px; }
+/* og : titre a gauche, liste a droite */
+.copy { position: absolute; left: 64px; top: 70px; width: 500px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: #431407; padding: 8px 15px 8px 13px; border: 1.5px solid rgba(67, 20, 7, .35); border-radius: 100px; background: rgba(255, 255, 255, .28); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: #431407; }
+h1 { margin-top: 26px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 66px; line-height: 1.02; letter-spacing: -.035em; color: var(--ink); }
+h1 em { font-style: normal; color: #FFFFFF; }
+.sub { margin-top: 22px; font-size: 23px; line-height: 1.45; color: #431407; max-width: 440px; }
+.brand { position: absolute; left: 64px; bottom: 50px; display: flex; align-items: center; gap: 18px; }
+.brand b { display: block; padding: 12px 18px 10px; background: var(--paper); border-radius: 8px; transform: rotate(-1.5deg); box-shadow: 0 12px 24px -12px rgba(124, 45, 18, .7); }
+.brand img { display: block; height: 30px; width: auto; }
+.brand span { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #431407; letter-spacing: .04em; }
 
-/* og : titre a gauche, plateau a droite */
-.copy { position: absolute; left: 64px; top: 72px; width: 500px; }
-.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #FDBA74; padding: 8px 15px 8px 13px; border: 1px solid rgba(251, 146, 60, .45); border-radius: 100px; background: rgba(251, 146, 60, .1); }
-.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
-h1 { margin-top: 26px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 64px; line-height: 1.02; letter-spacing: -.035em; }
-h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.sub { margin-top: 22px; font-size: 22px; line-height: 1.45; color: var(--ink-soft); max-width: 460px; }
-.brand { position: absolute; left: 64px; bottom: 50px; display: flex; align-items: center; gap: 16px; }
-.brand img { height: 34px; width: auto; }
-.brand span { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-mute); letter-spacing: .04em; padding-left: 16px; border-left: 1px solid var(--card-line); }
-.og .scene { left: 596px; top: 40px; width: 560px; }
-.og .board { --who: 196px; }
-.og .row { height: 76px; margin-bottom: 11px; padding: 0 14px 0 16px; }
-.og .who b { font-size: 21px; }
-.og .axis { padding: 2px 14px 0 16px; }
+.og .paper { left: 604px; top: 44px; transform: rotate(-2.5deg) scale(.82); }
+.og .prices { left: 918px; top: 382px; transform: rotate(5deg) scale(.72); }
+.og .ask { display: none; }
 
-/* Carte et figure : pas de titre, plateau a gauche, prix et criteres a droite */
+/* Carte et figure : pas de titre, feuille a gauche, deux post-it a droite */
 .art .copy, .art .brand { display: none; }
-.art .scene { left: 52px; top: 30px; width: 676px; }
-.art .side { display: flex; }
+.art .paper { left: 74px; top: 70px; transform: rotate(-2.5deg); }
+.art .prices { left: 800px; top: 56px; transform: rotate(4deg); }
+.art .ask { left: 812px; top: 392px; transform: rotate(-3deg); }
 </style>
 </head>
 <body>
@@ -113,57 +101,41 @@ h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: te
 
   <div class="copy">
     <span class="eyebrow"><i></i>Business process automation</span>
-    <h1>The real shortlist <em>for SMEs.</em></h1>
-    <p class="sub">Speed, published prices, field experience and support, compared.</p>
+    <h1>The real <em>shortlist</em> for SMEs.</h1>
+    <p class="sub">Four options, four criteria, and the one left on the list.</p>
   </div>
-  <div class="brand"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""><span>optimizia.xyz/blog</span></div>
+  <div class="brand"><b><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></b><span>optimizia.xyz/blog</span></div>
 
-  <div class="scene">
-    <div class="board">
-      <div class="bar">
-        <b>Time to a first live use case</b>
-        <small>Typical market ranges, in months</small>
-      </div>
-      <ol class="rows">
-        <li class="row">
-          <span class="who"><b>Global consultancy</b><small>1,000+ employees</small></span>
-          <span class="track"><i class="rng" style="--a:6;--b:12"></i><span class="val in">6-12 months</span></span>
-        </li>
-        <li class="row">
-          <span class="who"><b>In-house team</b><small>Any size</small></span>
-          <span class="track"><i class="rng" style="--a:3;--b:12"></i><span class="val in">3-12 months</span></span>
-        </li>
-        <li class="row">
-          <span class="who"><b>Freelancer</b><small>1-50 employees</small></span>
-          <span class="track" style="--a:.46;--b:.92"><i class="rng"></i><span class="val out">2-4 weeks</span></span>
-        </li>
-        <li class="row hot">
-          <span class="who"><b>Specialized agency</b><small>Up to 250 employees</small></span>
-          <span class="track" style="--a:0;--b:.43"><i class="rng"></i><span class="val out">13 days<span class="chip">live</span></span></span>
-        </li>
-      </ol>
-      <div class="axis">
-        <em>Months</em>
-        <span class="ticks"><span style="left:0">0</span><span style="left:25%">3</span><span style="left:50%">6</span><span style="left:75%">9</span><span style="left:100%">12</span></span>
-      </div>
-    </div>
+  <div class="paper">
+    <div class="lines"></div>
+    <i class="tape"></i>
+    <span class="label">SME automation partner</span>
+    <span class="title">Shortlist</span>
+
+    <div class="row out" style="top:140px"><b>Global consultancy</b><span>6-12 months</span>
+      <svg viewBox="0 0 542 14" preserveAspectRatio="none"><path d="M2 9 C 90 3, 190 12, 290 6 S 460 4, 540 8" fill="none" stroke="#292524" stroke-width="4" stroke-linecap="round" opacity=".82"/></svg></div>
+    <div class="row out" style="top:212px"><b>In-house team</b><span>3-12 months</span>
+      <svg viewBox="0 0 542 14" preserveAspectRatio="none"><path d="M2 6 C 120 11, 230 3, 340 8 S 480 11, 540 5" fill="none" stroke="#292524" stroke-width="4" stroke-linecap="round" opacity=".82"/></svg></div>
+    <div class="row out" style="top:284px"><b>Freelancer</b><span>rarely industrial</span>
+      <svg viewBox="0 0 542 14" preserveAspectRatio="none"><path d="M2 8 C 110 4, 220 11, 320 7 S 470 3, 540 9" fill="none" stroke="#292524" stroke-width="4" stroke-linecap="round" opacity=".82"/></svg></div>
+    <svg class="check" style="top:374px" viewBox="0 0 38 34"><path d="M3 18 L 14 29 L 35 3" fill="none" stroke="#F97316" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="row win" style="top:356px"><b>Specialized agency</b><span>13 days</span>
+      <svg class="ring" viewBox="0 0 590 100"><path d="M60 22 C 180 6, 430 4, 548 20 C 590 28, 584 78, 520 86 C 380 100, 150 98, 50 84 C 6 76, 8 34, 74 18 C 110 10, 150 8, 190 8" fill="none" stroke="#F97316" stroke-width="5" stroke-linecap="round"/></svg></div>
+
+    <span class="foot">Filters: speed &middot; prices &middot; experience &middot; support</span>
   </div>
 
-  <div class="side">
-    <div class="panel">
-      <h4>OptimizIA.xyz &middot; published prices</h4>
-      <div class="price"><span><b>Diagnostic</b><small>1 to 3 weeks</small></span><strong>from &euro;1,000</strong></div>
-      <div class="price"><span><b>PoC &rarr; MVP</b><small>13 days on average</small></span><strong>from &euro;1,500</strong></div>
-      <div class="price"><span><b>Copiloting</b><small>monitored every month</small></span><strong>from &euro;100<u>/mo</u></strong></div>
-      <p>Excl. VAT &middot; fixed fee per project</p>
-    </div>
-    <div class="panel">
-      <h4>The four criteria</h4>
-      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>A date for the first live use case</div>
-      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Prices published before the call</div>
-      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Real industrial field experience</div>
-      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Support after go-live</div>
-    </div>
+  <div class="note prices">
+    <h4>Published prices</h4>
+    <div class="price"><em>Diagnostic</em><strong><small>from</small>&euro;1,000</strong></div>
+    <div class="price"><em>PoC &rarr; MVP</em><strong><small>from</small>&euro;1,500</strong></div>
+    <div class="price"><em>Copiloting</em><strong><small>from</small>&euro;100<u>/mo</u></strong></div>
+    <p>Excl. VAT</p>
+  </div>
+
+  <div class="note ask">
+    <h4>Ask them</h4>
+    <p>&ldquo;Tell me about a past failure.&rdquo;</p>
   </div>
 </div>
 <script>
