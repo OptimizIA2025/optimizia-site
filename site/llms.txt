@@ -40,6 +40,7 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 
 ## Blog
 
+- [Open source workflow automation tools](https://www.optimizia.xyz/blog/open-source-workflow-automation-tools/): n8n, Node-RED, Apache Airflow, Huginn and Activepieces compared on license (n8n is fair-code, not OSI open source), self-hosting and fit for SMEs, with what the agency learned running n8n in production (error workflows, versioning outside paid Git sync, Code node limits)
 - [Business process automation companies](https://www.optimizia.xyz/blog/business-process-automation-companies/): what business process automation covers (BPA, RPA, workflow and AI automation), the four criteria to compare providers, a cost and speed table from global consultancy to freelancer, and the agency's published prices (diagnostic from 1,000 €, PoC from 1,500 €, copiloting from 100 € per month, excl. VAT)
 - [Zapier workflow automation tool](https://www.optimizia.xyz/blog/zapier-workflow-automation-tool/): how the agency maps, builds, tests and hands over Zapier workflows, the four safeguards on every Zap, pricing from 1,500 € excl. VAT, and when n8n or Make is the better call
 

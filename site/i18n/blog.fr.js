@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-112, carte article BPA). */
+   Regenere le 2026-09-25 (T-113, carte article open source). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In": "Outils open source d'automatisation de workflows : la sélection qui ne vous enferme pas",
+        "n8n, Node-RED, Airflow, Huginn and Activepieces compared on license, self-hosting and fit, plus what running n8n in production taught us about errors and versioning.": "n8n, Node-RED, Airflow, Huginn et Activepieces comparés sur la licence, l'auto-hébergement et l'usage, plus ce que n8n en production nous a appris sur les erreurs et le versionnage.",
         "Business Process Automation Companies: The Real Shortlist for SMEs": "Entreprises d'automatisation des processus métier : la vraie sélection pour les PME",
         "What business process automation covers, the four criteria that separate providers, a cost and speed table from global consultancy to freelancer, and the question that exposes a weak partner.": "Ce que recouvre l'automatisation des processus métier, les quatre critères qui départagent les prestataires, un tableau des coûts et des délais du grand cabinet au freelance, et la question qui démasque un partenaire fragile.",
         "Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork": "Automatisation de workflows avec Zapier : des automatisations fiables, sans les tâches répétitives",

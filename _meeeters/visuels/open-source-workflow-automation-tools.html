@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - open-source-workflow-automation-tools</title>
+<!-- Source du visuel de l'article : les cinq outils en tableau periodique, fond clair.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/open-source-workflow-automation-tools.html        (og : titre + rangee de 5 tuiles)
+     /_meeeters/visuels/open-source-workflow-automation-tools.html#art    (carte et figure : grande tuile n8n + 4 tuiles)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #0F172A; --ink-soft: #475569; --bg: #F3F6F2; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+.stage::before { content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(15, 23, 42, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, .045) 1px, transparent 1px);
+  background-size: 30px 30px; }
+
+/* Tuiles d'elements */
+.table { position: absolute; display: grid; gap: 20px; }
+.el { position: relative; border-radius: 14px; background: var(--bg-el); border: 2.5px solid var(--line); color: var(--tone);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset, 0 14px 28px -18px rgba(15, 23, 42, .35); overflow: hidden; }
+.el .no { position: absolute; left: var(--pad); top: calc(var(--pad) - 4px); font-family: 'JetBrains Mono', monospace; font-size: var(--fs-no); font-weight: 700; }
+.el .lic { position: absolute; right: var(--pad); top: var(--pad); font-family: 'JetBrains Mono', monospace; font-size: 14px; padding: 4px 9px; border-radius: 6px; background: rgba(255, 255, 255, .72); border: 1px solid var(--line); white-space: nowrap; }
+.el .sym { position: absolute; left: var(--pad); top: var(--sym-top); font-family: 'Outfit', sans-serif; font-weight: 800; font-size: var(--fs-sym); line-height: 1; letter-spacing: -.04em; }
+.el .name { position: absolute; left: var(--pad); bottom: var(--name-bottom); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: var(--fs-name); letter-spacing: -.02em; color: var(--ink); white-space: nowrap; }
+.el .for { position: absolute; left: var(--pad); right: var(--pad); bottom: var(--pad); font-size: var(--fs-for); color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+.el .extra { display: none; }
+
+.n8n { --bg-el: #FFEDD5; --line: #FB923C; --tone: #C2410C; }
+.nr  { --bg-el: #FFE4E6; --line: #FB7185; --tone: #BE123C; }
+.af  { --bg-el: #DBEAFE; --line: #60A5FA; --tone: #1D4ED8; }
+.hu  { --bg-el: #EDE9FE; --line: #A78BFA; --tone: #6D28D9; }
+.ap  { --bg-el: #DCFCE7; --line: #4ADE80; --tone: #15803D; }
+.n8n .badge { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: #FFFFFF; background: #EA580C; padding: 5px 11px; border-radius: 6px; }
+
+.legend { position: absolute; display: flex; gap: 26px; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-soft); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 13px; height: 13px; border-radius: 4px; background: var(--bg-el); border: 2px solid var(--line); }
+
+/* Carte et figure : grande tuile n8n a gauche, 2 x 2 a droite */
+.art .table { left: 70px; top: 44px; grid-template-columns: 440px 290px 290px; grid-template-rows: 244px 244px;
+  --pad: 22px; --fs-no: 20px; --fs-sym: 104px; --sym-top: 50px; --fs-name: 27px; --name-bottom: 50px; --fs-for: 17px; }
+.art .n8n { grid-row: 1 / span 2; --pad: 30px; --fs-no: 26px; --fs-sym: 210px; --sym-top: 78px; --fs-name: 40px; --name-bottom: 182px; --fs-for: 20px; }
+.art .n8n .badge { left: 70px; top: 30px; }
+.art .n8n .extra { display: block; position: absolute; left: 30px; right: 30px; bottom: 30px; padding-top: 16px; border-top: 2px dashed rgba(194, 65, 12, .3); }
+.art .n8n .extra span { display: block; font-size: 18px; color: var(--ink); font-weight: 500; line-height: 1.55; }
+.art .n8n .extra b { color: #C2410C; font-weight: 700; }
+.art .n8n .for { bottom: 146px; }
+.el .for.short { display: none; }
+.og .n8n .for { display: none; }
+.og .n8n .for.short { display: block; }
+.art .legend { left: 72px; bottom: 30px; }
+.art .copy, .art .brand { display: none; }
+
+/* og : titre en haut, rangee de 5 tuiles en bas */
+.copy { position: absolute; left: 68px; top: 50px; width: 760px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: #C2410C; padding: 8px 15px 8px 13px; border: 1.5px solid rgba(234, 88, 12, .4); border-radius: 100px; background: #FFFFFF; }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: #F97316; }
+h1 { margin-top: 20px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 60px; line-height: 1.04; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: #EA580C; }
+.sub { margin-top: 14px; font-size: 21px; color: var(--ink-soft); }
+.brand { position: absolute; right: 68px; top: 56px; }
+.brand img { display: block; height: 36px; width: auto; }
+.og .table { left: 68px; top: 330px; grid-template-columns: repeat(5, 197px); grid-template-rows: 236px; gap: 16px;
+  --pad: 16px; --fs-no: 17px; --fs-sym: 86px; --sym-top: 46px; --fs-name: 22px; --name-bottom: 46px; --fs-for: 15px; }
+.og .el .lic { font-size: 13px; padding: 3px 7px; }
+.og .n8n { border-width: 3.5px; }
+.og .n8n .badge { left: 16px; top: -1px; display: none; }
+.og .legend { display: none; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="copy">
+    <span class="eyebrow"><i></i>Open source workflow automation</span>
+    <h1>The shortlist that<br>won't <em>lock you in.</em></h1>
+    <p class="sub">Five tools, their licenses, and the one we run in production.</p>
+  </div>
+  <div class="brand"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+
+  <div class="table">
+    <div class="el n8n">
+      <span class="no">1</span><span class="lic">Fair-code</span>
+      <span class="sym">n8n</span>
+      <span class="badge">Best overall</span>
+      <span class="name">n8n</span>
+      <span class="for">Business process automation</span><span class="for short">Business automation</span>
+      <div class="extra"><span><b>500+</b> integrations</span><span><b>JS or Python</b> in any workflow</span><span>Self-hosted with <b>Docker</b></span></div>
+    </div>
+    <div class="el nr"><span class="no">2</span><span class="lic">Apache 2.0</span><span class="sym">Nr</span><span class="name">Node-RED</span><span class="for">IoT and event flows</span></div>
+    <div class="el af"><span class="no">3</span><span class="lic">Apache 2.0</span><span class="sym">Af</span><span class="name">Apache Airflow</span><span class="for">Data pipelines, ETL</span></div>
+    <div class="el hu"><span class="no">4</span><span class="lic">MIT</span><span class="sym">Hu</span><span class="name">Huginn</span><span class="for">Personal agents</span></div>
+    <div class="el ap"><span class="no">5</span><span class="lic">MIT</span><span class="sym">Ap</span><span class="name">Activepieces</span><span class="for">No-code simplicity</span></div>
+  </div>
+
+  <div class="legend">
+    <span class="n8n"><i></i>Business</span>
+    <span class="nr"><i></i>IoT</span>
+    <span class="af"><i></i>Data</span>
+    <span class="hu"><i></i>Agents</span>
+    <span class="ap"><i></i>No-code</span>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
