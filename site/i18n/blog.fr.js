@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-108, premier article). */
+   Regenere le 2026-09-25 (T-112, carte article BPA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Business Process Automation Companies: The Real Shortlist for SMEs": "Entreprises d'automatisation des processus métier : la vraie sélection pour les PME",
+        "What business process automation covers, the four criteria that separate providers, a cost and speed table from global consultancy to freelancer, and the question that exposes a weak partner.": "Ce que recouvre l'automatisation des processus métier, les quatre critères qui départagent les prestataires, un tableau des coûts et des délais du grand cabinet au freelance, et la question qui démasque un partenaire fragile.",
         "Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork": "Automatisation de workflows avec Zapier : des automatisations fiables, sans les tâches répétitives",
         "How we map your process before touching Zapier, the four safeguards on every Zap we hand over, what it costs, and when n8n or Make is the better call.": "Comment nous cartographions votre processus avant de toucher à Zapier, les quatre garde-fous de chaque Zap que nous remettons, ce que cela coûte, et quand n8n ou Make est le meilleur choix.",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Réseau d'experts en IA, automatisation et Knowledge Management. Nous aidons les dirigeants de TPE/PME à transformer leurs processus pour gagner en productivité et en sérénité.",

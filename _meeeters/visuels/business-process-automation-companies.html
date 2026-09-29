@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - business-process-automation-companies</title>
+<!-- Source du visuel de l'article. Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/business-process-automation-companies.html        (og : titre + delais)
+     /_meeeters/visuels/business-process-automation-companies.html#art    (carte et figure : delais, prix publies, criteres)
+     Les barres sont a l'echelle (0 a 12 mois) : 13 jours = 0,43 mois, 2-4 semaines = 0,46-0,92 mois.
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root {
+  --bg: #0F1729;
+  --ink: #F8FAFC;
+  --ink-soft: #CBD5E1;
+  --ink-mute: #A5B4CB;
+  --card: #1B2640;
+  --card-line: rgba(203, 213, 225, .22);
+  --orange: #FB923C;
+  --green: #4ADE80;
+  --grad: linear-gradient(90deg, #60A5FA 0%, #A78BFA 45%, #FB923C 100%);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background:
+    radial-gradient(640px 440px at 4% -8%, rgba(59, 130, 246, .34), transparent 70%),
+    radial-gradient(720px 500px at 102% 110%, rgba(249, 115, 22, .30), transparent 70%),
+    var(--bg); }
+.stage::before { content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(203, 213, 225, .14) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%);
+          mask-image: radial-gradient(900px 560px at 60% 50%, #000 25%, transparent 85%); }
+.stage::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--grad); }
+
+/* Plateau : delai jusqu'au premier cas d'usage en production */
+.scene { position: absolute; perspective: 1800px; }
+.board { width: 100%; transform: rotateY(-8deg) rotateX(4deg); transform-origin: 60% 50%;
+  border-radius: 26px; padding: 20px 22px 18px; background: linear-gradient(165deg, #22304F, #151F36);
+  border: 1px solid rgba(203, 213, 225, .26);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .08) inset, 0 40px 80px -24px rgba(0, 0, 0, .75); }
+.bar { padding: 0 4px 16px; margin-bottom: 16px; border-bottom: 1px solid var(--card-line); }
+.bar b { display: block; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -.015em; line-height: 1.1; }
+.bar small { display: block; margin-top: 5px; font-size: 16px; color: var(--ink-soft); }
+
+.board { --who: 232px; }
+.rows { list-style: none; }
+.row { display: grid; grid-template-columns: var(--who) 1fr; align-items: center; column-gap: 14px; height: 80px; padding: 0 16px 0 18px; margin-bottom: 12px; border-radius: 18px; background: var(--card); border: 1px solid var(--card-line); }
+.who b { display: block; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 23px; letter-spacing: -.015em; line-height: 1.12; white-space: nowrap; }
+.who small { display: block; margin-top: 3px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .04em; color: var(--ink-mute); white-space: nowrap; }
+.track { position: relative; height: 34px;
+  background: linear-gradient(90deg, rgba(203, 213, 225, .18) 1px, transparent 1px) 0 0 / 25% 100%;
+  border-right: 1px solid rgba(203, 213, 225, .18); }
+.rng { position: absolute; top: 5px; bottom: 5px; left: calc(var(--a) / 12 * 100%); width: calc((var(--b) - var(--a)) / 12 * 100%);
+  border-radius: 8px; background: linear-gradient(90deg, rgba(148, 163, 184, .38), rgba(148, 163, 184, .62)); box-shadow: inset 0 0 0 1px rgba(203, 213, 225, .35); }
+.val { position: absolute; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--ink); white-space: nowrap; }
+.val.in { right: 10px; }
+.val.out { left: calc(var(--b) / 12 * 100% + 12px); color: var(--ink-soft); }
+.row.hot { border-color: rgba(251, 146, 60, .75); background: #24273A; box-shadow: 0 0 0 4px rgba(251, 146, 60, .12); }
+.row.hot .rng { min-width: 14px; background: linear-gradient(90deg, #FDBA74, #F97316); box-shadow: none; }
+.row.hot .val { color: #FDBA74; font-weight: 700; }
+.chip { display: inline-flex; margin-left: 10px; font-size: 14px; font-weight: 400; padding: 3px 10px; border-radius: 100px; color: #86EFAC; background: rgba(74, 222, 128, .14); border: 1px solid rgba(74, 222, 128, .4); vertical-align: 1px; }
+.axis { display: grid; grid-template-columns: var(--who) 1fr; column-gap: 14px; padding: 2px 16px 0 18px; }
+.ticks { position: relative; height: 20px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-mute); }
+.ticks span { position: absolute; top: 0; transform: translateX(-50%); }
+.ticks span:first-child { transform: none; }
+.ticks span:last-child { transform: translateX(-100%); }
+.axis em { font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); line-height: 20px; }
+
+/* Panneaux de droite (variante carte) */
+.side { position: absolute; left: 764px; top: 34px; width: 392px; perspective: 1800px; display: none; flex-direction: column; gap: 18px; }
+.side > * { transform: rotateY(-8deg) rotateX(4deg); transform-origin: 0 50%; }
+.panel { border-radius: 22px; background: #172136; border: 1px solid rgba(203, 213, 225, .26); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .75); padding: 18px 20px 14px; }
+.panel h4 { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); font-weight: 400; margin-bottom: 4px; }
+.price { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(203, 213, 225, .14); }
+.price b { display: block; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -.01em; line-height: 1.15; }
+.price small { display: block; margin-top: 2px; font-size: 15px; color: var(--ink-soft); }
+.price strong { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -.01em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; white-space: nowrap; }
+.price strong u { text-decoration: none; font-size: 15px; font-weight: 500; }
+.panel p { padding-top: 10px; border-top: 1px solid rgba(203, 213, 225, .14); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-soft); }
+.check { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: 18px; font-weight: 500; }
+.check i { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: rgba(74, 222, 128, .2); color: #86EFAC; }
+.check i svg { width: 14px; height: 14px; }
+
+/* og : titre a gauche, plateau a droite */
+.copy { position: absolute; left: 64px; top: 72px; width: 500px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #FDBA74; padding: 8px 15px 8px 13px; border: 1px solid rgba(251, 146, 60, .45); border-radius: 100px; background: rgba(251, 146, 60, .1); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+h1 { margin-top: 26px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 64px; line-height: 1.02; letter-spacing: -.035em; }
+h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { margin-top: 22px; font-size: 22px; line-height: 1.45; color: var(--ink-soft); max-width: 460px; }
+.brand { position: absolute; left: 64px; bottom: 50px; display: flex; align-items: center; gap: 16px; }
+.brand img { height: 34px; width: auto; }
+.brand span { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--ink-mute); letter-spacing: .04em; padding-left: 16px; border-left: 1px solid var(--card-line); }
+.og .scene { left: 596px; top: 40px; width: 560px; }
+.og .board { --who: 196px; }
+.og .row { height: 76px; margin-bottom: 11px; padding: 0 14px 0 16px; }
+.og .who b { font-size: 21px; }
+.og .axis { padding: 2px 14px 0 16px; }
+
+/* Carte et figure : pas de titre, plateau a gauche, prix et criteres a droite */
+.art .copy, .art .brand { display: none; }
+.art .scene { left: 52px; top: 30px; width: 676px; }
+.art .side { display: flex; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="copy">
+    <span class="eyebrow"><i></i>Business process automation</span>
+    <h1>The real shortlist <em>for SMEs.</em></h1>
+    <p class="sub">Speed, published prices, field experience and support, compared.</p>
+  </div>
+  <div class="brand"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""><span>optimizia.xyz/blog</span></div>
+
+  <div class="scene">
+    <div class="board">
+      <div class="bar">
+        <b>Time to a first live use case</b>
+        <small>Typical market ranges, in months</small>
+      </div>
+      <ol class="rows">
+        <li class="row">
+          <span class="who"><b>Global consultancy</b><small>1,000+ employees</small></span>
+          <span class="track"><i class="rng" style="--a:6;--b:12"></i><span class="val in">6-12 months</span></span>
+        </li>
+        <li class="row">
+          <span class="who"><b>In-house team</b><small>Any size</small></span>
+          <span class="track"><i class="rng" style="--a:3;--b:12"></i><span class="val in">3-12 months</span></span>
+        </li>
+        <li class="row">
+          <span class="who"><b>Freelancer</b><small>1-50 employees</small></span>
+          <span class="track" style="--a:.46;--b:.92"><i class="rng"></i><span class="val out">2-4 weeks</span></span>
+        </li>
+        <li class="row hot">
+          <span class="who"><b>Specialized agency</b><small>Up to 250 employees</small></span>
+          <span class="track" style="--a:0;--b:.43"><i class="rng"></i><span class="val out">13 days<span class="chip">live</span></span></span>
+        </li>
+      </ol>
+      <div class="axis">
+        <em>Months</em>
+        <span class="ticks"><span style="left:0">0</span><span style="left:25%">3</span><span style="left:50%">6</span><span style="left:75%">9</span><span style="left:100%">12</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="panel">
+      <h4>OptimizIA.xyz &middot; published prices</h4>
+      <div class="price"><span><b>Diagnostic</b><small>1 to 3 weeks</small></span><strong>from &euro;1,000</strong></div>
+      <div class="price"><span><b>PoC &rarr; MVP</b><small>13 days on average</small></span><strong>from &euro;1,500</strong></div>
+      <div class="price"><span><b>Copiloting</b><small>monitored every month</small></span><strong>from &euro;100<u>/mo</u></strong></div>
+      <p>Excl. VAT &middot; fixed fee per project</p>
+    </div>
+    <div class="panel">
+      <h4>The four criteria</h4>
+      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>A date for the first live use case</div>
+      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Prices published before the call</div>
+      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Real industrial field experience</div>
+      <div class="check"><i><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 6.2 2.3 2.3 4.7-5"/></svg></i>Support after go-live</div>
+    </div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

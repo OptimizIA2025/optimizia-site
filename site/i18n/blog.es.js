@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-108, premier article). */
+   Regenere le 2026-09-25 (T-112, carte article BPA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "Business Process Automation Companies: The Real Shortlist for SMEs": "Empresas de automatización de procesos de negocio: la selección real para pymes",
+        "What business process automation covers, the four criteria that separate providers, a cost and speed table from global consultancy to freelancer, and the question that exposes a weak partner.": "Qué abarca la automatización de procesos de negocio, los cuatro criterios que separan a los proveedores, una tabla de costes y plazos de la gran consultora al freelancer, y la pregunta que desenmascara a un socio débil.",
         "Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork": "Automatización de flujos de trabajo con Zapier: automatizaciones fiables, sin tareas repetitivas",
         "How we map your process before touching Zapier, the four safeguards on every Zap we hand over, what it costs, and when n8n or Make is the better call.": "Cómo mapeamos su proceso antes de tocar Zapier, las cuatro salvaguardas de cada Zap que entregamos, cuánto cuesta y cuándo n8n o Make es la mejor opción.",
         "A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.": "Red de expertos en IA, automatización y Knowledge Management. Ayudamos a los directivos de pymes a transformar sus procesos para ganar productividad y tranquilidad.",
