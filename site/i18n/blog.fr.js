@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-113, carte article open source). */
+   Regenere le 2026-09-25 (T-115 : article low code). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Outils low code d'automatisation de workflows : la sélection qui ne vous fera pas perdre de temps",
+        "n8n, Make, Power Automate, Node-RED and Zapier compared on learning curve, pricing model and self-hosting, the right pick for each profile, and the error handling most comparisons skip.": "n8n, Make, Power Automate, Node-RED et Zapier comparés sur la prise en main, le modèle de prix et l'auto-hébergement, le bon choix pour chaque profil, et la gestion des erreurs que la plupart des comparatifs oublient.",
         "Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In": "Outils open source d'automatisation de workflows : la sélection qui ne vous enferme pas",
         "n8n, Node-RED, Airflow, Huginn and Activepieces compared on license, self-hosting and fit, plus what running n8n in production taught us about errors and versioning.": "n8n, Node-RED, Airflow, Huginn et Activepieces comparés sur la licence, l'auto-hébergement et l'usage, plus ce que n8n en production nous a appris sur les erreurs et le versionnage.",
         "Business Process Automation Companies: The Real Shortlist for SMEs": "Entreprises d'automatisation des processus métier : la vraie sélection pour les PME",

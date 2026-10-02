@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - low-code-workflow-automation-tools</title>
+<!-- Source du visuel de l'article : l'arbre de decision « quel outil pour quel profil » dessine en plan
+     d'architecte (bleu de Prusse, quadrillage, trait blanc, n8n entoure au feutre orange).
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/low-code-workflow-automation-tools.html        (og : titre + arbre compact)
+     /_meeeters/visuels/low-code-workflow-automation-tools.html#art    (carte et figure : arbre complet + cartouche)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --bg: #16447F; --line: #EAF3FF; --ink: #F4F9FF; --soft: #AFCBEE; --red: #FB923C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(120% 90% at 30% 20%, #1D539A 0%, var(--bg) 55%, #10376A 100%); }
+.stage::before { content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .13) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -1px -1px; }
+.stage::after { content: ""; position: absolute; inset: 18px; border: 1.5px solid rgba(234, 243, 255, .55); pointer-events: none; }
+
+.view { position: absolute; inset: 0; display: none; }
+.og .view-og, .art .view-art { display: block; }
+svg.wires { position: absolute; inset: 0; width: 1200px; height: 630px; overflow: visible; }
+.wires .w { fill: none; stroke: var(--line); stroke-width: 2.5; }
+.wires .dia { fill: var(--bg); stroke: var(--line); stroke-width: 2.5; }
+.wires .num { font-family: 'JetBrains Mono', monospace; font-size: 19px; font-weight: 700; fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.wires .yn { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; letter-spacing: .12em; fill: var(--soft); }
+.wires .mark { fill: none; stroke: var(--red); stroke-width: 3.5; stroke-linecap: round; }
+
+.box { position: absolute; border: 2.5px solid var(--line); background: rgba(16, 55, 106, .78); padding: 13px 15px; }
+.box .tag { display: block; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+.box .tool { display: block; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 29px; line-height: 1.02; letter-spacing: -.02em; color: var(--ink); }
+.box .for { display: block; margin-top: 7px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--soft); white-space: nowrap; }
+.box.start { border-style: dashed; }
+.box.start p { margin-top: 6px; font-size: 17px; line-height: 1.3; font-weight: 600; }
+.q { position: absolute; width: 184px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.38; color: #DCEBFF; }
+.q b { display: block; margin-bottom: 3px; font-size: 14px; letter-spacing: .14em; color: var(--soft); }
+.note { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.35; font-weight: 700; color: var(--red); }
+
+/* Cartouche du plan */
+.block { position: absolute; left: 44px; right: 38px; bottom: 36px; height: 66px; display: grid; grid-template-columns: 2.1fr 1.5fr 1.25fr 1fr;
+  border: 2px solid var(--line); background: rgba(16, 55, 106, .82); }
+.block > div { padding: 9px 14px; border-left: 2px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
+.block > div:first-child { border-left: 0; }
+.block small { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+.block span { font-size: 17px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.block img { display: block; height: 24px; width: auto; margin-top: 3px; }
+
+/* og : titre en haut, arbre compact en bas */
+.copy { position: absolute; left: 66px; top: 58px; width: 800px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); padding: 8px 15px 8px 13px; border: 1.5px solid rgba(234, 243, 255, .55); border-radius: 100px; background: rgba(16, 55, 106, .8); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+h1 { margin-top: 20px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 60px; line-height: 1.04; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--red); }
+.brand { position: absolute; right: 64px; top: 64px; }
+.brand img { display: block; height: 34px; width: auto; }
+.view-og .box { padding: 11px 13px; }
+.view-og .box .tool { font-size: 26px; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <!-- og -->
+  <div class="view view-og">
+    <div class="copy">
+      <span class="eyebrow"><i></i>Low code workflow automation</span>
+      <h1>The shortlist that won't<br><em>waste your time.</em></h1>
+    </div>
+    <div class="brand"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+
+    <svg class="wires" viewBox="0 0 1200 630" aria-hidden="true">
+      <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EAF3FF"/></marker></defs>
+      <path class="w" d="M180 352H220" marker-end="url(#a1)"/>
+      <path class="w" d="M284 352H412" marker-end="url(#a1)"/>
+      <path class="w" d="M484 352H612" marker-end="url(#a1)"/>
+      <path class="w" d="M684 352H812" marker-end="url(#a1)"/>
+      <path class="w" d="M884 352H966" marker-end="url(#a1)"/>
+      <path class="w" d="M252 388V452" marker-end="url(#a1)"/>
+      <path class="w" d="M448 388V452" marker-end="url(#a1)"/>
+      <path class="w" d="M648 388V452" marker-end="url(#a1)"/>
+      <path class="w" d="M848 388V452" marker-end="url(#a1)"/>
+      <rect class="dia" x="227" y="327" width="50" height="50" transform="rotate(45 252 352)"/><text class="num" x="252" y="352">1</text>
+      <rect class="dia" x="423" y="327" width="50" height="50" transform="rotate(45 448 352)"/><text class="num" x="448" y="352">2</text>
+      <rect class="dia" x="623" y="327" width="50" height="50" transform="rotate(45 648 352)"/><text class="num" x="648" y="352">3</text>
+      <rect class="dia" x="823" y="327" width="50" height="50" transform="rotate(45 848 352)"/><text class="num" x="848" y="352">4</text>
+      <text class="yn" x="314" y="342">NO</text><text class="yn" x="514" y="342">NO</text><text class="yn" x="714" y="342">NO</text><text class="yn" x="900" y="342">NO</text>
+      <text class="yn" x="262" y="428">YES</text><text class="yn" x="458" y="428">YES</text><text class="yn" x="658" y="428">YES</text><text class="yn" x="858" y="428">YES</text>
+      <path class="mark" d="M836 441C766 443 734 476 738 514C742 556 800 580 866 578C934 576 964 548 962 508C960 466 916 440 852 440C832 440 816 444 802 452"/>
+    </svg>
+
+    <div class="box start" style="left:66px; top:322px; width:114px; height:60px; display:flex; align-items:center;"><span class="tag" style="color:#F4F9FF">Start</span></div>
+    <div class="box" style="left:160px; top:458px; width:184px; height:104px;"><span class="tool">Power<br>Automate</span></div>
+    <div class="box" style="left:356px; top:458px; width:184px; height:104px;"><span class="tool">Node-RED</span><span class="for">Developers</span></div>
+    <div class="box" style="left:556px; top:458px; width:184px; height:104px;"><span class="tool">Zapier</span><span class="for">Simple, linear</span></div>
+    <div class="box" style="left:756px; top:458px; width:184px; height:104px;"><span class="tool">n8n</span><span class="for">Best overall</span></div>
+    <div class="box" style="left:972px; top:310px; width:164px; height:84px;"><span class="tool">Make</span><span class="for">Visual builders</span></div>
+  </div>
+
+  <!-- carte et figure -->
+  <div class="view view-art">
+    <svg class="wires" viewBox="0 0 1200 630" aria-hidden="true">
+      <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FB923C"/></marker><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EAF3FF"/></marker></defs>
+      <path class="w" d="M214 230H272" marker-end="url(#a2)"/>
+      <path class="w" d="M352 230H472" marker-end="url(#a2)"/>
+      <path class="w" d="M552 230H672" marker-end="url(#a2)"/>
+      <path class="w" d="M752 230H872" marker-end="url(#a2)"/>
+      <path class="w" d="M952 230H1004" marker-end="url(#a2)"/>
+      <path class="w" d="M312 270V356" marker-end="url(#a2)"/>
+      <path class="w" d="M512 270V356" marker-end="url(#a2)"/>
+      <path class="w" d="M712 270V356" marker-end="url(#a2)"/>
+      <path class="w" d="M912 270V356" marker-end="url(#a2)"/>
+      <rect class="dia" x="285" y="203" width="54" height="54" transform="rotate(45 312 230)"/><text class="num" x="312" y="230">1</text>
+      <rect class="dia" x="485" y="203" width="54" height="54" transform="rotate(45 512 230)"/><text class="num" x="512" y="230">2</text>
+      <rect class="dia" x="685" y="203" width="54" height="54" transform="rotate(45 712 230)"/><text class="num" x="712" y="230">3</text>
+      <rect class="dia" x="885" y="203" width="54" height="54" transform="rotate(45 912 230)"/><text class="num" x="912" y="230">4</text>
+      <text class="yn" x="392" y="220">NO</text><text class="yn" x="592" y="220">NO</text><text class="yn" x="792" y="220">NO</text><text class="yn" x="960" y="220">NO</text>
+      <text class="yn" x="322" y="318">YES</text><text class="yn" x="522" y="318">YES</text><text class="yn" x="722" y="318">YES</text><text class="yn" x="922" y="318">YES</text>
+      <path class="mark" d="M904 344C838 345 804 378 806 418C808 462 856 490 920 488C990 486 1022 456 1018 414C1014 372 970 346 908 346C888 346 870 350 856 357"/>
+      <path class="mark" d="M1092 436C1084 466 1058 478 1030 476" marker-end="url(#a3)"/>
+    </svg>
+
+    <div class="q" style="left:220px; top:96px;"><b>Q1</b>Microsoft 365 everywhere?</div>
+    <div class="q" style="left:420px; top:96px;"><b>Q2</b>Developer who wants full control?</div>
+    <div class="q" style="left:620px; top:96px;"><b>Q3</b>Simple, linear, under five steps?</div>
+    <div class="q" style="left:820px; top:96px;"><b>Q4</b>Self-hosting or custom code?</div>
+
+    <div class="box start" style="left:44px; top:172px; width:170px; height:116px;"><span class="tag">Start</span><p>Your process, mapped on paper</p></div>
+    <div class="box" style="left:1004px; top:190px; width:158px; height:80px;"><span class="tool">Make</span><span class="for">Visual builders</span></div>
+
+    <div class="box" style="left:220px; top:362px; width:184px; height:110px;"><span class="tool">Power<br>Automate</span><span class="for">Microsoft shops</span></div>
+    <div class="box" style="left:420px; top:362px; width:184px; height:110px;"><span class="tool">Node-RED</span><span class="for">Developers, IoT</span></div>
+    <div class="box" style="left:620px; top:362px; width:184px; height:110px;"><span class="tool">Zapier</span><span class="for">Simple, linear</span></div>
+    <div class="box" style="left:820px; top:362px; width:184px; height:110px;"><span class="tool">n8n</span><span class="for">Control and cost</span></div>
+    <div class="note" style="left:1036px; top:384px; width:130px;">Best overall<br>for SMEs</div>
+
+    <div class="block">
+      <div><small>Title</small><span>Low code workflow automation tools</span></div>
+      <div><small>Sheet</small><span>Which tool fits your profile</span></div>
+      <div><small>Drawn by</small><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+      <div><small>Date</small><span>2026-10-01</span></div>
+    </div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

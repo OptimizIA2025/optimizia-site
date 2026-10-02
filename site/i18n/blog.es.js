@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-113, carte article open source). */
+   Regenere le 2026-09-25 (T-115 : article low code). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Herramientas low code de automatización de flujos: la selección que no le hará perder el tiempo",
+        "n8n, Make, Power Automate, Node-RED and Zapier compared on learning curve, pricing model and self-hosting, the right pick for each profile, and the error handling most comparisons skip.": "n8n, Make, Power Automate, Node-RED y Zapier comparados en curva de aprendizaje, modelo de precios y autoalojamiento, la opción adecuada para cada perfil y la gestión de errores que la mayoría de las comparativas omiten.",
         "Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In": "Herramientas open source de automatización de flujos: la selección que no le ata",
         "n8n, Node-RED, Airflow, Huginn and Activepieces compared on license, self-hosting and fit, plus what running n8n in production taught us about errors and versioning.": "n8n, Node-RED, Airflow, Huginn y Activepieces comparados en licencia, autoalojamiento y encaje, y lo que n8n en producción nos enseñó sobre errores y versionado.",
         "Business Process Automation Companies: The Real Shortlist for SMEs": "Empresas de automatización de procesos de negocio: la selección real para pymes",

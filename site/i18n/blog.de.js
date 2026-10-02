@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-113, carte article open source). */
+   Regenere le 2026-09-25 (T-115 : article low code). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Low-Code-Tools für Workflow-Automatisierung: die Auswahl, die Ihnen keine Zeit raubt",
+        "n8n, Make, Power Automate, Node-RED and Zapier compared on learning curve, pricing model and self-hosting, the right pick for each profile, and the error handling most comparisons skip.": "n8n, Make, Power Automate, Node-RED und Zapier im Vergleich: Lernkurve, Preismodell und Self-Hosting, die richtige Wahl für jedes Profil und die Fehlerbehandlung, die die meisten Vergleiche auslassen.",
         "Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In": "Open-Source-Tools für Workflow-Automatisierung: die Auswahl ohne Lock-in",
         "n8n, Node-RED, Airflow, Huginn and Activepieces compared on license, self-hosting and fit, plus what running n8n in production taught us about errors and versioning.": "n8n, Node-RED, Airflow, Huginn und Activepieces im Vergleich nach Lizenz, Self-Hosting und Einsatz, dazu was uns n8n im Produktivbetrieb über Fehler und Versionierung gelehrt hat.",
         "Business Process Automation Companies: The Real Shortlist for SMEs": "Anbieter für Geschäftsprozessautomatisierung: die echte Auswahl für KMU",
