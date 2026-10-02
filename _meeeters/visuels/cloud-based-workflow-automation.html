@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - cloud-based-workflow-automation</title>
+<!-- Source du visuel de l'article : le verdict « commencer en no-code, monter vers n8n » dessine en carte de
+     randonnee topographique (papier creme, courbes de niveau vert sauge, sentier orange, nuages).
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/cloud-based-workflow-automation.html        (og : titre + carte)
+     /_meeeters/visuels/cloud-based-workflow-automation.html#art    (carte et figure : carte pleine + legende)
+     Les courbes de niveau sont calculees (champ de collines + carres marchants), donc identiques a chaque rendu.
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --paper: #F1EBDC; --ink: #1E2A22; --soft: #55604F; --line: #A9B996; --index: #6E8660; --trail: #E2550C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 80% at 75% 30%, #F5F0E4 0%, var(--paper) 60%, #E9E1CE 100%); }
+.stage::after { content: ""; position: absolute; inset: 16px; border: 1.5px solid rgba(30, 42, 34, .35); pointer-events: none; }
+svg.map { position: absolute; inset: 0; width: 1200px; height: 630px; }
+.map .c { fill: none; stroke: var(--line); stroke-width: 1.3; }
+.map .c.i { stroke: var(--index); stroke-width: 2; }
+.map .trail { fill: none; stroke: var(--trail); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 2 11; }
+.map .side { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 9; opacity: .75; }
+.map .wp { fill: #FFFDF7; stroke: var(--ink); stroke-width: 3; }
+.map .cloud { fill: #FFFFFF; opacity: .92; filter: drop-shadow(0 6px 10px rgba(30, 42, 34, .12)); }
+.map .warn { fill: var(--trail); }
+.map .warn-t { fill: #FFFFFF; font: 800 20px 'Outfit', sans-serif; text-anchor: middle; dominant-baseline: central; }
+
+.view { position: absolute; inset: 0; display: none; }
+.og .view-og, .art .view-art { display: block; }
+
+.plate { position: absolute; padding: 9px 13px 10px; background: rgba(255, 253, 247, .94); border: 1.5px solid var(--ink); border-radius: 4px; box-shadow: 3px 3px 0 rgba(30, 42, 34, .18); }
+.plate .tool { display: block; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 27px; line-height: 1.05; letter-spacing: -.02em; }
+.plate .for { display: block; margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--soft); white-space: nowrap; }
+.plate.summit { border-color: var(--trail); box-shadow: 3px 3px 0 rgba(226, 85, 12, .25); }
+.plate.summit .tool { color: #C2410C; }
+.note { position: absolute; padding: 3px 6px; background: rgba(241, 235, 220, .88); border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; line-height: 1.35; color: #C2410C; }
+
+/* Legende de carte */
+.key { position: absolute; left: 40px; top: 40px; width: 300px; padding: 16px 18px 14px; background: rgba(255, 253, 247, .95); border: 1.5px solid var(--ink); border-radius: 4px; }
+.key small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); }
+.key b { display: block; margin-top: 4px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 23px; line-height: 1.12; letter-spacing: -.02em; }
+.key ul { list-style: none; margin-top: 12px; padding-top: 11px; border-top: 1.5px dashed rgba(30, 42, 34, .3); display: grid; gap: 7px; }
+.key li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; }
+.key li svg { flex: none; }
+.compass { position: absolute; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 16px; color: var(--ink); text-align: center; }
+.scale { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--soft); }
+.scale i { display: block; width: 160px; height: 8px; margin-bottom: 5px; border: 1.5px solid var(--ink); background: linear-gradient(90deg, var(--ink) 50%, #FFFDF7 50%); background-size: 80px 100%; }
+
+/* og */
+.copy { position: absolute; left: 60px; top: 60px; width: 560px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); padding: 8px 15px 8px 13px; border: 1.5px solid rgba(30, 42, 34, .4); border-radius: 100px; background: #FFFDF7; }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--trail); }
+h1 { margin-top: 22px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 58px; line-height: 1.04; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: #C2410C; }
+.brand { position: absolute; left: 62px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+.fade { position: absolute; left: 0; top: 0; bottom: 0; width: 700px; background: linear-gradient(90deg, rgba(241, 235, 220, .96) 0%, rgba(241, 235, 220, .9) 70%, rgba(241, 235, 220, 0) 100%); }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="view view-og">
+    <svg class="map" id="map-og" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+    <div class="fade"></div>
+    <div class="copy">
+      <span class="eyebrow"><i></i>Cloud based workflow automation</span>
+      <h1>Start with no-code.<br><em>Graduate to n8n</em><br>when you hit limits.</h1>
+    </div>
+    <div class="brand"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+    <svg class="map" id="pins-og" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+    <div class="plate" style="left:518px; top:520px;"><span class="tool">Zapier</span><span class="for">Base camp</span></div>
+    <div class="plate" style="left:690px; top:300px;"><span class="tool">Make</span><span class="for">The ridge</span></div>
+    <div class="plate summit" style="left:1046px; top:160px;"><span class="tool">n8n</span><span class="for">Summit</span></div>
+    <div class="plate" style="left:1018px; top:500px;"><span class="tool">Power<br>Automate</span></div>
+  </div>
+
+  <div class="view view-art">
+    <svg class="map" id="map-art" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+    <svg class="map" id="pins-art" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+    <div class="key">
+      <small>Trail map</small>
+      <b>Cloud based workflow automation for SMEs</b>
+      <ul>
+        <li><svg width="34" height="8"><line x1="2" y1="4" x2="32" y2="4" stroke="#E2550C" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="2 9"/></svg>Main trail: start no-code</li>
+        <li><svg width="34" height="8"><line x1="2" y1="4" x2="32" y2="4" stroke="#1E2A22" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/></svg>Side trail: Microsoft 365</li>
+        <li><svg width="34" height="16"><circle cx="17" cy="8" r="7" fill="#E2550C"/><text x="17" y="8.5" fill="#fff" font-family="Outfit" font-weight="800" font-size="11" text-anchor="middle" dominant-baseline="central">!</text></svg>Steep: AI on unstructured data</li>
+      </ul>
+    </div>
+    <div class="compass" style="left:368px; top:44px;"><svg width="30" height="40" viewBox="0 0 30 40"><path d="M15 2L24 30L15 24L6 30Z" fill="#1E2A22"/><path d="M15 2L15 24L6 30Z" fill="#55604F"/></svg><br>N</div>
+    <div class="plate" style="left:56px; top:494px;"><span class="tool">Zapier</span><span class="for">Base camp · quick wins</span></div>
+    <div class="plate" style="left:250px; top:262px;"><span class="tool">Make</span><span class="for">The ridge · more control</span></div>
+    <div class="note" style="left:722px; top:296px; width:190px;">You hit limits here: AI on unstructured data</div>
+    <div class="plate summit" style="left:956px; top:120px;"><span class="tool">n8n</span><span class="for">Summit</span><span class="for">AI, code, self-hosting</span></div>
+    <div class="plate" style="left:902px; top:486px;"><span class="tool">Power Automate</span><span class="for">Microsoft 365 hill</span></div>
+    <div class="scale" style="left:484px; top:566px;"><i></i>0 · one afternoon</div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+
+// Relief : collines gaussiennes + ondulation douce, iso-lignes par carres marchants.
+function contours(svg, hills) {
+  const f = (x, y) => {
+    let v = 0.05 * Math.sin(x / 97 + 1.3) * Math.cos(y / 83 - 0.4) + 0.04 * Math.sin((x + y) / 151);
+    for (const h of hills) { const dx = (x - h.x) / h.sx, dy = (y - h.y) / h.sy; v += h.a * Math.exp(-(dx * dx + dy * dy) / 2); }
+    return v;
+  };
+  const S = 6, W = 1200 / S + 1, H = 630 / S + 1, g = [];
+  for (let j = 0; j < H; j++) { g.push([]); for (let i = 0; i < W; i++) g[j].push(f(i * S, j * S)); }
+  for (let n = 1; n <= 16; n++) {
+    const lv = -0.02 + n * 0.068, segs = [];
+    for (let j = 0; j < H - 1; j++) for (let i = 0; i < W - 1; i++) {
+      const a = g[j][i], b = g[j][i + 1], c = g[j + 1][i + 1], d = g[j + 1][i];
+      const x = i * S, y = j * S, pts = [];
+      const lerp = (p, q) => (lv - p) / (q - p);
+      if ((a > lv) !== (b > lv)) pts.push([x + S * lerp(a, b), y]);
+      if ((b > lv) !== (c > lv)) pts.push([x + S, y + S * lerp(b, c)]);
+      if ((d > lv) !== (c > lv)) pts.push([x + S * lerp(d, c), y + S]);
+      if ((a > lv) !== (d > lv)) pts.push([x, y + S * lerp(a, d)]);
+      if (pts.length === 2) segs.push(`M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}L${pts[1][0].toFixed(1)} ${pts[1][1].toFixed(1)}`);
+      if (pts.length === 4) segs.push(`M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}L${pts[1][0].toFixed(1)} ${pts[1][1].toFixed(1)}M${pts[2][0].toFixed(1)} ${pts[2][1].toFixed(1)}L${pts[3][0].toFixed(1)} ${pts[3][1].toFixed(1)}`);
+    }
+    el("path", { d: segs.join(""), class: n % 5 === 0 ? "c i" : "c", "stroke-linecap": "round" }, svg);
+  }
+}
+function cloud(svg, x, y, s) {
+  el("path", { class: "cloud", d: `M${x} ${y}c${-22*s} 0 ${-34*s} ${-20*s} ${-18*s} ${-34*s}c${4*s} ${-26*s} ${38*s} ${-30*s} ${48*s} ${-12*s}c${14*s} ${-28*s} ${62*s} ${-22*s} ${62*s} ${10*s}c${26*s} ${-6*s} ${40*s} ${30*s} ${14*s} ${36*s}z` }, svg);
+}
+function pin(svg, x, y, warn) {
+  if (warn) { el("circle", { cx: x, cy: y, r: 15, class: "warn" }, svg); el("text", { x, y: y + 1, class: "warn-t" }, svg).textContent = "!"; return; }
+  el("circle", { cx: x, cy: y, r: 9, class: "wp" }, svg);
+}
+function flag(svg, x, y) {
+  el("path", { d: `M${x} ${y}V${y - 46}`, stroke: "#1E2A22", "stroke-width": 3, "stroke-linecap": "round" }, svg);
+  el("path", { d: `M${x} ${y - 46}L${x + 30} ${y - 37}L${x} ${y - 28}Z`, fill: "#E2550C" }, svg);
+  el("circle", { cx: x, cy: y, r: 7, class: "wp" }, svg);
+}
+
+// Carte et figure
+contours(document.getElementById("map-art"), [
+  { x: 930, y: 200, sx: 210, sy: 170, a: 1.0 }, { x: 640, y: 330, sx: 170, sy: 120, a: 0.42 }, { x: 900, y: 520, sx: 120, sy: 80, a: 0.42 }, { x: 260, y: 600, sx: 260, sy: 120, a: 0.12 }]);
+(() => {
+  const p = document.getElementById("pins-art");
+  el("path", { class: "trail", d: "M170 468C250 470 330 452 360 430C384 380 420 360 470 372C540 388 590 352 640 318C700 278 760 268 820 236C870 210 900 180 934 156" }, p);
+  el("path", { class: "side", d: "M560 362C620 410 700 470 760 492C800 506 840 512 880 512" }, p);
+  pin(p, 170, 468); pin(p, 470, 372); pin(p, 880, 512); pin(p, 700, 282, true); flag(p, 934, 156);
+  cloud(p, 820, 96, 1.1); cloud(p, 1112, 330, 0.85); cloud(p, 610, 150, 0.8);
+})();
+
+// og
+contours(document.getElementById("map-og"), [
+  { x: 1010, y: 230, sx: 200, sy: 170, a: 1.0 }, { x: 790, y: 380, sx: 150, sy: 110, a: 0.42 }, { x: 1060, y: 540, sx: 110, sy: 70, a: 0.4 }, { x: 640, y: 600, sx: 200, sy: 90, a: 0.1 }]);
+(() => {
+  const p = document.getElementById("pins-og");
+  el("path", { class: "trail", d: "M650 560C700 520 720 470 740 440C760 410 790 400 820 392C880 376 900 330 930 290C960 250 990 220 1010 196" }, p);
+  el("path", { class: "side", d: "M840 388C900 430 950 470 1000 492" }, p);
+  pin(p, 650, 560); pin(p, 820, 392); pin(p, 1000, 492); flag(p, 1010, 196);
+  cloud(p, 900, 140, 1.0); cloud(p, 1150, 330, 0.8);
+})();
+</script>
+</body>
+</html>
