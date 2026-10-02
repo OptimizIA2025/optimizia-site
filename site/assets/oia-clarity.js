@@ -32,7 +32,10 @@
     var CLARITY_ID = (self && self.getAttribute('data-clarity')) || '';
     if (!CLARITY_ID) return; // aucun projet declare : rien ne se charge, rien ne s'affiche
 
-    var LEGAL = (self && self.getAttribute('data-legal')) || 'mentions-legales.html';
+    /* Chemin absolu obligatoire : le bandeau sert aussi les pages en
+       sous-dossier, ou un lien relatif resout en 404. Googlebot execute ce
+       script et explore le lien (404 /case-studies/legal-notice.html, 01/10). */
+    var LEGAL = (self && self.getAttribute('data-legal')) || '/legal-notice.html';
     var ACCENT = (self && self.getAttribute('data-accent')) || '#F97316';
     var STORE = 'oia_clarity_consent';
     /* Un refus se represente plus tot qu'une acceptation : le visiteur qui a dit
