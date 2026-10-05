@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-117 : article cloud). */
+   Regenere le 2026-09-25 (T-118 : article outils IA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Les meilleurs outils d'automatisation IA pour les petites entreprises : un comparatif pratique",
+        "Zapier, Make and n8n compared for small businesses, with AI chatbots, document processing and use cases by industry, the mistakes that sink automations, and the hidden cost of free tools.": "Zapier, Make et n8n comparés pour les petites entreprises, avec les chatbots IA, le traitement de documents et les usages par secteur, les erreurs qui font échouer une automatisation, et le coût caché des outils gratuits.",
         "Cloud Based Workflow Automation: A Practical Comparison for SMEs": "Automatisation des workflows dans le cloud : un comparatif pratique pour les PME",
         "Zapier, Make, n8n and Power Automate compared on setup, AI and cost at scale, when to move from no-code to n8n, and a measured case of AI reading the trade press every day.": "Zapier, Make, n8n et Power Automate comparés sur la mise en place, l'IA et le coût à l'échelle, le moment de passer du no-code à n8n, et un cas mesuré d'IA qui lit la presse professionnelle chaque jour.",
         "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Outils low code d'automatisation de workflows : la sélection qui ne vous fera pas perdre de temps",
