@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-117 : article cloud). */
+   Regenere le 2026-09-25 (T-118 : article outils IA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Die besten KI-Automatisierungstools für kleine Unternehmen: ein praktischer Vergleich",
+        "Zapier, Make and n8n compared for small businesses, with AI chatbots, document processing and use cases by industry, the mistakes that sink automations, and the hidden cost of free tools.": "Zapier, Make und n8n im Vergleich für kleine Unternehmen, mit KI-Chatbots, Dokumentenverarbeitung und Branchenanwendungen, den Fehlern, an denen Automatisierungen scheitern, und den versteckten Kosten kostenloser Tools.",
         "Cloud Based Workflow Automation: A Practical Comparison for SMEs": "Cloudbasierte Workflow-Automatisierung: ein praktischer Vergleich für KMU",
         "Zapier, Make, n8n and Power Automate compared on setup, AI and cost at scale, when to move from no-code to n8n, and a measured case of AI reading the trade press every day.": "Zapier, Make, n8n und Power Automate im Vergleich: Einrichtung, KI und Kosten bei Volumen, wann der Wechsel von No-Code zu n8n lohnt, und ein gemessener Fall von KI, die täglich die Fachpresse liest.",
         "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Low-Code-Tools für Workflow-Automatisierung: die Auswahl, die Ihnen keine Zeit raubt",
