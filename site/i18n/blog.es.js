@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-119 : carte intelligent automation). */
+   Regenere le 2026-09-25 (T-120). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "Business Process Workflow Automation: The Real Shortlist for SMEs": "Automatización de flujos de trabajo de procesos de negocio: la shortlist real para pymes",
+        "What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.": "Qué es la automatización de flujos de trabajo y luego la shortlist: n8n, Make, Zapier y una solución a medida comparados en facilidad de uso, modelo de precios, flexibilidad y autoalojamiento, con precios comprobados, para quién es cada opción y la unidad de facturación que cambia la factura.",
         "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Automatización inteligente: un marco práctico para pymes que funciona de verdad",
         "Intelligent automation as three layers, workflow engine, AI model and knowledge base, with a four-step method, a build, platform or specialist comparison, the mistakes that sink projects, and why it is a knowledge problem first.": "La automatización inteligente en tres capas, motor de flujos, modelo de IA y base de conocimiento, con un método en cuatro pasos, una comparativa entre construir en interno, plataforma y especialista, los errores que hunden los proyectos y por qué es ante todo un problema de conocimiento.",
         "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Las mejores herramientas de automatización con IA para pequeñas empresas: una comparativa práctica",

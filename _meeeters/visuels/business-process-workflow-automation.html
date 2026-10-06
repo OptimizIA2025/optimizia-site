@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - business-process-workflow-automation</title>
+<!-- Source du visuel de l'article : la shortlist dessinee comme un workflow, en logigramme neo-brutaliste
+     (traits noirs epais, ombres dures, aplats) sur fond rose. Trois questions, quatre reponses, n8n par defaut.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/business-process-workflow-automation.html        (og : titre + les quatre options)
+     /_meeeters/visuels/business-process-workflow-automation.html#art    (carte et figure : le logigramme complet)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #121212; --pink: #FFA9CB; --lime: #C8F169; --yellow: #FFE14D; --cyan: #8BE9F5; --paper: #FFFDF8; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--pink); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--pink); }
+.stage::before { content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(18, 18, 18, .16) 1.6px, transparent 1.7px); background-size: 24px 24px; background-position: 12px 12px; }
+
+.view { position: absolute; inset: 0; display: none; }
+.og .view-og, .art .view-art { display: block; }
+.view svg { position: absolute; inset: 0; width: 1200px; height: 630px; overflow: visible; }
+
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.box { position: absolute; border: 4px solid var(--ink); border-radius: 14px; box-shadow: 7px 7px 0 var(--ink); background: var(--paper); padding: 14px 16px; }
+.box .mono { display: block; font-size: 14px; }
+.lime { background: var(--lime); } .yellow { background: var(--yellow); } .cyan { background: var(--cyan); }
+.dark { background: var(--ink); color: var(--paper); }
+
+/* --- logigramme (carte et figure) --- */
+.top { position: absolute; left: 56px; top: 44px; font-size: 15px; display: flex; align-items: center; gap: 12px; }
+.top i { width: 13px; height: 13px; background: var(--ink); }
+.q { top: 104px; width: 204px; height: 136px; }
+.q b { display: block; margin-top: 7px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.14; letter-spacing: -.015em; }
+.start { left: 56px; top: 104px; width: 120px; height: 136px; }
+.start b { display: block; margin-top: 7px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.08; letter-spacing: -.02em; }
+.r { top: 372px; width: 204px; height: 164px; }
+.r b, .n8n b { display: block; margin-top: 5px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 31px; line-height: 1; letter-spacing: -.03em; }
+.r span:last-child { display: block; margin-top: 8px; font-size: 17px; line-height: 1.25; font-weight: 600; }
+.n8n { left: 964px; top: 104px; width: 180px; height: 432px; padding: 16px 18px; }
+.n8n b { margin-top: 124px; font-size: 68px; }
+.n8n .fit { display: block; margin-top: 12px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.12; letter-spacing: -.015em; }
+.n8n .free { position: absolute; left: 18px; right: 18px; bottom: 18px; padding-top: 12px; border-top: 4px solid var(--ink); font-size: 14px; line-height: 1.45; }
+.tag { position: absolute; font-size: 15px; padding: 2px 7px; background: var(--paper); border: 3px solid var(--ink); border-radius: 7px; line-height: 1.3; }
+.foot { position: absolute; left: 56px; bottom: 34px; font-size: 15px; }
+
+/* --- og --- */
+.copy { position: absolute; left: 60px; top: 96px; width: 560px; }
+.eyebrow { display: inline-block; font-size: 15px; padding: 7px 13px; background: var(--ink); color: var(--paper); border-radius: 8px; }
+h1 { margin-top: 26px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 66px; line-height: 1.04; letter-spacing: -.035em; }
+h1 em { font-style: normal; background: var(--paper); border: 4px solid var(--ink); border-radius: 12px; box-shadow: 6px 6px 0 var(--ink); padding: 0 12px 4px; display: inline-block; margin-top: 12px; }
+.brand { position: absolute; left: 60px; bottom: 52px; background: var(--paper); border: 4px solid var(--ink); border-radius: 12px; box-shadow: 6px 6px 0 var(--ink); padding: 12px 18px; }
+.brand img { display: block; height: 30px; width: auto; }
+.opt { width: 228px; height: 190px; padding: 18px 20px; }
+.opt b { display: block; margin-top: 8px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -.03em; }
+.opt span:last-child { display: block; margin-top: 10px; font-size: 19px; line-height: 1.25; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="view view-og">
+    <div class="copy">
+      <span class="eyebrow mono">The real shortlist</span>
+      <h1>Workflow automation: <em>which option fits?</em></h1>
+    </div>
+    <div class="brand"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+    <div class="box opt lime" style="left:664px;top:110px"><span class="mono">Default pick</span><b>n8n</b><span>Control, free to self-host</span></div>
+    <div class="box opt yellow" style="left:916px;top:110px"><span class="mono">Quick wins</span><b>Zapier</b><span>Easiest, billed per task</span></div>
+    <div class="box opt cyan" style="left:664px;top:326px"><span class="mono">Middle ground</span><b>Make</b><span>Visual, billed per credit</span></div>
+    <div class="box opt" style="left:916px;top:326px"><span class="mono">Legacy systems</span><b>Custom</b><span>Built for one process</span></div>
+  </div>
+
+  <div class="view view-art">
+    <div class="top mono"><i></i>Workflow automation, the shortlist</div>
+    <svg viewBox="0 0 1200 630" aria-hidden="true">
+      <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#121212"/></marker></defs>
+      <g stroke="#121212" stroke-width="4" fill="none" marker-end="url(#a)">
+        <path d="M185 172H216"/><path d="M433 172H464"/><path d="M681 172H712"/><path d="M929 172H960"/>
+        <path d="M322 249V366"/><path d="M570 249V366"/><path d="M818 249V366"/>
+      </g>
+    </svg>
+    <div class="box start dark"><span class="mono">Start</span><b>Your process</b></div>
+    <div class="box q" style="left:220px"><span class="mono">If</span><b>Legacy system or custom ERP?</b></div>
+    <div class="box q" style="left:468px"><span class="mono">If</span><b>Nobody technical on the team?</b></div>
+    <div class="box q" style="left:716px"><span class="mono">If</span><b>Prefer a visual builder?</b></div>
+    <div class="box n8n lime"><span class="mono">Else</span><b>n8n</b><span class="fit">Best fit for most SMEs</span><span class="free mono">Free to<br>self-host</span></div>
+    <div class="box r" style="left:220px"><span class="mono">Then</span><b>Custom build</b><span>Built for one process</span></div>
+    <div class="box r yellow" style="left:468px"><span class="mono">Then</span><b>Zapier</b><span>Quick wins, billed per task</span></div>
+    <div class="box r cyan" style="left:716px"><span class="mono">Then</span><b>Make</b><span>Visual, billed per credit</span></div>
+    <span class="tag mono" style="left:338px;top:292px">Yes</span>
+    <span class="tag mono" style="left:586px;top:292px">Yes</span>
+    <span class="tag mono" style="left:834px;top:292px">Yes</span>
+    <span class="tag mono" style="left:432px;top:128px">No</span>
+    <span class="tag mono" style="left:680px;top:128px">No</span>
+    <span class="tag mono" style="left:928px;top:128px">No</span>
+    <div class="foot mono">One process, three questions, four options</div>
+  </div>
+
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
