@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <script src="/assets/oia-theme.js?v=1"></script>
+    <link rel="canonical" href="https://www.optimizia.xyz/blog/intelligent-automation/">
+    <title>Intelligent Automation: A Practical Framework for SMEs</title>
+    <meta name="description" content="Intelligent automation for SMEs: a realistic framework to combine AI, workflows, and knowledge management without hype. Learn the method, avoid mistakes.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intelligent Automation: A Practical Framework for SMEs">
+    <meta property="og:description" content="Intelligent automation for SMEs: a realistic framework to combine AI, workflows, and knowledge management without hype. Learn the method, avoid mistakes.">
+    <meta property="og:url" content="https://www.optimizia.xyz/blog/intelligent-automation/">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/blog/intelligent-automation-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Intelligent automation drawn as three stacked layers: workflow engine, AI model and knowledge base.">
+    <meta property="article:published_time" content="2026-10-06">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligent Automation: A Practical Framework for SMEs">
+    <meta name="twitter:description" content="Intelligent automation for SMEs: a realistic framework to combine AI, workflows, and knowledge management without hype. Learn the method, avoid mistakes.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/blog/intelligent-automation-og.png">
+
+    <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=4">
+
+    <script src="/assets/vendor/gsap.min.js" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+            {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.optimizia.xyz/blog/"},
+            {"@type":"ListItem","position":3,"name":"Intelligent Automation: A Practical Framework for SMEs That Actually Works","item":"https://www.optimizia.xyz/blog/intelligent-automation/"}
+          ]
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.optimizia.xyz/blog/intelligent-automation/#article",
+          "headline": "Intelligent Automation: A Practical Framework for SMEs That Actually Works",
+          "description": "Intelligent automation for SMEs: a realistic framework to combine AI, workflows, and knowledge management without hype. Learn the method, avoid mistakes.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "author": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
+          "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+          "isPartOf": { "@id": "https://www.optimizia.xyz/blog/#page" },
+          "mainEntityOfPage": "https://www.optimizia.xyz/blog/intelligent-automation/",
+          "image": "https://www.optimizia.xyz/assets/blog/intelligent-automation-og.png",
+          "about": { "@type": "Thing", "name": "Intelligent automation", "sameAs": "https://en.wikipedia.org/wiki/Intelligent_automation" },
+          "mentions": [
+            { "@type": "SoftwareApplication", "name": "n8n", "url": "https://n8n.io/", "applicationCategory": "BusinessApplication" },
+            { "@type": "SoftwareApplication", "name": "Make", "url": "https://www.make.com/", "applicationCategory": "BusinessApplication" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"What is the difference between intelligent automation and regular automation?","acceptedAnswer":{"@type":"Answer","text":"Regular automation follows fixed rules: if this, then that. Intelligent automation adds a layer of AI that can interpret unstructured data, make predictions, or handle variation. For example, a regular automation can send a reminder when an invoice is overdue. An intelligent automation can read an email from a customer, understand that they are disputing the invoice, and route it to the right person with a summary."}},
+            {"@type":"Question","name":"How much does intelligent automation cost for an SME?","acceptedAnswer":{"@type":"Answer","text":"It depends on the scope. A proof of concept with a specialist starts from €1,500 excl. VAT and takes two to five weeks. A diagnostic to identify the right process starts from €1,000 excl. VAT. Ongoing copiloting starts from €100 excl. VAT per month. Building in-house with no-code tools has lower upfront costs but requires your time and may take longer."}},
+            {"@type":"Question","name":"Can I build intelligent automation myself with no-code tools?","acceptedAnswer":{"@type":"Answer","text":"Yes, for simple workflows with predictable inputs. Tools like n8n and Make are powerful and affordable. But if your process involves judgment calls, unstructured data, or integration with multiple systems, you will likely need help. The risk of building it yourself is spending weeks on a solution that does not work reliably, which costs more than hiring a specialist for a proof of concept."}},
+            {"@type":"Question","name":"How long does it take to see results from intelligent automation?","acceptedAnswer":{"@type":"Answer","text":"A well-scoped proof of concept can show results in two to five weeks. The key is to pick a narrow process and measure a specific outcome. If you try to automate a whole department at once, it will take months and likely fail."}},
+            {"@type":"Question","name":"What processes are best for intelligent automation in an SME?","acceptedAnswer":{"@type":"Answer","text":"The best candidates are processes that happen often, require some judgment, and have a clear owner. Examples include lead follow-up, invoice processing, report generation, and monitoring industry sources. Avoid processes that are highly variable or require empathy and negotiation."}}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script src="/assets/oia-i18n.js?v=8" data-base="/i18n/" data-page="blog-intelligent-automation" defer></script>
+    <style>
+    .post-figure { margin: 4px 0 36px; }
+    .post-figure img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--border); background: #DDEBD3; }
+    .post-figure figcaption { margin-top: 12px; font-size: .84rem; line-height: 1.5; color: var(--muted); text-align: center; }
+    .post th, .post td { padding: 10px 8px; }
+    .post th { vertical-align: bottom; }
+    @media (max-width: 720px) { .post table { min-width: 640px; } }
+    :root[data-theme="dark"] .post th { background: var(--bg-alt); }
+    .post-quote { margin: 28px 0; padding: 24px 28px; border-radius: 16px; background: var(--bg-alt); }
+    .post-quote blockquote { margin: 0; font-family: var(--font-display); font-size: 1.16rem; line-height: 1.5; color: var(--ink); }
+    .post-quote figcaption { margin-top: 14px; font-size: .86rem; line-height: 1.5; color: var(--muted); }
+    .post-quote figcaption b { display: block; color: var(--ink-soft); }
+    </style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img class="oia-logo logo-clair" src="/assets/brand/optimizia-logo.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"><img class="oia-logo logo-sombre" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+        <div class="nav-links">
+            <a href="/services.html">Services</a>
+            <a href="/case-studies/">Case studies</a>
+            <a href="/blog/">Blog</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html" class="nav-cta">Book a call</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/services.html">Services</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="post-wrap post-rel">
+        <a class="post-back" href="/blog/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back to the blog</a>
+        <div class="post-head">
+          <p class="eyebrow"><a href="/blog/" style="color:inherit;text-decoration:none">Automation</a> &middot; Article</p>
+          <h1>Intelligent Automation: A Practical Framework for SMEs That Actually Works</h1>
+        </div>
+        <a class="post-author" href="/about.html">
+          <span class="author-avatar"><img src="/avis-pics/romainBen.webp" alt="Portrait of Romain Ben" width="44" height="44" loading="lazy"></span>
+          <div class="author-id">
+            <b>Romain Ben</b>
+            <span>Co-founder &amp; AI Engineer, OptimizIA.xyz &middot; <time datetime="2026-10-06">October 6, 2026</time></span>
+          </div>
+        </a>
+        <aside class="post-aside">
+          <div class="post-aside-inner">
+            <div class="aside-box">
+              <b class="aside-title"><span>Share this article</span></b>
+              <div class="post-share" aria-label="Share this article">
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Fblog%2Fintelligent-automation%2F" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.06c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.88V21H9z"/></svg></a>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Fblog%2Fintelligent-automation%2F&amp;text=Intelligent%20Automation%3A%20A%20Practical%20Framework%20for%20SMEs%20That%20Actually%20Works" target="_blank" rel="noopener" aria-label="Share on X" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.9l-4.62-6.04L5.94 21H2.92l7.06-8.07L2.4 3h6.05l4.18 5.52L17.53 3zm-1.06 16.2h1.67L7.6 4.7H5.81l10.66 14.5z"/></svg></a>
+                <button class="share-btn share-copy" type="button" aria-label="Copy link" title="Copy link"><svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="icon-copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></button>
+              </div>
+            </div>
+            <div class="aside-box">
+              <b class="aside-title"><span>Contents</span></b>
+              <nav class="post-toc" aria-label="Article contents">
+                <a href="#what-it-means">What it really means</a>
+                <a href="#how-it-works">The method, step by step</a>
+                <a href="#comparing-approaches">Build, platform or specialist</a>
+                <a href="#mistakes">Mistakes that sink projects</a>
+                <a href="#knowledge-problem">A knowledge problem</a>
+                <a href="#how-to-get-started">How to get started</a>
+                <a href="#frequently-asked-questions">Frequently asked questions</a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+        <div class="post-summary">
+          <b><span>In short</span></b>
+
+          <p>Intelligent automation is the practice of using AI to make decisions within automated workflows, so your business can run processes that previously needed a human to look at each case. For a small or medium business, that means you can reclaim hours without hiring, but only if you scope the first project tightly and avoid the trap of automating everything at once.</p>
+        </div>
+        <aside class="post-rail" aria-label="Book a call">
+          <div class="post-rail-inner">
+            <div class="post-rail-card">
+              <span class="post-rail-tag">20-minute call</span>
+              <b><span>Which process first?</span></b>
+              <p>Describe the process that costs you the most time. We tell you honestly whether AI can take the repetitive part.</p>
+              <a class="btn btn-primary" href="/contact.html">Book a call</a>
+              <span class="post-rail-note">Free, no sales pitch.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="post">
+          <figure class="post-figure">
+            <img src="/assets/blog/intelligent-automation.webp" alt="Three stacked layers on a green background, drawn as an exploded view: a workflow engine on top that moves data and triggers actions, an AI model in the middle that reads and decides, and a knowledge base at the bottom that holds your rules and context. A flag on top reads: a human stays in control." width="1200" height="630">
+            <figcaption>Intelligent automation as three layers: the workflow engine acts, the AI model decides, and the knowledge base tells it what matters in your business.</figcaption>
+          </figure>
+
+          <p>This framework is the one we apply at OptimizIA.xyz, a network of AI, automation and Knowledge Management experts based in Béziers. The examples below come from systems we built and still run in production.</p>
+
+          <h2 id="what-it-means">What Intelligent Automation Really Means for an SME</h2>
+          <p>Intelligent automation is not a single tool. It is a combination of three layers:</p>
+          <ul>
+            <li><b>A workflow engine</b> that moves data and triggers actions.</li>
+            <li><b>An AI model</b> that interprets unstructured input or makes a prediction.</li>
+            <li><b>A knowledge base</b> that gives the AI the context it needs about your business.</li>
+          </ul>
+          <p>When these three layers work together, you can automate tasks like reading an email, extracting the relevant details, and routing it to the right person, or monitoring a set of sources and flagging only what matters.</p>
+          <p>For an SME, the goal is rarely to build a fully autonomous system. The goal is to remove the repetitive middle part of a process while keeping a human in control of exceptions and final decisions. That distinction matters because it changes what you buy and how you measure success.</p>
+
+          <h3>Why the term gets confusing</h3>
+          <p>Vendors use "intelligent automation" to describe everything from simple rule-based bots to large language models that write code. The practical difference for you is whether the system can handle variation. A rule-based automation works when the input is predictable: if the invoice number is missing, send an email. An intelligent automation works when the input varies: read the email, understand that the customer is asking about a late delivery, and create a support ticket with the right priority.</p>
+          <p>Four related terms come up in the same sales pitches. Here is what each one covers:</p>
+          <ul>
+            <li><b>RPA (robotic process automation):</b> software robots that replay clicks and keystrokes on fixed rules. There is no judgment involved.</li>
+            <li><b>Intelligent document processing:</b> AI that reads invoices, contracts or forms and returns structured data.</li>
+            <li><b>AI agents:</b> a language model that plans several steps and calls your tools on its own, within limits you set.</li>
+            <li><b>Hyperautomation:</b> a vendor word for combining all of the above across a whole company. It is rarely where an SME should start.</li>
+          </ul>
+
+          <h2 id="how-it-works">How Intelligent Automation Works: A Method That Fits SMEs</h2>
+          <p>The method we use with SMEs follows a simple sequence: find a process that is high friction and low variation, build a proof of concept in two to five weeks, then decide whether to scale or stop. This is not a theoretical framework. It is the same approach described in <a href="/services.html">how an engagement runs</a> with us, and it works because it forces you to prove value before spending more.</p>
+
+          <h3>Step 1: Pick the right process</h3>
+          <p>The best candidate for a first intelligent automation project has three characteristics:</p>
+          <ul>
+            <li>It happens often enough that the time savings add up.</li>
+            <li>It requires some judgment, so a simple rule-based bot would fail.</li>
+            <li>It has a clear owner who can explain the current manual steps and test the automated version.</li>
+          </ul>
+          <p>A process that fails any of these tests will create more work than it saves.</p>
+
+          <h3>Step 2: Map the decision points</h3>
+          <p>Before you touch any tool, write down every decision a human makes in the process. For example, in lead follow-up, a human might decide: is this lead worth calling today? The answer depends on the lead's industry, the size of the company, and the content of their message. That decision is where AI adds value. The workflow around it, moving the lead to a CRM or sending a notification, is standard automation.</p>
+
+          <h3>Step 3: Build a proof of concept</h3>
+          <p>A proof of concept should take two to five weeks and cost from €1,500 excl. VAT if you work with a specialist. The goal is to automate one narrow slice of the process end to end, with real data, and measure the result. You are not building the final system. You are testing whether the AI can make the decision well enough to save time without creating errors that cost more than the time saved.</p>
+          <p>On our own projects, going from proof of concept to a working MVP on a controlled scope takes 13 days on average.</p>
+
+          <h3>Step 4: Decide based on evidence</h3>
+          <p>After the proof of concept, you have three options: scale it, adjust it, or stop.</p>
+          <ul>
+            <li><b>Scale:</b> Scaling means adding more data sources, more decision rules, or more steps to the workflow.</li>
+            <li><b>Adjust:</b> Adjusting means the AI works but the workflow needs changes.</li>
+            <li><b>Stop:</b> Stopping is a valid outcome. If the proof of concept shows that the process is too variable or the data is too messy, you have spent a small amount to learn that, which is better than spending ten times more on a full build.</li>
+          </ul>
+
+          <h2 id="comparing-approaches">Comparing Approaches: Build In-House, Use a Platform, or Hire a Specialist</h2>
+          <p>There are three realistic ways to get intelligent automation into your business. Each has different costs, timelines, and risks. The table below compares them on the criteria that matter for an SME.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Approach</th><th>Upfront cost</th><th>Time to first result</th><th>Required skills</th><th>Best for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Build in-house with no-code tools (n8n, Make)</td><td>Low (tool subscription)</td><td>2-4 weeks if you have time</td><td>Workflow design, basic API understanding</td><td>Simple workflows with predictable inputs</td></tr>
+                <tr><td>Use a specialized AI automation platform</td><td>Medium (platform fee)</td><td>1-2 weeks for template use</td><td>Minimal, but customization needs technical help</td><td>Standard processes like invoice parsing or email triage</td></tr>
+                <tr><td>Hire an agency for a proof of concept</td><td>From €1,500 excl. VAT</td><td>2-5 weeks</td><td>None, but you need to define the process</td><td>Processes with judgment calls, unstructured data, or integration needs</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Building in-house is tempting because the tools are cheap. But the hidden cost is your time. If you spend three weeks learning n8n and debugging a workflow, that is three weeks you are not running your business. A platform can get you started faster, but you may hit a wall when your process does not fit the template. An agency proof of concept costs more upfront but gives you a working system and the knowledge to maintain it, which is why we recommend it for first projects.</p>
+          <p>If you build in-house, our <a href="/blog/best-ai-automation-tools-small-businesses/">comparison of AI automation tools for small businesses</a> helps you choose between Zapier, Make and n8n. If you would rather delegate, our <a href="/blog/business-process-automation-companies/">shortlist of business process automation companies</a> explains how to compare providers.</p>
+
+          <h2 id="mistakes">Mistakes That Sink Intelligent Automation Projects</h2>
+          <p>Most failed intelligent automation projects fail for the same few reasons. None of them are technical. They are about scope, data, and expectations.</p>
+
+          <h3>Mistake 1: Automating a process you do not understand</h3>
+          <p>If you cannot write down the current manual steps and the decision rules, you cannot automate them. The AI will make mistakes, and you will not know why. Before you automate, spend a week documenting the process. If you cannot document it, fix the process first.</p>
+
+          <h3>Mistake 2: Starting with a process that is too variable</h3>
+          <p>Some processes are not ready for automation because every case is different. For example, handling complex customer complaints that require empathy and negotiation is a poor first candidate. Start with a process where 80% of cases follow a similar pattern. The AI handles those, and a human handles the rest.</p>
+
+          <h3>Mistake 3: Ignoring the knowledge base</h3>
+          <p>Intelligent automation needs context. If the AI does not know your products, your pricing, or your policies, it will give wrong answers. Building a knowledge base is not glamorous, but it is the difference between a system that works and one that frustrates everyone. Our <a href="/case-studies/ai-training/">AI training</a> case study shows how we bring a team up to speed, from the first prompt to the autonomous agent.</p>
+
+          <h3>Mistake 4: Measuring activity instead of outcomes</h3>
+          <p>A common trap is to measure how many tasks the automation processed, not whether the business outcome improved. If you automate lead follow-up but the leads are not better qualified, you have not gained anything. Define the outcome before you build: for example, reduce response time from one day to one hour, or increase the number of leads that get a first touch within 24 hours.</p>
+          <p>This is why every automation we ship carries its own measurement: time saved, volume processed, error rate.</p>
+
+          <h2 id="knowledge-problem">The Counterintuitive Truth: Intelligent Automation Is a Knowledge Problem, Not a Technology Problem</h2>
+          <p>Most SMEs think they need better AI models or more sophisticated tools. In reality, the bottleneck is almost always knowledge: knowing which process to automate, knowing what the decision rules are, and knowing how to feed the AI the right context. The technology is mature enough. What is missing is the discipline to document and structure knowledge before automating.</p>
+          <p>This is why our recommended entry point is the <a href="/levers.html#diagnose">AI &amp; Knowledge Diagnostic</a>. It is a one to three week process that maps your workflows, identifies the highest-friction tasks, and ranks the priority use cases with an estimate of the gain. The diagnostic costs from €1,000 excl. VAT and gives you a clear picture of what to automate first and what to leave alone. If you already know which process to automate, you can go straight to a proof of concept. If you do not, you are guessing, and guessing is expensive.</p>
+          <p>That conviction comes from the field. <a href="/about.html">Rémy Ginoux</a>, co-founder of OptimizIA.xyz, spent 25 years in industrial and digital transformation at Volvo Group, Airbus Atlantic and Solvay, with Knowledge Management as his specialty. Michel Claire, Business Process Owner at bioMérieux, worked with him in January 2020:</p>
+          <figure class="post-quote">
+            <blockquote>“Rémy helped us in structuring the message to our local interfaces, he gave the momentum and the tools to create a collaborative network and allow us to develop it after his departure.”</blockquote>
+            <figcaption><b data-no-i18n>Michel Claire</b><span>Business Process Owner, Equipment &amp; Spares, bioMérieux</span></figcaption>
+          </figure>
+          <p>Structure the knowledge first, bring the tools second, and make sure the team carries on alone: the order has not changed with AI.</p>
+
+          <h3>A real example from our work</h3>
+          <p>We built a <a href="/case-studies/lead-monitoring/">system for an influence agent</a> that monitors industry sources every weekday morning. The system reads 25 sources, filters out noise, ranks items by priority, fills a sorted table and sends a written report to the agent's inbox. It covers an entire press sector for a few euros of AI processing per month, where the same monitoring by hand would take several hours every day. The key was not the AI model. It was the time we spent defining what "priority" means for that agent and writing that definition into the system. The AI just applies that definition consistently.</p>
+          <p>The three layers are easy to name on this project. The workflow engine is n8n. The AI model is Claude Sonnet 5. The knowledge base is the client's brief, plus a brand register that grows with every run.</p>
+          <p>That brief defines a good signal with four criteria, among them a brand that has just unlocked a budget and a campaign format one of his talents could reuse. All four are written into the instructions, and every line the AI returns starts with the criterion it matched, in the agent's own words since July 22, 2026.</p>
+          <p>One rule was in no document at all: he can only place his talents with brands active in France. He told us on July 15, 2026. Since then, the US and UK press still feeds the system, but only for reusable ideas and market data, capped at the lowest tier. No model could have guessed that rule. It had to come from him.</p>
+
+          <h2 id="how-to-get-started">How to Get Started Without Wasting Money</h2>
+          <p>If you want to test intelligent automation in your business, here is a sequence that minimizes risk.</p>
+          <ol>
+            <li>Pick one process that costs you at least five hours per week and has a clear owner.</li>
+            <li>Document the current steps and the decision rules. Write them down in plain language.</li>
+            <li>Run a small proof of concept with a specialist or a no-code tool. Set a hard deadline of four weeks.</li>
+            <li>Measure the outcome, not the activity. Did the process get faster? Did errors decrease? Did the owner save time?</li>
+            <li>Decide to scale, adjust, or stop based on the evidence.</li>
+          </ol>
+          <p>This sequence is not glamorous, but it works. It is the same approach we use with SMEs across Occitanie and internationally. You can read more about how we structure and price these projects on our <a href="/services.html">services page</a>.</p>
+
+          <h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+          <h3>What is the difference between intelligent automation and regular automation?</h3>
+          <p>Regular automation follows fixed rules: if this, then that. Intelligent automation adds a layer of AI that can interpret unstructured data, make predictions, or handle variation. For example, a regular automation can send a reminder when an invoice is overdue. An intelligent automation can read an email from a customer, understand that they are disputing the invoice, and route it to the right person with a summary.</p>
+
+          <h3>How much does intelligent automation cost for an SME?</h3>
+          <p>It depends on the scope. A proof of concept with a specialist starts from €1,500 excl. VAT and takes two to five weeks. A diagnostic to identify the right process starts from €1,000 excl. VAT. Ongoing copiloting starts from €100 excl. VAT per month. Building in-house with no-code tools has lower upfront costs but requires your time and may take longer.</p>
+
+          <h3>Can I build intelligent automation myself with no-code tools?</h3>
+          <p>Yes, for simple workflows with predictable inputs. Tools like n8n and Make are powerful and affordable. But if your process involves judgment calls, unstructured data, or integration with multiple systems, you will likely need help. The risk of building it yourself is spending weeks on a solution that does not work reliably, which costs more than hiring a specialist for a proof of concept.</p>
+
+          <h3>How long does it take to see results from intelligent automation?</h3>
+          <p>A well-scoped proof of concept can show results in two to five weeks. The key is to pick a narrow process and measure a specific outcome. If you try to automate a whole department at once, it will take months and likely fail.</p>
+
+          <h3>What processes are best for intelligent automation in an SME?</h3>
+          <p>The best candidates are processes that happen often, require some judgment, and have a clear owner. Examples include lead follow-up, invoice processing, report generation, and monitoring industry sources. Avoid processes that are highly variable or require empathy and negotiation.</p>
+        </div>
+
+        <nav class="silo-more" aria-label="Keep reading">
+          <b class="silo-more-title"><span>Keep reading</span></b>
+          <ul class="silo-more-list">
+            <li><a href="/blog/best-ai-automation-tools-small-businesses/"><b>Best AI automation tools for small businesses</b><span>Zapier, Make and n8n compared, with the mistakes to avoid and the hidden cost of free tools.</span></a></li>
+            <li><a href="/blog/business-process-automation-companies/"><b>Business process automation companies</b><span>Consultancy, agency, freelancer or in-house: how to choose who builds it.</span></a></li>
+            <li><a href="/blog/low-code-workflow-automation-tools/"><b>Low code workflow automation tools</b><span>Five tools compared on ease of use, pricing model and self-hosting, and how we pick for our clients.</span></a></li>
+          </ul>
+        </nav>
+        <div class="post-cta">
+          <h2>Prove it on one process first.</h2>
+          <p>Book 20 minutes: you describe the process that costs you the most time, we tell you honestly whether it is a good first candidate for intelligent automation.</p>
+          <a class="btn btn-primary" href="/contact.html">Book a call</a>
+        </div>
+      </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img class="oia-logo" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="/about.html" class="footer-ginoux">
+                    ↗ Meet the founders
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/levers.html">The 3 levers</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Book a call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Case studies</h4>
+                <ul>
+                    <li><a href="/case-studies/">All case studies</a></li>
+                    <li><a href="/case-studies/lead-monitoring/">Lead monitoring</a></li>
+                    <li><a href="/case-studies/automated-reporting/">Automated reporting</a></li>
+                    <li><a href="/case-studies/ai-training/">AI training</a></li>
+                    <li><a href="/case-studies/showcase-websites/">Showcase websites</a></li>
+                    <li><a href="/case-studies/seoplus/">SEOPlus!</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/tools/">All tools</a></li>
+                    <li><a href="/tools/seoplus/">SEO &amp; GEO audit (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
+            <p class="footer-tools"><button type="button" class="footer-cookies" data-oia-cookies data-no-i18n></button><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script>
+/* La date de l'auteur suit la langue affichee : oia-i18n.js n'indexe pas les <time>. */
+document.addEventListener("oia:lang", function (e) {
+    var fmt = new Intl.DateTimeFormat(e.detail || "en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+    document.querySelectorAll(".post-author time[datetime]").forEach(function (t) {
+        t.textContent = fmt.format(new Date(t.getAttribute("datetime") + "T00:00:00Z"));
+    });
+});
+document.querySelectorAll(".share-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+            b.classList.add("copied");
+            var t = window.OIA ? OIA.t("Link copied") : "Link copied";
+            b.setAttribute("aria-label", t);
+            b.setAttribute("title", t);
+            setTimeout(function () {
+                b.classList.remove("copied");
+                var u = window.OIA ? OIA.t("Copy link") : "Copy link";
+                b.setAttribute("aria-label", u);
+                b.setAttribute("title", u);
+            }, 2000);
+        });
+    });
+});
+</script>
+</body>
+</html>

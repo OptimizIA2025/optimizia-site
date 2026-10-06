@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - intelligent-automation</title>
+<!-- Source du visuel de l'article : l'automatisation intelligente en ecorche isometrique de trois couches
+     (moteur de workflow, modele d'IA, base de connaissance), l'humain plante en drapeau sur la couche du haut,
+     sur fond vert sauge clair.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/intelligent-automation.html        (og : titre + ecorche)
+     /_meeeters/visuels/intelligent-automation.html#art    (carte et figure : ecorche + legende des trois couches)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #12372A; --soft: #3F6152; --sage: #DDEBD3; --lime: #C8F169; --emerald: #1F7A5C; --orange: #F97316; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--sage); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(60% 80% at 66% 46%, #EEF6E6 0%, #DDEBD3 58%, #CFE1C3 100%); }
+.stage::before { content: ""; position: absolute; inset: -40px; opacity: .5;
+  background-image:
+    repeating-linear-gradient(30deg, rgba(18, 55, 42, .07) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(-30deg, rgba(18, 55, 42, .07) 0 1px, transparent 1px 34px); }
+
+.view { position: absolute; inset: 0; display: none; }
+.og .view-og, .art .view-art { display: block; }
+.view svg { position: absolute; inset: 0; width: 1200px; height: 630px; }
+
+.label { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+
+.copy { position: absolute; left: 62px; top: 110px; width: 560px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); padding: 8px 15px 8px 13px; border: 1.5px solid rgba(18, 55, 42, .35); border-radius: 100px; background: rgba(255, 255, 255, .55); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+h1 { margin-top: 24px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 62px; line-height: 1.03; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--emerald); }
+.brand { position: absolute; left: 64px; bottom: 56px; }
+.brand img { display: block; height: 32px; width: auto; }
+
+.legend { position: absolute; left: 700px; width: 440px; }
+.legend .n { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; letter-spacing: .12em; color: var(--emerald); }
+.legend b { display: block; margin-top: 2px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -.025em; }
+.legend span { display: block; margin-top: 4px; font-size: 18px; line-height: 1.3; font-weight: 500; color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="view view-og">
+    <div class="copy">
+      <span class="eyebrow"><i></i>A practical framework for SMEs</span>
+      <h1>Intelligent automation <em>that actually works.</em></h1>
+    </div>
+    <div class="brand"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+    <svg viewBox="0 0 1200 630" data-stack data-x="900" data-y="124" data-scale=".86"></svg>
+  </div>
+
+  <div class="view view-art">
+    <span class="label" style="right:56px; top:34px;">Exploded view · 3 layers</span>
+    <span class="label" style="right:56px; bottom:30px;">Intelligent automation</span>
+    <svg viewBox="0 0 1200 630" data-stack data-x="372" data-y="104" data-scale="1" data-leaders="1"></svg>
+    <div class="legend" style="top:208px;"><span class="n">01</span><b>Workflow engine</b><span>moves data and triggers actions</span></div>
+    <div class="legend" style="top:308px;"><span class="n">02</span><b>AI model</b><span>reads messy input and makes the call</span></div>
+    <div class="legend" style="top:408px;"><span class="n">03</span><b>Knowledge base</b><span>gives the AI your rules and context</span></div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+
+// Ecorche isometrique : trois dalles carrees de cote S, d'epaisseur H, ecartees de G.
+const S = 240, H = 42, G = 58, STEP = H + G, C = 0.866;
+const INK = "#12372A";
+const LAYERS = [
+  { name: "WORKFLOW ENGINE", num: "01", top: "#FFFDF7", left: "#E6EEDC", right: "#CFDDC2", text: INK },
+  { name: "AI MODEL", num: "02", top: "#C8F169", left: "#ABD84C", right: "#93C236", text: INK },
+  { name: "KNOWLEDGE BASE", num: "03", top: "#1F7A5C", left: "#17624A", right: "#114E3A", text: "#EAF3E2" }
+];
+const pts = a => a.map(p => p.join(",")).join(" ");
+
+function workflow() {
+  const node = (x, y, fill, icon) => `<rect x="${x - 22}" y="${y - 22}" width="44" height="44" rx="11" fill="${fill}" stroke="${INK}" stroke-width="2.5"/>${icon}`;
+  const mail = (x, y) => `<rect x="${x - 11}" y="${y - 8}" width="22" height="16" rx="2" fill="none" stroke="${INK}" stroke-width="2.2"/><polyline points="${x - 11},${y - 7} ${x},${y + 2} ${x + 11},${y - 7}" fill="none" stroke="${INK}" stroke-width="2.2"/>`;
+  const spark = (x, y) => `<path d="M${x},${y - 14} Q${x},${y} ${x + 14},${y} Q${x},${y} ${x},${y + 14} Q${x},${y} ${x - 14},${y} Q${x},${y} ${x},${y - 14}Z" fill="${INK}"/>`;
+  const check = (x, y) => `<polyline points="${x - 10},${y + 1} ${x - 3},${y + 8} ${x + 10},${y - 7}" fill="none" stroke="#FFFDF7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const person = (x, y) => `<circle cx="${x}" cy="${y - 7}" r="5.5" fill="#FFFDF7"/><path d="M${x - 11},${y + 12} a11,10 0 0 1 22,0Z" fill="#FFFDF7"/>`;
+  return `<g fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="46" y1="82" x2="194" y2="82"/><polyline points="120,82 120,178 46,178"/></g>
+    ${node(46, 82, "#FFFDF7", mail(46, 82))}${node(120, 82, "#C8F169", spark(120, 82))}${node(194, 82, INK, check(194, 82))}${node(46, 178, "#F97316", person(46, 178))}`;
+}
+function model() {
+  const g = [24, 62, 100, 138, 176, 214], path = [[214, 24], [176, 62], [214, 100], [176, 138], [214, 176], [176, 214], [138, 176], [100, 214], [62, 176], [24, 214]];
+  const on = new Set(path.map(p => p.join()));
+  let s = `<polyline points="${pts(path)}" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  for (const x of g) for (const y of g) if (x >= 176 || y >= 176)
+    s += `<circle cx="${x}" cy="${y}" r="7.5" fill="${on.has([x, y].join()) ? INK : "rgba(18,55,42,.2)"}"/>`;
+  return s;
+}
+function knowledge() {
+  const tabs = ["#C8F169", "#F97316", "#C8F169", "#FFFDF7", "#C8F169"];
+  return [[166, 12], [166, 88], [166, 164], [12, 164], [89, 164]].map(([x, y], i) =>
+    `<rect x="${x}" y="${y}" width="58" height="70" rx="7" fill="#F3F8EC" stroke="${INK}" stroke-width="2"/>
+     <rect x="${x + 9}" y="${y + 10}" width="18" height="7" rx="3.5" fill="${tabs[i] === "#FFFDF7" ? "#1F7A5C" : tabs[i]}"/>
+     ${[28, 40, 52].map((d, k) => `<line x1="${x + 9}" y1="${y + d}" x2="${x + (k === 2 ? 34 : 49)}" y2="${y + d}" stroke="${INK}" stroke-opacity=".38" stroke-width="3.5" stroke-linecap="round"/>`).join("")}`).join("");
+}
+const PATTERNS = [workflow, model, knowledge];
+
+function stack(svg) {
+  const X = +svg.dataset.x, Y = +svg.dataset.y, k = +svg.dataset.scale;
+  let s = `<defs><filter id="f${X}" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="11"/></filter></defs>`;
+  s += `<g transform="translate(${X} ${Y}) scale(${k})" stroke-linejoin="round">`;
+  const yb = 2 * STEP + H + 24;
+  s += `<polygon points="${pts([[0, yb], [C * S, yb + S / 2], [0, yb + S], [-C * S, yb + S / 2]])}" fill="${INK}" opacity=".2" filter="url(#f${X})"/>`;
+  for (let i = 2; i >= 0; i--) {
+    const L = LAYERS[i], yo = i * STEP;
+    const B = [0, yo], R = [C * S, yo + S / 2], F = [0, yo + S], Lf = [-C * S, yo + S / 2], d = p => [p[0], p[1] + H];
+    if (i < 2) for (const p of [Lf, R])
+      s += `<line x1="${p[0]}" y1="${p[1] + H}" x2="${p[0]}" y2="${p[1] + STEP}" stroke="${INK}" stroke-width="1.6" stroke-dasharray="3 6" stroke-linecap="round" opacity=".55"/>`;
+    s += `<polygon points="${pts([Lf, F, d(F), d(Lf)])}" fill="${L.left}" stroke="${INK}" stroke-width="2.5"/>`;
+    s += `<polygon points="${pts([F, R, d(R), d(F)])}" fill="${L.right}" stroke="${INK}" stroke-width="2.5"/>`;
+    s += `<polygon points="${pts([B, R, F, Lf])}" fill="${L.top}" stroke="${INK}" stroke-width="2.5"/>`;
+    s += `<g transform="matrix(${C} .5 ${-C} .5 0 ${yo})">${PATTERNS[i]()}</g>`;
+    s += `<text transform="matrix(${C} .5 0 1 ${Lf[0]} ${Lf[1]})" x="18" y="${H / 2 + 7}" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="19" letter-spacing="1.4" fill="${L.text}">${L.name}</text>`;
+    s += `<text transform="matrix(${C} -.5 0 1 ${F[0]} ${F[1]})" x="${S - 18}" y="${H / 2 + 7}" text-anchor="end" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="19" letter-spacing="1.4" fill="${L.text}">${L.num}</text>`;
+    if (svg.dataset.leaders) {
+      const ay = R[1] + H / 2;
+      s += `<line x1="${R[0] + 14}" y1="${ay}" x2="${R[0] + 96}" y2="${ay}" stroke="${INK}" stroke-width="2" stroke-linecap="round"/><circle cx="${R[0] + 14}" cy="${ay}" r="4.5" fill="${INK}"/>`;
+    }
+  }
+  // l'humain : drapeau plante sur le noeud orange de la couche du haut
+  const px = (46 - 178) * C, py = (46 + 178) / 2;
+  s += `<line x1="${px}" y1="${py - 6}" x2="${px}" y2="-54" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`;
+  s += `<rect x="${px - 1.5}" y="-74" width="228" height="42" rx="21" fill="${INK}"/>`;
+  s += `<circle cx="${px + 22}" cy="-53" r="6" fill="#F97316"/>`;
+  s += `<text x="${px + 38}" y="-46" font-family="'Outfit', sans-serif" font-weight="700" font-size="20" fill="#FFFDF7">Human in control</text>`;
+  svg.innerHTML = s + "</g>";
+}
+document.querySelectorAll("[data-stack]").forEach(stack);
+</script>
+</body>
+</html>

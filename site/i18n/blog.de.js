@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-118 : article outils IA). */
+   Regenere le 2026-09-25 (T-119 : carte intelligent automation). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Intelligente Automatisierung: ein praktischer Leitfaden für KMU, der wirklich funktioniert",
+        "Intelligent automation as three layers, workflow engine, AI model and knowledge base, with a four-step method, a build, platform or specialist comparison, the mistakes that sink projects, and why it is a knowledge problem first.": "Intelligente Automatisierung in drei Schichten, Workflow-Engine, KI-Modell und Wissensbasis, mit einer Methode in vier Schritten, einem Vergleich zwischen intern bauen, Plattform und Spezialist, den Fehlern, an denen Projekte scheitern, und warum es zuerst ein Wissensproblem ist.",
         "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Die besten KI-Automatisierungstools für kleine Unternehmen: ein praktischer Vergleich",
         "Zapier, Make and n8n compared for small businesses, with AI chatbots, document processing and use cases by industry, the mistakes that sink automations, and the hidden cost of free tools.": "Zapier, Make und n8n im Vergleich für kleine Unternehmen, mit KI-Chatbots, Dokumentenverarbeitung und Branchenanwendungen, den Fehlern, an denen Automatisierungen scheitern, und den versteckten Kosten kostenloser Tools.",
         "Cloud Based Workflow Automation: A Practical Comparison for SMEs": "Cloudbasierte Workflow-Automatisierung: ein praktischer Vergleich für KMU",
