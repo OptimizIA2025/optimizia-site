@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-119 : carte intelligent automation). */
+   Regenere le 2026-09-25 (T-120). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Business Process Workflow Automation: The Real Shortlist for SMEs": "Automatisation des workflows de processus métier : la vraie shortlist pour les PME",
+        "What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.": "Ce qu'est l'automatisation des workflows, puis la shortlist : n8n, Make, Zapier et le sur-mesure comparés sur la facilité d'usage, le modèle de prix, la flexibilité et l'auto-hébergement, avec des prix vérifiés, à qui s'adresse chaque option et l'unité de facturation qui change la facture.",
         "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Automatisation intelligente : un cadre pratique pour les PME, qui fonctionne vraiment",
         "Intelligent automation as three layers, workflow engine, AI model and knowledge base, with a four-step method, a build, platform or specialist comparison, the mistakes that sink projects, and why it is a knowledge problem first.": "L'automatisation intelligente en trois couches, moteur de workflow, modèle d'IA et base de connaissance, avec une méthode en quatre étapes, un comparatif entre construire en interne, plateforme et spécialiste, les erreurs qui coulent les projets, et pourquoi c'est d'abord un problème de connaissance.",
         "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Les meilleurs outils d'automatisation IA pour les petites entreprises : un comparatif pratique",
