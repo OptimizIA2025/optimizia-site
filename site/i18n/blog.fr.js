@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-122). */
+   Regenere le 2026-09-25 (T-123). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Automatisation marketing par workflows : le seul comparatif qui compte pour les PME",
+        "Build it yourself, hire an agency or buy an enterprise platform: three ways to automate lead follow-up compared on time to first value, maintenance, total cost and handover, with checked prices and two workflows we run ourselves.": "Le construire vous-même, passer par une agence ou acheter une plateforme pour grands comptes : trois façons d'automatiser le suivi des prospects comparées sur le délai de première valeur, la maintenance, le coût total et la passation, avec des prix vérifiés et deux workflows que nous faisons tourner nous-mêmes.",
         "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "Plateforme no-code d'automatisation des workflows : la vraie shortlist pour les PME qui veulent des résultats, pas des démos",
         "n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.": "n8n, Make et Zapier comparés du point de vue de la personne qui maintiendra les workflows : charge de maintenance, prévisibilité des prix, localisation des données et passation, ce qui fait vraiment la facture, un chemin de mise en œuvre en six étapes et une panne que nous avons réparée dans l'heure.",
         "Business Process Workflow Automation: The Real Shortlist for SMEs": "Automatisation des workflows de processus métier : la vraie shortlist pour les PME",
