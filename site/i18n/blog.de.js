@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-122). */
+   Regenere le 2026-09-25 (T-123). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Workflow-Marketing-Automatisierung: der einzige Vergleich, der für KMU zählt",
+        "Build it yourself, hire an agency or buy an enterprise platform: three ways to automate lead follow-up compared on time to first value, maintenance, total cost and handover, with checked prices and two workflows we run ourselves.": "Selbst bauen, eine Agentur beauftragen oder eine Enterprise-Plattform kaufen: drei Wege, das Lead-Follow-up zu automatisieren, im Vergleich nach Zeit bis zum ersten Nutzen, Wartung, Gesamtkosten und Übergabe, mit geprüften Preisen und zwei Workflows, die wir selbst betreiben.",
         "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "No-Code-Plattform für Workflow-Automatisierung: die echte Shortlist für KMU, die Ergebnisse brauchen, keine Demos",
         "n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.": "n8n, Make und Zapier im Vergleich aus Sicht der Person, die die Workflows pflegt: Wartungsaufwand, planbare Preise, Datenstandort und Übergabe, was die Rechnung wirklich treibt, ein Umsetzungsweg in sechs Schritten und ein Ausfall, den wir binnen einer Stunde behoben haben.",
         "Business Process Workflow Automation: The Real Shortlist for SMEs": "Workflow-Automatisierung für Geschäftsprozesse: die echte Shortlist für KMU",

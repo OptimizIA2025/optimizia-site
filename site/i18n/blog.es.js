@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-122). */
+   Regenere le 2026-09-25 (T-123). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Automatización de marketing con flujos de trabajo: la única comparativa que importa para las pymes",
+        "Build it yourself, hire an agency or buy an enterprise platform: three ways to automate lead follow-up compared on time to first value, maintenance, total cost and handover, with checked prices and two workflows we run ourselves.": "Construirlo usted mismo, contratar a una agencia o comprar una plataforma empresarial: tres formas de automatizar el seguimiento de leads comparadas en tiempo hasta el primer valor, mantenimiento, coste total y traspaso, con precios comprobados y dos flujos que operamos nosotros mismos.",
         "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "Plataforma no-code de automatización de flujos de trabajo: la shortlist real para pymes que necesitan resultados, no demos",
         "n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.": "n8n, Make y Zapier comparados desde el punto de vista de quien mantendrá los flujos: carga de mantenimiento, previsibilidad de precios, residencia de datos y traspaso, qué determina de verdad la factura, una ruta de implantación en seis pasos y un fallo que arreglamos en una hora.",
         "Business Process Workflow Automation: The Real Shortlist for SMEs": "Automatización de flujos de trabajo de procesos de negocio: la shortlist real para pymes",

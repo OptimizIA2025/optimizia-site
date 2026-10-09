@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - workflow-marketing-automation</title>
+<!-- Source du visuel de l'article : un entonnoir en verre depoli (glassmorphisme) sur un degrade turquoise,
+     quatre etages du prospect capte au CRM mis a jour, et trois cartes de verre pour les trois facons de le
+     faire construire.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/workflow-marketing-automation.html        (og : titre + entonnoir)
+     /_meeeters/visuels/workflow-marketing-automation.html#art    (carte et figure : entonnoir + trois options)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #073B45; --soft: #1F5F69; --lime: #C8F169; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #8FE0D8; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background:
+    radial-gradient(46% 60% at 12% 14%, #D6FBEA 0%, rgba(214, 251, 234, 0) 70%),
+    radial-gradient(40% 52% at 92% 8%, #FFF4B8 0%, rgba(255, 244, 184, 0) 68%),
+    radial-gradient(52% 64% at 78% 96%, #2FB4C6 0%, rgba(47, 180, 198, 0) 70%),
+    radial-gradient(46% 60% at 8% 98%, #29A69F 0%, rgba(41, 166, 159, 0) 72%),
+    #8FE0D8; }
+.blob { position: absolute; border-radius: 50%; filter: blur(34px); }
+.og .only-art, .art .only-og { display: none; }
+
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; }
+.glass { background: rgba(255, 255, 255, .34); border: 1.5px solid rgba(255, 255, 255, .78); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 20px 44px rgba(7, 59, 69, .16), inset 0 1px 0 rgba(255, 255, 255, .65); }
+
+/* entonnoir */
+.funnel { position: absolute; top: 96px; width: 520px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.art .funnel { left: 72px; }
+.og .funnel { left: 632px; top: 84px; }
+.lead { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .78); border: 1.5px solid #fff; box-shadow: 0 6px 14px rgba(7, 59, 69, .16); }
+.bar { flex: none; height: 84px; border-radius: 24px; display: flex; align-items: center; justify-content: center; gap: 14px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 27px; letter-spacing: -.02em; }
+.bar i { width: 14px; height: 14px; border-radius: 50%; background: var(--ink); flex: none; }
+.bar:nth-of-type(1) { width: 520px; } .bar:nth-of-type(2) { width: 436px; } .bar:nth-of-type(3) { width: 352px; } .bar:nth-of-type(4) { width: 268px; }
+.out { margin-top: 6px; padding: 9px 18px; border-radius: 999px; background: var(--lime); border: 1.5px solid rgba(7, 59, 69, .18); box-shadow: 0 10px 22px rgba(7, 59, 69, .16); }
+
+/* trois options */
+.top { position: absolute; top: 44px; }
+.opts { position: absolute; left: 676px; top: 104px; width: 468px; display: flex; flex-direction: column; gap: 16px; }
+.opt { position: relative; border-radius: 24px; padding: 20px 24px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 124px; }
+.opt b { display: block; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; line-height: 1.05; letter-spacing: -.025em; }
+.opt span.sub { display: block; margin-top: 6px; font-size: 17px; line-height: 1.25; font-weight: 600; color: var(--soft); }
+.opt .when { flex: none; text-align: right; font-size: 14px; line-height: 1.4; }
+.opt.win { background: rgba(255, 255, 255, .9); }
+.badge { position: absolute; right: 22px; top: -14px; padding: 5px 12px; border-radius: 999px; background: var(--lime); border: 1.5px solid rgba(7, 59, 69, .18); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; }
+
+/* og */
+.copy { position: absolute; left: 60px; top: 98px; width: 540px; }
+.eyebrow { display: inline-block; padding: 8px 15px; border-radius: 999px; }
+h1 { margin-top: 24px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 58px; line-height: 1.05; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: #0B6E78; }
+.brand { position: absolute; left: 60px; bottom: 54px; padding: 13px 18px; border-radius: 18px; background: rgba(255, 255, 255, .9); }
+.brand img { display: block; height: 30px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="blob" style="left:150px;top:150px;width:300px;height:300px;background:#C8F169;opacity:.55"></div>
+  <div class="blob" style="left:760px;top:240px;width:320px;height:320px;background:#16899A;opacity:.5"></div>
+  <div class="blob" style="left:900px;top:40px;width:220px;height:220px;background:#FFE27A;opacity:.6"></div>
+
+  <div class="copy only-og">
+    <span class="eyebrow mono glass">SME comparison guide</span>
+    <h1>Workflow marketing automation: <em>the only comparison that matters.</em></h1>
+  </div>
+  <div class="brand glass only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+
+  <div class="top mono only-art" style="left:72px">Workflow marketing automation</div>
+  <div class="top mono only-art" style="left:676px">Three ways to get it built</div>
+
+  <div class="funnel">
+    <span class="lead" style="left:86px;top:-34px;width:20px;height:20px"></span>
+    <span class="lead" style="left:182px;top:-22px;width:14px;height:14px"></span>
+    <span class="lead" style="left:262px;top:-38px;width:24px;height:24px"></span>
+    <span class="lead" style="left:356px;top:-24px;width:16px;height:16px"></span>
+    <span class="lead" style="left:428px;top:-36px;width:20px;height:20px"></span>
+    <div class="bar glass"><i></i>Lead captured</div>
+    <div class="bar glass"><i></i>Follow-up sent</div>
+    <div class="bar glass"><i></i>Sales notified</div>
+    <div class="bar glass"><i></i>CRM updated</div>
+    <span class="out mono">No copy-paste</span>
+  </div>
+
+  <div class="opts only-art">
+    <div class="opt glass"><div><b>Build it yourself</b><span class="sub">n8n or Make, on your own time</span></div><span class="when mono">Days<br>to weeks</span></div>
+    <div class="opt glass win"><span class="badge">Default for most SMEs</span><div><b>Agency</b><span class="sub">Built, documented, maintained</span></div><span class="when mono">2 to 5<br>weeks</span></div>
+    <div class="opt glass"><div><b>Enterprise platform</b><span class="sub">Subscription plus onboarding</span></div><span class="when mono">Weeks<br>to months</span></div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
