@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-120). */
+   Regenere le 2026-09-25 (T-122). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "Plateforme no-code d'automatisation des workflows : la vraie shortlist pour les PME qui veulent des résultats, pas des démos",
+        "n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.": "n8n, Make et Zapier comparés du point de vue de la personne qui maintiendra les workflows : charge de maintenance, prévisibilité des prix, localisation des données et passation, ce qui fait vraiment la facture, un chemin de mise en œuvre en six étapes et une panne que nous avons réparée dans l'heure.",
         "Business Process Workflow Automation: The Real Shortlist for SMEs": "Automatisation des workflows de processus métier : la vraie shortlist pour les PME",
         "What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.": "Ce qu'est l'automatisation des workflows, puis la shortlist : n8n, Make, Zapier et le sur-mesure comparés sur la facilité d'usage, le modèle de prix, la flexibilité et l'auto-hébergement, avec des prix vérifiés, à qui s'adresse chaque option et l'unité de facturation qui change la facture.",
         "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Automatisation intelligente : un cadre pratique pour les PME, qui fonctionne vraiment",

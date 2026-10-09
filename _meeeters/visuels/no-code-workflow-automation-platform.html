@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - no-code-workflow-automation-platform</title>
+<!-- Source du visuel de l'article : la une d'un journal, tout en typographie (serif noir sur papier journal,
+     une seule couleur d'accompagnement rouge). Gros titre « Results, not demos », trois colonnes pour les trois
+     plateformes et un encadre meteo pour le mardi apres-midi.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/no-code-workflow-automation-platform.html        (og : la une + logo)
+     /_meeeters/visuels/no-code-workflow-automation-platform.html#art    (carte et figure : la une + encadre meteo)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #1B1A17; --paper: #F2EDE1; --rule: rgba(27, 26, 23, .32); --red: #B92D1B; --serif: Georgia, 'Times New Roman', serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+body { font-family: var(--serif); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; padding: 30px 56px 0;
+  background: radial-gradient(120% 90% at 50% 40%, #F7F3E9 0%, #F2EDE1 55%, #E7E0D0 100%); }
+.og .only-art, .art .only-og { display: none; }
+
+.caps { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; }
+.mast { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 4px double var(--ink); }
+.mast .name { font-weight: 700; font-style: italic; font-size: 42px; line-height: 1; letter-spacing: -.02em; }
+.mast .ear { width: 250px; }
+.mast .ear:last-child { text-align: right; }
+.dateline { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--ink); }
+.dateline b { color: var(--red); font-weight: 700; }
+
+.headline { margin-top: 20px; font-weight: 700; font-size: 108px; line-height: .94; letter-spacing: -.04em; text-align: center; }
+.deck { margin: 18px auto 0; max-width: 940px; font-style: italic; font-size: 26px; line-height: 1.25; text-align: center; }
+
+.cols { position: absolute; left: 56px; right: 56px; top: 388px; display: grid; grid-template-columns: 1fr 1fr 1fr 268px; border-top: 2px solid var(--ink); padding-top: 18px; }
+.col { padding: 0 22px; border-left: 1px solid var(--rule); }
+.col:first-child { padding-left: 0; border-left: 0; }
+.col .caps { color: var(--red); display: block; letter-spacing: .12em; white-space: nowrap; }
+.col h2 { margin-top: 6px; font-size: 46px; line-height: 1; font-weight: 700; letter-spacing: -.03em; }
+.col p { margin-top: 8px; font-size: 19px; line-height: 1.3; }
+.box { margin-left: 22px; padding: 14px 16px 16px; border: 2px solid var(--ink); background: rgba(255, 255, 255, .45); }
+.box .caps { display: flex; align-items: center; justify-content: space-between; }
+.box svg { width: 34px; height: 34px; }
+.box b { display: block; margin-top: 6px; font-size: 27px; line-height: 1.05; letter-spacing: -.02em; }
+.box p { margin-top: 8px; font-size: 17px; line-height: 1.3; font-style: italic; }
+.brandbox { margin-left: 22px; padding: 18px 16px; border: 2px solid var(--ink); background: #FFFDF8; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.brandbox img { display: block; height: 30px; width: auto; align-self: flex-start; }
+.brandbox .caps { font-size: 14px; letter-spacing: .12em; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+
+  <div class="mast">
+    <span class="ear caps">SME edition</span>
+    <span class="name">The Workflow Gazette</span>
+    <span class="ear caps">No-code platforms</span>
+  </div>
+  <div class="dateline caps">
+    <span>The real shortlist</span>
+    <span>n8n <b>/</b> Make <b>/</b> Zapier</span>
+    <span>Who maintains it?</span>
+  </div>
+
+  <h1 class="headline">Results, not demos</h1>
+  <p class="deck">A no-code platform is only as good as the person who can fix it on a Tuesday afternoon.</p>
+
+  <div class="cols">
+    <div class="col">
+      <span class="caps">Technical team</span>
+      <h2>n8n</h2>
+      <p>Self-hosted on your own server, with no bill per run.</p>
+    </div>
+    <div class="col">
+      <span class="caps">Non-technical team</span>
+      <h2>Make</h2>
+      <p>The builder you can read at a glance, branches included.</p>
+    </div>
+    <div class="col">
+      <span class="caps">The niche app</span>
+      <h2>Zapier</h2>
+      <p>9,000 apps and a quick setup, with a bill per task.</p>
+    </div>
+    <div class="box only-art">
+      <span class="caps">Forecast
+        <svg viewBox="0 0 34 34" fill="none" stroke="#1B1A17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20a6 6 0 1 1 1.6-11.8A8 8 0 0 1 27 11.5 4.5 4.5 0 0 1 25.5 20z"/><path d="M17 20l-4 6h5l-3 6" stroke="#B92D1B"/></svg>
+      </span>
+      <b>Tuesday afternoon</b>
+      <p>A renamed column. Chance of a broken workflow: high.</p>
+    </div>
+    <div class="brandbox only-og">
+      <img src="../../site/assets/brand/optimizia-logo.svg" alt="">
+      <span class="caps">No-code workflow automation platforms</span>
+    </div>
+  </div>
+
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

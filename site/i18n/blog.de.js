@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-120). */
+   Regenere le 2026-09-25 (T-122). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "No-Code-Plattform für Workflow-Automatisierung: die echte Shortlist für KMU, die Ergebnisse brauchen, keine Demos",
+        "n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.": "n8n, Make und Zapier im Vergleich aus Sicht der Person, die die Workflows pflegt: Wartungsaufwand, planbare Preise, Datenstandort und Übergabe, was die Rechnung wirklich treibt, ein Umsetzungsweg in sechs Schritten und ein Ausfall, den wir binnen einer Stunde behoben haben.",
         "Business Process Workflow Automation: The Real Shortlist for SMEs": "Workflow-Automatisierung für Geschäftsprozesse: die echte Shortlist für KMU",
         "What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.": "Was Workflow-Automatisierung ist, dann die Shortlist: n8n, Make, Zapier und eine Individuallösung im Vergleich nach Einfachheit, Preismodell, Flexibilität und Self-Hosting, mit geprüften Preisen, für wen sich welche Option eignet und die Abrechnungseinheit, die die Rechnung verändert.",
         "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Intelligente Automatisierung: ein praktischer Leitfaden für KMU, der wirklich funktioniert",
