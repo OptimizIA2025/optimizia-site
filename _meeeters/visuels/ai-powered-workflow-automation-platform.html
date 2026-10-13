@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - ai-powered-workflow-automation-platform</title>
+<!-- Source du visuel de l'article : une affiche Bauhaus sur papier creme. Les trois formes primaires (cercle bleu,
+     carre rouge, triangle jaune) figurent les trois temps d'un workflow (declencheur, etape IA, action), enfilees
+     sur une diagonale noire, et la shortlist des six options est composee comme une liste typographique.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/ai-powered-workflow-automation-platform.html        (og : titre + composition)
+     /_meeeters/visuels/ai-powered-workflow-automation-platform.html#art    (carte et figure : composition + shortlist)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --paper: #F1E7D3; --ink: #17140F; --red: #D5362B; --yellow: #F0B415; --blue: #1D4C9A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* bandeau d'affiche */
+.strip { position: absolute; left: 56px; right: 56px; top: 40px; display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 5px solid var(--ink); }
+
+/* composition */
+.comp { position: absolute; width: 560px; height: 470px; }
+.art .comp { left: 44px; top: 112px; }
+.og .comp { left: 620px; top: 112px; }
+.comp svg { display: block; width: 560px; height: 470px; overflow: visible; }
+.comp text { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 16px; letter-spacing: .12em; fill: var(--ink); }
+.blend { mix-blend-mode: multiply; }
+
+/* shortlist */
+.list { position: absolute; left: 668px; top: 122px; width: 476px; }
+.list li { list-style: none; display: flex; align-items: center; gap: 16px; height: 68px; border-bottom: 2px solid var(--ink); }
+.list li:last-child { border-bottom: 0; }
+.list i { flex: none; width: 22px; height: 22px; }
+.list i.c { border-radius: 50%; background: var(--blue); }
+.list i.s { background: var(--red); }
+.list i.t { width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 22px solid var(--yellow); }
+.list b { font-weight: 800; font-size: 31px; letter-spacing: -.025em; white-space: nowrap; }
+.list .pick { flex: none; padding: 4px 9px; background: var(--ink); color: var(--paper); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+.list .for { margin-left: auto; text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 15px; line-height: 1.3; white-space: nowrap; }
+
+/* og */
+.copy { position: absolute; left: 56px; top: 118px; width: 560px; }
+.copy .mono { display: inline-block; padding: 7px 12px; background: var(--ink); color: var(--paper); }
+h1 { margin-top: 26px; font-weight: 800; font-size: 57px; line-height: 1.04; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--red); }
+.brand { position: absolute; left: 56px; bottom: 50px; padding: 12px 16px; background: #fff; border: 2px solid var(--ink); }
+.brand img { display: block; height: 30px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="strip mono"><span>AI powered workflow automation platform</span><span>SME shortlist &middot; 2026</span></div>
+
+  <div class="copy only-og">
+    <span class="mono">Six options compared</span>
+    <h1>AI powered workflow automation platform: <em>the real shortlist for SMEs.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+
+  <div class="comp">
+    <svg viewBox="0 0 560 470" aria-hidden="true">
+      <g fill="none" stroke="#17140F" stroke-width="3">
+        <path d="M140 0 A140 140 0 0 1 0 140"/>
+        <path d="M180 0 A180 180 0 0 1 0 180"/>
+        <path d="M220 0 A220 220 0 0 1 0 220"/>
+      </g>
+      <g fill="#17140F">
+        <rect x="430" y="330" width="110" height="10"/>
+        <rect x="430" y="352" width="110" height="10"/>
+        <rect x="430" y="374" width="110" height="10"/>
+        <rect x="430" y="396" width="110" height="10"/>
+      </g>
+      <line x1="34" y1="396" x2="528" y2="62" stroke="#17140F" stroke-width="13"/>
+      <circle class="blend" cx="148" cy="296" r="98" fill="#1D4C9A"/>
+      <rect class="blend" x="212" y="118" width="176" height="176" fill="#D5362B"/>
+      <path class="blend" d="M352 196 L532 196 L442 40 Z" fill="#F0B415"/>
+      <circle cx="34" cy="396" r="15" fill="#17140F"/>
+      <circle cx="528" cy="62" r="15" fill="#F1E7D3" stroke="#17140F" stroke-width="6"/>
+      <text x="104" y="434">TRIGGER</text>
+      <text x="262" y="326">AI STEP</text>
+      <text x="410" y="228">ACTION</text>
+    </svg>
+  </div>
+
+  <ul class="list only-art">
+    <li><i class="c"></i><b>n8n</b><span class="pick">SME pick</span><span class="for">Control, self-hosting</span></li>
+    <li><i class="s"></i><b>Make</b><span class="pick">SME pick</span><span class="for">Polished, templates</span></li>
+    <li><i class="t"></i><b>Zapier</b><span class="for">Simple, popular apps</span></li>
+    <li><i class="c"></i><b>UiPath</b><span class="for">Legacy desktop apps</span></li>
+    <li><i class="s"></i><b>Power Automate</b><span class="for">Microsoft ecosystem</span></li>
+    <li><i class="t"></i><b>Custom build</b><span class="for">Unique processes</span></li>
+  </ul>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

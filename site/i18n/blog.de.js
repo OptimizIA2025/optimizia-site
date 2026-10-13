@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-123). */
+   Regenere le 2026-09-25 (T-124). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "AI Powered Workflow Automation Platform: The Real Shortlist for SMEs": "KI-gestützte Plattform für Workflow-Automatisierung: die echte Shortlist für KMU",
+        "n8n, Make, Zapier, UiPath, Power Automate or a custom build: six ways to automate with AI compared on integrations, AI features, hosting and pricing, with entry prices checked in October 2026 and figures from our own builds.": "n8n, Make, Zapier, UiPath, Power Automate oder eine individuelle Lösung: sechs Wege, mit KI zu automatisieren, im Vergleich nach Integrationen, KI-Funktionen, Hosting und Preisen, mit im Oktober 2026 geprüften Einstiegspreisen und Zahlen aus unseren eigenen Projekten.",
         "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Workflow-Marketing-Automatisierung: der einzige Vergleich, der für KMU zählt",
         "Build it yourself, hire an agency or buy an enterprise platform: three ways to automate lead follow-up compared on time to first value, maintenance, total cost and handover, with checked prices and two workflows we run ourselves.": "Selbst bauen, eine Agentur beauftragen oder eine Enterprise-Plattform kaufen: drei Wege, das Lead-Follow-up zu automatisieren, im Vergleich nach Zeit bis zum ersten Nutzen, Wartung, Gesamtkosten und Übergabe, mit geprüften Preisen und zwei Workflows, die wir selbst betreiben.",
         "No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos": "No-Code-Plattform für Workflow-Automatisierung: die echte Shortlist für KMU, die Ergebnisse brauchen, keine Demos",
