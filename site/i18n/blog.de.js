@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-125). */
+   Regenere le 2026-09-25 (T-126). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Enterprise Workflow Automation: A Practical Guide to Choosing the Right Path": "Workflow-Automatisierung im Unternehmen: ein Praxisleitfaden zur Wahl des richtigen Wegs",
+        "n8n, Make, an AI assistant with RAG, an agency build or custom code: five routes to automate across departments, compared on setup, maintenance and risk, with our real prices and the three things comparisons miss.": "n8n, Make, ein KI-Assistent mit RAG, eine Agentur oder eigener Code: fünf Wege, abteilungsübergreifend zu automatisieren, im Vergleich nach Einrichtung, Wartung und Risiko, mit unseren echten Preisen und den drei Punkten, die Vergleiche übersehen.",
         "Make Workflow Automation: A Practical Guide to Building Reliable Automations": "Workflow-Automatisierung mit Make: ein Praxisleitfaden für zuverlässige Automatisierungen",
         "How Make scenarios, credits and error handlers really work, a six-step method to build workflows that keep running, the four mistakes that break them and the maintenance cost nobody budgets, with prices checked in October 2026.": "Wie Szenarien, Credits und Fehlerbehandler in Make wirklich funktionieren, eine Methode in sechs Schritten für Workflows, die dauerhaft laufen, die vier Fehler, die sie brechen, und die Wartungskosten, die niemand einplant, mit im Oktober 2026 geprüften Preisen.",
         "AI Powered Workflow Automation Platform: The Real Shortlist for SMEs": "KI-gestützte Plattform für Workflow-Automatisierung: die echte Shortlist für KMU",
