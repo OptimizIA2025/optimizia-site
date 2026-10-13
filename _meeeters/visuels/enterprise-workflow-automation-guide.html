@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - enterprise-workflow-automation-guide</title>
+<!-- Source du visuel de l'article : un tableau des departs a palettes (split-flap), fond charbon, palettes ivoire,
+     reperes ambre. Chaque ligne est une des cinq voies comparees par l'article (n8n, Make, assistant IA avec RAG,
+     agence, code sur mesure), avec ce a quoi elle sert et l'effort de mise en place.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered),
+     notice de montage au trait (Make).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/enterprise-workflow-automation-guide.html        (og : titre + tableau reduit)
+     /_meeeters/visuels/enterprise-workflow-automation-guide.html#art    (carte et figure : tableau complet)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --bg: #0F1113; --panel: #17191C; --line: #2B2E33; --ivory: #F3EFE4; --amber: #FFB81C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+body { font-family: 'Outfit', sans-serif; color: var(--ivory); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: radial-gradient(120% 90% at 50% 0%, #1B1E22 0%, var(--bg) 62%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+.amber { color: var(--amber); }
+
+.head { position: absolute; left: 40px; right: 40px; top: 62px; display: flex; align-items: center; justify-content: space-between; }
+.head b { font-weight: 800; font-size: 34px; letter-spacing: -.02em; }
+.pill { padding: 8px 14px; border-radius: 6px; background: var(--amber); color: #15130C; }
+
+.board { position: absolute; padding: 22px 20px 24px; background: var(--panel); border: 1.5px solid var(--line); border-radius: 14px; box-shadow: 0 24px 50px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .05); }
+.art .board { left: 40px; top: 132px; }
+.og .board { left: 610px; top: 164px; transform: scale(.9); transform-origin: 0 0; }
+.og .cols { font-size: 16px; }
+.cols, .row { display: flex; gap: 24px; }
+.cols { margin-bottom: 14px; }
+.row + .row { margin-top: 14px; }
+.c1 { width: 400px; } .c2 { width: 500px; } .c3 { width: 150px; }
+.og .c2 { display: none; }
+.flap { display: flex; gap: 2px; }
+.flap span { width: 23px; height: 36px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 21px; color: var(--ivory);
+  background: linear-gradient(#2A2D32 0, #23262A 47%, #0B0C0D 47%, #0B0C0D 53%, #1E2125 53%, #191B1F 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); }
+.flap.a span { color: var(--amber); }
+
+.foot { position: absolute; left: 40px; right: 40px; top: 536px; display: flex; justify-content: space-between; }
+.foot .mono { color: #A9A59A; }
+
+.copy { position: absolute; left: 44px; top: 122px; width: 520px; }
+.copy .pill { display: inline-block; }
+h1 { margin-top: 24px; font-weight: 800; font-size: 50px; line-height: 1.05; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--amber); }
+.brand { position: absolute; left: 44px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="head only-art"><b>Enterprise workflow automation</b><span class="pill mono">Choose your route</span></div>
+
+  <div class="copy only-og">
+    <span class="pill mono">Choose your route</span>
+    <h1>Enterprise workflow automation: a practical guide to choosing <em>the right path.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+
+  <div class="board">
+    <div class="cols mono amber"><span class="c1">Route</span><span class="c2">Best for</span><span class="c3">Setup</span></div>
+    <div class="row"><div class="flap c1" data-n="16" data-t="N8N WORKFLOWS"></div><div class="flap c2" data-n="20" data-t="MULTI-SYSTEM DATA"></div><div class="flap c3 a" data-n="6" data-t="MEDIUM"></div></div>
+    <div class="row"><div class="flap c1" data-n="16" data-t="MAKE SCENARIOS"></div><div class="flap c2" data-n="20" data-t="SAAS CONNECTIONS"></div><div class="flap c3 a" data-n="6" data-t="LOW"></div></div>
+    <div class="row"><div class="flap c1" data-n="16" data-t="AI ASSISTANT RAG"></div><div class="flap c2" data-n="20" data-t="DOCUMENT DECISIONS"></div><div class="flap c3 a" data-n="6" data-t="MEDIUM"></div></div>
+    <div class="row"><div class="flap c1" data-n="16" data-t="AGENCY BUILD"></div><div class="flap c2" data-n="20" data-t="NO INTERNAL CAPACITY"></div><div class="flap c3 a" data-n="6" data-t="LOW"></div></div>
+    <div class="row"><div class="flap c1" data-n="16" data-t="CUSTOM CODE"></div><div class="flap c2" data-n="20" data-t="VERY SPECIFIC NEEDS"></div><div class="flap c3 a" data-n="6" data-t="HIGH"></div></div>
+  </div>
+
+  <div class="foot only-art"><span class="mono">Five routes &middot; one process at a time</span><span class="mono">PoC to MVP: 13 days on average</span></div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+document.querySelectorAll(".flap").forEach(function (f) {
+  var t = f.dataset.t.padEnd(+f.dataset.n, " ");
+  for (var i = 0; i < t.length; i++) { var s = document.createElement("span"); s.textContent = t[i]; f.appendChild(s); }
+});
+</script>
+</body>
+</html>
