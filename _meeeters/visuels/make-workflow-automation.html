@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - make-workflow-automation</title>
+<!-- Source du visuel de l'article : une notice de montage en dessin au trait noir sur papier blanc, un seul aplat
+     jaune par vignette. Les six vignettes sont les six etapes de la methode de l'article (declencheur et objectif,
+     cartographie des donnees, construction, gestion des erreurs, test, suivi).
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/make-workflow-automation.html        (og : titre + six vignettes)
+     /_meeeters/visuels/make-workflow-automation.html#art    (carte et figure : six vignettes)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --paper: #F8F8F5; --ink: #141414; --yellow: #FFD324; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--paper); }
+.og .only-art, .art .only-og { display: none; }
+
+.head { position: absolute; left: 56px; right: 56px; top: 34px; display: flex; align-items: center; justify-content: space-between; }
+.head b { font-weight: 800; font-size: 30px; letter-spacing: -.02em; }
+.tag { padding: 7px 14px; border: 2.5px solid var(--ink); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; }
+
+.grid { position: absolute; display: grid; }
+.art .grid { left: 56px; top: 100px; width: 1088px; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.og .grid { left: 652px; top: 62px; width: 492px; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.step { position: relative; border: 2.5px solid var(--ink); border-radius: 8px; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.art .step { height: 244px; padding: 0 16px 20px; }
+.og .step { height: 160px; padding: 0 10px 12px; }
+.step i { position: absolute; left: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: #fff; font-style: normal; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center; }
+.og .step i { left: 8px; top: 8px; width: 28px; height: 28px; font-size: 16px; }
+.step svg { display: block; overflow: visible; fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.art .step svg { width: 250px; height: 138px; margin-bottom: 14px; }
+.og .step svg { width: 150px; height: 83px; margin-bottom: 8px; stroke-width: 4.5; }
+.step .y { fill: var(--yellow); }
+.step .k { fill: var(--ink); stroke: none; }
+.step .d { stroke-dasharray: 2 10; }
+.step span { font-weight: 700; letter-spacing: -.01em; text-align: center; line-height: 1.1; }
+.art .step span { font-size: 24px; }
+.og .step span { font-size: 17px; }
+
+.copy { position: absolute; left: 56px; top: 96px; width: 560px; }
+.copy .tag { display: inline-block; }
+h1 { margin-top: 24px; font-weight: 800; font-size: 52px; line-height: 1.05; letter-spacing: -.035em; }
+h1 em { font-style: normal; background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%); }
+.brand { position: absolute; left: 56px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="head only-art"><b>Make workflow automation</b><span class="tag">Assembly guide &middot; 6 steps</span></div>
+
+  <div class="copy only-og">
+    <span class="tag">Assembly guide &middot; 6 steps</span>
+    <h1>Make workflow automation: a practical guide to building <em>reliable automations.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+
+  <div class="grid">
+    <div class="step"><i>1</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <circle class="y" cx="46" cy="55" r="31"/>
+        <path d="M52 32 L36 58 L47 58 L41 79 L58 51 L47 51 Z" fill="#fff"/>
+        <path class="d" d="M90 55 L134 55"/>
+        <path d="M152 24 L152 88"/><path class="y" d="M152 26 L184 39 L152 52 Z"/>
+      </svg><span>Trigger and goal</span></div>
+    <div class="step"><i>2</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <rect x="8" y="36" width="48" height="38" rx="6"/>
+        <rect class="y" x="76" y="36" width="48" height="38" rx="6"/>
+        <rect x="144" y="36" width="48" height="38" rx="6"/>
+        <path d="M58 55 L72 55 M66 49 L72 55 L66 61"/><path d="M126 55 L140 55 M134 49 L140 55 L134 61"/>
+        <path d="M18 50 L46 50 M18 60 L38 60 M154 50 L182 50 M154 60 L174 60"/>
+      </svg><span>Map the data flow</span></div>
+    <div class="step"><i>3</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <path d="M46 55 L60 55 M98 55 L112 55"/><path class="d" d="M150 55 L158 55"/>
+        <circle class="y" cx="26" cy="55" r="19"/><circle cx="79" cy="55" r="19"/><circle cx="131" cy="55" r="19"/>
+        <circle cx="180" cy="55" r="15" stroke-dasharray="5 7"/><path d="M180 48 L180 62 M173 55 L187 55"/>
+      </svg><span>Build the scenario</span></div>
+    <div class="step"><i>4</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <path d="M44 32 L78 32 M112 32 L146 32"/>
+        <circle cx="28" cy="32" r="16"/><circle cx="95" cy="32" r="16"/><circle cx="162" cy="32" r="16"/>
+        <path class="d" d="M95 52 L95 84 L118 84"/>
+        <path class="y" d="M128 100 L176 100 L152 60 Z"/><path d="M152 74 L152 86"/><circle class="k" cx="152" cy="93" r="2.6"/>
+      </svg><span>Add error handling</span></div>
+    <div class="step"><i>5</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <circle cx="44" cy="55" r="31"/><path class="y" d="M35 39 L62 55 L35 71 Z"/>
+        <path d="M86 55 L112 55 M105 48 L112 55 L105 62"/>
+        <rect x="126" y="18" width="56" height="74" rx="6"/><path d="M138 36 L170 36 M138 50 L170 50 M138 64 L156 64"/>
+        <circle class="y" cx="178" cy="88" r="15"/><path d="M171 88 L176 93 L185 83"/>
+      </svg><span>Test with real data</span></div>
+    <div class="step"><i>6</i>
+      <svg viewBox="0 0 200 110" aria-hidden="true">
+        <rect x="30" y="14" width="140" height="62" rx="8"/>
+        <path d="M44 48 L74 48 L86 28 L100 64 L112 44 L140 44"/><circle class="y" cx="150" cy="44" r="8"/>
+        <path d="M156 92 Q100 112 44 92 M54 86 L44 92 L52 101"/>
+      </svg><span>Monitor and iterate</span></div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

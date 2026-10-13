@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-124). */
+   Regenere le 2026-09-25 (T-125). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "Make Workflow Automation: A Practical Guide to Building Reliable Automations": "Automatización de flujos de trabajo con Make: guía práctica para construir automatizaciones fiables",
+        "How Make scenarios, credits and error handlers really work, a six-step method to build workflows that keep running, the four mistakes that break them and the maintenance cost nobody budgets, with prices checked in October 2026.": "Cómo funcionan de verdad los escenarios, los créditos y los gestores de errores de Make, un método en seis pasos para construir flujos que sigan funcionando, los cuatro errores que los rompen y el coste de mantenimiento que nadie presupuesta, con precios comprobados en octubre de 2026.",
         "AI Powered Workflow Automation Platform: The Real Shortlist for SMEs": "Plataforma de automatización de flujos de trabajo con IA: la shortlist real para pymes",
         "n8n, Make, Zapier, UiPath, Power Automate or a custom build: six ways to automate with AI compared on integrations, AI features, hosting and pricing, with entry prices checked in October 2026 and figures from our own builds.": "n8n, Make, Zapier, UiPath, Power Automate o un desarrollo a medida: seis formas de automatizar con IA comparadas en integraciones, funciones de IA, alojamiento y precios, con precios de entrada comprobados en octubre de 2026 y cifras de nuestros propios proyectos.",
         "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Automatización de marketing con flujos de trabajo: la única comparativa que importa para las pymes",

@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-124). */
+   Regenere le 2026-09-25 (T-125). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Make Workflow Automation: A Practical Guide to Building Reliable Automations": "Workflow-Automatisierung mit Make: ein Praxisleitfaden für zuverlässige Automatisierungen",
+        "How Make scenarios, credits and error handlers really work, a six-step method to build workflows that keep running, the four mistakes that break them and the maintenance cost nobody budgets, with prices checked in October 2026.": "Wie Szenarien, Credits und Fehlerbehandler in Make wirklich funktionieren, eine Methode in sechs Schritten für Workflows, die dauerhaft laufen, die vier Fehler, die sie brechen, und die Wartungskosten, die niemand einplant, mit im Oktober 2026 geprüften Preisen.",
         "AI Powered Workflow Automation Platform: The Real Shortlist for SMEs": "KI-gestützte Plattform für Workflow-Automatisierung: die echte Shortlist für KMU",
         "n8n, Make, Zapier, UiPath, Power Automate or a custom build: six ways to automate with AI compared on integrations, AI features, hosting and pricing, with entry prices checked in October 2026 and figures from our own builds.": "n8n, Make, Zapier, UiPath, Power Automate oder eine individuelle Lösung: sechs Wege, mit KI zu automatisieren, im Vergleich nach Integrationen, KI-Funktionen, Hosting und Preisen, mit im Oktober 2026 geprüften Einstiegspreisen und Zahlen aus unseren eigenen Projekten.",
         "Workflow Marketing Automation: The Only Comparison That Matters for SMEs": "Workflow-Marketing-Automatisierung: der einzige Vergleich, der für KMU zählt",
