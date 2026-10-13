@@ -88,7 +88,7 @@ Pricing for AI powered workflow automation platforms varies widely. Here are the
 
 ### What the entry plans cost
 
-Checked in October 2026, billed annually: Zapier Professional starts at $19.99 per month for 750 tasks, and n8n Cloud Starter at €20 per month for 2,500 executions, with unlimited active workflows. Make's first paid plan, Core, starts at 10,000 credits per month; Make's own pages quote it at $9 or $12 per month, so check the live price. Self-hosting n8n's Community edition costs nothing in licenses.
+Checked in October 2026, billed annually: Zapier Professional starts at $19.99 per month for 750 tasks, Make Core at $9 per month for 10,000 credits, and n8n Cloud Starter at €20 per month for 2,500 executions, with unlimited active workflows. Self-hosting n8n's Community edition costs nothing in licenses.
 
 Don't fall for the "free forever" plans. They usually have severe limits on operations or AI features. Zapier's free plan stops at 100 tasks per month and two-step Zaps, and leaves out the AI by Zapier steps. Make's stops at 1,000 credits per month. Calculate your expected volume before committing.
 
