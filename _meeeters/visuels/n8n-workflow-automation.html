@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - n8n-workflow-automation</title>
+<!-- Source du visuel de l'article : un synthetiseur modulaire clair. Chaque module est un noeud n8n (declencheur, IF,
+     code, requete HTTP, erreur, journal), chaque cable de patch une connexion du workflow ; la sortie d'erreur du
+     module HTTP part vers le module d'erreur, la branche « false » du IF vers le journal.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered),
+     notice de montage au trait (Make), tableau des departs a palettes (enterprise).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/n8n-workflow-automation.html        (og : titre + rack de quatre modules)
+     /_meeeters/visuels/n8n-workflow-automation.html#art    (carte et figure : rack complet de six modules)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --wall: #D9DEE4; --ink: #17181B; --muted: #4F535A; --rail: #2A2C30; --orange: #F26B1D; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--wall); }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: radial-gradient(90% 80% at 60% 45%, #E7EBEF 0%, var(--wall) 70%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+
+.head { position: absolute; left: 40px; right: 40px; top: 44px; display: flex; align-items: center; justify-content: space-between; }
+.head b { font-weight: 800; font-size: 34px; letter-spacing: -.02em; }
+.pill { padding: 8px 14px; border-radius: 6px; background: var(--ink); color: #F4F4F1; font-size: 15px; }
+
+.rack { position: absolute; padding: 16px 9px; background: var(--rail); border-radius: 8px; box-shadow: 0 30px 60px rgba(30, 40, 55, .28), 0 6px 14px rgba(30, 40, 55, .18); }
+.art .rack { left: 40px; top: 112px; }
+.og .rack { left: 566px; top: 150px; transform: scale(.82); transform-origin: 0 0; }
+.rack::before, .rack::after { content: ""; position: absolute; left: 14px; right: 14px; height: 6px; background: radial-gradient(circle, #121315 2px, transparent 2.5px) 0 0 / 18px 6px repeat-x; }
+.rack::before { top: 5px; } .rack::after { bottom: 5px; }
+.modules { display: flex; gap: 6px; }
+.og .modules .art-only { display: none; }
+
+.mod { position: relative; height: 372px; border-radius: 4px; padding: 26px 14px 0; text-align: center;
+  background: linear-gradient(180deg, #F6F6F3 0%, #E6E6E1 100%); border: 1px solid #C4C7C2; box-shadow: inset 0 1px 0 #fff, inset 0 -2px 0 rgba(0, 0, 0, .06); }
+.mod::before, .mod::after { content: ""; position: absolute; left: 10px; right: 10px; height: 9px;
+  background: radial-gradient(circle at 4.5px 4.5px, #9EA2A8 2.6px, #6E7278 3.4px, transparent 4px) left / 9px 9px no-repeat,
+              radial-gradient(circle at 4.5px 4.5px, #9EA2A8 2.6px, #6E7278 3.4px, transparent 4px) right / 9px 9px no-repeat; }
+.mod::before { top: 7px; } .mod::after { bottom: 7px; }
+.w168 { width: 168px; } .w196 { width: 196px; } .w176 { width: 176px; }
+.mod h3 { font-weight: 800; font-size: 22px; letter-spacing: .06em; line-height: 1; }
+.bar { height: 4px; border-radius: 2px; margin: 10px auto 8px; width: 46px; background: var(--c); }
+.sub { color: var(--muted); }
+
+.knob { position: relative; width: 60px; height: 60px; margin: 18px auto 8px; border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #4A4D53 0%, #1E2023 62%, #111214 100%); box-shadow: 0 4px 8px rgba(0, 0, 0, .28), 0 0 0 4px #D2D4CF, 0 0 0 5px #B5B8B3; }
+.knob::after { content: ""; position: absolute; left: 50%; top: 6px; width: 3px; height: 18px; margin-left: -1.5px; border-radius: 2px; background: #F4F4F1; transform-origin: 50% 24px; transform: rotate(var(--r, 0deg)); }
+.led { display: inline-block; width: 11px; height: 11px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; background: var(--l); box-shadow: 0 0 0 2px rgba(0, 0, 0, .12), 0 0 10px var(--l); }
+.ledrow { margin-top: 14px; color: var(--muted); }
+.big-led { width: 34px; height: 34px; margin: 22px auto 10px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FF8A7E, #E5372B 60%, #A8211A); box-shadow: 0 0 0 4px #D2D4CF, 0 0 0 5px #B5B8B3, 0 0 26px rgba(229, 55, 43, .75); }
+.screen { margin: 18px auto 8px; width: 150px; padding: 12px 10px; border-radius: 6px; background: #0F1D17; box-shadow: inset 0 0 0 2px #26342D, 0 0 0 4px #D2D4CF; text-align: left; color: #6BE3A5; font-size: 14px; line-height: 1.5; }
+.meter { margin: 20px auto 6px; width: 120px; display: grid; gap: 6px; }
+.meter i { display: block; height: 9px; border-radius: 2px; background: linear-gradient(90deg, #20A86B var(--m), #C9CCC7 var(--m)); }
+
+.jacks { position: absolute; left: 0; right: 0; display: flex; gap: 16px; }
+.jacks.a { top: 236px; justify-content: flex-start; padding-left: 16px; } .jacks.b { top: 296px; justify-content: flex-end; padding-right: 16px; }
+.jack { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--muted); }
+.jack span { font-size: 14px; }
+.jack i { display: block; width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle, #0C0D0E 0 6px, #55595F 6.5px 8px, #C9CCD0 8.5px 11px, #8B9096 11.5px 15px); box-shadow: 0 2px 4px rgba(0, 0, 0, .25); }
+
+svg.cables { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+
+.foot { position: absolute; left: 40px; right: 40px; top: 556px; display: flex; justify-content: space-between; color: var(--muted); }
+
+.copy { position: absolute; left: 44px; top: 112px; width: 486px; }
+.copy .pill { display: inline-block; }
+h1 { margin-top: 24px; font-weight: 800; font-size: 50px; line-height: 1.05; letter-spacing: -.035em; }
+h1 em { font-style: normal; color: var(--orange); }
+.brand { position: absolute; left: 44px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="head only-art"><b>n8n workflow automation</b><span class="pill mono">Patch your process</span></div>
+
+  <div class="copy only-og">
+    <span class="pill mono">Practical guide for SMEs</span>
+    <h1>n8n workflow automation: build reliable automations <em>without the busywork.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+
+  <div class="rack" id="rack">
+    <div class="modules">
+      <div class="mod w168" style="--c:#2F5BEA">
+        <h3>Trigger</h3><div class="bar"></div><div class="sub mono">Schedule</div>
+        <div class="knob" style="--r:-50deg"></div><div class="mono sub">Rate</div>
+        <div class="jacks a"><div class="jack"><span class="mono">Hook</span><i></i></div></div>
+        <div class="jacks b"><div class="jack"><span class="mono">Out</span><i id="trigger-out"></i></div></div>
+      </div>
+      <div class="mod w168" style="--c:#F5B700">
+        <h3>IF</h3><div class="bar"></div><div class="sub mono">Condition</div>
+        <div class="knob" style="--r:35deg"></div><div class="mono sub">Threshold</div>
+        <div class="jacks a"><div class="jack"><span class="mono">In</span><i id="if-in"></i></div></div>
+        <div class="jacks b"><div class="jack"><span class="mono">True</span><i id="if-true"></i></div><div class="jack"><span class="mono">False</span><i id="if-false"></i></div></div>
+      </div>
+      <div class="mod w196 art-only" style="--c:#F26B1D">
+        <h3>Code</h3><div class="bar"></div><div class="sub mono">JS &middot; Python</div>
+        <div class="screen mono">return items<br>.filter(ok)</div>
+        <div class="jacks a"><div class="jack"><span class="mono">In</span><i id="code-in"></i></div></div>
+        <div class="jacks b"><div class="jack"><span class="mono">Out</span><i id="code-out"></i></div></div>
+      </div>
+      <div class="mod w196" style="--c:#12A3B5">
+        <h3>HTTP</h3><div class="bar"></div><div class="sub mono">Request</div>
+        <div class="knob" style="--r:70deg"></div><div class="mono sub">Retry 3&times;</div>
+        <div class="jacks a"><div class="jack"><span class="mono">In</span><i id="http-in"></i></div></div>
+        <div class="jacks b"><div class="jack"><span class="mono">Out</span><i id="http-out"></i></div><div class="jack"><span class="mono">Err</span><i id="http-err"></i></div></div>
+      </div>
+      <div class="mod w168" style="--c:#E5372B">
+        <h3>Error</h3><div class="bar"></div><div class="sub mono">Workflow</div>
+        <div class="big-led"></div><div class="mono sub">Alert</div>
+        <div class="jacks a"><div class="jack"><span class="mono">In</span><i id="error-in"></i></div></div>
+        <div class="jacks b"><div class="jack"><span class="mono">Mail</span><i></i></div></div>
+      </div>
+      <div class="mod w176 art-only" style="--c:#20A86B">
+        <h3>Log</h3><div class="bar"></div><div class="sub mono">Sheet</div>
+        <div class="meter"><i style="--m:92%"></i><i style="--m:74%"></i><i style="--m:86%"></i><i style="--m:58%"></i><i style="--m:80%"></i></div>
+        <div class="ledrow mono"><span class="led" style="--l:#20A86B"></span>Every run</div>
+        <div class="jacks a"><div class="jack"><span class="mono">OK</span><i id="log-ok"></i></div><div class="jack"><span class="mono">Skip</span><i id="log-skip"></i></div></div>
+      </div>
+    </div>
+    <svg class="cables" id="cables" aria-hidden="true"></svg>
+  </div>
+
+  <div class="foot only-art"><span class="mono">One module per node &middot; one cable per connection</span><span class="mono">Retry &middot; error output &middot; error workflow</span></div>
+</div>
+<script>
+var art = location.hash === "#art";
+if (art) document.getElementById("stage").className = "stage art";
+var CABLES = art ? [
+  ["trigger-out", "if-in", "#2F5BEA"],
+  ["if-true", "code-in", "#F5B700"],
+  ["code-out", "http-in", "#F26B1D"],
+  ["http-err", "error-in", "#E5372B"],
+  ["http-out", "log-ok", "#12A3B5"],
+  ["if-false", "log-skip", "#20A86B"]
+] : [
+  ["trigger-out", "if-in", "#2F5BEA"],
+  ["if-true", "http-in", "#F5B700"],
+  ["http-err", "error-in", "#E5372B"]
+];
+function draw() {
+  var rack = document.getElementById("rack"), svg = document.getElementById("cables");
+  var R = rack.getBoundingClientRect(), k = R.width / rack.offsetWidth;
+  svg.setAttribute("width", rack.offsetWidth); svg.setAttribute("height", rack.offsetHeight);
+  var at = function (id) { var b = document.getElementById(id).getBoundingClientRect(); return [(b.left + b.width / 2 - R.left) / k, (b.top + b.height / 2 - R.top) / k]; };
+  var out = "";
+  CABLES.forEach(function (c) {
+    var p = at(c[0]), q = at(c[1]), dx = Math.abs(q[0] - p[0]), sag = Math.min(46 + dx * .12, 92);
+    var d = "M" + p[0] + " " + p[1] + " C" + p[0] + " " + (p[1] + sag) + " " + q[0] + " " + (q[1] + sag) + " " + q[0] + " " + q[1];
+    out += '<path d="' + d + '" fill="none" stroke="rgba(20,28,40,.22)" stroke-width="12" stroke-linecap="round" transform="translate(3 7)"/>';
+    out += '<path d="' + d + '" fill="none" stroke="' + c[2] + '" stroke-width="9" stroke-linecap="round"/>';
+    out += '<path d="' + d + '" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="2.5" stroke-linecap="round" transform="translate(-1.5 -2)"/>';
+    [p, q].forEach(function (e) {
+      out += '<circle cx="' + e[0] + '" cy="' + e[1] + '" r="12" fill="' + c[2] + '" stroke="rgba(0,0,0,.28)" stroke-width="1.5"/>';
+      out += '<circle cx="' + e[0] + '" cy="' + e[1] + '" r="5" fill="rgba(0,0,0,.35)"/>';
+    });
+  });
+  svg.innerHTML = out;
+}
+draw();
+document.fonts.ready.then(draw);
+</script>
+</body>
+</html>
