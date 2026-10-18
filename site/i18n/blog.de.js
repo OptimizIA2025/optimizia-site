@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-126). */
+   Regenere le 2026-09-25. */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "n8n Workflow Automation: Build Reliable Automations Without the Busywork": "Workflow-Automatisierung mit n8n: zuverlässige Automatisierungen ohne Fleißarbeit",
+        "How n8n works, a five-step method to build workflows that keep running, the five mistakes that break them, prices checked against Zapier, Make and Power Automate, and when n8n is overkill for an SME.": "Wie n8n funktioniert, eine Methode in fünf Schritten für Workflows, die weiterlaufen, die fünf Fehler, die sie lahmlegen, geprüfte Preise im Vergleich zu Zapier, Make und Power Automate und wann n8n für ein KMU zu viel ist.",
         "Enterprise Workflow Automation: A Practical Guide to Choosing the Right Path": "Workflow-Automatisierung im Unternehmen: ein Praxisleitfaden zur Wahl des richtigen Wegs",
         "n8n, Make, an AI assistant with RAG, an agency build or custom code: five routes to automate across departments, compared on setup, maintenance and risk, with our real prices and the three things comparisons miss.": "n8n, Make, ein KI-Assistent mit RAG, eine Agentur oder eigener Code: fünf Wege, abteilungsübergreifend zu automatisieren, im Vergleich nach Einrichtung, Wartung und Risiko, mit unseren echten Preisen und den drei Punkten, die Vergleiche übersehen.",
         "Make Workflow Automation: A Practical Guide to Building Reliable Automations": "Workflow-Automatisierung mit Make: ein Praxisleitfaden für zuverlässige Automatisierungen",
