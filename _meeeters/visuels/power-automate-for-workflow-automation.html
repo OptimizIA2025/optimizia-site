@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - power-automate-for-workflow-automation</title>
+<!-- Source du visuel de l'article : un passeport ouvert sur un sous-main en cuir vert. Page d'identite de Power
+     Automate (ecosysteme d'origine, facturation, auto-hebergement), page des visas couverte de tampons encreurs :
+     Microsoft 365 admis, connecteurs standard inclus, connecteurs premium payants, autres SaaS sous condition,
+     auto-hebergement refuse. Le verdict de l'article (gagne chez Microsoft, perd ailleurs) en image.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered),
+     notice de montage au trait (Make), tableau des departs a palettes (enterprise), synthetiseur modulaire (n8n).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/power-automate-for-workflow-automation.html        (og : titre + page des visas)
+     /_meeeters/visuels/power-automate-for-workflow-automation.html#art    (carte et figure : passeport ouvert)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --desk: #16382E; --paper: #F3EEDC; --ink: #1D2321; --muted: #5E625C; --cream: #EDE8D8; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--desk); }
+body { font-family: 'Outfit', sans-serif; color: var(--cream); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 80% at 50% 45%, #1D4639 0%, var(--desk) 60%, #0F2820 100%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+
+.head { position: absolute; left: 40px; right: 40px; top: 34px; display: flex; align-items: center; justify-content: space-between; }
+.head b { font-weight: 800; font-size: 32px; letter-spacing: -.02em; }
+.pill { padding: 8px 14px; border-radius: 6px; background: var(--cream); color: #16241F; font-size: 15px; }
+
+.spread { position: absolute; display: flex; filter: drop-shadow(0 26px 40px rgba(0, 0, 0, .45)); }
+.art .spread { left: 92px; top: 98px; }
+.page { position: relative; width: 508px; height: 446px; color: var(--ink); overflow: hidden;
+  background:
+    linear-gradient(160deg, #F6F2E2 0%, var(--paper) 55%, #EDE6CF 100%); }
+.page.l { border-radius: 10px 0 0 10px; box-shadow: inset -26px 0 30px -22px rgba(60, 50, 30, .45); }
+.page.r { border-radius: 0 10px 10px 0; box-shadow: inset 26px 0 30px -22px rgba(60, 50, 30, .45); }
+
+.top { position: absolute; left: 30px; right: 30px; top: 22px; display: flex; justify-content: space-between; color: var(--muted); }
+.emblem { position: absolute; left: 30px; top: 66px; width: 138px; height: 168px; border: 2px solid #2349A8; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; background: rgba(35, 73, 168, .05); }
+.fields { position: absolute; left: 192px; top: 62px; right: 26px; display: grid; gap: 9px; }
+.fields span { display: block; color: var(--muted); }
+.fields b { display: block; font-weight: 800; font-size: 21px; letter-spacing: .01em; margin-top: 1px; }
+.mrz { position: absolute; left: 30px; right: 22px; bottom: 26px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 17px; letter-spacing: .06em; line-height: 1.45; color: #2A302D; }
+
+.stamp { position: absolute; text-align: center; color: var(--c); border: 3px solid var(--c); border-radius: 8px; padding: 9px 14px;
+  outline: 1.5px solid var(--c); outline-offset: -8px; mix-blend-mode: multiply; opacity: .9; filter: url(#ink); }
+.stamp .mono { display: block; letter-spacing: .08em; }
+.stamp b { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 21px; letter-spacing: .04em; text-transform: uppercase; line-height: 1.15; }
+.round { width: 176px; height: 176px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 12px; outline-offset: -10px; }
+.s1 { --c: #1E7A4C; left: 26px; top: 64px; transform: rotate(-9deg); }
+.s2 { --c: #2349A8; left: 226px; top: 70px; transform: rotate(5deg); }
+.s3 { --c: #7A2E8E; left: 236px; top: 176px; transform: rotate(-4deg); }
+.s4 { --c: #B9541B; left: 30px; top: 272px; transform: rotate(4deg); }
+.s5 { --c: #C0262D; left: 270px; top: 300px; transform: rotate(-11deg); border-width: 4px; }
+
+.og .spread { left: 650px; top: 92px; transform: rotate(-3deg) scale(.96); transform-origin: 0 0; }
+.og .page.l { display: none; }
+.og .page.r { border-radius: 10px; box-shadow: inset 26px 0 30px -22px rgba(60, 50, 30, .3); }
+
+.foot { position: absolute; left: 40px; right: 40px; top: 572px; display: flex; justify-content: space-between; color: #A9B8AE; }
+
+.copy { position: absolute; left: 44px; top: 118px; width: 560px; }
+.copy .pill { display: inline-block; }
+h1 { margin-top: 24px; font-weight: 800; font-size: 52px; line-height: 1.05; letter-spacing: -.035em; color: #F6F2E6; }
+h1 em { font-style: normal; color: #F2B33D; }
+.brand { position: absolute; left: 44px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="1" seed="7" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.45" result="m"/>
+    <feComposite in="SourceGraphic" in2="m" operator="in" result="s"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="1" seed="3" result="w"/>
+    <feDisplacementMap in="s" in2="w" scale="3"/>
+  </filter>
+</svg>
+<div class="stage og" id="stage">
+  <div class="head only-art"><b>Power Automate for workflow automation</b><span class="pill mono">Inside Microsoft, and outside it</span></div>
+
+  <div class="copy only-og">
+    <span class="pill mono">SME comparison</span>
+    <h1>Power Automate for workflow automation: <em>a realistic comparison.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+
+  <div class="spread">
+    <div class="page l">
+      <div class="top mono"><span>Workflow tool passport</span><span>No. PA-2026</span></div>
+      <div class="emblem">
+        <svg width="96" height="110" viewBox="0 0 96 110" fill="none" stroke="#2349A8" stroke-width="5" stroke-linecap="round">
+          <rect x="30" y="4" width="36" height="22" rx="4"/><path d="M48 42 L64 56 L48 70 L32 56 Z"/><circle cx="48" cy="94" r="11"/>
+          <path d="M48 26 V42"/><path d="M48 70 V83"/>
+        </svg>
+      </div>
+      <div class="fields">
+        <div><span class="mono">Name</span><b>POWER AUTOMATE</b></div>
+        <div><span class="mono">Home ecosystem</span><b>MICROSOFT 365</b></div>
+        <div><span class="mono">Billing</span><b>PER USER &middot; PER BOT</b></div>
+        <div><span class="mono">Self-hosting</span><b>NONE</b></div>
+        <div><span class="mono">Checked</span><b>OCTOBER 2026</b></div>
+      </div>
+      <div class="mrz">P&lt;MSFT&lt;POWER&lt;AUTOMATE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>M365&lt;&lt;STANDARD&lt;CONNECTORS&lt;&lt;2026&lt;&lt;&lt;</div>
+    </div>
+    <div class="page r">
+      <div class="top mono"><span>Visas</span><span>Page 2</span></div>
+      <div class="stamp round s1"><span class="mono">Admitted</span><b>Microsoft<br>365</b><span class="mono">Native</span></div>
+      <div class="stamp s2"><span class="mono">Standard connectors</span><b>Included</b></div>
+      <div class="stamp s3"><span class="mono">Premium connectors</span><b>$15 / user / mo</b></div>
+      <div class="stamp s4"><span class="mono">Other SaaS</span><b>Check each<br>connector</b></div>
+      <div class="stamp s5"><span class="mono">Self-hosting</span><b>Refused</b></div>
+    </div>
+  </div>
+
+  <div class="foot only-art"><span class="mono">Compared with n8n and Make</span><span class="mono">Prices checked October 2026</span></div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
