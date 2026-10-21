@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <script src="/assets/oia-theme.js?v=1"></script>
+    <link rel="canonical" href="https://www.optimizia.xyz/blog/intelligent-process-automation-ipa/">
+    <title>Intelligent Process Automation IPA: SME Guide</title>
+    <meta name="description" content="Intelligent process automation IPA combines workflow and AI to handle judgment-based tasks. Learn how SMEs can start with one process and scale.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intelligent Process Automation IPA: SME Guide">
+    <meta property="og:description" content="Intelligent process automation IPA combines workflow and AI to handle judgment-based tasks. Learn how SMEs can start with one process and scale.">
+    <meta property="og:url" content="https://www.optimizia.xyz/blog/intelligent-process-automation-ipa/">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/blog/intelligent-process-automation-ipa-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Intelligent process automation drawn as a mail sorting rack: an intake tray, one reading step, and pigeonholes for each category plus one for human review.">
+    <meta property="article:published_time" content="2026-10-20">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligent Process Automation IPA: SME Guide">
+    <meta name="twitter:description" content="Intelligent process automation IPA combines workflow and AI to handle judgment-based tasks. Learn how SMEs can start with one process and scale.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/blog/intelligent-process-automation-ipa-og.png">
+
+    <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=4">
+
+    <script src="/assets/vendor/gsap.min.js" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+            {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.optimizia.xyz/blog/"},
+            {"@type":"ListItem","position":3,"name":"Intelligent Process Automation (IPA): A Practical Guide for SMEs","item":"https://www.optimizia.xyz/blog/intelligent-process-automation-ipa/"}
+          ]
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.optimizia.xyz/blog/intelligent-process-automation-ipa/#article",
+          "headline": "Intelligent Process Automation (IPA): A Practical Guide for SMEs",
+          "description": "Intelligent process automation IPA combines workflow and AI to handle judgment-based tasks. Learn how SMEs can start with one process and scale.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-10-20",
+          "dateModified": "2026-10-20",
+          "author": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
+          "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+          "isPartOf": { "@id": "https://www.optimizia.xyz/blog/#page" },
+          "mainEntityOfPage": "https://www.optimizia.xyz/blog/intelligent-process-automation-ipa/",
+          "image": "https://www.optimizia.xyz/assets/blog/intelligent-process-automation-ipa-og.png",
+          "about": { "@type": "Thing", "name": "Intelligent process automation" },
+          "mentions": [
+            { "@type": "Thing", "name": "Robotic process automation", "sameAs": "https://en.wikipedia.org/wiki/Robotic_process_automation" },
+            { "@type": "SoftwareApplication", "name": "n8n", "url": "https://n8n.io/", "applicationCategory": "BusinessApplication" },
+            { "@type": "SoftwareApplication", "name": "Make", "url": "https://www.make.com/", "applicationCategory": "BusinessApplication" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"What is the difference between IPA and RPA?","acceptedAnswer":{"@type":"Answer","text":"Classic RPA repeats fixed screen actions, such as copying data from one field to another. IPA adds an AI step that reads, classifies, or extracts meaning from unstructured content before the workflow continues. IPA handles variation; RPA assumes the input is always in the same place and format."}},
+            {"@type":"Question","name":"Does an SME need a large platform to use IPA?","acceptedAnswer":{"@type":"Answer","text":"No. A small business can apply IPA with a workflow tool like n8n or Make and one narrow AI step. The value comes from choosing the right process and designing a clear fallback, not from the size of the software."}},
+            {"@type":"Question","name":"How do you know if a process is a good IPA candidate?","acceptedAnswer":{"@type":"Answer","text":"The process should repeat often, have a clear trigger, and currently require someone to read or sort information before acting. If the input is always structured and the next step is always the same, basic workflow automation is enough. If the input varies and the routing depends on meaning, an AI step may help."}},
+            {"@type":"Question","name":"What happens when the AI is not confident?","acceptedAnswer":{"@type":"Answer","text":"The workflow should route the item to a human review queue. This fallback is part of the design, not an exception. It keeps errors from reaching customers and creates a feedback loop for improving the AI step over time."}}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script src="/assets/oia-i18n.js?v=8" data-base="/i18n/" data-page="blog-intelligent-process-automation-ipa" defer></script>
+    <style>
+    .post-figure { margin: 4px 0 36px; }
+    .post-figure img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--border); background: #4A1A1E; }
+    .post-figure figcaption { margin-top: 12px; font-size: .84rem; line-height: 1.5; color: var(--muted); text-align: center; }
+    .post th, .post td { padding: 10px 8px; }
+    .post th { vertical-align: bottom; }
+    @media (max-width: 720px) { .post table { min-width: 680px; } }
+    :root[data-theme="dark"] .post th { background: var(--bg-alt); }
+    </style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img class="oia-logo logo-clair" src="/assets/brand/optimizia-logo.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"><img class="oia-logo logo-sombre" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+        <div class="nav-links">
+            <a href="/services.html">Services</a>
+            <a href="/case-studies/">Case studies</a>
+            <a href="/blog/">Blog</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html" class="nav-cta">Book a call</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/services.html">Services</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="post-wrap post-rel">
+        <a class="post-back" href="/blog/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back to the blog</a>
+        <div class="post-head">
+          <p class="eyebrow"><a href="/blog/" style="color:inherit;text-decoration:none">Automation</a> &middot; Article</p>
+          <h1>Intelligent Process Automation (IPA): A Practical Guide for SMEs</h1>
+        </div>
+        <a class="post-author" href="/about.html">
+          <span class="author-avatar"><img src="/avis-pics/romainBen.webp" alt="Portrait of Romain Ben" width="44" height="44" loading="lazy"></span>
+          <div class="author-id">
+            <b>Romain Ben</b>
+            <span>Co-founder &amp; AI Engineer, OptimizIA.xyz &middot; <time datetime="2026-10-20">October 20, 2026</time></span>
+          </div>
+        </a>
+        <aside class="post-aside">
+          <div class="post-aside-inner">
+            <div class="aside-box">
+              <b class="aside-title"><span>Share this article</span></b>
+              <div class="post-share" aria-label="Share this article">
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Fblog%2Fintelligent-process-automation-ipa%2F" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.06c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.88V21H9z"/></svg></a>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Fblog%2Fintelligent-process-automation-ipa%2F&amp;text=Intelligent%20Process%20Automation%20(IPA)%3A%20A%20Practical%20Guide%20for%20SMEs" target="_blank" rel="noopener" aria-label="Share on X" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.9l-4.62-6.04L5.94 21H2.92l7.06-8.07L2.4 3h6.05l4.18 5.52L17.53 3zm-1.06 16.2h1.67L7.6 4.7H5.81l10.66 14.5z"/></svg></a>
+                <button class="share-btn share-copy" type="button" aria-label="Copy link" title="Copy link"><svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="icon-copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></button>
+              </div>
+            </div>
+            <div class="aside-box">
+              <b class="aside-title"><span>Contents</span></b>
+              <nav class="post-toc" aria-label="Article contents">
+                <a href="#what-ipa-means">What IPA actually means</a>
+                <a href="#how-ipa-works">How IPA works in an SME</a>
+                <a href="#comparing-approaches">Comparing IPA approaches</a>
+                <a href="#mistakes">Mistakes that make projects fail</a>
+                <a href="#narrow-ai-step">Why the AI step stays narrow</a>
+                <a href="#realistic-project">A realistic IPA project</a>
+                <a href="#hidden-cost">What most guides do not tell you</a>
+                <a href="#frequently-asked-questions">Frequently asked questions</a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+        <div class="post-summary">
+          <b><span>In short</span></b>
+
+          <p>Intelligent process automation, or IPA, is the practice of automating business processes that require both rule-based execution and some form of judgment, classification, or unstructured data handling. Unlike basic robotic process automation, which repeats fixed screen actions, IPA adds AI components such as document parsing, text classification, or decision support to workflows that previously needed a person to look at the content and decide what to do next. For a small or medium business, IPA usually means connecting existing tools, documents, and messages into a workflow that can route, transform, and act on information without someone manually copying data between systems.</p>
+        </div>
+        <aside class="post-rail" aria-label="Book a call">
+          <div class="post-rail-inner">
+            <div class="post-rail-card">
+              <span class="post-rail-tag">20-minute call</span>
+              <b><span>Does your process need an AI step?</span></b>
+              <p>Tell us where your team reads, sorts or retypes information. We tell you whether AI earns its place, or whether a plain workflow is enough.</p>
+              <a class="btn btn-primary" href="/contact.html">Book a call</a>
+              <span class="post-rail-note">Free, no sales pitch.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="post">
+          <figure class="post-figure">
+            <img src="/assets/blog/intelligent-process-automation-ipa.webp" alt="A wooden mail sorting rack on a burgundy wall, titled intelligent process automation, read once, route by rules. Step 1, trigger: an inbox tray holds an email, a PDF invoice, a web form and a chat message. Step 2, one AI step: a brass plate reads classify, extract; not sure? send to review. Step 3, rules plus a fallback: an oak cabinet with six pigeonholes labelled quote request, complaint, invoice, delivery, out of scope, and human review, the last one highlighted with a question mark. A footer reads: trigger, decision, action; one narrow AI step, one fallback." width="1200" height="630">
+            <figcaption>Intelligent process automation drawn as a mail sorting rack: each item is read once, then filed by rules, with one slot kept for human review.</figcaption>
+          </figure>
+
+          <p>This guide is about how such a workflow is designed. If you are still deciding whether <a href="/blog/intelligent-automation/">intelligent automation</a> is worth it for your company at all, start with our framework for SMEs.</p>
+
+          <h2 id="what-ipa-means">What Intelligent Process Automation Actually Means</h2>
+          <p>IPA sits between two older ideas. The first is <a href="/blog/business-process-workflow-automation/">workflow automation</a>, where a process moves through defined steps and triggers actions in tools like <a href="/blog/n8n-workflow-automation/">n8n</a> or <a href="/blog/make-workflow-automation/">Make</a>. The second is AI assistance, where a model reads, classifies, or summarizes content. IPA combines them: the workflow handles the sequence, the AI handles the moments where the next step depends on what the content means.</p>
+          <p>A practical example is an incoming email with an attached invoice. A basic workflow can detect the email, extract the attachment, and save it to a folder. That is automation. IPA goes further: the workflow reads the invoice content, identifies the supplier, checks whether the amount matches an existing purchase order, and routes the invoice to the right person for approval or flags it for review. The AI part is not replacing the whole process. It is replacing the reading and matching step that used to take a person several minutes per document.</p>
+          <p>For SMEs, the distinction matters because many processes are not fully predictable. A customer request might be a complaint, a quote request, or a delivery question. A fixed rule cannot always tell them apart. IPA allows the workflow to classify the message first, then choose the correct path. The automation still follows rules, but the rules can now include a classification step that handles variation.</p>
+
+          <h3>Why the Term Causes Confusion</h3>
+          <p>The phrase "intelligent process automation" is used by large software vendors to describe enterprise platforms. That creates a wrong impression for smaller companies. You do not need a platform migration or a six-month project to apply IPA. The core idea works at a smaller scale: one process, one workflow, one AI step where it adds value. The intelligence comes from the design of the process, not from the size of the software.</p>
+          <p>A common mistake is to assume IPA means the AI decides everything. In practice, the most reliable IPA implementations keep the AI in a narrow role. The AI classifies, extracts, or suggests. The workflow enforces the sequence, the approvals, and the fallback when the AI is not confident. This separation is what makes the system auditable and safe enough for business use.</p>
+
+          <h2 id="how-ipa-works">How IPA Works in a Small Business Context</h2>
+          <p>The method is simpler than the terminology suggests. You start with a process that is repeated often, has a clear trigger, and currently requires someone to read, compare, or route information. Then you break the process into three layers.</p>
+          <ol>
+            <li><b>Trigger and data capture.</b> This could be a new email, a form submission, a file dropped in a folder, or a row added to a spreadsheet. The workflow starts here and collects the raw input.</li>
+            <li><b>Decision layer.</b> This is where IPA differs from basic automation. The workflow may call an AI step to classify the request, extract key fields from a document, or compare the content against a set of criteria. The output of this step is structured data: a category, a priority, a supplier name, a yes or no.</li>
+            <li><b>Action layer.</b> Based on the structured data, the workflow updates a CRM, sends a notification, creates a task, writes to a database, or asks a human to confirm. The action layer follows fixed rules. It does not need to be intelligent because the intelligence already happened upstream.</li>
+          </ol>
+
+          <h3>A Concrete Sequence</h3>
+          <p>Imagine a small professional services firm that receives project inquiries through a website form. Without automation, someone reads each submission, decides whether it fits the firm's services, and replies or forwards it. With IPA, the workflow receives the form data, uses an AI step to classify the inquiry type and extract the mentioned budget range or timeline, then routes it. High-fit inquiries go to a priority list. Unclear ones go to a review queue. Out-of-scope ones receive a predefined response. The person still handles the final judgment, but the reading and sorting time drops.</p>
+          <p>This sequence works because the AI step has a narrow job. It does not write the response. It does not decide to accept the project. It classifies and extracts. The workflow then applies rules that the business controls.</p>
+
+          <h3>Where the AI Step Adds Real Value</h3>
+          <p>The AI step is worth adding only when the process requires understanding content that varies. If the input is always structured, such as a form with fixed fields, a basic workflow is enough. If the input is an email, a PDF, a chat message, or a document with different layouts, the AI step earns its place.</p>
+          <p>The same logic applies to routing. If every request goes to the same person, there is nothing to route. If requests must go to different teams based on topic, language, or urgency, classification becomes valuable. The key is to add AI where a rule would be brittle, not to add AI for its own sake.</p>
+
+          <h2 id="comparing-approaches">Comparing IPA Approaches for SMEs</h2>
+          <p>The table below compares common ways to introduce intelligent process automation in a small business. The options are not mutually exclusive. Most companies start with one and expand.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Approach</th><th>Best for</th><th>Main constraint</th><th>Typical AI role</th><th>Control level</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Workflow-first with one AI classification step</td><td>Processes with varied incoming text or documents</td><td>Requires clear categories and enough examples</td><td>Classify, extract, or route</td><td>High</td></tr>
+                <tr><td>Document parsing and data entry automation</td><td>Invoices, orders, forms received as PDF or email</td><td>Document formats vary, needs testing on real samples</td><td>Extract fields, validate against rules</td><td>High</td></tr>
+                <tr><td>Human-in-the-loop review queues</td><td>Processes where errors are costly or judgment is subjective</td><td>A person must still review flagged items</td><td>Suggest, flag, pre-fill</td><td>Very high</td></tr>
+                <tr><td>Full end-to-end automation with AI decisions</td><td>Stable processes with low exception rates</td><td>Needs strong monitoring and fallback paths</td><td>Decide within defined limits</td><td>Medium</td></tr>
+                <tr><td>AI assistant connected to internal knowledge</td><td>Repeated internal questions or support requests</td><td>Requires curated knowledge base, not raw files</td><td>Retrieve and summarize</td><td>Medium</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The workflow-first approach is the most realistic starting point for an SME. It limits the AI to one step, keeps the process observable, and produces measurable time savings without a large upfront investment. Full end-to-end automation with AI decisions is possible but only after the process has run with human review long enough to expose edge cases.</p>
+          <p>The AI assistant is what the industry calls RAG, retrieval-augmented generation: level two of the six levels of AI use we teach in our <a href="/case-studies/ai-training/">AI training workshop</a>. To choose the tool behind each approach, our <a href="/blog/ai-powered-workflow-automation-platform/">shortlist of AI powered workflow automation platforms</a> compares n8n, Make, Zapier, UiPath, Power Automate and a custom build.</p>
+
+          <h2 id="mistakes">Mistakes That Make IPA Projects Fail</h2>
+          <ul>
+            <li><b>An unstable process.</b> The most common failure is starting with a process that is not stable. If the team does not agree on how the process should work, automation will not fix it. It will encode the confusion. Before building anything, the process needs a documented sequence and a clear owner.</li>
+            <li><b>Too much AI too early.</b> Another frequent mistake is giving the AI too much responsibility too early. When the AI writes replies, makes final decisions, or acts without a review step, small errors become visible to customers. A safer pattern is to let the AI classify, extract, or suggest, and let the workflow or a person execute the final action.</li>
+            <li><b>No fallback path.</b> A third mistake is ignoring the fallback path. Every AI step needs a defined behavior when the confidence is low or the input does not match any known category. Without a fallback, the workflow either stops silently or sends wrong information downstream. The fallback is often a simple queue for human review, but it must exist.</li>
+          </ul>
+
+          <h3>Underestimating the Knowledge Component</h3>
+          <p>IPA projects often fail because the business knowledge is scattered. The AI step needs examples of what a correct classification looks like. If the team cannot agree on what counts as a high-priority request, the AI cannot learn it. This is why a knowledge-flow analysis before automation is useful. It maps where information enters, who interprets it, and what rules they apply. The automation then captures that interpretation instead of guessing. It is also why our co-founder <a href="/about.html">Rémy Ginoux</a>, after 25 years of industrial and digital transformation, starts every diagnostic with knowledge management rather than with the tool.</p>
+          <p>The same applies to internal knowledge used by AI assistants. If the source documents are outdated or contradictory, the assistant will produce inconsistent answers. The knowledge base must be curated before it is connected to a workflow. This is a constraint, not a technical limitation. The AI can only retrieve what exists.</p>
+
+          <h3>Choosing the Wrong Process</h3>
+          <p>Some processes are poor candidates for IPA. A process that happens once a month, involves highly sensitive decisions, or changes frequently may not justify the setup effort. The best candidates are processes that:</p>
+          <ul>
+            <li>occur daily or weekly,</li>
+            <li>follow a repeatable pattern,</li>
+            <li>and currently consume visible staff time.</li>
+          </ul>
+          <p><a href="/case-studies/lead-monitoring/">Lead monitoring</a> and <a href="/case-studies/automated-reporting/">automated reporting</a> are examples where the trigger is regular and the output is structured enough to measure.</p>
+
+          <h2 id="narrow-ai-step">Why the AI Step Should Stay Narrow</h2>
+          <p>The strongest IPA implementations keep the AI in a small, well-defined role. This is the opposite of what many vendors suggest. The vendor pitch often implies that more AI coverage means more value. In practice, each additional AI decision point adds failure modes, monitoring burden, and review effort.</p>
+          <p>A narrow AI step is easier to test. You can run it against past examples and check whether the classification matches what a person would have done. You can adjust the categories without touching the rest of the workflow. You can also explain to the team exactly what the AI does and what it does not do.</p>
+          <p>When the AI step is narrow, the workflow remains the source of truth for the process. The sequence, the approvals, and the data storage are explicit. The AI is a component inside that sequence, not a black box that replaces it. This makes the system easier to audit and easier to hand over to another person.</p>
+
+          <h3>The Fallback Is Part of the Design</h3>
+          <p>A fallback path is not an afterthought. It is a first-class part of the workflow. When the AI cannot classify a request with enough confidence, the workflow routes it to a review queue. When a document cannot be parsed, the workflow notifies the right person instead of failing silently. These paths are what make the automation trustworthy.</p>
+          <p>The fallback also creates a feedback loop. Items that land in the review queue show where the AI step needs more examples or better categories. Over time, the review queue shrinks, but it never disappears entirely. Some inputs will always be ambiguous, and the business should decide how to handle them.</p>
+
+          <h3>A Real Example: Our Lead Monitoring</h3>
+          <p>Our <a href="/case-studies/lead-monitoring/">lead monitoring case study</a> follows this pattern. For Paul Bergé Lemonnier, an influence agent, an n8n workflow collects 25 industry feeds every morning. The AI step has one job: a language model reads each article, keeps what is actionable, and ranks every retained signal Tier 1, 2 or 3 against four business relevance criteria. Everything around it is fixed rules: deduplication, one line per brand in a register, a table and a daily report.</p>
+          <p>The fallback is explicit. The report goes out every day, even with zero signals, so that "nothing to report" never looks like a breakdown, and a separate alert fires if a feed dies or the collection runs empty. In his words, published on our <a href="/levers.html">levers page</a>, the system "saves me over 2 hours a day".</p>
+
+          <h2 id="realistic-project">What a Realistic IPA Project Looks Like</h2>
+          <p>A realistic project starts with a diagnostic phase. The goal is to identify one process where automation can remove repetitive reading, sorting, or data entry work. The diagnostic maps the current steps, the tools involved, and the decision points. It also estimates the time currently spent and the expected gain. This phase does not require building anything. It produces a shortlist of use cases with a clear recommendation.</p>
+          <p>The next phase is a proof of concept on a controlled scope. The workflow is built for a subset of the process, often with a limited number of categories or a single document type. The AI step is tested against real examples. The output is a working automation that the team can observe and validate. This phase typically takes two to five weeks, not months: 13 days on average for us, from PoC to a working MVP.</p>
+          <p>After validation, the workflow moves to production with monitoring and a review queue. The team tracks the time saved, the volume processed, and the error rate. Adjustments happen based on what the review queue reveals. New use cases are added gradually, using the same pattern: narrow AI step, clear fallback, measurable output.</p>
+
+          <h3>What the Agency Builds</h3>
+          <p>OptimizIA.xyz applies this method for SMEs, in three formats:</p>
+          <ul>
+            <li><b>AI &amp; Knowledge Diagnostic</b>, from €1,000 excl. VAT over one to three weeks: scoping workshops, knowledge-flow analysis, and priority use cases with gain estimates.</li>
+            <li><b>PoC and MVP</b>, from €1,500 excl. VAT: a working automation on a controlled scope, with an onboarding guide.</li>
+            <li><b>Copiloting</b>, from €100 excl. VAT per month: monitoring, fixes, and gradual rollout of new use cases.</li>
+          </ul>
+          <p>We build most often on n8n, and on Make when it fits better, and the client keeps everything built: workflows, configuration, and documentation. There is no proprietary lock-in. Software subscriptions and API usage are paid directly to the providers, usually a few tens of euros per month for an SME workload. The detail is on our <a href="/services.html">services page</a>.</p>
+          <p>This matters because IPA projects often stall when the client depends on the provider for every change. Keeping the workflows and documentation means the internal team can understand, modify, and maintain what was built. The agency's role shifts to copiloting and continuous improvement, not permanent dependency.</p>
+
+          <h2 id="hidden-cost">What Most Guides Do Not Tell You</h2>
+          <p>The biggest hidden cost in IPA is not the software or the initial build. It is the maintenance of the knowledge and categories that the AI step depends on. A classification step works well on the examples it was designed and tested with. When the business changes its services, its pricing, or its customer segments, the categories drift. Requests that used to be high-priority become normal. New request types appear. If nobody updates the examples and rules, the automation slowly becomes less accurate.</p>
+          <p>This drift is invisible at first. The workflow still runs. The AI still produces classifications. The errors appear in the review queue or, worse, in customer-facing actions. Teams often blame the AI when the real issue is that the business knowledge changed and the automation did not follow.</p>
+          <p>The practical response is to treat the AI step as a living component. It needs periodic review, just like a price list or a product catalog. The review does not require a data scientist. It requires someone who knows the process to look at recent examples, check the classifications, and update the categories when needed. If you cannot commit to that review, keep the AI step narrow enough that drift has limited impact.</p>
+
+          <h3>The Difference Between Automation and Knowledge Management</h3>
+          <p>IPA works best when the business separates two things: the workflow, which moves data and triggers actions, and the knowledge, which defines what the data means. The workflow is stable. The knowledge changes. When these two are tangled together, every business change requires a workflow change. When they are separated, the workflow stays the same and only the knowledge layer is updated.</p>
+          <p>This separation is why some IPA projects succeed while others become maintenance burdens. The successful ones treat the AI step as a replaceable component. The categories, examples, and rules can be updated without rebuilding the workflow. The unsuccessful ones hard-code the intelligence into the workflow itself, so every change requires technical intervention.</p>
+
+          <h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+          <h3>What is the difference between IPA and RPA?</h3>
+          <p>Classic RPA repeats fixed screen actions, such as copying data from one field to another. IPA adds an AI step that reads, classifies, or extracts meaning from unstructured content before the workflow continues. IPA handles variation; RPA assumes the input is always in the same place and format.</p>
+
+          <h3>Does an SME need a large platform to use IPA?</h3>
+          <p>No. A small business can apply IPA with a workflow tool like n8n or Make and one narrow AI step. The value comes from choosing the right process and designing a clear fallback, not from the size of the software.</p>
+
+          <h3>How do you know if a process is a good IPA candidate?</h3>
+          <p>The process should repeat often, have a clear trigger, and currently require someone to read or sort information before acting. If the input is always structured and the next step is always the same, basic workflow automation is enough. If the input varies and the routing depends on meaning, an AI step may help.</p>
+
+          <h3>What happens when the AI is not confident?</h3>
+          <p>The workflow should route the item to a human review queue. This fallback is part of the design, not an exception. It keeps errors from reaching customers and creates a feedback loop for improving the AI step over time.</p>
+        </div>
+
+        <nav class="silo-more" aria-label="Keep reading">
+          <b class="silo-more-title"><span>Keep reading</span></b>
+          <ul class="silo-more-list">
+            <li><a href="/blog/intelligent-automation/"><b>Intelligent automation</b><span>A realistic framework for SMEs: pick the process, map the decision points, prove it on one use case.</span></a></li>
+            <li><a href="/blog/n8n-workflow-automation/"><b>n8n workflow automation</b><span>How n8n works, a five-step method to build workflows that keep running, and when n8n is overkill.</span></a></li>
+            <li><a href="/blog/enterprise-workflow-automation-guide/"><b>Enterprise workflow automation</b><span>Five paths compared for SMEs, from n8n and Make to an AI assistant connected to your documents.</span></a></li>
+          </ul>
+        </nav>
+        <div class="post-cta">
+          <h2>One process, one AI step, one fallback.</h2>
+          <p>Book 20 minutes: describe the process where your team reads, sorts or retypes information, and we tell you honestly whether an AI step earns its place or whether a plain workflow is enough.</p>
+          <a class="btn btn-primary" href="/contact.html">Book a call</a>
+        </div>
+      </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img class="oia-logo" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="/about.html" class="footer-ginoux">
+                    ↗ Meet the founders
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/levers.html">The 3 levers</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Book a call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Case studies</h4>
+                <ul>
+                    <li><a href="/case-studies/">All case studies</a></li>
+                    <li><a href="/case-studies/lead-monitoring/">Lead monitoring</a></li>
+                    <li><a href="/case-studies/automated-reporting/">Automated reporting</a></li>
+                    <li><a href="/case-studies/ai-training/">AI training</a></li>
+                    <li><a href="/case-studies/showcase-websites/">Showcase websites</a></li>
+                    <li><a href="/case-studies/seoplus/">SEOPlus!</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/tools/">All tools</a></li>
+                    <li><a href="/tools/seoplus/">SEO &amp; GEO audit (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
+            <p class="footer-tools"><button type="button" class="footer-cookies" data-oia-cookies data-no-i18n></button><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script src="/assets/oia-newsletter.js" defer></script>
+<script>
+/* La date de l'auteur suit la langue affichee : oia-i18n.js n'indexe pas les <time>. */
+document.addEventListener("oia:lang", function (e) {
+    var fmt = new Intl.DateTimeFormat(e.detail || "en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+    document.querySelectorAll(".post-author time[datetime]").forEach(function (t) {
+        t.textContent = fmt.format(new Date(t.getAttribute("datetime") + "T00:00:00Z"));
+    });
+});
+document.querySelectorAll(".share-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+            b.classList.add("copied");
+            var t = window.OIA ? OIA.t("Link copied") : "Link copied";
+            b.setAttribute("aria-label", t);
+            b.setAttribute("title", t);
+            setTimeout(function () {
+                b.classList.remove("copied");
+                var u = window.OIA ? OIA.t("Copy link") : "Copy link";
+                b.setAttribute("aria-label", u);
+                b.setAttribute("title", u);
+            }, 2000);
+        });
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - intelligent-process-automation-ipa</title>
+<!-- Source du visuel de l'article : un casier de tri postal en chene sur un mur bordeaux. A gauche le bac
+     d'entree (e-mail, facture PDF, formulaire, message), au centre une seule plaque de laiton « AI step »
+     (classer, extraire, renvoyer en relecture si la confiance est basse), a droite les cases rangees par des
+     regles, dont une case « Human review ». La these de l'article (une etape IA etroite, un repli) en image.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered),
+     notice de montage au trait (Make), tableau des departs a palettes (enterprise), synthetiseur modulaire (n8n),
+     passeport a tampons (Power Automate).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/intelligent-process-automation-ipa.html        (og : titre + casier)
+     /_meeeters/visuels/intelligent-process-automation-ipa.html#art    (carte et figure : bac, etape IA, casier)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Bois en degrades lisses, sans veinage : les textures fines font exploser le poids du WebP. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --wall: #4A1A1E; --oak: #B47D40; --oak-d: #8C5C2C; --oak-l: #CE9A5A; --hole: #2A1510; --brass: #D8B670; --brass-d: #B28C46;
+  --env: #F4ECDB; --flap: #E5D8BE; --ink: #2B1A14; --cream: #F5EADC; --amber: #F2B33D; --line: #E6C3A0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--wall); }
+body { font-family: 'Outfit', sans-serif; color: var(--cream); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 85% at 55% 40%, #5E2329 0%, var(--wall) 58%, #2E0E11 100%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+
+.head { position: absolute; left: 40px; right: 40px; top: 34px; display: flex; align-items: center; justify-content: space-between; }
+.head b { font-weight: 800; font-size: 32px; letter-spacing: -.02em; }
+.pill { padding: 8px 14px; border-radius: 6px; background: var(--cream); color: #3A1519; font-size: 15px; }
+.k { position: absolute; top: 112px; color: var(--line); }
+
+/* bac d'entree */
+.tray { position: absolute; left: 50px; top: 146px; width: 290px; height: 392px; }
+.tray-back { position: absolute; left: 8px; right: 8px; top: 0; bottom: 30px; border-radius: 12px 12px 4px 4px;
+  background: linear-gradient(180deg, #74472A 0%, #5E3820 100%); box-shadow: inset 0 10px 22px rgba(0, 0, 0, .35); }
+.env { position: absolute; left: 26px; width: 238px; height: 104px; border-radius: 6px; background: var(--env); color: var(--ink);
+  box-shadow: 0 6px 14px rgba(30, 10, 6, .35); overflow: hidden; }
+.env::before { content: ""; position: absolute; inset: 0; background: var(--flap); clip-path: polygon(0 0, 100% 0, 50% 56%); }
+.env .mono { position: absolute; left: 16px; top: 44px; letter-spacing: .06em; }
+.e1 { top: 14px; transform: rotate(-3deg); }
+.e2 { top: 92px; transform: rotate(2deg); }
+.e3 { top: 170px; transform: rotate(-1.5deg); }
+.e4 { top: 248px; transform: rotate(2.5deg); }
+.lip { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; border-radius: 8px;
+  background: linear-gradient(180deg, var(--oak-l) 0%, var(--oak) 55%, var(--oak-d) 100%); box-shadow: 0 14px 24px rgba(0, 0, 0, .4);
+  display: flex; align-items: center; justify-content: center; }
+.plate { padding: 6px 14px; border-radius: 4px; color: var(--ink); background: linear-gradient(180deg, var(--brass) 0%, var(--brass-d) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 1px 2px rgba(0, 0, 0, .35); }
+
+/* une seule etape IA */
+.reader { position: absolute; left: 372px; top: 200px; width: 204px; padding: 20px 18px 18px; border-radius: 14px; color: var(--ink);
+  background: linear-gradient(160deg, #E4C47F 0%, var(--brass) 45%, var(--brass-d) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 22px 36px rgba(0, 0, 0, .42); }
+.reader svg { display: block; margin-bottom: 10px; }
+.reader b { display: block; font-weight: 800; font-size: 27px; line-height: 1.12; letter-spacing: -.01em; }
+.reader hr { border: 0; height: 2px; background: rgba(43, 26, 20, .35); margin: 14px 0 12px; }
+.reader .mono { display: block; letter-spacing: .06em; line-height: 1.35; }
+
+.flow { position: absolute; left: 0; top: 0; }
+
+/* casier */
+.cab { position: absolute; left: 612px; top: 146px; width: 548px; padding: 16px; border-radius: 10px;
+  background: linear-gradient(180deg, var(--oak-l) 0%, var(--oak) 40%, var(--oak-d) 100%);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .25), 0 26px 44px rgba(0, 0, 0, .45);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.hole { position: relative; height: 170px; border-radius: 4px; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 20%, #3A1D15 0%, var(--hole) 60%, #1B0C08 100%);
+  box-shadow: inset 0 12px 18px rgba(0, 0, 0, .55), inset 0 -2px 0 rgba(255, 255, 255, .08); }
+.in { position: absolute; left: 16px; width: 130px; height: 74px; border-radius: 4px; background: var(--env); box-shadow: 0 4px 10px rgba(0, 0, 0, .45); overflow: hidden; }
+.in::before { content: ""; position: absolute; inset: 0; background: var(--flap); clip-path: polygon(0 0, 100% 0, 50% 56%); }
+.in.a { bottom: 48px; transform: rotate(-2deg); }
+.in.b { bottom: 60px; left: 22px; transform: rotate(3deg); opacity: .92; }
+.tag { position: absolute; left: 10px; right: 10px; bottom: 9px; height: 30px; border-radius: 3px; color: var(--ink);
+  display: flex; align-items: center; justify-content: center; letter-spacing: .04em;
+  background: linear-gradient(180deg, var(--brass) 0%, var(--brass-d) 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45); }
+.hole.review { box-shadow: inset 0 12px 18px rgba(0, 0, 0, .55), 0 0 0 3px var(--amber); }
+.hole.review .tag { background: var(--amber); }
+.q { position: absolute; right: 14px; top: 16px; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--amber); color: var(--amber);
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 26px; }
+.crown { position: absolute; left: 50%; top: -18px; transform: translateX(-50%); white-space: nowrap; }
+.art .crown { display: none; }
+
+.foot { position: absolute; left: 40px; right: 40px; top: 572px; display: flex; justify-content: space-between; color: #D9B9A0; }
+
+.og .cab { left: 640px; top: 118px; width: 520px; transform: rotate(1.5deg); }
+.og .hole { height: 176px; }
+.copy { position: absolute; left: 44px; top: 118px; width: 548px; }
+.copy .pill { display: inline-block; }
+h1 { margin-top: 24px; font-weight: 800; font-size: 52px; line-height: 1.05; letter-spacing: -.035em; color: #F8EEE4; }
+h1 em { font-style: normal; color: var(--amber); }
+.brand { position: absolute; left: 44px; bottom: 50px; }
+.brand img { display: block; height: 32px; width: auto; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="head only-art"><b>Intelligent process automation</b><span class="pill mono">Read once, route by rules</span></div>
+  <span class="k mono only-art" style="left:58px">1 &middot; Trigger</span>
+  <span class="k mono only-art" style="left:372px">2 &middot; One AI step</span>
+  <span class="k mono only-art" style="left:612px">3 &middot; Rules, plus a fallback</span>
+
+  <div class="copy only-og">
+    <span class="pill mono">SME guide</span>
+    <h1>Intelligent process automation: <em>a practical guide for SMEs.</em></h1>
+  </div>
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+
+  <div class="tray only-art">
+    <div class="tray-back"></div>
+    <div class="env e1"><span class="mono">Email</span></div>
+    <div class="env e2"><span class="mono">PDF invoice</span></div>
+    <div class="env e3"><span class="mono">Web form</span></div>
+    <div class="env e4"><span class="mono">Chat message</span></div>
+    <div class="lip"><span class="plate mono">Inbox</span></div>
+  </div>
+
+  <svg class="flow only-art" width="1200" height="630" viewBox="0 0 1200 630" fill="none" stroke="#E6C3A0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M344 330 H362"/><path d="M354 322 L364 330 L354 338"/>
+    <path d="M580 330 H600"/><path d="M592 322 L602 330 L592 338"/>
+  </svg>
+
+  <div class="reader only-art">
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#2B1A14" stroke-width="4" stroke-linecap="round"><circle cx="18" cy="18" r="12"/><path d="M27 27 L39 39"/></svg>
+    <span class="mono">AI step</span>
+    <b>Classify.<br>Extract.</b>
+    <hr>
+    <span class="mono">Not sure?<br>Send to review</span>
+  </div>
+
+  <div class="cab">
+    <span class="crown plate mono">Sorted by rules</span>
+    <div class="hole"><div class="in b"></div><div class="in a"></div><span class="tag mono">Quote request</span></div>
+    <div class="hole"><div class="in a"></div><span class="tag mono">Complaint</span></div>
+    <div class="hole"><div class="in b"></div><div class="in a"></div><span class="tag mono">Invoice</span></div>
+    <div class="hole"><div class="in a"></div><span class="tag mono">Delivery</span></div>
+    <div class="hole"><div class="in a"></div><span class="tag mono">Out of scope</span></div>
+    <div class="hole review"><span class="q">?</span><div class="in a"></div><span class="tag mono">Human review</span></div>
+  </div>
+
+  <div class="foot only-art"><span class="mono">Trigger &middot; decision &middot; action</span><span class="mono">One narrow AI step, one fallback</span></div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
