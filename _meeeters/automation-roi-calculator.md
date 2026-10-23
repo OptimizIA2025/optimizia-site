@@ -68,7 +68,7 @@ One thing we won't do: promise you'll save 30% of your time. Our home page talks
 
 ## Start Calculating Your ROI
 
-Ready to see if automation pays off for your business? [Use the calculator](#calculator) now. It takes less than five minutes, and you'll get a clear answer. If you want help interpreting the results or implementing automation, [our team is available for a consultation](https://www.optimizia.xyz/contact.html).
+Ready to see if automation pays off for your business? [Use the calculator](https://www.optimizia.xyz/tools/automation-roi-calculator/#calculator) now. It takes less than five minutes, and you'll get a clear answer. If you want help interpreting the results or implementing automation, [our team is available for a consultation](https://www.optimizia.xyz/contact.html).
 
 ## Common Mistakes When Calculating Automation ROI
 
