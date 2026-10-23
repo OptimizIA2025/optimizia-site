@@ -49,7 +49,10 @@ window.OIA_I18N.fr = {
         "contact@optimizia.xyz": "contact@optimizia.xyz",
         "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitanie, France<br>&amp; International",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Tous droits réservés ·",
-        "Legal Notice": "Mentions légales"
+        "Legal Notice": "Mentions légales",
+        "Automation ROI": "ROI de l'automatisation",
+        "Automation ROI calculator": "Calculateur de ROI de l'automatisation",
+        "Volume, time per run, hourly cost, errors, build and running costs: see the payback period and first-year ROI of automating one process, then save the report as a PDF. Free, no email.": "Volume, temps par exécution, coût horaire, erreurs, coûts de mise en place et de fonctionnement : voyez le délai de retour et le ROI la première année de l'automatisation d'un processus, puis enregistrez le rapport en PDF. Gratuit, sans e-mail."
     },
     attr: {}
 };

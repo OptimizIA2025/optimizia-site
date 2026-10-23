@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - automation-roi-calculator</title>
+<!-- Source du visuel og du calculateur ROI (/tools/automation-roi-calculator/) : une regle a calcul ivoire sur
+     fond vert bouteille, le curseur a fil rouge pose sur 3,9, le delai de retour de l'exemple des factures.
+     Pas de variante #art : la page outil n'a pas de figure et /tools/ affiche ses cartes sans image.
+     Directions deja prises : plateau sombre (Zapier), bloc-notes orange (BPA), tableau periodique clair (open source),
+     plan d'architecte bleu (low code), carte de randonnee creme (cloud), cartes a collectionner violet (outils IA),
+     ecorche isometrique vert sauge (intelligent automation), logigramme neo-brutaliste rose (business process),
+     une de journal (no code platform), entonnoir en verre turquoise (workflow marketing), affiche Bauhaus (AI powered),
+     notice de montage au trait (Make), tableau des departs a palettes (enterprise), synthetiseur modulaire (n8n),
+     passeport a tampons (Power Automate), casier de tri postal (IPA), ticket de caisse vert anis (consultant).
+     Servir la racine du depot puis ouvrir /_meeeters/visuels/automation-roi-calculator.html
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200. -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --green: #15402F; --ivory: #F3EBD2; --ivory-2: #FAF5E6; --ink: #1C1A14; --amber: #F2B544; --red: #D3262E; --soft: #B9C9BC; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--green); }
+body { font-family: 'Outfit', sans-serif; color: var(--ivory); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 100% at 30% 20%, #1F5A41 0%, var(--green) 55%, #0E2E21 100%); }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+.brand { position: absolute; left: 60px; top: 46px; }
+.brand img { height: 40px; display: block; }
+.pill { position: absolute; right: 60px; top: 50px; padding: 9px 15px; border-radius: 6px; background: var(--amber); color: var(--ink); }
+.title { position: absolute; left: 60px; top: 132px; width: 900px; }
+.title .mono { color: var(--amber); display: block; margin-bottom: 14px; }
+.title h1 { font-weight: 800; font-size: 62px; line-height: 1.02; letter-spacing: -.03em; color: var(--ivory-2); }
+.title p { margin-top: 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 21px; color: var(--soft); }
+.rule { position: absolute; left: -70px; top: 372px; overflow: visible; transform: rotate(-3.2deg); transform-origin: 0 0;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, .35)); }
+.tag { position: absolute; left: 712px; top: 278px; display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 8px; background: var(--ivory-2); color: var(--ink);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .3); }
+.tag b { font-weight: 800; font-size: 24px; letter-spacing: -.01em; }
+.tag .mono { font-size: 14px; color: #5B5440; }
+.tag::after { content: ""; position: absolute; right: 100%; top: 50%; width: 24px; height: 2.5px; background: var(--red); }
+.foot { position: absolute; left: 60px; bottom: 34px; color: var(--soft); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="brand"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+  <span class="pill mono">Free tool</span>
+  <div class="title">
+    <span class="mono">Business process automation</span>
+    <h1>Calculate your ROI<br>before you invest.</h1>
+    <p>Payback period, first-year ROI and a report you can keep.</p>
+  </div>
+  <svg class="rule" id="rule" width="1360" height="200" viewBox="0 0 1360 200"></svg>
+  <div class="tag"><span class="mono">Payback</span><b>3.9 months</b></div>
+  <span class="foot mono">500 invoices · 10 min to 2 min · €25 an hour</span>
+</div>
+<script>
+// Echelles logarithmiques : x = X0 + L * log10(v). D sur le corps bas, C sur la reglette, A (deux decades) en haut.
+var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("rule");
+var X0 = 170, L = 1000, OFF = Math.round(L * Math.log10(2.5));
+function el(n, a, txt) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); if (txt) e.textContent = txt; svg.appendChild(e); return e; }
+el("rect", { x: 0, y: 0, width: 1360, height: 200, rx: 10, fill: "#EFE6CC" });
+el("rect", { x: 0, y: 66, width: 1360, height: 68, fill: "#CFC3A2" });
+el("rect", { x: X0 + OFF - 260, y: 69, width: 1500, height: 62, fill: "#FAF5E6" });
+function echelle(x0, l, y, dir, decades) {
+  for (var d = 0; d < decades; d++) {
+    for (var i = 10; i <= 100; i++) {
+      var v = i / 10, x = x0 + l / decades * (d + Math.log10(v));
+      if (d > 0 && i === 10) continue;
+      var h = i % 10 === 0 ? 20 : i % 5 === 0 ? 13 : 7;
+      if (decades === 2 && i % 10 !== 0 && i % 5 !== 0 && v > 2) continue;
+      el("line", { x1: x, y1: y, x2: x, y2: y + dir * h, stroke: "#1C1A14", "stroke-width": i % 10 === 0 ? 2 : 1.2 });
+      if ((i % 10 === 0 && !(d === 1 && v > 5 && v < 10)) || (decades === 1 && v === 1.5)) {
+        var lab = decades === 2 ? String(Math.round(v * Math.pow(10, d))) : String(v);
+        el("text", { x: x, y: y + dir * (h + 6) + (dir > 0 ? 12 : 0), "text-anchor": "middle", fill: "#1C1A14",
+          "font-family": "JetBrains Mono, monospace", "font-size": 15, "font-weight": 700 }, lab);
+      }
+    }
+  }
+}
+echelle(X0, L, 66, -1, 2);
+echelle(X0 + OFF, L, 69, 1, 1);
+echelle(X0, L, 134, 1, 1);
+[["A", 42], ["C", 104], ["D", 166]].forEach(function (s) {
+  el("text", { x: 40, y: s[1], fill: "#5B5440", "font-family": "JetBrains Mono, monospace", "font-size": 16, "font-weight": 700 }, s[0]);
+});
+var cx = X0 + L * Math.log10(3.9);
+el("rect", { x: cx - 42, y: -28, width: 84, height: 256, rx: 8, fill: "rgba(255,255,255,.22)", stroke: "rgba(28,26,20,.55)", "stroke-width": 2 });
+el("line", { x1: cx, y1: -28, x2: cx, y2: 228, stroke: "#D3262E", "stroke-width": 2.5 });
+</script>
+</body>
+</html>
