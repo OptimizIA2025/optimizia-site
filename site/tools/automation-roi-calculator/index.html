@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <script src="/assets/oia-theme.js?v=1"></script>
+    <link rel="canonical" href="https://www.optimizia.xyz/tools/automation-roi-calculator/">
+    <title>What Is Business Process Automation? ROI Calculator</title>
+    <meta name="description" content="What is business process automation? Use our interactive ROI calculator to see your potential savings before you invest. No guesswork, just numbers.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="OptimizIA.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="What Is Business Process Automation? ROI Calculator">
+    <meta property="og:description" content="What is business process automation? Use our interactive ROI calculator to see your potential savings before you invest. No guesswork, just numbers.">
+    <meta property="og:url" content="https://www.optimizia.xyz/tools/automation-roi-calculator/">
+    <meta property="og:image" content="https://www.optimizia.xyz/assets/tools/automation-roi-calculator-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="A slide rule reading the return on automating one process: hours saved, hourly cost and a payback period of just under four months.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Business Process Automation? ROI Calculator">
+    <meta name="twitter:description" content="What is business process automation? Use our interactive ROI calculator to see your potential savings before you invest. No guesswork, just numbers.">
+    <meta name="twitter:image" content="https://www.optimizia.xyz/assets/tools/automation-roi-calculator-og.png">
+
+    <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/PlusJakartaSans-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/css/editorial.css?v=4">
+
+    <script src="/assets/vendor/gsap.min.js" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.optimizia.xyz/"},
+            {"@type":"ListItem","position":2,"name":"Tools","item":"https://www.optimizia.xyz/tools/"},
+            {"@type":"ListItem","position":3,"name":"What Is Business Process Automation? Calculate Your ROI Before You Invest","item":"https://www.optimizia.xyz/tools/automation-roi-calculator/"}
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://www.optimizia.xyz/tools/automation-roi-calculator/#app",
+          "name": "Automation ROI calculator",
+          "headline": "What Is Business Process Automation? Calculate Your ROI Before You Invest",
+          "description": "What is business process automation? Use our interactive ROI calculator to see your potential savings before you invest. No guesswork, just numbers.",
+          "url": "https://www.optimizia.xyz/tools/automation-roi-calculator/",
+          "inLanguage": "en-US",
+          "datePublished": "2026-10-23",
+          "dateModified": "2026-10-23",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "browserRequirements": "Requires JavaScript",
+          "isAccessibleForFree": true,
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+          "creator": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
+          "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
+          "isPartOf": { "@id": "https://www.optimizia.xyz/tools/#collection" },
+          "image": "https://www.optimizia.xyz/assets/tools/automation-roi-calculator-og.png",
+          "about": { "@type": "Thing", "name": "Business process automation" },
+          "featureList": ["Payback period", "First-year ROI", "Net savings per year", "Error costs avoided", "Maintenance, training and adoption rate", "Printable PDF report"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"Is the ROI calculator free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, the calculator is free. You can use it as many times as you like and save reports as PDFs without paying anything or leaving an email."}},
+            {"@type":"Question","name":"What if I don't know my error rate?","acceptedAnswer":{"@type":"Answer","text":"Use the default value provided. It comes from our invoice example, 5% by hand and 1% once automated, not from a published industry average. Better: count the corrections your team made over the last two weeks and divide by the number of runs. You can adjust it later if you have more precise data."}},
+            {"@type":"Question","name":"Can I use this calculator for any type of process?","acceptedAnswer":{"@type":"Answer","text":"The calculator works best for repetitive, rule-based processes like data entry, document handling, and routine approvals. For complex, judgment-heavy tasks, the estimates may be less accurate."}},
+            {"@type":"Question","name":"How accurate are the ROI estimates?","acceptedAnswer":{"@type":"Answer","text":"The estimates are based on standard formulas and your inputs. They are meant to be a starting point for your analysis, not a guarantee. Actual results will vary depending on implementation quality and other factors. The two inputs that move the result most are the minutes saved per run and the adoption rate: measure them on a pilot before a full rollout."}}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script src="/assets/oia-i18n.js?v=8" data-base="/i18n/" data-page="tools-automation-roi-calculator" defer></script>
+    <style>
+    /* « Geschäftsprozessautomatisierung » ne tient pas sur un ecran de 360 px a la taille du H1. */
+    html:lang(de) .post-head h1, html:lang(de) .post h2 { hyphens: auto; overflow-wrap: break-word; }
+    /* Calculateur ROI (T-131) : saisie en deux etapes, resultats sur fond sombre comme la carte du rail. */
+    .roi { --roi-line: rgba(15, 23, 42, .16); margin: 8px 0 44px; padding: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+    :root[data-theme="dark"] .roi { --roi-line: rgba(248, 250, 252, .16); }
+    .roi-head { margin-bottom: 24px; }
+    .roi-tag { font-family: var(--font-mono); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--orange-deep); }
+    .post .roi h2 { margin: 6px 0 8px; }
+    .post .roi-head p { margin: 0; font-size: .92rem; color: var(--muted); }
+    .roi-step { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }
+    .roi-step legend, .roi-out-title { display: flex; align-items: center; gap: 10px; padding: 0; margin-bottom: 14px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--ink); }
+    .roi-n { display: inline-grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--orange-soft); color: var(--orange-deep); font-family: var(--font-mono); font-size: .74rem; font-weight: 700; }
+    .roi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 18px; }
+    .roi-wide { grid-column: 1 / -1; }
+    .post .roi-sub { margin: 24px 0 12px; font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+    .roi-field label { display: block; margin-bottom: 6px; font-size: .85rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .roi-field input, .roi-field select {
+      width: 100%; min-height: 46px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--ink);
+      background: var(--bg); border: 1.5px solid var(--roi-line); border-radius: var(--radius-sm);
+      font-variant-numeric: tabular-nums; transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .roi-field select {
+      appearance: none; padding-right: 38px; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F97316' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;
+    }
+    .roi-field input:hover, .roi-field select:hover { border-color: rgba(249, 115, 22, .45); }
+    .roi-field input:focus, .roi-field select:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-glow); }
+    .post .roi-hint { margin: 6px 0 0; font-size: .76rem; line-height: 1.45; color: var(--muted); }
+    .roi-out { margin-top: 28px; padding: 22px; background: var(--dark); border: 1px solid var(--dark-2); border-radius: var(--radius); color: #CBD5E1; }
+    .roi-out .roi-out-title { color: #fff; }
+    .roi-out .roi-n { background: rgba(249, 115, 22, .18); color: var(--orange); }
+    .roi-keys { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .roi-keys > div { min-width: 0; padding: 14px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .08); border-radius: var(--radius-sm); }
+    .roi-keys .roi-k { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: .64rem; text-transform: uppercase; letter-spacing: .1em; color: #94A3B8; }
+    .roi-keys b { display: block; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.15; color: #fff; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+    .roi-keys > div:first-child b { color: var(--orange); }
+    .roi-keys .roi-never { display: block; font-weight: 700; font-size: .95rem; line-height: 1.3; color: #FCA5A5; }
+    .roi-never[hidden] { display: none !important; }
+    .roi-rows { margin: 0 0 16px; }
+    .roi-rows > div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-top: 1px solid rgba(255, 255, 255, .08); font-size: .88rem; line-height: 1.4; }
+    .roi-rows dt { color: #CBD5E1; }
+    .roi-rows dd { margin: 0; color: #fff; font-weight: 600; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .post .roi-warn { margin: 0 0 16px; padding: 10px 12px; border-radius: var(--radius-sm); background: rgba(220, 38, 38, .16); color: #FECACA; font-size: .86rem; line-height: 1.5; }
+    .roi-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+    .roi-actions .btn { min-height: 44px; padding: 11px 22px; font-size: .92rem; }
+    .roi-actions span { flex: 1 1 220px; font-size: .78rem; line-height: 1.45; color: #94A3B8; }
+    .roi-how { margin-top: 18px; font-size: .88rem; }
+    .roi-how summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+    .post .roi-how ul { margin: 12px 0 0 20px; }
+    .post .roi-how li { margin-bottom: 6px; }
+    @media (max-width: 620px) {
+      .roi { padding: 18px; }
+      .roi-grid, .roi-keys { grid-template-columns: 1fr; }
+      .roi-keys b { font-size: 1.35rem; }
+      .roi-out { padding: 18px; }
+    }
+    .roi-report { display: none; }
+    @media print {
+      @page { margin: 14mm; }
+      html, body { background: #fff !important; }
+      body > :not(.roi-report) { display: none !important; }
+      .roi-report { display: block; color: #0F172A; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10pt; line-height: 1.4; }
+      .rr-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; margin-bottom: 16px; border-bottom: 2px solid #F97316; font-size: 9.5pt; color: #475569; }
+      .rr-head img { height: 28px; width: auto; }
+      .rr-title { margin: 0 0 2px; font-family: "Outfit", sans-serif; font-size: 18pt; font-weight: 700; }
+      .rr-h { margin: 14px 0 4px; font-family: "Outfit", sans-serif; font-size: 12.5pt; font-weight: 700; break-after: avoid; }
+      .roi-report table { width: 100%; border-collapse: collapse; break-inside: avoid; }
+      .roi-report td { padding: 3px 8px; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+      .roi-report td + td { text-align: right; font-weight: 600; white-space: nowrap; }
+      .roi-report .rr-key td { font-size: 11pt; }
+      .roi-report ul { margin: 0 0 0 18px; padding: 0; }
+      .roi-report li { margin-bottom: 4px; }
+      .rr-foot { margin-top: 12px; font-size: 8.5pt; color: #475569; }
+    }
+    </style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo"><img class="oia-logo logo-clair" src="/assets/brand/optimizia-logo.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"><img class="oia-logo logo-sombre" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+        <div class="nav-links">
+            <a href="/services.html">Services</a>
+            <a href="/case-studies/">Case studies</a>
+            <a href="/blog/">Blog</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html" class="nav-cta">Book a call</a>
+            <div class="lang-toggle" data-lang-picker></div>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/services.html">Services</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html" class="btn btn-orange" style="text-align:center;">Book a call</a>
+    <div class="lang-toggle lang-toggle-mobile" data-lang-picker></div>
+</div>
+
+<main class="editorial-body bg-mesh">
+    <section>
+      <div class="post-wrap post-rel">
+        <a class="post-back" href="/tools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> All tools</a>
+        <div class="post-head">
+          <p class="eyebrow"><a href="/tools/" style="color:inherit;text-decoration:none">Tools</a> &middot; Calculator</p>
+          <h1>What Is Business Process Automation? Calculate Your ROI Before You Invest</h1>
+        </div>
+        <a class="post-author" href="/about.html">
+          <span class="author-avatar"><img src="/avis-pics/romainBen.webp" alt="Portrait of Romain Ben" width="44" height="44" loading="lazy"></span>
+          <div class="author-id">
+            <b>Romain Ben</b>
+            <span>Co-founder &amp; AI Engineer, OptimizIA.xyz &middot; <time datetime="2026-10-23">October 23, 2026</time></span>
+          </div>
+        </a>
+        <aside class="post-aside">
+          <div class="post-aside-inner">
+            <div class="aside-box">
+              <b class="aside-title"><span>Share this calculator</span></b>
+              <div class="post-share" aria-label="Share this calculator">
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.optimizia.xyz%2Ftools%2Fautomation-roi-calculator%2F" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.06c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.82 0-2.1 1.42-2.1 2.88V21H9z"/></svg></a>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.optimizia.xyz%2Ftools%2Fautomation-roi-calculator%2F&amp;text=What%20Is%20Business%20Process%20Automation%3F%20Calculate%20Your%20ROI%20Before%20You%20Invest" target="_blank" rel="noopener" aria-label="Share on X" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.9l-4.62-6.04L5.94 21H2.92l7.06-8.07L2.4 3h6.05l4.18 5.52L17.53 3zm-1.06 16.2h1.67L7.6 4.7H5.81l10.66 14.5z"/></svg></a>
+                <button class="share-btn share-copy" type="button" aria-label="Copy link" title="Copy link"><svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="icon-copied" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></button>
+              </div>
+            </div>
+            <div class="aside-box">
+              <b class="aside-title"><span>Contents</span></b>
+              <nav class="post-toc" aria-label="Page contents">
+                <a href="#calculator">The calculator</a>
+                <a href="#what-you-get">What you get</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#report">What's in the report</a>
+                <a href="#why-trust">Why trust it</a>
+                <a href="#common-mistakes">Common mistakes</a>
+                <a href="#invoice-example">Invoice processing example</a>
+                <a href="#next-steps">Next steps</a>
+                <a href="#frequently-asked-questions">Frequently asked questions</a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+        <div class="post-summary">
+          <b><span>In short</span></b>
+
+          <p>Business process automation (BPA) means using software to execute recurring tasks that humans currently do by hand. The goal is to reduce manual work, cut errors, and speed up operations. But before you invest, you need to know if the numbers work. That's where our ROI calculator comes in.</p>
+        </div>
+        <aside class="post-rail" aria-label="Book a call">
+          <div class="post-rail-inner">
+            <div class="post-rail-card">
+              <span class="post-rail-tag">20-minute call</span>
+              <b><span>Want a second opinion?</span></b>
+              <p>Bring your estimate. We tell you which assumptions look optimistic, and whether a pilot is worth it.</p>
+              <a class="btn btn-primary" href="/contact.html">Book a call</a>
+              <span class="post-rail-note">Free, no sales pitch.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="post">
+          <p>If you are still asking <a href="/blog/business-process-automation-companies/">what is business process automation</a> and who can do it for you, our shortlist for SMEs answers both. This page answers the next question: does automating one given process pay for itself?</p>
+
+          <section class="roi" id="calculator" aria-labelledby="roi-title" data-clarity-mask="True">
+            <div class="roi-head">
+              <span class="roi-tag">Free calculator</span>
+              <h2 id="roi-title">Automation ROI calculator</h2>
+              <p>Start from the example values, then replace them with your own. The results update as you type.</p>
+            </div>
+
+            <fieldset class="roi-step">
+              <legend><span class="roi-n">1</span> <span>Describe your process</span></legend>
+              <div class="roi-grid">
+                <div class="roi-field roi-wide">
+                  <label for="roi-type">Type of task</label>
+                  <select id="roi-type">
+                    <option value="invoice">Invoice processing</option>
+                    <option value="entry">Data entry</option>
+                    <option value="routing">Document routing</option>
+                    <option value="approval">Routine approvals</option>
+                    <option value="other">Another process</option>
+                  </select>
+                  <p class="roi-hint">Each type loads example values. Replace them with yours.</p>
+                </div>
+                <div class="roi-field roi-wide">
+                  <label for="roi-runs">Runs per month</label>
+                  <input id="roi-runs" type="number" inputmode="decimal" min="0" step="1">
+                </div>
+                <div class="roi-field">
+                  <label for="roi-before">Minutes per run, by hand</label>
+                  <input id="roi-before" type="number" inputmode="decimal" min="0" step="any">
+                </div>
+                <div class="roi-field">
+                  <label for="roi-after">Minutes per run, once automated</label>
+                  <input id="roi-after" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">The time a person still spends on each run, checking or fixing.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="roi-step">
+              <legend><span class="roi-n">2</span> <span>Set your parameters</span></legend>
+              <div class="roi-grid">
+                <div class="roi-field">
+                  <label for="roi-rate">Loaded hourly cost (€)</label>
+                  <input id="roi-rate" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">Gross salary plus employer charges.</p>
+                </div>
+                <div class="roi-field">
+                  <label for="roi-adopt">Adoption rate (%)</label>
+                  <input id="roi-adopt" type="number" inputmode="decimal" min="0" max="100" step="any">
+                  <p class="roi-hint">Share of runs that actually go through the automation.</p>
+                </div>
+                <div class="roi-field">
+                  <label for="roi-err1">Error rate by hand (%)</label>
+                  <input id="roi-err1" type="number" inputmode="decimal" min="0" max="100" step="any">
+                </div>
+                <div class="roi-field">
+                  <label for="roi-err2">Error rate once automated (%)</label>
+                  <input id="roi-err2" type="number" inputmode="decimal" min="0" max="100" step="any">
+                </div>
+                <div class="roi-field roi-wide">
+                  <label for="roi-fix">Minutes to fix one error</label>
+                  <input id="roi-fix" type="number" inputmode="decimal" min="0" step="any">
+                </div>
+              </div>
+              <p class="roi-sub">What the automation costs</p>
+              <div class="roi-grid">
+                <div class="roi-field">
+                  <label for="roi-build">Implementation cost (€)</label>
+                  <input id="roi-build" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">Build plus integration. Our PoC and MVP start at €1,500 excl. VAT.</p>
+                </div>
+                <div class="roi-field">
+                  <label for="roi-train">Training hours, one-off</label>
+                  <input id="roi-train" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">All staff combined.</p>
+                </div>
+                <div class="roi-field">
+                  <label for="roi-soft">Software per month (€)</label>
+                  <input id="roi-soft" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">Subscriptions and API usage.</p>
+                </div>
+                <div class="roi-field">
+                  <label for="roi-maint">Maintenance per year (% of implementation)</label>
+                  <input id="roi-maint" type="number" inputmode="decimal" min="0" step="any">
+                  <p class="roi-hint">10 to 15% is a common budget.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="roi-out">
+              <p class="roi-out-title"><span class="roi-n">3</span> <span>Your estimate</span></p>
+              <div class="roi-keys" aria-live="polite">
+                <div><span class="roi-k">Payback period</span><b data-out="payback" data-no-i18n></b><span class="roi-never" hidden>Not at these numbers</span></div>
+                <div><span class="roi-k">First-year ROI</span><b data-out="roi" data-no-i18n></b></div>
+                <div><span class="roi-k">Net savings per year</span><b data-out="net" data-no-i18n></b></div>
+              </div>
+              <dl class="roi-rows">
+                <div><dt>Hours saved per month</dt><dd data-out="hours" data-no-i18n></dd></div>
+                <div><dt>Time saved per run</dt><dd data-out="perrun" data-no-i18n></dd></div>
+                <div><dt>Labor savings per year</dt><dd data-out="labor" data-no-i18n></dd></div>
+                <div><dt>Error costs avoided per year</dt><dd data-out="errors" data-no-i18n></dd></div>
+                <div><dt>Running costs per year</dt><dd data-out="running" data-no-i18n></dd></div>
+                <div><dt>Upfront cost, implementation and training</dt><dd data-out="upfront" data-no-i18n></dd></div>
+              </dl>
+              <p class="roi-warn" hidden>At these numbers, the automation does not pay for itself. Pick a process with more volume, or lower the costs.</p>
+              <div class="roi-actions">
+                <button type="button" class="btn btn-primary" id="roi-print">Print or save as PDF</button>
+                <span>Free, no email. The numbers are computed in your browser and never sent to us.</span>
+              </div>
+            </div>
+
+            <details class="roi-how">
+              <summary>How the numbers are calculated</summary>
+              <ul>
+                <li><b>Hours saved per month</b> = runs × adoption rate × (minutes by hand − minutes once automated) ÷ 60.</li>
+                <li><b>Error costs avoided</b> = runs × adoption rate × (error rate by hand − error rate once automated) × minutes to fix ÷ 60 × hourly cost.</li>
+                <li><b>Running costs</b> = software per month × 12 + maintenance rate × implementation cost.</li>
+                <li><b>Net savings per year</b> = labor savings + error costs avoided − running costs.</li>
+                <li><b>Upfront cost</b> = implementation cost + training hours × hourly cost.</li>
+                <li><b>Payback period</b> = upfront cost ÷ monthly net savings.</li>
+                <li><b>First-year ROI</b> = (net savings per year − upfront cost) ÷ upfront cost.</li>
+              </ul>
+            </details>
+          </section>
+
+          <h2 id="what-you-get">What You Get With This Tool</h2>
+          <p>This page is built for one thing: to help you decide if automating a process makes financial sense. You enter a few details about the process you're considering, and the calculator estimates your potential return on investment. You can then save the report as a PDF to share with your team or keep for your records.</p>
+          <p>The calculator covers common automation scenarios: data entry, document routing, invoice processing, and more. It uses standard formulas, written out under the results, to compute time saved, error reduction, and payback period. No email required, no sales call.</p>
+
+          <h2 id="key-benefits">Key Benefits of Business Process Automation</h2>
+          <p>Automating a process delivers benefits that go beyond just saving time. Here are the ones that matter most for small and medium businesses:</p>
+          <ul>
+            <li><b>Lower labor costs</b>: Reduce the hours spent on repetitive tasks.</li>
+            <li><b>Fewer errors</b>: Automated steps follow rules consistently, eliminating typos and missed fields.</li>
+            <li><b>Faster turnaround</b>: Processes complete in minutes instead of days.</li>
+            <li><b>Better compliance</b>: Every action is logged, making audits easier.</li>
+            <li><b>Scalability</b>: Handle more volume without hiring more staff.</li>
+          </ul>
+          <p>These benefits are real, but they vary by process. Our <a href="/case-studies/automated-reporting/">automated reporting</a> case study shows the end state on one of them: a chain that goes from raw data to a distributed report with no manual work. The calculator helps you quantify them for your specific case.</p>
+
+          <h2 id="how-it-works">How the ROI Calculator Works</h2>
+          <p>Using the calculator takes three steps:</p>
+          <ol>
+            <li><b>Describe your process</b>: Choose the type of task, how often it runs, and how long it takes by hand and once automated.</li>
+            <li><b>Set your parameters</b>: Enter your hourly labor cost, the expected error rate, and what the automation costs to build and run.</li>
+            <li><b>Get your estimate</b>: The calculator shows your annual savings, upfront cost, payback period and first-year ROI.</li>
+          </ol>
+          <p>You can adjust any input and see the results update instantly. When you're satisfied, save the full breakdown as a PDF report.</p>
+
+          <h2 id="report">What's in the Downloadable Report</h2>
+          <p>The report includes everything you need to present to stakeholders:</p>
+          <ul>
+            <li>A summary of your inputs and assumptions</li>
+            <li>Calculated annual savings and ROI percentage</li>
+            <li>Payback period in months</li>
+            <li>A breakdown of time saved per task</li>
+            <li>Notes on how to interpret the results</li>
+          </ul>
+          <p>The report is yours to keep. You can use it to build a business case for automation or to compare different processes. To download it, press the print button and choose Save as PDF as the destination.</p>
+
+          <h2 id="why-trust">Why Trust This Calculator</h2>
+          <p>This calculator was built by OptimizIA.xyz, an AI and automation agency for SMEs. Our co-founder <a href="/about.html">Rémy Ginoux</a> spent 25 years in industrial and digital transformation, at Volvo Group, Airbus Atlantic and Solvay, and today we help businesses like yours automate workflows with tools like <a href="/blog/n8n-workflow-automation/">n8n</a> and <a href="/blog/make-workflow-automation/">Make</a>. We know the pitfalls of automation projects, and we designed this tool to give you a realistic estimate, not a sales pitch.</p>
+          <p>It is also the arithmetic we use with clients. Before we build anything, we agree on what success looks like: time saved, volume processed, error rate. On our <a href="/case-studies/lead-monitoring/">lead monitoring</a> for Paul Bergé Lemonnier, an influence agent, the measure that counts is the client's own, published on our <a href="/levers.html">levers page</a>: the system "saves me over 2 hours a day".</p>
+          <p>One thing we won't do: promise you'll save 30% of your time. Our home page talks about reclaiming up to 30% of productive time, and "up to" is the point: it is a ceiling, not a forecast for your process. Results depend on your process, your team, and how well you implement the automation. The calculator gives you an estimate based on your inputs, so you can plan accordingly.</p>
+
+          <h2 id="start">Start Calculating Your ROI</h2>
+          <p>Ready to see if automation pays off for your business? <a href="#calculator">Use the calculator</a> now. It takes less than five minutes, and you'll get a clear answer. If you want help interpreting the results or implementing automation, <a href="/contact.html">our team is available for a consultation</a>.</p>
+
+          <h2 id="common-mistakes">Common Mistakes When Calculating Automation ROI</h2>
+          <p>Many businesses overestimate savings by ignoring hidden costs or underestimating implementation time. Here are pitfalls to avoid:</p>
+          <ul>
+            <li><b>Forgetting maintenance</b>: Automation needs updates and monitoring. Budget 10 to 15% of the initial cost annually, plus software subscriptions, usually a few tens of euros a month for an SME workload.</li>
+            <li><b>Ignoring training time</b>: Employees need time to learn new workflows. Include this in your payback period.</li>
+            <li><b>Overlooking integration costs</b>: Connecting automation to existing software may require extra development. Count it in the implementation cost.</li>
+            <li><b>Assuming 100% adoption</b>: Not every task will be automated perfectly. Use a realistic adoption rate (e.g., 80%).</li>
+          </ul>
+          <p>Our calculator includes fields for these factors, so your estimate stays grounded.</p>
+
+          <h2 id="invoice-example">Real-World Example: Invoice Processing</h2>
+          <p>Let's say your team processes 500 invoices per month. Each invoice takes 10 minutes by hand, and your loaded labor cost is €25 an hour: that's 83 hours a month on this task, with a 5% error rate on top. Automation could cut processing time to 2 minutes per invoice, the time a person still spends checking it.</p>
+          <p>If every invoice went through the automation, you would save 67 hours a month, or €20,000 a year in labor. At a realistic 80% adoption, it's 53 hours a month and €16,000 a year, plus €1,200 a year of corrections avoided if the error rate drops from 5% to 1% and each correction takes 15 minutes.</p>
+          <p>Now the costs. Assume €5,000 to build and connect the workflow, 8 hours of training, €30 a month of software and 15% of the build cost a year for maintenance. The net saving is €16,090 a year, the payback period is just under four months, and the first-year ROI is 209%. These are the example values the calculator opens with: run your own numbers to see similar results.</p>
+          <p>The €5,000 is an assumption for the example, not our price. Our PoC and MVP start at €1,500 excl. VAT on our <a href="/services.html">services page</a>, and the final price is fixed in writing once we have seen your process.</p>
+
+          <h2 id="next-steps">Next Steps After Your Calculation</h2>
+          <p>Once you have your ROI estimate, prioritize processes with the shortest payback period. Start with a pilot project to validate assumptions: that is what a PoC is for, on one real process with your real data, and with us, going from PoC to a working MVP takes 13 days on average. If the numbers look good, move to full implementation.</p>
+          <p>If you have several candidate processes and don't know which one to measure first, our <a href="/levers.html#diagnose">diagnostic</a> ranks them, from €1,000 excl. VAT. For guidance on choosing the right automation platform, read our <a href="/blog/business-process-workflow-automation/">comparison of n8n, Make and Zapier</a> or <a href="/contact.html">contact our team</a>.</p>
+
+          <h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+          <h3>Is the ROI calculator free to use?</h3>
+          <p>Yes, the calculator is free. You can use it as many times as you like and save reports as PDFs without paying anything or leaving an email.</p>
+
+          <h3>What if I don't know my error rate?</h3>
+          <p>Use the default value provided. It comes from our invoice example, 5% by hand and 1% once automated, not from a published industry average. Better: count the corrections your team made over the last two weeks and divide by the number of runs. You can adjust it later if you have more precise data.</p>
+
+          <h3>Can I use this calculator for any type of process?</h3>
+          <p>The calculator works best for repetitive, rule-based processes like data entry, document handling, and routine approvals. For complex, judgment-heavy tasks, the estimates may be less accurate.</p>
+
+          <h3>How accurate are the ROI estimates?</h3>
+          <p>The estimates are based on standard formulas and your inputs. They are meant to be a starting point for your analysis, not a guarantee. Actual results will vary depending on implementation quality and other factors. The two inputs that move the result most are the minutes saved per run and the adoption rate: measure them on a pilot before a full rollout.</p>
+        </div>
+
+        <nav class="silo-more" aria-label="Keep reading">
+          <b class="silo-more-title"><span>Keep reading</span></b>
+          <ul class="silo-more-list">
+            <li><a href="/blog/business-process-automation-companies/"><b>Business process automation companies</b><span>Consultancy, agency, freelancer or in-house: how to choose who builds it.</span></a></li>
+            <li><a href="/blog/business-process-workflow-automation/"><b>Business process workflow automation</b><span>What workflow automation is, then n8n, Make, Zapier and a custom build compared, with checked prices.</span></a></li>
+            <li><a href="/case-studies/automated-reporting/"><b>Automated reporting</b><span>From raw market data to a distributed verdict, with no manual step in between.</span></a></li>
+          </ul>
+        </nav>
+        <div class="post-cta">
+          <h2>Numbers look good? Prove them on one process.</h2>
+          <p>Book 20 minutes: describe the process you measured, and we tell you honestly whether a diagnostic, a PoC or nothing at all is the right next step.</p>
+          <a class="btn btn-primary" href="/contact.html">Book a call</a>
+        </div>
+      </div>
+    </section>
+</main>
+
+<div class="roi-report">
+  <div class="rr-head"><img src="/assets/brand/optimizia-logo.svg?v=1" alt="OptimizIA.xyz" width="200" height="33"><span data-rr="date" data-no-i18n></span></div>
+  <p class="rr-title">Automation ROI estimate</p>
+  <p class="rr-h">Your inputs and assumptions</p>
+  <table>
+    <tbody>
+      <tr><td>Type of task</td><td data-rr="type" data-no-i18n></td></tr>
+      <tr><td>Runs per month</td><td data-rr="runs" data-no-i18n></td></tr>
+      <tr><td>Minutes per run, by hand</td><td data-rr="before" data-no-i18n></td></tr>
+      <tr><td>Minutes per run, once automated</td><td data-rr="after" data-no-i18n></td></tr>
+      <tr><td>Loaded hourly cost (€)</td><td data-rr="rate" data-no-i18n></td></tr>
+      <tr><td>Adoption rate (%)</td><td data-rr="adopt" data-no-i18n></td></tr>
+      <tr><td>Error rate by hand (%)</td><td data-rr="err1" data-no-i18n></td></tr>
+      <tr><td>Error rate once automated (%)</td><td data-rr="err2" data-no-i18n></td></tr>
+      <tr><td>Minutes to fix one error</td><td data-rr="fix" data-no-i18n></td></tr>
+      <tr><td>Implementation cost (€)</td><td data-rr="build" data-no-i18n></td></tr>
+      <tr><td>Training hours, one-off</td><td data-rr="train" data-no-i18n></td></tr>
+      <tr><td>Software per month (€)</td><td data-rr="soft" data-no-i18n></td></tr>
+      <tr><td>Maintenance per year (% of implementation)</td><td data-rr="maint" data-no-i18n></td></tr>
+    </tbody>
+  </table>
+  <p class="rr-h">Your estimate</p>
+  <table>
+    <tbody>
+      <tr class="rr-key"><td>Payback period</td><td><span data-out="payback" data-no-i18n></span><span class="roi-never" hidden>Not at these numbers</span></td></tr>
+      <tr class="rr-key"><td>First-year ROI</td><td data-out="roi" data-no-i18n></td></tr>
+      <tr class="rr-key"><td>Net savings per year</td><td data-out="net" data-no-i18n></td></tr>
+      <tr><td>Hours saved per month</td><td data-out="hours" data-no-i18n></td></tr>
+      <tr><td>Time saved per run</td><td data-out="perrun" data-no-i18n></td></tr>
+      <tr><td>Labor savings per year</td><td data-out="labor" data-no-i18n></td></tr>
+      <tr><td>Error costs avoided per year</td><td data-out="errors" data-no-i18n></td></tr>
+      <tr><td>Running costs per year</td><td data-out="running" data-no-i18n></td></tr>
+      <tr><td>Upfront cost, implementation and training</td><td data-out="upfront" data-no-i18n></td></tr>
+    </tbody>
+  </table>
+  <p class="rr-h">How to read these results</p>
+  <ul>
+    <li>These figures are an estimate built only from the values above. They are not a quote or a guarantee.</li>
+    <li>The payback period sets the upfront cost against the net savings. If it is longer than the time you expect the process to stay the same, wait before automating it.</li>
+    <li>The two inputs that move the result most are the minutes saved per run and the adoption rate. Measure them on a pilot before a full rollout.</li>
+    <li>Amounts in euros, excluding VAT.</li>
+  </ul>
+  <p class="rr-foot">Automation ROI calculator by OptimizIA.xyz: optimizia.xyz/tools/automation-roi-calculator/</p>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><img class="oia-logo" src="/assets/brand/optimizia-logo-sombre.svg?v=1" alt="OptimizIA.xyz" width="268" height="44"></a>
+                <p>A network of AI, automation and Knowledge Management experts. We help SME leaders transform their processes to gain productivity and peace of mind.</p>
+                <a href="/about.html" class="footer-ginoux">
+                    ↗ Meet the founders
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/levers.html">The 3 levers</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Book a call</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Case studies</h4>
+                <ul>
+                    <li><a href="/case-studies/">All case studies</a></li>
+                    <li><a href="/case-studies/lead-monitoring/">Lead monitoring</a></li>
+                    <li><a href="/case-studies/automated-reporting/">Automated reporting</a></li>
+                    <li><a href="/case-studies/ai-training/">AI training</a></li>
+                    <li><a href="/case-studies/showcase-websites/">Showcase websites</a></li>
+                    <li><a href="/case-studies/seoplus/">SEOPlus!</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/tools/">All tools</a></li>
+                    <li><a href="/tools/seoplus/">SEO &amp; GEO audit (SEOPlus!)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@optimizia.xyz">contact@optimizia.xyz</a></li>
+                </ul>
+                <p style="margin-top:14px;">Béziers · Occitanie, France<br>& International</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span>© 2026 OptimizIA.xyz · All rights reserved ·</span> <a href="/legal-notice.html" class="legal-link">Legal Notice</a><span style="color: var(--text-muted);" data-no-i18n> · V7</span></p>
+            <p class="footer-tools"><button type="button" class="footer-cookies" data-oia-cookies data-no-i18n></button><span style="color: var(--text-muted);" data-no-i18n>optimizia.xyz</span></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+    });
+
+    function initGSAP() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            setTimeout(initGSAP, 100);
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach((el, i) => {
+            gsap.fromTo(el,
+                { y: 36, opacity: 0 },
+                { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+                  y: 0, opacity: 1, duration: 1.0, ease: 'power4.out', delay: i * 0.05 }
+            );
+        });
+    }
+    initGSAP();
+});
+</script>
+
+<!-- Mesure d'audience. Couche 2 exemptee (aucune banniere, 100 % des visiteurs),
+     couche 3 sous consentement. -->
+<script src="/assets/oia-tracker.js" data-site="optimizia" defer></script>
+<script src="/assets/oia-clarity.js" data-clarity="y4wvew5ezs" data-legal="/legal-notice.html" data-accent="#F97316" defer></script>
+<script src="/assets/oia-newsletter.js" defer></script>
+<script>
+/* La date de l'auteur suit la langue affichee : oia-i18n.js n'indexe pas les <time>. */
+document.addEventListener("oia:lang", function (e) {
+    var fmt = new Intl.DateTimeFormat(e.detail || "en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+    document.querySelectorAll(".post-author time[datetime]").forEach(function (t) {
+        t.textContent = fmt.format(new Date(t.getAttribute("datetime") + "T00:00:00Z"));
+    });
+});
+document.querySelectorAll(".share-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+            b.classList.add("copied");
+            var t = window.OIA ? OIA.t("Link copied") : "Link copied";
+            b.setAttribute("aria-label", t);
+            b.setAttribute("title", t);
+            setTimeout(function () {
+                b.classList.remove("copied");
+                var u = window.OIA ? OIA.t("Copy link") : "Copy link";
+                b.setAttribute("aria-label", u);
+                b.setAttribute("title", u);
+            }, 2000);
+        });
+    });
+});
+
+/* Calculateur ROI. Les libelles sont du HTML statique, traduits par oia-i18n.js ;
+   seuls les nombres s'ecrivent ici, formates par Intl dans la langue affichee. */
+(function () {
+    var EXEMPLES = {
+        invoice:  { runs: 500,  before: 10, after: 2,   err1: 5, err2: 1, fix: 15 },
+        entry:    { runs: 800,  before: 5,  after: 1,   err1: 4, err2: 1, fix: 10 },
+        routing:  { runs: 1200, before: 3,  after: 0.5, err1: 3, err2: 1, fix: 10 },
+        approval: { runs: 200,  before: 12, after: 3,   err1: 2, err2: 1, fix: 20 }
+    };
+    var COUTS = { rate: 25, adopt: 80, build: 5000, train: 8, soft: 30, maint: 15 };
+    var champ = function (id) { return document.getElementById("roi-" + id); };
+    var val = function (id) { var v = champ(id).valueAsNumber; return v > 0 ? v : 0; };
+    function remplir(o) { Object.keys(o).forEach(function (k) { champ(k).value = o[k]; }); }
+
+    function locale() {
+        var l = window.OIA && OIA.langue ? OIA.langue() : "en";
+        return l === "en" ? "en-US" : l;
+    }
+    /* "always" : sans lui, l'espagnol ecrit 1200 € alors que le site ecrit 1.200 €. */
+    function nb(v, o) { return new Intl.NumberFormat(locale(), Object.assign({ useGrouping: "always" }, o)).format(v); }
+    var eur = function (v) { return nb(v, { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); };
+    var eur2 = function (v) { return nb(v, { style: "currency", currency: "EUR", maximumFractionDigits: 2 }); };
+    var unite = function (v, u) { return nb(v, { style: "unit", unit: u, unitDisplay: "long", maximumFractionDigits: 1 }); };
+    var pct = function (v) { return nb(v / 100, { style: "percent", maximumFractionDigits: 1 }); };
+
+    function calculer() {
+        var runs = val("runs") * Math.min(val("adopt"), 100) / 100;
+        var rate = val("rate");
+        var parRun = val("before") - val("after");
+        var heures = runs * parRun / 60;
+        var labor = heures * rate * 12;
+        var errors = runs * (Math.min(val("err1"), 100) - Math.min(val("err2"), 100)) / 100 * val("fix") / 60 * rate * 12;
+        var running = val("soft") * 12 + val("maint") / 100 * val("build");
+        var net = labor + errors - running;
+        var upfront = val("build") + val("train") * rate;
+        return {
+            hours: heures, perrun: parRun, labor: labor, errors: errors, running: running, net: net, upfront: upfront,
+            payback: net > 0 ? upfront / (net / 12) : null,
+            roi: upfront > 0 ? (net - upfront) / upfront * 100 : null
+        };
+    }
+
+    function ecrire(attr, cle, texte) {
+        document.querySelectorAll("[" + attr + '="' + cle + '"]').forEach(function (el) { el.textContent = texte; });
+    }
+
+    function afficher() {
+        var r = calculer();
+        ecrire("data-out", "payback", r.payback === null ? "" : unite(r.payback, "month"));
+        document.querySelectorAll(".roi-never").forEach(function (el) { el.hidden = r.payback !== null; });
+        document.querySelector(".roi-warn").hidden = r.payback !== null;
+        ecrire("data-out", "roi", r.roi === null ? (r.net > 0 ? "∞" : pct(0)) : nb(r.roi / 100, { style: "percent", maximumFractionDigits: 0 }));
+        ecrire("data-out", "net", eur(r.net));
+        ecrire("data-out", "hours", unite(r.hours, "hour"));
+        ecrire("data-out", "perrun", unite(r.perrun, "minute"));
+        ecrire("data-out", "labor", eur(r.labor));
+        ecrire("data-out", "errors", eur(r.errors));
+        ecrire("data-out", "running", eur(r.running));
+        ecrire("data-out", "upfront", eur(r.upfront));
+    }
+
+    /* Le rapport imprime reprend les saisies, lues au moment d'imprimer. */
+    function rapport() {
+        var type = champ("type");
+        ecrire("data-rr", "type", type.options[type.selectedIndex].text);
+        ecrire("data-rr", "runs", nb(val("runs"), { maximumFractionDigits: 0 }));
+        ecrire("data-rr", "before", unite(val("before"), "minute"));
+        ecrire("data-rr", "after", unite(val("after"), "minute"));
+        ecrire("data-rr", "rate", eur2(val("rate")));
+        ["adopt", "err1", "err2", "maint"].forEach(function (k) { ecrire("data-rr", k, pct(val(k))); });
+        ecrire("data-rr", "fix", unite(val("fix"), "minute"));
+        ecrire("data-rr", "build", eur(val("build")));
+        ecrire("data-rr", "train", unite(val("train"), "hour"));
+        ecrire("data-rr", "soft", eur2(val("soft")));
+        ecrire("data-rr", "date", new Intl.DateTimeFormat(locale(), { dateStyle: "long" }).format(new Date()));
+    }
+
+    remplir(EXEMPLES.invoice);
+    remplir(COUTS);
+    afficher();
+    champ("type").addEventListener("change", function () {
+        if (EXEMPLES[this.value]) remplir(EXEMPLES[this.value]);
+        afficher();
+    });
+    document.getElementById("calculator").addEventListener("input", afficher);
+    document.addEventListener("oia:lang", afficher);
+    window.addEventListener("beforeprint", rapport);
+    document.getElementById("roi-print").addEventListener("click", function () { rapport(); window.print(); });
+})();
+</script>
+</body>
+</html>

@@ -12,7 +12,7 @@ The website is written in English, its canonical language; French, Spanish and G
 
 The domain carries the agency (root pages), its case studies and its tools:
 
-- **Tools**: https://www.optimizia.xyz/tools/ presents the tools the agency built and opened to everyone. The main one is **SEOPlus!** (https://www.optimizia.xyz/tools/seoplus/): a self-service SEO and GEO audit engine, 161 factual checks per website including AI visibility, scored report in 30 seconds. Dedicated description: https://www.optimizia.xyz/tools/seoplus/llms.txt
+- **Tools**: https://www.optimizia.xyz/tools/ presents the tools the agency built and opened to everyone. The main one is **SEOPlus!** (https://www.optimizia.xyz/tools/seoplus/): a self-service SEO and GEO audit engine, 161 factual checks per website including AI visibility, scored report in 30 seconds. Dedicated description: https://www.optimizia.xyz/tools/seoplus/llms.txt. The second is the **Automation ROI calculator** (https://www.optimizia.xyz/tools/automation-roi-calculator/): it estimates the payback period, first-year ROI and net yearly savings of automating one business process, computed in the browser, free, no email, report printable as PDF.
 - **Case studies**: https://www.optimizia.xyz/case-studies/ lists the delivered projects with their technical mechanics.
 - **Blog**: https://www.optimizia.xyz/blog/ publishes practical articles on automating the repetitive work of small businesses and SMEs.
 
@@ -26,6 +26,7 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 - [The 3 levers](https://www.optimizia.xyz/levers.html): how diagnosis, automation and knowledge management combine, explained in detail
 - [Contact](https://www.optimizia.xyz/contact.html): a free 20-minute discovery call, no commitment
 - [Tools](https://www.optimizia.xyz/tools/): the tools built by the agency, and how to tell whether your need calls for the tool or the agency
+- [Automation ROI calculator](https://www.optimizia.xyz/tools/automation-roi-calculator/): what business process automation is, and a free calculator for one process: inputs (runs per month, minutes per run by hand and once automated, loaded hourly cost, adoption rate, error rates and minutes to fix one error, implementation cost, training hours, software per month, maintenance as a share of implementation), outputs (hours saved, labor savings, error costs avoided, running costs, net savings per year, payback period, first-year ROI), formulas published on the page, and a worked invoice example (500 invoices a month, 10 to 2 minutes each, 25 € an hour, payback just under four months with an assumed 5,000 € build, not an agency price; agency PoC and MVP from 1,500 € excl. VAT)
 - [Agence IA à Béziers](https://www.optimizia.xyz/agence-ia-beziers.html): the French local page, Béziers and its region
 - [Legal notice](https://www.optimizia.xyz/legal-notice.html): publisher, legal entity, GDPR, cookies
 
