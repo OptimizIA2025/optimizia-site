@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25. */
+   Regenere le 2026-09-25 (T-134 : carte IRPA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "Intelligent Robotic Process Automation: A Practical Framework for SMEs": "Intelligente robotergestützte Prozessautomatisierung: ein praktischer Leitfaden für KMU",
+        "What intelligent robotic process automation adds for an SME: robot or API workflow, a six-step method, five tools compared with checked prices, and the hidden costs.": "Was intelligente robotergestützte Prozessautomatisierung einem KMU bringt: Roboter oder API-Workflow, eine Methode in sechs Schritten, fünf Tools im Vergleich mit geprüften Preisen und die versteckten Kosten.",
         "AI Automation Consultant for SMEs: Get Working Workflows, Not Just Advice": "Berater für KI-Automatisierung für KMU: Workflows, die laufen, nicht nur Ratschläge",
         "What an AI automation consultant should deliver for an SME: three profiles compared, six selection criteria, a real client example and published starting prices.": "Was ein Berater für KI-Automatisierung einem KMU liefern sollte: drei Profile im Vergleich, sechs Auswahlkriterien, ein echtes Kundenbeispiel und veröffentlichte Einstiegspreise.",
         "Intelligent Process Automation (IPA): A Practical Guide for SMEs": "Intelligente Prozessautomatisierung (IPA): ein praktischer Leitfaden für KMU",

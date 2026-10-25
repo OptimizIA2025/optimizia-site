@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - intelligent-robotic-process-automation</title>
+<!-- Source du visuel de l'article IRPA : un robot jouet mecanique en fer-blanc rouge, cle a remontoir, sur fond
+     moutarde. A gauche, une pile de factures aux mises en page differentes (Invoice, Factura, Rechnung) ; le robot
+     les lit avec ses yeux-lampes ; a droite, un registre recoit fournisseur, montant et echeance des factures dont
+     il est sur, rapprochees du bon de commande, et une enveloppe « To a person » recoit celle dont il n'est pas sur.
+     La these de l'article : l'IA lit, le robot tape, une personne recoit le reste.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/intelligent-robotic-process-automation.html        (og : titre + scene)
+     /_meeeters/visuels/intelligent-robotic-process-automation.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats et degrades lisses seulement : pas de grain ni de texture fine (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --mustard: #E7B53C; --ink: #1F2433; --soft: #5A4A1E; --paper: #FBF7EC; --red: #D7372B; --red-dk: #A8261D; --tin: #C9CED6; --tin-dk: #8D949F; --lamp: #FFE07A; --green: #2E7D4F; --kraft: #D8B47F; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--mustard); }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(80% 90% at 45% 40%, #F0C75A 0%, var(--mustard) 55%, #D69E26 100%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.brand { position: absolute; left: 48px; top: 40px; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 48px; top: 100px; width: 640px; }
+.copy h1 { font-weight: 800; font-size: 50px; line-height: 1.02; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 14px; font-size: 15px; color: var(--soft); }
+.scene { position: absolute; left: 0; top: 0; width: 1200px; height: 630px; transform-origin: 0 0; }
+.og .scene { transform: translate(250px, 168px) scale(.76); }
+svg text { font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+.foot { position: absolute; left: 48px; bottom: 30px; font-size: 15px; color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>Intelligent robotic<br>process automation</h1>
+    <span class="mono">The AI reads · the robot types · a person gets the rest</span>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+      <linearGradient id="tin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E05346"/><stop offset=".55" stop-color="#D7372B"/><stop offset="1" stop-color="#A8261D"/></linearGradient>
+      <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E3E7EC"/><stop offset=".5" stop-color="#C9CED6"/><stop offset="1" stop-color="#8D949F"/></linearGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#FFF4C2"/><stop offset=".55" stop-color="#FFE07A"/><stop offset="1" stop-color="#F2B92E"/></radialGradient>
+      <linearGradient id="beam" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#FFF4C2" stop-opacity=".85"/><stop offset="1" stop-color="#FFF4C2" stop-opacity="0"/></linearGradient>
+    </defs>
+
+    <!-- pile de factures -->
+    <g transform="translate(60,170)">
+      <g transform="translate(-26,-78) rotate(-11 130 170)"><rect x="10" y="20" width="240" height="300" rx="6" fill="#F4EEDD" stroke="#C9BC97" stroke-width="2"/>
+        <rect x="30" y="40" width="200" height="34" fill="#7FA36B"/><text x="42" y="63" font-size="16" fill="#FBF7EC">RECHNUNG</text></g>
+      <g transform="translate(52,-30) rotate(7 130 170)"><rect x="14" y="16" width="240" height="300" rx="6" fill="#FFFDF6" stroke="#C9BC97" stroke-width="2"/>
+        <rect x="168" y="30" width="70" height="44" rx="4" fill="#5B7DB1"/><text x="34" y="50" font-size="16" fill="#2D3E5C">FACTURA</text></g>
+      <g transform="translate(0,26) rotate(-2 130 170)"><rect x="20" y="10" width="240" height="300" rx="6" fill="var(--paper)" stroke="#C9BC97" stroke-width="2"/>
+        <text x="40" y="52" font-size="20" fill="var(--ink)">INVOICE</text>
+        <text x="40" y="78" font-size="14" fill="#6B6250">No. 2026-1043</text>
+        <rect x="40" y="100" width="190" height="2" fill="#D8CDB0"/>
+        <text x="40" y="128" font-size="14" fill="#6B6250">Acme Supplies</text>
+        <rect x="40" y="146" width="150" height="10" rx="2" fill="#E6DCC2"/><rect x="40" y="166" width="170" height="10" rx="2" fill="#E6DCC2"/><rect x="40" y="186" width="120" height="10" rx="2" fill="#E6DCC2"/>
+        <rect x="40" y="214" width="190" height="2" fill="#D8CDB0"/>
+        <text x="40" y="246" font-size="15" fill="var(--ink)">TOTAL</text><text x="230" y="246" font-size="15" fill="var(--ink)" text-anchor="end">€1,240.00</text>
+        <text x="40" y="276" font-size="14" fill="#6B6250">Due 15 Nov</text>
+        <rect x="34" y="226" width="206" height="30" rx="4" fill="none" stroke="#F2B92E" stroke-width="3"/></g>
+    </g>
+
+    <!-- faisceaux des yeux vers la facture -->
+    <polygon points="540,206 300,360 300,420" fill="url(#beam)"/>
+    <polygon points="586,206 300,380 300,440" fill="url(#beam)" opacity=".6"/>
+
+    <!-- robot -->
+    <g transform="translate(470,60)">
+      <rect x="91" y="34" width="8" height="40" fill="#B4BAC4"/>
+      <circle cx="95" cy="28" r="14" fill="var(--red)"/><circle cx="91" cy="24" r="4" fill="#F28B80"/>
+      <rect x="20" y="72" width="150" height="112" rx="22" fill="url(#tin)"/>
+      <rect x="38" y="96" width="114" height="62" rx="14" fill="#2B2F3A"/>
+      <circle cx="72" cy="127" r="18" fill="url(#glow)"/><circle cx="118" cy="127" r="18" fill="url(#glow)"/>
+      <rect x="10" y="108" width="12" height="40" rx="5" fill="url(#steel)"/><rect x="168" y="108" width="12" height="40" rx="5" fill="url(#steel)"/>
+      <rect x="70" y="184" width="50" height="16" fill="url(#steel)"/>
+      <rect x="0" y="198" width="190" height="200" rx="26" fill="url(#tin)"/>
+      <rect x="30" y="222" width="130" height="100" rx="12" fill="var(--paper)"/>
+      <text x="95" y="252" font-size="15" fill="var(--ink)" text-anchor="middle">OCR · NLP</text>
+      <circle cx="58" cy="290" r="12" fill="#2B2F3A"/><line x1="58" y1="290" x2="64" y2="281" stroke="var(--lamp)" stroke-width="3"/>
+      <circle cx="95" cy="290" r="12" fill="#2B2F3A"/><line x1="95" y1="290" x2="101" y2="281" stroke="var(--lamp)" stroke-width="3"/>
+      <circle cx="132" cy="290" r="12" fill="#2B2F3A"/><line x1="132" y1="290" x2="124" y2="282" stroke="#FF7A6B" stroke-width="3"/>
+      <g fill="#F28B80"><circle cx="16" cy="214" r="4"/><circle cx="174" cy="214" r="4"/><circle cx="16" cy="382" r="4"/><circle cx="174" cy="382" r="4"/></g>
+      <!-- bras -->
+      <path d="M0 240 C -40 250 -60 290 -70 330" stroke="url(#steel)" stroke-width="18" fill="none" stroke-linecap="round"/>
+      <path d="M190 240 C 240 236 270 210 300 180" stroke="url(#steel)" stroke-width="18" fill="none" stroke-linecap="round"/>
+      <circle cx="-72" cy="336" r="16" fill="var(--tin-dk)"/><circle cx="302" cy="176" r="16" fill="var(--tin-dk)"/>
+      <!-- cle a remontoir -->
+      <rect x="186" y="300" width="34" height="10" fill="url(#steel)"/>
+      <ellipse cx="236" cy="290" rx="16" ry="26" fill="none" stroke="url(#steel)" stroke-width="10"/>
+      <ellipse cx="236" cy="322" rx="16" ry="26" fill="none" stroke="url(#steel)" stroke-width="10"/>
+      <!-- jambes -->
+      <rect x="40" y="398" width="34" height="58" fill="url(#steel)"/><rect x="116" y="398" width="34" height="58" fill="url(#steel)"/>
+      <rect x="24" y="452" width="66" height="22" rx="8" fill="#2B2F3A"/><rect x="100" y="452" width="66" height="22" rx="8" fill="#2B2F3A"/>
+    </g>
+    <ellipse cx="565" cy="540" rx="150" ry="14" fill="#B5841C" opacity=".45"/>
+
+    <!-- registre -->
+    <g transform="translate(800,96)">
+      <rect x="6" y="8" width="340" height="232" rx="10" fill="#C7951F" opacity=".5"/>
+      <rect x="0" y="0" width="340" height="232" rx="10" fill="var(--paper)"/>
+      <rect x="0" y="0" width="340" height="44" rx="10" fill="var(--ink)"/><rect x="0" y="30" width="340" height="14" fill="var(--ink)"/>
+      <text x="20" y="29" font-size="16" fill="var(--paper)">ENTERED</text><text x="320" y="29" font-size="14" fill="#C9CED6" text-anchor="end">AUTO</text>
+      <text x="20" y="80" font-size="14" fill="#6B6250">VENDOR</text><text x="320" y="80" font-size="15" fill="var(--ink)" text-anchor="end">Acme Supplies</text>
+      <rect x="20" y="92" width="300" height="2" fill="#E6DCC2"/>
+      <text x="20" y="120" font-size="14" fill="#6B6250">AMOUNT</text><text x="320" y="120" font-size="15" fill="var(--ink)" text-anchor="end">€1,240.00</text>
+      <rect x="20" y="132" width="300" height="2" fill="#E6DCC2"/>
+      <text x="20" y="160" font-size="14" fill="#6B6250">DUE</text><text x="320" y="160" font-size="15" fill="var(--ink)" text-anchor="end">15 Nov</text>
+      <g transform="rotate(-4 170 200)"><rect x="44" y="180" width="252" height="36" rx="6" fill="none" stroke="var(--green)" stroke-width="3"/>
+        <text x="170" y="204" font-size="15" fill="var(--green)" text-anchor="middle">✓ MATCHED TO PO</text></g>
+    </g>
+
+    <!-- enveloppe vers une personne -->
+    <g transform="translate(830,380)">
+      <rect x="6" y="8" width="290" height="150" rx="8" fill="#C7951F" opacity=".5"/>
+      <rect x="0" y="0" width="290" height="150" rx="8" fill="var(--kraft)"/>
+      <path d="M0 6 L145 86 L290 6" fill="none" stroke="#B88F55" stroke-width="3"/>
+      <rect x="40" y="94" width="210" height="40" rx="6" fill="var(--paper)"/>
+      <text x="145" y="120" font-size="16" fill="var(--ink)" text-anchor="middle">TO A PERSON</text>
+      <rect x="196" y="-18" width="110" height="30" rx="15" fill="var(--ink)"/>
+      <text x="251" y="2" font-size="14" fill="var(--lamp)" text-anchor="middle">LOW CONF.</text>
+    </g>
+  </svg>
+
+  <div class="foot mono only-art">Reads any layout · enters what it is sure of · escalates the rest</div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25. */
+   Regenere le 2026-09-25 (T-134 : carte IRPA). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -13,6 +13,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "Intelligent Robotic Process Automation: A Practical Framework for SMEs": "Automatisation robotisée intelligente des processus : un cadre pratique pour les PME",
+        "What intelligent robotic process automation adds for an SME: robot or API workflow, a six-step method, five tools compared with checked prices, and the hidden costs.": "Ce que l'automatisation robotisée intelligente des processus apporte à une PME : robot ou workflow par API, une méthode en six étapes, cinq outils comparés avec des prix vérifiés, et les coûts cachés.",
         "AI Automation Consultant for SMEs: Get Working Workflows, Not Just Advice": "Consultant en automatisation IA pour PME : des workflows qui tournent, pas seulement des conseils",
         "What an AI automation consultant should deliver for an SME: three profiles compared, six selection criteria, a real client example and published starting prices.": "Ce qu'un consultant en automatisation IA doit livrer à une PME : trois profils comparés, six critères de sélection, un exemple client réel et des prix de départ publiés.",
         "Intelligent Process Automation (IPA): A Practical Guide for SMEs": "Automatisation intelligente des processus (IPA) : un guide pratique pour les PME",
