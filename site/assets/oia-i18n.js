@@ -38,8 +38,9 @@
        libelle, un dictionnaire en cache chercherait encore l'ancienne. Le
        25/10, la nav gagne le menu Home (huit cles par dictionnaire). Le 26/10,
        les cles de la nav et du pied de page quittent les dictionnaires de page
-       pour le dictionnaire commun. */
-    var VERSION = '9';
+       pour le dictionnaire commun. Le 26/10 encore, « Béziers · » rejoint le
+       pied de page espagnol et allemand, ou il manquait. */
+    var VERSION = '10';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
