@@ -15,7 +15,8 @@
    La page declare ce qu'elle est sur la balise script :
      <script src="assets/oia-i18n.js?v=1" data-page="index" defer></script>
    data-page nomme le dictionnaire (i18n/index.fr.js), data-base deplace le
-   dossier pour les pages qui ne sont pas a la racine. */
+   dossier pour les pages qui ne sont pas a la racine. La nav, le menu mobile
+   et le pied de page, identiques partout, vivent dans i18n/commun.fr.js. */
 (function () {
     'use strict';
 
@@ -35,8 +36,10 @@
        avec le chiffre. Le 08/09, le bouton d'appel de la nav passe de
        « Free audit » a « Book a call » sur les 34 pages : la cle change avec le
        libelle, un dictionnaire en cache chercherait encore l'ancienne. Le
-       25/10, la nav gagne le menu Home (huit cles par dictionnaire). */
-    var VERSION = '8';
+       25/10, la nav gagne le menu Home (huit cles par dictionnaire). Le 26/10,
+       les cles de la nav et du pied de page quittent les dictionnaires de page
+       pour le dictionnaire commun. */
+    var VERSION = '9';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
@@ -77,18 +80,48 @@
         return (d && d.attr) || {};
     }
 
+    /* Le dictionnaire commun porte la nav, le menu mobile et le pied de page :
+       un libelle de chrome se change dans 3 fichiers au lieu d'une copie par
+       page (105 fichiers pour le menu Home le 25/10). Ses cles sont en anglais :
+       une page ecrite dans une autre langue (Beziers) garde les siennes. Il est
+       fusionne dans le dictionnaire de la page, qui l'emporte sur une cle en
+       double. */
+    var COMMUN = SOURCE === 'en';
+
+    function fusionner(code) {
+        var page = (window.OIA_I18N || {})[code];
+        var commun = (window.OIA_I18N_COMMUN || {})[code];
+        if (!page || !commun) return;
+        Object.keys(commun.html).forEach(function (k) {
+            if (!Object.prototype.hasOwnProperty.call(page.html, k)) page.html[k] = commun.html[k];
+        });
+    }
+
     function charger(code, suite) {
         if (code === SOURCE || dicos[code]) { suite(true); return; }
         if (enVol[code]) { enVol[code].push(suite); return; }
         enVol[code] = [suite];
 
+        var attendus = COMMUN ? 2 : 1;
+        var tousLa = true;
+        function arrive(ok) {
+            tousLa = tousLa && ok;
+            if (--attendus) return;
+            if (tousLa) fusionner(code);
+            fini(code, tousLa);
+        }
+        inserer(BASE + PAGE + '.' + code + '.js?v=' + VERSION, arrive);
+        if (COMMUN) inserer(BASE + 'commun.' + code + '.js?v=' + VERSION, arrive);
+    }
+
+    /* Un dictionnaire absent ou casse laisse la page en anglais plutot que de la
+       figer a moitie traduite : la page comme le commun doivent arriver. */
+    function inserer(src, suite) {
         var s = document.createElement('script');
-        s.src = BASE + PAGE + '.' + code + '.js?v=' + VERSION;
+        s.src = src;
         s.async = true;
-        s.onload = function () { fini(code, true); };
-        /* Un dictionnaire absent ou casse laisse la page en anglais plutot que
-           de la figer a moitie traduite. */
-        s.onerror = function () { fini(code, false); };
+        s.onload = function () { suite(true); };
+        s.onerror = function () { suite(false); };
         document.head.appendChild(s);
     }
 

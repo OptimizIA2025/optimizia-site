@@ -4,22 +4,9 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
-        "Home": "Startseite",
-        "Why now": "Ausgangslage",
-        "Benefits": "Nutzen",
-        "Results": "Ergebnisse",
-        "The method": "Die Methode",
-        "Our formats": "Unsere Formate",
-        "Testimonials": "Kundenstimmen",
-        "Services": "Leistungen",
-        "Case studies": "Referenzen",
-        "Blog": "Blog",
-        "About": "Über uns",
-        "Book a call": "Termin buchen",
         "Legal Notice | OptimizIA.xyz": "Impressum | OptimizIA.xyz",
         "&lt; Back to home": "&lt; Zurück zur Startseite",
         "Legal information": "Rechtliche Informationen",
-        "Legal Notice": "Impressum",
         "In accordance with the provisions of articles 6-III and 19 of French Law No. 2004-575 of June 21, 2004 on Confidence in the Digital Economy (L.C.E.N.).": "Gemäß den Bestimmungen der Artikel 6-III und 19 des französischen Gesetzes Nr. 2004-575 vom 21. Juni 2004 über das Vertrauen in die digitale Wirtschaft (L.C.E.N.).",
 
         "1. Site publisher": "1. Websitebetreiber",
