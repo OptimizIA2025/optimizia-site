@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "Resources": "Recursos",
         "AI &amp; Automation Case Studies | OptimizIA.xyz": "Casos de éxito en IA y automatización | OptimizIA.xyz",
         "Services": "Servicios",

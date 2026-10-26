@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "Zapier Workflow Automation Tool | OptimizIA.xyz": "Herramienta de automatización con Zapier | OptimizIA.xyz",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

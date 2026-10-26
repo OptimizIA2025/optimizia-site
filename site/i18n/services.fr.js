@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "Our services: diagnostic, PoC &amp; MVP, copiloting | OptimizIA.xyz": "Nos offres : diagnostic, PoC &amp; MVP, copilotage | OptimizIA.xyz",
         "Services": "Offres",
         "Case studies": "Réalisations",

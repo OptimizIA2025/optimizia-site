@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "Workflow Marketing Automation: SME Comparison Guide": "Automatisation marketing par workflows : le guide comparatif pour les PME",
         "Services": "Offres",
         "Case studies": "Réalisations",

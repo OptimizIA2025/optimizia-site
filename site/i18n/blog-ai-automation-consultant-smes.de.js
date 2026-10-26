@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Home": "Startseite",
+        "Why now": "Ausgangslage",
+        "Benefits": "Nutzen",
+        "Results": "Ergebnisse",
+        "The method": "Die Methode",
+        "Our formats": "Unsere Formate",
+        "Testimonials": "Kundenstimmen",
         "AI Automation Consultant for SMEs | Fixed-Price PoC": "Berater für KI-Automatisierung für KMU | PoC zum Festpreis",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

@@ -1,8 +1,12 @@
-/* Bascule clair/sombre. Charge SYNCHRONE dans le <head> (anti-flash : l'attribut
+/* Chrome de la nav, charge sur toutes les pages.
+ *
+ * Bascule clair/sombre. Charge SYNCHRONE dans le <head> (anti-flash : l'attribut
  * data-theme doit etre pose avant le premier rendu). Le choix vit dans
  * localStorage ; par defaut le site reste clair, comme il a ete concu.
  * Les boutons sont injectes a cote de chaque selecteur de langue
- * ([data-lang-picker] : nav desktop + menu mobile). */
+ * ([data-lang-picker] : nav desktop + menu mobile).
+ *
+ * Menu « Home » (.nav-dd) : les sections de l'accueil. Styles dans site.css. */
 (function () {
     var KEY = 'oia-theme';
     var racine = document.documentElement;
@@ -45,6 +49,44 @@
         }
         peindre();
     }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', injecter);
-    else injecter();
+
+    /* A la souris, le survol ouvre et ferme ; un clic sur le bouton ne doit donc
+       pas refermer un menu que le survol vient d'ouvrir. Au doigt et au clavier,
+       le bouton bascule. */
+    function menuAccueil(dd) {
+        var btn = dd.querySelector('.nav-dd-btn');
+        var minuterie = null;
+        var souris = false;
+        function poser(ouvert) {
+            clearTimeout(minuterie);
+            dd.classList.toggle('open', ouvert);
+            btn.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+        }
+        dd.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') poser(true); });
+        dd.addEventListener('pointerleave', function (e) {
+            if (e.pointerType === 'mouse') minuterie = setTimeout(function () { poser(false); }, 150);
+        });
+        btn.addEventListener('pointerdown', function (e) { souris = e.pointerType === 'mouse'; });
+        btn.addEventListener('click', function () {
+            poser(souris || !dd.classList.contains('open'));
+            souris = false;
+        });
+        /* Sur l'accueil le lien fait defiler la page sans la recharger : le menu
+           doit se refermer de lui-meme. */
+        dd.querySelector('.nav-dd-menu').addEventListener('click', function (e) {
+            if (e.target.closest('a')) poser(false);
+        });
+        dd.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && dd.classList.contains('open')) { poser(false); btn.focus(); }
+        });
+        dd.addEventListener('focusout', function (e) { if (!dd.contains(e.relatedTarget)) poser(false); });
+        document.addEventListener('pointerdown', function (e) { if (!dd.contains(e.target)) poser(false); });
+    }
+
+    function demarrer() {
+        injecter();
+        document.querySelectorAll('.nav-dd').forEach(menuAccueil);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', demarrer);
+    else demarrer();
 })();

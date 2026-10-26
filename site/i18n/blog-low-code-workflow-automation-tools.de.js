@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Home": "Startseite",
+        "Why now": "Ausgangslage",
+        "Benefits": "Nutzen",
+        "Results": "Ergebnisse",
+        "The method": "Die Methode",
+        "Our formats": "Unsere Formate",
+        "Testimonials": "Kundenstimmen",
         "Low Code Workflow Automation Tools: A Real Shortlist": "Low-Code-Tools für Workflow-Automatisierung: eine echte Auswahl",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

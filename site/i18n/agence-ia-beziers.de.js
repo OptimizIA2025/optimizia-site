@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Accueil": "Startseite",
+        "Constat": "Ausgangslage",
+        "Bénéfices": "Nutzen",
+        "Résultats": "Ergebnisse",
+        "La méthode": "Die Methode",
+        "Nos formats": "Unsere Formate",
+        "Témoignages": "Kundenstimmen",
         "Agence IA à Béziers | OptimizIA.xyz": "KI-Agentur in Béziers | OptimizIA.xyz",
         "Offres": "Leistungen",
         "Réalisations": "Referenzen",

@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "Workflow Automation for Small Businesses: Best AI Tools": "Automatisation des workflows pour les petites entreprises : les meilleurs outils IA",
         "Services": "Offres",
         "Case studies": "Réalisations",

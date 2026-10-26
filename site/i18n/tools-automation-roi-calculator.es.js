@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "What Is Business Process Automation? ROI Calculator": "¿Qué es la automatización de procesos de negocio? Calculadora de ROI",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

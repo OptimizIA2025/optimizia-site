@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "n8n Workflow Automation: A Practical Guide for SMEs": "Automatización de flujos de trabajo con n8n: guía práctica para pymes",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Home": "Startseite",
+        "Why now": "Ausgangslage",
+        "Benefits": "Nutzen",
+        "Results": "Ergebnisse",
+        "The method": "Die Methode",
+        "Our formats": "Unsere Formate",
+        "Testimonials": "Kundenstimmen",
         "Intelligent Automation: A Practical Framework for SMEs": "Intelligente Automatisierung: ein praktischer Leitfaden für KMU",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

@@ -3,6 +3,11 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "Resources": "Recursos",
         "OptimizIA.xyz | AI &amp; Automation for SMEs": "OptimizIA.xyz | IA y automatización para pymes",
         "Services": "Servicios",

@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "Resources": "Recursos",
         "Brand Websites and Visual Identity | OptimizIA.xyz": "Sitios web de marca e identidad visual | OptimizIA.xyz",
         "Services": "Servicios",

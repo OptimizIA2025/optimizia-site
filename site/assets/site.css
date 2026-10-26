@@ -316,17 +316,118 @@ html body .mobile-overlay.active { display: block; opacity: 1; }
 
 /* Un seul point de rupture, dans les deux sens : sans la regle min-width, les
    pages dont la feuille bascule a 768px garderaient leurs liens desktop entre
-   769 et 900px alors que leurs voisines sont deja en burger. */
-@media (max-width: 900px) {
+   769 et 900px alors que leurs voisines sont deja en burger.
+   Rupture de la nav a 1100px depuis le menu Home (25/10) : en allemand, la
+   barre complete demande 1174px, et le logo, compresse par flexbox, se
+   deformait (deja 228px de large au lieu de 268 a 901px avant le menu). */
+@media (max-width: 1100px) {
     html body .nav-links { display: none; }
     html body .hamburger { display: flex; }
     html body .mobile-menu { display: flex; }
 }
-@media (min-width: 901px) {
-    html body .nav-links { display: flex; align-items: center; gap: 32px; }
+@media (min-width: 1101px) {
+    html body .nav-links { display: flex; align-items: center; gap: 28px; }
     html body .hamburger { display: none; }
     html body .mobile-menu,
     html body .mobile-overlay { display: none; }
+}
+/* L'espagnol est la langue la plus large : a 1101px, 35px restent entre le
+   logo et le menu avec cet espacement. */
+@media (min-width: 1101px) and (max-width: 1240px) {
+    html body .nav-links { gap: 16px; }
+}
+html body .nav-logo { flex-shrink: 0; }
+
+/* Menu « Home » : les sections de l'accueil, accessibles depuis toutes les
+   pages (l'accueil est long). Ouverture et fermeture pilotees par oia-theme.js
+   (classe .open). Ferme, le panneau est en visibility: hidden, donc hors de la
+   tabulation. Dans le menu mobile, un <details> natif fait l'accordeon. */
+html body .nav-dd { position: relative; }
+html body .nav-dd-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 0; border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);
+    transition: color .2s ease;
+}
+html body .nav-dd-btn:hover,
+html body .nav-dd.open .nav-dd-btn { color: var(--orange); }
+html body .nav-dd-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 4px; }
+html body .nav-dd-btn svg {
+    width: 12px; height: 12px; fill: none; stroke: currentColor;
+    stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+    transition: transform .2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+html body .nav-dd.open .nav-dd-btn svg { transform: rotate(180deg); }
+html body .nav-dd-menu {
+    position: absolute; top: calc(100% + 30px); left: -14px;
+    display: flex; flex-direction: column; min-width: 232px; padding: 6px;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    transform-origin: top left;
+    opacity: 0; visibility: hidden; transform: translateY(-4px) scale(.98);
+    transition: opacity .12s ease, transform .12s cubic-bezier(0.23, 1, 0.32, 1), visibility 0s linear .12s;
+}
+/* Pont invisible entre le bouton et le panneau : la souris traverse l'ecart
+   sans que le survol se perde. */
+html body .nav-dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -32px; height: 32px; }
+html body .nav-dd.open .nav-dd-menu {
+    opacity: 1; visibility: visible; transform: none;
+    transition: opacity .16s ease, transform .2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0s;
+}
+html body .nav-dd-menu a {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 9px 12px; border-radius: 9px;
+    color: var(--text); white-space: nowrap;
+    transition: background-color .15s ease, color .15s ease;
+}
+html body .nav-dd-menu a:hover { background: var(--orange-light); color: var(--orange); }
+html body .nav-dd-menu a:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; }
+html body .nav-dd-n {
+    font-family: 'JetBrains Mono', monospace; font-size: .7rem; font-weight: 500;
+    letter-spacing: .04em; color: var(--text-muted);
+    transition: color .15s ease;
+}
+html body .nav-dd-menu a:hover .nav-dd-n { color: var(--orange); }
+
+/* L'accordeon allonge le menu mobile : il doit pouvoir defiler, et sur toute
+   la hauteur visible (100vh deborde sous la barre d'outils de Safari iOS). */
+html body .mobile-menu { height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+html body .mm-dd { border-bottom: 1px solid var(--border); }
+html body .mm-dd summary {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0; font-size: 1.1rem; font-weight: 600; color: var(--text);
+    list-style: none; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+html body .mm-dd summary::-webkit-details-marker { display: none; }
+html body .mm-dd summary::after {
+    content: ""; width: 8px; height: 8px; margin-right: 4px;
+    border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+html body .mm-dd[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+html body .mm-dd-list { display: flex; flex-direction: column; padding: 0 0 12px; }
+html body .mobile-menu .mm-dd-list a {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 10px 0; border-bottom: 0;
+    font-size: 1rem; font-weight: 500; color: var(--text-secondary);
+    transition: color .2s ease;
+}
+html body .mobile-menu .mm-dd-list a:hover { color: var(--orange); }
+@supports (interpolate-size: allow-keywords) {
+    html body .mm-dd { interpolate-size: allow-keywords; }
+    html body .mm-dd::details-content {
+        height: 0; overflow: clip;
+        transition: height .25s cubic-bezier(0.23, 1, 0.32, 1), content-visibility .25s allow-discrete;
+    }
+    html body .mm-dd[open]::details-content { height: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html body .nav-dd-menu,
+    html body .nav-dd.open .nav-dd-menu { transform: none; }
+    html body .nav-dd-btn svg,
+    html body .mm-dd summary::after,
+    html body .mm-dd::details-content { transition: none; }
 }
 
 :root[data-theme="dark"] #navbar,
