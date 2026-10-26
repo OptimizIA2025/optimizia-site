@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "Resources": "Ressources",
         "SEOPlus!, SEO Audit and AI Visibility | OptimizIA.xyz": "SEOPlus!, audit SEO et visibilité IA | OptimizIA.xyz",
         "Services": "Offres",

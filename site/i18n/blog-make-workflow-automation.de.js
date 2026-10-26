@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Home": "Startseite",
+        "Why now": "Ausgangslage",
+        "Benefits": "Nutzen",
+        "Results": "Ergebnisse",
+        "The method": "Die Methode",
+        "Our formats": "Unsere Formate",
+        "Testimonials": "Kundenstimmen",
         "Make Workflow Automation: A Practical Guide": "Workflow-Automatisierung mit Make: ein Praxisleitfaden",
         "Services": "Leistungen",
         "Case studies": "Referenzen",

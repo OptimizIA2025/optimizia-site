@@ -77,42 +77,49 @@
        par page stylent `footer p`, `footer a` et `footer button`, il faut les
        battre sans !important. */
     var CSS =
-        '#newsletter{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px 56px;align-items:center;' +
-        'padding:0 0 44px;margin:0 0 48px;border-bottom:1px solid rgba(248,250,252,.10);scroll-margin-top:96px}' +
-        '#newsletter .oianl-sur{margin:0 0 10px;font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:500;' +
+        '#newsletter{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 48px;' +
+        'padding:0 0 32px;margin:0 0 40px;border-bottom:1px solid rgba(248,250,252,.08);scroll-margin-top:96px}' +
+        '#newsletter .oianl-texte{flex:1 1 320px;min-width:0}' +
+        '#newsletter .oianl-titre{margin:0 0 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;' +
+        'font-size:1rem;font-weight:600;line-height:1.4;letter-spacing:-.01em;color:#F8FAFC}' +
+        '#newsletter .oianl-sur{font-family:"JetBrains Mono",monospace;font-size:.66rem;font-weight:500;' +
         'letter-spacing:.12em;text-transform:uppercase;color:#FDBA74}' +
-        '#newsletter .oianl-titre{margin:0 0 8px;font-size:1.5rem;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:#F8FAFC}' +
-        '#newsletter .oianl-corps{margin:0;max-width:46ch;font-size:.95rem;line-height:1.65;color:#94A3B8}' +
-        '#newsletter form{display:flex;gap:10px;margin:0}' +
-        '#newsletter .oianl-champ{flex:1 1 auto;min-width:0;height:48px;padding:0 18px;border-radius:999px;' +
-        'border:1px solid rgba(248,250,252,.18);background:rgba(248,250,252,.04);color:#F8FAFC;font:inherit;font-size:.95rem;' +
+        '#newsletter .oianl-corps{margin:0;font-size:.875rem;line-height:1.55;color:#94A3B8}' +
+        '#newsletter .oianl-action{flex:0 1 380px;min-width:0}' +
+        /* Champ et bouton dans une seule pilule. Le contour s'eclaire au focus :
+           c'est lui qui porte l'indicateur de focus du champ. */
+        '#newsletter form{display:flex;align-items:center;gap:4px;height:44px;margin:0;padding:4px;' +
+        'border:1px solid rgba(248,250,252,.14);border-radius:999px;background:rgba(248,250,252,.03);' +
         'transition:border-color 160ms ease,background-color 160ms ease}' +
+        '#newsletter form:focus-within{border-color:rgba(253,186,116,.7);background:rgba(248,250,252,.06)}' +
+        '#newsletter .oianl-champ{flex:1 1 auto;min-width:0;height:100%;padding:0 8px 0 14px;border:0;outline:0;' +
+        'background:transparent;color:#F8FAFC;font:inherit;font-size:.875rem}' +
         '#newsletter .oianl-champ::placeholder{color:#64748B}' +
-        '#newsletter .oianl-champ:focus-visible{outline:2px solid #FDBA74;outline-offset:2px;border-color:#FDBA74;background:rgba(248,250,252,.07)}' +
-        /* Bouton en filet : l'aplat orange reste reserve au vrai appel a l'action
-           du site, la prise de rendez-vous. */
-        '#newsletter .oianl-btn{flex:none;height:48px;padding:0 24px;border-radius:999px;border:1px solid #F97316;' +
-        'background:transparent;color:#FDBA74;font:inherit;font-size:.95rem;font-weight:600;white-space:nowrap;cursor:pointer;' +
+        /* L'aplat orange reste reserve au vrai appel a l'action du site, la prise
+           de rendez-vous : le bouton ne le prend qu'au survol. */
+        '#newsletter .oianl-btn{flex:none;height:34px;padding:0 16px;border:0;border-radius:999px;' +
+        'background:rgba(248,250,252,.1);color:#F8FAFC;font:inherit;font-size:.82rem;font-weight:600;white-space:nowrap;cursor:pointer;' +
         'transition:transform 160ms cubic-bezier(.23,1,.32,1),background-color 160ms ease,color 160ms ease}' +
         '#newsletter .oianl-btn:active{transform:scale(.97)}' +
-        '#newsletter .oianl-btn:focus-visible{outline:2px solid #FDBA74;outline-offset:3px}' +
+        '#newsletter .oianl-btn:focus-visible{outline:2px solid #FDBA74;outline-offset:2px}' +
         '#newsletter .oianl-btn[disabled]{opacity:.6;cursor:default;transform:none}' +
         '@media (hover:hover) and (pointer:fine){#newsletter .oianl-btn:not([disabled]):hover{background:#F97316;color:#fff}}' +
-        '#newsletter .oianl-note{margin:12px 0 0;padding:0 4px;font-size:.8rem;line-height:1.5;color:#64748B}' +
+        '#newsletter .oianl-note{margin:8px 0 0;padding:0 16px;font-size:.75rem;line-height:1.5;color:#64748B}' +
         '#newsletter .oianl-note a{color:#94A3B8;text-decoration:underline;text-underline-offset:2px}' +
-        '#newsletter .oianl-etat{margin:10px 0 0;padding:0 4px;min-height:1.5em;font-size:.88rem;line-height:1.5;color:#FCA5A5}' +
+        '#newsletter .oianl-etat{margin:8px 0 0;padding:0 16px;min-height:1.5em;font-size:.8rem;line-height:1.5;color:#FCA5A5}' +
         '#newsletter .oianl-etat:empty{display:none}' +
-        '#newsletter .oianl-merci{margin:0;display:flex;align-items:center;gap:12px;font-size:1rem;line-height:1.5;color:#F8FAFC;' +
+        '#newsletter .oianl-merci{margin:0;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;font-size:.9rem;line-height:1.5;color:#F8FAFC;' +
         'transition:opacity 220ms cubic-bezier(.23,1,.32,1),transform 220ms cubic-bezier(.23,1,.32,1)}' +
         '#newsletter .oianl-merci[data-entree]{opacity:0;transform:translateY(6px)}' +
-        '#newsletter .oianl-merci::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.18)}' +
+        '#newsletter .oianl-merci::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.16)}' +
         '#newsletter .oianl-piege{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}' +
         '#newsletter .oianl-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}' +
         /* Apres les regles qui posent un display : a specificite egale la
            derniere gagne, et sans elle l'attribut hidden ne masque rien. */
         '#newsletter [hidden]{display:none}' +
-        '@media (max-width:900px){#newsletter{grid-template-columns:1fr;padding-bottom:36px;margin-bottom:40px}}' +
-        '@media (max-width:480px){#newsletter form{flex-direction:column}#newsletter .oianl-btn{width:100%}}' +
+        /* 16 px au doigt : en dessous, Safari iOS zoome sur le champ au focus. */
+        '@media (max-width:900px){#newsletter{padding-bottom:28px;margin-bottom:36px}' +
+        '#newsletter .oianl-action{flex-basis:100%}#newsletter .oianl-champ{font-size:16px}}' +
         '@media (prefers-reduced-motion:reduce){#newsletter .oianl-btn,#newsletter .oianl-merci{transition:none}' +
         '#newsletter .oianl-btn:active{transform:none}#newsletter .oianl-merci[data-entree]{transform:none}}' +
         '@media print{#newsletter{display:none}}';
@@ -221,12 +228,11 @@
         bloc.id = 'newsletter';
         bloc.setAttribute('data-no-i18n', '');
         bloc.innerHTML =
-            '<div>' +
-                '<p class="oianl-sur"></p>' +
-                '<p class="oianl-titre">The Automation Brief</p>' +
+            '<div class="oianl-texte">' +
+                '<p class="oianl-titre"><span class="oianl-sur"></span>The Automation Brief</p>' +
                 '<p class="oianl-corps"></p>' +
             '</div>' +
-            '<div>' +
+            '<div class="oianl-action">' +
                 '<form novalidate>' +
                     '<label class="oianl-vh" for="oianl-email"></label>' +
                     '<input class="oianl-champ" id="oianl-email" type="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" required>' +

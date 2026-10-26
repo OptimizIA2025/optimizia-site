@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "No Code Workflow Automation Platform: SME Shortlist": "Plateforme no-code d'automatisation des workflows : la shortlist pour les PME",
         "Services": "Offres",
         "Case studies": "Réalisations",

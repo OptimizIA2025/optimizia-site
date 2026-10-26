@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.en = {
     html: {
+        "Accueil": "Home",
+        "Constat": "Why now",
+        "Bénéfices": "Benefits",
+        "Résultats": "Results",
+        "La méthode": "The method",
+        "Nos formats": "Our formats",
+        "Témoignages": "Testimonials",
         "Agence IA à Béziers | OptimizIA.xyz": "AI Agency in Béziers | OptimizIA.xyz",
         "Offres": "Services",
         "Réalisations": "Case studies",

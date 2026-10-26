@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "What Is Business Process Automation? The SME Shortlist": "¿Qué es la automatización de procesos de negocio? La selección para pymes",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

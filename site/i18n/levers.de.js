@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Home": "Startseite",
+        "Why now": "Ausgangslage",
+        "Benefits": "Nutzen",
+        "Results": "Ergebnisse",
+        "The method": "Die Methode",
+        "Our formats": "Unsere Formate",
+        "Testimonials": "Kundenstimmen",
         "Resources": "Ressourcen",
         "The 3 levers: diagnose, automate, capitalise | OptimizIA.xyz": "Die 3 Hebel: diagnostizieren, automatisieren, kapitalisieren | OptimizIA.xyz",
         "Services": "Leistungen",

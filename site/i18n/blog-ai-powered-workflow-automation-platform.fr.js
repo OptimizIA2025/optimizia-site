@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "AI Powered Workflow Automation Platform: SME Shortlist": "Plateforme d'automatisation des workflows par IA : la shortlist pour les PME",
         "Services": "Offres",
         "Case studies": "Réalisations",

@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "n8n Workflow Automation: A Practical Guide for SMEs": "Automatisation des workflows avec n8n : le guide pratique pour les PME",
         "Services": "Offres",
         "Case studies": "Réalisations",

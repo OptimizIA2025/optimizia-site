@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "Power Automate for Workflow Automation: SME Comparison": "Power Automate para automatizar flujos de trabajo: comparativa para pymes",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

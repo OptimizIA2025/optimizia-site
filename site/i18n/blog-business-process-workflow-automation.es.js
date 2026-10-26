@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
+        "Home": "Inicio",
+        "Why now": "El diagnóstico",
+        "Benefits": "Beneficios",
+        "Results": "Resultados",
+        "The method": "El método",
+        "Our formats": "Nuestros formatos",
+        "Testimonials": "Testimonios",
         "What Is Workflow Automation? n8n, Make and Zapier Compared": "¿Qué es la automatización de flujos de trabajo? n8n, Make y Zapier comparados",
         "Services": "Servicios",
         "Case studies": "Casos de éxito",

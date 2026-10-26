@@ -3,6 +3,13 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "Home": "Accueil",
+        "Why now": "Constat",
+        "Benefits": "Bénéfices",
+        "Results": "Résultats",
+        "The method": "La méthode",
+        "Our formats": "Nos formats",
+        "Testimonials": "Témoignages",
         "Intelligent Robotic Process Automation: A Practical Guide": "Automatisation robotisée intelligente des processus : guide pratique",
         "Services": "Offres",
         "Case studies": "Réalisations",
