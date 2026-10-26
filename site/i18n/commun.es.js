@@ -32,7 +32,7 @@ window.OIA_I18N_COMMUN.es = {
         "SEO &amp; GEO audit (SEOPlus!)": "Auditoría SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contacto",
         "contact@optimizia.xyz": "contact@optimizia.xyz",
-        "Béziers · Occitanie, France<br>&amp; International": "Occitania, Francia<br>e internacional",
+        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Occitania, Francia<br>e internacional",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
         "Legal Notice": "Aviso legal"
     }
