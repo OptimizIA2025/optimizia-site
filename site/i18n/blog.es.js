@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-134 : carte IRPA). */
+   Regenere le 2026-09-25 (T-139 : carte IBM Intelligent Automation). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Automatización inteligente de IBM o herramientas ligeras: guía para pymes",
+        "What IBM's intelligent automation platform covers, the five-step customer care pattern it automates, and when an SME is better served by n8n, Make and RAG.": "Qué cubre la plataforma de automatización inteligente de IBM, el patrón de atención al cliente en cinco pasos que automatiza y cuándo a una pyme le sirven mejor n8n, Make y RAG.",
         "Intelligent Robotic Process Automation: A Practical Framework for SMEs": "Automatización robótica inteligente de procesos: un marco práctico para pymes",
         "What intelligent robotic process automation adds for an SME: robot or API workflow, a six-step method, five tools compared with checked prices, and the hidden costs.": "Lo que la automatización robótica inteligente de procesos aporta a una pyme: robot o flujo por API, un método en seis pasos, cinco herramientas comparadas con precios verificados y los costes ocultos.",
         "AI Automation Consultant for SMEs: Get Working Workflows, Not Just Advice": "Consultor de automatización con IA para pymes: flujos que funcionan, no solo consejos",

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - ibm-intelligent-automation</title>
+<!-- Source du visuel de l'article « IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs » :
+     un port en papier decoupe au couchant, tons terracotta et peche. A quai sous deux grues, un porte-conteneurs
+     charge de conteneurs Workflow, Decisions, Content, Documents, RPA (les briques d'une plateforme d'entreprise) ;
+     au premier plan, un petit voilier avec une seule personne a bord quitte le port. La these de l'article : une
+     plateforme d'entreprise est un cargo, il lui faut un port et un equipage ; une PME a besoin d'un bateau qu'elle
+     mene seule. Aucun logo ni nom de marque dans l'image.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/ibm-intelligent-automation.html        (og : titre + scene)
+     /_meeeters/visuels/ibm-intelligent-automation.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats et degrades lisses seulement, ombres portees des couches de papier : pas de grain (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #4A1E10; --soft: #8A4428; --cream: #FCEFE2; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #F2C7A5; }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.brand { position: absolute; left: 48px; top: 40px; z-index: 2; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 48px; top: 104px; width: 600px; z-index: 2; }
+.copy h1 { font-weight: 800; font-size: 52px; line-height: 1.02; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 16px; font-size: 15px; color: var(--soft); }
+.scene { position: absolute; left: 0; top: 0; }
+svg text { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .06em; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>IBM automation,<br>or a lighter stack?</h1>
+    <span class="mono">Built for volume · or built to sail yourself</span>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FBE3CC"/><stop offset=".62" stop-color="#F5BE97"/><stop offset="1" stop-color="#EE9F78"/>
+      </linearGradient>
+      <filter id="ombre" x="-10%" y="-20%" width="120%" height="150%">
+        <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#6B2612" flood-opacity=".32"/>
+      </filter>
+      <filter id="ombre-l" x="-10%" y="-20%" width="120%" height="150%">
+        <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#6B2612" flood-opacity=".28"/>
+      </filter>
+    </defs>
+
+    <rect width="1200" height="630" fill="url(#sky)"/>
+    <circle cx="430" cy="372" r="118" fill="#FDF0DF" filter="url(#ombre-l)"/>
+    <circle cx="430" cy="372" r="92" fill="#FEF6EC"/>
+
+    <!-- nuages de papier -->
+    <g filter="url(#ombre-l)" fill="#FBE7D4">
+      <path d="M760 128 a26 26 0 0 1 44 -14 a34 34 0 0 1 62 8 a22 22 0 0 1 26 30 h-140 a20 20 0 0 1 8 -24z"/>
+      <path d="M980 214 a20 20 0 0 1 34 -10 a28 28 0 0 1 50 6 a18 18 0 0 1 22 24 h-114 a16 16 0 0 1 8 -20z"/>
+      <path d="M120 268 a18 18 0 0 1 30 -8 a24 24 0 0 1 44 6 a16 16 0 0 1 18 20 h-100 a14 14 0 0 1 8 -18z" class="only-art"/>
+    </g>
+    <g fill="none" stroke="#9C4A2C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M640 236 q8 -8 16 0 q8 -8 16 0"/><path d="M690 212 q6 -6 12 0 q6 -6 12 0"/>
+    </g>
+
+    <!-- cote lointaine -->
+    <path d="M560 392 C620 360 660 372 720 352 C790 330 840 356 900 338 C960 322 1020 340 1080 326 C1130 316 1170 324 1200 318 V400 H560z" fill="#E9A27C" filter="url(#ombre-l)"/>
+
+    <!-- mer, couche du fond -->
+    <path id="mer1" fill="#EB9A72" filter="url(#ombre)"/>
+
+    <!-- grues de quai -->
+    <g fill="#8C3B22" filter="url(#ombre-l)">
+      <g transform="translate(1056,0)">
+        <rect x="0" y="176" width="12" height="270"/><rect x="74" y="176" width="12" height="270"/>
+        <rect x="-4" y="300" width="94" height="10"/><path d="M6 300 L80 200 L86 206 L12 306z"/>
+        <rect x="-236" y="166" width="364" height="14"/><path d="M30 166 L43 108 L56 166z"/>
+        <path d="M43 112 L-200 166 L-196 170 L43 118z"/><path d="M43 112 L124 166 L120 170 L43 118z"/>
+        <rect x="-150" y="180" width="22" height="16" rx="2"/><rect x="-140" y="196" width="2" height="104"/>
+      </g>
+      <g transform="translate(1148,24) scale(.8)">
+        <rect x="0" y="176" width="12" height="320"/><rect x="74" y="176" width="12" height="320"/>
+        <rect x="-236" y="166" width="364" height="14"/><path d="M30 166 L43 108 L56 166z"/>
+        <path d="M43 112 L-200 166 L-196 170 L43 118z"/>
+      </g>
+    </g>
+
+    <!-- porte-conteneurs -->
+    <g filter="url(#ombre)">
+      <g id="charge">
+        <!-- rangee du bas : briques de la plateforme -->
+        <g transform="translate(580,354)">
+          <rect x="0" y="0" width="118" height="44" rx="2" fill="#FCEFE2"/>
+          <rect x="120" y="0" width="118" height="44" rx="2" fill="#D9784F"/>
+          <rect x="240" y="0" width="118" height="44" rx="2" fill="#F1C29C"/>
+          <rect x="360" y="0" width="118" height="44" rx="2" fill="#B5532F"/>
+          <text x="59" y="28" font-size="15" fill="#8A4428" text-anchor="middle">WORKFLOW</text>
+          <text x="179" y="28" font-size="15" fill="#FCEFE2" text-anchor="middle">DECISIONS</text>
+          <text x="299" y="28" font-size="15" fill="#8A4428" text-anchor="middle">CONTENT</text>
+          <text x="419" y="28" font-size="15" fill="#FCEFE2" text-anchor="middle">DOCUMENTS</text>
+        </g>
+        <!-- rangee du haut -->
+        <g transform="translate(600,308)">
+          <rect x="0" y="0" width="118" height="44" rx="2" fill="#C4603C"/>
+          <rect x="120" y="0" width="118" height="44" rx="2" fill="#FCEFE2"/>
+          <rect x="240" y="0" width="98" height="44" rx="2" fill="#E59A70"/>
+          <rect x="340" y="0" width="98" height="44" rx="2" fill="#F6D7BB"/>
+          <text x="179" y="28" font-size="15" fill="#8A4428" text-anchor="middle">RPA</text>
+        </g>
+        <g fill="none" stroke="#000" stroke-opacity=".08" stroke-width="2">
+          <path d="M600 354 v44 M620 354 v44 M640 354 v44 M660 354 v44 M680 354 v44"/>
+          <path d="M720 308 v44 M740 308 v44 M760 308 v44 M780 308 v44"/>
+          <path d="M840 354 v44 M860 354 v44 M880 354 v44 M900 354 v44 M920 354 v44"/>
+          <path d="M960 354 v44 M980 354 v44 M1000 354 v44 M1020 354 v44 M1040 354 v44"/>
+        </g>
+      </g>
+      <!-- chateau -->
+      <rect x="1062" y="292" width="58" height="108" rx="3" fill="#FCEFE2"/>
+      <rect x="1056" y="284" width="70" height="14" rx="2" fill="#B5532F"/>
+      <g fill="#C4603C"><rect x="1072" y="310" width="12" height="10" rx="1"/><rect x="1094" y="310" width="12" height="10" rx="1"/><rect x="1072" y="334" width="12" height="10" rx="1"/><rect x="1094" y="334" width="12" height="10" rx="1"/></g>
+      <rect x="1100" y="258" width="14" height="28" fill="#8C3B22"/>
+      <!-- coque -->
+      <path d="M528 398 H1150 L1132 468 H578 C556 450 540 428 528 398z" fill="#6E2E1C"/>
+      <rect x="560" y="408" width="560" height="6" fill="#B5532F"/>
+    </g>
+
+    <!-- quai -->
+    <rect x="1000" y="446" width="200" height="22" fill="#7A3420" filter="url(#ombre-l)"/>
+
+    <!-- mer, couches intermediaires -->
+    <path id="mer2" fill="#DE825A" filter="url(#ombre)"/>
+    <path id="mer3" fill="#CC6A44" filter="url(#ombre)"/>
+
+    <!-- voilier, a demi cache par la vague de devant -->
+    <g filter="url(#ombre)">
+      <g transform="translate(150,404)">
+        <rect x="104" y="0" width="5" height="128" fill="#6E2E1C"/>
+        <path d="M100 6 L100 124 L18 124 C40 92 72 50 100 6z" fill="#FCEFE2"/>
+        <path d="M113 18 L113 124 L170 124 C160 96 140 60 113 18z" fill="#F6D7BB"/>
+        <path d="M109 2 L136 10 L109 18z" fill="#C4603C"/>
+        <circle cx="150" cy="118" r="9" fill="#6E2E1C"/><rect x="141" y="128" width="18" height="18" rx="6" fill="#6E2E1C"/>
+        <path d="M158 134 L182 128" stroke="#6E2E1C" stroke-width="4" stroke-linecap="round"/>
+        <path d="M2 140 H196 L176 172 H30 C18 162 8 152 2 140z" fill="#7A3420"/>
+      </g>
+    </g>
+
+    <!-- mer, couche de devant -->
+    <path id="mer4" fill="#B85633" filter="url(#ombre)"/>
+    <path id="mer5" fill="#9E4428" filter="url(#ombre)"/>
+  </svg>
+</div>
+<script>
+/* Vagues : bandes de papier ondulees, crete a la hauteur y, amplitude a, longueur d'onde L, dephasage d. */
+function vague(y, a, L, d) {
+  var p = 'M0 630 V' + y, x = -d;
+  while (x < 1200) { p += ' Q' + (x + L / 4) + ' ' + (y - a) + ' ' + (x + L / 2) + ' ' + y + ' T' + (x + L) + ' ' + y; x += L; }
+  return p + ' V630z';
+}
+document.getElementById('mer1').setAttribute('d', vague(398, 6, 180, 40));
+document.getElementById('mer2').setAttribute('d', vague(462, 9, 230, 90));
+document.getElementById('mer3').setAttribute('d', vague(508, 11, 260, 20));
+document.getElementById('mer4').setAttribute('d', vague(556, 13, 300, 150));
+document.getElementById('mer5').setAttribute('d', vague(598, 12, 340, 60));
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
