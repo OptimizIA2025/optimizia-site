@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-134 : carte IRPA). */
+   Regenere le 2026-09-25 (T-139 : carte IBM Intelligent Automation). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Automatisation intelligente IBM ou outils légers : le guide pour les PME",
+        "What IBM's intelligent automation platform covers, the five-step customer care pattern it automates, and when an SME is better served by n8n, Make and RAG.": "Ce que couvre la plateforme d'automatisation intelligente d'IBM, le schéma de relation client en cinq étapes qu'elle automatise, et quand une PME est mieux servie par n8n, Make et le RAG.",
         "Intelligent Robotic Process Automation: A Practical Framework for SMEs": "Automatisation robotisée intelligente des processus : un cadre pratique pour les PME",
         "What intelligent robotic process automation adds for an SME: robot or API workflow, a six-step method, five tools compared with checked prices, and the hidden costs.": "Ce que l'automatisation robotisée intelligente des processus apporte à une PME : robot ou workflow par API, une méthode en six étapes, cinq outils comparés avec des prix vérifiés, et les coûts cachés.",
         "AI Automation Consultant for SMEs: Get Working Workflows, Not Just Advice": "Consultant en automatisation IA pour PME : des workflows qui tournent, pas seulement des conseils",
