@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-141 : carte AI readiness assessment). */
+   Regenere le 2026-09-25 (T-143 : carte AI proof of concept). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "Preuve de concept IA pour les PME : comment en mener une qui débouche sur quelque chose",
+        "How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.": "Comment mener une preuve de concept IA dans une petite entreprise : une fiche d'une page, cinq étapes, un exemple réel, et ce qui change en route vers le MVP.",
         "AI Readiness Assessment for SMEs: A Six-Question Checklist": "Évaluation de maturité IA pour les PME : la checklist en six questions",
         "Is your SME ready for AI? Six questions to ask about one process, a scoring grid, real examples, and what a diagnostic adds to a self-assessment.": "Votre PME est-elle prête pour l'IA ? Six questions à poser sur un processus, une grille de score, des exemples réels, et ce qu'un diagnostic ajoute à une auto-évaluation.",
         "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Automatisation intelligente IBM ou outils légers : le guide pour les PME",

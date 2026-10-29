@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - ai-proof-of-concept</title>
+<!-- Source du visuel de l'article « AI Proof of Concept for SMEs: How to Run One That Leads Somewhere » (article maison,
+     29/10) : une soufflerie sur fond lavande. Dans la veine d'essai, sombre, des filets de fumee blancs contournent une
+     petite maquette d'avion jaune montee sur son mat ; ventilateur a droite, nid d'abeilles a gauche. Sous la veine, un
+     pupitre : SAMPLE 100 CASES, PASS MARK 90 %, RESULT 93 %, voyant GO MVP. La these : on teste une maquette dans des
+     conditions reelles, contre un seuil fixe d'avance, avant de construire en grand.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/ai-proof-of-concept.html        (og : titre + scene)
+     /_meeeters/visuels/ai-proof-of-concept.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats et degrades lisses seulement : pas de grain (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #24204A; --soft: #4B4580; --indigo: #2E2A5C; --mint: #5FD3A0; --yellow: #F4C54C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #DCD6F2; }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 100% at 45% 30%, #ECE8FA 0%, #DCD6F2 55%, #C8BFEA 100%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.brand { position: absolute; left: 48px; top: 40px; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 48px; top: 104px; width: 600px; }
+.copy h1 { font-weight: 800; font-size: 54px; line-height: 1.02; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 16px; font-size: 15px; color: var(--soft); }
+.scene { position: absolute; left: 0; top: 0; width: 1200px; height: 630px; transform-origin: 0 0; }
+.og .scene { transform: translate(410px, 220px) scale(.68); }
+svg text { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>Test it small,<br>before you build it.</h1>
+    <span class="mono">One task · a real sample · a pass mark</span>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+      <linearGradient id="veine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D3878"/><stop offset="1" stop-color="#26224F"/></linearGradient>
+      <linearGradient id="cadre" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#57519A"/><stop offset="1" stop-color="#3A356F"/></linearGradient>
+      <linearGradient id="aile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD866"/><stop offset="1" stop-color="#E9AE2C"/></linearGradient>
+      <clipPath id="vitre"><rect x="120" y="124" width="860" height="262" rx="14"/></clipPath>
+      <filter id="ombre" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#26224F" flood-opacity=".3"/></filter>
+    </defs>
+
+    <!-- ventilateur -->
+    <g filter="url(#ombre)">
+      <circle cx="1060" cy="255" r="128" fill="url(#cadre)"/>
+      <circle cx="1060" cy="255" r="108" fill="#26224F"/>
+      <g id="pales" fill="#8B84C9"></g>
+      <circle cx="1060" cy="255" r="22" fill="#C9C3EC"/><circle cx="1060" cy="255" r="8" fill="#3A356F"/>
+    </g>
+    <!-- veine d'essai -->
+    <rect x="96" y="100" width="908" height="310" rx="30" fill="url(#cadre)" filter="url(#ombre)"/>
+    <rect x="120" y="124" width="860" height="262" rx="14" fill="url(#veine)"/>
+    <g clip-path="url(#vitre)">
+      <g id="fumee" fill="none" stroke="#F4F2FF" stroke-linecap="round"></g>
+      <!-- nid d'abeilles d'entree -->
+      <g fill="none" stroke="#6F68B3" stroke-width="2" opacity=".7" id="ruche"></g>
+      <!-- mat et maquette -->
+      <rect x="556" y="262" width="8" height="130" fill="#8B84C9"/>
+      <g transform="translate(560,250) scale(-1,1)">
+        <path d="M-120 2 C-118 -10 -96 -16 -60 -16 L70 -14 C96 -13 118 -6 126 2 C118 10 96 14 70 14 L-60 14 C-96 14 -118 12 -120 2z" fill="url(#aile)"/>
+        <path d="M-10 -14 L-44 -70 L-20 -70 L34 -14z" fill="#E9AE2C"/>
+        <path d="M-10 14 L-30 44 L-12 44 L28 14z" fill="#D99A1F"/>
+        <path d="M-108 -6 L-130 -46 L-112 -46 L-86 -10z" fill="#E9AE2C"/>
+        <g fill="#3A356F"><circle cx="70" cy="-3" r="5"/><circle cx="52" cy="-3" r="5"/><circle cx="34" cy="-3" r="5"/></g>
+        <path d="M96 -10 C110 -8 120 -3 124 2" stroke="#FFF2C2" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+    <text x="214" y="160" font-size="15" fill="#B9B3E6">TEST SECTION · 1:20 MODEL</text>
+
+    <!-- pupitre -->
+    <g filter="url(#ombre)">
+      <rect x="96" y="436" width="908" height="124" rx="22" fill="#2E2A5C"/>
+    </g>
+    <g id="lectures"></g>
+    <g transform="translate(870,498)">
+      <circle cx="-44" cy="0" r="16" fill="#5FD3A0" opacity=".25"/><circle cx="-44" cy="0" r="10" fill="#5FD3A0"/>
+      <text x="16" y="7" font-size="20" fill="#D5F5E6" text-anchor="middle">GO MVP</text>
+    </g>
+  </svg>
+</div>
+<script>
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; }
+/* Filets de fumee : lignes horizontales deviees autour de la maquette (bosse gaussienne centree sur x = 600). */
+var f = document.getElementById('fumee');
+[150, 176, 202, 226, 274, 298, 324, 350].forEach(function (y0, i) {
+  var d = y0 - 250, sens = d < 0 ? -1 : 1, A = 46 * Math.exp(-Math.abs(d) / 60), p = '';
+  for (var x = 110; x <= 990; x += 10) {
+    var y = y0 + sens * A * Math.exp(-Math.pow((x - 600) / 120, 2));
+    p += (x === 110 ? 'M' : ' L') + x + ' ' + y.toFixed(1);
+  }
+  el('path', { d: p, 'stroke-width': i % 3 ? 3 : 4, opacity: .55 + (i % 2) * .3 }, f);
+});
+/* Sillage derriere la maquette */
+for (var k = 0; k < 3; k++) el('path', { d: 'M700 ' + (244 + k * 6) + ' C760 ' + (236 + k * 12) + ' 820 ' + (262 - k * 10) + ' 990 ' + (246 + k * 8), 'stroke-width': 2, opacity: .45 }, f);
+/* Nid d'abeilles a l'entree */
+var r = document.getElementById('ruche');
+for (var cx = 130; cx <= 160; cx += 15) for (var cy = 130; cy <= 380; cy += 17) el('rect', { x: cx + ((cy / 17) % 2) * 7, y: cy, width: 12, height: 14, rx: 2 }, r);
+/* Pales du ventilateur */
+var pl = document.getElementById('pales');
+for (var b = 0; b < 6; b++) el('path', { d: 'M1060 255 C1074 220 1100 196 1136 190 C1120 222 1098 244 1060 255z', transform: 'rotate(' + b * 60 + ' 1060 255)' }, pl);
+/* Lectures du pupitre */
+var L = document.getElementById('lectures');
+[['SAMPLE', '100 CASES', 140, '#E6E3FA'], ['PASS MARK', '≥ 90 %', 380, '#E6E3FA'], ['RESULT', '93 %', 620, '#5FD3A0']].forEach(function (c) {
+  el('rect', { x: c[2], y: 458, width: 210, height: 80, rx: 12, fill: '#221F47' }, L);
+  var a = el('text', { x: c[2] + 18, y: 484, 'font-size': 14, fill: '#9C96D6' }, L); a.textContent = c[0];
+  var v = el('text', { x: c[2] + 18, y: 522, 'font-size': 28, fill: c[3] }, L); v.textContent = c[1];
+});
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
