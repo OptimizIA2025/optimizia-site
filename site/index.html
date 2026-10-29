@@ -720,7 +720,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var SAY = say.textContent;
     var sayTween = null;
     function peindreSay() {
-        say.innerHTML = t(SAY).split(' ').map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
+        var words = t(SAY).split(' ');
+        say.textContent = '';
+        words.forEach(function (w, i) {
+            var span = document.createElement('span');
+            span.className = 'w';
+            span.textContent = w;
+            say.appendChild(span);
+            if (i < words.length - 1) say.appendChild(document.createTextNode(' '));
+        });
         if (sayTween) { sayTween.scrollTrigger && sayTween.scrollTrigger.kill(); sayTween.kill(); sayTween = null; }
         if (window.gsap && !calme) sayTween = gsap.to(say.querySelectorAll('.w'), { opacity: 1, stagger: .08, ease: 'none', scrollTrigger: { trigger: say, start: 'top 80%', end: 'bottom 50%', scrub: true } });
     }
