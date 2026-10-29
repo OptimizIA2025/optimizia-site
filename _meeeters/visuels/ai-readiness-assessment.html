@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - ai-readiness-assessment</title>
+<!-- Source du visuel de l'article « AI Readiness Assessment for SMEs: A Six-Question Checklist » (article maison,
+     29/10) : un tableau de bord retro en email bleu nuit sur fond bleu poudre, six cadrans creme a zones rouge,
+     ambre et verte, un par question (Process, Written down, Data, Knowledge, Owner, Numbers). Cinq aiguilles dans le
+     vert, celle de Knowledge dans le rouge ; voyant « 5 / 6 READY ». La these : on evalue un processus, question par
+     question, et on sait quoi corriger d'abord.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/ai-readiness-assessment.html        (og : titre + scene)
+     /_meeeters/visuels/ai-readiness-assessment.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats et degrades lisses seulement : pas de grain (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #1C2B3D; --soft: #3F5873; --navy: #22364E; --navy-dk: #172638; --cream: #FBF5E6; --chrome: #C9D2DC; --red: #E2574C; --amber: #F0B23E; --green: #3E9E6A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: #BCD5E8; }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background: radial-gradient(90% 100% at 50% 35%, #D5E6F3 0%, #BCD5E8 55%, #A2C1DC 100%); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.brand { position: absolute; left: 48px; top: 40px; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 48px; top: 104px; width: 560px; }
+.copy h1 { font-weight: 800; font-size: 54px; line-height: 1.02; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 16px; font-size: 15px; color: var(--soft); }
+.scene { position: absolute; left: 0; top: 0; width: 1200px; height: 630px; transform-origin: 0 0; }
+.og .scene { transform: translate(446px, 204px) scale(.68); }
+svg text { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>Is this process<br>ready for AI?</h1>
+    <span class="mono">Six questions · one process · one honest answer</span>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+      <linearGradient id="email" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B4462"/><stop offset="1" stop-color="#1B2D44"/></linearGradient>
+      <radialGradient id="cadran" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#FFFBF0"/><stop offset="1" stop-color="#EFE6CF"/></radialGradient>
+      <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF2F6"/><stop offset=".5" stop-color="#AEB9C6"/><stop offset="1" stop-color="#E3E8EE"/></linearGradient>
+      <filter id="ombre" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1B2D44" flood-opacity=".35"/></filter>
+    </defs>
+    <!-- planche -->
+    <rect x="150" y="70" width="900" height="500" rx="34" fill="url(#email)" filter="url(#ombre)"/>
+    <rect x="164" y="84" width="872" height="472" rx="26" fill="none" stroke="#3B5878" stroke-width="2"/>
+    <g fill="#8FA3B8"><circle cx="186" cy="106" r="6"/><circle cx="1014" cy="106" r="6"/><circle cx="186" cy="534" r="6"/><circle cx="1014" cy="534" r="6"/></g>
+    <rect x="470" y="92" width="260" height="36" rx="8" fill="url(#chrome)"/>
+    <text x="600" y="116" font-size="15" fill="#22364E" text-anchor="middle">READINESS · 1 PROCESS</text>
+    <g id="cadrans"></g>
+    <!-- voyant -->
+    <g transform="translate(600,536)">
+      <rect x="-104" y="-17" width="208" height="34" rx="17" fill="#13202F"/>
+      <circle cx="-80" cy="0" r="8" fill="#5FD08E"/><circle cx="-80" cy="0" r="13" fill="#5FD08E" opacity=".25"/>
+      <text x="14" y="6" font-size="15" fill="#CFE9D9" text-anchor="middle">5 / 6 READY</text>
+    </g>
+  </svg>
+</div>
+<script>
+/* Six cadrans : arc de 240 degres, zones rouge (Not yet), ambre, verte (Ready), aiguille a la valeur v (0 a 1). */
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; }
+function pt(cx, cy, r, a) { var t = (a - 90) * Math.PI / 180; return [cx + r * Math.cos(t), cy + r * Math.sin(t)]; }
+function arc(cx, cy, r, a0, a1) { var p = pt(cx, cy, r, a0), q = pt(cx, cy, r, a1); return 'M' + p[0] + ' ' + p[1] + ' A' + r + ' ' + r + ' 0 ' + (a1 - a0 > 180 ? 1 : 0) + ' 1 ' + q[0] + ' ' + q[1]; }
+var A0 = -120, A1 = 120;
+function cadran(parent, cx, cy, label, v) {
+  var l = el('text', { x: cx, y: cy + 98, 'font-size': 15, fill: '#E6EDF4', 'text-anchor': 'middle' }, parent); l.textContent = label;
+  var g = el('g', { transform: 'translate(' + cx + ' ' + cy + ') scale(.8) translate(' + -cx + ' ' + -cy + ')' }, parent);
+  el('circle', { cx: cx, cy: cy, r: 92, fill: 'url(#chrome)' }, g);
+  el('circle', { cx: cx, cy: cy, r: 84, fill: 'url(#cadran)' }, g);
+  var zones = [[0, .33, '#E2574C'], [.33, .6, '#F0B23E'], [.6, 1, '#3E9E6A']];
+  zones.forEach(function (z) { el('path', { d: arc(cx, cy, 64, A0 + z[0] * 240, A0 + z[1] * 240), fill: 'none', stroke: z[2], 'stroke-width': 12 }, g); });
+  for (var i = 0; i <= 12; i++) {
+    var a = A0 + i * 20, p = pt(cx, cy, 76, a), q = pt(cx, cy, i % 3 ? 71 : 66, a);
+    el('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], stroke: '#3F5873', 'stroke-width': i % 3 ? 2 : 3, 'stroke-linecap': 'round' }, g);
+  }
+  var t = el('text', { x: cx, y: cy + 50, 'font-size': 18, fill: '#3F5873', 'text-anchor': 'middle' }, g); t.textContent = v > .6 ? 'READY' : 'NOT YET';
+  var a = A0 + v * 240, tip = pt(cx, cy, 70, a), b1 = pt(cx, cy, 7, a - 90), b2 = pt(cx, cy, 7, a + 90), tail = pt(cx, cy, 14, a + 180);
+  el('path', { d: 'M' + tip + ' L' + b1 + ' L' + tail + ' L' + b2 + 'z', fill: v > .6 ? '#1C2B3D' : '#C2392F' }, g);
+  el('circle', { cx: cx, cy: cy, r: 10, fill: '#1C2B3D' }, g);
+  el('circle', { cx: cx, cy: cy, r: 4, fill: '#C9D2DC' }, g);
+}
+var g = document.getElementById('cadrans');
+[['PROCESS', .86, 330, 216], ['WRITTEN DOWN', .78, 600, 216], ['DATA', .82, 870, 216],
+ ['KNOWLEDGE', .18, 330, 404], ['OWNER', .9, 600, 404], ['NUMBERS', .74, 870, 404]].forEach(function (c) { cadran(g, c[2], c[3], c[0], c[1]); });
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

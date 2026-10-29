@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-139 : carte IBM Intelligent Automation). */
+   Regenere le 2026-09-25 (T-141 : carte AI readiness assessment). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "AI Readiness Assessment for SMEs: A Six-Question Checklist": "Evaluación de preparación para la IA en pymes: checklist en seis preguntas",
+        "Is your SME ready for AI? Six questions to ask about one process, a scoring grid, real examples, and what a diagnostic adds to a self-assessment.": "¿Está su pyme lista para la IA? Seis preguntas sobre un proceso, una tabla de puntuación, ejemplos reales y lo que un diagnóstico añade a una autoevaluación.",
         "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Automatización inteligente de IBM o herramientas ligeras: guía para pymes",
         "What IBM's intelligent automation platform covers, the five-step customer care pattern it automates, and when an SME is better served by n8n, Make and RAG.": "Qué cubre la plataforma de automatización inteligente de IBM, el patrón de atención al cliente en cinco pasos que automatiza y cuándo a una pyme le sirven mejor n8n, Make y RAG.",
         "Intelligent Robotic Process Automation: A Practical Framework for SMEs": "Automatización robótica inteligente de procesos: un marco práctico para pymes",
