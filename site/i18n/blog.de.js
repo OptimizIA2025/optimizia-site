@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-141 : carte AI readiness assessment). */
+   Regenere le 2026-09-25 (T-143 : carte AI proof of concept). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "KI-Proof-of-Concept im KMU: so führt er zu einem Ergebnis",
+        "How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.": "Wie ein kleines Unternehmen einen KI-Proof-of-Concept durchführt: ein einseitiges Briefing, fünf Schritte, ein echtes Beispiel und was sich auf dem Weg zum MVP ändert.",
         "AI Readiness Assessment for SMEs: A Six-Question Checklist": "KI-Bereitschaft im KMU bewerten: eine Checkliste mit sechs Fragen",
         "Is your SME ready for AI? Six questions to ask about one process, a scoring grid, real examples, and what a diagnostic adds to a self-assessment.": "Ist Ihr KMU bereit für KI? Sechs Fragen zu einem Prozess, ein Bewertungsraster, echte Beispiele und was eine Analyse über die Selbstbewertung hinaus bringt.",
         "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Intelligente Automatisierung von IBM oder schlanke Tools: ein Leitfaden für KMU",

@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-141 : carte AI readiness assessment). */
+   Regenere le 2026-09-25 (T-143 : carte AI proof of concept). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.es = {
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
         "Automation": "Automatización",
+        "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "Prueba de concepto de IA para pymes: cómo hacer una que lleve a algo",
+        "How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.": "Cómo hacer una prueba de concepto de IA en una pequeña empresa: una ficha de una página, cinco pasos, un ejemplo real y lo que cambia camino del MVP.",
         "AI Readiness Assessment for SMEs: A Six-Question Checklist": "Evaluación de preparación para la IA en pymes: checklist en seis preguntas",
         "Is your SME ready for AI? Six questions to ask about one process, a scoring grid, real examples, and what a diagnostic adds to a self-assessment.": "¿Está su pyme lista para la IA? Seis preguntas sobre un proceso, una tabla de puntuación, ejemplos reales y lo que un diagnóstico añade a una autoevaluación.",
         "IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs": "Automatización inteligente de IBM o herramientas ligeras: guía para pymes",
