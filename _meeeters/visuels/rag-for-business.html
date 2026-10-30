@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - rag-for-business</title>
+<!-- Source du visuel de l'article « RAG for Business: How an SME Turns Its Documents Into an AI Assistant » (article
+     maison, 29/10) : une bibliotheque en pixel art sur fond corail. Une etagere prune etiquetee QUALITY / SALES / HR,
+     un livre manquant (son emplacement cerne de jaune), un chemin de points mene au livre ouvert qui flotte sous une
+     boite de dialogue facon jeu video : question sur la garantie, reponse, et la source [1] (document, page,
+     responsable). La these : l'assistant repond depuis vos documents et dit lequel.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/rag-for-business.html        (og : titre + scene)
+     /_meeeters/visuels/rag-for-business.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats seulement, grille de 5 px, bords nets : pas de degrade ni de grain (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --ink: #231F3F; --plum: #5A2236; --coral: #F2785C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--coral); }
+body { font-family: 'Outfit', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--coral); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.brand { position: absolute; left: 48px; top: 40px; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 48px; top: 104px; width: 600px; }
+.copy h1 { font-weight: 800; font-size: 54px; line-height: 1.02; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 16px; font-size: 15px; color: var(--plum); }
+.scene { position: absolute; left: 0; top: 0; width: 1200px; height: 630px; transform-origin: 0 0; overflow: visible; }
+.og .scene { transform: translate(380px, 196px) scale(.7); }
+svg text { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .04em; }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>Ask your documents,<br>get the source.</h1>
+    <span class="mono">Retrieve · Generate · Cite</span>
+  </div>
+
+  <svg class="scene" viewBox="0 0 1200 630" width="1200" height="630" shape-rendering="crispEdges">
+    <g id="poussiere" fill="#F79A80"></g>
+    <g id="sol"></g>
+    <g id="etagere"></g>
+    <g id="livres"></g>
+    <g id="chemin" fill="#FFF6E6"></g>
+    <g id="livre-ouvert"></g>
+    <g id="dialogue"></g>
+  </svg>
+</div>
+<script>
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) {
+  var e = document.createElementNS(NS, tag);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  parent.appendChild(e);
+  return e;
+}
+function px(x, y, w, h, fill, parent) { return el('rect', { x: x, y: y, width: w, height: h, fill: fill }, parent); }
+function txt(x, y, size, fill, s, parent) { var t = el('text', { x: x, y: y, 'font-size': size, fill: fill }, parent); t.textContent = s; return t; }
+function plus(x, y, c, parent) { px(x, y - 5, 5, 15, c, parent); px(x - 5, y, 15, 5, c, parent); }
+var seed = 7;
+function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+function pick(a) { return a[Math.floor(rnd() * a.length)]; }
+
+/* Poussiere en pixels sur le mur */
+var P = document.getElementById('poussiere');
+[[120, 70], [300, 40], [500, 120], [1170, 450], [520, 300], [880, 470], [1100, 560], [40, 330]].forEach(function (p) { plus(p[0], p[1], '#F79A80', P); });
+
+/* Sol a carreaux */
+var S = document.getElementById('sol');
+px(-600, 540, 2400, 120, '#D9634C', S);
+px(-600, 540, 2400, 10, '#B84C3B', S);
+for (var sx = -600; sx < 1800; sx += 40) for (var sy = 550; sy < 670; sy += 40) {
+  px(sx + ((sy - 550) / 40 % 2 ? 20 : 0), sy, 20, 20, '#CF5A45', S);
+}
+
+/* Etagere : cadre prune, fond, tablettes etiquetees */
+var E = document.getElementById('etagere');
+px(70, 545, 400, 10, '#B84C3B', E);
+px(60, 130, 400, 410, '#4A2338', E);
+px(80, 150, 360, 370, '#6E3754', E);
+px(80, 260, 360, 20, '#4A2338', E);
+px(80, 390, 360, 20, '#4A2338', E);
+[['QUALITY', 275], ['SALES', 405], ['HR', 535]].forEach(function (l) { txt(92, l[1], 14, '#F6E7C8', l[0], E); });
+px(60, 130, 400, 5, '#6B3550', E);
+
+/* Livres, avec un emplacement vide sur la tablette du milieu */
+var L = document.getElementById('livres');
+var teintes = [['#26375E', '#1A2744'], ['#F2B544', '#C98E25'], ['#F6E7C8', '#D8C59E'], ['#2F8F83', '#216A61'], ['#4C6FB0', '#36528A'], ['#B04A6E', '#86344F'], ['#F6E7C8', '#D8C59E']];
+var VIDE = { rang: 1, x: 260, l: 30, h: 90 };
+[[150, 260], [280, 390], [410, 520]].forEach(function (r, ri) {
+  var x = 85;
+  while (x < 440) {
+    if (ri === VIDE.rang && x >= VIDE.x - 25 && x < VIDE.x) x = VIDE.x;
+    if (ri === VIDE.rang && x === VIDE.x) { x += VIDE.l; continue; }
+    var w = pick([20, 25, 30, 30, 35]), h = pick([70, 80, 85, 90, 95]);
+    if (ri === VIDE.rang && x < VIDE.x && x + w > VIDE.x) w = VIDE.x - x;
+    if (x + w > 435) w = 435 - x;
+    if (w < 15) break;
+    var c = pick(teintes);
+    px(x, r[1] - h, w, h, c[0], L);
+    px(x, r[1] - h + 15, w, 5, c[1], L);
+    px(x, r[1] - 20, w, 5, c[1], L);
+    px(x + w - 5, r[1] - h, 5, h, c[1], L);
+    x += w + (rnd() < .15 ? 5 : 0);
+  }
+});
+/* Emplacement vide cerne de jaune */
+var vy = 390 - VIDE.h;
+el('rect', { x: VIDE.x + 2, y: vy + 2, width: VIDE.l - 4, height: VIDE.h - 4, fill: 'none', stroke: '#FFD45C', 'stroke-width': 4, 'stroke-dasharray': '6 6' }, L);
+
+/* Chemin de points : de l'emplacement vide au livre ouvert */
+var C = document.getElementById('chemin');
+var pts = [];
+for (var cx = 305; cx <= 505; cx += 20) pts.push([cx, 330]);
+for (var cy = 350; cy <= 470; cy += 20) pts.push([505, cy]);
+for (var cx2 = 525; cx2 <= 585; cx2 += 20) pts.push([cx2, 470]);
+pts.forEach(function (p) { px(p[0], p[1], 10, 10, '#FFF6E6', C); });
+
+/* Livre ouvert qui flotte, ligne surlignee, marque-page jaune */
+var B = document.getElementById('livre-ouvert');
+px(615, 545, 170, 10, '#B84C3B', B);
+px(600, 440, 200, 80, '#C98E25', B);
+px(605, 430, 90, 80, '#FFF3DA', B);
+px(705, 430, 90, 80, '#FFF3DA', B);
+px(695, 430, 10, 85, '#8A5A2B', B);
+for (var ly = 445; ly <= 495; ly += 12) {
+  px(615, ly, 70, 5, '#CDBB98', B);
+  if (ly === 469) px(712, ly - 5, 76, 15, '#FFD45C', B);
+  px(715, ly, ly === 481 ? 45 : 70, 5, ly === 469 ? '#8A5A2B' : '#CDBB98', B);
+}
+px(770, 410, 15, 30, '#FFD45C', B);
+px(770, 440, 5, 5, '#FFD45C', B); px(780, 440, 5, 5, '#FFD45C', B);
+plus(590, 420, '#FFF6E6', B); plus(820, 455, '#FFF6E6', B); plus(805, 405, '#FFD45C', B);
+
+/* Boite de dialogue facon jeu video, onglet ASSISTANT, source [1] */
+var D = document.getElementById('dialogue');
+px(590, 50, 190, 45, '#1B1830', D);
+px(597, 57, 176, 38, '#FFF6E6', D);
+px(603, 63, 164, 32, '#232046', D);
+txt(620, 86, 16, '#FFD45C', 'ASSISTANT', D);
+px(560, 90, 590, 300, '#1B1830', D);
+px(570, 100, 570, 280, '#FFF6E6', D);
+px(578, 108, 554, 264, '#232046', D);
+[[560, 90], [1140, 90], [560, 380], [1140, 380]].forEach(function (c) { px(c[0], c[1], 10, 10, '#F2785C', D); });
+txt(610, 152, 20, '#B9B3F0', '> HOW LONG IS THE WARRANTY', D);
+txt(610, 180, 20, '#B9B3F0', '  ON THE X200?', D);
+txt(610, 235, 34, '#FFF6E6', '24 MONTHS ON PARTS,', D);
+var r2 = txt(610, 280, 34, '#FFF6E6', '12 ON LABOUR. ', D);
+var t1 = el('tspan', { fill: '#FFD45C' }, r2); t1.textContent = '[1]';
+for (var dx = 610; dx < 1100; dx += 15) px(dx, 302, 10, 4, '#4B4790', D);
+txt(610, 334, 18, '#6FE0B5', '[1] WARRANTY-POLICY.PDF · P.2', D);
+txt(610, 358, 16, '#9C96D6', '    OWNER: QUALITY TEAM', D);
+px(1085, 340, 25, 5, '#FFF6E6', D); px(1090, 345, 15, 5, '#FFF6E6', D); px(1095, 350, 5, 5, '#FFF6E6', D);
+
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>
