@@ -1,5 +1,5 @@
 /* blog, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-143 : carte AI proof of concept). */
+   Regenere le 2026-09-25 (T-144 : carte RAG for business). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.de = {
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Praxisnahe Artikel zur Automatisierung wiederkehrender Arbeit in kleinen und mittleren Unternehmen. Unsere <a href=\"/case-studies/\">Referenzen</a> zeigen, was wir bauen und was es im Alltag verändert.",
         "Automation": "Automatisierung",
+        "RAG for Business: How an SME Turns Its Documents Into an AI Assistant": "RAG für Unternehmen: Wie ein KMU seine Dokumente in einen KI-Assistenten verwandelt",
+        "How RAG turns an SME's own documents into an assistant that cites its sources: where it pays off, when it does not, and how to get the documents ready.": "Wie RAG die eigenen Dokumente eines KMU in einen Assistenten verwandelt, der seine Quellen nennt: wo es sich lohnt, wann nicht und wie man die Dokumente vorbereitet.",
         "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "KI-Proof-of-Concept im KMU: so führt er zu einem Ergebnis",
         "How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.": "Wie ein kleines Unternehmen einen KI-Proof-of-Concept durchführt: ein einseitiges Briefing, fünf Schritte, ein echtes Beispiel und was sich auf dem Weg zum MVP ändert.",
         "AI Readiness Assessment for SMEs: A Six-Question Checklist": "KI-Bereitschaft im KMU bewerten: eine Checkliste mit sechs Fragen",

@@ -1,5 +1,5 @@
 /* blog, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-143 : carte AI proof of concept). */
+   Regenere le 2026-09-25 (T-144 : carte RAG for business). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -8,6 +8,8 @@ window.OIA_I18N.fr = {
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Des articles concrets pour automatiser le travail répétitif des TPE et PME. Nos <a href=\"/case-studies/\">réalisations</a> montrent ce que nous construisons, et ce que cela change au quotidien.",
         "Automation": "Automatisation",
+        "RAG for Business: How an SME Turns Its Documents Into an AI Assistant": "RAG en entreprise : comment une PME transforme ses documents en assistant IA",
+        "How RAG turns an SME's own documents into an assistant that cites its sources: where it pays off, when it does not, and how to get the documents ready.": "Comment le RAG fait des documents d'une PME un assistant qui cite ses sources : où il rapporte, quand il ne rapporte pas, et comment préparer les documents.",
         "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "Preuve de concept IA pour les PME : comment en mener une qui débouche sur quelque chose",
         "How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.": "Comment mener une preuve de concept IA dans une petite entreprise : une fiche d'une page, cinq étapes, un exemple réel, et ce qui change en route vers le MVP.",
         "AI Readiness Assessment for SMEs: A Six-Question Checklist": "Évaluation de maturité IA pour les PME : la checklist en six questions",
