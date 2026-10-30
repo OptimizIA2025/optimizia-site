@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-144 : carte RAG for business). */
+   Regenere le 2026-09-25 (T-145 : categories du blog). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -7,7 +7,11 @@ window.OIA_I18N.es = {
         "The blog": "El blog",
         "Custom AI automation, from the field": "Automatización con IA a medida, desde el terreno",
         "Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href=\"/case-studies/\">case studies</a> show what we build, and what it changes day to day.": "Artículos prácticos para automatizar el trabajo repetitivo de las pymes. Nuestros <a href=\"/case-studies/\">casos de éxito</a> muestran lo que construimos y lo que cambia en el día a día.",
-        "Automation": "Automatización",
+        "All articles": "Todos los artículos",
+        "Getting started": "Para empezar",
+        "Tool guides": "Guías de herramientas",
+        "Comparisons": "Comparativas",
+        "AI in practice": "La IA en la práctica",
         "RAG for Business: How an SME Turns Its Documents Into an AI Assistant": "RAG para empresas: cómo una pyme convierte sus documentos en un asistente de IA",
         "How RAG turns an SME's own documents into an assistant that cites its sources: where it pays off, when it does not, and how to get the documents ready.": "Cómo el RAG convierte los documentos de una pyme en un asistente que cita sus fuentes: dónde compensa, cuándo no y cómo preparar los documentos.",
         "AI Proof of Concept for SMEs: How to Run One That Leads Somewhere": "Prueba de concepto de IA para pymes: cómo hacer una que lleve a algo",

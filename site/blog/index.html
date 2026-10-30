@@ -230,16 +230,6 @@
     <style>
     .post-head .lead a { color: var(--orange-deep); text-decoration: underline; text-underline-offset: 2px; }
     .blog-card-art img { display: block; width: 100%; height: auto; }
-    .blog-grid.is-featured > .blog-card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); column-gap: 36px; align-content: center; padding: 28px; }
-    .blog-grid.is-featured > .blog-card:first-child > .blog-card-art { grid-column: 1; grid-row: 1 / span 4; margin: 0; align-self: center; }
-    .blog-grid.is-featured > .blog-card:first-child > :not(.blog-card-art) { grid-column: 2; }
-    .blog-grid.is-featured > .blog-card:first-child > .blog-card-tag { align-self: end; }
-    .blog-grid.is-featured > .blog-card:first-child h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); letter-spacing: -0.025em; line-height: 1.2; }
-    .blog-grid.is-featured > .blog-card:first-child p { flex: none; font-size: .98rem; }
-    @media (max-width: 800px) {
-      .blog-grid.is-featured > .blog-card:first-child { display: flex; padding: 24px; }
-      .blog-grid.is-featured > .blog-card:first-child > .blog-card-art { margin: -6px 0 16px; }
-    }
     </style>
 </head>
 <body>
@@ -307,157 +297,165 @@
           <p class="lead">Practical articles on automating the repetitive work of small and mid-size businesses. Our <a href="/case-studies/">case studies</a> show what we build, and what it changes day to day.</p>
         </div>
 
-        <div class="blog-grid is-featured">
-          <a class="blog-card" href="/blog/rag-for-business/">
+        <div class="blog-filter" role="group" aria-label="Filter articles by theme">
+          <button class="chip active" type="button" aria-pressed="true" data-cat="all"><span>All articles</span><span class="chip-n"></span></button>
+          <button class="chip" type="button" aria-pressed="false" data-cat="start"><span>Getting started</span><span class="chip-n"></span></button>
+          <button class="chip" type="button" aria-pressed="false" data-cat="tools"><span>Tool guides</span><span class="chip-n"></span></button>
+          <button class="chip" type="button" aria-pressed="false" data-cat="compare"><span>Comparisons</span><span class="chip-n"></span></button>
+          <button class="chip" type="button" aria-pressed="false" data-cat="ai"><span>AI in practice</span><span class="chip-n"></span></button>
+        </div>
+
+        <div class="blog-grid">
+          <a class="blog-card" data-cat="ai" href="/blog/rag-for-business/">
             <div class="blog-card-art"><img src="/assets/blog/rag-for-business.webp" alt="" width="1200" height="630"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">AI in practice</span>
             <h2>RAG for Business: How an SME Turns Its Documents Into an AI Assistant</h2>
             <p>How RAG turns an SME's own documents into an assistant that cites its sources: where it pays off, when it does not, and how to get the documents ready.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-30">October 30, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/ai-proof-of-concept/">
+          <a class="blog-card" data-cat="start" href="/blog/ai-proof-of-concept/">
             <div class="blog-card-art"><img src="/assets/blog/ai-proof-of-concept.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Getting started</span>
             <h2>AI Proof of Concept for SMEs: How to Run One That Leads Somewhere</h2>
             <p>How to run an AI proof of concept in a small business: a one-page brief, five steps, a real example, and what changes on the way to the MVP.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-29">October 29, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/ai-readiness-assessment/">
+          <a class="blog-card" data-cat="start" href="/blog/ai-readiness-assessment/">
             <div class="blog-card-art"><img src="/assets/blog/ai-readiness-assessment.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Getting started</span>
             <h2>AI Readiness Assessment for SMEs: A Six-Question Checklist</h2>
             <p>Is your SME ready for AI? Six questions to ask about one process, a scoring grid, real examples, and what a diagnostic adds to a self-assessment.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-29">October 29, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/ibm-intelligent-automation/">
+          <a class="blog-card" data-cat="tools" href="/blog/ibm-intelligent-automation/">
             <div class="blog-card-art"><img src="/assets/blog/ibm-intelligent-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Tool guides</span>
             <h2>IBM Intelligent Automation or a Lighter Stack: A Guide for SMEs</h2>
             <p>What IBM's intelligent automation platform covers, the five-step customer care pattern it automates, and when an SME is better served by n8n, Make and RAG.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-26">October 26, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/intelligent-robotic-process-automation/">
+          <a class="blog-card" data-cat="ai" href="/blog/intelligent-robotic-process-automation/">
             <div class="blog-card-art"><img src="/assets/blog/intelligent-robotic-process-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">AI in practice</span>
             <h2>Intelligent Robotic Process Automation: A Practical Framework for SMEs</h2>
             <p>What intelligent robotic process automation adds for an SME: robot or API workflow, a six-step method, five tools compared with checked prices, and the hidden costs.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-24">October 24, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/ai-automation-consultant-smes/">
+          <a class="blog-card" data-cat="start" href="/blog/ai-automation-consultant-smes/">
             <div class="blog-card-art"><img src="/assets/blog/ai-automation-consultant-smes.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Getting started</span>
             <h2>AI Automation Consultant for SMEs: Get Working Workflows, Not Just Advice</h2>
             <p>What an AI automation consultant should deliver for an SME: three profiles compared, six selection criteria, a real client example and published starting prices.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-22">October 22, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/intelligent-process-automation-ipa/">
+          <a class="blog-card" data-cat="ai" href="/blog/intelligent-process-automation-ipa/">
             <div class="blog-card-art"><img src="/assets/blog/intelligent-process-automation-ipa.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">AI in practice</span>
             <h2>Intelligent Process Automation (IPA): A Practical Guide for SMEs</h2>
             <p>Intelligent process automation for SMEs: three layers, one narrow AI step and a fallback for low-confidence cases, with a real lead monitoring example and our starting prices.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-20">October 20, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/power-automate-for-workflow-automation/">
+          <a class="blog-card" data-cat="tools" href="/blog/power-automate-for-workflow-automation/">
             <div class="blog-card-art"><img src="/assets/blog/power-automate-for-workflow-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Tool guides</span>
             <h2>Power Automate for Workflow Automation: A Realistic Comparison for SMEs</h2>
             <p>Power Automate compared with n8n and Make for SMEs: where it wins inside Microsoft 365, where premium connectors and per-user licenses cost you, with prices checked in October 2026.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-19">October 19, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/n8n-workflow-automation/">
+          <a class="blog-card" data-cat="tools" href="/blog/n8n-workflow-automation/">
             <div class="blog-card-art"><img src="/assets/blog/n8n-workflow-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Tool guides</span>
             <h2>n8n Workflow Automation: Build Reliable Automations Without the Busywork</h2>
             <p>How n8n works, a five-step method to build workflows that keep running, the five mistakes that break them, prices checked against Zapier, Make and Power Automate, and when n8n is overkill for an SME.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-18">October 18, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/enterprise-workflow-automation-guide/">
+          <a class="blog-card" data-cat="compare" href="/blog/enterprise-workflow-automation-guide/">
             <div class="blog-card-art"><img src="/assets/blog/enterprise-workflow-automation-guide.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Enterprise Workflow Automation: A Practical Guide to Choosing the Right Path</h2>
             <p>n8n, Make, an AI assistant with RAG, an agency build or custom code: five routes to automate across departments, compared on setup, maintenance and risk, with our real prices and the three things comparisons miss.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-13">October 13, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/make-workflow-automation/">
+          <a class="blog-card" data-cat="tools" href="/blog/make-workflow-automation/">
             <div class="blog-card-art"><img src="/assets/blog/make-workflow-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Tool guides</span>
             <h2>Make Workflow Automation: A Practical Guide to Building Reliable Automations</h2>
             <p>How Make scenarios, credits and error handlers really work, a six-step method to build workflows that keep running, the four mistakes that break them and the maintenance cost nobody budgets, with prices checked in October 2026.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-13">October 13, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/ai-powered-workflow-automation-platform/">
+          <a class="blog-card" data-cat="compare" href="/blog/ai-powered-workflow-automation-platform/">
             <div class="blog-card-art"><img src="/assets/blog/ai-powered-workflow-automation-platform.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>AI Powered Workflow Automation Platform: The Real Shortlist for SMEs</h2>
             <p>n8n, Make, Zapier, UiPath, Power Automate or a custom build: six ways to automate with AI compared on integrations, AI features, hosting and pricing, with entry prices checked in October 2026 and figures from our own builds.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-13">October 13, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/workflow-marketing-automation/">
+          <a class="blog-card" data-cat="compare" href="/blog/workflow-marketing-automation/">
             <div class="blog-card-art"><img src="/assets/blog/workflow-marketing-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Workflow Marketing Automation: The Only Comparison That Matters for SMEs</h2>
             <p>Build it yourself, hire an agency or buy an enterprise platform: three ways to automate lead follow-up compared on time to first value, maintenance, total cost and handover, with checked prices and two workflows we run ourselves.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-09">October 9, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/no-code-workflow-automation-platform/">
+          <a class="blog-card" data-cat="compare" href="/blog/no-code-workflow-automation-platform/">
             <div class="blog-card-art"><img src="/assets/blog/no-code-workflow-automation-platform.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>No Code Workflow Automation Platform: The Real Shortlist for SMEs That Need Results, Not Demos</h2>
             <p>n8n, Make and Zapier compared for the person who will maintain the workflows: maintenance burden, pricing predictability, data residency and handover, what really drives the bill, a six-step implementation path, and a failure we fixed within the hour.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-09">October 9, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/business-process-workflow-automation/">
+          <a class="blog-card" data-cat="compare" href="/blog/business-process-workflow-automation/">
             <div class="blog-card-art"><img src="/assets/blog/business-process-workflow-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Business Process Workflow Automation: The Real Shortlist for SMEs</h2>
             <p>What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-06">October 6, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/intelligent-automation/">
+          <a class="blog-card" data-cat="start" href="/blog/intelligent-automation/">
             <div class="blog-card-art"><img src="/assets/blog/intelligent-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Getting started</span>
             <h2>Intelligent Automation: A Practical Framework for SMEs That Actually Works</h2>
             <p>Intelligent automation as three layers, workflow engine, AI model and knowledge base, with a four-step method, a build, platform or specialist comparison, the mistakes that sink projects, and why it is a knowledge problem first.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-06">October 6, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/best-ai-automation-tools-small-businesses/">
+          <a class="blog-card" data-cat="compare" href="/blog/best-ai-automation-tools-small-businesses/">
             <div class="blog-card-art"><img src="/assets/blog/best-ai-automation-tools-small-businesses.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Best AI Automation Tools for Small Businesses: A Practical Comparison</h2>
             <p>Zapier, Make and n8n compared for small businesses, with AI chatbots, document processing and use cases by industry, the mistakes that sink automations, and the hidden cost of free tools.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-05">October 5, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/cloud-based-workflow-automation/">
+          <a class="blog-card" data-cat="compare" href="/blog/cloud-based-workflow-automation/">
             <div class="blog-card-art"><img src="/assets/blog/cloud-based-workflow-automation.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Cloud Based Workflow Automation: A Practical Comparison for SMEs</h2>
             <p>Zapier, Make, n8n and Power Automate compared on setup, AI and cost at scale, when to move from no-code to n8n, and a measured case of AI reading the trade press every day.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-02">October 2, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/low-code-workflow-automation-tools/">
+          <a class="blog-card" data-cat="compare" href="/blog/low-code-workflow-automation-tools/">
             <div class="blog-card-art"><img src="/assets/blog/low-code-workflow-automation-tools.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time</h2>
             <p>n8n, Make, Power Automate, Node-RED and Zapier compared on learning curve, pricing model and self-hosting, the right pick for each profile, and the error handling most comparisons skip.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-10-01">October 1, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/open-source-workflow-automation-tools/">
+          <a class="blog-card" data-cat="compare" href="/blog/open-source-workflow-automation-tools/">
             <div class="blog-card-art"><img src="/assets/blog/open-source-workflow-automation-tools.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Comparisons</span>
             <h2>Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In</h2>
             <p>n8n, Node-RED, Airflow, Huginn and Activepieces compared on license, self-hosting and fit, plus what running n8n in production taught us about errors and versioning.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-09-29">September 29, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/business-process-automation-companies/">
+          <a class="blog-card" data-cat="start" href="/blog/business-process-automation-companies/">
             <div class="blog-card-art"><img src="/assets/blog/business-process-automation-companies.webp?v=2" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Getting started</span>
             <h2>Business Process Automation Companies: The Real Shortlist for SMEs</h2>
             <p>What business process automation covers, the four criteria that separate providers, a cost and speed table from global consultancy to freelancer, and the question that exposes a weak partner.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-09-29">September 29, 2026</time></span>
           </a>
-          <a class="blog-card" href="/blog/zapier-workflow-automation-tool/">
+          <a class="blog-card" data-cat="tools" href="/blog/zapier-workflow-automation-tool/">
             <div class="blog-card-art"><img src="/assets/blog/zapier-workflow-automation-tool.webp" alt="" width="1200" height="630" loading="lazy"></div>
-            <span class="blog-card-tag">Automation</span>
+            <span class="blog-card-tag">Tool guides</span>
             <h2>Zapier Workflow Automation Tool: Build Reliable Automations Without the Busywork</h2>
             <p>How we map your process before touching Zapier, the four safeguards on every Zap we hand over, what it costs, and when n8n or Make is the better call.</p>
             <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-09-26">September 26, 2026</time></span>
@@ -560,6 +558,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     initGSAP();
+});
+</script>
+
+<script>
+/* Filtre par categorie. La premiere carte visible passe en tete de grille : c'est elle que la regle :first-child d'editorial.css met a la une. */
+document.addEventListener("DOMContentLoaded", function () {
+    var grid = document.querySelector(".blog-grid");
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".blog-filter .chip"));
+    if (!grid || !chips.length) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(".blog-card"));
+    var dans = function (cat) { return cards.filter(function (c) { return cat === "all" || c.dataset.cat === cat; }); };
+    chips.forEach(function (chip) {
+        var cat = chip.dataset.cat;
+        chip.querySelector(".chip-n").textContent = dans(cat).length;
+        chip.addEventListener("click", function () {
+            chips.forEach(function (b) {
+                b.classList.toggle("active", b === chip);
+                b.setAttribute("aria-pressed", String(b === chip));
+            });
+            var gardees = dans(cat);
+            cards.forEach(function (c) { c.style.display = gardees.indexOf(c) < 0 ? "none" : ""; });
+            gardees.concat(cards.filter(function (c) { return gardees.indexOf(c) < 0; })).forEach(function (c) { grid.appendChild(c); });
+        });
+    });
 });
 </script>
 
