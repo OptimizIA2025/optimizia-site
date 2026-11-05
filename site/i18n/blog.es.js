@@ -1,5 +1,5 @@
 /* blog, es. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-147 : categories du blog). */
+   Regenere le 2026-09-25 (T-148 : retouches GSC). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.es = {
     html: {
@@ -44,8 +44,8 @@ window.OIA_I18N.es = {
         "What workflow automation is, then the shortlist: n8n, Make, Zapier and a custom build compared on ease of use, pricing model, flexibility and self-hosting, with checked prices, who each option is for, and the billing unit that changes the bill.": "Qué es la automatización de flujos de trabajo y luego la shortlist: n8n, Make, Zapier y una solución a medida comparados en facilidad de uso, modelo de precios, flexibilidad y autoalojamiento, con precios comprobados, para quién es cada opción y la unidad de facturación que cambia la factura.",
         "Intelligent Automation: A Practical Framework for SMEs That Actually Works": "Automatización inteligente: un marco práctico para pymes que funciona de verdad",
         "Intelligent automation as three layers, workflow engine, AI model and knowledge base, with a four-step method, a build, platform or specialist comparison, the mistakes that sink projects, and why it is a knowledge problem first.": "La automatización inteligente en tres capas, motor de flujos, modelo de IA y base de conocimiento, con un método en cuatro pasos, una comparativa entre construir en interno, plataforma y especialista, los errores que hunden los proyectos y por qué es ante todo un problema de conocimiento.",
-        "Best AI Automation Tools for Small Businesses: A Practical Comparison": "Las mejores herramientas de automatización con IA para pequeñas empresas: una comparativa práctica",
-        "Zapier, Make and n8n compared for small businesses, with AI chatbots, document processing and use cases by industry, the mistakes that sink automations, and the hidden cost of free tools.": "Zapier, Make y n8n comparados para pequeñas empresas, con chatbots de IA, procesamiento de documentos y usos por sector, los errores que hunden una automatización y el coste oculto de las herramientas gratuitas.",
+        "Workflow Automation for Small Business: What to Automate First, and With Which Tool": "Automatización de flujos para pequeñas empresas: qué automatizar primero y con qué herramienta",
+        "The six workflows a small business should automate first, then Zapier, Make and n8n compared, where AI adds something, the mistakes that sink automations and the hidden cost of free tools.": "Los seis flujos que una pequeña empresa debería automatizar primero, después Zapier, Make y n8n comparados, dónde aporta algo la IA, los errores que hunden las automatizaciones y el coste oculto de las herramientas gratuitas.",
         "Cloud Based Workflow Automation: A Practical Comparison for SMEs": "Automatización de flujos en la nube: una comparativa práctica para pymes",
         "Zapier, Make, n8n and Power Automate compared on setup, AI and cost at scale, when to move from no-code to n8n, and a measured case of AI reading the trade press every day.": "Zapier, Make, n8n y Power Automate comparados en configuración, IA y coste a escala, cuándo pasar del no-code a n8n y un caso medido de IA que lee la prensa sectorial cada día.",
         "Low Code Workflow Automation Tools: The Shortlist That Won't Waste Your Time": "Herramientas low code de automatización de flujos: la selección que no le hará perder el tiempo",

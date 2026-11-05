@@ -1,9 +1,9 @@
 /* blog-power-automate-for-workflow-automation, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25. */
+   Regenere le 2026-09-25 (T-148 : retouches GSC). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
-        "Power Automate for Workflow Automation: SME Comparison": "Power Automate pour automatiser ses workflows : comparatif PME",
+        "Power Automate Workflow Automation vs n8n and Make": "Automatiser ses workflows avec Power Automate, face à n8n et Make",
         "Back to the blog": "Retour au blog",
         "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automation</a> · Article": "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automatisation</a> · Article",
         "Power Automate for Workflow Automation: A Realistic Comparison for SMEs": "Power Automate pour automatiser ses workflows : un comparatif réaliste pour les PME",

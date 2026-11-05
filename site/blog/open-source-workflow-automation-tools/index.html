@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="/assets/site.css?v=10">
     <script src="/assets/oia-theme.js?v=2"></script>
     <link rel="canonical" href="https://www.optimizia.xyz/blog/open-source-workflow-automation-tools/">
-    <title>Open Source Workflow Automation Tools: Top Picks</title>
-    <meta name="description" content="Compare the best open source workflow automation tools for SMEs. No vendor lock-in, full control, and real integration options. See which fits your stack.">
+    <title>Open Source Workflow Automation Tools: Self-Hosted Picks</title>
+    <meta name="description" content="Open source workflow automation tools for SMEs: n8n, Node-RED, Airflow, Huginn and Activepieces compared, and what self-hosting really takes.">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="OptimizIA.xyz">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Open Source Workflow Automation Tools: Top Picks">
-    <meta property="og:description" content="Compare the best open source workflow automation tools for SMEs. No vendor lock-in, full control, and real integration options. See which fits your stack.">
+    <meta property="og:title" content="Open Source Workflow Automation Tools: Self-Hosted Picks">
+    <meta property="og:description" content="Open source workflow automation tools for SMEs: n8n, Node-RED, Airflow, Huginn and Activepieces compared, and what self-hosting really takes.">
     <meta property="og:url" content="https://www.optimizia.xyz/blog/open-source-workflow-automation-tools/">
     <meta property="og:image" content="https://www.optimizia.xyz/assets/blog/open-source-workflow-automation-tools-og.png">
     <meta property="og:image:width" content="1200">
@@ -23,8 +23,8 @@
     <meta property="og:image:alt" content="Five open source workflow automation tools drawn as periodic table tiles, with n8n as the large best overall tile.">
     <meta property="article:published_time" content="2026-09-29">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Open Source Workflow Automation Tools: Top Picks">
-    <meta name="twitter:description" content="Compare the best open source workflow automation tools for SMEs. No vendor lock-in, full control, and real integration options. See which fits your stack.">
+    <meta name="twitter:title" content="Open Source Workflow Automation Tools: Self-Hosted Picks">
+    <meta name="twitter:description" content="Open source workflow automation tools for SMEs: n8n, Node-RED, Airflow, Huginn and Activepieces compared, and what self-hosting really takes.">
     <meta name="twitter:image" content="https://www.optimizia.xyz/assets/blog/open-source-workflow-automation-tools-og.png">
 
     <link rel="preload" href="/assets/fonts/Outfit-300_800-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,10 +51,10 @@
           "@type": "BlogPosting",
           "@id": "https://www.optimizia.xyz/blog/open-source-workflow-automation-tools/#article",
           "headline": "Open Source Workflow Automation Tools: The Shortlist That Won't Lock You In",
-          "description": "Compare the best open source workflow automation tools for SMEs. No vendor lock-in, full control, and real integration options. See which fits your stack.",
+          "description": "Open source workflow automation tools for SMEs: n8n, Node-RED, Airflow, Huginn and Activepieces compared, and what self-hosting really takes.",
           "inLanguage": "en-US",
           "datePublished": "2026-09-29",
-          "dateModified": "2026-09-29",
+          "dateModified": "2026-11-05",
           "author": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
           "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
           "isPartOf": { "@id": "https://www.optimizia.xyz/blog/#page" },
@@ -76,7 +76,8 @@
             {"@type":"Question","name":"Can I use open source workflow automation tools for commercial purposes?","acceptedAnswer":{"@type":"Answer","text":"Yes, most open source tools allow commercial use. n8n's Sustainable Use License permits free self-hosting for internal business operations. Apache 2.0 and MIT licenses have no restrictions on commercial use. Always check the specific license of the tool you choose."}},
             {"@type":"Question","name":"How do open source tools compare to Zapier or Make?","acceptedAnswer":{"@type":"Answer","text":"Open source tools give you full control over your data and avoid per-task fees. However, they require you to manage your own infrastructure. Zapier and Make are easier to set up but can become expensive as your usage grows. For high-volume automations, self-hosting n8n can be significantly cheaper."}},
             {"@type":"Question","name":"Is n8n really free?","acceptedAnswer":{"@type":"Answer","text":"The community edition of n8n is free to self-host and use for commercial purposes, with some limitations (e.g., no SSO, no workflow sharing, no Git version control). The cloud version has a free trial and paid plans. The Sustainable Use License means you can't offer n8n as a hosted service to others, but internal business use is fine."}},
-            {"@type":"Question","name":"What skills do I need to self-host these tools?","acceptedAnswer":{"@type":"Answer","text":"Basic command-line skills and familiarity with Docker are helpful. Most tools provide Docker images, so you can deploy with a single command. You'll also need to manage a server, configure a domain, and set up SSL certificates. If that sounds daunting, consider a managed hosting option or a tool like n8n cloud."}}
+            {"@type":"Question","name":"What skills do I need to self-host these tools?","acceptedAnswer":{"@type":"Answer","text":"Basic command-line skills and familiarity with Docker are helpful. Most tools provide Docker images, so you can deploy with a single command. You'll also need to manage a server, configure a domain, and set up SSL certificates. If that sounds daunting, consider a managed hosting option or a tool like n8n cloud."}},
+            {"@type":"Question","name":"Is there open source business process automation software?","acceptedAnswer":{"@type":"Answer","text":"Yes. For workflows between business apps, n8n and Activepieces are the usual choices for an SME. For formal, modelled processes with approvals and audit trails, open source BPMN engines such as Flowable exist, but they are built for developers and take a project to set up."}}
           ]
         }
       ]
@@ -186,6 +187,7 @@
                 <a href="#who-each-option-suits">Who each option suits</a>
                 <a href="#price-ranges">What open source really costs</a>
                 <a href="#watch-out">What to watch out for</a>
+                <a href="#self-hosting">What self-hosting takes</a>
                 <a href="#in-production">Running n8n in production</a>
                 <a href="#frequently-asked-questions">Frequently asked questions</a>
               </nav>
@@ -310,6 +312,17 @@
           <h3>Workflow versioning</h3>
           <p>Workflows change, and one bad edit can break a process that ran fine for months. On n8n, <a href="https://docs.n8n.io/deploy/host-n8n/community-edition-features" target="_blank" rel="noopener">Git-based version control</a> is reserved for paid plans. On the community edition, we export every workflow as JSON after each change and keep it versioned with the client's documentation, so any earlier version can be imported back as is.</p>
 
+          <h2 id="self-hosting">Self-Hosted Workflow Automation: What It Takes</h2>
+          <p>Self-hosting is what makes these tools free, and it is also where the real work sits. Before choosing one, check that someone will own five jobs:</p>
+          <ul>
+            <li><b>A server.</b> A small virtual machine is enough for most SME workloads, and it is the smallest line on the bill.</li>
+            <li><b>Updates.</b> These tools ship often. Someone reads the release notes and upgrades, because a version left behind misses its security fixes.</li>
+            <li><b>Backups.</b> The workflows, the credentials and the execution database, saved off the server and restored at least once to prove it works.</li>
+            <li><b>Access and secrets.</b> HTTPS, strong admin passwords, and API keys kept in the tool's credential store rather than in workflow code.</li>
+            <li><b>Monitoring.</b> An alert when a workflow fails or stops running, because nobody is told when a self-hosted workflow stops unless you set it up.</li>
+          </ul>
+          <p>We run one self-hosted n8n instance for the production workflows of three of our projects. The server costs little; the time spent on updates and monitoring is the real cost, which is why we offer it as <a href="/services.html">copiloting</a>, from €100 excl. VAT per month.</p>
+
           <h2 id="in-production">What We Learned Running n8n in Production</h2>
           <p>Comparisons stay abstract until something breaks. Our reference case is <a href="/case-studies/lead-monitoring/">a market-monitoring agent</a> built on self-hosted n8n for Paul Bergé Lemonnier, an influence agent: it reads 25 industry feeds every weekday, has an AI rank each signal and emails him a digest. On one of its first full runs, it read 336 articles and kept the 14 worth a call, in two minutes. Four lessons from building it:</p>
           <ul>
@@ -336,6 +349,9 @@
 
           <h3>What skills do I need to self-host these tools?</h3>
           <p>Basic command-line skills and familiarity with Docker are helpful. Most tools provide Docker images, so you can deploy with a single command. You'll also need to manage a server, configure a domain, and set up SSL certificates. If that sounds daunting, consider a managed hosting option or a tool like n8n cloud.</p>
+
+          <h3>Is there open source business process automation software?</h3>
+          <p>Yes. For workflows between business apps, n8n and Activepieces are the usual choices for an SME. For formal, modelled processes with approvals and audit trails, open source BPMN engines such as Flowable exist, but they are built for developers and take a project to set up.</p>
         </div>
         <div class="post-sources">
           <b class="post-sources-title"><span>Sources</span></b>

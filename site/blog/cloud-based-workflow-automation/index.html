@@ -54,7 +54,7 @@
           "description": "Cloud based workflow automation compared: tools, costs, and fit for SMEs. See which option wins for your team size and budget.",
           "inLanguage": "en-US",
           "datePublished": "2026-10-02",
-          "dateModified": "2026-10-02",
+          "dateModified": "2026-11-05",
           "author": { "@type": "Person", "@id": "https://www.optimizia.xyz/about.html#person-romain-ben", "name": "Romain Ben", "url": "https://romainben.cloud" },
           "publisher": { "@id": "https://www.optimizia.xyz/#organization" },
           "isPartOf": { "@id": "https://www.optimizia.xyz/blog/#page" },
@@ -183,6 +183,7 @@
                 <a href="#selection-criteria">Selection criteria</a>
                 <a href="#comparison-table">Comparison table</a>
                 <a href="#who-should-choose">Who should choose which option</a>
+                <a href="#cloud-or-self-hosted">Cloud software or a system you host</a>
                 <a href="#real-case">A real case, measured</a>
                 <a href="#price-ranges">Price ranges</a>
                 <a href="#buying-questions">Questions during the buying process</a>
@@ -260,6 +261,10 @@
           <p><b>Choose n8n if:</b> you have a developer on staff or you work with an agency, you need AI to handle unstructured data, or you want to self-host for data privacy. A logistics company that wants to parse emails and extract shipment details would use n8n with a custom AI model.</p>
           <p><b>Choose Power Automate if:</b> your company runs on Microsoft 365 and you want to automate approvals, document generation, or SharePoint workflows. It is less friendly for non-Microsoft apps.</p>
           <p>If you are an SME without a technical team, the pragmatic path is to start with Zapier or Make, then bring in an agency like OptimizIA.xyz when you hit a wall. OptimizIA.xyz specializes in n8n and AI workflows for SMEs, and they offer a <a href="/contact.html">free 20-minute audit call</a> to assess your needs.</p>
+
+          <h2 id="cloud-or-self-hosted">Cloud Workflow Software or a Workflow System You Host</h2>
+          <p>Cloud workflow software runs on the vendor's servers: Zapier, Make and Power Automate work this way, and so does n8n Cloud. You pay a subscription, the vendor handles updates, uptime and security, and your data passes through their infrastructure. A workflow system you host yourself, such as self-hosted n8n, runs on your own server: the licence is free for internal use, the data stays where you put it, and the updates, backups and monitoring become your job.</p>
+          <p>For most SMEs, the cloud is the right start: nothing to run, and a first workflow can go live the same day. Hosting becomes worth it when volumes make per-task pricing expensive, or when client data must stay on infrastructure you control. Our <a href="/blog/open-source-workflow-automation-tools/">open source comparison</a> covers what self-hosting really takes, and our <a href="/blog/make-workflow-automation/">Make guide</a> shows how far a cloud tool goes before you need it.</p>
 
           <h2 id="real-case">A Real Case: AI on Unstructured Data, Measured</h2>
           <p>What does "AI on unstructured data" look like once it runs every day? Our reference is the <a href="/case-studies/lead-monitoring/">lead monitoring agent</a> we built on n8n for Paul Bergé Lemonnier, an influence agent. Every weekday, it reads the full text of what 25 trade press feeds published, has Claude Sonnet 5 keep what is actionable and rank each signal into three tiers with a one-sentence justification, then emails him a digest.</p>
