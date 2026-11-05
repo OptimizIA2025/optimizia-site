@@ -3,6 +3,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "Copy link": "Link kopieren",
+        "Link copied": "Link kopiert",
         "Zapier Workflow Automation Tool | OptimizIA.xyz": "Zapier-Workflow-Automatisierung | OptimizIA.xyz",
         "Back to the blog": "Zurück zum Blog",
         "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automation</a> · Article": "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automatisierung</a> · Artikel",
