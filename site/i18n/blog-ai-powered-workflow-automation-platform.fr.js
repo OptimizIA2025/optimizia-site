@@ -1,5 +1,5 @@
 /* blog-ai-powered-workflow-automation-platform, fr. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-124). */
+   Regenere le 2026-09-25 (T-148 : retouches GSC). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
@@ -139,6 +139,8 @@ window.OIA_I18N.fr = {
         "No. AI automation handles repetitive tasks, freeing your team for higher-value work like customer relationships and creative problem-solving. It's a tool to augment human work, not replace it.": "Non. L'automatisation par IA prend en charge les tâches répétitives et libère votre équipe pour un travail à plus forte valeur, comme la relation client et la résolution créative de problèmes. C'est un outil pour augmenter le travail humain, pas pour le remplacer.",
         "What's the first process I should automate?": "Quel est le premier processus à automatiser ?",
         "Start with something simple and high-volume, like data entry, report generation, or email triage. Avoid complex processes with many exceptions until you have experience.": "Commencez par quelque chose de simple et à fort volume, comme la saisie de données, la génération de rapports ou le tri des e-mails. Évitez les processus complexes aux nombreuses exceptions tant que vous n'avez pas d'expérience.",
+        "Can I host a workflow automation platform on my own server?": "Puis-je héberger une plateforme d'automatisation des workflows sur mon propre serveur ?",
+        "Some of them. n8n and Activepieces can run on your own server, which keeps the data with you and removes per-task pricing, in exchange for updates, backups and monitoring. Zapier and Make run only in the vendor's cloud. Power Automate runs in Microsoft's cloud, with a desktop app for automating Windows applications. We run our own n8n server for three of our projects.": "Certaines, oui. n8n et Activepieces peuvent tourner sur votre propre serveur, ce qui garde les données chez vous et supprime la facturation à la tâche, en échange des mises à jour, des sauvegardes et de la surveillance. Zapier et Make ne tournent que dans le cloud de l'éditeur. Power Automate tourne dans le cloud de Microsoft, avec une application de bureau pour automatiser les applications Windows. Nous faisons tourner notre propre serveur n8n pour trois de nos projets.",
         "Keep reading": "À lire aussi",
         "<b>No code workflow automation platforms</b><span>n8n, Make and Zapier compared for the person who will maintain the workflows.</span>": "<b>Plateformes no-code d'automatisation des workflows</b><span>n8n, Make et Zapier comparés du point de vue de la personne qui maintiendra les workflows.</span>",
         "<b>Cloud based workflow automation</b><span>Zapier, Make, n8n and Power Automate, and when to move from no-code to n8n.</span>": "<b>Automatisation des workflows dans le cloud</b><span>Zapier, Make, n8n et Power Automate, et quand passer du no-code à n8n.</span>",

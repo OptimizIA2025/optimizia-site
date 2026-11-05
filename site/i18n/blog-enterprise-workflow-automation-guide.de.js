@@ -1,9 +1,9 @@
 /* blog-enterprise-workflow-automation-guide, de. Cle = texte anglais exact du HTML, espaces normalises.
-   Regenere le 2026-09-25 (T-126). */
+   Regenere le 2026-09-25 (T-148 : retouches GSC). */
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
-        "Enterprise Workflow Automation: A Practical Guide": "Workflow-Automatisierung im Unternehmen: ein Praxisleitfaden",
+        "Enterprise Workflow Automation: Five Routes Compared": "Workflow-Automatisierung im Unternehmen: fünf Wege im Vergleich",
         "Back to the blog": "Zurück zum Blog",
         "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automation</a> · Article": "<a href=\"/blog/\" style=\"color:inherit;text-decoration:none\">Automatisierung</a> · Artikel",
         "Enterprise Workflow Automation: A Practical Guide to Choosing the Right Path": "Workflow-Automatisierung im Unternehmen: ein Praxisleitfaden zur Wahl des richtigen Wegs",
