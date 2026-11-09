@@ -47,6 +47,7 @@ window.OIA_I18N.fr = {
         "<b>Scalability:</b> Will it handle hundreds of workflows and thousands of executions per day?": "<b>Montée en charge :</b> tiendra-t-il des centaines de workflows et des milliers d'exécutions par jour ?",
         "<b>Security:</b> Does it support encryption, role-based access control, and audit logs?": "<b>Sécurité :</b> prend-il en charge le chiffrement, le contrôle d'accès par rôles et les journaux d'audit ?",
         "These criteria matter more than marketing claims. A tool with a flashy UI but poor documentation will cost you time.": "Ces critères comptent plus que les arguments marketing. Un outil à l'interface flatteuse mais mal documenté vous coûtera du temps.",
+        "The same checks apply to the rest of an open source stack. When the apps you want to connect are open source too, an ERP or a helpdesk for example, <a href=\"https://opensource-it.com/\" target=\"_blank\" rel=\"noopener\">Open Source IT</a> publishes reviews and comparisons of open source enterprise software.": "Les mêmes critères valent pour le reste d'une pile open source. Quand les applications à connecter sont elles aussi open source, un ERP ou un logiciel de support client par exemple, <a href=\"https://opensource-it.com/\" target=\"_blank\" rel=\"noopener\">Open Source IT</a> publie des avis et des comparatifs de logiciels d'entreprise open source.",
         "Comparison Table": "Tableau comparatif",
         "Tool": "Outil",
         "License": "Licence",
