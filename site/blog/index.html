@@ -47,6 +47,14 @@
           "blogPost": [
             {
               "@type": "BlogPosting",
+              "@id": "https://www.optimizia.xyz/fr/blog/ia-expert-comptable/#article",
+              "headline": "IA pour expert-comptable : six tâches qu'un cabinet peut automatiser sans changer de logiciel",
+              "url": "https://www.optimizia.xyz/fr/blog/ia-expert-comptable/",
+              "inLanguage": "fr-FR",
+              "datePublished": "2026-11-10"
+            },
+            {
+              "@type": "BlogPosting",
               "@id": "https://www.optimizia.xyz/blog/rag-for-business/#article",
               "headline": "RAG for Business: How an SME Turns Its Documents Into an AI Assistant",
               "url": "https://www.optimizia.xyz/blog/rag-for-business/",
@@ -230,6 +238,9 @@
     <style>
     .post-head .lead a { color: var(--orange-deep); text-decoration: underline; text-underline-offset: 2px; }
     .blog-card-art img { display: block; width: 100%; height: auto; }
+    /* Article ecrit en francais au milieu des articles anglais : une marque discrete sur l'image, hors du flux de la carte a la une. */
+    .blog-card-art { position: relative; }
+    .blog-card-lang { position: absolute; top: 12px; left: 12px; padding: 6px 9px; border-radius: 999px; background: var(--surface); color: var(--orange-deep); font-family: var(--font-mono); font-size: .66rem; line-height: 1; letter-spacing: .1em; }
     </style>
 </head>
 <body>
@@ -306,8 +317,15 @@
         </div>
 
         <div class="blog-grid">
+          <a class="blog-card" data-cat="ai" href="/fr/blog/ia-expert-comptable/" hreflang="fr">
+            <div class="blog-card-art"><img src="/assets/blog/ia-expert-comptable.webp" alt="" width="1200" height="630"><span class="blog-card-lang" data-no-i18n>FR</span></div>
+            <span class="blog-card-tag">AI in practice</span>
+            <h2 lang="fr">IA pour expert-comptable : six tâches qu'un cabinet peut automatiser sans changer de logiciel</h2>
+            <p lang="fr">Relances de pièces, questions des clients, facture électronique : ce qu'un cabinet comptable peut confier à l'IA, ce qui reste humain, et les prix.</p>
+            <span class="blog-card-time"><img class="blog-card-avatar" src="/avis-pics/romainBen.webp" alt="" width="30" height="30" loading="lazy"><b>Romain Ben</b><time datetime="2026-11-10">November 10, 2026</time></span>
+          </a>
           <a class="blog-card" data-cat="ai" href="/blog/rag-for-business/">
-            <div class="blog-card-art"><img src="/assets/blog/rag-for-business.webp" alt="" width="1200" height="630"></div>
+            <div class="blog-card-art"><img src="/assets/blog/rag-for-business.webp" alt="" width="1200" height="630" loading="lazy"></div>
             <span class="blog-card-tag">AI in practice</span>
             <h2>RAG for Business: How an SME Turns Its Documents Into an AI Assistant</h2>
             <p>How RAG turns an SME's own documents into an assistant that cites its sources: where it pays off, when it does not, and how to get the documents ready.</p>
