@@ -73,6 +73,14 @@ verifier_redirection "www.optimizia.xyz" "/case-studies/automated-reporting/lega
 verifier_redirection "www.optimizia.xyz" "/mentions-legales.html" "/legal-notice.html"
 verifier_redirection "www.optimizia.xyz" "/new-reporting-pics/SOI_W2621_ANONYMIZED_SHOWCASE.html" "/assets/examples/example-report.html"
 
+# Dossier /fr/ : nouvelles pages ecrites en francais en sous-dossier, servies ;
+# anciennes pages a plat de l'ancien silo, renvoyees vers l'accueil. Le 10/11,
+# le filet ^~ /fr/ renvoyait aussi le premier article vers l'accueil sans
+# qu'aucun controle ne le voie (T-151).
+verifier "www.optimizia.xyz" "/fr/blog/ia-expert-comptable/" 200
+verifier_redirection "www.optimizia.xyz" "/fr/blog/" "/blog/"
+verifier_redirection "www.optimizia.xyz" "/fr/ancienne-page-inconnue.html" "/"
+
 # En-têtes de sécurité
 verifier_entete "www.optimizia.xyz" "/" "X-Content-Type-Options"
 verifier_entete "www.optimizia.xyz" "/" "Content-Security-Policy"
