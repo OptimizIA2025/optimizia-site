@@ -3,6 +3,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.de = {
     html: {
+        "IA pour expert-comptable&nbsp;: six tâches qu'un cabinet peut automatiser sans changer de logiciel": "KI für Steuerberater: sechs Aufgaben, die eine Kanzlei automatisieren kann, ohne die Software zu wechseln",
+        "Relances de pièces, questions des clients, facture électronique&nbsp;: ce qu'un cabinet comptable peut confier à l'IA, ce qui reste humain, et les prix.": "Fehlende Belege anfordern, Mandantenfragen beantworten, E-Rechnung: was eine Kanzlei an KI abgeben kann, was menschlich bleibt, und die Preise.",
         "Blog | OptimizIA.xyz": "Blog | OptimizIA.xyz",
         "The blog": "Der Blog",
         "Custom AI automation, from the field": "Maßgeschneiderte KI-Automatisierung, aus der Praxis",

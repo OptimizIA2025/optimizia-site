@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Visuel - ia-expert-comptable</title>
+<!-- Source du visuel de l'article « IA pour expert-comptable : six taches qu'un cabinet peut automatiser sans changer
+     de logiciel » (article maison en francais, 10/11) : un carnet a souches sur fond bleu carbone. Le feuillet de droite
+     est une relance de pieces cochee ligne par ligne (la note de frais manque encore), tamponnee « Relance J+7 » et
+     visee par le collaborateur ; une feuille de papier carbone depasse, et la souche de gauche garde le double pour le
+     dossier. La these : la relance part toute seule, le cabinet garde la trace, une personne valide.
+     Directions deja prises : voir (C) Journal du blog (coffre, 01 site OptimizIA.xyz).
+     Servir la racine du depot puis ouvrir
+     /_meeeters/visuels/ia-expert-comptable.html        (og : titre + scene)
+     /_meeeters/visuels/ia-expert-comptable.html#art    (carte et figure : scene seule)
+     Le visuel s'affiche a ~600 px de large : tout texte fait au moins 14 px dans le canevas de 1200.
+     Aplats seulement, pas de degrade ni de grain (poids du WebP). -->
+<link rel="stylesheet" href="../../site/assets/fonts/fonts.css">
+<style>
+:root { --bleu: #2E3E8C; --ombre: #24316F; --carbone: #4A62D1; --papier: #FBF7EE; --souche: #EEE6D2; --encre: #1B2453; --double: #3D57C9; --rouge: #D4472B; --vert: #1E7A4E; --or: #C9A54A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bleu); }
+body { font-family: 'Outfit', sans-serif; color: var(--encre); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; width: 1200px; height: 630px; overflow: hidden; background: var(--bleu); }
+.og .only-art, .art .only-og { display: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.brand { position: absolute; left: 56px; top: 48px; }
+.brand img { height: 38px; display: block; }
+.copy { position: absolute; left: 56px; top: 132px; width: 470px; color: var(--papier); }
+.copy h1 { font-weight: 800; font-size: 56px; line-height: 1.03; letter-spacing: -.03em; }
+.copy .mono { display: block; margin-top: 22px; font-size: 16px; color: #B9C6FF; }
+
+.scene { position: absolute; left: 0; top: 0; width: 800px; height: 480px; transform-origin: 0 0; }
+.og .scene { transform: translate(470px, 92px) scale(.86); }
+.art .scene { transform: translate(200px, 76px); }
+
+.ombre, .carbone, .souche, .feuillet { position: absolute; border-radius: 6px; }
+.ombre { left: 58px; top: 58px; width: 700px; height: 400px; background: var(--ombre); }
+.carbone { left: 318px; top: 66px; width: 452px; height: 404px; background: var(--carbone); transform: rotate(3.2deg); transform-origin: 0 0; }
+.carbone::after { content: ""; position: absolute; right: 0; bottom: 0; width: 46px; height: 46px; background: #8FA0EC; clip-path: polygon(0 0, 100% 0, 0 100%); }
+.souche { left: 40px; top: 40px; width: 205px; height: 400px; background: var(--souche); border-radius: 6px 0 0 6px; padding: 26px 20px; color: var(--double); }
+.feuillet { left: 245px; top: 40px; width: 495px; height: 400px; background: var(--papier); border-radius: 0 6px 6px 0; padding: 26px 30px; }
+.perfo { position: absolute; left: 243px; top: 52px; height: 376px; border-left: 4px dotted #B7AB8F; }
+
+.souche .mono { font-size: 14px; display: block; line-height: 1.55; }
+.souche .no { font-size: 20px; margin-bottom: 14px; }
+.souche .ligne { border-bottom: 2px solid #CFC4AA; margin: 10px 0 12px; }
+.souche .double { position: absolute; left: 20px; bottom: 24px; font-size: 14px; border: 3px solid var(--double); padding: 4px 10px; border-radius: 4px; }
+
+.tete { display: flex; justify-content: space-between; align-items: baseline; }
+.tete .mono { font-size: 17px; }
+.tete .no { color: var(--rouge); }
+.dossier { margin-top: 6px; font-size: 17px; color: #5B6285; }
+.trait { border-bottom: 2px solid #E2D9C3; margin: 16px 0 6px; }
+.rang { display: flex; align-items: center; gap: 14px; height: 50px; border-bottom: 2px solid #EFE8D8; font-size: 20px; font-weight: 500; }
+.case { width: 26px; height: 26px; border: 3px solid var(--encre); border-radius: 4px; position: relative; flex: none; }
+.case svg { position: absolute; left: -3px; top: -7px; width: 30px; height: 30px; }
+.rang .etat { margin-left: auto; font-size: 14px; color: var(--vert); }
+.rang.manque { color: var(--rouge); }
+.rang.manque .case { border-color: var(--rouge); }
+.rang.manque .etat { color: var(--rouge); }
+.pied { margin-top: 18px; font-size: 14px; color: #5B6285; }
+.vise { margin-top: 30px; display: flex; align-items: flex-end; gap: 12px; font-size: 17px; color: #5B6285; }
+.vise svg { width: 150px; height: 44px; }
+
+.tampon { position: absolute; left: 512px; top: 352px; transform: rotate(-11deg); border: 5px solid var(--rouge); border-radius: 8px; padding: 8px 16px 6px; color: var(--rouge); opacity: .92; background: rgba(251,247,238,.6); }
+.tampon .mono { font-size: 27px; letter-spacing: .1em; display: block; line-height: 1; }
+.tampon small { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: .14em; margin-top: 6px; text-align: center; }
+
+.stylo { position: absolute; left: 706px; top: -64px; width: 30px; height: 250px; transform: rotate(24deg); transform-origin: 50% 0; }
+.stylo .corps { position: absolute; left: 0; top: 0; width: 30px; height: 196px; background: var(--encre); border-radius: 15px 15px 6px 6px; }
+.stylo .bague { position: absolute; left: 0; top: 150px; width: 30px; height: 12px; background: var(--or); }
+.stylo .agrafe { position: absolute; left: 12px; top: 14px; width: 6px; height: 96px; background: var(--or); border-radius: 3px; }
+.stylo .plume { position: absolute; left: 3px; top: 194px; width: 24px; height: 52px; background: var(--or); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+</style>
+</head>
+<body>
+<div class="stage og" id="stage">
+  <div class="brand only-og"><img src="../../site/assets/brand/optimizia-logo-sombre.svg" alt=""></div>
+  <div class="copy only-og">
+    <h1>IA et expertise<br>comptable&nbsp;:<br>6&nbsp;tâches à<br>automatiser</h1>
+    <span class="mono">Cabinets de la Côte d'Azur</span>
+  </div>
+
+  <div class="scene">
+    <div class="ombre"></div>
+    <div class="carbone"></div>
+    <div class="souche">
+      <span class="mono no">N° 0427</span>
+      <span class="mono">Relance</span>
+      <span class="mono">Note de frais</span>
+      <div class="ligne"></div>
+      <span class="mono">Envoyée 05/11</span>
+      <span class="mono">J+7 · 12/11</span>
+      <span class="mono double">Double</span>
+    </div>
+    <div class="perfo"></div>
+    <div class="feuillet">
+      <div class="tete"><span class="mono">Relance de pièces</span></div>
+      <div class="dossier">Dossier client · exercice 2026</div>
+      <div class="trait"></div>
+      <div class="rang"><span class="case"><svg viewBox="0 0 30 30" fill="none" stroke="#1B2453" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6 7L26 5"/></svg></span>Relevé bancaire d'octobre<span class="mono etat">Reçu</span></div>
+      <div class="rang"><span class="case"><svg viewBox="0 0 30 30" fill="none" stroke="#1B2453" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6 7L26 5"/></svg></span>Factures fournisseurs<span class="mono etat">Reçu</span></div>
+      <div class="rang manque"><span class="case"></span>Note de frais, déplacement<span class="mono etat">Manquant</span></div>
+      <div class="rang"><span class="case"><svg viewBox="0 0 30 30" fill="none" stroke="#1B2453" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6 7L26 5"/></svg></span>Contrat de prêt<span class="mono etat">Reçu</span></div>
+      <div class="vise">Vu par :<svg viewBox="0 0 150 44" fill="none" stroke="#1B2453" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 34c10-2 14-24 22-24 6 0-2 26 6 26 7 0 9-18 15-18 5 0 1 14 7 14s10-12 16-12 4 10 10 10 14-8 22-10 18 0 30-2"/></svg></div>
+    </div>
+    <div class="tampon"><span class="mono">Relancé J+7</span><small>Automatique</small></div>
+    <div class="stylo"><div class="corps"></div><div class="agrafe"></div><div class="bague"></div><div class="plume"></div></div>
+  </div>
+</div>
+<script>
+if (location.hash === "#art") document.getElementById("stage").className = "stage art";
+</script>
+</body>
+</html>

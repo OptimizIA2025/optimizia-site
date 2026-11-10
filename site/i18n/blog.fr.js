@@ -3,6 +3,8 @@
 window.OIA_I18N = window.OIA_I18N || {};
 window.OIA_I18N.fr = {
     html: {
+        "IA pour expert-comptable&nbsp;: six tâches qu'un cabinet peut automatiser sans changer de logiciel": "IA pour expert-comptable : six tâches qu'un cabinet peut automatiser sans changer de logiciel",
+        "Relances de pièces, questions des clients, facture électronique&nbsp;: ce qu'un cabinet comptable peut confier à l'IA, ce qui reste humain, et les prix.": "Relances de pièces, questions des clients, facture électronique : ce qu'un cabinet comptable peut confier à l'IA, ce qui reste humain, et les prix.",
         "Blog | OptimizIA.xyz": "Blog | OptimizIA.xyz",
         "The blog": "Le blog",
         "Custom AI automation, from the field": "L'automatisation IA sur mesure, vue du terrain",
