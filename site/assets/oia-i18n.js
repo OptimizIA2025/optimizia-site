@@ -39,15 +39,16 @@
        25/10, la nav gagne le menu Home (huit cles par dictionnaire). Le 26/10,
        les cles de la nav et du pied de page quittent les dictionnaires de page
        pour le dictionnaire commun. Le 26/10 encore, « Béziers · » rejoint le
-       pied de page espagnol et allemand, ou il manquait. */
-    var VERSION = '10';
+       pied de page espagnol et allemand, ou il manquait. Le 12/11, la ville du
+       pied de page devient Cagnes-sur-Mer (T-150). */
+    var VERSION = '11';
 
     var self = document.currentScript || document.querySelector('script[data-page]');
     var PAGE = (self && self.getAttribute('data-page')) || '';
     var BASE = (self && self.getAttribute('data-base')) || 'i18n/';
     /* La langue d'ecriture de la page. Anglais partout, sauf exception declaree :
-       la page locale de Beziers est ecrite et indexee en francais (une requete
-       locale francaise ne se gagne pas avec une page anglaise), et ce sont ses
+       les pages du dossier /fr/ sont ecrites et indexees en francais (une requete
+       locale francaise ne se gagne pas avec une page anglaise), et ce sont leurs
        dictionnaires en/es/de qui s'appliquent au rendu. Le reste du mecanisme
        ne distingue jamais les langues, seule la source change. */
     var SOURCE = (self && self.getAttribute('data-source')) || 'en';

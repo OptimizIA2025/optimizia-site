@@ -25,7 +25,7 @@ window.OIA_I18N.de = {
         "A product built in-house: a full website audit, AI search visibility included, delivered in 30 seconds with its action plan.": "Ein intern gebautes Produkt: ein vollständiges Website-Audit, KI-Suchsichtbarkeit inklusive, geliefert in 30 Sekunden mit Aktionsplan.",
         "Does your situation look like one of these pages?": "Erkennen Sie Ihre Situation auf einer dieser Seiten wieder?",
         "Each of these projects started from a problem that was simple to state and painful to live with every day. Twenty minutes are usually enough to know whether the same mechanism applies to your business.": "Jedes dieser Projekte begann mit einem Problem, das einfach zu benennen und im Alltag mühsam zu ertragen war. Zwanzig Minuten reichen meist, um zu wissen, ob derselbe Mechanismus auch bei Ihnen greift.",
-        "Reply within 72h · Occitanie, France &amp; International": "Antwort innerhalb von 72 Std. · Okzitanien, Frankreich &amp; International",
+        "Reply within 72h · Côte d'Azur, France &amp; International": "Antwort innerhalb von 72 Std. · Côte d'Azur, Frankreich &amp; International",
         "Book a free audit": "Kostenloses Audit buchen",
         "Guides": "Leitfäden",
         "SEO guide": "SEO-Leitfaden",

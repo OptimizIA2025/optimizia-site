@@ -32,7 +32,7 @@ window.OIA_I18N.de = {
         "Can I cancel or reschedule?": "Kann ich absagen oder verschieben?",
         "Yes, absolutely. You'll receive a confirmation email with a link to easily cancel or reschedule if your plans change.": "Ja, selbstverständlich. Sie erhalten eine Bestätigungsmail mit einem Link, über den Sie den Termin bei geänderten Plänen leicht absagen oder verschieben können.",
         "Do you operate everywhere in France?": "Arbeiten Sie in ganz Frankreich?",
-        "Our registered office is in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). We operate on-site across Occitanie and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Unser Sitz ist in <a href=\"agence-ia-beziers.html\">Béziers</a> (Hérault). Wir arbeiten vor Ort in Okzitanien und remote in ganz Frankreich und international. Videokonferenzen sind seit Jahren unsere Norm und passen perfekt zu dieser Art von Gespräch.",
+        "We are based in <a href=\"/fr/agence-ia-nice/\">Cagnes-sur-Mer</a>, on the Côte d'Azur. We operate on-site across the Alpes-Maritimes and Monaco, and remotely across France and internationally. Video conferencing has been our norm for years, it suits this type of conversation perfectly.": "Wir sind in <a href=\"/fr/agence-ia-nice/\">Cagnes-sur-Mer</a> an der Côte d'Azur ansässig. Wir arbeiten vor Ort in den Alpes-Maritimes und in Monaco sowie remote in ganz Frankreich und international. Videokonferenzen sind seit Jahren unsere Norm und passen perfekt zu dieser Art von Gespräch.",
         "Book a free audit": "Kostenloses Audit buchen",
         "Guides": "Leitfäden",
         "SEO guide": "SEO-Leitfaden",

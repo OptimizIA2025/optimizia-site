@@ -100,7 +100,7 @@ window.OIA_I18N.es = {
         "Audit SEO &amp; GEO (SEOPlus!)": "Auditoría SEO &amp; GEO (SEOPlus!)",
         "Contact": "Contacto",
         "contact@optimizia.xyz": "contact@optimizia.xyz",
-        "Côte d'Azur, France<br>&amp; international": "Costa Azul, Francia<br>e internacional",
+        "Cagnes-sur-Mer · Côte d'Azur, France<br>&amp; international": "Cagnes-sur-Mer · Costa Azul, Francia<br>e internacional",
         "© 2026 OptimizIA.xyz · Tous droits réservés ·": "© 2026 OptimizIA.xyz · Todos los derechos reservados ·",
         "Mentions légales": "Aviso legal",
         "Copier le lien": "Copiar enlace",

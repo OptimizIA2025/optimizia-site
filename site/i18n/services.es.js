@@ -111,7 +111,7 @@ window.OIA_I18N.es = {
         "What deserves automating, and how to keep it running.": "Qué merece automatizarse y cómo mantenerlo en marcha.",
         "Ready to automate your growth?": "¿Listo para automatizar su crecimiento?",
         "Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.": "Reserve 20 minutos, sin pitch ni venta, solo una conversación informal sobre su situación y lo que la IA puede cambiar realmente para usted.",
-        "Reply within 72h · Occitanie, France &amp; International": "Respuesta en 72 h · Occitania, Francia e internacional",
+        "Reply within 72h · Côte d'Azur, France &amp; International": "Respuesta en 72 h · Costa Azul, Francia e internacional",
         "Book a free audit": "Reservar una auditoría gratuita",
         "SEO guide": "Guía SEO",
         "GEO guide": "Guía GEO",

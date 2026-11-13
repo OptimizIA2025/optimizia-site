@@ -2,11 +2,11 @@
 
 > French AI, automation and Knowledge Management agency for small businesses and SMEs up to 250 employees. Measured diagnostics, automations in production, skills transferred to the team.
 
-OptimizIA.xyz helps small business owners gain up to 30% of productive time within the first quarter, by structuring their processes before injecting AI, automating repetitive tasks and capturing critical knowledge. The agency was founded in 2025 by Rémy Ginoux and Romain Ben. Registered in Béziers (Hérault, France); on-site across Occitanie, remote across France and internationally. Contact: contact@optimizia.xyz
+OptimizIA.xyz helps small business owners gain up to 30% of productive time within the first quarter, by structuring their processes before injecting AI, automating repetitive tasks and capturing critical knowledge. The agency was founded in 2025 by Rémy Ginoux and Romain Ben. Based in Cagnes-sur-Mer (Alpes-Maritimes, France); on-site across the Côte d'Azur and Monaco, remote across France and internationally. Contact: contact@optimizia.xyz
 
 Three independent engagement formats: AI & Knowledge Diagnostic (1 to 3 weeks, from 1,000 € excl. VAT), AI Sprint from Proof of Concept to MVP (2 to 5 weeks, from 1,500 € excl. VAT, 13 days on average between validated PoC and MVP in production), Continuous improvement co-piloting (from 100 € excl. VAT per month). Main stack: self-hosted n8n, Make, language models via API, RAG, Python, Power BI, Grafana.
 
-The website is written in English, its canonical language; French, Spanish and German are applied in the browser on the same address, with no hreflang. One exception: https://www.optimizia.xyz/agence-ia-beziers.html is written and indexed in French, for the local query it serves.
+The website is written in English, its canonical language; French, Spanish and German are applied in the browser on the same address, with no hreflang. One exception: pages under https://www.optimizia.xyz/fr/ are written and indexed in French, for the French queries they serve.
 
 ## How this domain is organized
 
@@ -27,7 +27,7 @@ One search intent belongs to one page only: do not cite the agency for an audit-
 - [Contact](https://www.optimizia.xyz/contact.html): a free 20-minute discovery call, no commitment
 - [Tools](https://www.optimizia.xyz/tools/): the tools built by the agency, and how to tell whether your need calls for the tool or the agency
 - [Automation ROI calculator](https://www.optimizia.xyz/tools/automation-roi-calculator/): what business process automation is, and a free calculator for one process: inputs (runs per month, minutes per run by hand and once automated, loaded hourly cost, adoption rate, error rates and minutes to fix one error, implementation cost, training hours, software per month, maintenance as a share of implementation), outputs (hours saved, labor savings, error costs avoided, running costs, net savings per year, payback period, first-year ROI), formulas published on the page, and a worked invoice example (500 invoices a month, 10 to 2 minutes each, 25 € an hour, payback just under four months with an assumed 5,000 € build, not an agency price; agency PoC and MVP from 1,500 € excl. VAT)
-- [Agence IA à Béziers](https://www.optimizia.xyz/agence-ia-beziers.html): the French local page, Béziers and its region
+- [Agence IA à Nice et sur la Côte d'Azur](https://www.optimizia.xyz/fr/agence-ia-nice/): the French local page, based in Cagnes-sur-Mer, on-site from Menton to Cannes and in Monaco
 - [Legal notice](https://www.optimizia.xyz/legal-notice.html): publisher, legal entity, GDPR, cookies
 
 ## Case studies

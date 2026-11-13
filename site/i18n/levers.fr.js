@@ -74,7 +74,7 @@ window.OIA_I18N.fr = {
         "These three levers power every format we sell. <a href=\"/services.html\" class=\"solution-link no-arrow\">See the services and starting prices</a>": "Ces trois leviers alimentent chacun de nos formats. <a href=\"/services.html\" class=\"solution-link no-arrow\">Voir les offres et les prix de départ</a>",
         "Ready to automate your growth?": "Prêt à automatiser votre croissance ?",
         "Book 20 minutes, no pitch, no sales, just an informal conversation about your situation and what AI can really change for you.": "Réservez 20 minutes, sans pitch ni vente, juste une conversation informelle sur votre situation et ce que l'IA peut vraiment y changer.",
-        "Reply within 72h · Occitanie, France &amp; International": "Réponse sous 72h · Occitanie, France &amp; International",
+        "Reply within 72h · Côte d'Azur, France &amp; International": "Réponse sous 72h · Côte d'Azur, France &amp; International",
         "Book a free audit": "Réserver un audit gratuit",
         "Guides": "Guides",
         "SEO guide": "Guide SEO",

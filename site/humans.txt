@@ -7,7 +7,7 @@ Rémy Ginoux — Co-fondateur & Senior Consultant
 
 Romain Ben — Co-fondateur & Ingénieur IA
   Email: contact@optimizia.xyz
-  Location: Nice, France
+  Location: Cagnes-sur-Mer, France
   Role: Développement IA, automatisation (n8n / Make), RAG, agents autonomes
 
 /* SITE */
