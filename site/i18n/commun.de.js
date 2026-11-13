@@ -1,5 +1,5 @@
 /* Dictionnaire commun, de : nav, menu mobile et pied de page des pages ecrites
-   en anglais (toutes sauf Beziers). Cle = texte anglais exact du HTML, espaces
+   en anglais (toutes sauf le dossier /fr/). Cle = texte anglais exact du HTML, espaces
    normalises. Charge par oia-i18n.js en plus du dictionnaire de la page, qui
    l'emporte sur une cle en double. Cree le 2026-10-26 (OPT-015). */
 window.OIA_I18N_COMMUN = window.OIA_I18N_COMMUN || {};
@@ -32,7 +32,7 @@ window.OIA_I18N_COMMUN.de = {
         "SEO &amp; GEO audit (SEOPlus!)": "SEO-&amp;-GEO-Audit (SEOPlus!)",
         "Contact": "Kontakt",
         "contact@optimizia.xyz": "contact@optimizia.xyz",
-        "Béziers · Occitanie, France<br>&amp; International": "Béziers · Okzitanien, Frankreich<br>&amp; International",
+        "Cagnes-sur-Mer · Côte d'Azur, France<br>&amp; International": "Cagnes-sur-Mer · Côte d'Azur, Frankreich<br>&amp; International",
         "© 2026 OptimizIA.xyz · All rights reserved ·": "© 2026 OptimizIA.xyz · Alle Rechte vorbehalten ·",
         "Legal Notice": "Impressum"
     }

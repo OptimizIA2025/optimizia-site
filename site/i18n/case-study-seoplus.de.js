@@ -60,7 +60,7 @@ window.OIA_I18N.de = {
         "A use case close to yours?": "Ein Anwendungsfall wie Ihrer?",
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 Minuten kostenlose Analyse, um zu klären, ob derselbe Mechanismus bei Ihnen greift, ohne Fachjargon und unverbindlich.",
         "Book a slot": "Termin buchen",
-        "Reply within 72h · Occitanie, France &amp; International": "Antwort innerhalb von 72 Std. · Okzitanien, Frankreich &amp; International",
+        "Reply within 72h · Côte d'Azur, France &amp; International": "Antwort innerhalb von 72 Std. · Côte d'Azur, Frankreich &amp; International",
         "Book a free audit": "Kostenloses Audit buchen",
         "Guides": "Leitfäden",
         "SEO guide": "SEO-Leitfaden",

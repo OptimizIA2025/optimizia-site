@@ -80,6 +80,11 @@ verifier_redirection "www.optimizia.xyz" "/new-reporting-pics/SOI_W2621_ANONYMIZ
 verifier "www.optimizia.xyz" "/fr/blog/ia-expert-comptable/" 200
 verifier_redirection "www.optimizia.xyz" "/fr/blog/" "/blog/"
 verifier_redirection "www.optimizia.xyz" "/fr/ancienne-page-inconnue.html" "/"
+# Page locale Cote d'Azur (T-150) : servie, et les deux anciennes pages locales y menent.
+verifier "www.optimizia.xyz" "/fr/agence-ia-nice/" 200
+verifier_redirection "www.optimizia.xyz" "/fr/agence-ia-nice" "/fr/agence-ia-nice/"
+verifier_redirection "www.optimizia.xyz" "/agence-ia-beziers.html" "/fr/agence-ia-nice/"
+verifier_redirection "www.optimizia.xyz" "/fr/agence-ia-pme.html" "/fr/agence-ia-nice/"
 
 # En-têtes de sécurité
 verifier_entete "www.optimizia.xyz" "/" "X-Content-Type-Options"

@@ -60,7 +60,7 @@ window.OIA_I18N.es = {
         "A use case close to yours?": "¿Un caso de uso parecido al suyo?",
         "A free 20-minute diagnosis to find out whether the same mechanism applies to your business, no jargon, no commitment.": "20 minutos de diagnóstico gratuito para saber si el mismo mecanismo se aplica en su caso, sin jerga y sin compromiso.",
         "Book a slot": "Reservar una franja",
-        "Reply within 72h · Occitanie, France &amp; International": "Respuesta en 72 h · Occitania, Francia e internacional",
+        "Reply within 72h · Côte d'Azur, France &amp; International": "Respuesta en 72 h · Costa Azul, Francia e internacional",
         "Book a free audit": "Reservar una auditoría gratuita",
         "Guides": "Guías",
         "SEO guide": "Guía SEO",
